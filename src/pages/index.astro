@@ -1,6 +1,30 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Logo from '../components/brand/Logo.astro';
+
+const latestEpisodes = [
+  {
+    pillarCode: 'P1',
+    pillarLabel: 'GEOPOLÍTICA',
+    title: '[TÍTULO DEL EPISODIO 1]',
+    date: '[FECHA]',
+    href: '#',
+  },
+  {
+    pillarCode: 'P2',
+    pillarLabel: 'TECNOLOGÍA',
+    title: '[TÍTULO DEL EPISODIO 2]',
+    date: '[FECHA]',
+    href: '#',
+  },
+  {
+    pillarCode: 'P3',
+    pillarLabel: 'ECONOMÍA',
+    title: '[TÍTULO DEL EPISODIO 3]',
+    date: '[FECHA]',
+    href: '#',
+  },
+];
 ---
 
 <BaseLayout title="LIMINAL">
@@ -11,8 +35,28 @@ import Logo from '../components/brand/Logo.astro';
     </div>
 
     <p class="home__promise">
-      Leer el presente como un sistema. Anticipar las consecuencias. Decodificar las señales que importan.
+      <span>Leer el presente como un sistema.</span>
+      <span>Anticipar las consecuencias.</span>
+      <span>Decodificar las señales que importan.</span>
     </p>
+  </section>
+
+  <section class="latest" aria-labelledby="latest-heading">
+    <h2 id="latest-heading" class="latest__title">Últimos episodios</h2>
+    <ul class="latest__grid">
+      {latestEpisodes.map((ep) => (
+        <li>
+          <a href={ep.href} class="ep-card">
+            <div class="ep-card__thumb" aria-hidden="true">
+              <span class="ep-card__thumb-mark">LIMINAL</span>
+            </div>
+            <span class="ep-card__pillar">{ep.pillarCode} · {ep.pillarLabel}</span>
+            <h3 class="ep-card__title">{ep.title}</h3>
+            <span class="ep-card__date">{ep.date}</span>
+          </a>
+        </li>
+      ))}
+    </ul>
   </section>
 </BaseLayout>
 
@@ -38,22 +82,116 @@ import Logo from '../components/brand/Logo.astro';
     font-size: var(--fs-md);
     letter-spacing: var(--tracking-display-wide);
     text-transform: uppercase;
-    color: var(--color-hueso);
+    color: var(--color-ocre);
   }
   .home__promise {
     font-family: var(--font-display);
     font-weight: 700;
-    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    /* Tamaño elegido para que la oración más larga
+       ("DECODIFICAR LAS SEÑALES QUE IMPORTAN.") entre en una sola línea
+       en desktop ≥1024px, sin competir con el wordmark del logo. */
+    font-size: clamp(1rem, 2.4vw, 1.5rem);
     letter-spacing: var(--tracking-display);
     text-transform: uppercase;
-    line-height: 1.25;
+    line-height: 1.3;
     color: var(--color-hueso);
-    max-width: 28ch;
+  }
+  .home__promise > span {
+    display: block;
+    white-space: nowrap;
+  }
+  .home__promise > span + span {
+    margin-top: var(--space-2);
+  }
+
+  /* === Sección: últimos episodios === */
+  .latest {
+    margin-top: var(--space-16);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+  }
+  .latest__title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: var(--fs-md);
+    letter-spacing: var(--tracking-display-wide);
+    text-transform: uppercase;
+    color: var(--color-hueso);
+    text-align: center;
+  }
+  .latest__grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+  }
+  .ep-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    text-decoration: none;
+    color: inherit;
+  }
+  .ep-card:hover .ep-card__thumb {
+    border-color: var(--color-teal-brillante);
+  }
+  .ep-card:hover .ep-card__title {
+    color: var(--color-teal-brillante);
+  }
+  .ep-card__thumb {
+    aspect-ratio: 16 / 9;
+    background: var(--color-selva);
+    border: 1px solid var(--rule);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 150ms;
+  }
+  .ep-card__thumb-mark {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: var(--fs-md);
+    letter-spacing: var(--tracking-display-wide);
+    text-transform: uppercase;
+    color: color-mix(in oklab, var(--color-hueso) 30%, transparent);
+  }
+  .ep-card__pillar {
+    font-family: var(--font-mono);
+    font-weight: 400;
+    font-size: var(--fs-xs);
+    letter-spacing: var(--tracking-mono);
+    color: var(--color-teal-brillante);
+  }
+  .ep-card__title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: var(--fs-md);
+    letter-spacing: var(--tracking-display);
+    text-transform: uppercase;
+    color: var(--color-hueso);
+    transition: color 150ms;
+  }
+  .ep-card__date {
+    font-family: var(--font-mono);
+    font-weight: 400;
+    font-size: var(--fs-xs);
+    color: var(--color-ceniza);
   }
 
   @media (max-width: 720px) {
     .home {
       padding: var(--space-8) 0 var(--space-6);
+    }
+    /* En mobile, la legibilidad manda: permitimos wrap natural
+       si la oración no entra en una sola línea. */
+    .home__promise > span {
+      white-space: normal;
+    }
+    .latest__grid {
+      grid-template-columns: 1fr;
     }
   }
 </style>
