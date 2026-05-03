@@ -1,20 +1,24 @@
 ---
+import SocialIcons from './SocialIcons.astro';
+
 const year = new Date().getFullYear();
 ---
 
 <footer class="site-footer">
   <p class="tagline">Contexto · Mecanismo · Consecuencia</p>
+  <SocialIcons />
+  <a class="email" href="mailto:contacto@mundoliminal.com">contacto@mundoliminal.com</a>
   <p class="meta">© {year} LIMINAL · mundoliminal.com</p>
 </footer>
 
 <style>
   .site-footer {
     margin-top: var(--space-24);
-    padding: var(--space-8);
+    padding: var(--space-12) var(--space-8) var(--space-8);
     border-top: 1px solid var(--rule);
     display: flex;
     flex-direction: column;
-    gap: var(--space-2);
+    gap: var(--space-6);
     align-items: center;
     text-align: center;
   }
@@ -24,11 +28,30 @@ const year = new Date().getFullYear();
     font-weight: 700;
     letter-spacing: var(--tracking-display-wide);
     text-transform: uppercase;
-    color: var(--color-hueso);
+    color: var(--color-ceniza);
+  }
+  .email {
+    font-family: var(--font-mono);
+    font-size: var(--fs-sm);
+    color: var(--color-ceniza);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: color 150ms, border-color 150ms;
+  }
+  .email:hover {
+    color: var(--color-teal-brillante);
+    border-bottom-color: var(--color-teal-brillante);
   }
   .meta {
     font-family: var(--font-mono);
     font-size: var(--fs-xs);
     color: var(--color-ceniza);
+  }
+
+  @media (max-width: 720px) {
+    .site-footer {
+      padding: var(--space-8) var(--space-4);
+      gap: var(--space-4);
+    }
   }
 </style>
