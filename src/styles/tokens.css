@@ -1,0 +1,56 @@
+:root {
+  /* === Paleta LIMINAL — Brand Kit v1.1 (10 tonos) === */
+  --color-vacio: #060C08;
+  --color-selva: #0B2419;
+  --color-bosque: #1A3D2B;
+  --color-teal: #0B8B6E;
+  --color-teal-brillante: #0FBA94;
+  --color-neon: #FF4C08;
+  --color-ocre: #C47A18;
+  --color-hueso: #DED8CE;
+  --color-ceniza: #6E7D6C;
+  --color-blanco: #FFFFFF;
+
+  /* Combinación por defecto (fondo Vacío, texto Hueso, acentos Teal) */
+  --bg-default: var(--color-vacio);
+  --fg-default: var(--color-hueso);
+  --accent-default: var(--color-teal);
+  --accent-hover: var(--color-teal-brillante);
+  --muted: var(--color-ceniza);
+  --rule: color-mix(in oklab, var(--color-hueso) 14%, transparent);
+
+  /* === Tipografías (Brand Kit: máx. 2 por pieza) === */
+  --font-display: 'Oswald Variable', 'Oswald', system-ui, sans-serif;
+  --font-mono: 'Space Mono', ui-monospace, SFMono-Regular, monospace;
+
+  /* Tracking display: 0.12em a 0.20em (Brand Kit) */
+  --tracking-display: 0.12em;
+  --tracking-display-wide: 0.20em;
+  --tracking-mono: 0.08em;
+
+  /* === Type scale === */
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-base: 1rem;
+  --fs-md: 1.125rem;
+  --fs-lg: 1.25rem;
+  --fs-xl: 1.5rem;
+  --fs-2xl: 2rem;
+  --fs-3xl: clamp(2rem, 5vw, 3rem);
+  --fs-display: clamp(2.5rem, 8vw, 5.5rem);
+
+  /* === Espaciado === */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-24: 6rem;
+
+  /* === Layout === */
+  --content-max: 72ch;
+  --container-max: 1200px;
+}

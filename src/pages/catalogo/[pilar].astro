@@ -1,0 +1,62 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { PILLARS, type Pillar } from '../../lib/pillars';
+
+export function getStaticPaths() {
+  return PILLARS.map((p) => ({
+    params: { pilar: p.slug },
+    props: { pillar: p },
+  }));
+}
+
+interface Props {
+  pillar: Pillar;
+}
+
+const { pillar } = Astro.props;
+---
+
+<BaseLayout title={`Catálogo — ${pillar.label}`}>
+  <article>
+    <header>
+      <p class="code">{pillar.code}</p>
+      <h1>{pillar.label}</h1>
+    </header>
+    <p class="placeholder">[PLACEHOLDER: episodios y columnas del pilar {pillar.code} {pillar.label} aparecerán acá una vez que estén cargados en <code>src/content/episodes/</code> y <code>src/content/columns/</code>.]</p>
+    <p><a href="/catalogo">← Volver al catálogo</a></p>
+  </article>
+</BaseLayout>
+
+<style>
+  article {
+    max-width: var(--content-max);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+  header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+  .code {
+    font-family: var(--font-mono);
+    font-size: var(--fs-sm);
+    color: var(--color-teal-brillante);
+    letter-spacing: var(--tracking-display-wide);
+  }
+  h1 {
+    font-size: var(--fs-3xl);
+    letter-spacing: var(--tracking-display-wide);
+  }
+  .placeholder {
+    color: color-mix(in oklab, var(--color-hueso) 60%, transparent);
+    font-style: italic;
+  }
+  code {
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+    color: var(--color-hueso);
+  }
+</style>

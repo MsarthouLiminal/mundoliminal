@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 288" role="img" aria-label="LIMINAL — variante Principal Hueso">
+  <title>LIMINAL · Principal Hueso</title>
+  <desc>Wordmark Vacío sobre fondo Hueso. Variante para fondos claros. Brand Kit v1.1 · Documento Madre · Oswald 700 0.20em tracking · línea umbral Neon #FF4C08 al 50% cap-height · corner brackets Teal #0B8B6E. Wordmark convertido a paths vectoriales.</desc>
+  <rect x="0" y="0" width="960" height="288" fill="#DED8CE"/>
+  <g fill="#0B8B6E" stroke="none"><rect x="46.64" y="47.60" width="44" height="3"/><rect x="45.14" y="49.10" width="3" height="44"/><rect x="869.36" y="47.60" width="44" height="3"/><rect x="911.86" y="49.10" width="3" height="44"/><rect x="46.64" y="227.40" width="44" height="3"/><rect x="45.14" y="184.90" width="3" height="44"/><rect x="869.36" y="227.40" width="44" height="3"/><rect x="911.86" y="184.90" width="3" height="44"/></g>
+  <rect x="69.64" y="142.50" width="820.72" height="3" fill="#FF4C08"/>
+  <g fill="#060C08" stroke="none">
+    <g transform="translate(74.640 216.900) scale(0.180000 -0.180000)"><path d="M60 0V810H239V121H425V0Z"/></g>
+    <g transform="translate(190.380 216.900) scale(0.180000 -0.180000)"><path d="M61 0V810H240V0Z"/></g>
+    <g transform="translate(280.560 216.900) scale(0.180000 -0.180000)"><path d="M57 0 71 810H263L352 339L448 810H633L647 0H520L505 539L411 0H298L198 543L186 0Z"/></g>
+    <g transform="translate(443.280 216.900) scale(0.180000 -0.180000)"><path d="M61 0V810H240V0Z"/></g>
+    <g transform="translate(533.460 216.900) scale(0.180000 -0.180000)"><path d="M60 0V810H186L352 420V810H500V0H379L213 420V0Z"/></g>
+    <g transform="translate(670.440 216.900) scale(0.180000 -0.180000)"><path d="M21 0 174 810H378L529 0H364L337 171H218L190 0ZM234 278H320L277 594Z"/></g>
+    <g transform="translate(805.620 216.900) scale(0.180000 -0.180000)"><path d="M60 0V810H239V121H425V0Z"/></g>
+  </g>
+</svg>

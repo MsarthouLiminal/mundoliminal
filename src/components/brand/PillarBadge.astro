@@ -1,0 +1,32 @@
+---
+import { PILLAR_BY_CODE, type PillarCode } from '../../lib/pillars';
+
+interface Props {
+  code: PillarCode;
+}
+
+const { code } = Astro.props;
+const pillar = PILLAR_BY_CODE[code];
+---
+
+<span class="badge">
+  <span class="code">{pillar.code}</span>
+  <span class="dot">·</span>
+  <span class="label">{pillar.label.toUpperCase()}</span>
+</span>
+
+<style>
+  .badge {
+    font-family: var(--font-mono);
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    letter-spacing: var(--tracking-mono);
+    color: var(--color-teal-brillante);
+    display: inline-flex;
+    gap: 0.4em;
+    align-items: baseline;
+  }
+  .dot {
+    color: var(--color-ceniza);
+  }
+</style>

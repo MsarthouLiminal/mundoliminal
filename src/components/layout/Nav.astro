@@ -1,0 +1,56 @@
+---
+const links = [
+  { href: '/sobre-martin', label: 'Sobre Martín' },
+  { href: '/talks', label: 'Talks' },
+  { href: '/reportes', label: 'Reportes' },
+  { href: '/consultoria', label: 'Consultoría' },
+  { href: '/eventos', label: 'Eventos' },
+  { href: '/catalogo', label: 'Catálogo' },
+  { href: '/transparencia', label: 'Transparencia' },
+  { href: '/contacto', label: 'Contacto' },
+];
+
+const current = Astro.url.pathname.replace(/\/$/, '') || '/';
+---
+
+<nav class="nav" aria-label="Navegación principal">
+  <ul>
+    {links.map(({ href, label }) => {
+      const active = current === href || current.startsWith(href + '/');
+      return (
+        <li>
+          <a href={href} aria-current={active ? 'page' : undefined} class:list={[{ active }]}>
+            {label}
+          </a>
+        </li>
+      );
+    })}
+  </ul>
+</nav>
+
+<style>
+  .nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4) var(--space-6);
+    font-family: var(--font-mono);
+    font-size: var(--fs-xs);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-mono);
+  }
+  .nav a {
+    text-decoration: none;
+    color: var(--color-hueso);
+    border-bottom: 1px solid transparent;
+    padding-bottom: 2px;
+    transition: border-color 150ms, color 150ms;
+  }
+  .nav a:hover,
+  .nav a.active {
+    border-bottom-color: var(--color-teal-brillante);
+    color: var(--color-teal-brillante);
+  }
+</style>

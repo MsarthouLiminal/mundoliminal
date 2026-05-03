@@ -1,0 +1,43 @@
+---
+import Logo from '../brand/Logo.astro';
+import Nav from './Nav.astro';
+
+const isHome = Astro.url.pathname === '/' || Astro.url.pathname === '';
+---
+
+<header class="site-header">
+  {isHome ? (
+    <span class="brand" aria-hidden="true"></span>
+  ) : (
+    <a href="/" class="brand" aria-label="LIMINAL — inicio">
+      <Logo variant="oscura" width={140} />
+    </a>
+  )}
+  <Nav />
+</header>
+
+<style>
+  .site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-6);
+    padding: var(--space-6) var(--space-8);
+    border-bottom: 1px solid var(--rule);
+  }
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    min-height: 1px;
+  }
+
+  @media (max-width: 720px) {
+    .site-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--space-4);
+      padding: var(--space-4);
+    }
+  }
+</style>

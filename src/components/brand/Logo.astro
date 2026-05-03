@@ -1,0 +1,38 @@
+---
+type Variant = 'oscura' | 'selva' | 'hueso' | 'blanca';
+
+interface Props {
+  variant?: Variant;
+  width?: number;
+  alt?: string;
+}
+
+const { variant = 'oscura', width = 240, alt = 'LIMINAL' } = Astro.props;
+
+const file: Record<Variant, string> = {
+  oscura: 'liminal-logo-principal-oscura.svg',
+  selva: 'liminal-logo-selva.svg',
+  hueso: 'liminal-logo-principal-hueso.svg',
+  blanca: 'liminal-logo-principal-blanca.svg',
+};
+
+const src = `/brand/logos/${file[variant]}`;
+---
+
+<img
+  class="logo"
+  src={src}
+  alt={alt}
+  width={width}
+  height={Math.round((width * 288) / 960)}
+  style={`width: ${width}px;`}
+/>
+
+<style>
+  .logo {
+    display: block;
+    /* Tamaño mínimo digital del Brand Kit: 80px */
+    min-width: 80px;
+    height: auto;
+  }
+</style>

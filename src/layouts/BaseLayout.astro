@@ -1,0 +1,54 @@
+---
+import '../styles/global.css';
+import SiteHeader from '../components/layout/SiteHeader.astro';
+import SiteFooter from '../components/layout/SiteFooter.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const {
+  title,
+  description = 'LIMINAL — Señales que importan.',
+} = Astro.props;
+
+const fullTitle = title === 'LIMINAL' ? 'LIMINAL — Señales que importan.' : `${title} · LIMINAL`;
+---
+
+<!doctype html>
+<html lang="es-UY">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="LIMINAL" />
+    <meta name="theme-color" content="#060C08" />
+  </head>
+  <body>
+    <SiteHeader />
+    <main>
+      <slot />
+    </main>
+    <SiteFooter />
+  </body>
+</html>
+
+<style>
+  main {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: var(--space-12) var(--space-8);
+  }
+
+  @media (max-width: 720px) {
+    main {
+      padding: var(--space-8) var(--space-4);
+    }
+  }
+</style>

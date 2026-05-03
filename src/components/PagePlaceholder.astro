@@ -1,0 +1,34 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const {
+  title,
+  description = `[PLACEHOLDER: contenido de la página "${title}" pendiente de redacción.]`,
+} = Astro.props;
+---
+
+<article class="placeholder-page">
+  <h1>{title}</h1>
+  <p class="placeholder">{description}</p>
+</article>
+
+<style>
+  .placeholder-page {
+    max-width: var(--content-max);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+  h1 {
+    font-size: var(--fs-3xl);
+    letter-spacing: var(--tracking-display-wide);
+  }
+  .placeholder {
+    color: color-mix(in oklab, var(--color-hueso) 60%, transparent);
+    font-style: italic;
+  }
+</style>

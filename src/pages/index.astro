@@ -1,0 +1,59 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Logo from '../components/brand/Logo.astro';
+---
+
+<BaseLayout title="LIMINAL">
+  <section class="home">
+    <div class="home__brand">
+      <Logo variant="oscura" width={520} alt="LIMINAL" />
+      <p class="home__phrase">Señales que importan.</p>
+    </div>
+
+    <p class="home__promise">
+      Leer el presente como un sistema. Anticipar las consecuencias. Decodificar las señales que importan.
+    </p>
+  </section>
+</BaseLayout>
+
+<style>
+  .home {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-12);
+    align-items: center;
+    text-align: center;
+    padding: var(--space-16) var(--space-4) var(--space-12);
+  }
+  .home__brand {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+    align-items: center;
+    width: 100%;
+  }
+  .home__phrase {
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: var(--fs-md);
+    letter-spacing: var(--tracking-display-wide);
+    text-transform: uppercase;
+    color: var(--color-hueso);
+  }
+  .home__promise {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    letter-spacing: var(--tracking-display);
+    text-transform: uppercase;
+    line-height: 1.25;
+    color: var(--color-hueso);
+    max-width: 28ch;
+  }
+
+  @media (max-width: 720px) {
+    .home {
+      padding: var(--space-8) 0 var(--space-6);
+    }
+  }
+</style>

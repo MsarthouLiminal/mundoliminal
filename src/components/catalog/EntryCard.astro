@@ -1,0 +1,88 @@
+---
+import PillarBadge from '../brand/PillarBadge.astro';
+import type { PillarCode } from '../../lib/pillars';
+
+interface Props {
+  title: string;
+  description?: string;
+  date: Date;
+  pillar: PillarCode;
+  url: string;
+  type: 'episode' | 'column';
+  platform?: string;
+}
+
+const { title, description, date, pillar, url, type, platform } = Astro.props;
+
+const dateStr = date.toLocaleDateString('es-UY', {
+  year: 'numeric',
+  month: 'short',
+  day: 'numeric',
+});
+
+const typeLabel = type === 'episode' ? 'Episodio' : 'Columna';
+---
+
+<article class="entry-card">
+  <header class="entry-card__head">
+    <PillarBadge code={pillar} />
+    <span class="entry-card__type">
+      {typeLabel}{platform ? ` · ${platform}` : ''}
+    </span>
+  </header>
+  <h3 class="entry-card__title">
+    <a href={url} target="_blank" rel="noopener">{title}</a>
+  </h3>
+  {description && <p class="entry-card__desc">{description}</p>}
+  <p class="entry-card__date">{dateStr}</p>
+</article>
+
+<style>
+  .entry-card {
+    border: 1px solid var(--rule);
+    padding: var(--space-6);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    transition: border-color 150ms;
+  }
+  .entry-card:hover {
+    border-color: var(--color-teal-brillante);
+  }
+  .entry-card__head {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-3);
+    align-items: baseline;
+    flex-wrap: wrap;
+  }
+  .entry-card__type {
+    font-family: var(--font-mono);
+    font-size: var(--fs-xs);
+    color: var(--color-ceniza);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-mono);
+  }
+  .entry-card__title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: var(--fs-lg);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-display);
+  }
+  .entry-card__title a {
+    text-decoration: none;
+    color: var(--color-hueso);
+  }
+  .entry-card__title a:hover {
+    color: var(--color-teal-brillante);
+  }
+  .entry-card__desc {
+    color: color-mix(in oklab, var(--color-hueso) 80%, transparent);
+  }
+  .entry-card__date {
+    font-family: var(--font-mono);
+    font-size: var(--fs-xs);
+    color: var(--color-ceniza);
+  }
+</style>
