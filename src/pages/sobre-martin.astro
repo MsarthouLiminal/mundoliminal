@@ -1,8 +1,305 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import PagePlaceholder from '../components/PagePlaceholder.astro';
+import Logo from '../components/brand/Logo.astro';
 ---
 
 <BaseLayout title="Sobre Martín">
-  <PagePlaceholder title="Sobre Martín" />
+  <article class="about">
+    <header class="about__opening">
+      <h1>Martín Sarthou.</h1>
+      <p>
+        Treinta años cubriendo conflictos, elecciones y crisis económicas
+        dejaron una conclusión incómoda: lo impactante le gana a lo importante.
+        Los sucesos tapan los procesos.
+      </p>
+      <p>No debería ser así en la información, pero lo es.</p>
+      <p>LIMINAL nace de esa convicción.</p>
+    </header>
+
+    <section class="about__bio">
+      <!-- TODO: reemplazar con foto profesional cuando esté disponible -->
+      <div class="about__photo" aria-hidden="true">
+        <Logo variant="hueso" width={120} alt="" />
+      </div>
+
+      <div class="about__text">
+        <section class="bio-block">
+          <h2>Cobertura internacional.</h2>
+          <p>
+            Tres décadas de trabajo periodístico en cuatro continentes,
+            con foco en zonas de conflicto y procesos políticos.
+          </p>
+          <p>
+            Como corresponsal de CNN en Español y CNN Internacional, cubrí
+            desde Medio Oriente —Israel-Hamás, Israel-Hezbollah, Siria, Líbano,
+            Jordania— hasta América Latina. La región me dio la solidez del oficio:
+            golpes y crisis institucionales en Paraguay, alzamiento zapatista en
+            Chiapas, la visita de Juan Pablo II a Cuba, terremotos y tsunamis en
+            Haití, Chile y Perú. La toma de la residencia del embajador de Japón
+            en Lima por el MRTA. La guerra entre Ecuador y Perú. El conflicto civil
+            en Belfast.
+          </p>
+          <p>
+            Procesos electorales en decenas de países, incluyendo todos los
+            sudamericanos. La muerte de Hugo Chávez. La muerte de Néstor Kirchner.
+            El conflicto en La Haya entre Argentina y Uruguay por las plantas de
+            celulosa.
+          </p>
+          <p>
+            Invitaciones oficiales de gobiernos —Israel, Estados Unidos, Reino Unido,
+            Francia— para entrevistas con presidentes y cobertura de procesos
+            electorales.
+          </p>
+          <p>En Uruguay trabajé en El Observador y Telemundo.</p>
+        </section>
+
+        <section class="bio-block">
+          <h2>Comunicación estratégica.</h2>
+          <p>
+            Más de una década dirigiendo comunicación institucional y estrategia
+            de marca fuera del periodismo.
+          </p>
+          <p>
+            Director de comunicaciones del Club Nacional de Football. Responsable
+            de comunicación corporativa de UPM en Fray Bentos —cuyo conflicto de
+            instalación, cuando aún era Botnia, había cubierto años antes desde
+            la otra vereda—. Desarrollo de guiones cinematográficos para Medio
+            y Medio Films.
+          </p>
+          <p>
+            Esa doble experiencia —el periodismo y la comunicación corporativa,
+            vividos en distintos momentos sobre los mismos temas— terminó de definir
+            un método: separar dato, interpretación y opinión no es una pose.
+            Es la única forma de no engañar al que está del otro lado.
+          </p>
+        </section>
+
+        <section class="bio-block">
+          <h2>Docencia.</h2>
+          <p>
+            Hoy enseño en la Universidad de la Empresa (UDE), en programas de
+            comunicación y relaciones internacionales.
+          </p>
+          <p>
+            Antes pasé por Universidad de la República (UDELAR), ORT y Universidad
+            Católica del Uruguay (UCU).
+          </p>
+        </section>
+      </div>
+    </section>
+
+    <p class="about__closing">
+      <em>"Los sucesos pasan. Los procesos quedan. LIMINAL trabaja sobre lo segundo."</em>
+    </p>
+
+    <section class="about__cta" aria-labelledby="about-cta-heading">
+      <h2 id="about-cta-heading" class="about__cta-heading">
+        Si llegaste hasta acá,<br />dos caminos posibles.
+      </h2>
+      <div class="about__cta-grid">
+        <div class="cta-col">
+          <h3>Suscribite al newsletter.</h3>
+          <p>
+            Tres veces por semana, un análisis sobre geopolítica,
+            tecnología y economía. Sin urgencia falsa, sin agenda, sin relleno.
+          </p>
+          <a class="cta-col__button" href="https://mundoliminal.substack.com" target="_blank" rel="noopener">
+            Suscribirme →
+          </a>
+        </div>
+        <div class="cta-col">
+          <h3>Trabajemos juntos.</h3>
+          <p>
+            Talks, reportes, consultoría. Si necesitás leer el presente con la
+            misma vara, podemos hablar.
+          </p>
+          <a class="cta-col__button" href="/contacto">Escribir →</a>
+        </div>
+      </div>
+    </section>
+  </article>
 </BaseLayout>
+
+<style>
+  .about {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-16);
+  }
+
+  .about__opening {
+    max-width: var(--content-max);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+  .about__opening h1 {
+    font-size: var(--fs-3xl);
+    letter-spacing: var(--tracking-display-wide);
+    color: var(--color-hueso);
+    margin-bottom: var(--space-4);
+  }
+  .about__opening p {
+    font-family: var(--font-mono);
+    font-size: var(--fs-md);
+    color: var(--color-hueso);
+    line-height: 1.7;
+  }
+
+  .about__bio {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    gap: var(--space-12);
+    align-items: start;
+  }
+  .about__photo {
+    aspect-ratio: 4 / 5;
+    background: var(--color-selva);
+    border: 1px solid var(--rule);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top: var(--space-8);
+    opacity: 1;
+  }
+  .about__photo :global(img) {
+    opacity: 0.18;
+    filter: grayscale(1);
+  }
+  .about__text {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-12);
+  }
+  .bio-block {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+  .bio-block h2 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: var(--fs-md);
+    letter-spacing: var(--tracking-display);
+    text-transform: uppercase;
+    color: var(--color-hueso);
+    margin-bottom: var(--space-2);
+  }
+  .bio-block p {
+    font-family: var(--font-mono);
+    font-size: var(--fs-base);
+    color: var(--color-hueso);
+    line-height: 1.7;
+  }
+
+  .about__closing {
+    margin: var(--space-12) auto;
+    max-width: 60ch;
+    text-align: center;
+    font-family: var(--font-mono);
+    font-style: italic;
+    font-size: var(--fs-xl);
+    line-height: 1.5;
+    color: var(--color-ocre);
+    padding: var(--space-8) 0;
+  }
+
+  .about__cta {
+    border-top: 1px solid var(--rule);
+    padding-top: var(--space-12);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+  }
+  .about__cta-heading {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: var(--fs-xl);
+    letter-spacing: var(--tracking-display);
+    text-transform: uppercase;
+    color: var(--color-hueso);
+    text-align: center;
+    line-height: 1.2;
+  }
+  .about__cta-grid {
+    display: grid;
+    grid-template-columns: 1fr 1px 1fr;
+    gap: var(--space-12);
+    align-items: start;
+  }
+  .about__cta-grid::before {
+    content: '';
+    display: block;
+    grid-column: 2;
+    align-self: stretch;
+    background: var(--rule);
+    width: 1px;
+  }
+  .cta-col {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+  .cta-col:nth-child(1) { grid-column: 1; }
+  .cta-col:nth-child(2) { grid-column: 3; }
+  .cta-col h3 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: var(--fs-md);
+    letter-spacing: var(--tracking-display);
+    text-transform: uppercase;
+    color: var(--color-hueso);
+  }
+  .cta-col p {
+    font-family: var(--font-mono);
+    font-size: var(--fs-sm);
+    color: var(--color-hueso);
+    line-height: 1.6;
+  }
+  .cta-col__button {
+    align-self: flex-start;
+    margin-top: var(--space-2);
+    padding: var(--space-3) var(--space-6);
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: var(--fs-sm);
+    letter-spacing: var(--tracking-mono);
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--color-vacio);
+    background: var(--color-teal-brillante);
+    border: 1px solid var(--color-teal-brillante);
+    transition: background 150ms, color 150ms;
+  }
+  .cta-col__button:hover {
+    background: transparent;
+    color: var(--color-teal-brillante);
+  }
+
+  @media (max-width: 860px) {
+    .about__bio {
+      grid-template-columns: 1fr;
+      gap: var(--space-8);
+    }
+    .about__photo {
+      position: static;
+      max-width: 320px;
+    }
+    .about__cta-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-8);
+    }
+    .about__cta-grid::before {
+      display: none;
+    }
+    .cta-col:nth-child(1),
+    .cta-col:nth-child(2) {
+      grid-column: 1;
+    }
+    .cta-col:nth-child(2) {
+      border-top: 1px solid var(--rule);
+      padding-top: var(--space-8);
+    }
+  }
+</style>

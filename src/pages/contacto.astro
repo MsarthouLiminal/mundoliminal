@@ -1,8 +1,182 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import PagePlaceholder from '../components/PagePlaceholder.astro';
+import NewsletterCTA from '../components/home/NewsletterCTA.astro';
+
+const categories = [
+  {
+    name: 'LIMINAL Talks',
+    desc: 'presentaciones analíticas para empresas, asociaciones y organizaciones.',
+  },
+  {
+    name: 'Reportes y briefings sectoriales',
+    desc: 'análisis cerrados para entornos de alta incertidumbre.',
+  },
+  {
+    name: 'Consultoría en comunicación estratégica',
+    desc: 'posicionamiento institucional, gestión de crisis, relaciones con gobierno.',
+  },
+  {
+    name: 'Colaboraciones editoriales',
+    desc: 'sponsorships, partnerships, contenido conjunto, aliados de proyecto.',
+  },
+  {
+    name: 'Prensa y entrevistas',
+    desc: 'apariciones en medios, entrevistas, panelista en eventos.',
+  },
+  {
+    name: 'Otros',
+    desc: 'todo lo que no entre en las categorías anteriores.',
+  },
+];
 ---
 
 <BaseLayout title="Contacto">
-  <PagePlaceholder title="Contacto" />
+  <article class="contact">
+    <header class="contact__opening">
+      <h1>Contacto.</h1>
+      <p>Si estás acá, probablemente tenés algo concreto para proponer.</p>
+      <p>Bienvenido.</p>
+    </header>
+
+    <section class="contact__email-block" aria-labelledby="email-heading">
+      <h2 id="email-heading" class="subhead">Escribime a:</h2>
+      <a class="contact__email" href="mailto:contacto@mundoliminal.com">
+        contacto@mundoliminal.com
+      </a>
+    </section>
+
+    <section class="contact__categories" aria-labelledby="cats-heading">
+      <h2 id="cats-heading" class="subhead">Para qué estás escribiendo:</h2>
+      <ul class="cats">
+        {categories.map((c) => (
+          <li class="cat">
+            <span class="cat__name">{c.name}</span>
+            <span class="cat__sep"> — </span>
+            <span class="cat__desc">{c.desc}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="contact__more" aria-labelledby="more-heading">
+      <h2 id="more-heading" class="subhead">También acá:</h2>
+      <p>
+        LinkedIn →
+        <a href="https://www.linkedin.com/in/martinsarthou/" target="_blank" rel="noopener">
+          linkedin.com/in/martinsarthou
+        </a>
+      </p>
+      <p class="contact__location">Montevideo, Uruguay (UTC-3).</p>
+    </section>
+
+    <NewsletterCTA variant="standalone">
+      <Fragment slot="heading">
+        ¿Todavía no tenés algo concreto,<br />pero te interesa el proyecto?
+      </Fragment>
+    </NewsletterCTA>
+  </article>
 </BaseLayout>
+
+<style>
+  .contact {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-12);
+    max-width: var(--content-max);
+  }
+
+  .contact__opening {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+  .contact__opening h1 {
+    font-size: var(--fs-3xl);
+    letter-spacing: var(--tracking-display-wide);
+    color: var(--color-hueso);
+    margin-bottom: var(--space-4);
+  }
+  .contact__opening p {
+    font-family: var(--font-mono);
+    font-size: var(--fs-md);
+    color: var(--color-hueso);
+    line-height: 1.7;
+  }
+
+  .subhead {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: var(--fs-md);
+    letter-spacing: var(--tracking-display-wide);
+    text-transform: uppercase;
+    color: var(--color-hueso);
+    margin-bottom: var(--space-4);
+  }
+
+  .contact__email-block {
+    padding: var(--space-8) 0;
+  }
+  .contact__email {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: clamp(1.25rem, 3.5vw, 2rem);
+    letter-spacing: var(--tracking-mono);
+    color: var(--color-ocre);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: color 150ms, border-color 150ms;
+    word-break: break-all;
+  }
+  .contact__email:hover {
+    color: var(--color-teal-brillante);
+    border-bottom-color: var(--color-teal-brillante);
+  }
+
+  .cats {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+  .cat {
+    font-family: var(--font-mono);
+    font-size: var(--fs-base);
+    line-height: 1.6;
+  }
+  .cat__name {
+    font-weight: 700;
+    color: var(--color-hueso);
+  }
+  .cat__sep {
+    color: var(--color-ceniza);
+  }
+  .cat__desc {
+    color: var(--color-ceniza);
+  }
+
+  .contact__more {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+  .contact__more p {
+    font-family: var(--font-mono);
+    font-size: var(--fs-base);
+    color: var(--color-hueso);
+  }
+  .contact__more a {
+    color: var(--color-teal-brillante);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 150ms;
+  }
+  .contact__more a:hover {
+    border-bottom-color: var(--color-teal-brillante);
+  }
+  .contact__location {
+    color: var(--color-ceniza) !important;
+  }
+</style>
