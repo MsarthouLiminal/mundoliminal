@@ -1,0 +1,110 @@
+---
+import type { LatestItem, Platform } from '../../lib/feeds';
+import { formatPubDate } from '../../lib/feeds';
+
+interface Props {
+  item: LatestItem | null;
+  platform: Platform;
+  fallbackHref: string;
+}
+
+const { item, platform, fallbackHref } = Astro.props;
+
+const platformLabel: Record<Platform, string> = {
+  youtube: 'EN YOUTUBE',
+  substack: 'EN SUBSTACK',
+  spotify: 'EN SPOTIFY',
+};
+
+const href = item?.url ?? fallbackHref;
+const title = item?.title ?? 'Próximo episodio';
+const dateLabel = item ? formatPubDate(item.pubDate) : null;
+const thumb = item?.thumbnail ?? null;
+const isFallback = item === null;
+---
+
+<a
+  class="card"
+  href={href}
+  target="_blank"
+  rel="noopener"
+  aria-label={`${platformLabel[platform]}: ${title}`}
+>
+  <div class="card__thumb" aria-hidden="true">
+    {thumb ? (
+      <img src={thumb} alt="" loading="lazy" />
+    ) : (
+      <span class="card__thumb-mark">LIMINAL</span>
+    )}
+  </div>
+  <span class="card__platform">{platformLabel[platform]}</span>
+  <h3 class="card__title">{title}</h3>
+  {dateLabel && <span class="card__date">{dateLabel}</span>}
+  {isFallback && <span class="card__date card__date--soft">Próximamente</span>}
+</a>
+
+<style>
+  .card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    text-decoration: none;
+    color: inherit;
+  }
+  .card:hover .card__thumb {
+    border-color: var(--color-teal-brillante);
+  }
+  .card:hover .card__title {
+    color: var(--color-teal-brillante);
+  }
+  .card__thumb {
+    aspect-ratio: 16 / 9;
+    background: var(--color-selva);
+    border: 1px solid var(--rule);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 150ms;
+  }
+  .card__thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .card__thumb-mark {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: var(--fs-md);
+    letter-spacing: var(--tracking-display-wide);
+    text-transform: uppercase;
+    color: color-mix(in oklab, var(--color-hueso) 30%, transparent);
+  }
+  .card__platform {
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: var(--fs-xs);
+    letter-spacing: var(--tracking-mono);
+    text-transform: uppercase;
+    color: var(--color-teal-brillante);
+  }
+  .card__title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: var(--fs-md);
+    letter-spacing: var(--tracking-display);
+    text-transform: uppercase;
+    color: var(--color-hueso);
+    transition: color 150ms;
+  }
+  .card__date {
+    font-family: var(--font-mono);
+    font-weight: 400;
+    font-size: var(--fs-xs);
+    color: var(--color-ceniza);
+  }
+  .card__date--soft {
+    font-style: italic;
+  }
+</style>

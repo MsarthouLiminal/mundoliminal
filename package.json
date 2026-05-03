@@ -12,8 +12,13 @@
     "check": "astro check"
   },
   "dependencies": {
-    "astro": "^5.0.0",
     "@fontsource-variable/oswald": "^5.0.0",
-    "@fontsource/space-mono": "^5.0.0"
+    "@fontsource/space-mono": "^5.0.0",
+    "astro": "^5.0.0",
+    "fast-xml-parser": "^5.7.2"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.9",
+    "typescript": "^5.9.3"
   }
 }

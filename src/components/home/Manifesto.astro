@@ -1,0 +1,69 @@
+---
+---
+
+<section class="manifesto" aria-labelledby="manifesto-heading">
+  <h2 id="manifesto-heading" class="manifesto__heading">Lo que LIMINAL hace, y lo que no.</h2>
+  <div class="manifesto__body">
+    <p>La mayoría de las noticias no explican lo que pasa. Lo amplifican.</p>
+    <p>El ruido tapa la consecuencia. La consecuencia es lo que importa.</p>
+    <p>
+      Entre el evento y el análisis hay un hueco que casi nadie llena con rigor.
+      LIMINAL existe para llenarlo.
+    </p>
+    <p>
+      Tres territorios: geopolítica, tecnología, economía.
+      Tres preguntas: qué pasa, cómo funciona, qué cambia.
+      Sin agenda. Sin urgencia falsa. Sin relleno.
+    </p>
+    <p class="manifesto__close">
+      <em>Para hacer ruido donde hay silencio. Y silencio donde sobra ruido.</em>
+    </p>
+  </div>
+</section>
+
+<style>
+  .manifesto {
+    margin-top: var(--space-24);
+    padding: var(--space-12) 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+    align-items: center;
+    text-align: center;
+  }
+  .manifesto__heading {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: var(--fs-md);
+    letter-spacing: var(--tracking-display-wide);
+    text-transform: uppercase;
+    color: var(--color-hueso);
+    max-width: var(--content-max);
+  }
+  .manifesto__body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    max-width: var(--content-max);
+    font-family: var(--font-mono);
+    font-size: var(--fs-md);
+    line-height: 1.7;
+    color: var(--color-hueso);
+  }
+  .manifesto__close {
+    margin-top: var(--space-6);
+    font-style: italic;
+    font-size: var(--fs-lg);
+    color: var(--color-ocre);
+  }
+
+  @media (max-width: 720px) {
+    .manifesto {
+      text-align: left;
+      padding: var(--space-8) 0;
+    }
+    .manifesto__body {
+      font-size: var(--fs-base);
+    }
+  }
+</style>

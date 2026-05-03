@@ -1,0 +1,101 @@
+---
+type Variant = 'hero' | 'standalone';
+
+interface Props {
+  variant?: Variant;
+}
+
+const { variant = 'hero' } = Astro.props;
+const hasHeading = Astro.slots.has('heading');
+---
+
+<section class:list={['cta', `cta--${variant}`]}>
+  {hasHeading && (
+    <h2 class="cta__heading"><slot name="heading" /></h2>
+  )}
+  <p class="cta__lead">Suscribite al newsletter de LIMINAL.</p>
+  <p class="cta__sub">El umbral entre lo que sucede y lo que merece ser analizado.</p>
+  <p class="cta__body">
+    Tres veces por semana, un análisis sobre geopolítica, tecnología y economía.
+    Donde lo impactante no está por encima de lo importante.
+    Sin urgencia falsa, sin agenda, sin relleno.
+  </p>
+  <p class="cta__pull"><em>Lo que pasa, cómo funciona, qué cambia.</em></p>
+  <a class="cta__button" href="https://mundoliminal.substack.com" target="_blank" rel="noopener">
+    Suscribirme →
+  </a>
+</section>
+
+<style>
+  .cta {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    max-width: var(--content-max);
+    text-align: left;
+  }
+  .cta--hero {
+    margin-top: var(--space-12);
+    align-self: flex-start;
+  }
+  .cta--standalone {
+    background: color-mix(in oklab, var(--color-selva) 60%, transparent);
+    border: 1px solid var(--rule);
+    padding: var(--space-8);
+    margin-top: var(--space-12);
+  }
+  .cta__heading {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: var(--fs-xl);
+    letter-spacing: var(--tracking-display);
+    text-transform: uppercase;
+    color: var(--color-hueso);
+    margin-bottom: var(--space-2);
+  }
+  .cta__lead {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: var(--fs-lg);
+    letter-spacing: var(--tracking-display);
+    text-transform: uppercase;
+    color: var(--color-hueso);
+  }
+  .cta__sub {
+    font-family: var(--font-mono);
+    font-size: var(--fs-sm);
+    color: var(--color-ceniza);
+  }
+  .cta__body {
+    font-family: var(--font-mono);
+    font-size: var(--fs-base);
+    color: var(--color-hueso);
+    line-height: 1.6;
+  }
+  .cta__pull {
+    font-family: var(--font-mono);
+    font-style: italic;
+    font-size: var(--fs-sm);
+    color: var(--color-ocre);
+  }
+  .cta__button {
+    align-self: flex-start;
+    margin-top: var(--space-4);
+    display: inline-block;
+    padding: var(--space-3) var(--space-6);
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: var(--fs-sm);
+    letter-spacing: var(--tracking-mono);
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--color-vacio);
+    background: var(--color-teal-brillante);
+    border: 1px solid var(--color-teal-brillante);
+    transition: background 150ms, color 150ms;
+  }
+  .cta__button:hover {
+    background: transparent;
+    color: var(--color-teal-brillante);
+  }
+</style>

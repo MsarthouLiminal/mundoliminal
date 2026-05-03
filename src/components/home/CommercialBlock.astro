@@ -1,0 +1,120 @@
+---
+const lines = [
+  {
+    title: 'LIMINAL Talks',
+    body: 'Presentaciones analíticas a medida para empresas, asociaciones y organizaciones. Geopolítica, tecnología, economía, cultura: el tema lo definen ustedes; el método, LIMINAL.',
+    href: '/talks',
+  },
+  {
+    title: 'Reportes y briefings sectoriales',
+    body: 'Análisis cerrados para entornos de alta incertidumbre. Documentos para tomar decisiones, no para enmarcar.',
+    href: '/reportes',
+  },
+  {
+    title: 'Consultoría en comunicación estratégica',
+    body: 'Treinta años de comunicación profesional aplicados a posicionamiento institucional, gestión de crisis y relaciones con gobierno.',
+    href: '/consultoria',
+  },
+];
+---
+
+<section class="commercial" aria-labelledby="commercial-heading">
+  <h2 id="commercial-heading" class="commercial__heading">¿Qué más hace LIMINAL?</h2>
+  <p class="commercial__intro">
+    El proyecto editorial es la columna. Pero LIMINAL también opera fuera del canal.
+    Tres líneas de trabajo para empresas, organizaciones e instituciones que necesitan
+    leer el presente con la misma vara.
+  </p>
+  <ul class="commercial__grid">
+    {lines.map((line) => (
+      <li class="line">
+        <h3 class="line__title">{line.title}</h3>
+        <p class="line__body">{line.body}</p>
+        <a class="line__cta" href={line.href}>Ver más →</a>
+      </li>
+    ))}
+  </ul>
+</section>
+
+<style>
+  .commercial {
+    margin-top: var(--space-24);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+  }
+  .commercial__heading {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: var(--fs-md);
+    letter-spacing: var(--tracking-display-wide);
+    text-transform: uppercase;
+    color: var(--color-hueso);
+    text-align: center;
+  }
+  .commercial__intro {
+    font-family: var(--font-mono);
+    font-size: var(--fs-base);
+    color: var(--color-hueso);
+    line-height: 1.7;
+    max-width: var(--content-max);
+    margin: 0 auto;
+    text-align: center;
+  }
+  .commercial__grid {
+    list-style: none;
+    margin: var(--space-4) 0 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+  }
+  .line {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    padding: var(--space-8);
+    background: color-mix(in oklab, var(--color-selva) 70%, transparent);
+    border: 1px solid var(--rule);
+  }
+  .line__title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: var(--fs-md);
+    letter-spacing: var(--tracking-display);
+    text-transform: uppercase;
+    color: var(--color-hueso);
+  }
+  .line__body {
+    font-family: var(--font-mono);
+    font-size: var(--fs-sm);
+    color: var(--color-hueso);
+    line-height: 1.6;
+    flex-grow: 1;
+  }
+  .line__cta {
+    align-self: flex-start;
+    margin-top: var(--space-2);
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: var(--fs-xs);
+    letter-spacing: var(--tracking-mono);
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--color-teal-brillante);
+    border-bottom: 1px solid transparent;
+    transition: border-color 150ms;
+  }
+  .line__cta:hover {
+    border-bottom-color: var(--color-teal-brillante);
+  }
+
+  @media (max-width: 720px) {
+    .commercial__grid {
+      grid-template-columns: 1fr;
+    }
+    .commercial__intro {
+      text-align: left;
+    }
+  }
+</style>
