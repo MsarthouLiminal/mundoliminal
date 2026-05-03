@@ -1,6 +1,5 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Logo from '../components/brand/Logo.astro';
 ---
 
 <BaseLayout title="Sobre Martín">
@@ -17,10 +16,9 @@ import Logo from '../components/brand/Logo.astro';
     </header>
 
     <section class="about__bio">
-      <!-- TODO: reemplazar con foto profesional cuando esté disponible -->
-      <div class="about__photo" aria-hidden="true">
-        <Logo variant="hueso" width={120} alt="" />
-      </div>
+      <figure class="about__photo">
+        <img src="/images/martin-profile.jpg" alt="Martín Sarthou" />
+      </figure>
 
       <div class="about__text">
         <section class="bio-block">
@@ -153,19 +151,25 @@ import Logo from '../components/brand/Logo.astro';
     align-items: start;
   }
   .about__photo {
-    aspect-ratio: 4 / 5;
-    background: var(--color-selva);
-    border: 1px solid var(--rule);
-    display: flex;
-    align-items: center;
-    justify-content: center;
     position: sticky;
     top: var(--space-8);
-    opacity: 1;
+    margin: 0;
+    border: 1px solid var(--rule);
+    overflow: hidden;
+    isolation: isolate;
   }
-  .about__photo :global(img) {
-    opacity: 0.18;
-    filter: grayscale(1);
+  .about__photo img {
+    display: block;
+    width: 100%;
+    height: auto;
+    filter: grayscale(100%);
+  }
+  .about__photo::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(11, 139, 110, 0.20);
+    pointer-events: none;
   }
   .about__text {
     display: flex;
