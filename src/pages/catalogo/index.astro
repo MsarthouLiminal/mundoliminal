@@ -1,83 +1,277 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { PILLARS } from '../../lib/pillars';
+import {
+  getYouTubeLatestList,
+  getSubstackLatestList,
+  getSpotifyLatestList,
+  formatPubDate,
+  type LatestItem,
+  type Platform,
+} from '../../lib/feeds';
+
+const settled = await Promise.allSettled([
+  getYouTubeLatestList(5),
+  getSubstackLatestList(5),
+  getSpotifyLatestList(5),
+]);
+
+const [ytList, sbList, spList] = settled.map((r): LatestItem[] =>
+  r.status === 'fulfilled' ? r.value : [],
+);
+
+interface BlockConfig {
+  platform: Platform;
+  label: string;
+  items: LatestItem[];
+  archiveHref: string;
+  archiveLabel: string;
+  emptyLabel: string;
+}
+
+const blocks: BlockConfig[] = [
+  {
+    platform: 'youtube',
+    label: 'EN YOUTUBE',
+    items: ytList,
+    archiveHref: 'https://www.youtube.com/@trimaxmediaok',
+    archiveLabel: 'Ver todos los videos',
+    emptyLabel: 'Próximo video en camino.',
+  },
+  {
+    platform: 'substack',
+    label: 'EN SUBSTACK',
+    items: sbList,
+    archiveHref: 'https://mundoliminal.substack.com',
+    archiveLabel: 'Ver todas las columnas',
+    emptyLabel: 'Próxima columna en camino.',
+  },
+  {
+    platform: 'spotify',
+    label: 'EN SPOTIFY',
+    items: spList,
+    archiveHref: 'https://open.spotify.com/show/5iy7NKRkKbcOZxLzld1nNX',
+    archiveLabel: 'Ver todos los episodios',
+    emptyLabel: 'Próximo episodio en camino.',
+  },
+];
 ---
 
 <BaseLayout title="Catálogo">
-  <article>
-    <header class="catalog-head">
-      <h1>Catálogo</h1>
-      <p class="placeholder">[PLACEHOLDER: descripción del catálogo — episodios y columnas, pendiente de redacción.]</p>
+  <main class="catalogo">
+
+    <!-- TÍTULO DE PÁGINA -->
+    <header class="page-header">
+      <h1>CATÁLOGO.</h1>
     </header>
 
-    <ul class="pillars">
-      {PILLARS.map((p) => (
-        <li class="pillar">
-          <a href={`/catalogo/${p.slug}`}>
-            <span class="pillar__code">{p.code}</span>
-            <span class="pillar__label">{p.label}</span>
-          </a>
-        </li>
-      ))}
-    </ul>
-  </article>
+    <!-- APERTURA EDITORIAL -->
+    <section class="apertura">
+      <p>
+        Tres lenguajes, una sola idea editorial. LIMINAL produce análisis
+        en tres formatos: video, columna escrita y conversación. Cada uno
+        aporta algo distinto, y cada uno vive en la plataforma donde
+        funciona mejor: YouTube para el video, Substack para el texto largo,
+        Spotify para el podcast.
+      </p>
+      <p class="apertura-cierre">
+        Acá encontrás lo más reciente de los tres. El archivo completo de
+        cada formato vive en su plataforma.
+      </p>
+    </section>
+
+    <hr class="divisor" />
+
+    <!-- BLOQUES POR PLATAFORMA -->
+    {blocks.map((block) => (
+      <section class="bloque" aria-labelledby={`bloque-${block.platform}`}>
+        <h2 id={`bloque-${block.platform}`} class="bloque-titulo">
+          {block.label}
+        </h2>
+
+        {block.items.length === 0 ? (
+          <p class="bloque-vacio">{block.emptyLabel}</p>
+        ) : (
+          <ul class="lista">
+            {block.items.map((item) => (
+              <li class="item">
+                <a
+                  class="item-link"
+                  href={item.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <h3 class="item-titulo">{item.title}</h3>
+                  <span class="item-fecha">{formatPubDate(item.pubDate)}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        )}
+
+        <a
+          class="archivo-link"
+          href={block.archiveHref}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {block.archiveLabel} →
+        </a>
+      </section>
+    ))}
+
+  </main>
 </BaseLayout>
 
 <style>
-  article {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-12);
-  }
-  .catalog-head {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-4);
+  .catalogo {
     max-width: var(--content-max);
+    margin: 0 auto;
+    padding: var(--space-24) var(--space-6) var(--space-24);
+    color: var(--fg-default);
+    font-family: var(--font-mono);
+    font-weight: 400;
+    line-height: 1.7;
+    font-size: var(--fs-base);
   }
-  h1 {
-    font-size: var(--fs-3xl);
-    letter-spacing: var(--tracking-display-wide);
+
+  /* HEADER DE PÁGINA */
+  .page-header {
+    margin-bottom: var(--space-24);
   }
-  .placeholder {
-    color: color-mix(in oklab, var(--color-hueso) 60%, transparent);
-    font-style: italic;
-    max-width: 60ch;
-  }
-  .pillars {
-    list-style: none;
+
+  .page-header h1 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: var(--fs-display);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-display);
+    color: var(--color-hueso);
     margin: 0;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: var(--space-4);
+    line-height: 1;
   }
-  .pillar a {
+
+  /* APERTURA */
+  .apertura p {
+    margin: 0 0 var(--space-6);
+  }
+
+  .apertura-cierre {
+    color: var(--color-ocre);
+    font-weight: 700;
+    margin-top: var(--space-8);
+  }
+
+  /* DIVISOR ENTRE BLOQUES PRINCIPALES */
+  .divisor {
+    border: none;
+    border-top: 1px solid var(--color-bosque);
+    margin: var(--space-24) 0;
+  }
+
+  /* BLOQUES */
+  .bloque {
+    margin-bottom: var(--space-24);
+  }
+
+  .bloque:last-of-type {
+    margin-bottom: 0;
+  }
+
+  .bloque-titulo {
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: var(--fs-xs);
+    letter-spacing: var(--tracking-mono);
+    text-transform: uppercase;
+    color: var(--color-teal-brillante);
+    margin: 0 0 var(--space-8);
+  }
+
+  .bloque-vacio {
+    font-style: italic;
+    color: var(--color-ceniza);
+    margin: 0 0 var(--space-6);
+  }
+
+  /* LISTA DE PIEZAS */
+  .lista {
+    list-style: none;
+    margin: 0 0 var(--space-8);
+    padding: 0;
+  }
+
+  .item {
+    border-top: 1px solid var(--color-bosque);
+  }
+
+  .item:last-of-type {
+    border-bottom: 1px solid var(--color-bosque);
+  }
+
+  .item-link {
     display: flex;
     flex-direction: column;
     gap: var(--space-2);
-    padding: var(--space-6);
-    border: 1px solid var(--rule);
+    padding: var(--space-6) 0;
     text-decoration: none;
-    color: var(--color-hueso);
-    transition: border-color 150ms, color 150ms;
+    color: inherit;
+    transition: color 150ms;
   }
-  .pillar a:hover {
-    border-color: var(--color-teal-brillante);
+
+  .item-link:hover .item-titulo,
+  .item-link:focus .item-titulo {
     color: var(--color-teal-brillante);
   }
-  .pillar__code {
-    font-family: var(--font-mono);
-    font-size: var(--fs-xs);
-    font-weight: 700;
-    color: var(--color-teal-brillante);
-    letter-spacing: var(--tracking-display);
-  }
-  .pillar__label {
+
+  .item-titulo {
     font-family: var(--font-display);
-    font-size: var(--fs-xl);
     font-weight: 700;
-    text-transform: uppercase;
+    font-size: var(--fs-md);
     letter-spacing: var(--tracking-display);
+    text-transform: uppercase;
+    color: var(--color-hueso);
+    margin: 0;
+    line-height: 1.25;
+    transition: color 150ms;
+  }
+
+  .item-fecha {
+    font-family: var(--font-mono);
+    font-weight: 400;
+    font-size: var(--fs-xs);
+    color: var(--color-ceniza);
+  }
+
+  /* LINK AL ARCHIVO COMPLETO */
+  .archivo-link {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: var(--fs-xs);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-mono);
+    color: var(--color-ocre);
+    text-decoration: none;
+    border-bottom: 1px solid var(--color-ocre);
+    padding-bottom: 2px;
+    margin-top: var(--space-6);
+    transition: color 150ms, border-color 150ms;
+  }
+
+  .archivo-link:hover,
+  .archivo-link:focus {
+    color: var(--color-hueso);
+    border-bottom-color: var(--color-hueso);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 600px) {
+    .catalogo {
+      padding: var(--space-16) var(--space-4) var(--space-24);
+    }
+
+    .item-titulo {
+      font-size: var(--fs-base);
+    }
   }
 </style>
