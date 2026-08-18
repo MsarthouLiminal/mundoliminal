@@ -1,30 +1,48 @@
 ---
+import CampoSenal from '../visual/CampoSenal.astro';
 ---
 
 <section class="manifesto" aria-labelledby="manifesto-heading">
-  <h2 id="manifesto-heading" class="manifesto__heading">Lo que LIMINAL hace, y lo que no.</h2>
-  <div class="manifesto__body">
-    <p>La mayoría de las noticias no explican lo que pasa. Lo amplifican.</p>
-    <p>El ruido tapa la consecuencia. La consecuencia es lo que importa.</p>
-    <p>
-      Entre el evento y el análisis hay un hueco que casi nadie llena con rigor.
-      LIMINAL existe para llenarlo.
-    </p>
-    <p>
-      Tres territorios: geopolítica, tecnología, economía.
-      Tres preguntas: qué pasa, cómo funciona, qué cambia.
-      Sin agenda. Sin urgencia falsa. Sin relleno.
-    </p>
-    <p class="manifesto__close">
-      <em>Para hacer ruido donde hay silencio. Y silencio donde sobra ruido.</em>
-    </p>
+  <CampoSenal opacidad={0.5} />
+
+  <div class="manifesto__contenido">
+    <h2 id="manifesto-heading" class="manifesto__heading">Lo que LIMINAL hace, y lo que no.</h2>
+    <div class="manifesto__body">
+      <p>La mayoría de las noticias no explican lo que pasa. Lo amplifican.</p>
+      <p>El ruido tapa la consecuencia. La consecuencia es lo que importa.</p>
+      <p>
+        Entre el evento y el análisis hay un hueco que casi nadie llena con rigor.
+        LIMINAL existe para llenarlo.
+      </p>
+      <p>
+        Tres territorios: geopolítica, tecnología, economía.
+        Tres preguntas: qué pasa, cómo funciona, qué cambia.
+        Sin agenda. Sin urgencia falsa. Sin relleno.
+      </p>
+      <p class="manifesto__close">
+        <em>Para hacer ruido donde hay silencio. Y silencio donde sobra ruido.</em>
+      </p>
+    </div>
   </div>
 </section>
 
 <style>
   .manifesto {
+    position: relative;
     margin-top: var(--space-24);
-    padding: var(--space-12) 0;
+    /* A sangre: el campo necesita todo el ancho para leerse como campo. */
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    padding: var(--space-24) var(--space-8);
+    overflow: hidden;
+    border-block: 1px solid var(--rule);
+    display: flex;
+    justify-content: center;
+  }
+  .manifesto__contenido {
+    position: relative;
+    z-index: 1;
+    max-width: var(--container-max);
     display: flex;
     flex-direction: column;
     gap: var(--space-8);
@@ -39,6 +57,7 @@
     text-transform: uppercase;
     color: var(--color-hueso);
     max-width: var(--content-max);
+    margin: 0;
   }
   .manifesto__body {
     display: flex;
@@ -50,8 +69,13 @@
     line-height: 1.7;
     color: var(--color-hueso);
   }
+  .manifesto__body p {
+    margin: 0;
+    /* El texto tiene que ganarle al campo, siempre. */
+    text-shadow: 0 2px 18px rgba(6, 12, 8, 0.9);
+  }
   .manifesto__close {
-    margin-top: var(--space-6);
+    margin-top: var(--space-6) !important;
     font-style: italic;
     font-size: var(--fs-lg);
     color: var(--color-ocre);
@@ -60,7 +84,11 @@
   @media (max-width: 720px) {
     .manifesto {
       text-align: left;
-      padding: var(--space-8) 0;
+      padding: var(--space-16) var(--space-4);
+    }
+    .manifesto__contenido {
+      text-align: left;
+      align-items: flex-start;
     }
     .manifesto__body {
       font-size: var(--fs-base);

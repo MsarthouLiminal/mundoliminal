@@ -26,8 +26,9 @@ const lines = [
     leer el presente con la misma vara.
   </p>
   <ul class="commercial__grid">
-    {lines.map((line) => (
+    {lines.map((line, i) => (
       <li class="line">
+        <span class="line__ref">L·{String(i + 1).padStart(2, '0')}</span>
         <h3 class="line__title">{line.title}</h3>
         <p class="line__body">{line.body}</p>
         <a class="line__cta" href={line.href}>Ver más →</a>
@@ -69,13 +70,51 @@ const lines = [
     grid-template-columns: repeat(3, 1fr);
     gap: var(--space-6);
   }
+  /* Registro sobrio: acá el interlocutor es institucional.
+     Sin globo, sin campo — sólo la regla instrumental y una barra al pasar. */
   .line {
+    position: relative;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     gap: var(--space-3);
     padding: var(--space-8);
     background: color-mix(in oklab, var(--color-selva) 70%, transparent);
     border: 1px solid var(--rule);
+    transition: background 400ms;
+  }
+  .line::after {
+    content: '';
+    position: absolute;
+    inset-inline: 0;
+    bottom: 0;
+    height: 2px;
+    background: var(--color-teal-brillante);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 550ms cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+  .line:hover,
+  .line:focus-within {
+    background: color-mix(in oklab, var(--color-selva) 92%, transparent);
+  }
+  .line:hover::after,
+  .line:focus-within::after {
+    transform: scaleX(1);
+  }
+  .line__ref {
+    font-family: var(--font-mono);
+    font-size: var(--fs-xs);
+    letter-spacing: var(--tracking-display-wide);
+    text-transform: uppercase;
+    color: var(--color-ocre);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .line,
+    .line::after {
+      transition: none;
+    }
   }
   .line__title {
     font-family: var(--font-display);

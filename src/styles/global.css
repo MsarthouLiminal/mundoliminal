@@ -11,6 +11,9 @@ html {
 
 body {
   margin: 0;
+  /* Las secciones a sangre (hero, manifiesto) usan 100vw, que incluye el ancho
+     de la barra de scroll. Sin esto aparece scroll horizontal de unos pocos px. */
+  overflow-x: hidden;
   font-family: var(--font-mono);
   font-size: var(--fs-base);
   line-height: 1.6;

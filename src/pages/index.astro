@@ -4,6 +4,7 @@ import HeroHome from '../components/home/HeroHome.astro';
 import LatestCard from '../components/home/LatestCard.astro';
 import Manifesto from '../components/home/Manifesto.astro';
 import CommercialBlock from '../components/home/CommercialBlock.astro';
+import TrazaSenal from '../components/visual/TrazaSenal.astro';
 import {
   getYouTubeLatest,
   getSubstackLatest,
@@ -26,6 +27,7 @@ const [yt, sb, sp] = settled.map((r): LatestItem | null =>
 
   <section class="latest" aria-labelledby="latest-heading">
     <h2 id="latest-heading" class="latest__title">Últimos de LIMINAL.</h2>
+    <TrazaSenal entrada="Canal" lectura="Tres salidas" />
     <ul class="latest__grid">
       <li>
         <LatestCard

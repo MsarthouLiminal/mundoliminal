@@ -1,0 +1,644 @@
+---
+/**
+ * GloboLiminal — observatorio en SVG puro, sin dependencias.
+ *
+ * Proyección esférica, continentes en matriz de puntos, arcos de gran círculo
+ * entre nodos y HUD de telemetría. Portado del prototipo `globo-liminal.html`
+ * y adaptado a un contenedor responsive (el original vivía en un lienzo fijo
+ * de 1920x1080 escalado por transform).
+ */
+
+interface Props {
+  /** Muestra el HUD de telemetría y los corchetes de encuadre. */
+  hud?: boolean;
+  /** Opacidad del conjunto. Bajala cuando el globo va detrás de texto. */
+  opacidad?: number;
+  /** Segundos por vuelta completa. */
+  vuelta?: number;
+  /** Etiqueta del observatorio, arriba a la derecha. */
+  sector?: string;
+}
+
+const {
+  hud = true,
+  opacidad = 1,
+  vuelta = 72,
+  sector = 'A7',
+} = Astro.props;
+---
+
+<div class="globo" style={`--globo-op:${opacidad}`} data-vuelta={vuelta} aria-hidden="true">
+  <div class="globo__halo"></div>
+
+  <svg class="globo__svg" viewBox="-560 -420 1120 840" preserveAspectRatio="xMidYMid meet">
+    <defs>
+      <radialGradient id="gl-halo" cx="50%" cy="50%" r="50%">
+        <stop offset="72%" stop-color="#0FBA94" stop-opacity="0"></stop>
+        <stop offset="90%" stop-color="#0FBA94" stop-opacity="0.07"></stop>
+        <stop offset="98%" stop-color="#0FBA94" stop-opacity="0.02"></stop>
+        <stop offset="100%" stop-color="#0FBA94" stop-opacity="0"></stop>
+      </radialGradient>
+      <radialGradient id="gl-inner" cx="42%" cy="38%" r="60%">
+        <stop offset="0%" stop-color="#0B2419" stop-opacity="0.55"></stop>
+        <stop offset="70%" stop-color="#060C08" stop-opacity="0.75"></stop>
+        <stop offset="100%" stop-color="#060C08" stop-opacity="0.9"></stop>
+      </radialGradient>
+      <filter id="gl-arcglow" x="-50%" y="-50%" width="200%" height="200%">
+        <feGaussianBlur stdDeviation="3" result="b"></feGaussianBlur>
+        <feMerge>
+          <feMergeNode in="b"></feMergeNode>
+          <feMergeNode in="SourceGraphic"></feMergeNode>
+        </feMerge>
+      </filter>
+      <filter id="gl-nodeglow" x="-100%" y="-100%" width="300%" height="300%">
+        <feGaussianBlur stdDeviation="4"></feGaussianBlur>
+      </filter>
+      <linearGradient id="gl-gradA" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#0FBA94" stop-opacity="0"></stop>
+        <stop offset="50%" stop-color="#0FBA94"></stop>
+        <stop offset="100%" stop-color="#0FBA94" stop-opacity="0"></stop>
+      </linearGradient>
+      <linearGradient id="gl-gradB" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#C47A18" stop-opacity="0"></stop>
+        <stop offset="50%" stop-color="#C47A18"></stop>
+        <stop offset="100%" stop-color="#C47A18" stop-opacity="0"></stop>
+      </linearGradient>
+      <linearGradient id="gl-gradC" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#0B8B6E" stop-opacity="0"></stop>
+        <stop offset="50%" stop-color="#0B8B6E"></stop>
+        <stop offset="100%" stop-color="#0B8B6E" stop-opacity="0"></stop>
+      </linearGradient>
+    </defs>
+
+    <circle cx="0" cy="0" r="420" fill="url(#gl-halo)"></circle>
+    <circle cx="0" cy="0" r="380" fill="url(#gl-inner)"></circle>
+
+    <g id="gl-parallels" stroke="#0B8B6E" stroke-width="1" fill="none" opacity="0.38"></g>
+    <g id="gl-meridians" stroke="#0B8B6E" stroke-width="1" fill="none" opacity="0.42"></g>
+    <g id="gl-equator" stroke="#0FBA94" stroke-width="0.8" fill="none" opacity="0.30"></g>
+    <g id="gl-dots"></g>
+    <g id="gl-arcs-base"></g>
+    <g id="gl-arcs-light" filter="url(#gl-arcglow)"></g>
+    <g id="gl-cities"></g>
+  </svg>
+
+  {hud && (
+    <>
+      <span class="globo__bracket tl"></span>
+      <span class="globo__bracket tr"></span>
+      <span class="globo__bracket bl"></span>
+      <span class="globo__bracket br"></span>
+
+      <div class="globo__meta">
+        OBS<span class="pt">·</span>L-04 <span class="val" id="gl-bearing">BEARING 142.6°</span><br />
+        SECTOR<span class="pt">·</span>{sector} <span class="val">TRK / LIVE</span>
+      </div>
+
+      <div class="globo__hud">
+        <div class="row"><span class="lbl">LAT</span><span class="val" id="gl-lat">00.000° N</span></div>
+        <div class="row"><span class="lbl">LON</span><span class="val" id="gl-lon">000.000° E</span></div>
+        <div class="row"><span class="lbl">ALT</span><span class="val">35 786 KM</span></div>
+        <div class="row"><span class="lbl">UTC</span><span class="val" id="gl-utc">00:00:00Z</span></div>
+        <div class="sep"></div>
+        <div class="row"><span class="lbl">SIGNAL</span><span class="val"><i class="blink"></i>UPLINK OK</span></div>
+        <div class="row"><span class="lbl">FRAME</span><span class="val" id="gl-frame">0000000</span></div>
+      </div>
+    </>
+  )}
+</div>
+
+<style>
+  .globo {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    opacity: var(--globo-op, 1);
+    pointer-events: none;
+    contain: layout paint;
+  }
+  .globo__halo {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(58% 58% at 50% 46%, color-mix(in oklab, var(--color-selva) 55%, transparent), transparent 70%),
+      var(--color-vacio);
+  }
+  .globo__svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  /* Corchetes de encuadre — el gesto de marca */
+  .globo__bracket {
+    position: absolute;
+    width: clamp(24px, 3.4vw, 56px);
+    height: clamp(24px, 3.4vw, 56px);
+    border: 1px solid var(--color-teal);
+    opacity: 0.7;
+  }
+  .globo__bracket.tl { top: var(--space-6); left: var(--space-6); border-right: 0; border-bottom: 0; }
+  .globo__bracket.tr { top: var(--space-6); right: var(--space-6); border-left: 0; border-bottom: 0; }
+  .globo__bracket.bl { bottom: var(--space-6); left: var(--space-6); border-right: 0; border-top: 0; }
+  .globo__bracket.br { bottom: var(--space-6); right: var(--space-6); border-left: 0; border-top: 0; }
+
+  .globo__meta,
+  .globo__hud {
+    position: absolute;
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-mono);
+    font-size: clamp(0.56rem, 0.9vw, 0.72rem);
+    line-height: 1.7;
+    color: var(--color-ceniza);
+  }
+  .globo__meta {
+    top: calc(var(--space-6) + clamp(34px, 4.4vw, 72px));
+    right: calc(var(--space-6) + var(--space-2));
+    text-align: right;
+  }
+  .globo__hud {
+    bottom: calc(var(--space-6) + clamp(34px, 4.4vw, 72px));
+    right: calc(var(--space-6) + var(--space-2));
+    text-align: right;
+  }
+  .globo__meta .val,
+  .globo__hud .val {
+    color: var(--color-teal-brillante);
+    font-variant-numeric: tabular-nums;
+  }
+  .globo__meta .pt { color: var(--color-teal-brillante); }
+  .globo__hud .row {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--space-4);
+  }
+  .globo__hud .lbl { min-width: 4.5em; text-align: left; }
+  .globo__hud .val { min-width: 8.5em; }
+  .globo__hud .sep {
+    height: 1px;
+    background: var(--color-teal);
+    opacity: 0.5;
+    margin: var(--space-2) 0 var(--space-2) auto;
+    width: 12em;
+  }
+  .globo__hud .blink {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    background: var(--color-neon);
+    margin-right: var(--space-2);
+    animation: gl-blink 1.4s steps(2, end) infinite;
+  }
+  @keyframes gl-blink {
+    0%, 50% { opacity: 1; }
+    50.01%, 100% { opacity: 0.15; }
+  }
+
+  /* El HUD lateral estorba en pantallas chicas: se va, el globo queda. */
+  @media (max-width: 720px) {
+    .globo__meta { display: none; }
+    .globo__hud .row:nth-child(3),
+    .globo__hud .row:nth-child(4) { display: none; }
+  }
+
+  /* Nodos y arcos (dentro del SVG, por eso van sin scope de Astro) */
+  .globo :global(.gl-city-label) {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    fill: var(--color-hueso);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  .globo :global(.gl-city-coord) {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    fill: var(--color-teal-brillante);
+    letter-spacing: 0.1em;
+    opacity: 0.75;
+  }
+  .globo :global(.gl-arc-light) {
+    fill: none;
+    stroke-width: 2.2;
+    stroke-linecap: round;
+    stroke-dasharray: 14 86;
+    animation: gl-flow var(--dur, 3.2s) linear infinite;
+  }
+  .globo :global(.gl-arc-base) {
+    fill: none;
+    stroke-width: 1;
+    opacity: 0.18;
+    stroke: var(--color-teal-brillante);
+  }
+  @keyframes gl-flow {
+    from { stroke-dashoffset: 100; }
+    to { stroke-dashoffset: 0; }
+  }
+  @keyframes gl-pulse {
+    0% { r: 3.5; opacity: 0.85; }
+    100% { r: 26; opacity: 0; }
+  }
+  @keyframes gl-core {
+    0%, 100% { opacity: 1; r: 4.5; }
+    50% { opacity: 0.55; r: 5.5; }
+  }
+  .globo :global(.gl-halo) { animation: gl-pulse 2.6s ease-out infinite; }
+  .globo :global(.gl-halo2) { animation: gl-pulse 2.6s ease-out infinite; animation-delay: 1.3s; }
+  .globo :global(.gl-core) { animation: gl-core 2.6s ease-in-out infinite; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .globo :global(.gl-arc-light),
+    .globo :global(.gl-halo),
+    .globo :global(.gl-halo2),
+    .globo :global(.gl-core),
+    .globo__hud .blink {
+      animation: none;
+    }
+  }
+</style>
+
+<script>
+  (() => {
+    const raiz = document.querySelector<HTMLElement>('.globo');
+    if (!raiz) return;
+
+    const NS = 'http://www.w3.org/2000/svg';
+    const R = 380;
+    const TILT = (-22 * Math.PI) / 180;
+    const COS_T = Math.cos(TILT);
+    const SIN_T = Math.sin(TILT);
+    const lento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    type Ciudad = {
+      id: string;
+      name: string;
+      lat: number;
+      lng: number;
+      coord: string;
+      off: [number, number];
+      anchor?: 'end';
+      shape?: 'diamond';
+    };
+
+    const ciudades: Ciudad[] = [
+      { id: 'MVD', name: 'MONTEVIDEO', lat: -34.9, lng: -56.16, coord: '34.9°S · 56.2°W', off: [-20, 22], anchor: 'end' },
+      { id: 'BUE', name: 'BUENOS AIRES', lat: -34.6, lng: -58.38, coord: '34.6°S · 58.4°W', off: [-20, -10], anchor: 'end' },
+      { id: 'GRU', name: 'SAN PABLO', lat: -23.55, lng: -46.63, coord: '23.5°S · 46.6°W', off: [18, 18] },
+      { id: 'CCS', name: 'CARACAS', lat: 10.48, lng: -66.9, coord: '10.5°N · 66.9°W', off: [-20, -10], anchor: 'end' },
+      { id: 'HAV', name: 'LA HABANA', lat: 23.13, lng: -82.38, coord: '23.1°N · 82.4°W', off: [-20, 22], anchor: 'end' },
+      { id: 'WAS', name: 'WASHINGTON DC', lat: 38.9, lng: -77.04, coord: '38.9°N · 77.0°W', off: [18, 22] },
+      { id: 'ORD', name: 'CHICAGO', lat: 41.88, lng: -87.63, coord: '41.9°N · 87.6°W', off: [-20, -10], anchor: 'end' },
+      { id: 'LAX', name: 'LOS ÁNGELES', lat: 34.05, lng: -118.24, coord: '34.1°N · 118.2°W', off: [-20, 22], anchor: 'end' },
+      { id: 'MAD', name: 'MADRID', lat: 40.42, lng: -3.7, coord: '40.4°N · 03.7°W', off: [-20, 22], anchor: 'end' },
+      { id: 'DUB', name: 'DUBLÍN', lat: 53.35, lng: -6.26, coord: '53.4°N · 06.3°W', off: [-20, -10], anchor: 'end' },
+      { id: 'LON', name: 'LONDRES', lat: 51.51, lng: -0.13, coord: '51.5°N · 00.1°W', off: [18, -10] },
+      { id: 'MOW', name: 'MOSCÚ', lat: 55.75, lng: 37.62, coord: '55.8°N · 37.6°E', off: [18, -10] },
+      { id: 'IEV', name: 'KIEV', lat: 50.45, lng: 30.52, coord: '50.4°N · 30.5°E', off: [-20, 22], anchor: 'end' },
+      { id: 'HRM', name: 'ESTRECHO DE ORMUZ', lat: 26.57, lng: 56.25, coord: '26.6°N · 56.3°E', off: [22, 26], shape: 'diamond' },
+      { id: 'IKA', name: 'TEHERÁN', lat: 35.69, lng: 51.39, coord: '35.7°N · 51.4°E', off: [-20, -10], anchor: 'end' },
+      { id: 'TLV', name: 'TEL AVIV', lat: 32.08, lng: 34.78, coord: '32.1°N · 34.8°E', off: [-26, -18], anchor: 'end' },
+      { id: 'JER', name: 'JERUSALÉN', lat: 31.78, lng: 35.22, coord: '31.8°N · 35.2°E', off: [26, 28] },
+      { id: 'PEK', name: 'BEIJING', lat: 39.9, lng: 116.41, coord: '39.9°N · 116.4°E', off: [-20, -10], anchor: 'end' },
+      { id: 'TYO', name: 'TOKIO', lat: 35.68, lng: 139.69, coord: '35.7°N · 139.7°E', off: [18, -10] },
+    ];
+
+    const conexiones = [
+      { a: 'TYO', b: 'LAX', dur: 5.6, grad: 'gl-gradA' },
+      { a: 'MAD', b: 'BUE', dur: 5.2, grad: 'gl-gradB' },
+      { a: 'MOW', b: 'PEK', dur: 4.8, grad: 'gl-gradC' },
+      { a: 'LON', b: 'WAS', dur: 4.4, grad: 'gl-gradA' },
+      { a: 'LON', b: 'MOW', dur: 3.6, grad: 'gl-gradB' },
+      { a: 'IKA', b: 'HRM', dur: 2.2, grad: 'gl-gradB' },
+      { a: 'TLV', b: 'JER', dur: 1.8, grad: 'gl-gradC' },
+      { a: 'HAV', b: 'CCS', dur: 2.6, grad: 'gl-gradA' },
+      { a: 'GRU', b: 'MVD', dur: 2.6, grad: 'gl-gradC' },
+      { a: 'MVD', b: 'BUE', dur: 1.6, grad: 'gl-gradA' },
+      { a: 'DUB', b: 'LON', dur: 2.0, grad: 'gl-gradC' },
+      { a: 'IEV', b: 'MOW', dur: 2.4, grad: 'gl-gradA' },
+      { a: 'MAD', b: 'DUB', dur: 2.8, grad: 'gl-gradB' },
+      { a: 'ORD', b: 'LAX', dur: 3.6, grad: 'gl-gradC' },
+      { a: 'PEK', b: 'TYO', dur: 2.8, grad: 'gl-gradB' },
+      { a: 'IKA', b: 'TLV', dur: 3.0, grad: 'gl-gradA' },
+    ];
+
+    // Cajas de tierra aproximadas para la matriz de puntos de continentes.
+    const tierra: [number, number, number, number][] = [
+      [25, 50, -125, -70], [40, 60, -130, -90], [50, 70, -110, -60], [55, 71, -170, -130],
+      [14, 32, -118, -85], [60, 83, -55, -20], [-12, 12, -80, -50], [-35, -2, -75, -35],
+      [-55, -35, -76, -55], [40, 55, -10, 30], [50, 65, -5, 35], [55, 72, 4, 32],
+      [38, 48, 10, 30], [50, 60, -10, 2], [10, 35, -17, 35], [-35, 12, -17, 42],
+      [0, 15, 32, 52], [-26, -12, 43, 50], [12, 40, 32, 62], [40, 72, 40, 180],
+      [35, 55, 55, 105], [20, 50, 100, 145], [5, 25, 92, 110], [-10, 8, 95, 140],
+      [5, 20, 117, 127], [8, 32, 68, 90], [30, 46, 128, 146], [-38, -12, 113, 154],
+      [-47, -34, 166, 178], [36, 44, -10, 4], [63, 67, -25, -13],
+    ];
+    const esTierra = (lat: number, lng: number) =>
+      tierra.some((b) => lat >= b[0] && lat <= b[1] && lng >= b[2] && lng <= b[3]);
+
+    type P3 = { x: number; y: number; z: number };
+
+    function proyectar(lat: number, lng: number, rotDeg: number): P3 {
+      const phi = (lat * Math.PI) / 180;
+      const theta = (lng * Math.PI) / 180;
+      const x0 = R * Math.cos(phi) * Math.sin(theta);
+      const y0 = R * Math.sin(phi);
+      const z0 = R * Math.cos(phi) * Math.cos(theta);
+      const rot = (rotDeg * Math.PI) / 180;
+      const cR = Math.cos(rot);
+      const sR = Math.sin(rot);
+      const x1 = x0 * cR + z0 * sR;
+      const z1 = -x0 * sR + z0 * cR;
+      return { x: x1, y: y0 * COS_T - z1 * SIN_T, z: y0 * SIN_T + z1 * COS_T };
+    }
+
+    function arcoGranCirculo(a: P3, b: P3, n: number, alto: number): P3[] {
+      const dot = (a.x * b.x + a.y * b.y + a.z * b.z) / (R * R);
+      const omega = Math.acos(Math.max(-1, Math.min(1, dot)));
+      if (omega < 1e-3) return [a, b];
+      const sO = Math.sin(omega);
+      const pts: P3[] = [];
+      for (let i = 0; i <= n; i++) {
+        const t = i / n;
+        const f1 = Math.sin((1 - t) * omega) / sO;
+        const f2 = Math.sin(t * omega) / sO;
+        const s = 1 + alto * Math.sin(Math.PI * t);
+        pts.push({
+          x: (f1 * a.x + f2 * b.x) * s,
+          y: (f1 * a.y + f2 * b.y) * s,
+          z: (f1 * a.z + f2 * b.z) * s,
+        });
+      }
+      return pts;
+    }
+
+    const $ = (id: string) => raiz.querySelector(`#${id}`) as SVGGElement;
+
+    // --- Paralelos y ecuador (estáticos) ---
+    const gPar = $('gl-parallels');
+    for (let lat = -75; lat <= 75; lat += 15) {
+      if (lat === 0) continue;
+      const phi = (lat * Math.PI) / 180;
+      const r = R * Math.cos(phi);
+      const e = document.createElementNS(NS, 'ellipse');
+      e.setAttribute('cx', '0');
+      e.setAttribute('cy', (-R * Math.sin(phi) * COS_T).toFixed(2));
+      e.setAttribute('rx', r.toFixed(2));
+      e.setAttribute('ry', Math.abs(r * SIN_T).toFixed(2));
+      e.setAttribute('opacity', lat % 30 === 0 ? '0.85' : '0.45');
+      gPar.appendChild(e);
+    }
+    const eq = document.createElementNS(NS, 'ellipse');
+    eq.setAttribute('cx', '0');
+    eq.setAttribute('cy', '0');
+    eq.setAttribute('rx', String(R));
+    eq.setAttribute('ry', Math.abs(R * SIN_T).toFixed(2));
+    $('gl-equator').appendChild(eq);
+
+    // --- Matriz de puntos de continentes ---
+    const coordsPunto: [number, number][] = [];
+    for (let lat = -82; lat <= 82; lat += 4) {
+      const cosLat = Math.cos((lat * Math.PI) / 180);
+      const paso = Math.max(4, 4 / Math.max(0.2, cosLat));
+      for (let lng = -180; lng <= 180; lng += paso) {
+        if (esTierra(lat, lng)) coordsPunto.push([lat, lng]);
+      }
+    }
+    const gDots = $('gl-dots');
+    const puntos = coordsPunto.map(() => {
+      const c = document.createElementNS(NS, 'circle');
+      c.setAttribute('r', '1.6');
+      c.setAttribute('fill', '#0FBA94');
+      gDots.appendChild(c);
+      return c;
+    });
+
+    // --- Meridianos (se repintan cada cuadro) ---
+    const N_MER = 12;
+    const gMer = $('gl-meridians');
+    const meridianos = Array.from({ length: N_MER }, () => {
+      const p = document.createElementNS(NS, 'path');
+      p.setAttribute('stroke-linecap', 'round');
+      gMer.appendChild(p);
+      return p;
+    });
+
+    // --- Nodos ---
+    const gCiudades = $('gl-cities');
+    const nodos = ciudades.map((c) => {
+      const rombo = c.shape === 'diamond';
+      const g = document.createElementNS(NS, 'g');
+
+      const h1 = document.createElementNS(NS, 'circle');
+      h1.setAttribute('class', 'gl-halo');
+      h1.setAttribute('r', '4');
+      h1.setAttribute('fill', 'none');
+      h1.setAttribute('stroke', rombo ? '#C47A18' : '#FF4C08');
+      h1.setAttribute('stroke-width', '1.5');
+      g.appendChild(h1);
+
+      const h2 = document.createElementNS(NS, 'circle');
+      h2.setAttribute('class', 'gl-halo2');
+      h2.setAttribute('r', '4');
+      h2.setAttribute('fill', 'none');
+      h2.setAttribute('stroke', '#0FBA94');
+      h2.setAttribute('stroke-width', '1');
+      g.appendChild(h2);
+
+      const glow = document.createElementNS(NS, 'circle');
+      glow.setAttribute('r', '9');
+      glow.setAttribute('fill', rombo ? '#C47A18' : '#FF4C08');
+      glow.setAttribute('opacity', '0.18');
+      glow.setAttribute('filter', 'url(#gl-nodeglow)');
+      g.appendChild(glow);
+
+      if (rombo) {
+        const core = document.createElementNS(NS, 'path');
+        core.setAttribute('d', 'M 0 -7 L 7 0 L 0 7 L -7 0 Z');
+        core.setAttribute('fill', '#C47A18');
+        core.setAttribute('stroke', '#FF4C08');
+        core.setAttribute('stroke-width', '1.2');
+        g.appendChild(core);
+        const inner = document.createElementNS(NS, 'path');
+        inner.setAttribute('d', 'M 0 -2.5 L 2.5 0 L 0 2.5 L -2.5 0 Z');
+        inner.setAttribute('fill', '#FFE6D7');
+        g.appendChild(inner);
+      } else {
+        const core = document.createElementNS(NS, 'circle');
+        core.setAttribute('class', 'gl-core');
+        core.setAttribute('r', '4.5');
+        core.setAttribute('fill', '#FF4C08');
+        g.appendChild(core);
+        const inner = document.createElementNS(NS, 'circle');
+        inner.setAttribute('r', '1.6');
+        inner.setAttribute('fill', '#FFE6D7');
+        g.appendChild(inner);
+      }
+
+      const l1 = document.createElementNS(NS, 'text');
+      l1.setAttribute('class', 'gl-city-label');
+      l1.textContent = c.name;
+      const l2 = document.createElementNS(NS, 'text');
+      l2.setAttribute('class', 'gl-city-coord');
+      l2.textContent = c.coord;
+      l2.setAttribute('dy', '14');
+      if (c.anchor === 'end') {
+        l1.setAttribute('text-anchor', 'end');
+        l2.setAttribute('text-anchor', 'end');
+      }
+      g.appendChild(l1);
+      g.appendChild(l2);
+
+      const tick = document.createElementNS(NS, 'line');
+      tick.setAttribute('stroke', '#0FBA94');
+      tick.setAttribute('stroke-width', '1');
+      tick.setAttribute('opacity', '0.55');
+      g.appendChild(tick);
+
+      gCiudades.appendChild(g);
+      return { g, l1, l2, tick, cfg: c };
+    });
+
+    // --- Arcos ---
+    const gBase = $('gl-arcs-base');
+    const gLuz = $('gl-arcs-light');
+    const arcos = conexiones.map((cn) => {
+      const base = document.createElementNS(NS, 'path');
+      base.setAttribute('class', 'gl-arc-base');
+      gBase.appendChild(base);
+      const luz = document.createElementNS(NS, 'path');
+      luz.setAttribute('class', 'gl-arc-light');
+      luz.setAttribute('pathLength', '100');
+      luz.setAttribute('stroke', `url(#${cn.grad})`);
+      luz.style.setProperty('--dur', `${cn.dur}s`);
+      gLuz.appendChild(luz);
+      return { base, luz, cfg: cn };
+    });
+
+    // --- Bucle ---
+    const vuelta = Number(raiz.dataset.vuelta) || 72;
+    const VEL = 360 / vuelta;
+    const t0 = performance.now();
+    let cuadro = 0;
+    let visible = true;
+    const pos: Record<string, P3> = {};
+
+    const io = new IntersectionObserver(
+      (es) => {
+        visible = es[0].isIntersecting;
+      },
+      { rootMargin: '120px' },
+    );
+    io.observe(raiz);
+
+    const txt = (id: string, v: string) => {
+      const el = raiz.querySelector(`#${id}`);
+      if (el) el.textContent = v;
+    };
+
+    function meridiano(lng0: number, rot: number) {
+      let d = '';
+      let pluma = false;
+      const N = 36;
+      for (let i = 0; i <= N; i++) {
+        const p = proyectar(-90 + (180 * i) / N, lng0, rot);
+        if (p.z >= 0) {
+          d += `${pluma ? 'L' : 'M'} ${p.x.toFixed(1)} ${(-p.y).toFixed(1)} `;
+          pluma = true;
+        } else {
+          pluma = false;
+        }
+      }
+      return d;
+    }
+
+    function pintar(ts: number) {
+      requestAnimationFrame(pintar);
+      // Fuera de pantalla no gastamos cuadros; con motion reducido, el globo queda quieto.
+      if (!visible) return;
+      const t = (ts - t0) / 1000;
+      const rot = lento ? 28 : (t * VEL) % 360;
+      if (lento && cuadro > 0) return;
+      cuadro++;
+
+      for (let i = 0; i < N_MER; i++) {
+        meridianos[i].setAttribute('d', meridiano((i / N_MER) * 360, rot));
+      }
+
+      for (let i = 0; i < coordsPunto.length; i++) {
+        const p = proyectar(coordsPunto[i][0], coordsPunto[i][1], rot);
+        const el = puntos[i];
+        if (p.z >= 0) {
+          const zn = p.z / R;
+          el.setAttribute('cx', p.x.toFixed(1));
+          el.setAttribute('cy', (-p.y).toFixed(1));
+          el.setAttribute('r', (1 + zn * 1.2).toFixed(2));
+          el.setAttribute('opacity', Math.min(0.85, 0.18 + zn * 0.75).toFixed(2));
+        } else {
+          el.setAttribute('opacity', '0');
+        }
+      }
+
+      for (let i = 0; i < nodos.length; i++) {
+        const c = nodos[i].cfg;
+        const p = proyectar(c.lat, c.lng, rot);
+        pos[c.id] = p;
+        const n = nodos[i];
+        if (p.z < 0) {
+          n.g.setAttribute('opacity', '0');
+          continue;
+        }
+        const zn = p.z / R;
+        n.g.setAttribute('transform', `translate(${p.x.toFixed(1)} ${(-p.y).toFixed(1)})`);
+        n.g.setAttribute('opacity', Math.min(1, 0.3 + zn * 1.05).toFixed(2));
+        const [ox, oy] = c.off;
+        n.l1.setAttribute('x', String(ox));
+        n.l1.setAttribute('y', String(oy));
+        n.l2.setAttribute('x', String(ox));
+        n.l2.setAttribute('y', String(oy));
+        n.tick.setAttribute('x1', '0');
+        n.tick.setAttribute('y1', '0');
+        n.tick.setAttribute('x2', String(ox > 0 ? ox - 4 : ox + 4));
+        n.tick.setAttribute('y2', String(oy < 0 ? oy + 2 : oy - 2));
+        const op = Math.max(0, Math.min(1, (zn - 0.05) * 2.4));
+        n.l1.setAttribute('opacity', op.toFixed(2));
+        n.l2.setAttribute('opacity', (op * 0.85).toFixed(2));
+        n.tick.setAttribute('opacity', (op * 0.6).toFixed(2));
+      }
+
+      for (let i = 0; i < arcos.length; i++) {
+        const a = pos[arcos[i].cfg.a];
+        const b = pos[arcos[i].cfg.b];
+        if (!a || !b) continue;
+        const pts = arcoGranCirculo(a, b, 28, 0.3);
+        let d = '';
+        let vis = 0;
+        for (let k = 0; k < pts.length; k++) {
+          if (pts[k].z >= -R * 0.04) vis++;
+          d += `${k === 0 ? 'M' : 'L'} ${pts[k].x.toFixed(1)} ${(-pts[k].y).toFixed(1)} `;
+        }
+        const op = Math.max(0, Math.min(1, (vis / pts.length - 0.25) * 1.8));
+        arcos[i].base.setAttribute('d', d);
+        arcos[i].luz.setAttribute('d', d);
+        arcos[i].luz.style.opacity = op.toFixed(2);
+        arcos[i].base.style.opacity = (op * 0.5).toFixed(2);
+      }
+
+      if (cuadro % 3 === 0) {
+        const lat = Math.sin(t * 0.07) * 18 + 6;
+        const lon = (((t * 4.2) % 360) + 540) % 360 - 180;
+        const s = Math.floor(t) % 86400;
+        const p2 = (n: number) => String(n).padStart(2, '0');
+        txt('gl-lat', `${Math.abs(lat).toFixed(3)}° ${lat >= 0 ? 'N' : 'S'}`);
+        txt('gl-lon', `${Math.abs(lon).toFixed(3).padStart(7, '0')}° ${lon >= 0 ? 'E' : 'W'}`);
+        txt('gl-utc', `${p2(Math.floor(s / 3600))}:${p2(Math.floor((s % 3600) / 60))}:${p2(s % 60)}Z`);
+        txt('gl-frame', String(cuadro).padStart(7, '0'));
+        txt('gl-bearing', `BEARING ${((t * 6.4) % 360).toFixed(1)}°`);
+      }
+    }
+
+    requestAnimationFrame(pintar);
+  })();
+</script>
