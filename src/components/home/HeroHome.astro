@@ -75,6 +75,10 @@ import GloboLiminal from '../visual/GloboLiminal.astro';
     text-transform: uppercase;
     color: var(--color-ocre);
     margin: 0;
+    /* El globo tiene rótulos de ciudades justo detrás: la frase les gana. */
+    padding: var(--space-2) var(--space-4);
+    background: color-mix(in oklab, var(--color-vacio) 86%, transparent);
+    text-shadow: 0 0 12px var(--color-vacio);
   }
 
   /* Lema abajo a la izquierda; el HUD del globo vive abajo a la derecha.
