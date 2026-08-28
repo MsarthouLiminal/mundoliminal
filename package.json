@@ -9,7 +9,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "check": "astro check"
+    "check": "astro check",
+    "publicar": "git add -u && (git diff --cached --quiet && (echo 'Sin cambios: pido a GitHub que reconstruya el sitio...' && gh workflow run \"Publicar sitio\" --ref main) || (git commit -m \"Actualizacion $(date '+%Y-%m-%d %H:%M')\" && git push origin main)) && echo '' && echo 'Listo. El sitio se publica solo en 1-3 minutos.'"
   },
   "dependencies": {
     "@fontsource-variable/oswald": "^5.0.0",

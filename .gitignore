@@ -29,3 +29,11 @@ pnpm-debug.log*
 
 # Cloudflare
 .wrangler/
+
+# --- Material editorial y documentos internos: nunca al repo (es publico) ---
+*.docx
+*.pdf
+*.zip
+Documentación Liminal Construccion/
+docs/redaccion/
+docs/*.md
