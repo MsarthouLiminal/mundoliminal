@@ -37,7 +37,3 @@ pnpm-debug.log*
 Documentación Liminal Construccion/
 docs/redaccion/
 docs/*.md
-
-# node_modules vive como node_modules.nosync + symlink, para que iCloud
-# no sincronice 39.000 archivos. Ver la nota en el README.
-node_modules.nosync

@@ -50,21 +50,13 @@ script en `scripts/publicar.command`.
 **Nunca usar Retry ni Rollback en el panel de Cloudflare**: reconstruyen la
 línea que se toca, no la última, y republican código viejo.
 
-## node_modules e iCloud
+## Dónde vive el proyecto
 
-El proyecto vive dentro del Escritorio, que sincroniza con iCloud. Como
-`node_modules` son ~39.000 archivos, está guardado como `node_modules.nosync`
-con un symlink `node_modules ->  node_modules.nosync`: iCloud ignora todo lo
-que termina en `.nosync`.
+`~/Sitios/mundoliminal` — **fuera de iCloud a propósito**.
 
-Si alguna vez borrás `node_modules` a mano o algo lo reemplaza por una carpeta
-real, se repone así:
+El Escritorio, Documentos y Descargas de este Mac sincronizan con iCloud, y
+eso ya habia dañado el repo: 484 carpetas duplicadas de conflicto en
+`node_modules` y cuatro refs rotos dentro de `.git` (`main 2`, `main 3`).
+No devolver el proyecto a ninguna de esas tres carpetas.
 
-```sh
-rm -rf node_modules
-mv node_modules.nosync node_modules 2>/dev/null || npm install
-mv node_modules node_modules.nosync
-ln -s node_modules.nosync node_modules
-```
-
-`npm install` funciona normal a través del symlink.
+El acceso rapido esta en `Escritorio/ESCRITORIO LIMINAL/Automatismos/`.

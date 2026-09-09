@@ -10,7 +10,7 @@
 #
 #  Copia maestra: mundoliminal/scripts/publicar.command
 #  Para reponer el acceso del Escritorio:
-#    cp "$HOME/Desktop/ESCRITORIO LIMINAL/mundoliminal/scripts/publicar.command" \
+#    cp "$HOME/Sitios/mundoliminal/scripts/publicar.command" \
 #       "$HOME/Desktop/Publicar LIMINAL.command"
 #    chmod +x "$HOME/Desktop/Publicar LIMINAL.command"
 # ─────────────────────────────────────────────────────────────
@@ -18,7 +18,7 @@
 # Finder no hereda el PATH de la Terminal: lo fijamos a mano.
 export PATH="/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 
-PROYECTO="$HOME/Desktop/ESCRITORIO LIMINAL/mundoliminal"
+PROYECTO="$HOME/Sitios/mundoliminal"
 
 linea() { printf '─%.0s' {1..52}; echo; }
 fin() { echo; linea; echo "  Apreta Enter para cerrar esta ventana."; read; exit "${1:-0}"; }
