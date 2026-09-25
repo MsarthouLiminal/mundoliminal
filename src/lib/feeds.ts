@@ -17,6 +17,13 @@ const USER_AGENT =
 
 const FEED_TIMEOUT_MS = 8_000;
 
+// Un video de la playlist cuenta como episodio si su titulo trae marca de
+// temporada (T1, T2...) o de episodio (E39). Antes esto era un
+// `includes(' | T1 |')` que exigia una barra DESPUES de "T1", asi que el E39
+// ("... | LIMINAL | E39 | T1", sin sufijo "| TRIMAX LIVE") quedaba afuera y no
+// aparecia en la home. La marca puede ir al final del titulo o en el medio.
+const ES_EPISODIO = /\|\s*(?:T\d+|E\d+)\b/i;
+
 const YOUTUBE_FEED =
   'https://www.youtube.com/feeds/videos.xml?playlist_id=PLQSbB4OqWGEF-G3RJ4gk0ejlNxTyV06FJ';
 const SUBSTACK_FEED = 'https://mundoliminal.substack.com/feed';
@@ -110,7 +117,7 @@ export async function getYouTubeLatestList(limit = 5): Promise<LatestItem[]> {
     const parsed = parser.parse(xml);
     const entries = asArray(parsed?.feed?.entry);
     const filtered = entries.filter((e: any) =>
-      typeof e?.title === 'string' && e.title.includes(' | T1 |'),
+      typeof e?.title === 'string' && ES_EPISODIO.test(e.title),
     );
     if (filtered.length === 0) return [];
     filtered.sort((a: any, b: any) => {
