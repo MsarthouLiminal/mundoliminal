@@ -354,6 +354,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     line-height: 1;
   }
 
+  /* En pantallas angostas el título entra entero, sin desbordar. */
+  @media (max-width: 480px) {
+    .page-header h1 {
+      font-size: 9vw;
+    }
+  }
+
   /* APERTURA */
   .apertura p {
     margin: 0 0 var(--space-6);
