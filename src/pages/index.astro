@@ -25,7 +25,10 @@ const [yt, sb, sp] = settled.map((r): LatestItem | null =>
 const edicion = edicionVigente();
 ---
 
-<BaseLayout title="LIMINAL">
+<BaseLayout
+  title="LIMINAL"
+  description="Monitor semanal de minerales críticos, chokepoints, infraestructura de la IA y conflictos, con fuente y fecha. Análisis de Martín Sarthou desde Montevideo."
+>
   <HeroHome>
     <MonitorSenales edicion={edicion} />
   </HeroHome>

@@ -11,7 +11,7 @@ import {
   type Edicion,
   contarSenales,
   fechaCorta,
-  fechaLarga,
+  semanaDel,
   fechaSinAnio,
   proyectar,
   coordenadas,
@@ -78,7 +78,7 @@ function lado(l: string | undefined) {
       )}
       <p class="senales__dateline">
         {archivada && <span class="senales__archivo">Edición archivada · </span>}
-        Edición del {fechaLarga(edicion.fechaEdicion)} · Datos al {fechaSinAnio(edicion.corteDatos)}
+        {semanaDel(edicion.fechaEdicion)} · Datos al {fechaSinAnio(edicion.corteDatos)}
       </p>
       <hr class="senales__umbral" />
     </header>
@@ -235,6 +235,7 @@ function lado(l: string | undefined) {
         <p>
           Una señal entra al monitor si cambia algo material y tiene un mecanismo que se puede explicar.
           Cada una lleva fuente con nombre y fecha. La lectura es de LIMINAL y está separada del dato.
+          La IA ayuda a rastrear y ordenar; cada señal la reviso yo antes de publicarla.
         </p>
         <p>La edición sale los lunes. Si algo se rompe en la semana, la señal se actualiza y lo dice.</p>
         <a class="cierre__mas" href="/senales">Método completo y archivo de ediciones <b aria-hidden="true">→</b></a>
@@ -440,11 +441,11 @@ function lado(l: string | undefined) {
   }
 
   /* ---------- Pestañas ---------- */
+  /* Los filtros pasan a otra línea cuando no entran: ninguno queda cortado. */
   .pestanas {
     display: flex;
+    flex-wrap: wrap;
     gap: 6px;
-    overflow-x: auto;
-    padding-bottom: 2px;
   }
   .pestana {
     flex: 0 0 auto;

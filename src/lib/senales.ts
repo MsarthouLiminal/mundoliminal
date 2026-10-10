@@ -109,6 +109,17 @@ export function fechaLarga(iso: string): string {
     .replace(',', '');
 }
 
+/** "2026-10-12" → "Semana del 12 de octubre de 2026" (fecha de cada edición) */
+export function semanaDel(iso: string): string {
+  const fecha = new Intl.DateTimeFormat('es-UY', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+    timeZone: 'UTC',
+  }).format(aFecha(iso));
+  return `Semana del ${fecha}`;
+}
+
 /** "2026-10-10" → "sábado 10 de octubre" */
 export function fechaSinAnio(iso: string): string {
   return fechaLarga(iso).replace(/ de \d{4}$/, '');

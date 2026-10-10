@@ -8,12 +8,15 @@ interface Props {
   description?: string;
   /** Páginas en construcción: que Google no las indexe todavía. */
   noindex?: boolean;
+  /** Imagen para compartir (1200x630). Por defecto, la de LIMINAL. */
+  imagen?: string;
 }
 
 const {
   title,
-  description = 'LIMINAL · Señales que importan.',
+  description = 'Monitor semanal de minerales críticos, chokepoints, infraestructura de la IA y conflictos, con fuente y fecha. Análisis de Martín Sarthou desde Montevideo.',
   noindex = false,
+  imagen = '/og/liminal.jpg',
 } = Astro.props;
 
 const fullTitle = title === 'LIMINAL' ? 'LIMINAL · Señales que importan.' : `${title} · LIMINAL`;
@@ -25,6 +28,7 @@ const ruta = Astro.url.pathname === '/' || Astro.url.pathname.endsWith('/')
   ? Astro.url.pathname
   : `${Astro.url.pathname}/`;
 const canonical = new URL(ruta, Astro.site ?? 'https://mundoliminal.com').href;
+const imagenAbsoluta = new URL(imagen, Astro.site ?? 'https://mundoliminal.com').href;
 ---
 
 <!doctype html>
@@ -42,6 +46,15 @@ const canonical = new URL(ruta, Astro.site ?? 'https://mundoliminal.com').href;
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="LIMINAL" />
+    <meta property="og:locale" content="es_UY" />
+    <meta property="og:image" content={imagenAbsoluta} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="LIMINAL. Señales que importan: minerales críticos, chokepoints, infraestructura de la IA y conflictos." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={imagenAbsoluta} />
     <meta name="theme-color" content="#060C08" />
   </head>
   <body>

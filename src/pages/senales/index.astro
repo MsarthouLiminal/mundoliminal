@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import MonitorSenales from '../../components/senales/MonitorSenales.astro';
-import { ediciones, edicionVigente, contarSenales, fechaLarga } from '../../lib/senales';
+import { ediciones, edicionVigente, contarSenales, semanaDel } from '../../lib/senales';
 
 const vigente = edicionVigente();
 const archivo = ediciones();
@@ -39,6 +39,13 @@ const archivo = ediciones();
           <dd>
             Arriba va el hecho, con fuente y fecha. Abajo, después de la línea naranja, la lectura de LIMINAL.
             Así se distingue qué pasó de qué significa.
+          </dd>
+        </div>
+        <div>
+          <dt>Con IA, revisado a mano</dt>
+          <dd>
+            La IA rastrea fuentes y prepara el borrador con los criterios de LIMINAL. Cada señal se revisa antes de
+            publicarse, y la lectura la escribe Martín Sarthou.
           </dd>
         </div>
         <div>
@@ -84,7 +91,7 @@ const archivo = ediciones();
           <li>
             <a href={`/senales/${e.id}`}>
               <span class="archivo__sem">Semana {e.semana}</span>
-              <span class="archivo__fecha">{fechaLarga(e.fechaEdicion)}</span>
+              <span class="archivo__fecha">{semanaDel(e.fechaEdicion)}</span>
               <span class="archivo__n">{contarSenales(e)} señales{e.id === vigente.id ? ' · Vigente' : ''}</span>
             </a>
           </li>
