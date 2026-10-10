@@ -4,7 +4,6 @@ import HeroHome from '../components/home/HeroHome.astro';
 import LatestCard from '../components/home/LatestCard.astro';
 import Manifesto from '../components/home/Manifesto.astro';
 import CommercialBlock from '../components/home/CommercialBlock.astro';
-import TrazaSenal from '../components/visual/TrazaSenal.astro';
 import MonitorSenales from '../components/senales/MonitorSenales.astro';
 import { edicionVigente } from '../lib/senales';
 import {
@@ -31,10 +30,12 @@ const edicion = edicionVigente();
     <MonitorSenales edicion={edicion} />
   </HeroHome>
 
-  <section class="latest" aria-labelledby="latest-heading">
-    <h2 id="latest-heading" class="latest__title">Últimos de LIMINAL.</h2>
-    <TrazaSenal entrada="Canal" lectura="Tres salidas" />
-    <ul class="latest__grid">
+  <section class="ultimos" aria-labelledby="latest-heading">
+    <div class="ultimos__cab">
+      <h2 id="latest-heading">Lo último de LIMINAL</h2>
+      <p>El análisis de la semana en video, columna y podcast.</p>
+    </div>
+    <ul class="ultimos__grid">
       <li>
         <LatestCard
           item={yt}
@@ -65,33 +66,46 @@ const edicion = edicionVigente();
 </BaseLayout>
 
 <style>
-  .latest {
+  .ultimos {
     margin-top: var(--space-16);
-    display: flex;
-    flex-direction: column;
+    display: grid;
     gap: var(--space-8);
+    font-family: var(--font-text-v2);
   }
-  .latest__title {
-    font-family: var(--font-display);
-    font-weight: 700;
-    font-size: var(--fs-md);
-    letter-spacing: var(--tracking-display-wide);
-    text-transform: uppercase;
+  .ultimos__cab {
+    display: grid;
+    gap: var(--space-2);
+    padding-bottom: var(--space-4);
+    border-bottom: 3px solid var(--color-horizonte);
+  }
+  .ultimos__cab h2 {
+    margin: 0;
+    font-family: var(--font-display-v2);
+    font-weight: 800;
+    font-size: clamp(1.8rem, 3.4vw, 2.4rem);
+    line-height: 1;
+    letter-spacing: -0.005em;
+    text-transform: none;
+    color: var(--color-blanco);
+  }
+  .ultimos__cab p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.6;
     color: var(--color-hueso);
-    text-align: center;
   }
-  .latest__grid {
+  .ultimos__grid {
     list-style: none;
     margin: 0;
     padding: 0;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: var(--space-6);
   }
 
   @media (max-width: 720px) {
-    .latest__grid {
-      grid-template-columns: 1fr;
+    .ultimos__grid {
+      grid-template-columns: minmax(0, 1fr);
     }
   }
 </style>

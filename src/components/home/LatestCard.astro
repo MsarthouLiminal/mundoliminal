@@ -11,9 +11,9 @@ interface Props {
 const { item, platform, fallbackHref } = Astro.props;
 
 const platformLabel: Record<Platform, string> = {
-  youtube: 'EN YOUTUBE',
-  substack: 'EN SUBSTACK',
-  spotify: 'EN SPOTIFY',
+  youtube: 'Video en YouTube',
+  substack: 'Columna en Substack',
+  spotify: 'Podcast en Spotify',
 };
 
 const href = item?.url ?? fallbackHref;
@@ -50,17 +50,22 @@ const isFallback = item === null;
     gap: var(--space-3);
     text-decoration: none;
     color: inherit;
+    font-family: var(--font-text-v2);
   }
   .card:hover .card__thumb {
-    border-color: var(--color-teal-brillante);
+    border-color: var(--color-horizonte);
   }
   .card:hover .card__title {
-    color: var(--color-teal-brillante);
+    color: var(--color-horizonte);
+  }
+  .card:focus-visible {
+    outline: 2px solid var(--color-horizonte);
+    outline-offset: 4px;
   }
   .card__thumb {
     aspect-ratio: 16 / 9;
     background: var(--color-selva);
-    border: 1px solid var(--rule);
+    border: 1px solid var(--color-teal);
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -74,37 +79,37 @@ const isFallback = item === null;
     display: block;
   }
   .card__thumb-mark {
-    font-family: var(--font-display);
-    font-weight: 700;
-    font-size: var(--fs-md);
-    letter-spacing: var(--tracking-display-wide);
-    text-transform: uppercase;
+    font-family: var(--font-display-v2);
+    font-weight: 800;
+    font-size: 1.6rem;
+    letter-spacing: 0.12em;
     color: color-mix(in oklab, var(--color-hueso) 30%, transparent);
   }
   .card__platform {
-    font-family: var(--font-mono);
     font-weight: 700;
-    font-size: var(--fs-xs);
-    letter-spacing: var(--tracking-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--color-teal-brillante);
+    color: var(--color-horizonte);
   }
   .card__title {
-    font-family: var(--font-display);
+    margin: 0;
+    letter-spacing: -0.005em;
+    font-family: var(--font-display-v2);
     font-weight: 700;
-    font-size: var(--fs-md);
-    letter-spacing: var(--tracking-display);
-    text-transform: uppercase;
-    color: var(--color-hueso);
+    font-size: 1.45rem;
+    line-height: 1.05;
+    text-transform: none;
+    color: var(--color-blanco);
+    text-wrap: balance;
     transition: color 150ms;
   }
   .card__date {
-    font-family: var(--font-mono);
-    font-weight: 400;
-    font-size: var(--fs-xs);
-    color: var(--color-ceniza);
+    font-weight: 500;
+    font-size: 0.78rem;
+    color: var(--color-lila);
   }
   .card__date--soft {
-    font-style: italic;
+    font-style: normal;
   }
 </style>
