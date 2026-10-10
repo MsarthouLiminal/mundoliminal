@@ -43,6 +43,7 @@ export interface Evento {
 /** Con quiénes trabajó LIMINAL Talks. */
 export const MARCAS: Marca[] = [
   { nombre: 'WTC Uruguay' },
+  { nombre: 'REF Uruguay' },
   { nombre: 'Sancor Seguros' },
   { nombre: 'Randstad' },
   { nombre: 'Amber Latam' },
@@ -114,6 +115,15 @@ export const CASOS: Caso[] = [
     texto: 'Conducción del encuentro anual de Fenicio con grandes marcas del retail uruguayo.',
     foto: '/images/talks/fenicio-talks.jpg',
     fotoAlt: 'Martín Sarthou conduce Fenicio Talks 2026.',
+  },
+  {
+    cliente: 'REF Uruguay',
+    etiqueta: 'Foros de empresarios y gerentes',
+    formato: 'Presentación analítica',
+    fecha: '2026',
+    lugar: 'Montevideo y Colonia',
+    texto:
+      'Charlas para foros de REF Uruguay sobre minerales críticos, "La Cuenca del Plata cambió de manos" y "¿En qué mundo vivimos?", con un caso por rubro para cada sala.',
   },
   {
     cliente: 'MBRF',

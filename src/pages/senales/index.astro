@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import MonitorSenales from '../../components/senales/MonitorSenales.astro';
-import { ediciones, edicionVigente, contarSenales, semanaDel } from '../../lib/senales';
+import { ediciones, edicionVigente, contarSenales, delFecha } from '../../lib/senales';
 
 const vigente = edicionVigente();
 const archivo = ediciones();
@@ -91,8 +91,10 @@ const archivo = ediciones();
           <li>
             <a href={`/senales/${e.id}`}>
               <span class="archivo__sem">Semana {e.semana}</span>
-              <span class="archivo__fecha">{semanaDel(e.fechaEdicion)}</span>
-              <span class="archivo__n">{contarSenales(e)} señales{e.id === vigente.id ? ' · Vigente' : ''}</span>
+              <span class="archivo__sep" aria-hidden="true">·</span>
+              <span class="archivo__fecha">{delFecha(e.fechaEdicion)}</span>
+              <span class="archivo__sep archivo__sep--n" aria-hidden="true">·</span>
+              <span class="archivo__n">{contarSenales(e)} señales</span>
             </a>
           </li>
         ))}
@@ -182,10 +184,11 @@ const archivo = ediciones();
   .ejes__lista p { margin-top: var(--space-2); font-size: 0.88rem; line-height: 1.5; color: var(--color-lila); }
 
   .archivo__lista { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--color-teal); }
+  /* Una fila por edición: "Semana 42 · del 12 de octubre de 2026 · 8 señales". */
   .archivo__lista a {
-    display: grid;
-    grid-template-columns: 9rem minmax(0, 1fr) auto;
-    gap: var(--space-4);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-1) var(--space-3);
     align-items: baseline;
     padding: var(--space-4) 0;
     border-bottom: 1px solid var(--color-teal);
@@ -196,9 +199,13 @@ const archivo = ediciones();
   .archivo__sem { font-family: var(--font-display-v2); font-weight: 800; font-size: 1.3rem; color: var(--color-blanco); }
   .archivo__fecha { font-variant-numeric: tabular-nums; }
   .archivo__n { font-weight: 500; font-size: 0.8rem; color: var(--color-lila); }
+  .archivo__sep { color: var(--color-horizonte); font-weight: 700; }
+  /* En celular la cantidad de señales baja a su propia línea, sin dejar un punto colgando. */
   @media (max-width: 560px) {
-    .archivo__lista a { grid-template-columns: minmax(0, 1fr); gap: var(--space-1); }
+    .archivo__sep--n { display: none; }
+    .archivo__n { flex-basis: 100%; }
   }
+
 
   .sub {
     display: grid;

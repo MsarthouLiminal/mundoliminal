@@ -109,15 +109,20 @@ export function fechaLarga(iso: string): string {
     .replace(',', '');
 }
 
-/** "2026-10-12" → "Semana del 12 de octubre de 2026" (fecha de cada edición) */
-export function semanaDel(iso: string): string {
+/** "2026-10-12" → "del 12 de octubre de 2026" (fila del archivo de ediciones) */
+export function delFecha(iso: string): string {
   const fecha = new Intl.DateTimeFormat('es-UY', {
     day: 'numeric',
     month: 'long',
     year: 'numeric',
     timeZone: 'UTC',
   }).format(aFecha(iso));
-  return `Semana del ${fecha}`;
+  return `del ${fecha}`;
+}
+
+/** "2026-10-12" → "Semana del 12 de octubre de 2026" (fecha de cada edición) */
+export function semanaDel(iso: string): string {
+  return `Semana ${delFecha(iso)}`;
 }
 
 /** "2026-10-10" → "sábado 10 de octubre" */
