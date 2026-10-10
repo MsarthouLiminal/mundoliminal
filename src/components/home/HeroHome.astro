@@ -1,202 +1,106 @@
 ---
-import Logo from '../brand/Logo.astro';
-import NewsletterCTA from './NewsletterCTA.astro';
-import GloboLiminal from '../visual/GloboLiminal.astro';
+/**
+ * Apertura de la home: quién es LIMINAL en tres líneas y, enseguida,
+ * el monitor Señales de la semana (llega por el slot).
+ * El globo decorativo salió de la home en octubre de 2026: el mapa del
+ * monitor cumple esa función y además informa.
+ */
 ---
 
-{/* Pantalla 1 — el observatorio. A sangre completa, sin texto que compita. */}
-<section class="observatorio" aria-label="LIMINAL — observatorio">
-  <GloboLiminal hud={true} opacidad={1} vuelta={78} sector="A7" />
-
-  <div class="observatorio__marca">
-    <Logo variant="oscura" width={520} alt="LIMINAL" />
-    <p class="observatorio__frase">Señales que importan.</p>
+<section class="cabecera" aria-labelledby="home-titulo">
+  <div class="cabecera__marca">
+    <p class="cabecera__kick">LIMINAL <span aria-hidden="true">·</span> Señales que importan</p>
+    <h1 id="home-titulo" class="cabecera__h">Leer el presente como un sistema.</h1>
   </div>
-
-  <p class="observatorio__lema">Contexto <span>·</span> Mecanismo <span>·</span> Consecuencia</p>
-
-  <a class="observatorio__bajar" href="#senales" aria-label="Ir a las señales de la semana">
-    <span class="observatorio__linea"></span>
-  </a>
+  <div class="cabecera__texto">
+    <p>
+      Un proyecto editorial de Martín Sarthou sobre geopolítica, tecnología y economía. Separa el ruido y la
+      propaganda de lo que cambia algo: qué pasa, cómo funciona y qué consecuencias tiene.
+    </p>
+    <p class="cabecera__enlaces">
+      <a href="/sobre-martin">Quién es Martín Sarthou <b aria-hidden="true">→</b></a>
+      <a href="/talks">LIMINAL Talks <b aria-hidden="true">→</b></a>
+    </p>
+  </div>
 </section>
 
-{/* Entre el observatorio y la tesis: el monitor Señales de la semana. */}
+{/* El monitor Señales de la semana. */}
 <slot />
 
-{/* Pantalla 2 — la tesis. Mismo contenido de siempre, ahora con aire propio. */}
-<section class="hero" id="tesis" aria-label="Qué es LIMINAL">
-  <p class="hero__promise">
-    <span>Leer el presente como un sistema.</span>
-    <span>Anticipar las consecuencias.</span>
-    <span>Decodificar las señales que importan.</span>
-  </p>
-
-  <p class="hero__intro">
-    Un proyecto editorial sobre geopolítica, tecnología y economía.
-    Los tres territorios donde se juega el poder de nuestro tiempo.
-    Por Martín Sarthou.
-  </p>
-
-  <NewsletterCTA variant="hero" />
-</section>
-
 <style>
-  /* ===== Pantalla 1: observatorio a sangre ===== */
-  .observatorio {
-    position: relative;
-    /* Rompe el contenedor de <main> para ir de borde a borde. */
-    width: 100vw;
-    margin-left: calc(50% - 50vw);
-    min-height: 100svh;
+  .cabecera {
     display: grid;
-    place-items: center;
-    overflow: hidden;
-    border-bottom: 1px solid var(--rule);
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+    gap: var(--space-6) var(--space-12);
+    align-items: end;
+    padding: var(--space-12) 0 var(--space-8);
+    border-bottom: 1px solid var(--color-teal);
   }
-  .observatorio__marca {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--space-6);
-    padding: var(--space-8) var(--space-4);
-    text-align: center;
-    animation: hero-entra 1.1s cubic-bezier(0.2, 0.7, 0.2, 1) both;
-    animation-delay: 0.25s;
+  .cabecera__marca {
+    display: grid;
+    gap: var(--space-3);
+    min-width: 0;
   }
-  /* El logo respira sobre el globo sin taparlo. */
-  .observatorio__marca :global(.logo) {
-    width: min(400px, 46vw) !important;
-    filter: drop-shadow(0 0 50px rgba(6, 12, 8, 0.9));
-  }
-  .observatorio__frase {
-    font-family: var(--font-mono);
+  .cabecera__kick {
+    margin: 0;
+    font-family: var(--font-text-v2);
     font-weight: 700;
-    font-size: var(--fs-sm);
-    letter-spacing: var(--tracking-display-wide);
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--color-ocre);
-    margin: 0;
-    /* El globo tiene rótulos de ciudades justo detrás: la frase les gana. */
-    padding: var(--space-2) var(--space-4);
-    background: color-mix(in oklab, var(--color-vacio) 86%, transparent);
-    text-shadow: 0 0 12px var(--color-vacio);
+    color: var(--color-lila);
   }
-
-  /* Lema abajo a la izquierda; el HUD del globo vive abajo a la derecha.
-     Cada uno en su esquina para que nunca se pisen. */
-  .observatorio__lema {
-    position: absolute;
-    z-index: 2;
-    bottom: calc(var(--space-6) + clamp(34px, 4.4vw, 72px));
-    left: calc(var(--space-6) + var(--space-2));
+  .cabecera__kick span {
+    color: var(--color-horizonte);
+    padding: 0 0.2em;
+  }
+  .cabecera__h {
     margin: 0;
-    font-family: var(--font-mono);
-    font-size: var(--fs-xs);
-    letter-spacing: var(--tracking-display-wide);
+    font-family: var(--font-display-v2);
+    font-weight: 800;
+    font-size: clamp(2.2rem, 4.8vw, 3.8rem);
+    line-height: 0.95;
+    letter-spacing: -0.005em;
+    text-transform: none;
+    color: var(--color-sal);
+    text-wrap: balance;
+  }
+  .cabecera__texto {
+    display: grid;
+    gap: var(--space-4);
+    min-width: 0;
+    font-family: var(--font-text-v2);
+  }
+  .cabecera__texto p {
+    margin: 0;
+    max-width: 52ch;
+    font-size: 1.02rem;
+    line-height: 1.6;
+    color: var(--color-hueso);
+  }
+  .cabecera__enlaces {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2) var(--space-6);
+  }
+  .cabecera__enlaces a {
+    display: inline-flex;
+    gap: 8px;
+    font-weight: 700;
+    font-size: 0.82rem;
+    letter-spacing: 0.04em;
     text-transform: uppercase;
-    color: var(--color-ceniza);
-    animation: hero-entra 1.1s cubic-bezier(0.2, 0.7, 0.2, 1) both;
-    animation-delay: 0.9s;
-  }
-  .observatorio__lema span {
-    color: var(--color-teal);
-    padding: 0 0.25em;
-  }
-
-  .observatorio__bajar {
-    position: absolute;
-    z-index: 2;
-    bottom: var(--space-4);
-    left: 50%;
-    transform: translateX(-50%);
-    display: block;
-    padding: var(--space-4);
     text-decoration: none;
+    color: var(--color-horizonte);
   }
-  .observatorio__linea {
-    display: block;
-    width: 1px;
-    height: 40px;
-    background: linear-gradient(var(--color-teal-brillante), transparent);
-    animation: hero-baja 2.4s ease-in-out infinite;
-  }
-  .observatorio__bajar:hover .observatorio__linea {
-    background: linear-gradient(var(--color-hueso), transparent);
+  .cabecera__enlaces a:hover {
+    color: var(--color-blanco);
   }
 
-  @keyframes hero-entra {
-    from { opacity: 0; transform: translateY(18px); }
-    to { opacity: 1; transform: none; }
-  }
-  @keyframes hero-baja {
-    0%, 100% { transform: translateY(-5px); opacity: 0.35; }
-    50% { transform: translateY(5px); opacity: 1; }
-  }
-
-  @media (max-width: 720px) {
-    .observatorio {
-      min-height: 92svh;
-    }
-    /* En pantalla chica el lema compite con el HUD: gana el HUD. */
-    .observatorio__lema {
-      display: none;
-    }
-  }
-
-  /* ===== Pantalla 2: la tesis ===== */
-  .hero {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-8);
-    align-items: center;
-    text-align: center;
-    padding: var(--space-24) var(--space-4) var(--space-16);
-  }
-  .hero__promise {
-    font-family: var(--font-display);
-    font-weight: 700;
-    font-size: clamp(1rem, 2.4vw, 1.5rem);
-    letter-spacing: var(--tracking-display);
-    text-transform: uppercase;
-    line-height: 1.3;
-    color: var(--color-hueso);
-    margin: 0;
-  }
-  .hero__promise > span {
-    display: block;
-    white-space: nowrap;
-  }
-  .hero__promise > span + span {
-    margin-top: var(--space-2);
-  }
-  .hero__intro {
-    font-family: var(--font-mono);
-    font-size: var(--fs-base);
-    color: var(--color-hueso);
-    max-width: var(--content-max);
-    line-height: 1.7;
-    margin: 0;
-  }
-
-  @media (max-width: 720px) {
-    .hero {
-      padding: var(--space-16) 0 var(--space-8);
-    }
-    .hero__promise > span {
-      white-space: normal;
-    }
-    .hero__intro {
-      text-align: left;
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .observatorio__marca,
-    .observatorio__lema,
-    .observatorio__linea {
-      animation: none;
+  @media (max-width: 860px) {
+    .cabecera {
+      grid-template-columns: minmax(0, 1fr);
+      padding: var(--space-8) 0 var(--space-6);
     }
   }
 </style>

@@ -6,11 +6,9 @@ const isHome = Astro.url.pathname === '/' || Astro.url.pathname === '';
 ---
 
 <header class="site-header">
-  {!isHome && (
-    <a href="/" class="brand" aria-label="LIMINAL — inicio">
-      <Logo variant="oscura" width={140} />
-    </a>
-  )}
+  <a href="/" class="brand" aria-label="LIMINAL, inicio" aria-current={isHome ? 'page' : undefined}>
+    <Logo variant="oscura" width={140} />
+  </a>
   <Nav />
 </header>
 
@@ -23,8 +21,6 @@ const isHome = Astro.url.pathname === '/' || Astro.url.pathname === '';
     padding: var(--space-6) var(--space-8);
     border-bottom: 1px solid var(--rule);
   }
-  /* Cuando no hay logo (home), .brand no se renderiza:
-     la primera columna queda vacía y el nav queda anclado a la derecha. */
   .brand {
     display: inline-flex;
     align-items: center;
