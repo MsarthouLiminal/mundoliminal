@@ -1,24 +1,39 @@
 ---
 /**
- * Apertura de la home: quién es LIMINAL en tres líneas y, enseguida,
+ * Apertura de la home: la marca, la frase, quién está detrás y, enseguida,
  * el monitor Señales de la semana (llega por el slot).
- * El globo decorativo salió de la home en octubre de 2026: el mapa del
- * monitor cumple esa función y además informa.
+ * Ocupa más o menos media pantalla: el monitor asoma abajo sin scrollear.
  */
 ---
 
-<section class="cabecera" aria-labelledby="home-titulo">
-  <div class="cabecera__marca">
-    <p class="cabecera__kick">LIMINAL <span aria-hidden="true">·</span> Señales que importan</p>
-    <h1 id="home-titulo" class="cabecera__h">Leer el presente como un sistema.</h1>
-  </div>
-  <div class="cabecera__texto">
-    <p>
-      Un proyecto editorial de Martín Sarthou sobre geopolítica, tecnología y economía. Separa el ruido y la
-      propaganda de lo que cambia algo: qué pasa, cómo funciona y qué consecuencias tiene.
-    </p>
-    <p class="cabecera__enlaces">
-      <a href="/sobre-martin">Quién es Martín Sarthou <b aria-hidden="true">→</b></a>
+<section class="apertura" aria-labelledby="home-titulo">
+  <h1 id="home-titulo" class="apertura__marca">
+    <img src="/brand/logos/liminal-logo-v2-1.svg" alt="LIMINAL" width="960" height="288" fetchpriority="high" />
+  </h1>
+
+  <p class="apertura__lema">Leer el presente como un sistema.</p>
+
+  <p class="apertura__texto">
+    Un proyecto editorial sobre geopolítica, tecnología y economía. Separa el ruido y la propaganda de lo que
+    cambia algo: qué pasa, cómo funciona y qué consecuencias tiene.
+  </p>
+
+  <figure class="apertura__retrato">
+    <img
+      src="/images/martin-sarthou-retrato.jpg"
+      srcset="/images/martin-sarthou-retrato-360.jpg 360w, /images/martin-sarthou-retrato.jpg 720w"
+      sizes="(max-width: 860px) 96px, 300px"
+      width="720"
+      height="900"
+      alt="Martín Sarthou"
+    />
+  </figure>
+
+  <div class="apertura__firma">
+    <p class="apertura__nombre">Martín Sarthou</p>
+    <p class="apertura__roles">Periodista, speaker, docente</p>
+    <p class="apertura__enlaces">
+      <a href="/sobre-martin">Quién es <b aria-hidden="true">→</b></a>
       <a href="/talks">LIMINAL Talks <b aria-hidden="true">→</b></a>
     </p>
   </div>
@@ -28,62 +43,119 @@
 <slot />
 
 <style>
-  .cabecera {
+  .apertura {
     display: grid;
-    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
-    gap: var(--space-6) var(--space-12);
-    align-items: end;
-    padding: var(--space-12) 0 var(--space-8);
+    grid-template-columns: minmax(0, 1fr) 300px;
+    grid-template-areas:
+      'marca retrato'
+      'lema retrato'
+      'texto retrato'
+      'firma retrato';
+    grid-template-rows: auto auto auto 1fr;
+    column-gap: var(--space-16);
+    row-gap: var(--space-4);
+    padding: var(--space-4) 0 var(--space-10, 2.5rem);
     border-bottom: 1px solid var(--color-teal);
-  }
-  .cabecera__marca {
-    display: grid;
-    gap: var(--space-3);
-    min-width: 0;
-  }
-  .cabecera__kick {
-    margin: 0;
     font-family: var(--font-text-v2);
-    font-weight: 700;
-    font-size: 0.78rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--color-lila);
   }
-  .cabecera__kick span {
-    color: var(--color-horizonte);
-    padding: 0 0.2em;
+
+  .apertura__marca {
+    grid-area: marca;
+    margin: 0 0 0 calc(-0.047 * min(560px, 100%));
+    line-height: 0;
   }
-  .cabecera__h {
+  .apertura__marca img {
+    display: block;
+    width: min(560px, 100%);
+    height: auto;
+  }
+
+  .apertura__lema {
+    grid-area: lema;
     margin: 0;
     font-family: var(--font-display-v2);
     font-weight: 800;
-    font-size: clamp(2.2rem, 4.8vw, 3.8rem);
-    line-height: 0.95;
+    font-size: clamp(1.9rem, 3.6vw, 2.8rem);
+    line-height: 1;
     letter-spacing: -0.005em;
-    text-transform: none;
     color: var(--color-sal);
     text-wrap: balance;
   }
-  .cabecera__texto {
-    display: grid;
-    gap: var(--space-4);
-    min-width: 0;
-    font-family: var(--font-text-v2);
-  }
-  .cabecera__texto p {
+
+  .apertura__texto {
+    grid-area: texto;
     margin: 0;
-    max-width: 52ch;
+    max-width: 54ch;
     font-size: 1.02rem;
     line-height: 1.6;
     color: var(--color-hueso);
   }
-  .cabecera__enlaces {
+
+  /* El retrato lleva los corchetes Teal del logo: misma familia visual. */
+  .apertura__retrato {
+    grid-area: retrato;
+    position: relative;
+    align-self: center;
+    margin: 0;
+    padding: 10px;
+  }
+  .apertura__retrato::before,
+  .apertura__retrato::after {
+    content: '';
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    border-color: var(--color-teal);
+    border-style: solid;
+  }
+  .apertura__retrato::before {
+    top: 0;
+    left: 0;
+    border-width: 3px 0 0 3px;
+  }
+  .apertura__retrato::after {
+    right: 0;
+    bottom: 0;
+    border-width: 0 3px 3px 0;
+  }
+  .apertura__retrato img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+  }
+
+  .apertura__firma {
+    grid-area: firma;
+    align-self: end;
+    display: grid;
+    gap: var(--space-1);
+    padding-top: var(--space-4);
+    border-top: 3px solid var(--color-horizonte);
+    max-width: 54ch;
+  }
+  .apertura__nombre {
+    margin: 0;
+    font-family: var(--font-display-v2);
+    font-weight: 800;
+    font-size: 1.5rem;
+    line-height: 1;
+    color: var(--color-blanco);
+  }
+  .apertura__roles {
+    margin: 0;
+    font-weight: 500;
+    font-size: 0.92rem;
+    color: var(--color-lila);
+  }
+  .apertura__enlaces {
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-2) var(--space-6);
+    margin: var(--space-2) 0 0;
   }
-  .cabecera__enlaces a {
+  .apertura__enlaces a {
     display: inline-flex;
     gap: 8px;
     font-weight: 700;
@@ -93,14 +165,38 @@
     text-decoration: none;
     color: var(--color-horizonte);
   }
-  .cabecera__enlaces a:hover {
+  .apertura__enlaces a:hover {
     color: var(--color-blanco);
   }
 
+  /* Celular y tablet: el retrato pasa a miniatura al lado de la firma. */
   @media (max-width: 860px) {
-    .cabecera {
-      grid-template-columns: minmax(0, 1fr);
-      padding: var(--space-8) 0 var(--space-6);
+    .apertura {
+      grid-template-columns: 96px minmax(0, 1fr);
+      grid-template-areas:
+        'marca marca'
+        'lema lema'
+        'texto texto'
+        'retrato firma';
+      grid-template-rows: none;
+      column-gap: var(--space-4);
+      padding: var(--space-6) 0 var(--space-8);
+    }
+    .apertura__retrato {
+      align-self: start;
+      padding: 5px;
+    }
+    .apertura__retrato::before,
+    .apertura__retrato::after {
+      width: 16px;
+      height: 16px;
+      border-width: 2px 0 0 2px;
+    }
+    .apertura__retrato::after {
+      border-width: 0 2px 2px 0;
+    }
+    .apertura__firma {
+      align-self: start;
     }
   }
 </style>
