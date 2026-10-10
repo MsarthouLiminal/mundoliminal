@@ -6,14 +6,25 @@ import SiteFooter from '../components/layout/SiteFooter.astro';
 interface Props {
   title: string;
   description?: string;
+  /** Páginas en construcción: que Google no las indexe todavía. */
+  noindex?: boolean;
 }
 
 const {
   title,
-  description = 'LIMINAL — Señales que importan.',
+  description = 'LIMINAL · Señales que importan.',
+  noindex = false,
 } = Astro.props;
 
-const fullTitle = title === 'LIMINAL' ? 'LIMINAL — Señales que importan.' : `${title} · LIMINAL`;
+const fullTitle = title === 'LIMINAL' ? 'LIMINAL · Señales que importan.' : `${title} · LIMINAL`;
+
+// URL canónica: siempre mundoliminal.com (sin www) y con barra final,
+// que es la forma en que Cloudflare Pages sirve cada página. Así Google
+// deja de tratar www/sin www y con/sin barra como páginas duplicadas.
+const ruta = Astro.url.pathname === '/' || Astro.url.pathname.endsWith('/')
+  ? Astro.url.pathname
+  : `${Astro.url.pathname}/`;
+const canonical = new URL(ruta, Astro.site ?? 'https://mundoliminal.com').href;
 ---
 
 <!doctype html>
@@ -24,6 +35,9 @@ const fullTitle = title === 'LIMINAL' ? 'LIMINAL — Señales que importan.' : `
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex, follow" />}
+    <meta property="og:url" content={canonical} />
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />

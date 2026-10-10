@@ -5,6 +5,8 @@ import LatestCard from '../components/home/LatestCard.astro';
 import Manifesto from '../components/home/Manifesto.astro';
 import CommercialBlock from '../components/home/CommercialBlock.astro';
 import TrazaSenal from '../components/visual/TrazaSenal.astro';
+import MonitorSenales from '../components/senales/MonitorSenales.astro';
+import { edicionVigente } from '../lib/senales';
 import {
   getYouTubeLatest,
   getSubstackLatest,
@@ -20,10 +22,14 @@ const settled = await Promise.allSettled([
 const [yt, sb, sp] = settled.map((r): LatestItem | null =>
   r.status === 'fulfilled' ? r.value : null,
 );
+
+const edicion = edicionVigente();
 ---
 
 <BaseLayout title="LIMINAL">
-  <HeroHome />
+  <HeroHome>
+    <MonitorSenales edicion={edicion} />
+  </HeroHome>
 
   <section class="latest" aria-labelledby="latest-heading">
     <h2 id="latest-heading" class="latest__title">Últimos de LIMINAL.</h2>

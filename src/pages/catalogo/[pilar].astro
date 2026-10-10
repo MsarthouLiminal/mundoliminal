@@ -16,7 +16,7 @@ interface Props {
 const { pillar } = Astro.props;
 ---
 
-<BaseLayout title={`Catálogo — ${pillar.label}`}>
+<BaseLayout title={`Catálogo — ${pillar.label}`} noindex>
   <article>
     <header>
       <p class="code">{pillar.code}</p>

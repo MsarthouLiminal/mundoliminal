@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import MonitorSenales from '../../components/senales/MonitorSenales.astro';
+import { ediciones, edicionVigente, fechaLarga, type Edicion } from '../../lib/senales';
+
+export function getStaticPaths() {
+  return ediciones().map((edicion) => ({ params: { edicion: edicion.id }, props: { edicion } }));
+}
+
+interface Props {
+  edicion: Edicion;
+}
+
+const { edicion } = Astro.props;
+const archivada = edicion.id !== edicionVigente().id;
+---
+
+<BaseLayout
+  title={`Señales, semana ${edicion.semana}`}
+  description={`Edición del ${fechaLarga(edicion.fechaEdicion)} del monitor semanal de LIMINAL.`}
+>
+  <p class="volver"><a href="/senales">← Señales: método y archivo</a></p>
+  <MonitorSenales edicion={edicion} titular={`Semana ${edicion.semana}`} archivada={archivada} />
+</BaseLayout>
+
+<style>
+  .volver {
+    font-family: var(--font-text-v2);
+    font-weight: 500;
+    font-size: 0.85rem;
+    color: var(--color-lila);
+  }
+</style>

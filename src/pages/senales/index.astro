@@ -1,0 +1,219 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import MonitorSenales from '../../components/senales/MonitorSenales.astro';
+import { ediciones, edicionVigente, contarSenales, fechaLarga } from '../../lib/senales';
+
+const vigente = edicionVigente();
+const archivo = ediciones();
+---
+
+<BaseLayout
+  title="Señales"
+  description="El monitor semanal de LIMINAL: minerales críticos, chokepoints, infraestructura de la IA y conflictos armados. Cada señal con fuente, fecha y lectura."
+>
+  <div class="pagina">
+    <header class="pagina__cab">
+      <p class="pagina__kick">Monitor semanal · Sale los lunes</p>
+      <h1>Señales</h1>
+      <p class="pagina__lede">
+        Las señales que mueven el poder en cuatro ejes: minerales críticos, chokepoints,
+        infraestructura de la IA y conflictos armados. Cada una con su fuente, su fecha y una lectura de LIMINAL.
+      </p>
+      <hr />
+    </header>
+
+    <MonitorSenales edicion={vigente} titular={`Semana ${vigente.semana}`} bajada={false} cierre={false} />
+
+    <section class="metodo" aria-labelledby="metodo-h">
+      <h2 id="metodo-h">Cómo se arma</h2>
+      <dl class="metodo__lista">
+        <div>
+          <dt>Qué entra</dt>
+          <dd>
+            Una señal entra si cumple al menos dos de cuatro condiciones: cambia algo material,
+            tiene un mecanismo que se puede explicar, se está contando mal o poco, o se puede ubicar en el mapa.
+          </dd>
+        </div>
+        <div>
+          <dt>Dato y lectura, separados</dt>
+          <dd>
+            Arriba va el hecho, con fuente y fecha. Abajo, después de la línea naranja, la lectura de LIMINAL.
+            Así se distingue qué pasó de qué significa.
+          </dd>
+        </div>
+        <div>
+          <dt>Tendencia e intensidad</dt>
+          <dd>
+            La tendencia dice hacia dónde va el fenómeno: escala, se sostiene o afloja. La intensidad mide cuánto
+            puede mover el tablero si sigue así. Las dos son criterio editorial, no una medición.
+          </dd>
+        </div>
+        <div>
+          <dt>Cadencia</dt>
+          <dd>
+            Una edición por semana, los lunes. Si algo cambia en el medio, la edición se actualiza y lo aclara.
+            Las ediciones anteriores quedan archivadas tal como salieron.
+          </dd>
+        </div>
+        <div>
+          <dt>Fuentes</dt>
+          <dd>
+            Organismos internacionales, agencias, medios de referencia y datos oficiales.
+            Cada señal enlaza a su fuente original o a la cobertura que la reporta.
+          </dd>
+        </div>
+      </dl>
+    </section>
+
+    <section class="ejes" aria-labelledby="ejes-h">
+      <h2 id="ejes-h">Los cuatro ejes</h2>
+      <ul class="ejes__lista">
+        {vigente.ejes.map((eje) => (
+          <li>
+            <a href={`#${eje.slug}`}>{eje.nombre}</a>
+            <p>{eje.alcance}</p>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="archivo" aria-labelledby="archivo-h">
+      <h2 id="archivo-h">Archivo de ediciones</h2>
+      <ol class="archivo__lista">
+        {archivo.map((e) => (
+          <li>
+            <a href={`/senales/${e.id}`}>
+              <span class="archivo__sem">Semana {e.semana}</span>
+              <span class="archivo__fecha">{fechaLarga(e.fechaEdicion)}</span>
+              <span class="archivo__n">{contarSenales(e)} señales{e.id === vigente.id ? ' · Vigente' : ''}</span>
+            </a>
+          </li>
+        ))}
+      </ol>
+    </section>
+
+    <aside class="sub" aria-labelledby="sub-h">
+      <h2 id="sub-h">Recibí Señales cada lunes</h2>
+      <p>Las señales de la semana, la lectura completa y lo que quedó afuera del monitor. Llega por correo.</p>
+      <a class="sub__boton" href="https://mundoliminal.substack.com/subscribe" target="_blank" rel="noopener">
+        Suscribirme en Substack <span aria-hidden="true">→</span>
+      </a>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .pagina {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-16);
+    font-family: var(--font-text-v2);
+    color: var(--color-hueso);
+  }
+  .pagina h1,
+  .pagina h2 {
+    font-family: var(--font-display-v2);
+    font-weight: 800;
+    text-transform: none;
+    letter-spacing: -0.005em;
+    color: var(--color-blanco);
+  }
+  .pagina__cab { display: grid; gap: var(--space-3); }
+  .pagina__kick {
+    font-weight: 500;
+    font-size: 0.82rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-lila);
+  }
+  .pagina__cab h1 { font-size: clamp(3.2rem, 9vw, 6.5rem); line-height: 0.88; }
+  .pagina__lede { max-width: 60ch; font-size: clamp(1.05rem, 1.6vw, 1.25rem); line-height: 1.5; }
+  .pagina__cab hr { height: 3px; border: 0; margin: var(--space-4) 0 0; background: var(--color-horizonte); }
+
+  /* El monitor ya trae su propia apertura: acá le sacamos el aire de arriba. */
+  .pagina :global(.senales__intro) { padding-top: 0; }
+
+  .metodo h2,
+  .ejes h2,
+  .archivo h2 { font-size: 2rem; line-height: 1; margin-bottom: var(--space-6); }
+
+  .metodo__lista {
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: var(--space-6) var(--space-8);
+    border-top: 1px solid var(--color-teal);
+    padding-top: var(--space-6);
+  }
+  .metodo__lista dt {
+    font-family: var(--font-display-v2);
+    font-weight: 800;
+    font-size: 1.35rem;
+    line-height: 1.05;
+    color: var(--color-blanco);
+    margin-bottom: var(--space-2);
+  }
+  .metodo__lista dd { margin: 0; font-size: 0.94rem; line-height: 1.6; }
+
+  .ejes__lista {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--space-6);
+  }
+  .ejes__lista li { border-top: 3px solid var(--color-horizonte); padding-top: var(--space-3); }
+  .ejes__lista a {
+    font-family: var(--font-display-v2);
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: var(--color-blanco);
+    text-decoration: none;
+  }
+  .ejes__lista a:hover { color: var(--color-horizonte); }
+  .ejes__lista p { margin-top: var(--space-2); font-size: 0.88rem; line-height: 1.5; color: var(--color-lila); }
+
+  .archivo__lista { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--color-teal); }
+  .archivo__lista a {
+    display: grid;
+    grid-template-columns: 9rem minmax(0, 1fr) auto;
+    gap: var(--space-4);
+    align-items: baseline;
+    padding: var(--space-4) 0;
+    border-bottom: 1px solid var(--color-teal);
+    text-decoration: none;
+    color: var(--color-hueso);
+  }
+  .archivo__lista a:hover { color: var(--color-blanco); }
+  .archivo__sem { font-family: var(--font-display-v2); font-weight: 800; font-size: 1.3rem; color: var(--color-blanco); }
+  .archivo__fecha { font-variant-numeric: tabular-nums; }
+  .archivo__n { font-weight: 500; font-size: 0.8rem; color: var(--color-lila); }
+  @media (max-width: 560px) {
+    .archivo__lista a { grid-template-columns: minmax(0, 1fr); gap: var(--space-1); }
+  }
+
+  .sub {
+    display: grid;
+    gap: var(--space-3);
+    max-width: 640px;
+    padding: var(--space-8);
+    background: var(--color-selva);
+    border: 1px solid var(--color-teal);
+  }
+  .sub h2 { font-size: 2rem; line-height: 1; }
+  .sub__boton {
+    justify-self: start;
+    display: inline-flex;
+    gap: 10px;
+    padding: 14px 20px;
+    background: var(--color-horizonte);
+    color: var(--color-vacio);
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+  .sub__boton:hover { background: var(--color-blanco); color: var(--color-vacio); }
+</style>

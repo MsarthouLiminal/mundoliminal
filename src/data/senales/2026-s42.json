@@ -1,0 +1,230 @@
+{
+  "id": "2026-s42",
+  "semana": 42,
+  "fechaEdicion": "2026-10-12",
+  "corteDatos": "2026-10-10",
+  "ejes": [
+    {
+      "id": "min",
+      "slug": "minerales",
+      "nombre": "Minerales críticos",
+      "alcance": "Tierras raras, cobre, cobalto, litio, uranio. Quién controla el acceso y a qué precio.",
+      "senales": [
+        {
+          "n": 1,
+          "titulo": "China abre un canal verde de tierras raras para Europa",
+          "lugar": "Beijing / Bruselas",
+          "lugarMapa": "Beijing",
+          "lat": 39.9,
+          "lon": 116.41,
+          "etiqueta": "der",
+          "arco": { "lat": 50.85, "lon": 4.35, "nombre": "Bruselas" },
+          "fecha": "2026-10-10",
+          "hecho": "Beijing promete acelerar licencias de exportación de tierras raras e imanes hacia la UE. Bruselas, destrabar casos de doble uso. La tregua comercial con Washington vence el 10 de enero.",
+          "lectura": "China dosifica el acceso por bloque: afloja con Europa y mantiene la presión sobre Estados Unidos.",
+          "tendencia": "afloja",
+          "intensidad": 3,
+          "fuente": {
+            "nombre": "SMM (Shanghai Metals Market)",
+            "url": "https://news.metal.com/newscontent/104149330-china-and-eu-agree-on-enhancing-rare-earth-supply-chain-stability-and-licensing-cooperation"
+          }
+        },
+        {
+          "n": 2,
+          "titulo": "98 restricciones nuevas al comercio de minerales críticos desde 2020",
+          "lugar": "RDC · China · Indonesia",
+          "lugarMapa": "Cinturón del cobre, RDC",
+          "lat": -11.66,
+          "lon": 27.48,
+          "etiqueta": "der",
+          "fecha": "2026-10-08",
+          "hecho": "Relevamiento de UNCTAD hasta mayo de 2026: 37 licencias, 31 impuestos a la exportación, 29 prohibiciones y una cuota. Lideran RDC (18), China (16) e Indonesia (12).",
+          "lectura": "El proteccionismo minero dejó de ser la excepción. Ya es la regla del mercado.",
+          "tendencia": "escala",
+          "intensidad": 3,
+          "fuente": {
+            "nombre": "UNCTAD vía Infobae",
+            "url": "https://www.infobae.com/movant/2026/10/08/casi-100-nuevas-restricciones-reconfiguran-el-comercio-global-de-minerales-criticos/"
+          },
+          "analisis": {
+            "titulo": "Uruguay en la mesa de las tierras raras",
+            "url": "https://mundoliminal.substack.com/p/uruguay-tiene-lugar-con-un-potencial"
+          }
+        }
+      ],
+      "tambienTitulo": "También en el radar",
+      "tambien": [
+        { "etiqueta": "9 oct", "texto": "La UE designó 46 proyectos estratégicos y puso en vía rápida el cobre de KGHM en Polonia (USD 2.400 millones)." },
+        { "etiqueta": "8 oct", "texto": "Antofagasta: la huelga podría recortar hasta la mitad del cobre en noviembre." },
+        { "etiqueta": "8 oct", "texto": "Zambia negocia un acuerdo de minerales con Estados Unidos." }
+      ]
+    },
+    {
+      "id": "cho",
+      "slug": "chokepoints",
+      "nombre": "Chokepoints",
+      "alcance": "Estrechos, puertos, aranceles y cadenas de suministro. Dónde se traba el comercio.",
+      "senales": [
+        {
+          "n": 3,
+          "titulo": "Ormuz: el crudo vuelve, los ataques también",
+          "lugar": "Estrecho de Ormuz",
+          "lugarMapa": "Estrecho de Ormuz",
+          "lat": 26.57,
+          "lon": 56.25,
+          "etiqueta": "der",
+          "fecha": "2026-10-06",
+          "hecho": "Desde el 2 de octubre hay al menos un ataque diario a buques en Ormuz o el golfo de Adén. El crudo de Medio Oriente ya supera el nivel prebélico: 18,3 millones de barriles diarios. Brent a USD 99,57.",
+          "lectura": "El flujo se recuperó y la seguridad no. La diferencia ya se paga en el precio y en los fletes.",
+          "tendencia": "escala",
+          "intensidad": 3,
+          "fuente": {
+            "nombre": "Al Jazeera, con datos de Kpler y UKMTO",
+            "url": "https://www.aljazeera.com/news/2026/10/6/hormuz-ship-attacks-surge-are-increased-oil-exports-sustainable"
+          }
+        },
+        {
+          "n": 4,
+          "titulo": "Déficit récord pese a los aranceles; China cae al cuarto puesto",
+          "lugar": "Washington",
+          "lugarMapa": "Washington",
+          "lat": 38.9,
+          "lon": -77.04,
+          "etiqueta": "der",
+          "fecha": "2026-10-06",
+          "hecho": "Estados Unidos cerró agosto con un déficit de USD 105.600 millones, el mayor desde antes de los aranceles. Importaciones récord. China quedó detrás de México, Canadá y Taiwán como proveedor.",
+          "lectura": "El arancel no achicó el déficit. Le cambió el origen.",
+          "tendencia": "escala",
+          "intensidad": 2,
+          "fuente": {
+            "nombre": "Oficina del Censo vía First Trust",
+            "url": "https://www.ftportfolios.com/Commentary/EconomicResearch/2026/10/6/the-trade-deficit-in-goods-and-services-came-in-at-105.6-billion-in-august"
+          },
+          "analisis": {
+            "titulo": "La moral con arancel es una vieja excusa",
+            "url": "https://mundoliminal.substack.com/p/la-moral-con-arancel-es-una-vieja"
+          }
+        }
+      ],
+      "tambienTitulo": "También en el radar",
+      "tambien": [
+        { "etiqueta": "6 oct", "texto": "Cerca del 40% de las exportaciones del Golfo ya evita Ormuz por oleoducto o trasbordo (Kpler)." },
+        { "etiqueta": "9 oct", "texto": "Abrió la consulta pública previa a la revisión del T-MEC. Los comentarios vencen el 12 de enero de 2027." }
+      ]
+    },
+    {
+      "id": "ia",
+      "slug": "ia",
+      "nombre": "Infraestructura IA",
+      "alcance": "Data centers, chips, energía y agua. El cuerpo físico de la IA y quién lo decide.",
+      "senales": [
+        {
+          "n": 5,
+          "titulo": "Los data centers llegan a la boleta: 34 votaciones en noviembre",
+          "lugar": "Ohio · Texas · Pensilvania",
+          "lugarMapa": "Ector County, Texas",
+          "lat": 31.87,
+          "lon": -102.54,
+          "etiqueta": "izq",
+          "fecha": "2026-10-01",
+          "hecho": "Hay 34 medidas locales sobre data centers en ocho estados para las elecciones de medio término. 31 nacieron de firmas vecinales. En 2026 ya se cancelaron más de 50 proyectos por oposición comunitaria.",
+          "lectura": "La IA perdió el consenso donde se enchufa. La geografía de los data centers ahora se vota.",
+          "tendencia": "escala",
+          "intensidad": 3,
+          "fuente": {
+            "nombre": "S&P Global, con datos de Ballotpedia",
+            "url": "https://www.spglobal.com/energy/en/news-research/latest-news/electric-power/100126-data-center-backlash-shapes-midterm-ballots-campaigns-across-us"
+          },
+          "analisis": {
+            "titulo": "El día que las Big Tech pidieron auxilio",
+            "url": "https://mundoliminal.substack.com/p/el-dia-que-las-big-tech-pidieron"
+          }
+        },
+        {
+          "n": 6,
+          "titulo": "Drones ucranianos dejan fuera de servicio un data center de Yandex",
+          "lugar": "Sasovo, Rusia",
+          "lugarMapa": "Sasovo, región de Riazán",
+          "lat": 54.35,
+          "lon": 41.92,
+          "etiqueta": "der",
+          "fecha": "2026-10-08",
+          "hecho": "El centro de Sasovo, uno de los cinco grandes de Yandex, se incendió. En 2021 alojaba dos de sus tres supercomputadoras para entrenar YandexGPT. Reuters lo registra como el primer gran ataque a un nodo de datos ruso en la guerra.",
+          "lectura": "El data center ya es blanco militar. La infraestructura de la IA entró al mapa de la guerra.",
+          "tendencia": "escala",
+          "intensidad": 3,
+          "fuente": {
+            "nombre": "Reuters vía The Star",
+            "url": "https://www.thestar.com.my/news/world/2026/10/08/drones-hit-yandex-data-centre-in-first-major-attack-on-russian-data-hub"
+          }
+        }
+      ],
+      "tambienTitulo": "También en el radar",
+      "tambien": [
+        { "etiqueta": "6 oct", "texto": "Google firmó 3,6 GW con Constellation, 890 MW de origen nuclear, para alimentar sus data centers." },
+        { "etiqueta": "1 oct", "texto": "Pensilvania tiene 70 data centers activos y 71 propuestos o en obra." }
+      ]
+    },
+    {
+      "id": "con",
+      "slug": "conflictos",
+      "nombre": "Conflictos",
+      "alcance": "Guerras activas, cambios de fase y lo que derraman sobre la región.",
+      "senales": [
+        {
+          "n": 7,
+          "titulo": "Un año de alto el fuego con 1.471 muertos",
+          "lugar": "Gaza",
+          "lugarMapa": "Gaza",
+          "lat": 31.5,
+          "lon": 34.47,
+          "etiqueta": "izq",
+          "fecha": "2026-10-09",
+          "hecho": "La tregua cumple un año el 10 de octubre. Desde entonces murieron al menos 1.471 palestinos y 5.189 resultaron heridos. Más de 100 organizaciones, entre ellas Amnistía y Oxfam, dicen que existe solo de nombre.",
+          "lectura": "Cuatro muertos por día, en promedio, durante la tregua. La guerra bajó de escala y siguió.",
+          "tendencia": "estable",
+          "intensidad": 3,
+          "fuente": {
+            "nombre": "Al Jazeera · Amnistía Internacional",
+            "url": "https://www.aljazeera.com/news/2026/10/9/gaza-ceasefire-exists-in-name-only-more-than-100-ngos-say"
+          }
+        },
+        {
+          "n": 8,
+          "titulo": "Rusia le pone precio a la tregua energética",
+          "lugar": "Kiev",
+          "lugarMapa": "Kiev",
+          "lat": 50.45,
+          "lon": 30.52,
+          "etiqueta": "izq",
+          "fecha": "2026-10-09",
+          "hecho": "Un ataque ruso dejó a Kiev con apagones el 8 de octubre. Moscú pide alivio de sanciones a cambio de dejar de golpear la red. Washington busca una reunión trilateral a fines de octubre.",
+          "lectura": "La red eléctrica es moneda de negociación. Moscú la cobra antes de firmar.",
+          "tendencia": "escala",
+          "intensidad": 3,
+          "fuente": {
+            "nombre": "The Kyiv Independent",
+            "url": "https://kyivindependent.com/putin-puts-a-price-on-trumps-ukraine-energy-truce/"
+          }
+        }
+      ],
+      "tambienTitulo": "Focos en observación",
+      "tambien": [
+        { "etiqueta": "Sudán · 7 oct", "texto": "Al Burhan descarta negociar con las RSF y promete recuperar todo el territorio." },
+        { "etiqueta": "Irán · 6 oct", "texto": "La guerra con EE.UU. e Israel cumple siete meses. Washington mantiene el bloqueo a los puertos iraníes." },
+        { "etiqueta": "Yemen · 6 oct", "texto": "Los hutíes atacan buques vinculados a Arabia Saudí en el golfo de Adén." }
+      ]
+    }
+  ],
+  "focos": [
+    { "nombre": "Sudán", "lugarMapa": "Jartum, Sudán", "lat": 15.5, "lon": 32.56, "etiqueta": "izq", "eje": "con" },
+    { "nombre": "Irán", "lugarMapa": "Teherán, Irán", "lat": 35.69, "lon": 51.39, "etiqueta": "arriba", "eje": "con" },
+    { "nombre": "Yemen", "lugarMapa": "Adén, Yemen", "lat": 12.79, "lon": 45.02, "etiqueta": "der", "eje": "con" }
+  ],
+  "agenda": [
+    { "fecha": "2026-10-15", "texto": "15 oct", "eje": "Infraestructura IA", "detalle": "TSMC presenta resultados del tercer trimestre. Es el termómetro de la demanda de chips para IA." },
+    { "texto": "Fin de oct", "eje": "Conflictos", "detalle": "Washington busca una reunión trilateral con Ucrania y Rusia." },
+    { "fecha": "2026-11-03", "texto": "3 nov", "eje": "Infraestructura IA", "detalle": "Elecciones de medio término en Estados Unidos, con 34 votaciones locales sobre data centers." },
+    { "fecha": "2027-01-10", "texto": "10 ene", "eje": "Minerales · Chokepoints", "detalle": "Vence la tregua comercial entre Estados Unidos y China, extendida hasta el 10 de enero de 2027." }
+  ]
+}

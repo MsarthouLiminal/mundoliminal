@@ -1,0 +1,847 @@
+---
+/**
+ * MonitorSenales: el monitor semanal de LIMINAL.
+ *
+ * Panel de instrumento en Brand Kit v2.1: carta equirectangular con las
+ * señales numeradas, tablero de cuatro ejes y agenda de "qué observar".
+ * Todo el contenido sale de un archivo de src/data/senales/.
+ */
+import { MAPA_W, MAPA_H, TIERRA, GRILLA, ECUADOR } from '../../data/mapa-mundo';
+import {
+  type Edicion,
+  contarSenales,
+  fechaCorta,
+  fechaLarga,
+  fechaSinAnio,
+  proyectar,
+  coordenadas,
+  arco,
+  recorteMovil,
+  TENDENCIA,
+  INTENSIDAD,
+} from '../../lib/senales';
+
+interface Props {
+  edicion: Edicion;
+  /** Muestra el titular y la bajada del monitor. */
+  intro?: boolean;
+  /** Titular del bloque cuando hay intro. */
+  titular?: string;
+  /** Muestra la bajada que explica los cuatro ejes. */
+  bajada?: boolean;
+  /** Muestra el cierre con método resumido y suscripción. */
+  cierre?: boolean;
+  /** Edición vieja: lo aclara arriba. */
+  archivada?: boolean;
+}
+
+const {
+  edicion,
+  intro = true,
+  titular = 'Cuatro ejes donde se juega el poder.',
+  bajada = true,
+  cierre = true,
+  archivada = false,
+} = Astro.props;
+
+const total = contarSenales(edicion);
+const senales = edicion.ejes.flatMap((eje) => eje.senales.map((s) => ({ ...s, eje: eje.id })));
+const puntos = senales.map((s) => ({ s, xy: proyectar(s.lat, s.lon) }));
+const focos = edicion.focos.map((f) => ({ f, xy: proyectar(f.lat, f.lon) }));
+const arcos = senales
+  .filter((s) => s.arco)
+  .map((s) => {
+    const a = proyectar(s.lat, s.lon);
+    const b = proyectar(s.arco!.lat, s.arco!.lon);
+    return { s, b, d: arco(a, b) };
+  });
+const recorte = recorteMovil([...puntos.map((p) => p.xy), ...focos.map((f) => f.xy), ...arcos.map((a) => a.b)]);
+const etiquetaArco = arcos.length ? `Canal verde ${arcos[0].s.lugar}` : '';
+
+function lado(l: string | undefined) {
+  if (l === 'izq') return { x: -10, y: 5, anchor: 'end' };
+  if (l === 'arriba') return { x: 0, y: -9, anchor: 'middle' };
+  return { x: 10, y: 5, anchor: 'start' };
+}
+---
+
+<section class="senales" id="senales" aria-labelledby="senales-titulo" data-senales>
+  {intro && (
+    <header class="senales__intro">
+      <p class="senales__kick">Señales · Semana {edicion.semana}</p>
+      <h2 id="senales-titulo" class="senales__h">{titular}</h2>
+      {bajada && (
+        <p class="senales__lede">
+          LIMINAL monitorea minerales críticos, chokepoints, infraestructura de la IA y conflictos armados.
+          {archivada ? 'Esto es lo que vimos esa semana.' : 'Esto es lo que vemos esta semana.'}
+        </p>
+      )}
+      <p class="senales__dateline">
+        {archivada && <span class="senales__archivo">Edición archivada · </span>}
+        Edición del {fechaLarga(edicion.fechaEdicion)} · Datos al {fechaSinAnio(edicion.corteDatos)}
+      </p>
+      <hr class="senales__umbral" />
+    </header>
+  )}
+  {!intro && <h2 id="senales-titulo" class="visually-hidden">Monitor Señales, semana {edicion.semana}</h2>}
+
+  <div class="panel">
+    <div class="panel__in">
+      <div class="carta">
+        <div class="carta__cab">
+          <div class="lectura-mapa" aria-live="polite">
+            <b data-ro-lugar>{total} señales · {edicion.focos.length} focos en observación</b>
+            <span data-ro-coord>Tocá un punto del mapa o una señal</span>
+          </div>
+          <div class="leyenda">
+            <span><i class="lg-punto"></i>Señal de la semana</span>
+            <span><i class="lg-anillo"></i>Foco en observación</span>
+            {etiquetaArco && <span><i class="lg-arco"></i>{etiquetaArco}</span>}
+          </div>
+        </div>
+        <div class="carta__marco">
+          <svg
+            class="mapa"
+            viewBox={`0 0 ${MAPA_W} ${MAPA_H}`}
+            data-vb={`0 0 ${MAPA_W} ${MAPA_H}`}
+            data-vb-movil={recorte}
+            role="img"
+            aria-label={`Mapa con las ${total} señales de la semana y ${edicion.focos.length} focos en observación`}
+          >
+            <path class="mapa__grilla" d={GRILLA} />
+            <path class="mapa__tierra" d={TIERRA} />
+            <path class="mapa__ecuador" d={ECUADOR} />
+            {arcos.map((a) => (
+              <>
+                <path class="mapa__arco" data-eje={a.s.eje} d={a.d} />
+                <circle class="mapa__extremo" data-eje={a.s.eje} cx={a.b[0]} cy={a.b[1]} r="2.6" />
+              </>
+            ))}
+            {focos.map(({ f, xy }) => {
+              const l = lado(f.etiqueta);
+              return (
+                <g class="foco" data-eje={f.eje} data-lugar={f.lugarMapa} data-coord={coordenadas(f.lat, f.lon)} transform={`translate(${xy[0]} ${xy[1]})`}>
+                  <g class="esc">
+                    <circle r="4.5" />
+                    <text x={l.x === 10 ? 8 : l.x === -10 ? -8 : 0} y={l.y} text-anchor={l.anchor}>{f.nombre.toUpperCase()}</text>
+                  </g>
+                </g>
+              );
+            })}
+            {puntos.map(({ s, xy }) => {
+              const l = lado(s.etiqueta);
+              return (
+                <g
+                  class="punto"
+                  data-n={s.n}
+                  data-eje={s.eje}
+                  transform={`translate(${xy[0]} ${xy[1]})`}
+                  tabindex="0"
+                  role="button"
+                  aria-label={`Señal ${s.n}, ${s.lugarMapa}`}
+                >
+                  <g class="esc">
+                    <circle class="punto__pulso" r="6" />
+                    <circle class="punto__nucleo" r="5.5" />
+                    <text x={l.x} y={l.y} text-anchor={l.anchor}>{s.n}</text>
+                  </g>
+                </g>
+              );
+            })}
+          </svg>
+        </div>
+      </div>
+
+      <div class="pestanas" role="tablist" aria-label="Filtrar por eje">
+        <button class="pestana" role="tab" type="button" data-f="todas" data-hash="senales" aria-selected="true">Todas <span>{total}</span></button>
+        {edicion.ejes.map((eje) => (
+          <button class="pestana" role="tab" type="button" data-f={eje.id} data-hash={eje.slug} aria-selected="false">
+            {eje.nombre} <span>{eje.senales.length}</span>
+          </button>
+        ))}
+      </div>
+
+      <div class="tablero" data-tablero>
+        {edicion.ejes.map((eje) => (
+          <section class="eje" data-eje={eje.id} aria-labelledby={`eje-${eje.id}`}>
+            <header class="eje__cab">
+              <h3 id={`eje-${eje.id}`}>{eje.nombre}</h3>
+              <p>{eje.alcance}</p>
+            </header>
+            <div class="eje__senales">
+              {eje.senales.map((s) => (
+                <article class="senal" id={`senal-${s.n}`} data-n={s.n} data-lugar={s.lugarMapa} data-coord={coordenadas(s.lat, s.lon)}>
+                  <div class="senal__meta">
+                    <button class="senal__num" type="button" aria-label={`Ver señal ${s.n} en el mapa`}>{s.n}</button>
+                    <span>{s.lugar}</span>
+                    <time datetime={s.fecha}>{fechaCorta(s.fecha)}</time>
+                  </div>
+                  <h4>{s.titulo}</h4>
+                  <p class="senal__hecho">{s.hecho}</p>
+                  <p class="senal__lectura">{s.lectura}</p>
+                  <div class="senal__pie">
+                    <span>{TENDENCIA[s.tendencia]}</span>
+                    <span class="intensidad" aria-label={`Intensidad ${INTENSIDAD[s.intensidad].toLowerCase()}`}>
+                      {[1, 2, 3].map((i) => <i class:list={[{ lleno: i <= s.intensidad }]}></i>)}
+                      <em>{INTENSIDAD[s.intensidad]}</em>
+                    </span>
+                  </div>
+                  <p class="senal__fuente">
+                    <a href={s.fuente.url} target="_blank" rel="noopener">{s.fuente.nombre} · {fechaCorta(s.fecha)}</a>
+                  </p>
+                  {s.analisis && (
+                    <a class="senal__analisis" href={s.analisis.url} target="_blank" rel="noopener">
+                      Análisis LIMINAL: {s.analisis.titulo} <b aria-hidden="true">→</b>
+                    </a>
+                  )}
+                </article>
+              ))}
+            </div>
+            {eje.tambien.length > 0 && (
+              <div class="eje__tambien">
+                <h5>{eje.tambienTitulo}</h5>
+                <ul>
+                  {eje.tambien.map((t) => (
+                    <li><span>{t.etiqueta}</span> · {t.texto}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </section>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  {edicion.agenda.length > 0 && (
+    <div class="agenda">
+      <h3 class="senales__sec">Qué observar</h3>
+      <ol class="agenda__linea">
+        {edicion.agenda.map((a) => (
+          <li>
+            <span class="agenda__eje">{a.eje}</span>
+            {a.fecha ? <time datetime={a.fecha}>{a.texto}</time> : <time>{a.texto}</time>}
+            <p>{a.detalle}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  )}
+
+  {cierre && (
+    <div class="cierre">
+      <div class="cierre__metodo">
+        <h3 class="senales__sec">Cómo se arma Señales</h3>
+        <p>
+          Una señal entra al monitor si cambia algo material y tiene un mecanismo que se puede explicar.
+          Cada una lleva fuente con nombre y fecha. La lectura es de LIMINAL y está separada del dato.
+        </p>
+        <p>La edición sale los lunes. Si algo se rompe en la semana, la señal se actualiza y lo dice.</p>
+        <a class="cierre__mas" href="/senales">Método completo y archivo de ediciones <b aria-hidden="true">→</b></a>
+      </div>
+      <aside class="cierre__sub" aria-labelledby="senales-sub">
+        <h3 id="senales-sub">Recibí Señales cada lunes</h3>
+        <p>Las señales de la semana, la lectura completa y lo que quedó afuera del monitor. Llega por correo.</p>
+        <a class="cierre__boton" href="https://mundoliminal.substack.com/subscribe" target="_blank" rel="noopener">
+          Suscribirme en Substack <span aria-hidden="true">→</span>
+        </a>
+        <small>Gratis. Se envía desde mundoliminal.substack.com.</small>
+      </aside>
+    </div>
+  )}
+</section>
+
+<style>
+  .senales {
+    font-family: var(--font-text-v2);
+    color: var(--color-hueso);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-12);
+    scroll-margin-top: var(--space-6);
+  }
+  .senales :global(a) {
+    text-decoration: none;
+  }
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+
+  /* ---------- Apertura ---------- */
+  .senales__intro {
+    display: grid;
+    gap: var(--space-3);
+    padding-top: var(--space-12);
+  }
+  .senales__kick,
+  .senales__dateline {
+    font-family: var(--font-text-v2);
+    font-weight: 500;
+    font-size: 0.82rem;
+    color: var(--color-lila);
+    font-variant-numeric: tabular-nums;
+  }
+  .senales__kick {
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .senales__archivo {
+    color: var(--color-horizonte);
+  }
+  .senales__h {
+    font-family: var(--font-display-v2);
+    font-weight: 800;
+    font-size: clamp(2.6rem, 7vw, 5.4rem);
+    line-height: 0.9;
+    letter-spacing: -0.01em;
+    text-transform: none;
+    color: var(--color-blanco);
+    text-wrap: balance;
+    max-width: 14ch;
+  }
+  .senales__lede {
+    margin-top: var(--space-2);
+    font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+    line-height: 1.5;
+    max-width: 58ch;
+  }
+  .senales__umbral {
+    height: 3px;
+    border: 0;
+    margin: var(--space-4) 0 0;
+    background: var(--color-horizonte);
+  }
+  .senales__sec {
+    font-family: var(--font-display-v2);
+    font-weight: 800;
+    font-size: 2rem;
+    line-height: 1;
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--color-blanco);
+    margin-bottom: var(--space-6);
+  }
+
+  /* ---------- Panel a sangre ---------- */
+  .panel {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    background: var(--color-selva);
+    border-block: 1px solid var(--color-teal);
+  }
+  .panel__in {
+    max-width: calc(var(--container-max) + 2 * var(--space-8));
+    margin: 0 auto;
+    padding: var(--space-8) var(--space-8) var(--space-12);
+    display: grid;
+    gap: var(--space-6);
+  }
+
+  /* ---------- Carta ---------- */
+  .carta__cab {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: var(--space-3) var(--space-6);
+    margin-bottom: var(--space-3);
+    font-weight: 500;
+    font-size: 0.78rem;
+    color: var(--color-lila);
+    font-variant-numeric: tabular-nums;
+  }
+  .lectura-mapa {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: var(--space-1) var(--space-3);
+    min-width: 0;
+  }
+  .lectura-mapa b {
+    font-family: var(--font-display-v2);
+    font-weight: 800;
+    font-size: 1.15rem;
+    color: var(--color-blanco);
+  }
+  .leyenda {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+  }
+  .leyenda span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .lg-punto,
+  .lg-anillo {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+  }
+  .lg-punto { background: var(--color-horizonte); }
+  .lg-anillo { border: 1.5px solid var(--color-lila); }
+  .lg-arco { width: 18px; border-top: 1.5px dashed var(--color-horizonte); }
+
+  .carta__marco {
+    border: 1px solid var(--color-teal);
+    background: var(--color-vacio);
+  }
+  .mapa {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .mapa__tierra { fill: var(--color-bosque); }
+  .mapa__grilla { fill: none; stroke: var(--color-teal); stroke-width: 0.6; stroke-opacity: 0.35; }
+  .mapa__ecuador { fill: none; stroke: var(--color-teal); stroke-width: 0.8; stroke-dasharray: 3 4; stroke-opacity: 0.8; }
+  .mapa__arco { fill: none; stroke: var(--color-horizonte); stroke-width: 1.2; stroke-dasharray: 4 4; stroke-opacity: 0.75; }
+  .mapa__extremo { fill: var(--color-horizonte); }
+  .foco circle { fill: none; stroke: var(--color-lila); stroke-width: 1.5; }
+  .foco text {
+    fill: var(--color-lila);
+    font: 700 9px var(--font-text-v2);
+    letter-spacing: 0.06em;
+    paint-order: stroke;
+    stroke: var(--color-vacio);
+    stroke-width: 3px;
+  }
+  .punto { cursor: pointer; outline: none; }
+  .punto__nucleo { fill: var(--color-horizonte); stroke: var(--color-vacio); stroke-width: 1.5; }
+  .punto__pulso {
+    fill: var(--color-horizonte);
+    opacity: 0.25;
+    transform-origin: 0 0;
+    animation: senal-pulso 2.6s ease-out infinite;
+  }
+  .punto text {
+    fill: var(--color-blanco);
+    font: 700 13px var(--font-text-v2);
+    paint-order: stroke;
+    stroke: var(--color-vacio);
+    stroke-width: 4px;
+  }
+  .punto.activo .punto__nucleo,
+  .punto:focus-visible .punto__nucleo { stroke: var(--color-blanco); stroke-width: 2; }
+  .punto.activo text { fill: var(--color-horizonte); }
+  .atenuado { opacity: 0.18; }
+  @keyframes senal-pulso {
+    0% { transform: scale(0.6); opacity: 0.45; }
+    80%, 100% { transform: scale(2.4); opacity: 0; }
+  }
+  @media (max-width: 640px) {
+    .punto .esc,
+    .foco .esc { transform: scale(1.7); }
+  }
+
+  /* ---------- Pestañas ---------- */
+  .pestanas {
+    display: flex;
+    gap: 6px;
+    overflow-x: auto;
+    padding-bottom: 2px;
+  }
+  .pestana {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: 10px 14px;
+    background: transparent;
+    border: 1px solid var(--color-teal);
+    color: var(--color-hueso);
+    font: 500 0.82rem/1 var(--font-text-v2);
+    cursor: pointer;
+  }
+  .pestana span { color: var(--color-lila); font-variant-numeric: tabular-nums; }
+  .pestana[aria-selected='true'] {
+    background: var(--color-horizonte);
+    border-color: var(--color-horizonte);
+    color: var(--color-vacio);
+    font-weight: 700;
+  }
+  .pestana[aria-selected='true'] span { color: var(--color-vacio); }
+  .pestana:focus-visible,
+  .senal__num:focus-visible,
+  .senales a:focus-visible { outline: 2px solid var(--color-horizonte); outline-offset: 3px; }
+
+  /* ---------- Tablero ---------- */
+  .tablero {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    border-top: 1px solid var(--color-teal);
+  }
+  .eje {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: 22px 20px 8px;
+    border-right: 1px solid var(--color-teal);
+  }
+  .eje:last-child { border-right: 0; }
+  .eje[hidden] { display: none; }
+  .eje__cab h3 {
+    font-family: var(--font-display-v2);
+    font-weight: 800;
+    font-size: 1.75rem;
+    line-height: 0.95;
+    letter-spacing: -0.005em;
+    text-transform: none;
+    color: var(--color-blanco);
+  }
+  .eje__cab p {
+    margin-top: var(--space-2);
+    font-weight: 500;
+    font-size: 0.78rem;
+    line-height: 1.45;
+    color: var(--color-lila);
+  }
+  .eje__senales {
+    display: grid;
+    margin-top: var(--space-4);
+  }
+  .senal {
+    display: grid;
+    gap: 10px;
+    align-content: start;
+    padding: 18px 12px 20px;
+    margin-inline: -12px;
+    border-top: 1px solid var(--color-teal);
+    transition: background 0.2s;
+    scroll-margin-top: var(--space-16);
+  }
+  .senal:hover,
+  .senal.activo { background: var(--color-bosque); }
+  .senal__meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+    font-size: 0.76rem;
+    color: var(--color-lila);
+    font-variant-numeric: tabular-nums;
+  }
+  .senal__meta time { margin-left: auto; white-space: nowrap; }
+  .senal__num {
+    flex: 0 0 auto;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    border: 1.5px solid var(--color-horizonte);
+    background: transparent;
+    color: var(--color-horizonte);
+    font: 700 0.75rem/1 var(--font-text-v2);
+    cursor: pointer;
+  }
+  .senal.activo .senal__num { background: var(--color-horizonte); color: var(--color-vacio); }
+  .senal h4 {
+    font-family: var(--font-display-v2);
+    font-weight: 800;
+    font-size: 1.45rem;
+    line-height: 1.02;
+    letter-spacing: -0.005em;
+    text-transform: none;
+    color: var(--color-blanco);
+    text-wrap: balance;
+  }
+  .senal__hecho { font-size: 0.875rem; line-height: 1.55; }
+  .senal__lectura {
+    display: grid;
+    gap: var(--space-2);
+    font-weight: 500;
+    font-size: 0.94rem;
+    line-height: 1.45;
+    color: var(--color-blanco);
+  }
+  .senal__lectura::before {
+    content: '';
+    width: 28px;
+    height: 2px;
+    background: var(--color-horizonte);
+  }
+  .senal__pie {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px;
+    font: 700 0.7rem/1 var(--font-text-v2);
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+  }
+  .intensidad { display: inline-flex; align-items: center; gap: 3px; }
+  .intensidad i { width: 8px; height: 8px; border: 1px solid var(--color-teal); }
+  .intensidad i.lleno { background: var(--color-horizonte); border-color: var(--color-horizonte); }
+  .intensidad em { font-style: normal; margin-left: 5px; color: var(--color-lila); }
+  .senal__fuente { font-weight: 500; font-size: 0.75rem; line-height: 1.4; color: var(--color-lila); }
+  .senal__fuente a {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-color: var(--color-teal);
+    text-underline-offset: 3px;
+  }
+  .senal__fuente a:hover { color: var(--color-blanco); }
+  .senal__analisis {
+    justify-self: start;
+    padding-bottom: 2px;
+    border-bottom: 1px solid var(--color-teal);
+    font-weight: 700;
+    font-size: 0.8rem;
+    line-height: 1.35;
+    color: var(--color-blanco);
+  }
+  .senal__analisis b { color: var(--color-horizonte); }
+  .senal__analisis:hover { color: var(--color-blanco); border-color: var(--color-horizonte); }
+  .eje__tambien {
+    margin-top: auto;
+    padding: var(--space-4) 0 14px;
+    border-top: 1px solid var(--color-teal);
+  }
+  .eje__tambien h5 {
+    margin: 0 0 var(--space-2);
+    font: 700 0.7rem/1 var(--font-text-v2);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-lila);
+  }
+  .eje__tambien ul { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-2); }
+  .eje__tambien li { font-size: 0.8rem; line-height: 1.45; }
+  .eje__tambien li span { color: var(--color-lila); font-weight: 500; font-variant-numeric: tabular-nums; }
+
+  .tablero.solo { grid-template-columns: minmax(0, 1fr); }
+  .tablero.solo .eje { border-right: 0; }
+  .tablero.solo .eje__senales { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: var(--space-8); }
+
+  @media (max-width: 1180px) {
+    .tablero { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .eje:nth-child(2n) { border-right: 0; }
+    .eje:nth-child(n + 3) { border-top: 1px solid var(--color-teal); }
+  }
+  @media (max-width: 720px) {
+    .panel__in { padding: var(--space-6) var(--space-4) var(--space-8); }
+    .tablero,
+    .tablero.solo .eje__senales { grid-template-columns: minmax(0, 1fr); }
+    .eje { border-right: 0; padding-inline: 0; }
+    .eje + .eje { border-top: 1px solid var(--color-teal); }
+    .senal { margin-inline: -8px; padding-inline: 8px; }
+  }
+
+  /* ---------- Qué observar ---------- */
+  .agenda__linea {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    border-top: 3px solid var(--color-horizonte);
+  }
+  .agenda__linea li {
+    display: grid;
+    gap: 6px;
+    align-content: start;
+    min-width: 0;
+    padding: var(--space-4) var(--space-6) 0 0;
+  }
+  .agenda__eje {
+    font-weight: 500;
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-lila);
+  }
+  .agenda__linea time {
+    font-family: var(--font-display-v2);
+    font-weight: 800;
+    font-size: 1.9rem;
+    line-height: 1;
+    color: var(--color-horizonte);
+  }
+  .agenda__linea p { font-size: 0.88rem; line-height: 1.5; max-width: 34ch; }
+  @media (max-width: 860px) {
+    .agenda__linea { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: var(--space-6); }
+  }
+  @media (max-width: 480px) {
+    .agenda__linea { grid-template-columns: minmax(0, 1fr); }
+  }
+
+  /* ---------- Cierre ---------- */
+  .cierre {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    gap: var(--space-12);
+    align-items: start;
+    padding-top: var(--space-12);
+    border-top: 1px solid var(--color-teal);
+  }
+  .cierre__metodo p { margin-bottom: var(--space-3); font-size: 0.95rem; line-height: 1.6; max-width: 60ch; }
+  .cierre__mas {
+    display: inline-block;
+    margin-top: var(--space-2);
+    padding-bottom: 3px;
+    border-bottom: 1px solid var(--color-teal);
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: var(--color-blanco);
+  }
+  .cierre__mas b { color: var(--color-horizonte); }
+  .cierre__mas:hover { color: var(--color-blanco); border-color: var(--color-horizonte); }
+  .cierre__sub {
+    display: grid;
+    gap: var(--space-3);
+    padding: 26px;
+    background: var(--color-selva);
+    border: 1px solid var(--color-teal);
+  }
+  .cierre__sub h3 {
+    font-family: var(--font-display-v2);
+    font-weight: 800;
+    font-size: 1.9rem;
+    line-height: 0.98;
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--color-blanco);
+  }
+  .cierre__sub p { font-size: 0.9rem; }
+  .cierre__boton {
+    justify-self: start;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 20px;
+    background: var(--color-horizonte);
+    color: var(--color-vacio);
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .cierre__boton:hover { background: var(--color-blanco); color: var(--color-vacio); }
+  .cierre__sub small { font-weight: 500; font-size: 0.75rem; color: var(--color-lila); }
+  @media (max-width: 860px) {
+    .cierre { grid-template-columns: minmax(0, 1fr); gap: var(--space-8); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .punto__pulso { animation: none; opacity: 0.2; }
+  }
+</style>
+
+<script>
+  (() => {
+    const raiz = document.querySelector<HTMLElement>('[data-senales]');
+    if (!raiz) return;
+
+    const tablero = raiz.querySelector<HTMLElement>('[data-tablero]')!;
+    const ejes = [...raiz.querySelectorAll<HTMLElement>('.eje')];
+    const pestanas = [...raiz.querySelectorAll<HTMLButtonElement>('.pestana')];
+    const senales = [...raiz.querySelectorAll<HTMLElement>('.senal')];
+    const puntos = [...raiz.querySelectorAll<SVGGElement>('.punto')];
+    const filtrables = [...raiz.querySelectorAll<SVGElement>('.punto, .foco, .mapa__arco, .mapa__extremo')];
+    const focos = [...raiz.querySelectorAll<SVGGElement>('.foco')];
+    const mapa = raiz.querySelector<SVGSVGElement>('.mapa')!;
+    const roLugar = raiz.querySelector<HTMLElement>('[data-ro-lugar]')!;
+    const roCoord = raiz.querySelector<HTMLElement>('[data-ro-coord]')!;
+    const lugarBase = roLugar.textContent;
+    const coordBase = roCoord.textContent;
+    const lento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let elegida: string | null = null;
+    let filtro = 'todas';
+
+    const ejeDe = (n: string) => document.getElementById(`senal-${n}`)?.closest<HTMLElement>('.eje')?.dataset.eje ?? null;
+
+    function lectura(lugar?: string | null, coord?: string | null) {
+      roLugar.textContent = lugar || lugarBase;
+      roCoord.textContent = coord || coordBase;
+    }
+
+    function marcar(n: string | null) {
+      senales.forEach((s) => s.classList.toggle('activo', s.dataset.n === n));
+      puntos.forEach((p) => p.classList.toggle('activo', p.dataset.n === n));
+      const s = n ? document.getElementById(`senal-${n}`) : null;
+      if (s) lectura(`${n} · ${s.dataset.lugar}`, s.dataset.coord);
+      else lectura();
+    }
+
+    function filtrar(f: string, escribirHash: boolean) {
+      filtro = f;
+      pestanas.forEach((p) => p.setAttribute('aria-selected', String(p.dataset.f === f)));
+      ejes.forEach((e) => (e.hidden = f !== 'todas' && e.dataset.eje !== f));
+      tablero.classList.toggle('solo', f !== 'todas');
+      filtrables.forEach((el) => el.classList.toggle('atenuado', f !== 'todas' && el.dataset.eje !== f));
+      if (escribirHash) {
+        const p = pestanas.find((x) => x.dataset.f === f);
+        try {
+          history.replaceState(null, '', `#${p?.dataset.hash ?? 'senales'}`);
+        } catch {
+          /* sin historial: no pasa nada */
+        }
+      }
+    }
+
+    function elegir(n: string, desplazar: boolean) {
+      const e = ejeDe(n);
+      if (filtro !== 'todas' && filtro !== e) filtrar('todas', true);
+      elegida = n;
+      marcar(n);
+      if (desplazar) {
+        document.getElementById(`senal-${n}`)?.scrollIntoView({ behavior: lento ? 'auto' : 'smooth', block: 'nearest' });
+      }
+    }
+
+    pestanas.forEach((p) => p.addEventListener('click', () => filtrar(p.dataset.f ?? 'todas', true)));
+
+    puntos.forEach((p) => {
+      const n = p.dataset.n ?? '';
+      p.addEventListener('click', () => elegir(n, true));
+      p.addEventListener('keydown', (ev) => {
+        if (ev.key === 'Enter' || ev.key === ' ') {
+          ev.preventDefault();
+          elegir(n, true);
+        }
+      });
+      p.addEventListener('mouseenter', () => marcar(n));
+      p.addEventListener('mouseleave', () => marcar(elegida));
+    });
+
+    focos.forEach((f) => {
+      f.addEventListener('mouseenter', () => lectura(f.dataset.lugar, f.dataset.coord));
+      f.addEventListener('mouseleave', () => marcar(elegida));
+    });
+
+    senales.forEach((s) => {
+      const n = s.dataset.n ?? '';
+      s.addEventListener('mouseenter', () => marcar(n));
+      s.addEventListener('mouseleave', () => marcar(elegida));
+      s.querySelector('.senal__num')?.addEventListener('click', () => {
+        elegida = n;
+        marcar(n);
+        mapa.scrollIntoView({ behavior: lento ? 'auto' : 'smooth', block: 'center' });
+      });
+    });
+
+    const movil = window.matchMedia('(max-width: 640px)');
+    const ajustarMapa = () =>
+      mapa.setAttribute('viewBox', (movil.matches ? mapa.dataset.vbMovil : mapa.dataset.vb) ?? '');
+    ajustarMapa();
+    movil.addEventListener('change', ajustarMapa);
+
+    const desdeHash: Record<string, string> = Object.fromEntries(
+      pestanas.map((p) => [p.dataset.hash ?? '', p.dataset.f ?? 'todas']),
+    );
+    const desdeUrl = (desplazar: boolean) => {
+      const h = location.hash.slice(1);
+      if (!desdeHash[h]) return;
+      filtrar(desdeHash[h], false);
+      if (desplazar) raiz.querySelector('.panel')?.scrollIntoView({ behavior: lento ? 'auto' : 'smooth' });
+    };
+    desdeUrl(false);
+    window.addEventListener('hashchange', () => desdeUrl(true));
+  })();
+</script>

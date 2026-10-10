@@ -15,10 +15,13 @@ import GloboLiminal from '../visual/GloboLiminal.astro';
 
   <p class="observatorio__lema">Contexto <span>·</span> Mecanismo <span>·</span> Consecuencia</p>
 
-  <a class="observatorio__bajar" href="#tesis" aria-label="Ir al contenido">
+  <a class="observatorio__bajar" href="#senales" aria-label="Ir a las señales de la semana">
     <span class="observatorio__linea"></span>
   </a>
 </section>
+
+{/* Entre el observatorio y la tesis: el monitor Señales de la semana. */}
+<slot />
 
 {/* Pantalla 2 — la tesis. Mismo contenido de siempre, ahora con aire propio. */}
 <section class="hero" id="tesis" aria-label="Qué es LIMINAL">

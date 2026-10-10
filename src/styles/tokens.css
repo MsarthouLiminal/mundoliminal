@@ -53,4 +53,17 @@
   /* === Layout === */
   --content-max: 72ch;
   --container-max: 1200px;
+
+  /* === Brand Kit v2.1 "Hora umbral" (aprobado 15-sep-2026) ===
+     Conviven con v1.1 mientras dura la migración. Cada tono tiene un rol:
+     Horizonte = señal sobre oscuro, Óxido = señal sobre claro,
+     Lila = metadata sobre oscuro, Ciruela = metadata sobre claro. */
+  --color-horizonte: #FF7A1A;
+  --color-oxido: #C4530F;
+  --color-lila: #C6B8DB;
+  --color-ciruela: #4A2E5C;
+  --color-sal: #E8EAE3;
+
+  --font-display-v2: 'Big Shoulders Display', 'Oswald Variable', 'Arial Narrow', sans-serif;
+  --font-text-v2: 'Chivo', 'Helvetica Neue', Arial, sans-serif;
 }
