@@ -20,6 +20,7 @@ const href = item?.url ?? fallbackHref;
 const title = item?.title ?? 'Próximo episodio';
 const dateLabel = item ? formatPubDate(item.pubDate) : null;
 const thumb = item?.thumbnail ?? null;
+const respaldo = item?.thumbnailRespaldo;
 const isFallback = item === null;
 ---
 
@@ -32,7 +33,13 @@ const isFallback = item === null;
 >
   <div class="card__thumb" aria-hidden="true">
     {thumb ? (
-      <img src={thumb} alt="" loading="lazy" />
+      <img
+        src={thumb}
+        alt=""
+        loading="lazy"
+        data-respaldo={respaldo}
+        onerror={respaldo ? "this.onerror=null;this.src=this.dataset.respaldo" : undefined}
+      />
     ) : (
       <span class="card__thumb-mark">LIMINAL</span>
     )}

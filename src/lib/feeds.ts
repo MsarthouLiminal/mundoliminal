@@ -8,6 +8,8 @@ export interface LatestItem {
   url: string;
   pubDate: Date;
   thumbnail: string | null;
+  /** Imagen alternativa si la principal no carga (hoy, solo Substack). */
+  thumbnailRespaldo?: string;
   author?: string;
   durationLabel?: string;
 }
@@ -154,6 +156,24 @@ export async function getYouTubeLatestList(limit = 5): Promise<LatestItem[]> {
   }
 }
 
+/**
+ * Substack firma las URLs de su CDN ("$s_!...!") y algunos navegadores
+ * reciben un 404 con la versión firmada. Se arma la misma imagen sin firma,
+ * a 800 px (unos 60 KB), y se guarda el original de S3 como respaldo.
+ */
+export function imagenSubstack(url: string | null): { src: string | null; respaldo?: string } {
+  if (!url) return { src: null };
+  const corte = url.search(/\/https?(%3A|:)/i);
+  const original = url.includes('substackcdn.com/image/fetch/') && corte > -1
+    ? decodeURIComponent(url.slice(corte + 1))
+    : url;
+  if (!/^https:\/\/substack-post-media\.s3\.amazonaws\.com\//.test(original)) return { src: url };
+  return {
+    src: `https://substackcdn.com/image/fetch/w_800,c_limit,f_auto,q_auto:good,fl_progressive:steep/${encodeURIComponent(original)}`,
+    respaldo: original,
+  };
+}
+
 export async function getSubstackLatestList(limit = 5): Promise<LatestItem[]> {
   try {
     const xml = await fetchXml(SUBSTACK_FEED);
@@ -169,15 +189,17 @@ export async function getSubstackLatestList(limit = 5): Promise<LatestItem[]> {
       const html =
         (typeof it?.['content:encoded'] === 'string' ? it['content:encoded'] : '') ||
         (typeof it?.description === 'string' ? it.description : '');
-      const thumbnail =
+      const imagen = imagenSubstack(
         (typeof it?.enclosure?.['@_url'] === 'string' ? it.enclosure['@_url'] : null) ??
-        extractFirstImg(html);
+          extractFirstImg(html),
+      );
       result.push({
         platform: 'substack',
         title: String(it?.title ?? '').trim(),
         url: link,
         pubDate,
-        thumbnail,
+        thumbnail: imagen.src,
+        thumbnailRespaldo: imagen.respaldo,
         author: typeof it?.['dc:creator'] === 'string' ? it['dc:creator'] : undefined,
       });
     }
