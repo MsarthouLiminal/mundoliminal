@@ -1,8 +1,136 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import PagePlaceholder from '../components/PagePlaceholder.astro';
+import CabeceraV2 from '../components/v2/CabeceraV2.astro';
+import ContactoDirecto from '../components/v2/ContactoDirecto.astro';
+import '../styles/v2.css';
+
+const SERVICIOS = [
+  ['Relaciones con gobierno', 'Mapa de actores, agenda y estrategia para plantear un tema ante organismos y entidades públicas.'],
+  ['Relación con la prensa', 'Estrategia de medios, mensajes y criterio para decidir qué se cuenta, cuándo y a quién.'],
+  [
+    'Preparación de voceros',
+    'Entrenamiento uno a uno, a puerta cerrada, para gerentes y directivos antes de una entrevista, una conferencia o un panel.',
+  ],
+  ['Gestión de crisis', 'Las primeras horas, los mensajes, la vocería y el seguimiento hasta que el tema baja.'],
+  ['Posicionamiento institucional', 'Cómo se cuenta una organización en su contexto sectorial, regional y geopolítico.'],
+  [
+    'Contenido a medida',
+    'Guiones, formatos y conducción para que los voceros de la organización hablen con su público, siempre declarado como contenido de la organización.',
+  ],
+];
+
+const PASOS = [
+  ['Diagnóstico', 'Qué está en juego, con quién y en qué plazo.'],
+  ['Plan', 'Mensajes, voceros, canales y calendario.'],
+  ['Acompañamiento', 'Ajustes sobre la marcha, con acceso directo y sin intermediarios.'],
+];
 ---
 
-<BaseLayout title="Consultoría en comunicación estratégica" noindex>
-  <PagePlaceholder title="Consultoría en comunicación estratégica" />
+<BaseLayout
+  title="Consultoría en comunicación estratégica"
+  description="Consultoría de Martín Sarthou en comunicación estratégica: relaciones con gobierno, prensa, preparación de voceros, crisis y posicionamiento institucional."
+>
+  <div class="v2">
+    <CabeceraV2
+      rotulo="Consultoría en comunicación estratégica"
+      titular="Comunicar cuando el contexto aprieta."
+      bajada="Asesoramiento para empresas e instituciones que tienen que hablar con el gobierno, con la prensa o con su comunidad en un momento delicado."
+    >
+      <p class="credencial">
+        Treinta años en prensa, televisión y digital enseñan cómo se arma una nota, qué busca un periodista y en qué
+        momento se cae un vocero. A eso se suma la experiencia del otro lado: comunicación corporativa y relación con
+        actores públicos.
+      </p>
+    </CabeceraV2>
+
+    <section class="v2-sec" aria-labelledby="servicios-h">
+      <h2 id="servicios-h">Qué hago</h2>
+      <ul class="v2-grilla">
+        {SERVICIOS.map(([t, d]) => (
+          <li>
+            <h3>{t}</h3>
+            <p>{d}</p>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="v2-sec" aria-labelledby="pasos-h">
+      <h2 id="pasos-h">Cómo trabajo</h2>
+      <ol class="pasos">
+        {PASOS.map(([t, d], i) => (
+          <li>
+            <span class="pasos__n">{i + 1}</span>
+            <h3>{t}</h3>
+            <p>{d}</p>
+          </li>
+        ))}
+      </ol>
+    </section>
+
+    <section class="v2-sec reserva" aria-labelledby="reserva-h">
+      <h2 id="reserva-h">Reserva y transparencia</h2>
+      <p class="v2-sec__bajada">
+        Los clientes de consultoría no se nombran sin su permiso. Si alguno aparece en contenido de LIMINAL, queda
+        declarado en la página de Transparencia.
+      </p>
+      <a class="v2-link" href="/transparencia">Ver Transparencia <b aria-hidden="true">→</b></a>
+    </section>
+
+    <ContactoDirecto
+      titulo="Contame qué está pasando"
+      texto="Dos o tres líneas alcanzan para empezar: qué organización, qué situación y para cuándo. Lo que me cuentes queda entre nosotros."
+    />
+  </div>
 </BaseLayout>
+
+<style>
+  .credencial {
+    max-width: 60ch;
+    font-size: 0.98rem;
+    line-height: 1.6;
+    color: var(--color-lila);
+  }
+
+  .pasos {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    border-top: 3px solid var(--color-horizonte);
+  }
+  .pasos li {
+    display: grid;
+    gap: var(--space-2);
+    align-content: start;
+    padding: var(--space-6) var(--space-6) 0 0;
+    min-width: 0;
+  }
+  .pasos__n {
+    font-family: var(--font-display-v2);
+    font-weight: 800;
+    font-size: 2.6rem;
+    line-height: 1;
+    color: var(--color-horizonte);
+  }
+  .pasos h3 {
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+  .pasos p {
+    font-size: 0.94rem;
+    line-height: 1.55;
+  }
+  @media (max-width: 640px) {
+    .pasos {
+      grid-template-columns: minmax(0, 1fr);
+      gap: var(--space-4);
+    }
+  }
+
+  .reserva {
+    padding-top: var(--space-6);
+    border-top: 1px solid var(--color-teal);
+  }
+</style>

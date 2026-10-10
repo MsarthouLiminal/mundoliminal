@@ -1,11 +1,8 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
-// Páginas que todavía no se indexan (placeholders y rutas de pilares sin uso).
-const SIN_INDEXAR = [
-  /\/(talks|reportes|consultoria|eventos)\/?$/,
-  /\/catalogo\/[^/]+\/?$/,
-];
+// Páginas que todavía no se indexan (rutas de pilares sin uso).
+const SIN_INDEXAR = [/\/catalogo\/[^/]+\/?$/];
 
 export default defineConfig({
   site: 'https://mundoliminal.com',

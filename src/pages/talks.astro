@@ -1,8 +1,303 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import PagePlaceholder from '../components/PagePlaceholder.astro';
+import CabeceraV2 from '../components/v2/CabeceraV2.astro';
+import MuroMarcas from '../components/v2/MuroMarcas.astro';
+import ContactoDirecto from '../components/v2/ContactoDirecto.astro';
+import { CASOS } from '../data/trabajos';
+import '../styles/v2.css';
+
+const FORMATOS = [
+  {
+    nombre: 'Presentación analítica',
+    lema: 'Una lectura del contexto, armada para tu público.',
+    puntos: [
+      '45 a 60 minutos, más preguntas.',
+      'Con el sistema visual de LIMINAL: mapas, datos y placas propias.',
+      'Cada charla se escribe para esa sala: su rubro, su país y las decisiones que tiene por delante.',
+    ],
+    ejemplos: [
+      'El nuevo mapa del poder mundial',
+      'La Cuenca del Plata cambió de manos',
+      '¿En qué mundo vivimos?',
+    ],
+  },
+  {
+    nombre: 'Conversación y conducción',
+    lema: 'Oficio periodístico al servicio de tu evento.',
+    puntos: [
+      'Entrevistas a referentes, paneles y presentación de estudios.',
+      'Conducción de eventos de marca como maestro de ceremonias.',
+      'El diseño de la conversación está incluido: preguntas, ritmo y cierre.',
+    ],
+    ejemplos: ['El ahorro cambió de dirección', 'Fenicio Talks 2026', 'El estudio de talento de Randstad'],
+  },
+];
+
+const chica = (foto: string) => foto.replace(/\.jpg$/, '-720.jpg');
+
+const TEMAS = [
+  ['Geopolítica y poder', 'Conflictos, alianzas y sanciones, y cómo llegan a la economía real.'],
+  ['Coyuntura internacional', 'Lo que pasó en el mundo, separado entre ruido y consecuencia.'],
+  ['América Latina y Uruguay', 'El Cono Sur en el mapa global: riesgos, oportunidades y alineamientos.'],
+  ['Minerales, logística y comercio', 'Rutas, puertos, aranceles y quién controla los insumos críticos.'],
+  ['Geopolítica de la tecnología', 'Chips, nube, datos y energía: el mapa físico de la tecnología.'],
+  ['IA para tomadores de decisiones', 'Qué cambia, qué no y qué decisiones exige la inteligencia artificial.'],
+];
 ---
 
-<BaseLayout title="LIMINAL Talks" noindex>
-  <PagePlaceholder title="LIMINAL Talks" />
+<BaseLayout
+  title="LIMINAL Talks"
+  description="Charlas y conversaciones de Martín Sarthou para empresas, cámaras y foros: geopolítica, tecnología y economía para quienes toman decisiones."
+>
+  <div class="v2">
+    <CabeceraV2
+      rotulo="LIMINAL Talks"
+      titular="Análisis en vivo para quienes toman decisiones."
+      bajada="Charlas y conversaciones para empresas, cámaras y foros. Geopolítica, tecnología y economía, leídas desde el lugar donde decide tu público."
+    >
+      <p class="no-es">
+        No es una charla motivacional ni una clase. Es una lectura del contexto con su mecanismo y sus consecuencias,
+        pensada para la sala que la escucha.
+      </p>
+    </CabeceraV2>
+
+    <figure class="sala">
+      <img
+        src="/images/talks/sala.jpg"
+        srcset="/images/talks/sala-900.jpg 900w, /images/talks/sala.jpg 1600w"
+        sizes="(max-width: 1200px) 100vw, 1200px"
+        width="1600"
+        height="800"
+        alt="Martín Sarthou en escena, ante una sala llena."
+        fetchpriority="high"
+      />
+    </figure>
+
+    <section class="v2-sec" aria-labelledby="formatos-h">
+      <h2 id="formatos-h">Dos formatos</h2>
+      <div class="formatos">
+        {FORMATOS.map((f) => (
+          <article class="formato">
+            <h3>{f.nombre}</h3>
+            <p class="formato__lema">{f.lema}</p>
+            <ul class="formato__puntos">
+              {f.puntos.map((p) => <li>{p}</li>)}
+            </ul>
+            <div class="formato__ej">
+              <p class="v2-kick">Recientes</p>
+              <ul>
+                {f.ejemplos.map((e) => <li>{e}</li>)}
+              </ul>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="v2-sec" aria-labelledby="temas-h">
+      <h2 id="temas-h">Temas</h2>
+      <ul class="v2-grilla">
+        {TEMAS.map(([t, d]) => (
+          <li>
+            <h3>{t}</h3>
+            <p>{d}</p>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="v2-sec" aria-labelledby="casos-h">
+      <h2 id="casos-h">Dónde estuve</h2>
+      <ul class="casos">
+        {CASOS.map((c) => (
+          <li class:list={['caso', { 'caso--foto': c.foto }]}>
+            {c.foto && (
+              <img
+                class="caso__foto"
+                src={c.foto}
+                srcset={`${chica(c.foto)} 720w, ${c.foto} 1200w`}
+                sizes="(max-width: 760px) 100vw, 400px"
+                width="1200"
+                height="800"
+                alt={c.fotoAlt ?? `Martín Sarthou en ${c.cliente}`}
+                loading="lazy"
+                decoding="async"
+              />
+            )}
+            <div class="caso__cuerpo">
+              <p class="caso__formato">{c.formato}</p>
+              <h3>{c.cliente}</h3>
+              <p class="caso__etiqueta">{c.etiqueta}</p>
+              <p class="caso__texto">{c.texto}</p>
+              {(c.fecha || c.lugar) && (
+                <p class="v2-meta">{[c.lugar, c.fecha].filter(Boolean).join(' · ')}</p>
+              )}
+            </div>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <MuroMarcas />
+
+    <ContactoDirecto
+      titulo="¿Una charla o una conversación para tu empresa?"
+      texto="Escribime con la fecha, la ciudad, el tamaño y el perfil del público, y lo que tu empresa necesita entender. Te respondo con una propuesta."
+      enlace={{ href: '/eventos', texto: 'Ver la agenda de las próximas semanas' }}
+    />
+  </div>
 </BaseLayout>
+
+<style>
+  .no-es {
+    max-width: 58ch;
+    font-size: 0.98rem;
+    line-height: 1.6;
+    color: var(--color-lila);
+  }
+
+  .sala {
+    margin: 0;
+  }
+  .sala img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 21 / 9;
+    object-fit: cover;
+    object-position: 50% 15%;
+  }
+  @media (max-width: 640px) {
+    .sala img {
+      aspect-ratio: 3 / 2;
+    }
+  }
+
+  .formatos {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    border-top: 3px solid var(--color-horizonte);
+  }
+  .formato {
+    display: grid;
+    gap: var(--space-4);
+    align-content: start;
+    padding: var(--space-6) var(--space-8) var(--space-6) 0;
+    min-width: 0;
+  }
+  .formato + .formato {
+    padding-left: var(--space-8);
+    border-left: 1px solid var(--color-teal);
+  }
+  .formato h3 {
+    font-size: 2rem;
+    line-height: 1;
+  }
+  .formato__lema {
+    font-weight: 500;
+    font-size: 1.05rem;
+    color: var(--color-blanco);
+  }
+  .formato__puntos {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: var(--space-2);
+  }
+  .formato__puntos li {
+    display: grid;
+    grid-template-columns: 18px 1fr;
+    gap: var(--space-2);
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+  .formato__puntos li::before {
+    content: '';
+    width: 12px;
+    height: 2px;
+    margin-top: 0.75em;
+    background: var(--color-horizonte);
+  }
+  .formato__ej {
+    display: grid;
+    gap: var(--space-2);
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--color-teal);
+  }
+  .formato__ej ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: var(--space-1);
+  }
+  .formato__ej li {
+    font-family: var(--font-display-v2);
+    font-weight: 700;
+    font-size: 1.2rem;
+    line-height: 1.15;
+    color: var(--color-hueso);
+  }
+  @media (max-width: 760px) {
+    .formatos {
+      grid-template-columns: minmax(0, 1fr);
+    }
+    .formato,
+    .formato + .formato {
+      padding: var(--space-6) 0;
+      border-left: 0;
+    }
+    .formato + .formato {
+      border-top: 1px solid var(--color-teal);
+    }
+  }
+
+  .casos {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr));
+    gap: var(--space-6);
+  }
+  .caso {
+    display: grid;
+    align-content: start;
+    min-width: 0;
+    background: var(--color-selva);
+    border: 1px solid var(--color-teal);
+  }
+  .caso__foto {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    display: block;
+    border-bottom: 1px solid var(--color-teal);
+  }
+  .caso__cuerpo {
+    display: grid;
+    gap: var(--space-2);
+    padding: var(--space-6);
+  }
+  .caso__formato {
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-horizonte);
+  }
+  .caso h3 {
+    font-size: 1.75rem;
+    line-height: 1;
+  }
+  .caso__etiqueta {
+    font-weight: 500;
+    font-size: 0.85rem;
+    color: var(--color-lila);
+  }
+  .caso__texto {
+    font-size: 0.94rem;
+    line-height: 1.55;
+  }
+</style>

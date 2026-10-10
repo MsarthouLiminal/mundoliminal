@@ -1,8 +1,179 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import PagePlaceholder from '../components/PagePlaceholder.astro';
+import CabeceraV2 from '../components/v2/CabeceraV2.astro';
+import ContactoDirecto from '../components/v2/ContactoDirecto.astro';
+import '../styles/v2.css';
+
+const FORMATOS = [
+  [
+    'Briefing periódico',
+    'Tres o cuatro páginas, diez minutos de lectura. Una columna de análisis, un radar de señales con lo que significa para tu negocio, la agenda que mueve y un espacio propio de tu organización. Sale el día y la hora que acordemos, por el canal que elijas, y puede ir con doble firma.',
+  ],
+  [
+    'Briefing trimestral',
+    'Una lectura de escenario para el trimestre que empieza, pensada para directorios y carteras de clientes.',
+  ],
+  [
+    'Reporte de escenario',
+    'Un tema, una decisión: entrar a un mercado, una ruta logística en riesgo, un insumo crítico. Análisis a fondo, con escenarios y qué observar.',
+  ],
+  [
+    'Edición especial',
+    'Cuando algo se rompe (una guerra, un arancel, una elección), una edición extra para leerlo a tiempo.',
+  ],
+];
+
+const METODO = [
+  ['Fuente y fecha', 'Cada dato lleva fuente con nombre y fecha. Primero las fuentes primarias.'],
+  ['Dato y lectura, separados', 'Qué pasó va por un lado; qué significa para tu mesa, por otro.'],
+  ['Lo que no se sabe, dicho', 'Las lagunas van en el texto, no escondidas en una nota al pie.'],
+  ['Lectura medida, nunca personas', 'Cada edición lleva enlaces medibles. Cada tres meses, un informe breve de lectura, siempre en agregado.'],
+];
 ---
 
-<BaseLayout title="Reportes y briefings" noindex>
-  <PagePlaceholder title="Reportes y briefings" />
+<BaseLayout
+  title="Reportes y briefings"
+  description="Briefings cerrados de LIMINAL para comunidades empresariales, directorios y carteras de clientes: análisis para decidir con incertidumbre."
+>
+  <div class="v2">
+    <CabeceraV2
+      rotulo="Reportes y briefings"
+      titular="Análisis cerrado para decidir con incertidumbre."
+      bajada="Briefings para comunidades empresariales, directorios y carteras de clientes. El mismo método de Señales, escrito para un sector, una comunidad o una decisión."
+    />
+
+    <section class="v2-sec" aria-labelledby="dif-h">
+      <h2 id="dif-h">Señales y un briefing</h2>
+      <div class="dif">
+        <div class="dif__col">
+          <p class="v2-kick">Señales</p>
+          <h3>Abierto</h3>
+          <ul>
+            <li>Sale todos los lunes, para cualquiera.</li>
+            <li>Cuatro ejes globales: minerales, chokepoints, infraestructura de IA y conflictos.</li>
+            <li>Se lee en la web y llega por correo.</li>
+          </ul>
+          <a class="v2-link" href="/senales">Ver la edición de esta semana <b aria-hidden="true">→</b></a>
+        </div>
+        <div class="dif__col dif__col--cerrado">
+          <p class="v2-kick">Briefing</p>
+          <h3>Cerrado</h3>
+          <ul>
+            <li>Con la cadencia que acordemos, solo para tu comunidad o tu directorio.</li>
+            <li>Lo que toca a tu rubro, tu país y tus decisiones.</li>
+            <li>Circula por el canal que elijas, con tu firma junto a la de LIMINAL si querés.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="v2-sec" aria-labelledby="formatos-h">
+      <h2 id="formatos-h">Formatos</h2>
+      <ul class="v2-grilla">
+        {FORMATOS.map(([t, d]) => (
+          <li>
+            <h3>{t}</h3>
+            <p>{d}</p>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="v2-sec" aria-labelledby="metodo-h">
+      <h2 id="metodo-h">Cómo se escribe</h2>
+      <dl class="metodo">
+        {METODO.map(([t, d]) => (
+          <div>
+            <dt>{t}</dt>
+            <dd>{d}</dd>
+          </div>
+        ))}
+      </dl>
+    </section>
+
+    <ContactoDirecto
+      titulo="Pedí una edición de muestra"
+      texto="Escribime contando para quién sería el briefing, cuántas personas lo van a leer y con qué frecuencia lo necesitás. Te mando una edición de muestra."
+      enlace={{ href: '/senales', texto: 'Mientras tanto, leé Señales' }}
+    />
+  </div>
 </BaseLayout>
+
+<style>
+  .dif {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    border-top: 3px solid var(--color-horizonte);
+  }
+  .dif__col {
+    display: grid;
+    gap: var(--space-3);
+    align-content: start;
+    padding: var(--space-6) var(--space-8) var(--space-6) 0;
+    min-width: 0;
+  }
+  .dif__col--cerrado {
+    padding-left: var(--space-8);
+    border-left: 1px solid var(--color-teal);
+  }
+  .dif h3 {
+    font-size: 2rem;
+    line-height: 1;
+  }
+  .dif ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: var(--space-2);
+  }
+  .dif li {
+    display: grid;
+    grid-template-columns: 18px 1fr;
+    gap: var(--space-2);
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+  .dif li::before {
+    content: '';
+    width: 12px;
+    height: 2px;
+    margin-top: 0.75em;
+    background: var(--color-horizonte);
+  }
+  @media (max-width: 760px) {
+    .dif {
+      grid-template-columns: minmax(0, 1fr);
+    }
+    .dif__col,
+    .dif__col--cerrado {
+      padding: var(--space-6) 0;
+      border-left: 0;
+    }
+    .dif__col--cerrado {
+      border-top: 1px solid var(--color-teal);
+    }
+  }
+
+  .metodo {
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr));
+    gap: var(--space-6) var(--space-8);
+    padding-top: var(--space-6);
+    border-top: 1px solid var(--color-teal);
+  }
+  .metodo dt {
+    margin-bottom: var(--space-2);
+    font-family: var(--font-display-v2);
+    font-weight: 800;
+    font-size: 1.35rem;
+    line-height: 1.05;
+    color: var(--color-blanco);
+  }
+  .metodo dd {
+    margin: 0;
+    font-size: 0.94rem;
+    line-height: 1.6;
+  }
+</style>

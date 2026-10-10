@@ -83,7 +83,7 @@ export function contarSenales(e: Edicion): number {
 
 /* ---------- Fechas (siempre en UTC para que no corra el día) ---------- */
 
-const MESES_CORTOS = ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'];
+const MESES_CORTOS = ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'set', 'oct', 'nov', 'dic'];
 
 function aFecha(iso: string): Date {
   const [a, m, d] = iso.split('-').map(Number);

@@ -1,0 +1,62 @@
+---
+/**
+ * Muro de marcas: con quiénes trabajó LIMINAL.
+ * Si la marca tiene logo, se muestra en un solo tono (Hueso) para que el muro
+ * se lea parejo sobre fondo oscuro; si no, se muestra el nombre en tipografía.
+ */
+import { MARCAS } from '../../data/trabajos';
+
+interface Props {
+  titulo?: string;
+}
+
+const { titulo = 'Con quiénes trabajé' } = Astro.props;
+---
+
+<section class="muro v2-sec" aria-labelledby="muro-h">
+  <h2 id="muro-h">{titulo}</h2>
+  <ul class="muro__lista">
+    {MARCAS.map((m) => (
+      <li>
+        {m.logo ? <img src={m.logo} alt={m.nombre} loading="lazy" /> : <span>{m.nombre}</span>}
+      </li>
+    ))}
+  </ul>
+</section>
+
+<style>
+  .muro__lista {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 180px), 1fr));
+    border-top: 1px solid var(--color-teal);
+    border-left: 1px solid var(--color-teal);
+  }
+  .muro__lista li {
+    min-height: 110px;
+    display: grid;
+    place-items: center;
+    padding: var(--space-6) var(--space-4);
+    border-right: 1px solid var(--color-teal);
+    border-bottom: 1px solid var(--color-teal);
+    text-align: center;
+  }
+  .muro__lista span {
+    font-family: var(--font-display-v2);
+    font-weight: 800;
+    font-size: 1.35rem;
+    line-height: 1;
+    color: var(--color-hueso);
+  }
+  .muro__lista img {
+    max-width: 140px;
+    max-height: 48px;
+    width: auto;
+    height: auto;
+    /* Todos los logos al mismo tono, sin importar su color original. */
+    filter: brightness(0) invert(0.88);
+    opacity: 0.9;
+  }
+</style>

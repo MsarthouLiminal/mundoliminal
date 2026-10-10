@@ -1,0 +1,53 @@
+---
+/** Cierre de las páginas de servicios: el contacto directo por correo. */
+interface Props {
+  titulo: string;
+  texto: string;
+  enlace?: { href: string; texto: string };
+}
+
+const { titulo, texto, enlace } = Astro.props;
+const correo = 'contacto@mundoliminal.com';
+---
+
+<section class="contacto" aria-labelledby="contacto-h">
+  <h2 id="contacto-h">{titulo}</h2>
+  <p class="contacto__texto">{texto}</p>
+  <a class="contacto__correo" href={`mailto:${correo}`}>{correo}</a>
+  {enlace && (
+    <a class="v2-link" href={enlace.href}>
+      {enlace.texto} <b aria-hidden="true">→</b>
+    </a>
+  )}
+</section>
+
+<style>
+  .contacto {
+    display: grid;
+    gap: var(--space-4);
+    padding: var(--space-8);
+    background: var(--color-selva);
+    border: 1px solid var(--color-teal);
+  }
+  h2 {
+    font-size: clamp(1.8rem, 3.4vw, 2.4rem);
+    line-height: 1;
+  }
+  .contacto__texto {
+    max-width: 60ch;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  .contacto__correo {
+    justify-self: start;
+    font-family: var(--font-display-v2);
+    font-weight: 800;
+    font-size: clamp(1.6rem, 4.2vw, 2.6rem);
+    line-height: 1;
+    color: var(--color-horizonte);
+    overflow-wrap: anywhere;
+  }
+  .contacto__correo:hover {
+    color: var(--color-blanco);
+  }
+</style>

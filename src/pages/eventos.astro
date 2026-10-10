@@ -1,8 +1,240 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import PagePlaceholder from '../components/PagePlaceholder.astro';
+import CabeceraV2 from '../components/v2/CabeceraV2.astro';
+import MuroMarcas from '../components/v2/MuroMarcas.astro';
+import { proximos, recientes, partesFecha, type Evento } from '../data/trabajos';
+import '../styles/v2.css';
+
+const lista = proximos();
+const pasados = recientes();
+
+const acceso = (e: Evento) => (e.acceso === 'invitacion' ? 'Por invitación' : 'Inscripción abierta');
 ---
 
-<BaseLayout title="Eventos LIMINAL" noindex>
-  <PagePlaceholder title="Eventos LIMINAL" />
+<BaseLayout
+  title="Agenda"
+  description="Dónde va a estar LIMINAL: próximas charlas, moderaciones y encuentros de Martín Sarthou."
+>
+  <div class="v2">
+    <CabeceraV2
+      rotulo="Agenda"
+      titular="Dónde va a estar LIMINAL."
+      bajada="Charlas, moderaciones y encuentros de las próximas semanas. Los que son por invitación están marcados: no tienen inscripción abierta."
+    />
+
+    <section class="v2-sec" aria-labelledby="prox-h">
+      <h2 id="prox-h">Próximos</h2>
+      {lista.length === 0 && <p class="v2-sec__bajada">No hay encuentros anunciados por ahora.</p>}
+      <ol class="agenda">
+        {lista.map((e) => {
+          const f = partesFecha(e.fecha);
+          return (
+            <li class="evento">
+              <time class="evento__fecha" datetime={e.fecha}>
+                <span class="evento__dia">{f.dia}</span>
+                <span class="evento__num">{f.num}</span>
+                <span class="evento__mes">{f.mes}</span>
+              </time>
+              <div class="evento__cuerpo">
+                <p class="evento__formato">
+                  {e.formato} · <span>{acceso(e)}</span>
+                </p>
+                <h3>{e.titulo}</h3>
+                <p class="evento__detalle">{e.detalle}</p>
+                <p class="v2-meta">
+                  {[e.ciudad, e.lugar, e.hora && `${e.hora} h`, `Organiza ${e.organiza}`].filter(Boolean).join(' · ')}
+                </p>
+                {e.inscripcion && (
+                  <a class="evento__inscripcion" href={e.inscripcion} target="_blank" rel="noopener">
+                    Inscribirse <span aria-hidden="true">→</span>
+                  </a>
+                )}
+              </div>
+            </li>
+          );
+        })}
+      </ol>
+    </section>
+
+    {pasados.length > 0 && (
+      <section class="v2-sec" aria-labelledby="pas-h">
+        <h2 id="pas-h">Encuentros recientes</h2>
+        <ul class="pasados">
+          {pasados.map((e) => {
+            const f = partesFecha(e.fecha);
+            return (
+              <li>
+                <span class="v2-meta">{f.num} {f.mes}</span>
+                <span>{e.titulo}</span>
+                <span class="v2-meta">{e.organiza}</span>
+              </li>
+            );
+          })}
+        </ul>
+      </section>
+    )}
+
+    <section class="vivo" aria-labelledby="vivo-h">
+      <p class="v2-kick">En preparación</p>
+      <h2 id="vivo-h">LIMINAL en vivo</h2>
+      <p>
+        Un formato propio de escenario, con entradas a la venta, está en preparación. Quienes reciben Señales se van a
+        enterar primero.
+      </p>
+      <a class="vivo__boton" href="https://mundoliminal.substack.com/subscribe" target="_blank" rel="noopener">
+        Recibir Señales <span aria-hidden="true">→</span>
+      </a>
+    </section>
+
+    <MuroMarcas />
+
+    <a class="v2-link" href="/talks">Contratar una charla o una moderación <b aria-hidden="true">→</b></a>
+  </div>
 </BaseLayout>
+
+<style>
+  .agenda {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-top: 3px solid var(--color-horizonte);
+  }
+  .evento {
+    display: grid;
+    grid-template-columns: 7.5rem minmax(0, 1fr);
+    gap: var(--space-6);
+    padding: var(--space-6) 0;
+    border-bottom: 1px solid var(--color-teal);
+  }
+  .evento__fecha {
+    display: grid;
+    align-content: start;
+    font-variant-numeric: tabular-nums;
+  }
+  .evento__dia,
+  .evento__mes {
+    font-weight: 700;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-lila);
+  }
+  .evento__num {
+    font-family: var(--font-display-v2);
+    font-weight: 800;
+    font-size: 3.4rem;
+    line-height: 0.9;
+    color: var(--color-horizonte);
+  }
+  .evento__cuerpo {
+    display: grid;
+    gap: var(--space-2);
+    min-width: 0;
+  }
+  .evento__formato {
+    font-weight: 700;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-hueso);
+  }
+  .evento__formato span {
+    color: var(--color-lila);
+  }
+  .evento h3 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    line-height: 1.02;
+  }
+  .evento__inscripcion {
+    justify-self: start;
+    display: inline-flex;
+    gap: 8px;
+    margin-top: var(--space-2);
+    padding: 10px 16px;
+    border: 1px solid var(--color-horizonte);
+    color: var(--color-horizonte);
+    font-weight: 700;
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .evento__inscripcion:hover {
+    background: var(--color-horizonte);
+    color: var(--color-vacio);
+  }
+  .evento__detalle {
+    max-width: 62ch;
+    font-size: 0.96rem;
+    line-height: 1.55;
+  }
+  @media (max-width: 560px) {
+    .evento {
+      grid-template-columns: minmax(0, 1fr);
+      gap: var(--space-3);
+    }
+    .evento__fecha {
+      grid-auto-flow: column;
+      justify-content: start;
+      align-items: baseline;
+      gap: var(--space-2);
+    }
+    .evento__num {
+      font-size: 2.4rem;
+    }
+  }
+
+  .pasados {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid var(--color-teal);
+  }
+  .pasados li {
+    display: grid;
+    grid-template-columns: 5rem minmax(0, 1fr) auto;
+    gap: var(--space-4);
+    align-items: baseline;
+    padding: var(--space-3) 0;
+    border-bottom: 1px solid var(--color-teal);
+    font-size: 0.95rem;
+  }
+  @media (max-width: 560px) {
+    .pasados li {
+      grid-template-columns: minmax(0, 1fr);
+      gap: var(--space-1);
+    }
+  }
+
+  .vivo {
+    display: grid;
+    gap: var(--space-3);
+    padding: var(--space-8);
+    background: var(--color-selva);
+    border: 1px solid var(--color-teal);
+  }
+  .vivo h2 {
+    font-size: clamp(1.8rem, 3.4vw, 2.4rem);
+    line-height: 1;
+  }
+  .vivo p:not(.v2-kick) {
+    max-width: 60ch;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  .vivo__boton {
+    justify-self: start;
+    display: inline-flex;
+    gap: 10px;
+    padding: 14px 20px;
+    background: var(--color-horizonte);
+    color: var(--color-vacio);
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .vivo__boton:hover {
+    background: var(--color-blanco);
+    color: var(--color-vacio);
+  }
+</style>

@@ -1,0 +1,43 @@
+---
+/** Apertura de página en Brand Kit v2.1: rótulo, titular, bajada y línea de umbral. */
+interface Props {
+  rotulo: string;
+  titular: string;
+  bajada?: string;
+}
+
+const { rotulo, titular, bajada } = Astro.props;
+---
+
+<header class="cab">
+  <p class="v2-kick">{rotulo}</p>
+  <h1>{titular}</h1>
+  {bajada && <p class="cab__bajada">{bajada}</p>}
+  <slot />
+  <hr />
+</header>
+
+<style>
+  .cab {
+    display: grid;
+    gap: var(--space-3);
+  }
+  h1 {
+    font-size: clamp(2.6rem, 7vw, 5.2rem);
+    line-height: 0.92;
+    letter-spacing: -0.01em;
+    max-width: 16ch;
+  }
+  .cab__bajada {
+    margin-top: var(--space-2);
+    max-width: 58ch;
+    font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+    line-height: 1.5;
+  }
+  hr {
+    height: 3px;
+    border: 0;
+    margin: var(--space-4) 0 0;
+    background: var(--color-horizonte);
+  }
+</style>
