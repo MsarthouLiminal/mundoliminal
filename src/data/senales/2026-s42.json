@@ -21,7 +21,7 @@
           "arco": { "lat": 50.85, "lon": 4.35, "nombre": "Bruselas" },
           "fecha": "2026-10-10",
           "hecho": "Beijing promete acelerar licencias de exportación de tierras raras e imanes hacia la UE. Bruselas, destrabar casos de doble uso. La tregua comercial con Washington vence el 10 de enero.",
-          "lectura": "China dosifica el acceso por bloque: afloja con Europa y mantiene la presión sobre Estados Unidos.",
+          "lectura": "Beijing ofrece oxígeno industrial a Europa para fracturar el frente común con Washington ante el fin de la tregua. Para la industria europea es un alivio inmediato pero engañoso, que consolida su dependencia crítica y la deja expuesta a quedar como rehén si el conflicto comercial escala.",
           "tendencia": "afloja",
           "intensidad": 3,
           "fuente": {
@@ -39,7 +39,7 @@
           "etiqueta": "der",
           "fecha": "2026-10-08",
           "hecho": "Relevamiento de UNCTAD hasta mayo de 2026: 37 licencias, 31 impuestos a la exportación, 29 prohibiciones y una cuota. Lideran RDC (18), China (16) e Indonesia (12).",
-          "lectura": "El proteccionismo minero dejó de ser la excepción. Ya es la regla del mercado.",
+          "lectura": "Los países productores abandonaron el rol de meros extractores y usan trabas aduaneras para obligar a Occidente a procesar e industrializar en origen. América Latina queda dividida y vulnerable: posee las reservas clave de litio y cobre, pero su falta de coordinación y su capacidad de refinación insuficiente le impiden ejercer ese mismo poder de negociación.",
           "tendencia": "escala",
           "intensidad": 3,
           "fuente": {
@@ -75,7 +75,7 @@
           "etiqueta": "der",
           "fecha": "2026-10-06",
           "hecho": "Desde el 2 de octubre hay al menos un ataque diario a buques en Ormuz o el golfo de Adén. El crudo de Medio Oriente ya supera el nivel prebélico: 18,3 millones de barriles diarios. Brent a USD 99,57.",
-          "lectura": "El flujo se recuperó y la seguridad no. La diferencia ya se paga en el precio y en los fletes.",
+          "lectura": "El crudo sigue fluyendo porque la prima de riesgo de guerra paga con creces el peligro de navegar bajo fuego. Esa factura inflada por fletes y pólizas de guerra no la absorbe la cadena logística: se traslada íntegra e inevitablemente al surtidor del consumidor final.",
           "tendencia": "escala",
           "intensidad": 3,
           "fuente": {
@@ -85,7 +85,7 @@
         },
         {
           "n": 4,
-          "titulo": "Déficit récord pese a los aranceles; China cae al cuarto puesto",
+          "titulo": "Importaciones récord pese a los aranceles; China cae al cuarto puesto",
           "lugar": "Washington",
           "lugarMapa": "Washington",
           "lat": 38.9,
@@ -93,7 +93,7 @@
           "etiqueta": "der",
           "fecha": "2026-10-06",
           "hecho": "Estados Unidos cerró agosto con un déficit de USD 105.600 millones, el mayor desde antes de los aranceles. Importaciones récord. China quedó detrás de México, Canadá y Taiwán como proveedor.",
-          "lectura": "El arancel no achicó el déficit. Le cambió el origen.",
+          "lectura": "Los aranceles fracasaron en corregir el desequilibrio macroeconómico: las importaciones récord demuestran que el apetito importador estadounidense sigue intacto. La caída de China es en gran medida un espejismo estadístico, donde México opera como plataforma de triangulación y ensamblaje para esquivar las tarifas.",
           "tendencia": "escala",
           "intensidad": 2,
           "fuente": {
@@ -128,7 +128,7 @@
           "etiqueta": "izq",
           "fecha": "2026-10-01",
           "hecho": "Hay 34 medidas locales sobre data centers en ocho estados para las elecciones de medio término. 31 nacieron de firmas vecinales. En 2026 ya se cancelaron más de 50 proyectos por oposición comunitaria.",
-          "lectura": "La IA perdió el consenso donde se enchufa. La geografía de los data centers ahora se vota.",
+          "lectura": "La IA choca contra la realidad local: cuando el gasto de luz, agua y tierra se decide en las elecciones locales, el rechazo de los vecinos a tener estas moles al lado de sus casas frena el avance tecnológico más que cualquier ley. En Uruguay pasó algo parecido: la queja popular por el agua en Canelones obligó a Google a cambiar sus planes, dejando claro que sin el visto bueno de la gente de la zona ya no se construye igual.",
           "tendencia": "escala",
           "intensidad": 3,
           "fuente": {
@@ -150,7 +150,7 @@
           "etiqueta": "der",
           "fecha": "2026-10-08",
           "hecho": "El centro de Sasovo, uno de los cinco grandes de Yandex, se incendió. En 2021 alojaba dos de sus tres supercomputadoras para entrenar YandexGPT. Reuters lo registra como el primer gran ataque a un nodo de datos ruso en la guerra.",
-          "lectura": "El data center ya es blanco militar. La infraestructura de la IA entró al mapa de la guerra.",
+          "lectura": "La nube vuelve a convertirse en blanco militar: atacar la capacidad de cómputo enemiga ya rinde tanto o más que bombardear una refinería o un cuartel. Esto cambia radicalmente el negocio: los futuros centros de datos tendrán que diseñarse como infraestructura de defensa, obligando a construirlos bajo tierra, hiperdispersos y lejos del alcance del frente.",
           "tendencia": "escala",
           "intensidad": 3,
           "fuente": {
@@ -181,7 +181,7 @@
           "etiqueta": "izq",
           "fecha": "2026-10-09",
           "hecho": "La tregua cumple un año el 10 de octubre. Desde entonces murieron al menos 1.471 palestinos y 5.189 resultaron heridos. Más de 100 organizaciones, entre ellas Amnistía y Oxfam, dicen que existe solo de nombre.",
-          "lectura": "Cuatro muertos por día, en promedio, durante la tregua. La guerra bajó de escala y siguió.",
+          "lectura": "Más que un alto el fuego, es una guerra de desgaste administrada a fuego lento bajo un membrete diplomático vacío para tranquilizar a la comunidad internacional. La cifra mide apenas los impactos directos de bala y metralla, pero deja afuera el saldo invisible del colapso sanitario, la desnutrición programada y la inviabilidad total de la vida cotidiana.",
           "tendencia": "estable",
           "intensidad": 3,
           "fuente": {
@@ -199,7 +199,7 @@
           "etiqueta": "izq",
           "fecha": "2026-10-09",
           "hecho": "Un ataque ruso dejó a Kiev con apagones el 8 de octubre. Moscú pide alivio de sanciones a cambio de dejar de golpear la red. Washington busca una reunión trilateral a fines de octubre.",
-          "lectura": "La red eléctrica es moneda de negociación. Moscú la cobra antes de firmar.",
+          "lectura": "Rusia usa el frío invernal y el sufrimiento civil como extorsión geopolítica: más que la paz, negocia el canje de infraestructura básica por aire económico. Poner el precio antes de sentarse a negociar busca consolidar el daño como un hecho consumado y obligar a Occidente a pagar solo por frenar la escalada, sin ceder Moscú nada de lo conquistado.",
           "tendencia": "escala",
           "intensidad": 3,
           "fuente": {
