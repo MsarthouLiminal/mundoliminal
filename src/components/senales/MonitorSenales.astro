@@ -12,6 +12,8 @@ import {
   contarSenales,
   fechaCorta,
   semanaDel,
+  fechaHora,
+  ultimaActualizacion,
   fechaSinAnio,
   proyectar,
   coordenadas,
@@ -45,6 +47,7 @@ const {
 } = Astro.props;
 
 const total = contarSenales(edicion);
+const actualizada = ultimaActualizacion(edicion);
 const senales = edicion.ejes.flatMap((eje) => eje.senales.map((s) => ({ ...s, eje: eje.id })));
 const puntos = senales.map((s) => ({ s, xy: proyectar(s.lat, s.lon) }));
 const focos = edicion.focos.map((f) => ({ f, xy: proyectar(f.lat, f.lon) }));
@@ -79,6 +82,7 @@ function lado(l: string | undefined) {
       <p class="senales__dateline">
         {archivada && <span class="senales__archivo">Edición archivada · </span>}
         {semanaDel(edicion.fechaEdicion)} · Datos al {fechaSinAnio(edicion.corteDatos)}
+        {actualizada && <span class="senales__actualizada"> · Actualizada el {fechaHora(actualizada)}</span>}
       </p>
       <hr class="senales__umbral" />
     </header>
@@ -170,12 +174,17 @@ function lado(l: string | undefined) {
             </header>
             <div class="eje__senales">
               {eje.senales.map((s) => (
-                <article class="senal" id={`senal-${s.n}`} data-n={s.n} data-lugar={s.lugarMapa} data-coord={coordenadas(s.lat, s.lon)}>
+                <article class:list={['senal', { 'senal--um': s.ultimoMomento }]} id={`senal-${s.n}`} data-n={s.n} data-lugar={s.lugarMapa} data-coord={coordenadas(s.lat, s.lon)}>
                   <div class="senal__meta">
                     <button class="senal__num" type="button" aria-label={`Ver señal ${s.n} en el mapa`}>{s.n}</button>
                     <span>{s.lugar}</span>
                     <time datetime={s.fecha}>{fechaCorta(s.fecha)}</time>
                   </div>
+                  {s.ultimoMomento ? (
+                    <p class="senal__aviso senal__aviso--um">Último momento{s.actualizado && ` · ${fechaHora(s.actualizado)}`}</p>
+                  ) : s.actualizado && (
+                    <p class="senal__aviso">Actualizado el {fechaHora(s.actualizado)}</p>
+                  )}
                   <h4>{s.titulo}</h4>
                   <p class="senal__hecho">{s.hecho}</p>
                   <p class="senal__lectura">{s.lectura}</p>
@@ -543,6 +552,22 @@ function lado(l: string | undefined) {
     cursor: pointer;
   }
   .senal.activo .senal__num { background: var(--color-horizonte); color: var(--color-vacio); }
+  /* Señales que cambiaron a mitad de semana: la actualización se dice, no se esconde. */
+  .senal__aviso {
+    justify-self: start;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-horizonte);
+  }
+  .senal__aviso--um {
+    padding: 3px 8px;
+    background: var(--color-horizonte);
+    color: var(--color-vacio);
+  }
+  .senal--um { box-shadow: inset 3px 0 0 var(--color-horizonte); }
+  .senales__actualizada { color: var(--color-horizonte); }
   .senal h4 {
     font-family: var(--font-display-v2);
     font-weight: 800;

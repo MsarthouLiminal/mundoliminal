@@ -30,6 +30,10 @@ export interface Senal {
   intensidad: 1 | 2 | 3;
   fuente: { nombre: string; url: string };
   analisis?: { titulo: string; url: string };
+  /** Si la señal se actualizó después de publicada: "2026-10-14T16:20" (hora de Montevideo). */
+  actualizado?: string;
+  /** Señal agregada a mitad de semana, antes de la edición siguiente. */
+  ultimoMomento?: boolean;
 }
 
 export interface Eje {
@@ -123,6 +127,18 @@ export function delFecha(iso: string): string {
 /** "2026-10-12" → "Semana del 12 de octubre de 2026" (fecha de cada edición) */
 export function semanaDel(iso: string): string {
   return `Semana ${delFecha(iso)}`;
+}
+
+/** "2026-10-14T16:20" → "14 oct, 16:20" (la hora ya viene en hora de Montevideo) */
+export function fechaHora(isoLocal: string): string {
+  const [dia, hora] = isoLocal.split('T');
+  return hora ? `${fechaCorta(dia)}, ${hora.slice(0, 5)}` : fechaCorta(dia);
+}
+
+/** La actualización más reciente de la edición, si hubo alguna. */
+export function ultimaActualizacion(e: Edicion): string | null {
+  const marcas = e.ejes.flatMap((eje) => eje.senales.map((s) => s.actualizado).filter(Boolean)) as string[];
+  return marcas.length ? marcas.sort().at(-1)! : null;
 }
 
 /** "2026-10-10" → "sábado 10 de octubre" */
