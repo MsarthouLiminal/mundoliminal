@@ -89,7 +89,7 @@ const archivo = ediciones();
       <ol class="archivo__lista">
         {archivo.map((e) => (
           <li>
-            <a href={`/senales/${e.id}`}>
+            <a href={`/senales/${e.id}/`}>
               <span class="archivo__sem">Semana {e.semana}</span>
               <span class="archivo__sep" aria-hidden="true">·</span>
               <span class="archivo__fecha">{delFecha(e.fechaEdicion)}</span>

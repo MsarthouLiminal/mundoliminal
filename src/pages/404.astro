@@ -1,0 +1,84 @@
+---
+/**
+ * Página 404. Además de orientar al visitante, le avisa a Google que la
+ * dirección no existe: sin este archivo, Cloudflare Pages devolvía la portada
+ * con código 200 para cualquier URL inventada o vieja.
+ */
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Página no encontrada"
+  description="La dirección que buscás no existe en mundoliminal.com."
+  noindex
+>
+  <section class="no-encontrada" aria-labelledby="ne-titulo">
+    <p class="no-encontrada__dato">Error 404</p>
+    <h1 id="ne-titulo">Esta página no existe.</h1>
+    <p class="no-encontrada__texto">
+      Puede que la dirección haya cambiado o que el link esté mal escrito. Lo que buscabas probablemente está en
+      alguna de estas tres puertas.
+    </p>
+    <ul class="no-encontrada__puertas">
+      <li><a href="/">Inicio <b aria-hidden="true">→</b></a></li>
+      <li><a href="/senales/">Señales de la semana <b aria-hidden="true">→</b></a></li>
+      <li><a href="/talks/">LIMINAL Talks <b aria-hidden="true">→</b></a></li>
+    </ul>
+  </section>
+</BaseLayout>
+
+<style>
+  .no-encontrada {
+    display: grid;
+    gap: var(--space-4);
+    max-width: 60ch;
+    padding: var(--space-16) 0 var(--space-24);
+    font-family: var(--font-text-v2);
+  }
+  .no-encontrada__dato {
+    margin: 0;
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: var(--color-lila);
+  }
+  h1 {
+    margin: 0;
+    font-family: var(--font-display-v2);
+    font-weight: 800;
+    font-size: clamp(2.6rem, 7vw, 4.4rem);
+    line-height: 0.95;
+    letter-spacing: -0.005em;
+    text-transform: none;
+    color: var(--color-blanco);
+  }
+  .no-encontrada__texto {
+    margin: 0;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--color-hueso);
+  }
+  .no-encontrada__puertas {
+    list-style: none;
+    margin: var(--space-4) 0 0;
+    padding: var(--space-4) 0 0;
+    border-top: 3px solid var(--color-horizonte);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3) var(--space-8);
+  }
+  .no-encontrada__puertas a {
+    display: inline-flex;
+    gap: 8px;
+    min-height: 44px;
+    align-items: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--color-horizonte);
+  }
+  .no-encontrada__puertas a:hover {
+    color: var(--color-blanco);
+  }
+</style>

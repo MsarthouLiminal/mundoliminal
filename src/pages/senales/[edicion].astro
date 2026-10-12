@@ -19,7 +19,7 @@ const archivada = edicion.id !== edicionVigente().id;
   title={`Señales, semana ${edicion.semana}`}
   description={`Monitor Señales de LIMINAL, ${semanaDel(edicion.fechaEdicion).toLowerCase()}: ${contarSenales(edicion)} señales en minerales críticos, chokepoints, infraestructura de la IA y conflictos, con fuente y fecha.`}
 >
-  <p class="volver"><a href="/senales">← Señales: método y archivo</a></p>
+  <p class="volver"><a href="/senales/">← Señales: método y archivo</a></p>
   <MonitorSenales edicion={edicion} titular={`Semana ${edicion.semana}`} archivada={archivada} />
 </BaseLayout>
 

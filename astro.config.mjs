@@ -7,7 +7,7 @@ const SIN_INDEXAR = [/\/catalogo\/[^/]+\/?$/];
 export default defineConfig({
   site: 'https://mundoliminal.com',
   output: 'static',
-  trailingSlash: 'never',
+  trailingSlash: 'ignore',
   integrations: [
     sitemap({
       filter: (url) => !SIN_INDEXAR.some((re) => re.test(url)),

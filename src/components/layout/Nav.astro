@@ -20,7 +20,7 @@ const current = Astro.url.pathname.replace(/\/$/, '') || '/';
       const active = current === href || current.startsWith(href + '/');
       return (
         <li>
-          <a href={href} aria-current={active ? 'page' : undefined} class:list={[{ active }]}>
+          <a href={href + '/'} aria-current={active ? 'page' : undefined} class:list={[{ active }]}>
             {label}
           </a>
         </li>
