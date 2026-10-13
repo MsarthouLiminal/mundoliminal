@@ -67,21 +67,22 @@
       "senales": [
         {
           "n": 3,
-          "titulo": "Ormuz: el crudo vuelve, los ataques también",
+          "titulo": "Ormuz: seis buques atacados en un día y el tráfico, a un quinto",
           "lugar": "Estrecho de Ormuz",
           "lugarMapa": "Estrecho de Ormuz",
           "lat": 26.57,
           "lon": 56.25,
           "etiqueta": "der",
-          "fecha": "2026-10-06",
-          "hecho": "Desde el 2 de octubre hay al menos un ataque diario a buques en Ormuz o el golfo de Adén. El crudo de Medio Oriente ya supera el nivel prebélico: 18,3 millones de barriles diarios. Brent a USD 99,57.",
-          "lectura": "El crudo sigue fluyendo porque la prima de riesgo de guerra paga con creces el peligro de navegar bajo fuego. Esa factura inflada por fletes y pólizas de guerra no la absorbe la cadena logística: se traslada íntegra e inevitablemente al surtidor del consumidor final.",
+          "fecha": "2026-10-12",
+          "hecho": "El 11 de octubre fueron atacados seis buques (cinco petroleros y un portacontenedores), cinco en el estrecho y uno frente a Sohar, en Omán. En las 72 horas previas cruzaron unos 29 buques por día, contra una media histórica de 138, según datos navales de EE.UU. citados por el centro marítimo JMIC; el rastreo independiente registra todavía menos. El Brent volvió a superar los USD 105 el 12 de octubre (CBS).",
+          "lectura": "La ilusión de que el crudo fluía a pesar de las bombas se quebró: cuando los ataques se vuelven sistemáticos, ni las primas de riesgo multimillonarias convencen a los capitanes de cruzar la ratonera. El desplome del tráfico al 20% transforma el estrecho en un cierre de facto, trasladando el golpe de inmediato al Brent de tres dígitos y a las refinerías globales.",
           "tendencia": "escala",
           "intensidad": 3,
           "fuente": {
-            "nombre": "Al Jazeera, con datos de Kpler y UKMTO",
-            "url": "https://www.aljazeera.com/news/2026/10/6/hormuz-ship-attacks-surge-are-increased-oil-exports-sustainable"
-          }
+            "nombre": "gCaptain, con datos de UKMTO y JMIC",
+            "url": "https://gcaptain.com/new-reports-reveal-five-more-ships-hit-near-hormuz/"
+          },
+          "actualizado": "2026-10-13T08:42"
         },
         {
           "n": 4,
@@ -142,21 +143,23 @@
         },
         {
           "n": 6,
-          "titulo": "Drones ucranianos dejan fuera de servicio un data center de Yandex",
-          "lugar": "Sasovo, Rusia",
+          "titulo": "Data centers en la mira: tres de Yandex y varios en Ucrania",
+          "lugar": "Rusia / Ucrania",
           "lugarMapa": "Sasovo, región de Riazán",
           "lat": 54.35,
           "lon": 41.92,
           "etiqueta": "der",
-          "fecha": "2026-10-08",
-          "hecho": "El centro de Sasovo, uno de los cinco grandes de Yandex, se incendió. En 2021 alojaba dos de sus tres supercomputadoras para entrenar YandexGPT. Reuters lo registra como el primer gran ataque a un nodo de datos ruso en la guerra.",
-          "lectura": "La nube vuelve a convertirse en blanco militar: atacar la capacidad de cómputo enemiga ya rinde tanto o más que bombardear una refinería o un cuartel. Esto cambia radicalmente el negocio: los futuros centros de datos tendrán que diseñarse como infraestructura de defensa, obligando a construirlos bajo tierra, hiperdispersos y lejos del alcance del frente.",
+          "arco": { "lat": 46.48, "lon": 30.73, "nombre": "Odesa" },
+          "fecha": "2026-10-11",
+          "hecho": "Drones ucranianos alcanzaron en una semana tres de los cinco data centers de Yandex: Sasovo (8 de octubre), Kaluga (9) y Vladímir (fin de semana). El 10 de octubre Rusia golpeó el data center del proveedor Tenet en Odesa, con daños en refrigeración y generación, y alegó que lo usaban las Fuerzas Armadas ucranianas. Se reportan además impactos en un centro de Ukrsibbank (del grupo BNP Paribas) en Kiev y en otro de RX-Name en Mykolaiv.",
+          "lectura": "La guerra inauguró la doctrina de la represalia informática por fuego real: más que ciberataques, los centros de datos sufren bombardeos cruzados sistemáticos. Al normalizarse el ataque a servidores civiles y bancarios bajo la excusa del doble uso militar, la infraestructura digital entra de lleno en la lista de objetivos bélicos convencionales.",
           "tendencia": "escala",
           "intensidad": 3,
           "fuente": {
-            "nombre": "Reuters vía The Star",
-            "url": "https://www.thestar.com.my/news/world/2026/10/08/drones-hit-yandex-data-centre-in-first-major-attack-on-russian-data-hub"
-          }
+            "nombre": "DCD (DatacenterDynamics)",
+            "url": "https://www.datacenterdynamics.com/en/news/russian-military-takes-out-more-ukrainian-data-centers/"
+          },
+          "actualizado": "2026-10-13T08:42"
         }
       ],
       "tambienTitulo": "También en el radar",
@@ -171,6 +174,27 @@
       "nombre": "Conflictos",
       "alcance": "Guerras activas, cambios de fase y lo que derraman sobre la región.",
       "senales": [
+        {
+          "n": 9,
+          "titulo": "Los hutíes llevan la guerra a los aeropuertos saudíes",
+          "lugar": "Riad / Saná",
+          "lugarMapa": "Riad",
+          "lat": 24.71,
+          "lon": 46.68,
+          "etiqueta": "izq",
+          "arco": { "lat": 15.37, "lon": 44.19, "nombre": "Saná" },
+          "fecha": "2026-10-12",
+          "hecho": "El 10 de octubre, misiles y drones hutíes mataron a 13 personas, entre ellas un estadounidense, e hirieron a más de 300 en el aeropuerto King Khalid de Riad, el ataque más letal en un país árabe del Golfo desde el inicio de la guerra con Irán. El 12 se prorrogó el cierre del aeropuerto, y los ataques a aeropuertos saudíes ya suman al menos 20 muertos en una semana. Trump dijo que evalúa sumarse a la ofensiva saudí; los hutíes amenazaron a EE.UU. y declararon blancos legítimos las instalaciones petroleras y los aeropuertos del reino.",
+          "lectura": "Los hutíes rompieron el cerco marítimo y llevaron el costo del conflicto al corazón civil y logístico del reino saudí, cerrando cielos en vez de solo estrechos. La muerte de un ciudadano estadounidense y la amenaza a la infraestructura petrolera arrastran a Washington al borde de una intervención directa, convirtiendo una guerra asimétrica en una conflagración regional abierta.",
+          "tendencia": "escala",
+          "intensidad": 3,
+          "fuente": {
+            "nombre": "CBS News, con AP y AFP",
+            "url": "https://www.cbsnews.com/live-updates/iran-war-us-trump-saudi-arabia-houthi/#post-update-aca4c171"
+          },
+          "actualizado": "2026-10-13T08:42",
+          "ultimoMomento": true
+        },
         {
           "n": 7,
           "titulo": "Un año de alto el fuego con 1.471 muertos",
@@ -192,20 +216,21 @@
         {
           "n": 8,
           "titulo": "Rusia le pone precio a la tregua energética",
-          "lugar": "Kiev",
+          "lugar": "Kiev / Járkiv",
           "lugarMapa": "Kiev",
           "lat": 50.45,
           "lon": 30.52,
           "etiqueta": "izq",
-          "fecha": "2026-10-09",
-          "hecho": "Un ataque ruso dejó a Kiev con apagones el 8 de octubre. Moscú pide alivio de sanciones a cambio de dejar de golpear la red. Washington busca una reunión trilateral a fines de octubre.",
-          "lectura": "Rusia usa el frío invernal y el sufrimiento civil como extorsión geopolítica: más que la paz, negocia el canje de infraestructura básica por aire económico. Poner el precio antes de sentarse a negociar busca consolidar el daño como un hecho consumado y obligar a Occidente a pagar solo por frenar la escalada, sin ceder Moscú nada de lo conquistado.",
+          "fecha": "2026-10-12",
+          "hecho": "El 9 de octubre, EE.UU. autorizó hasta el 7 de abril de 2027 las operaciones con diésel ruso (OFAC, licencia general 135). El 11, Trump anunció una tregua energética; después del anuncio, Rusia atacó instalaciones de gas de Naftogaz y una central eléctrica en Járkiv, y el Kremlin dijo que las conversaciones siguen. El 12, la UE sumó casi 1.600 sanciones contra la industria militar rusa, la mayor ampliación desde el inicio de la guerra.",
+          "lectura": "El frente occidental se partió en dos: Washington paga por adelantado cediendo alivio petrolero por temor a la inflación interna, mientras Bruselas redobla el castigo con sanciones récord. Moscú capitaliza esa fractura cobrando la concesión de Trump sin apagar los misiles, demostrando que para el Kremlin una tregua es menos un cese del fuego que una herramienta para quebrar a la OTAN desde adentro.",
           "tendencia": "escala",
           "intensidad": 3,
           "fuente": {
-            "nombre": "The Kyiv Independent",
-            "url": "https://kyivindependent.com/putin-puts-a-price-on-trumps-ukraine-energy-truce/"
-          }
+            "nombre": "Al Jazeera, con AFP, AP y Reuters",
+            "url": "https://www.aljazeera.com/news/2026/10/12/ukraines-zelenskyy-accuses-russia-of-violating-trumps-energy-ceasefire"
+          },
+          "actualizado": "2026-10-13T08:42"
         }
       ],
       "tambienTitulo": "Focos en observación",
