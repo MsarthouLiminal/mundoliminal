@@ -82,7 +82,17 @@
             "nombre": "gCaptain, con datos de UKMTO y JMIC",
             "url": "https://gcaptain.com/new-reports-reveal-five-more-ships-hit-near-hormuz/"
           },
-          "actualizado": "2026-10-13T08:42"
+          "actualizado": "2026-10-13T08:42",
+          "anterior": {
+            "titulo": "Ormuz: el crudo vuelve, los ataques también",
+            "fecha": "2026-10-06",
+            "hecho": "Desde el 2 de octubre hay al menos un ataque diario a buques en Ormuz o el golfo de Adén. El crudo de Medio Oriente ya supera el nivel prebélico: 18,3 millones de barriles diarios. Brent a USD 99,57.",
+            "lectura": "El crudo sigue fluyendo porque la prima de riesgo de guerra paga con creces el peligro de navegar bajo fuego. Esa factura inflada por fletes y pólizas de guerra no la absorbe la cadena logística: se traslada íntegra e inevitablemente al surtidor del consumidor final.",
+            "fuente": {
+              "nombre": "Al Jazeera, con datos de Kpler y UKMTO",
+              "url": "https://www.aljazeera.com/news/2026/10/6/hormuz-ship-attacks-surge-are-increased-oil-exports-sustainable"
+            }
+          }
         },
         {
           "n": 4,
@@ -159,7 +169,17 @@
             "nombre": "DCD (DatacenterDynamics)",
             "url": "https://www.datacenterdynamics.com/en/news/russian-military-takes-out-more-ukrainian-data-centers/"
           },
-          "actualizado": "2026-10-13T08:42"
+          "actualizado": "2026-10-13T08:42",
+          "anterior": {
+            "titulo": "Drones ucranianos dejan fuera de servicio un data center de Yandex",
+            "fecha": "2026-10-08",
+            "hecho": "El centro de Sasovo, uno de los cinco grandes de Yandex, se incendió. En 2021 alojaba dos de sus tres supercomputadoras para entrenar YandexGPT. Reuters lo registra como el primer gran ataque a un nodo de datos ruso en la guerra.",
+            "lectura": "La nube vuelve a convertirse en blanco militar: atacar la capacidad de cómputo enemiga ya rinde tanto o más que bombardear una refinería o un cuartel. Esto cambia radicalmente el negocio: los futuros centros de datos tendrán que diseñarse como infraestructura de defensa, obligando a construirlos bajo tierra, hiperdispersos y lejos del alcance del frente.",
+            "fuente": {
+              "nombre": "Reuters vía The Star",
+              "url": "https://www.thestar.com.my/news/world/2026/10/08/drones-hit-yandex-data-centre-in-first-major-attack-on-russian-data-hub"
+            }
+          }
         }
       ],
       "tambienTitulo": "También en el radar",
@@ -230,7 +250,16 @@
             "nombre": "Al Jazeera, con AFP, AP y Reuters",
             "url": "https://www.aljazeera.com/news/2026/10/12/ukraines-zelenskyy-accuses-russia-of-violating-trumps-energy-ceasefire"
           },
-          "actualizado": "2026-10-13T08:42"
+          "actualizado": "2026-10-13T08:42",
+          "anterior": {
+            "fecha": "2026-10-09",
+            "hecho": "Un ataque ruso dejó a Kiev con apagones el 8 de octubre. Moscú pide alivio de sanciones a cambio de dejar de golpear la red. Washington busca una reunión trilateral a fines de octubre.",
+            "lectura": "Rusia usa el frío invernal y el sufrimiento civil como extorsión geopolítica: más que la paz, negocia el canje de infraestructura básica por aire económico. Poner el precio antes de sentarse a negociar busca consolidar el daño como un hecho consumado y obligar a Occidente a pagar solo por frenar la escalada, sin ceder Moscú nada de lo conquistado.",
+            "fuente": {
+              "nombre": "The Kyiv Independent",
+              "url": "https://kyivindependent.com/putin-puts-a-price-on-trumps-ukraine-energy-truce/"
+            }
+          }
         }
       ],
       "tambienTitulo": "Focos en observación",

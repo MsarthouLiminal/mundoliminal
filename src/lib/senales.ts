@@ -34,6 +34,19 @@ export interface Senal {
   actualizado?: string;
   /** Señal agregada a mitad de semana, antes de la edición siguiente. */
   ultimoMomento?: boolean;
+  /**
+   * La versión publicada el lunes, cuando una actualización cambió el texto.
+   * Se carga la primera vez que se actualiza la señal y no se vuelve a pisar:
+   * siempre guarda lo que salió en la edición. Se muestra plegada bajo la señal.
+   */
+  anterior?: {
+    /** Solo si el título cambió. */
+    titulo?: string;
+    fecha: string;
+    hecho: string;
+    lectura: string;
+    fuente: { nombre: string; url: string };
+  };
 }
 
 export interface Eje {
