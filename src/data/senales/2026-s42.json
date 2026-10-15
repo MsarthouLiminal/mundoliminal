@@ -75,14 +75,14 @@
           "etiqueta": "der",
           "fecha": "2026-10-14",
           "hecho": "El portacontenedores GFS Pride, de bandera de Singapur, se hundió el 14 de octubre tras ser atacado en el estrecho, con sus 21 tripulantes evacuados: la Guardia Revolucionaria iraní dice que chocó una mina y fuentes de seguridad marítima hablan de un proyectil (Reuters). El mismo día terminó de hundirse el granelero Cape Dao, golpeado el 23 de septiembre. Son el segundo y el tercer buque hundidos desde el inicio de la guerra en febrero, según datos de siniestros de la OMI, con 20 ataques registrados por UKMTO en Ormuz desde el 1 de octubre.",
-          "lectura": "Cuando los buques pasan de recibir impactos a hundirse, la prima de riesgo deja de ser un costo y se convierte en una sentencia: ninguna póliza paga un casco en el fondo del estrecho. Con Teherán reivindicando minas y Washington insistiendo en que el tráfico sigue bajo protección, la diferencia entre bloqueo y cierre ya es solo semántica.",
+          "lectura": "Cuando los buques pasan de recibir impactos a hundirse, todo cambia: no hay póliza que pague un casco en el fondo del estrecho. Con Teherán reivindicando minas y Washington insistiendo en que el tráfico sigue bajo protección, la diferencia entre bloqueo y cierre ya es solo cosa de discursos.",
           "tendencia": "escala",
           "intensidad": 3,
           "fuente": {
             "nombre": "CNN",
             "url": "https://www.cnn.com/2026/10/15/middleeast/strait-of-hormuz-ships-sunk-iran-intl-hnk"
           },
-          "actualizado": "2026-10-15THH:MM",
+          "actualizado": "2026-10-15T07:26",
           "anterior": {
             "titulo": "Ormuz: el crudo vuelve, los ataques también",
             "fecha": "2026-10-06",
@@ -212,7 +212,7 @@
             "nombre": "Reuters vía US News",
             "url": "https://www.usnews.com/news/world/articles/2026-10-14/aramcos-dhahran-hq-suffered-extensive-damage-in-tuesdays-attack-sources-say"
           },
-          "actualizado": "2026-10-15THH:MM",
+          "actualizado": "2026-10-15T07:26",
           "ultimoMomento": true
         },
         {
@@ -250,7 +250,7 @@
             "nombre": "ABC News",
             "url": "https://abcnews.com/International/600000-power-ukraine-russia-launches-missile-drone-attack/story?id=137248732"
           },
-          "actualizado": "2026-10-15THH:MM",
+          "actualizado": "2026-10-15T07:26",
           "anterior": {
             "fecha": "2026-10-09",
             "hecho": "Un ataque ruso dejó a Kiev con apagones el 8 de octubre. Moscú pide alivio de sanciones a cambio de dejar de golpear la red. Washington busca una reunión trilateral a fines de octubre.",
