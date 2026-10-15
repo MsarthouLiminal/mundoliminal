@@ -130,6 +130,25 @@
       "alcance": "Data centers, chips, energía y agua. El cuerpo físico de la IA y quién lo decide.",
       "senales": [
         {
+          "n": 10,
+          "titulo": "Solaria: USD 5.700 millones y 500 MW de data centers en Uruguay",
+          "lugar": "Uruguay (Canelones, San José, Florida)",
+          "lugarMapa": "Canelones, Uruguay",
+          "lat": -34.52,
+          "lon": -56.28,
+          "etiqueta": "der",
+          "fecha": "2026-10-14",
+          "hecho": "El presidente Yamandú Orsi firmó el 14 de octubre un acuerdo con la española Solaria para un parque de centros de datos de 500 MW en régimen de zona franca, que el gobierno presenta como la mayor inversión de la historia del país: USD 5.500 millones para los data centers, en Canelones y San José, y USD 200 millones para 350 MW de generación solar propia en Florida. La primera fase suma 200 MW de cómputo y toda la generación solar, con 3.100 empleos de obra hacia 2029; la segunda agrega 300 MW, sin fecha. El anuncio no informa consumo de agua, sistema de refrigeración ni clientes del parque.",
+          "lectura": "Uruguay ofreció su matriz renovable como carta de presentación y Solaria la tomó: 350 MW de paneles para alimentar hasta 500 MW de cómputo que no se apagan de noche, sin que el anuncio diga de dónde saldrá la energía cuando no hay sol. Falta además la cifra que en 2023 obligó a Google a rediseñar su data center en Canelones: cuánta agua va a usar el parque. La inversión que el gobierno llama la más grande de la historia llega con el monto en el titular y el agua en blanco.",
+          "tendencia": "escala",
+          "intensidad": 3,
+          "fuente": {
+            "nombre": "Presidencia de la República",
+            "url": "https://www.gub.uy/presidencia/comunicacion/noticias/presidente-orsi-anuncio-mayor-inversion-historia-del-pais-solaria"
+          },
+          "actualizado": "2026-10-15T07:35"
+        },
+        {
           "n": 5,
           "titulo": "Los data centers llegan a la boleta: 34 votaciones en noviembre",
           "lugar": "Ohio · Texas · Pensilvania",
