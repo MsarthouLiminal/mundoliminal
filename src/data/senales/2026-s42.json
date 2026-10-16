@@ -214,6 +214,34 @@
       "alcance": "Guerras activas, cambios de fase y lo que derraman sobre la región.",
       "senales": [
         {
+          "n": 8,
+          "titulo": "La tregua energética cayó: Ucrania vuelve a golpear refinerías",
+          "lugar": "Kiev / Járkiv",
+          "lugarMapa": "Kiev",
+          "lat": 50.45,
+          "lon": 30.52,
+          "etiqueta": "izq",
+          "fecha": "2026-10-15",
+          "hecho": "El 15 de octubre un dron ucraniano incendió la refinería de Rosneft en Riazán, que procesa cerca del 5% del crudo refinado de Rusia, horas después de que Zelensky declarara al Financial Times que Ucrania terminó con la tregua energética anunciada por Trump el 11 de octubre. Kiev condiciona el cese de sus ataques a recibir interceptores Patriot y denuncia recortes de inteligencia estadounidense y límites al uso de Starlink (AP). Lavrov calificó los ataques de desafío directo a Trump; la víspera, misiles rusos habían dejado a 600.000 personas sin luz en Kiev y Járkiv.",
+          "lectura": "La tregua duró cuatro días y murió por su propio diseño: Washington la anunció sin garantías, Moscú siguió bombardeando la red eléctrica y Kiev decidió que aguantar solo le costaba refinerías intactas del enemigo. Zelensky ahora le pone precio al cese (Patriots a cambio de parar los drones), una señal de que la relación con Trump ya se negocia golpe a golpe.",
+          "tendencia": "escala",
+          "intensidad": 3,
+          "fuente": {
+            "nombre": "Reuters vía The Standard",
+            "url": "https://www.thestandard.com.hk/world/article/345649/Ukraine-hits-Russian-refinery-as-Zelensky-says-were-done-with-Trumps-energy-truce"
+          },
+          "actualizado": "2026-10-16T07:23",
+          "anterior": {
+            "fecha": "2026-10-09",
+            "hecho": "Un ataque ruso dejó a Kiev con apagones el 8 de octubre. Moscú pide alivio de sanciones a cambio de dejar de golpear la red. Washington busca una reunión trilateral a fines de octubre.",
+            "lectura": "Rusia usa el frío invernal y el sufrimiento civil como extorsión geopolítica: más que la paz, negocia el canje de infraestructura básica por aire económico. Poner el precio antes de sentarse a negociar busca consolidar el daño como un hecho consumado y obligar a Occidente a pagar solo por frenar la escalada, sin ceder Moscú nada de lo conquistado.",
+            "fuente": {
+              "nombre": "The Kyiv Independent",
+              "url": "https://kyivindependent.com/putin-puts-a-price-on-trumps-ukraine-energy-truce/"
+            }
+          }
+        },
+        {
           "n": 9,
           "titulo": "Aramco: daño extenso en la sede y los hutíes redoblan sobre Riad",
           "lugar": "Dhahran / Saná",
@@ -250,34 +278,6 @@
           "fuente": {
             "nombre": "Al Jazeera · Amnistía Internacional",
             "url": "https://www.aljazeera.com/news/2026/10/9/gaza-ceasefire-exists-in-name-only-more-than-100-ngos-say"
-          }
-        },
-        {
-          "n": 8,
-          "titulo": "La tregua energética cayó: Ucrania vuelve a golpear refinerías",
-          "lugar": "Kiev / Járkiv",
-          "lugarMapa": "Kiev",
-          "lat": 50.45,
-          "lon": 30.52,
-          "etiqueta": "izq",
-          "fecha": "2026-10-15",
-          "hecho": "El 15 de octubre un dron ucraniano incendió la refinería de Rosneft en Riazán, que procesa cerca del 5% del crudo refinado de Rusia, horas después de que Zelensky declarara al Financial Times que Ucrania terminó con la tregua energética anunciada por Trump el 11 de octubre. Kiev condiciona el cese de sus ataques a recibir interceptores Patriot y denuncia recortes de inteligencia estadounidense y límites al uso de Starlink (AP). Lavrov calificó los ataques de desafío directo a Trump; la víspera, misiles rusos habían dejado a 600.000 personas sin luz en Kiev y Járkiv.",
-          "lectura": "La tregua duró cuatro días y murió por su propio diseño: Washington la anunció sin garantías, Moscú siguió bombardeando la red eléctrica y Kiev decidió que aguantar solo le costaba refinerías intactas del enemigo. Zelensky ahora le pone precio al cese (Patriots a cambio de parar los drones), una señal de que la relación con Trump ya se negocia golpe a golpe.",
-          "tendencia": "escala",
-          "intensidad": 3,
-          "fuente": {
-            "nombre": "Reuters vía The Standard",
-            "url": "https://www.thestandard.com.hk/world/article/345649/Ukraine-hits-Russian-refinery-as-Zelensky-says-were-done-with-Trumps-energy-truce"
-          },
-          "actualizado": "2026-10-16T07:23",
-          "anterior": {
-            "fecha": "2026-10-09",
-            "hecho": "Un ataque ruso dejó a Kiev con apagones el 8 de octubre. Moscú pide alivio de sanciones a cambio de dejar de golpear la red. Washington busca una reunión trilateral a fines de octubre.",
-            "lectura": "Rusia usa el frío invernal y el sufrimiento civil como extorsión geopolítica: más que la paz, negocia el canje de infraestructura básica por aire económico. Poner el precio antes de sentarse a negociar busca consolidar el daño como un hecho consumado y obligar a Occidente a pagar solo por frenar la escalada, sin ceder Moscú nada de lo conquistado.",
-            "fuente": {
-              "nombre": "The Kyiv Independent",
-              "url": "https://kyivindependent.com/putin-puts-a-price-on-trumps-ukraine-energy-truce/"
-            }
           }
         }
       ],
