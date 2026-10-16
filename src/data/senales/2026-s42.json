@@ -67,22 +67,22 @@
       "senales": [
         {
           "n": 3,
-          "titulo": "Ormuz: de los ataques a los hundimientos, dos buques en 24 horas",
+          "titulo": "Ormuz: el crudo ya no vuelve, los tránsitos caen 40%",
           "lugar": "Estrecho de Ormuz",
           "lugarMapa": "Estrecho de Ormuz",
           "lat": 26.57,
           "lon": 56.25,
           "etiqueta": "der",
           "fecha": "2026-10-14",
-          "hecho": "El portacontenedores GFS Pride, de bandera de Singapur, se hundió el 14 de octubre tras ser atacado en el estrecho, con sus 21 tripulantes evacuados: la Guardia Revolucionaria iraní dice que chocó una mina y fuentes de seguridad marítima hablan de un proyectil (Reuters). El mismo día terminó de hundirse el granelero Cape Dao, golpeado el 23 de septiembre. Son el segundo y el tercer buque hundidos desde el inicio de la guerra en febrero, según datos de siniestros de la OMI, con 20 ataques registrados por UKMTO en Ormuz desde el 1 de octubre.",
-          "lectura": "Cuando los buques pasan de recibir impactos a hundirse, todo cambia: no hay póliza que pague un casco en el fondo del estrecho. Con Teherán reivindicando minas y Washington insistiendo en que el tráfico sigue bajo protección, la diferencia entre bloqueo y cierre ya es solo cosa de discursos.",
+          "hecho": "Las exportaciones de crudo por Ormuz cayeron a 8,5 millones de barriles diarios en la semana cerrada el 12 de octubre, casi 40% debajo del nivel preguerra, con días de apenas 3 millones cruzando el estrecho (datos de Kpler). El retroceso llega tras más de 20 buques atacados en el mes y el hundimiento del portacontenedores GFS Pride el 14 de octubre, con sus 21 tripulantes evacuados. El total exportado desde Medio Oriente bajó a 14 millones de barriles diarios, casi 20% menos que antes de la guerra.",
+          "lectura": "Más que cerrar el estrecho, a Irán le alcanza con que cada tránsito cueste más de lo que rinde: armadores y aseguradoras están haciendo el bloqueo por él. El crudo que en setiembre volvió con escolta estadounidense hoy cae 40%, y esa es la medida real de quién controla Ormuz.",
           "tendencia": "escala",
           "intensidad": 3,
           "fuente": {
-            "nombre": "CNN",
-            "url": "https://www.cnn.com/2026/10/15/middleeast/strait-of-hormuz-ships-sunk-iran-intl-hnk"
+            "nombre": "CNBC, con datos de Kpler",
+            "url": "https://www.cnbc.com/2026/10/14/container-ship-sinks-strait-hormuz-as-iran-war-attacks.html"
           },
-          "actualizado": "2026-10-15T07:26",
+          "actualizado": "2026-10-16THH:MM",
           "anterior": {
             "titulo": "Ormuz: el crudo vuelve, los ataques también",
             "fecha": "2026-10-06",
@@ -254,22 +254,22 @@
         },
         {
           "n": 8,
-          "titulo": "Rusia deja a 600.000 sin luz en plena tregua energética",
+          "titulo": "La tregua energética cayó: Ucrania vuelve a golpear refinerías",
           "lugar": "Kiev / Járkiv",
           "lugarMapa": "Kiev",
           "lat": 50.45,
           "lon": 30.52,
           "etiqueta": "izq",
-          "fecha": "2026-10-14",
-          "hecho": "En la madrugada del 14 de octubre, tres días después de que Trump anunciara una tregua energética, Rusia lanzó 39 misiles balísticos y de crucero y unos 128 drones contra la red eléctrica ucraniana: 600.000 personas quedaron sin luz en Kiev, su región y Járkiv, con 26 instalaciones del sistema eléctrico y cuatro de petróleo y gas dañadas (fuerza aérea ucraniana vía ABC News). En Kiev murieron al menos tres personas y 21 resultaron heridas. Trump insiste en que la tregua sigue en pie; Moscú dice que atacó instalaciones de uso militar.",
-          "lectura": "El frente occidental se partió en dos: Washington paga por adelantado cediendo alivio petrolero por temor a la inflación interna, mientras Bruselas redobla el castigo con sanciones récord. Moscú capitaliza esa fractura cobrando la concesión de Trump sin apagar los misiles, demostrando que para el Kremlin una tregua es menos un cese del fuego que una herramienta para quebrar a la OTAN desde adentro.",
+          "fecha": "2026-10-15",
+          "hecho": "El 15 de octubre un dron ucraniano incendió la refinería de Rosneft en Riazán, que procesa cerca del 5% del crudo refinado de Rusia, horas después de que Zelensky declarara al Financial Times que Ucrania terminó con la tregua energética anunciada por Trump el 11 de octubre. Kiev condiciona el cese de sus ataques a recibir interceptores Patriot y denuncia recortes de inteligencia estadounidense y límites al uso de Starlink (AP). Lavrov calificó los ataques de desafío directo a Trump; la víspera, misiles rusos habían dejado a 600.000 personas sin luz en Kiev y Járkiv.",
+          "lectura": "La tregua duró cuatro días y murió por su propio diseño: Washington la anunció sin garantías, Moscú siguió bombardeando la red eléctrica y Kiev decidió que aguantar solo le costaba refinerías intactas del enemigo. Zelensky ahora le pone precio al cese (Patriots a cambio de parar los drones), una señal de que la relación con Trump ya se negocia golpe a golpe.",
           "tendencia": "escala",
           "intensidad": 3,
           "fuente": {
-            "nombre": "ABC News",
-            "url": "https://abcnews.com/International/600000-power-ukraine-russia-launches-missile-drone-attack/story?id=137248732"
+            "nombre": "Reuters vía The Standard",
+            "url": "https://www.thestandard.com.hk/world/article/345649/Ukraine-hits-Russian-refinery-as-Zelensky-says-were-done-with-Trumps-energy-truce"
           },
-          "actualizado": "2026-10-15T07:26",
+          "actualizado": "2026-10-16THH:MM",
           "anterior": {
             "fecha": "2026-10-09",
             "hecho": "Un ataque ruso dejó a Kiev con apagones el 8 de octubre. Moscú pide alivio de sanciones a cambio de dejar de golpear la red. Washington busca una reunión trilateral a fines de octubre.",
