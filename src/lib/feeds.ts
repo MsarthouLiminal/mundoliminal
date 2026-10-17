@@ -1,4 +1,5 @@
 import { XMLParser } from 'fast-xml-parser';
+import titulosCorregidos from '../data/titulos-corregidos.json';
 
 export type Platform = 'youtube' | 'substack' | 'spotify';
 
@@ -69,7 +70,21 @@ function asArray<T>(v: T | T[] | undefined | null): T[] {
 // Aplica a YouTube y Spotify; Substack tiene títulos limpios desde origen.
 function cleanFeedTitle(raw: string): string {
   const idx = raw.indexOf(' | ');
-  return (idx === -1 ? raw : raw.slice(0, idx)).trim();
+  return (idx === -1 ? raw : raw.slice(0, idx))
+    .replace(/\s*:(\s*:)+/g, ':') // "Uruguay: : US$" pasa a "Uruguay: US$"
+    .replace(/\s{2,}/g, ' ')
+    .trim();
+}
+
+/** Título corregido a mano para un video (src/data/titulos-corregidos.json), si lo hay. */
+function tituloCorregidoYouTube(link: string): string | null {
+  try {
+    const id = new URL(link).searchParams.get('v');
+    const tabla = (titulosCorregidos as { youtube?: Record<string, string> }).youtube ?? {};
+    return id && tabla[id] ? tabla[id] : null;
+  } catch {
+    return null;
+  }
 }
 
 function extractFirstImg(html: string | undefined): string | null {
@@ -142,7 +157,7 @@ export async function getYouTubeLatestList(limit = 5): Promise<LatestItem[]> {
         ?? null;
       items.push({
         platform: 'youtube',
-        title: cleanFeedTitle(String(e.title)),
+        title: tituloCorregidoYouTube(link) ?? cleanFeedTitle(String(e.title)),
         url: link,
         pubDate,
         thumbnail: typeof thumb === 'string' ? thumb : null,

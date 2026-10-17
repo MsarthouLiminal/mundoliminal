@@ -1,0 +1,6 @@
+{
+  "_nota": "Títulos que la web muestra corregidos mientras la plataforma no los cambia. La clave es el id del video de YouTube (lo que va después de watch?v=). Cuando el título se corrija en YouTube, la entrada se puede borrar.",
+  "youtube": {
+    "mzTjqb78mnQ": "Datacenters en Uruguay: US$ 5.700 millones lejos de la guerra"
+  }
+}
