@@ -53,8 +53,7 @@ const categories = [
       <ul class="cats">
         {categories.map((c) => (
           <li class="cat">
-            <span class="cat__name">{c.name}</span>
-            <span class="cat__sep">· </span>
+            <span class="cat__name">{c.name}:</span>
             <span class="cat__desc">{c.desc}</span>
           </li>
         ))}
@@ -81,11 +80,14 @@ const categories = [
 </BaseLayout>
 
 <style>
+  /* Brand Kit v2.1: titulares en Big Shoulders Display 800 (caja mixta),
+     todo lo que se lee en Chivo. */
   .contact {
     display: flex;
     flex-direction: column;
     gap: var(--space-12);
     max-width: var(--content-max);
+    font-family: var(--font-text-v2);
   }
 
   .contact__opening {
@@ -94,70 +96,60 @@ const categories = [
     gap: var(--space-4);
   }
   .contact__opening h1 {
-    font-size: var(--fs-3xl);
-    letter-spacing: var(--tracking-display-wide);
-    color: var(--tinta);
+    font-size: clamp(3rem, 7vw, 5rem);
+    line-height: 0.92;
+    color: var(--tinta-fuerte);
     margin-bottom: var(--space-4);
   }
   .contact__opening p {
-    font-family: var(--font-mono);
-    font-size: var(--fs-md);
+    font-size: 1.2rem;
     color: var(--tinta);
-    line-height: 1.7;
+    line-height: 1.6;
   }
 
   .subhead {
-    font-family: var(--font-display);
-    font-weight: 700;
-    font-size: var(--fs-md);
-    letter-spacing: var(--tracking-display-wide);
-    text-transform: uppercase;
-    color: var(--tinta);
+    font-size: 1.75rem;
+    line-height: 1;
+    color: var(--tinta-fuerte);
     margin-bottom: var(--space-4);
   }
 
   .contact__email-block {
-    padding: var(--space-8) 0;
+    padding: var(--space-4) 0;
   }
   .contact__email {
     display: inline-block;
-    font-family: var(--font-mono);
     font-weight: 700;
-    font-size: clamp(1.25rem, 3.5vw, 2rem);
-    letter-spacing: var(--tracking-mono);
-    color: var(--senal);
-    text-decoration: none;
-    border-bottom: 1px solid transparent;
-    transition: color 150ms, border-color 150ms;
-    word-break: break-all;
+    font-size: clamp(1.3rem, 3.5vw, 2rem);
+    color: var(--tinta-fuerte);
+    text-decoration: underline;
+    text-decoration-color: var(--color-teal);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 6px;
+    transition: color 150ms, text-decoration-color 150ms;
+    overflow-wrap: anywhere;
   }
   .contact__email:hover {
-    color: var(--acento);
-    border-bottom-color: var(--acento);
+    color: var(--tinta-fuerte);
+    text-decoration-color: var(--senal);
   }
 
   .cats {
     list-style: none;
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-4);
+    border-top: 1px solid var(--color-teal);
   }
   .cat {
-    font-family: var(--font-mono);
-    font-size: var(--fs-base);
-    line-height: 1.6;
+    padding: var(--space-3) 0;
+    border-bottom: 1px solid var(--color-teal);
+    font-size: 1rem;
+    line-height: 1.55;
+    color: var(--tinta);
   }
   .cat__name {
     font-weight: 700;
-    color: var(--tinta);
-  }
-  .cat__sep {
-    color: var(--tinta-suave);
-  }
-  .cat__desc {
-    color: var(--tinta-suave);
+    color: var(--tinta-fuerte);
   }
 
   .contact__more {
@@ -166,20 +158,30 @@ const categories = [
     gap: var(--space-3);
   }
   .contact__more p {
-    font-family: var(--font-mono);
-    font-size: var(--fs-base);
+    font-size: 1rem;
     color: var(--tinta);
   }
   .contact__more a {
-    color: var(--acento);
-    text-decoration: none;
-    border-bottom: 1px solid transparent;
-    transition: border-color 150ms;
+    font-weight: 700;
+    color: var(--tinta-fuerte);
+    text-decoration: underline;
+    text-decoration-color: var(--color-teal);
+    text-underline-offset: 4px;
   }
   .contact__more a:hover {
-    border-bottom-color: var(--acento);
+    text-decoration-color: var(--senal);
   }
   .contact__location {
-    color: var(--tinta-suave) !important;
+    font-weight: 500;
+    color: var(--tinta-meta) !important;
+  }
+
+  @media (max-width: 640px) {
+    .contact__opening p {
+      font-size: 1.08rem;
+    }
+    .subhead {
+      font-size: 1.5rem;
+    }
   }
 </style>

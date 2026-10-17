@@ -14,7 +14,7 @@ body {
   /* Las secciones a sangre (hero, manifiesto) usan 100vw, que incluye el ancho
      de la barra de scroll. Sin esto aparece scroll horizontal de unos pocos px. */
   overflow-x: hidden;
-  font-family: var(--font-mono);
+  font-family: var(--font-text-v2);
   font-size: var(--fs-base);
   line-height: 1.6;
   background: var(--bg-default);
@@ -23,12 +23,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Brand Kit v2.1: titulares en Big Shoulders Display 800, caja mixta,
+   tracking entre -0,01em y 0, interlineado 0,92 a 1,0. */
 h1, h2, h3, h4 {
-  font-family: var(--font-display);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: var(--tracking-display);
-  line-height: 1.1;
+  font-family: var(--font-display-v2);
+  font-weight: 800;
+  letter-spacing: -0.005em;
+  line-height: 1;
+  text-wrap: balance;
   margin: 0;
 }
 

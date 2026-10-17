@@ -19,9 +19,11 @@
   --muted: var(--tinta-suave);
   --rule: color-mix(in oklab, var(--tinta) 16%, transparent);
 
-  /* === Tipografías (Brand Kit: máx. 2 por pieza) === */
-  --font-display: 'Oswald Variable', 'Oswald', system-ui, sans-serif;
-  --font-mono: 'Space Mono', ui-monospace, SFMono-Regular, monospace;
+  /* === Tipografías (Brand Kit v2.1: exactamente dos familias) ===
+     Los nombres viejos quedan como alias de las v2.1 para que ningún
+     componente pueda volver a Oswald o a Space Mono. */
+  --font-display: var(--font-display-v2);
+  --font-mono: var(--font-text-v2);
 
   /* Tracking display: 0.12em a 0.20em (Brand Kit) */
   --tracking-display: 0.12em;
@@ -64,7 +66,7 @@
   --color-ciruela: #4A2E5C;
   --color-sal: #E8EAE3;
 
-  --font-display-v2: 'Big Shoulders Display', 'Oswald Variable', 'Arial Narrow', sans-serif;
+  --font-display-v2: 'Big Shoulders Display', 'Arial Narrow', sans-serif;
   --font-text-v2: 'Chivo', 'Helvetica Neue', Arial, sans-serif;
 
   /* === Roles de color (desde el 17-oct-2026) ===

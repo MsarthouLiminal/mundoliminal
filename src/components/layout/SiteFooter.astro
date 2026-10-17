@@ -5,10 +5,10 @@ const year = new Date().getFullYear();
 ---
 
 <footer class="site-footer">
-  <p class="tagline">Contexto · Mecanismo · Consecuencia</p>
+  <p class="tagline">Contexto, mecanismo, consecuencia</p>
   <SocialIcons />
   <a class="email" href="mailto:contacto@mundoliminal.com">contacto@mundoliminal.com</a>
-  <p class="meta">© {year} LIMINAL · mundoliminal.com</p>
+  <p class="meta">© {year} LIMINAL</p>
 </footer>
 
 <style>
@@ -21,18 +21,15 @@ const year = new Date().getFullYear();
     gap: var(--space-6);
     align-items: center;
     text-align: center;
+    font-family: var(--font-text-v2);
   }
   .tagline {
-    font-family: var(--font-mono);
-    font-size: var(--fs-sm);
-    font-weight: 700;
-    letter-spacing: var(--tracking-display-wide);
-    text-transform: uppercase;
-    color: var(--tinta-suave);
+    font-weight: 500;
+    font-size: 1rem;
+    color: var(--tinta-meta);
   }
   .email {
-    font-family: var(--font-mono);
-    font-size: var(--fs-sm);
+    font-size: 0.9rem;
     color: var(--tinta-suave);
     text-decoration: none;
     border-bottom: 1px solid transparent;
@@ -43,8 +40,7 @@ const year = new Date().getFullYear();
     border-bottom-color: var(--acento);
   }
   .meta {
-    font-family: var(--font-mono);
-    font-size: var(--fs-xs);
+    font-size: 0.8rem;
     color: var(--tinta-suave);
   }
 

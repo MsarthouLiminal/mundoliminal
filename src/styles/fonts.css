@@ -1,9 +1,6 @@
-@import '@fontsource-variable/oswald';
-@import '@fontsource/space-mono/400.css';
-@import '@fontsource/space-mono/700.css';
-
-/* Brand Kit v2.1: Big Shoulders Display + Chivo. Hoy las usa el monitor
-   Señales; el resto del sitio migra en la próxima etapa. */
+/* Brand Kit v2.1: exactamente dos familias, Big Shoulders Display (titulares)
+   y Chivo (todo lo que se lee). Oswald vive solo dentro del wordmark, ya en
+   paths; Space Mono quedó retirada el 17 de octubre de 2026. */
 @import '@fontsource/big-shoulders-display/700';
 @import '@fontsource/big-shoulders-display/800';
 @import '@fontsource/chivo/400.css';

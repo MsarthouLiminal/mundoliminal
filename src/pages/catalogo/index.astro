@@ -31,7 +31,7 @@ interface BlockConfig {
 const blocks: BlockConfig[] = [
   {
     platform: 'youtube',
-    label: 'EN YOUTUBE',
+    label: 'En YouTube',
     items: ytList,
     archiveHref: 'https://www.youtube.com/@trimaxmediaok',
     archiveLabel: 'Ver todos los videos',
@@ -39,7 +39,7 @@ const blocks: BlockConfig[] = [
   },
   {
     platform: 'substack',
-    label: 'EN SUBSTACK',
+    label: 'En Substack',
     items: sbList,
     archiveHref: 'https://mundoliminal.substack.com',
     archiveLabel: 'Ver todas las columnas',
@@ -47,7 +47,7 @@ const blocks: BlockConfig[] = [
   },
   {
     platform: 'spotify',
-    label: 'EN SPOTIFY',
+    label: 'En Spotify',
     items: spList,
     archiveHref: 'https://open.spotify.com/show/5iy7NKRkKbcOZxLzld1nNX',
     archiveLabel: 'Ver todos los episodios',
@@ -60,11 +60,11 @@ const blocks: BlockConfig[] = [
   title="Catálogo"
   description="Lo más reciente de LIMINAL en sus tres formatos: video en YouTube, columna en Substack y podcast en Spotify."
 >
-  <main class="catalogo">
+  <div class="catalogo">
 
     <!-- TÍTULO DE PÁGINA -->
     <header class="page-header">
-      <h1>CATÁLOGO.</h1>
+      <h1>Catálogo.</h1>
     </header>
 
     <!-- APERTURA EDITORIAL -->
@@ -117,40 +117,38 @@ const blocks: BlockConfig[] = [
           target="_blank"
           rel="noopener noreferrer"
         >
-          {block.archiveLabel} →
+          {block.archiveLabel} <b aria-hidden="true">→</b>
         </a>
       </section>
     ))}
 
-  </main>
+  </div>
 </BaseLayout>
 
 <style>
+  /* Brand Kit v2.1: titulares en Big Shoulders Display 800 (caja mixta),
+     todo lo que se lee en Chivo. */
   .catalogo {
     max-width: var(--content-max);
     margin: 0 auto;
-    padding: var(--space-24) var(--space-6) var(--space-24);
+    padding: var(--space-16) var(--space-6) var(--space-24);
     color: var(--fg-default);
-    font-family: var(--font-mono);
+    font-family: var(--font-text-v2);
     font-weight: 400;
-    line-height: 1.7;
-    font-size: var(--fs-base);
+    line-height: 1.65;
+    font-size: 1.05rem;
   }
 
   /* HEADER DE PÁGINA */
   .page-header {
-    margin-bottom: var(--space-24);
+    margin-bottom: var(--space-12);
   }
 
   .page-header h1 {
-    font-family: var(--font-display);
-    font-weight: 700;
-    font-size: var(--fs-display);
-    text-transform: uppercase;
-    letter-spacing: var(--tracking-display);
-    color: var(--tinta);
+    font-size: clamp(3rem, 8vw, 5.5rem);
+    color: var(--tinta-fuerte);
     margin: 0;
-    line-height: 1;
+    line-height: 0.92;
   }
 
   /* APERTURA */
@@ -159,7 +157,7 @@ const blocks: BlockConfig[] = [
   }
 
   .apertura-cierre {
-    color: var(--senal-texto);
+    color: var(--tinta-fuerte);
     font-weight: 700;
     margin-top: var(--space-8);
   }
@@ -168,12 +166,12 @@ const blocks: BlockConfig[] = [
   .divisor {
     border: none;
     border-top: 1px solid var(--color-teal);
-    margin: var(--space-24) 0;
+    margin: var(--space-16) 0;
   }
 
   /* BLOQUES */
   .bloque {
-    margin-bottom: var(--space-24);
+    margin-bottom: var(--space-16);
   }
 
   .bloque:last-of-type {
@@ -181,17 +179,13 @@ const blocks: BlockConfig[] = [
   }
 
   .bloque-titulo {
-    font-family: var(--font-mono);
-    font-weight: 700;
-    font-size: var(--fs-xs);
-    letter-spacing: var(--tracking-mono);
-    text-transform: uppercase;
-    color: var(--acento);
-    margin: 0 0 var(--space-8);
+    font-size: 2rem;
+    line-height: 1;
+    color: var(--tinta-fuerte);
+    margin: 0 0 var(--space-6);
   }
 
   .bloque-vacio {
-    font-style: italic;
     color: var(--tinta-suave);
     margin: 0 0 var(--space-6);
   }
@@ -199,7 +193,7 @@ const blocks: BlockConfig[] = [
   /* LISTA DE PIEZAS */
   .lista {
     list-style: none;
-    margin: 0 0 var(--space-8);
+    margin: 0 0 var(--space-6);
     padding: 0;
   }
 
@@ -215,66 +209,66 @@ const blocks: BlockConfig[] = [
     display: flex;
     flex-direction: column;
     gap: var(--space-2);
-    padding: var(--space-6) 0;
+    padding: var(--space-4) 0;
     text-decoration: none;
     color: inherit;
-    transition: color 150ms;
   }
 
   .item-link:hover .item-titulo,
-  .item-link:focus .item-titulo {
-    color: var(--acento);
+  .item-link:focus-visible .item-titulo {
+    color: var(--senal);
+  }
+  .item-link:focus-visible {
+    outline: 2px solid var(--senal);
+    outline-offset: 3px;
   }
 
   .item-titulo {
-    font-family: var(--font-display);
-    font-weight: 700;
-    font-size: var(--fs-md);
-    letter-spacing: var(--tracking-display);
-    text-transform: uppercase;
-    color: var(--tinta);
+    font-size: 1.55rem;
+    color: var(--tinta-fuerte);
     margin: 0;
-    line-height: 1.25;
+    line-height: 1;
     transition: color 150ms;
   }
 
   .item-fecha {
-    font-family: var(--font-mono);
-    font-weight: 400;
-    font-size: var(--fs-xs);
-    color: var(--tinta-suave);
+    font-weight: 500;
+    font-size: 0.82rem;
+    color: var(--tinta-meta);
+    font-variant-numeric: tabular-nums;
   }
 
   /* LINK AL ARCHIVO COMPLETO */
   .archivo-link {
     display: inline-block;
-    font-family: var(--font-mono);
     font-weight: 700;
-    font-size: var(--fs-xs);
-    text-transform: uppercase;
-    letter-spacing: var(--tracking-mono);
-    color: var(--senal-texto);
+    font-size: 0.9rem;
+    color: var(--tinta-fuerte);
     text-decoration: none;
-    border-bottom: 1px solid var(--senal);
-    padding-bottom: 2px;
-    margin-top: var(--space-6);
-    transition: color 150ms, border-color 150ms;
+    border-bottom: 1px solid var(--color-teal);
+    padding-bottom: 3px;
+    margin-top: var(--space-2);
+    transition: border-color 150ms;
+  }
+  .archivo-link b {
+    color: var(--senal);
   }
 
   .archivo-link:hover,
-  .archivo-link:focus {
-    color: var(--tinta);
-    border-bottom-color: var(--tinta);
+  .archivo-link:focus-visible {
+    color: var(--tinta-fuerte);
+    border-bottom-color: var(--senal);
   }
 
   /* RESPONSIVE */
   @media (max-width: 600px) {
     .catalogo {
-      padding: var(--space-16) var(--space-4) var(--space-24);
+      padding: var(--space-8) 0 var(--space-16);
+      font-size: 1rem;
     }
 
     .item-titulo {
-      font-size: var(--fs-base);
+      font-size: 1.3rem;
     }
   }
 </style>

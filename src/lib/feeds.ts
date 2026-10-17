@@ -76,6 +76,59 @@ function cleanFeedTitle(raw: string): string {
     .trim();
 }
 
+// El canal sube los títulos en mayúsculas; la web los muestra en caja mixta,
+// como pide el Brand Kit v2.1 (mayúsculas solo en overlays de video). La
+// conversión automática necesita saber qué palabras son nombres propios o
+// siglas: si una sale mal, se corrige en src/data/titulos-corregidos.json,
+// que siempre tiene prioridad.
+const NOMBRES_PROPIOS = [
+  // Lugares y regiones
+  'Uruguay', 'Montevideo', 'Punta del Este', 'Río de la Plata', 'Brasil', 'Argentina', 'Buenos Aires',
+  'Chile', 'Paraguay', 'Bolivia', 'Perú', 'Ecuador', 'Colombia', 'Venezuela', 'México', 'Cuba',
+  'Panamá', 'Canadá', 'Groenlandia', 'Estados Unidos', 'Washington', 'Nueva York', 'América Latina',
+  'Latinoamérica', 'Sudamérica', 'América', 'Europa', 'Unión Europea', 'Alemania', 'Francia',
+  'España', 'Italia', 'Reino Unido', 'Londres', 'Bruselas', 'Davos', 'Rusia', 'Moscú', 'Ucrania',
+  'China', 'Pekín', 'Beijing', 'Taiwán', 'Hong Kong', 'Japón', 'Corea del Sur', 'Corea del Norte',
+  'Corea', 'India', 'Pakistán', 'Indonesia', 'Vietnam', 'Australia', 'Asia', 'África', 'Medio Oriente',
+  'Irán', 'Irak', 'Israel', 'Gaza', 'Cisjordania', 'Líbano', 'Siria', 'Turquía', 'Egipto', 'Yemen',
+  'Catar', 'Qatar', 'Emiratos Árabes Unidos', 'Emiratos', 'Arabia Saudita', 'Ormuz', 'Suez',
+  'Malaca', 'Bab el-Mandeb', 'Mar Rojo', 'Atlántico', 'Pacífico', 'Antártida', 'Amazonia', 'Amazonía',
+  // Personas
+  'Trump', 'Xi', 'Putin', 'Lula', 'Flávio', 'Bolsonaro', 'Milei', 'Orsi', 'Lacalle Pou', 'Lacalle',
+  'Netanyahu', 'Jamenei', 'Zelenski', 'Maduro', 'Petro', 'Sheinbaum', 'Biden', 'Vance', 'Rubio',
+  'Modi', 'Kim Jong-un', 'Musk', 'Tim Payne',
+  // Instituciones, empresas y eventos
+  'Mercosur', 'Cancillería', 'Casa Blanca', 'Kremlin', 'Pentágono', 'Google', 'Microsoft', 'Amazon',
+  'Nvidia', 'OpenAI', 'Anthropic', 'Apple', 'Tesla', 'TikTok', 'YouTube', 'Huawei', 'Starlink',
+  'Copa América', 'Juegos Olímpicos',
+];
+const SIGLAS = [
+  'EEUU', 'EE.UU.', 'EE. UU.', 'IA', 'ONU', 'OTAN', 'OEA', 'FMI', 'BID', 'CEPAL', 'OPEP', 'BRICS', 'UE',
+  'PBI', 'PIB', 'BCU', 'INE', 'UTE', 'ANCAP', 'OSE', 'ANP', 'OMC', 'OMS', 'G7', 'G20', 'TLC', 'CPTPP',
+  'LIMINAL', 'US$', 'USD',
+];
+
+/** Pasa a caja mixta un título que viene todo en mayúsculas. Si ya tiene minúsculas, no lo toca. */
+export function cajaMixta(titulo: string): string {
+  if (/\p{Ll}/u.test(titulo)) return titulo;
+  let t = titulo.toLocaleLowerCase('es-UY');
+  const formas = [...NOMBRES_PROPIOS, ...SIGLAS].sort((a, b) => b.length - a.length);
+  for (const forma of formas) {
+    const patron = forma.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    t = t.replace(new RegExp(`(?<![\\p{L}\\p{N}])${patron}(?![\\p{L}\\p{N}])`, 'giu'), forma);
+  }
+  // "el Mundial", "del Mundial 2026": el torneo, no el adjetivo ("guerra mundial").
+  t = t.replace(/(?<![\p{L}])(el|del|al) mundial(?![\p{L}])/giu, '$1 Mundial');
+  t = t.replace(/(?<![\p{L}])mundial (\d{4})/giu, 'Mundial $1');
+  // Mayúscula al principio y después de punto, cierre de pregunta o de exclamación.
+  return t.replace(/(^|[.?!]\s+)([¿¡"«(]*)(\p{L})/gu, (_m, antes, signos, letra) => antes + signos + letra.toLocaleUpperCase('es-UY'));
+}
+
+/** Evita que la moneda quede en una línea y la cifra en la otra ("US$ 5.700", "USD 105"). */
+function sinCortarCifras(titulo: string): string {
+  return titulo.replace(/\b(US\$|USD|U\$S)\s+(?=\d)/g, '$1 ');
+}
+
 /** Título corregido a mano para un video (src/data/titulos-corregidos.json), si lo hay. */
 function tituloCorregidoYouTube(link: string): string | null {
   try {
@@ -157,7 +210,7 @@ export async function getYouTubeLatestList(limit = 5): Promise<LatestItem[]> {
         ?? null;
       items.push({
         platform: 'youtube',
-        title: tituloCorregidoYouTube(link) ?? cleanFeedTitle(String(e.title)),
+        title: sinCortarCifras(tituloCorregidoYouTube(link) ?? cajaMixta(cleanFeedTitle(String(e.title)))),
         url: link,
         pubDate,
         thumbnail: typeof thumb === 'string' ? thumb : null,
@@ -210,7 +263,7 @@ export async function getSubstackLatestList(limit = 5): Promise<LatestItem[]> {
       );
       result.push({
         platform: 'substack',
-        title: String(it?.title ?? '').trim(),
+        title: sinCortarCifras(String(it?.title ?? '').trim()),
         url: link,
         pubDate,
         thumbnail: imagen.src,
@@ -249,7 +302,7 @@ export async function getSpotifyLatestList(limit = 5): Promise<LatestItem[]> {
         typeof it?.['itunes:duration'] === 'string' ? it['itunes:duration'] : undefined;
       result.push({
         platform: 'spotify',
-        title: cleanFeedTitle(String(it?.title ?? '').trim()),
+        title: sinCortarCifras(cleanFeedTitle(String(it?.title ?? '').trim())),
         url: link,
         pubDate,
         thumbnail: thumb,

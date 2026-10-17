@@ -90,7 +90,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </section>
 
     <p class="about__closing">
-      <em>"Los sucesos pasan. Los procesos quedan. LIMINAL trabaja sobre lo segundo."</em>
+      <em>“Los sucesos pasan. Los procesos quedan. LIMINAL trabaja sobre lo segundo.”</em>
     </p>
 
     <section class="about__cta" aria-labelledby="about-cta-heading">
@@ -122,29 +122,31 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 </BaseLayout>
 
 <style>
+  /* Brand Kit v2.1: titulares en Big Shoulders Display 800 (caja mixta),
+     todo lo que se lee en Chivo. */
   .about {
     display: flex;
     flex-direction: column;
     gap: var(--space-16);
+    font-family: var(--font-text-v2);
   }
 
   .about__opening {
-    max-width: var(--content-max);
+    max-width: 64ch;
     display: flex;
     flex-direction: column;
     gap: var(--space-4);
   }
   .about__opening h1 {
-    font-size: var(--fs-3xl);
-    letter-spacing: var(--tracking-display-wide);
-    color: var(--tinta);
+    font-size: clamp(3rem, 7vw, 5rem);
+    line-height: 0.92;
+    color: var(--tinta-fuerte);
     margin-bottom: var(--space-4);
   }
   .about__opening p {
-    font-family: var(--font-mono);
-    font-size: var(--fs-md);
+    font-size: 1.2rem;
     color: var(--tinta);
-    line-height: 1.7;
+    line-height: 1.6;
   }
 
   .about__bio {
@@ -178,6 +180,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     display: flex;
     flex-direction: column;
     gap: var(--space-12);
+    max-width: 62ch;
   }
   .bio-block {
     display: flex;
@@ -185,49 +188,45 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     gap: var(--space-3);
   }
   .bio-block h2 {
-    font-family: var(--font-display);
-    font-weight: 700;
-    font-size: var(--fs-md);
-    letter-spacing: var(--tracking-display);
-    text-transform: uppercase;
-    color: var(--tinta);
+    font-size: 2rem;
+    line-height: 0.95;
+    color: var(--tinta-fuerte);
     margin-bottom: var(--space-2);
   }
   .bio-block p {
-    font-family: var(--font-mono);
-    font-size: var(--fs-base);
+    font-size: 1.05rem;
     color: var(--tinta);
-    line-height: 1.7;
+    line-height: 1.65;
   }
 
   .about__closing {
-    margin: var(--space-12) auto;
-    max-width: 60ch;
+    margin: var(--space-8) auto;
+    max-width: 22ch;
     text-align: center;
-    font-family: var(--font-mono);
-    font-style: italic;
-    font-size: var(--fs-xl);
-    line-height: 1.5;
-    color: var(--senal);
-    padding: var(--space-8) 0;
+    font-family: var(--font-display-v2);
+    font-weight: 800;
+    font-size: clamp(2rem, 4.2vw, 3rem);
+    line-height: 0.95;
+    letter-spacing: -0.005em;
+    color: var(--tinta-fuerte);
+    text-wrap: balance;
+  }
+  .about__closing em {
+    font-style: normal;
   }
 
   .about__cta {
-    border-top: 1px solid var(--rule);
+    border-top: 1px solid var(--color-teal);
     padding-top: var(--space-12);
     display: flex;
     flex-direction: column;
     gap: var(--space-8);
   }
   .about__cta-heading {
-    font-family: var(--font-display);
-    font-weight: 700;
-    font-size: var(--fs-xl);
-    letter-spacing: var(--tracking-display);
-    text-transform: uppercase;
-    color: var(--tinta);
+    font-size: clamp(2rem, 3.4vw, 2.4rem);
+    line-height: 0.95;
+    color: var(--tinta-fuerte);
     text-align: center;
-    line-height: 1.2;
   }
   .about__cta-grid {
     display: grid;
@@ -239,49 +238,47 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     content: '';
     display: block;
     grid-column: 2;
+    grid-row: 1;
     align-self: stretch;
-    background: var(--rule);
+    background: var(--color-teal);
     width: 1px;
   }
   .cta-col {
     display: flex;
     flex-direction: column;
-    gap: var(--space-4);
+    gap: var(--space-3);
   }
-  .cta-col:nth-child(1) { grid-column: 1; }
-  .cta-col:nth-child(2) { grid-column: 3; }
+  .cta-col:nth-child(1) { grid-column: 1; grid-row: 1; }
+  .cta-col:nth-child(2) { grid-column: 3; grid-row: 1; }
   .cta-col h3 {
-    font-family: var(--font-display);
-    font-weight: 700;
-    font-size: var(--fs-md);
-    letter-spacing: var(--tracking-display);
-    text-transform: uppercase;
-    color: var(--tinta);
+    font-size: 1.6rem;
+    line-height: 1;
+    color: var(--tinta-fuerte);
   }
   .cta-col p {
-    font-family: var(--font-mono);
-    font-size: var(--fs-sm);
+    font-size: 1rem;
     color: var(--tinta);
     line-height: 1.6;
   }
   .cta-col__button {
     align-self: flex-start;
     margin-top: var(--space-2);
-    padding: var(--space-3) var(--space-6);
-    font-family: var(--font-mono);
+    padding: 13px 22px;
+    border-radius: 4px;
     font-weight: 700;
-    font-size: var(--fs-sm);
-    letter-spacing: var(--tracking-mono);
-    text-transform: uppercase;
+    font-size: 0.95rem;
     text-decoration: none;
     color: var(--sobre-boton);
-    background: var(--acento);
-    border: 1px solid var(--acento);
-    transition: background 150ms, color 150ms;
+    background: var(--boton);
+    transition: background 150ms;
   }
   .cta-col__button:hover {
-    background: transparent;
-    color: var(--acento);
+    background: var(--boton-hover);
+    color: var(--sobre-boton);
+  }
+  .cta-col__button:focus-visible {
+    outline: 2px solid var(--senal);
+    outline-offset: 3px;
   }
 
   @media (max-width: 860px) {
@@ -291,6 +288,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     }
     .about__photo {
       position: relative;
+      top: 0;
       max-width: 320px;
     }
     .about__cta-grid {
@@ -303,10 +301,22 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     .cta-col:nth-child(1),
     .cta-col:nth-child(2) {
       grid-column: 1;
+      grid-row: auto;
     }
     .cta-col:nth-child(2) {
-      border-top: 1px solid var(--rule);
+      border-top: 1px solid var(--color-teal);
       padding-top: var(--space-8);
+    }
+  }
+  @media (max-width: 640px) {
+    .about__opening p {
+      font-size: 1.08rem;
+    }
+    .bio-block h2 {
+      font-size: 1.75rem;
+    }
+    .about__cta-heading {
+      text-align: left;
     }
   }
 </style>
