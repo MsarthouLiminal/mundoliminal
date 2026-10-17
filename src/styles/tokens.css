@@ -11,13 +11,13 @@
   --color-ceniza: #6E7D6C;
   --color-blanco: #FFFFFF;
 
-  /* Combinación por defecto (fondo Vacío, texto Hueso, acentos Teal) */
-  --bg-default: var(--color-vacio);
-  --fg-default: var(--color-hueso);
+  /* Combinación por defecto: modo papel (ver "Roles" más abajo) */
+  --bg-default: var(--fondo);
+  --fg-default: var(--tinta);
   --accent-default: var(--color-teal);
-  --accent-hover: var(--color-teal-brillante);
-  --muted: var(--color-ceniza);
-  --rule: color-mix(in oklab, var(--color-hueso) 14%, transparent);
+  --accent-hover: var(--senal);
+  --muted: var(--tinta-suave);
+  --rule: color-mix(in oklab, var(--tinta) 16%, transparent);
 
   /* === Tipografías (Brand Kit: máx. 2 por pieza) === */
   --font-display: 'Oswald Variable', 'Oswald', system-ui, sans-serif;
@@ -66,4 +66,53 @@
 
   --font-display-v2: 'Big Shoulders Display', 'Oswald Variable', 'Arial Narrow', sans-serif;
   --font-text-v2: 'Chivo', 'Helvetica Neue', Arial, sans-serif;
+
+  /* === Roles de color (desde el 17-oct-2026) ===
+     El sitio se lee en papel: combinación "Papel Sal" del Brand Kit
+     (Sal + Selva + Óxido + Ciruela, Teal para las líneas). Los componentes
+     usan estos roles, nunca un tono suelto; así cada bloque cambia de
+     superficie sin tocar sus reglas. Los bloques que siguen oscuros
+     (el mapa de Señales, el manifiesto) llevan la clase .ventana, que
+     redefine los mismos roles con sus pares sobre oscuro. */
+  --fondo: var(--color-sal);
+  --fondo-caja: color-mix(in oklab, var(--color-selva) 6%, var(--color-sal));
+  --hover-fondo: color-mix(in oklab, var(--color-selva) 7%, transparent);
+  --tinta-fuerte: var(--color-selva);   /* titulares y texto destacado */
+  --tinta: var(--color-selva);          /* cuerpo */
+  --tinta-meta: var(--color-ciruela);   /* fechas, pies, etiquetas */
+  --tinta-suave: var(--color-ciruela);
+  --senal: var(--color-oxido);          /* umbral, marcas, cifras grandes */
+  --senal-texto: var(--color-selva);    /* texto chico con rol de señal: Óxido no llega a 4,5:1 sobre Sal */
+  --acento: var(--color-selva);         /* texto de enlaces y acentos chicos */
+  --serie: var(--color-teal);           /* series y trazos de gráficos */
+  --sobre-senal: var(--color-blanco);   /* texto sobre un fondo --senal */
+  --boton: var(--color-selva);
+  --sobre-boton: var(--color-blanco);
+  --boton-hover: var(--color-oxido);
+  --mapa-tierra: var(--color-bosque);
+  --mapa-fondo: var(--color-vacio);
+}
+
+/* Bloques que se miran en oscuro sobre el papel: los mismos roles, pares
+   de la combinación "Principal Selva". */
+.ventana {
+  --fondo: var(--color-selva);
+  --fondo-caja: var(--color-selva);
+  --hover-fondo: var(--color-bosque);
+  --tinta-fuerte: var(--color-blanco);
+  --tinta: var(--color-hueso);
+  --tinta-meta: var(--color-lila);
+  --tinta-suave: var(--color-lila);
+  --senal: var(--color-horizonte);
+  --senal-texto: var(--color-horizonte);
+  --acento: var(--color-teal-brillante);
+  --serie: var(--color-teal-brillante);
+  --sobre-senal: var(--color-vacio);
+  --boton: var(--color-sal);
+  --sobre-boton: var(--color-selva);
+  --boton-hover: var(--color-blanco);
+  --rule: color-mix(in oklab, var(--color-hueso) 14%, transparent);
+  --accent-hover: var(--color-horizonte);
+  --muted: var(--color-lila);
+  color: var(--tinta);
 }

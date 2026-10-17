@@ -1,0 +1,387 @@
+---
+/**
+ * SenalesPortada: Señales en la home, en versión de portada.
+ *
+ * El mapa (oscuro, como ventana sobre el papel) y las señales de la semana
+ * como titulares agrupados por eje. Cada titular y cada punto del mapa llevan
+ * a su señal completa en /senales, donde están el hecho, la lectura, la
+ * fuente y las versiones anteriores. Los cambios de mitad de semana se ven
+ * acá con sus marcas ("Actualizado", "Último momento").
+ */
+import { MAPA_W, MAPA_H, TIERRA, GRILLA, ECUADOR } from '../../data/mapa-mundo';
+import {
+  type Edicion,
+  contarSenales,
+  fechaCorta,
+  fechaHora,
+  semanaDel,
+  fechaSinAnio,
+  ultimaActualizacion,
+  proyectar,
+  arco,
+  recorteMovil,
+  TENDENCIA,
+} from '../../lib/senales';
+
+interface Props {
+  edicion: Edicion;
+}
+
+const { edicion } = Astro.props;
+
+const total = contarSenales(edicion);
+const actualizada = ultimaActualizacion(edicion);
+const senales = edicion.ejes.flatMap((eje) => eje.senales);
+const puntos = senales.map((s) => ({ s, xy: proyectar(s.lat, s.lon) }));
+const focos = edicion.focos.map((f) => ({ f, xy: proyectar(f.lat, f.lon) }));
+const arcos = senales
+  .filter((s) => s.arco)
+  .map((s) => ({ s, b: proyectar(s.arco!.lat, s.arco!.lon), d: arco(proyectar(s.lat, s.lon), proyectar(s.arco!.lat, s.arco!.lon)) }));
+const recorte = recorteMovil([...puntos.map((p) => p.xy), ...focos.map((f) => f.xy), ...arcos.map((a) => a.b)]);
+
+const vistas = [
+  { clase: 'mapa--ancho', viewBox: `0 0 ${MAPA_W} ${MAPA_H}` },
+  { clase: 'mapa--movil', viewBox: recorte },
+];
+
+function lado(l: string | undefined) {
+  if (l === 'izq') return { x: -10, y: 5, anchor: 'end' };
+  if (l === 'arriba') return { x: 0, y: -9, anchor: 'middle' };
+  return { x: 10, y: 5, anchor: 'start' };
+}
+
+/** En la portada los lugares van con comas, sin punto medio. */
+const lugar = (texto: string) => texto.replace(/\s*·\s*/g, ', ');
+const dia = (iso: string) => fechaCorta(iso.split('T')[0]);
+---
+
+<section class="portada-senales" aria-labelledby="portada-senales-h">
+  <header class="ps__cab">
+    <p class="ps__kick">Señales, semana {edicion.semana}</p>
+    <h2 id="portada-senales-h" class="ps__h">Cuatro ejes donde se juega el poder.</h2>
+    <p class="ps__dateline">
+      {semanaDel(edicion.fechaEdicion)}. Datos al {fechaSinAnio(edicion.corteDatos)}.
+      {actualizada && <strong> Actualizada el {fechaHora(actualizada)}</strong>}
+    </p>
+  </header>
+  <hr class="ps__umbral" />
+
+  <figure class="ps__mapa ventana">
+    {vistas.map((v) => (
+      <svg
+        class:list={['mapa', v.clase]}
+        viewBox={v.viewBox}
+        role="img"
+        aria-label={`Mapa con las ${total} señales de la semana y ${edicion.focos.length} focos en observación`}
+      >
+        <path class="mapa__grilla" d={GRILLA} />
+        <path class="mapa__tierra" d={TIERRA} />
+        <path class="mapa__ecuador" d={ECUADOR} />
+        {arcos.map((a) => (
+          <>
+            <path class="mapa__arco" d={a.d} />
+            <circle class="mapa__extremo" cx={a.b[0]} cy={a.b[1]} r="2.6" />
+          </>
+        ))}
+        {focos.map(({ f, xy }) => {
+          const l = lado(f.etiqueta);
+          return (
+            <g class="foco" transform={`translate(${xy[0]} ${xy[1]})`}>
+              <circle r="4.5" />
+              <text x={l.x === 10 ? 8 : l.x === -10 ? -8 : 0} y={l.y} text-anchor={l.anchor}>{f.nombre.toUpperCase()}</text>
+            </g>
+          );
+        })}
+        {puntos.map(({ s, xy }) => {
+          const l = lado(s.etiqueta);
+          return (
+            <a href={`/senales/#senal-${s.n}`} aria-label={`Señal ${s.n}: ${s.titulo}`}>
+              <g class="punto" transform={`translate(${xy[0]} ${xy[1]})`}>
+                <circle class="punto__nucleo" r="5.5" />
+                <text x={l.x} y={l.y} text-anchor={l.anchor}>{s.n}</text>
+              </g>
+            </a>
+          );
+        })}
+      </svg>
+    ))}
+    <figcaption class="ps__leyenda">
+      {total} señales y {edicion.focos.length} focos en observación. Cada número lleva a su señal.
+    </figcaption>
+  </figure>
+
+  <div class="ps__ejes">
+    {edicion.ejes.map((eje) => (
+      <section class="ps__eje" aria-labelledby={`ps-eje-${eje.id}`}>
+        <h3 id={`ps-eje-${eje.id}`}>{eje.nombre}</h3>
+        <ul>
+          {eje.senales.map((s) => (
+            <li>
+              <a class="titular" href={`/senales/#senal-${s.n}`}>
+                <span class="titular__num" aria-hidden="true">{s.n}</span>
+                <span class="titular__cuerpo">
+                  {s.ultimoMomento ? (
+                    <span class="titular__um">Último momento{s.actualizado && `, ${dia(s.actualizado)}`}</span>
+                  ) : s.actualizado && (
+                    <span class="titular__act">Actualizado el {dia(s.actualizado)}</span>
+                  )}
+                  <span class="titular__t">{s.titulo}</span>
+                  <span class="titular__meta">
+                    <span>{lugar(s.lugar)}, {fechaCorta(s.fecha)}</span>
+                    <b>{TENDENCIA[s.tendencia]}</b>
+                  </span>
+                </span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))}
+  </div>
+
+  <div class="ps__acciones">
+    <a class="ps__mas" href="/senales/">El monitor completo, con fuente y lectura <b aria-hidden="true">→</b></a>
+    <a class="ps__boton" href="https://mundoliminal.substack.com/subscribe" target="_blank" rel="noopener">Recibí Señales cada lunes</a>
+  </div>
+</section>
+
+<style>
+  .portada-senales {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    min-width: 0;
+    font-family: var(--font-text-v2);
+  }
+  .ps__cab {
+    display: grid;
+    gap: var(--space-2);
+  }
+  .ps__kick {
+    font-weight: 700;
+    font-size: 0.82rem;
+    color: var(--tinta-meta);
+  }
+  .ps__h {
+    font-family: var(--font-display-v2);
+    font-weight: 800;
+    font-size: clamp(2.1rem, 3.6vw, 2.9rem);
+    line-height: 0.95;
+    letter-spacing: -0.005em;
+    text-transform: none;
+    color: var(--tinta-fuerte);
+    text-wrap: balance;
+  }
+  .ps__dateline {
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: var(--tinta-meta);
+    font-variant-numeric: tabular-nums;
+  }
+  .ps__dateline strong {
+    color: var(--tinta-fuerte);
+  }
+  .ps__umbral {
+    height: 3px;
+    margin: 0;
+    border: 0;
+    background: var(--senal);
+  }
+
+  /* ---------- Mapa ---------- */
+  .ps__mapa {
+    margin: 0;
+    background: var(--mapa-fondo);
+  }
+  .mapa {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .mapa--movil {
+    display: none;
+  }
+  .mapa__tierra { fill: var(--mapa-tierra); }
+  .mapa__grilla { fill: none; stroke: var(--color-teal); stroke-width: 0.6; stroke-opacity: 0.35; }
+  .mapa__ecuador { fill: none; stroke: var(--color-teal); stroke-width: 0.8; stroke-dasharray: 3 4; stroke-opacity: 0.8; }
+  .mapa__arco { fill: none; stroke: var(--senal); stroke-width: 1.2; stroke-dasharray: 4 4; stroke-opacity: 0.75; }
+  .mapa__extremo { fill: var(--senal); }
+  .foco circle { fill: none; stroke: var(--tinta-meta); stroke-width: 1.5; }
+  .foco text {
+    fill: var(--tinta-meta);
+    font: 700 9px var(--font-text-v2);
+    letter-spacing: 0.06em;
+    paint-order: stroke;
+    stroke: var(--mapa-fondo);
+    stroke-width: 3px;
+  }
+  .punto__nucleo { fill: var(--senal); stroke: var(--mapa-fondo); stroke-width: 1.5; }
+  .punto text {
+    fill: var(--tinta-fuerte);
+    font: 700 13px var(--font-text-v2);
+    paint-order: stroke;
+    stroke: var(--mapa-fondo);
+    stroke-width: 4px;
+  }
+  a:hover .punto__nucleo,
+  a:focus-visible .punto__nucleo { stroke: var(--tinta-fuerte); stroke-width: 2; }
+  a:hover .punto text,
+  a:focus-visible .punto text { fill: var(--senal); }
+  .ps__leyenda {
+    padding: 10px 14px 12px;
+    font-size: 0.82rem;
+    color: var(--tinta-meta);
+  }
+
+  /* ---------- Titulares por eje ---------- */
+  .ps__ejes {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-6) var(--space-8);
+    margin-top: var(--space-2);
+  }
+  .ps__eje {
+    min-width: 0;
+    border-top: 1px solid var(--color-teal);
+    padding-top: var(--space-3);
+  }
+  .ps__eje h3 {
+    margin: 0 0 2px;
+    font-family: var(--font-display-v2);
+    font-weight: 800;
+    font-size: 1.4rem;
+    line-height: 1;
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--tinta-fuerte);
+  }
+  .ps__eje ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .titular {
+    display: grid;
+    grid-template-columns: 28px minmax(0, 1fr);
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid color-mix(in oklab, var(--color-teal) 40%, transparent);
+    color: var(--tinta);
+    text-decoration: none;
+  }
+  .titular:hover .titular__t {
+    color: var(--senal);
+  }
+  .titular:focus-visible {
+    outline: 2px solid var(--senal);
+    outline-offset: 2px;
+  }
+  .titular__num {
+    width: 26px;
+    height: 26px;
+    display: grid;
+    place-items: center;
+    border: 1.5px solid var(--senal);
+    border-radius: 50%;
+    font: 700 0.75rem/1 var(--font-text-v2);
+    color: var(--tinta-fuerte);
+    font-variant-numeric: tabular-nums;
+  }
+  .titular__cuerpo {
+    display: grid;
+    gap: 5px;
+    min-width: 0;
+  }
+  .titular__t {
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1.3;
+    color: var(--tinta-fuerte);
+    transition: color 150ms;
+  }
+  .titular__meta {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-3);
+    font-size: 0.82rem;
+    color: var(--tinta-meta);
+  }
+  .titular__meta b {
+    white-space: nowrap;
+    color: var(--tinta-fuerte);
+  }
+  .titular__act {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 700;
+    font-size: 0.75rem;
+    color: var(--senal-texto);
+  }
+  .titular__act::before {
+    content: '';
+    width: 7px;
+    height: 7px;
+    background: var(--senal);
+  }
+  .titular__um {
+    justify-self: start;
+    padding: 3px 7px;
+    background: var(--senal);
+    color: var(--sobre-senal);
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  /* ---------- Acciones ---------- */
+  .ps__acciones {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-4) var(--space-8);
+    padding-top: var(--space-2);
+  }
+  .ps__mas {
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--tinta-fuerte);
+    text-decoration: underline;
+    text-decoration-color: var(--color-teal);
+    text-underline-offset: 4px;
+  }
+  .ps__mas b {
+    color: var(--senal);
+  }
+  .ps__boton {
+    display: inline-block;
+    padding: 13px 22px;
+    background: var(--boton);
+    color: var(--sobre-boton);
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-decoration: none;
+  }
+  .ps__boton:hover {
+    background: var(--boton-hover);
+    color: var(--sobre-boton);
+  }
+
+  @media (max-width: 640px) {
+    .mapa--ancho { display: none; }
+    .mapa--movil { display: block; }
+    .ps__mapa { margin-inline: calc(-1 * var(--space-4)); }
+    .ps__leyenda { padding-inline: var(--space-4); }
+    .ps__ejes {
+      grid-template-columns: minmax(0, 1fr);
+      gap: var(--space-4);
+    }
+    .ps__boton {
+      display: block;
+      width: 100%;
+      text-align: center;
+    }
+  }
+</style>

@@ -2,7 +2,7 @@
 import CampoSenal from '../visual/CampoSenal.astro';
 ---
 
-<section class="manifesto" aria-labelledby="manifesto-heading">
+<section class="manifesto ventana" aria-labelledby="manifesto-heading">
   <CampoSenal opacidad={0.5} />
 
   <div class="manifesto__contenido">
@@ -37,6 +37,8 @@ import CampoSenal from '../visual/CampoSenal.astro';
     margin-left: calc(50% - 50vw);
     padding: var(--space-24) var(--space-8);
     overflow: hidden;
+    /* Bloque oscuro sobre el papel (clase .ventana): el campo se pinta encima. */
+    background: var(--color-vacio);
     border-block: 1px solid var(--color-teal);
     display: flex;
     justify-content: center;
@@ -62,7 +64,7 @@ import CampoSenal from '../visual/CampoSenal.astro';
     font-size: 0.78rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--color-lila);
+    color: var(--tinta-meta);
   }
   .manifesto__heading {
     margin: 0;
@@ -72,7 +74,7 @@ import CampoSenal from '../visual/CampoSenal.astro';
     line-height: 0.95;
     letter-spacing: -0.005em;
     text-transform: none;
-    color: var(--color-blanco);
+    color: var(--tinta-fuerte);
     text-wrap: balance;
   }
   .manifesto__body {
@@ -82,7 +84,7 @@ import CampoSenal from '../visual/CampoSenal.astro';
     max-width: 56ch;
     font-size: 1.1rem;
     line-height: 1.65;
-    color: var(--color-hueso);
+    color: var(--tinta);
   }
   .manifesto__body p {
     margin: 0;
@@ -92,12 +94,12 @@ import CampoSenal from '../visual/CampoSenal.astro';
   .manifesto__close {
     margin-top: var(--space-4) !important;
     padding-top: var(--space-4);
-    border-top: 3px solid var(--color-horizonte);
+    border-top: 3px solid var(--senal);
     font-family: var(--font-display-v2);
     font-weight: 700;
     font-size: clamp(1.5rem, 2.6vw, 2rem);
     line-height: 1.1;
-    color: var(--color-horizonte);
+    color: var(--senal);
   }
 
   @media (max-width: 860px) {

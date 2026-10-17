@@ -47,7 +47,7 @@ const typeLabel = type === 'episode' ? 'Episodio' : 'Columna';
     transition: border-color 150ms;
   }
   .entry-card:hover {
-    border-color: var(--color-teal-brillante);
+    border-color: var(--acento);
   }
   .entry-card__head {
     display: flex;
@@ -59,7 +59,7 @@ const typeLabel = type === 'episode' ? 'Episodio' : 'Columna';
   .entry-card__type {
     font-family: var(--font-mono);
     font-size: var(--fs-xs);
-    color: var(--color-ceniza);
+    color: var(--tinta-suave);
     text-transform: uppercase;
     letter-spacing: var(--tracking-mono);
   }
@@ -72,17 +72,17 @@ const typeLabel = type === 'episode' ? 'Episodio' : 'Columna';
   }
   .entry-card__title a {
     text-decoration: none;
-    color: var(--color-hueso);
+    color: var(--tinta);
   }
   .entry-card__title a:hover {
-    color: var(--color-teal-brillante);
+    color: var(--acento);
   }
   .entry-card__desc {
-    color: color-mix(in oklab, var(--color-hueso) 80%, transparent);
+    color: color-mix(in oklab, var(--tinta) 80%, transparent);
   }
   .entry-card__date {
     font-family: var(--font-mono);
     font-size: var(--fs-xs);
-    color: var(--color-ceniza);
+    color: var(--tinta-suave);
   }
 </style>

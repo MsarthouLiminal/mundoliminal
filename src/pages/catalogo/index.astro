@@ -148,7 +148,7 @@ const blocks: BlockConfig[] = [
     font-size: var(--fs-display);
     text-transform: uppercase;
     letter-spacing: var(--tracking-display);
-    color: var(--color-hueso);
+    color: var(--tinta);
     margin: 0;
     line-height: 1;
   }
@@ -159,7 +159,7 @@ const blocks: BlockConfig[] = [
   }
 
   .apertura-cierre {
-    color: var(--color-ocre);
+    color: var(--senal-texto);
     font-weight: 700;
     margin-top: var(--space-8);
   }
@@ -167,7 +167,7 @@ const blocks: BlockConfig[] = [
   /* DIVISOR ENTRE BLOQUES PRINCIPALES */
   .divisor {
     border: none;
-    border-top: 1px solid var(--color-bosque);
+    border-top: 1px solid var(--color-teal);
     margin: var(--space-24) 0;
   }
 
@@ -186,13 +186,13 @@ const blocks: BlockConfig[] = [
     font-size: var(--fs-xs);
     letter-spacing: var(--tracking-mono);
     text-transform: uppercase;
-    color: var(--color-teal-brillante);
+    color: var(--acento);
     margin: 0 0 var(--space-8);
   }
 
   .bloque-vacio {
     font-style: italic;
-    color: var(--color-ceniza);
+    color: var(--tinta-suave);
     margin: 0 0 var(--space-6);
   }
 
@@ -204,11 +204,11 @@ const blocks: BlockConfig[] = [
   }
 
   .item {
-    border-top: 1px solid var(--color-bosque);
+    border-top: 1px solid var(--color-teal);
   }
 
   .item:last-of-type {
-    border-bottom: 1px solid var(--color-bosque);
+    border-bottom: 1px solid var(--color-teal);
   }
 
   .item-link {
@@ -223,7 +223,7 @@ const blocks: BlockConfig[] = [
 
   .item-link:hover .item-titulo,
   .item-link:focus .item-titulo {
-    color: var(--color-teal-brillante);
+    color: var(--acento);
   }
 
   .item-titulo {
@@ -232,7 +232,7 @@ const blocks: BlockConfig[] = [
     font-size: var(--fs-md);
     letter-spacing: var(--tracking-display);
     text-transform: uppercase;
-    color: var(--color-hueso);
+    color: var(--tinta);
     margin: 0;
     line-height: 1.25;
     transition: color 150ms;
@@ -242,7 +242,7 @@ const blocks: BlockConfig[] = [
     font-family: var(--font-mono);
     font-weight: 400;
     font-size: var(--fs-xs);
-    color: var(--color-ceniza);
+    color: var(--tinta-suave);
   }
 
   /* LINK AL ARCHIVO COMPLETO */
@@ -253,9 +253,9 @@ const blocks: BlockConfig[] = [
     font-size: var(--fs-xs);
     text-transform: uppercase;
     letter-spacing: var(--tracking-mono);
-    color: var(--color-ocre);
+    color: var(--senal-texto);
     text-decoration: none;
-    border-bottom: 1px solid var(--color-ocre);
+    border-bottom: 1px solid var(--senal);
     padding-bottom: 2px;
     margin-top: var(--space-6);
     transition: color 150ms, border-color 150ms;
@@ -263,8 +263,8 @@ const blocks: BlockConfig[] = [
 
   .archivo-link:hover,
   .archivo-link:focus {
-    color: var(--color-hueso);
-    border-bottom-color: var(--color-hueso);
+    color: var(--tinta);
+    border-bottom-color: var(--tinta);
   }
 
   /* RESPONSIVE */

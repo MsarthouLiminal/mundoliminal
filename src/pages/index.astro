@@ -1,26 +1,31 @@
 ---
+/**
+ * Home de mundoliminal.com: una portada.
+ *
+ * Arriba, la apertura. Enseguida, en el primer pantallazo, la portada en dos
+ * columnas: Señales de la semana (mapa y titulares) y Lo último (columna,
+ * video y podcast). En el celular, Lo último va primero. El monitor completo,
+ * con hecho, lectura y fuente, vive en /senales.
+ */
 import BaseLayout from '../layouts/BaseLayout.astro';
 import HeroHome from '../components/home/HeroHome.astro';
-import LatestCard from '../components/home/LatestCard.astro';
+import LoUltimo from '../components/home/LoUltimo.astro';
 import Manifesto from '../components/home/Manifesto.astro';
 import CommercialBlock from '../components/home/CommercialBlock.astro';
-import MonitorSenales from '../components/senales/MonitorSenales.astro';
+import SenalesPortada from '../components/senales/SenalesPortada.astro';
 import { edicionVigente } from '../lib/senales';
 import {
   getYouTubeLatest,
-  getSubstackLatest,
+  getSubstackLatestList,
   getSpotifyLatest,
   type LatestItem,
 } from '../lib/feeds';
 
-const settled = await Promise.allSettled([
-  getYouTubeLatest(),
-  getSubstackLatest(),
-  getSpotifyLatest(),
+const [yt, sbLista, sp] = await Promise.all([
+  getYouTubeLatest().catch((): LatestItem | null => null),
+  getSubstackLatestList(3).catch((): LatestItem[] => []),
+  getSpotifyLatest().catch((): LatestItem | null => null),
 ]);
-const [yt, sb, sp] = settled.map((r): LatestItem | null =>
-  r.status === 'fulfilled' ? r.value : null,
-);
 
 const edicion = edicionVigente();
 ---
@@ -29,39 +34,31 @@ const edicion = edicionVigente();
   title="LIMINAL"
   description="Monitor semanal de minerales críticos, chokepoints, infraestructura de la IA y conflictos, con fuente y fecha. Análisis de Martín Sarthou desde Montevideo."
 >
-  <HeroHome>
-    <MonitorSenales edicion={edicion} />
-  </HeroHome>
+  <HeroHome />
 
-  <section class="ultimos" aria-labelledby="latest-heading">
-    <div class="ultimos__cab">
-      <h2 id="latest-heading">Lo último de LIMINAL</h2>
-      <p>El análisis de la semana en video, columna y podcast.</p>
+  <div class="portada">
+    <div class="portada__senales">
+      <SenalesPortada edicion={edicion} />
     </div>
-    <ul class="ultimos__grid">
-      <li>
-        <LatestCard
-          item={yt}
-          platform="youtube"
-          fallbackHref="https://www.youtube.com/@trimaxmediaok"
-        />
-      </li>
-      <li>
-        <LatestCard
-          item={sb}
-          platform="substack"
-          fallbackHref="https://mundoliminal.substack.com"
-        />
-      </li>
-      <li>
-        <LatestCard
-          item={sp}
-          platform="spotify"
-          fallbackHref="https://open.spotify.com/show/5iy7NKRkKbcOZxLzld1nNX"
-        />
-      </li>
-    </ul>
-  </section>
+    <div class="portada__ultimo">
+      <LoUltimo columna={sbLista[0] ?? null} columnasAnteriores={sbLista.slice(1, 3)} video={yt} podcast={sp} />
+    </div>
+  </div>
+
+  {edicion.agenda.length > 0 && (
+    <section class="observar" aria-labelledby="observar-h">
+      <h2 id="observar-h">Qué observar</h2>
+      <ol>
+        {edicion.agenda.map((a) => (
+          <li>
+            <span class="observar__eje">{a.eje.replace(/\s*·\s*/g, ' y ')}</span>
+            {a.fecha ? <time datetime={a.fecha}>{a.texto}</time> : <time>{a.texto}</time>}
+            <p>{a.detalle}</p>
+          </li>
+        ))}
+      </ol>
+    </section>
+  )}
 
   <Manifesto />
 
@@ -69,46 +66,109 @@ const edicion = edicionVigente();
 </BaseLayout>
 
 <style>
-  .ultimos {
+  .portada {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: var(--space-12);
+    margin-top: var(--space-8);
+  }
+  .portada__senales {
+    flex: 999 1 560px;
+    min-width: 0;
+  }
+  .portada__ultimo {
+    flex: 1 1 320px;
+    min-width: 0;
+  }
+
+  .observar {
     margin-top: var(--space-16);
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--color-teal);
     display: grid;
-    gap: var(--space-8);
+    gap: var(--space-4);
     font-family: var(--font-text-v2);
   }
-  .ultimos__cab {
-    display: grid;
-    gap: var(--space-2);
-    padding-bottom: var(--space-4);
-    border-bottom: 3px solid var(--color-horizonte);
-  }
-  .ultimos__cab h2 {
-    margin: 0;
+  .observar h2 {
     font-family: var(--font-display-v2);
     font-weight: 800;
-    font-size: clamp(1.8rem, 3.4vw, 2.4rem);
+    font-size: 2rem;
     line-height: 1;
-    letter-spacing: -0.005em;
+    letter-spacing: 0;
     text-transform: none;
-    color: var(--color-blanco);
+    color: var(--tinta-fuerte);
   }
-  .ultimos__cab p {
-    margin: 0;
-    font-size: 1rem;
-    line-height: 1.6;
-    color: var(--color-hueso);
-  }
-  .ultimos__grid {
+  .observar ol {
     list-style: none;
     margin: 0;
     padding: 0;
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: var(--space-6);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: var(--space-8);
+  }
+  .observar li {
+    display: grid;
+    align-content: start;
+    gap: 6px;
+  }
+  .observar__eje {
+    font-weight: 700;
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--tinta-meta);
+  }
+  .observar time {
+    font-family: var(--font-display-v2);
+    font-weight: 800;
+    font-size: 2rem;
+    line-height: 1;
+    color: var(--tinta-fuerte);
+  }
+  .observar p {
+    font-size: 0.95rem;
+    line-height: 1.45;
+    color: var(--tinta);
   }
 
-  @media (max-width: 720px) {
-    .ultimos__grid {
+  @media (max-width: 960px) {
+    .observar ol {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  @media (max-width: 640px) {
+    .portada {
+      gap: var(--space-10, 2.5rem);
+      margin-top: var(--space-6);
+    }
+    /* En el celular, lo último va antes que Señales. */
+    .portada__ultimo {
+      order: -1;
+      flex-basis: 100%;
+    }
+    .portada__senales {
+      flex-basis: 100%;
+    }
+    .observar {
+      margin-top: var(--space-12);
+    }
+    .observar ol {
       grid-template-columns: minmax(0, 1fr);
+      gap: var(--space-4);
+    }
+    .observar li {
+      grid-template-columns: 76px minmax(0, 1fr);
+      column-gap: 12px;
+    }
+    .observar li time {
+      grid-column: 1;
+      grid-row: 1 / span 2;
+      font-size: 1.5rem;
+    }
+    .observar__eje,
+    .observar p {
+      grid-column: 2;
     }
   }
 </style>

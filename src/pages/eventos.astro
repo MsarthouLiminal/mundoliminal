@@ -97,7 +97,7 @@ const acceso = (e: Evento) => (e.acceso === 'invitacion' ? 'Por invitación' : '
     list-style: none;
     margin: 0;
     padding: 0;
-    border-top: 3px solid var(--color-horizonte);
+    border-top: 3px solid var(--senal);
   }
   .evento {
     display: grid;
@@ -117,14 +117,14 @@ const acceso = (e: Evento) => (e.acceso === 'invitacion' ? 'Por invitación' : '
     font-size: 0.75rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--color-lila);
+    color: var(--tinta-meta);
   }
   .evento__num {
     font-family: var(--font-display-v2);
     font-weight: 800;
     font-size: 3.4rem;
     line-height: 0.9;
-    color: var(--color-horizonte);
+    color: var(--senal);
   }
   .evento__cuerpo {
     display: grid;
@@ -136,10 +136,10 @@ const acceso = (e: Evento) => (e.acceso === 'invitacion' ? 'Por invitación' : '
     font-size: 0.72rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--color-hueso);
+    color: var(--tinta);
   }
   .evento__formato span {
-    color: var(--color-lila);
+    color: var(--tinta-meta);
   }
   .evento h3 {
     font-size: clamp(1.5rem, 3vw, 2rem);
@@ -151,16 +151,16 @@ const acceso = (e: Evento) => (e.acceso === 'invitacion' ? 'Por invitación' : '
     gap: 8px;
     margin-top: var(--space-2);
     padding: 10px 16px;
-    border: 1px solid var(--color-horizonte);
-    color: var(--color-horizonte);
+    border: 1px solid var(--senal);
+    color: var(--senal-texto);
     font-weight: 700;
     font-size: 0.78rem;
     letter-spacing: 0.06em;
     text-transform: uppercase;
   }
   .evento__inscripcion:hover {
-    background: var(--color-horizonte);
-    color: var(--color-vacio);
+    background: var(--senal);
+    color: var(--sobre-senal);
   }
   .evento__detalle {
     max-width: 62ch;
@@ -209,7 +209,7 @@ const acceso = (e: Evento) => (e.acceso === 'invitacion' ? 'Por invitación' : '
     display: grid;
     gap: var(--space-3);
     padding: var(--space-8);
-    background: var(--color-selva);
+    background: var(--fondo-caja);
     border: 1px solid var(--color-teal);
   }
   .vivo h2 {
@@ -226,15 +226,15 @@ const acceso = (e: Evento) => (e.acceso === 'invitacion' ? 'Por invitación' : '
     display: inline-flex;
     gap: 10px;
     padding: 14px 20px;
-    background: var(--color-horizonte);
-    color: var(--color-vacio);
+    background: var(--boton);
+    color: var(--sobre-boton);
     font-weight: 700;
     font-size: 0.85rem;
     letter-spacing: 0.04em;
     text-transform: uppercase;
   }
   .vivo__boton:hover {
-    background: var(--color-blanco);
-    color: var(--color-vacio);
+    background: var(--boton-hover);
+    color: var(--sobre-boton);
   }
 </style>

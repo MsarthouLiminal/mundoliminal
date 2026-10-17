@@ -1,0 +1,257 @@
+---
+/**
+ * LoUltimo: la columna lateral de la portada con la última pieza de cada
+ * plataforma. La columna va primero porque es la que más se renueva, y
+ * suma los títulos de las dos anteriores. En el celular las tarjetas pasan
+ * a formato compacto (imagen chica a la izquierda) y la sección va antes que
+ * Señales.
+ */
+import type { LatestItem, Platform } from '../../lib/feeds';
+import { fechaCorta } from '../../lib/senales';
+
+interface Props {
+  columna: LatestItem | null;
+  columnasAnteriores: LatestItem[];
+  video: LatestItem | null;
+  podcast: LatestItem | null;
+}
+
+const { columna, columnasAnteriores, video, podcast } = Astro.props;
+
+/** Fecha del día en Montevideo, en formato corto ("16 oct"). */
+function dia(d: Date): string {
+  const iso = new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Montevideo' }).format(d);
+  return fechaCorta(iso);
+}
+
+const etiqueta: Record<Platform, string> = {
+  substack: 'Columna en Substack',
+  youtube: 'Video en YouTube',
+  spotify: 'Podcast en Spotify',
+};
+const respaldoHref: Record<Platform, string> = {
+  substack: 'https://mundoliminal.substack.com',
+  youtube: 'https://www.youtube.com/@trimaxmediaok',
+  spotify: 'https://open.spotify.com/show/5iy7NKRkKbcOZxLzld1nNX',
+};
+
+const tarjetas: { platform: Platform; item: LatestItem | null }[] = [
+  { platform: 'substack', item: columna },
+  { platform: 'youtube', item: video },
+  { platform: 'spotify', item: podcast },
+];
+---
+
+<aside class="lo-ultimo" aria-labelledby="lo-ultimo-h">
+  <div class="lu__cab">
+    <p class="lu__kick">Lo último de LIMINAL</p>
+    <h2 id="lo-ultimo-h" class="lu__h">Columna, video y podcast</h2>
+  </div>
+  <hr class="lu__linea" />
+
+  <ul class="lu__lista">
+    {tarjetas.map(({ platform, item }) => (
+      <li class="lu__item">
+        <a class="pieza" href={item?.url ?? respaldoHref[platform]} target="_blank" rel="noopener">
+          <span class="pieza__img" aria-hidden="true">
+            {item?.thumbnail ? (
+              <img
+                src={item.thumbnail}
+                alt=""
+                loading="lazy"
+                data-respaldo={item.thumbnailRespaldo}
+                onerror={item.thumbnailRespaldo ? 'this.onerror=null;this.src=this.dataset.respaldo' : undefined}
+              />
+            ) : (
+              <span class="pieza__marca">LIMINAL</span>
+            )}
+          </span>
+          <span class="pieza__texto">
+            <span class="pieza__plataforma">
+              {etiqueta[platform]}<span class="pieza__fecha-corta">{item && `, ${dia(item.pubDate)}`}</span>
+            </span>
+            <span class="pieza__titulo">{item?.title ?? 'Próximamente'}</span>
+            {item && <time class="pieza__fecha" datetime={item.pubDate.toISOString()}>{dia(item.pubDate)}</time>}
+          </span>
+        </a>
+        {platform === 'substack' && columnasAnteriores.length > 0 && (
+          <div class="anteriores">
+            <p>Antes en la columna</p>
+            <ul>
+              {columnasAnteriores.map((c) => (
+                <li>
+                  <a href={c.url} target="_blank" rel="noopener">{c.title} <span>{dia(c.pubDate)}</span></a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </li>
+    ))}
+  </ul>
+</aside>
+
+<style>
+  .lo-ultimo {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    min-width: 0;
+    font-family: var(--font-text-v2);
+  }
+  .lu__cab {
+    display: grid;
+    gap: var(--space-2);
+  }
+  .lu__kick {
+    font-weight: 700;
+    font-size: 0.82rem;
+    color: var(--tinta-meta);
+  }
+  .lu__h {
+    font-family: var(--font-display-v2);
+    font-weight: 800;
+    font-size: 2rem;
+    line-height: 0.95;
+    letter-spacing: -0.005em;
+    text-transform: none;
+    color: var(--tinta-fuerte);
+  }
+  .lu__linea {
+    height: 3px;
+    margin: 0;
+    border: 0;
+    background: var(--tinta-fuerte);
+  }
+  .lu__lista {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: var(--space-4);
+  }
+  .lu__item {
+    display: grid;
+    gap: var(--space-3);
+    padding-bottom: var(--space-4);
+    border-bottom: 1px solid var(--color-teal);
+  }
+  .pieza {
+    display: grid;
+    gap: 9px;
+    color: var(--tinta);
+    text-decoration: none;
+  }
+  .pieza__img {
+    display: grid;
+    place-items: center;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: var(--color-selva);
+  }
+  .pieza__img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .pieza__marca {
+    font: 800 1.4rem/1 var(--font-display-v2);
+    color: var(--color-hueso);
+  }
+  .pieza__texto {
+    display: grid;
+    gap: 6px;
+    min-width: 0;
+  }
+  .pieza__plataforma {
+    font-weight: 700;
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--tinta-meta);
+  }
+  .pieza__fecha-corta {
+    display: none;
+  }
+  .pieza__titulo {
+    font-family: var(--font-display-v2);
+    font-weight: 800;
+    font-size: 1.55rem;
+    line-height: 1;
+    letter-spacing: -0.005em;
+    color: var(--tinta-fuerte);
+    text-wrap: balance;
+    transition: color 150ms;
+  }
+  .pieza:hover .pieza__titulo {
+    color: var(--senal);
+  }
+  .pieza:focus-visible {
+    outline: 2px solid var(--senal);
+    outline-offset: 3px;
+  }
+  .pieza__fecha {
+    font-size: 0.82rem;
+    color: var(--tinta-meta);
+  }
+  .anteriores {
+    display: grid;
+    gap: 6px;
+  }
+  .anteriores p {
+    font-weight: 700;
+    font-size: 0.75rem;
+    color: var(--tinta-meta);
+  }
+  .anteriores ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 8px;
+  }
+  .anteriores a {
+    font-size: 0.9rem;
+    line-height: 1.35;
+    color: var(--tinta-fuerte);
+    text-decoration: none;
+  }
+  .anteriores a:hover {
+    color: var(--senal);
+  }
+  .anteriores span {
+    color: var(--tinta-meta);
+    white-space: nowrap;
+  }
+
+  /* En el celular: tarjetas compactas, imagen chica a la izquierda. */
+  @media (max-width: 640px) {
+    .lu__h {
+      font-size: 1.75rem;
+    }
+    .lu__item {
+      gap: var(--space-2);
+      padding-bottom: var(--space-3);
+    }
+    .pieza {
+      grid-template-columns: 128px minmax(0, 1fr);
+      gap: 12px;
+      align-items: start;
+    }
+    .pieza__fecha-corta {
+      display: inline;
+    }
+    .pieza__fecha {
+      display: none;
+    }
+    .pieza__titulo {
+      font-size: 1.25rem;
+    }
+    .anteriores {
+      padding-left: 140px;
+    }
+    .anteriores a {
+      font-size: 0.82rem;
+    }
+  }
+</style>

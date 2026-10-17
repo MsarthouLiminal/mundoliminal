@@ -152,7 +152,7 @@ const {
     letter-spacing: var(--tracking-mono);
     font-size: clamp(0.56rem, 0.9vw, 0.72rem);
     line-height: 1.7;
-    color: var(--color-ceniza);
+    color: var(--tinta-suave);
   }
   .globo__meta {
     top: calc(var(--space-6) + clamp(34px, 4.4vw, 72px));
@@ -166,10 +166,10 @@ const {
   }
   .globo__meta .val,
   .globo__hud .val {
-    color: var(--color-teal-brillante);
+    color: var(--acento);
     font-variant-numeric: tabular-nums;
   }
-  .globo__meta .pt { color: var(--color-teal-brillante); }
+  .globo__meta .pt { color: var(--acento); }
   .globo__hud .row {
     display: flex;
     justify-content: flex-end;
@@ -188,7 +188,7 @@ const {
     display: inline-block;
     width: 7px;
     height: 7px;
-    background: var(--color-neon);
+    background: var(--senal);
     margin-right: var(--space-2);
     animation: gl-blink 1.4s steps(2, end) infinite;
   }
@@ -208,7 +208,7 @@ const {
   .globo :global(.gl-city-label) {
     font-family: var(--font-mono);
     font-size: 13px;
-    fill: var(--color-hueso);
+    fill: var(--tinta);
     letter-spacing: 0.18em;
     text-transform: uppercase;
     font-weight: 700;
@@ -216,7 +216,7 @@ const {
   .globo :global(.gl-city-coord) {
     font-family: var(--font-mono);
     font-size: 10px;
-    fill: var(--color-teal-brillante);
+    fill: var(--acento);
     letter-spacing: 0.1em;
     opacity: 0.75;
   }
@@ -231,7 +231,7 @@ const {
     fill: none;
     stroke-width: 1;
     opacity: 0.18;
-    stroke: var(--color-teal-brillante);
+    stroke: var(--acento);
   }
   @keyframes gl-flow {
     from { stroke-dashoffset: 100; }

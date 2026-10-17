@@ -117,7 +117,7 @@ const archivo = ediciones();
     flex-direction: column;
     gap: var(--space-16);
     font-family: var(--font-text-v2);
-    color: var(--color-hueso);
+    color: var(--tinta);
   }
   .pagina h1,
   .pagina h2 {
@@ -125,7 +125,7 @@ const archivo = ediciones();
     font-weight: 800;
     text-transform: none;
     letter-spacing: -0.005em;
-    color: var(--color-blanco);
+    color: var(--tinta-fuerte);
   }
   .pagina__cab { display: grid; gap: var(--space-3); }
   .pagina__kick {
@@ -133,11 +133,11 @@ const archivo = ediciones();
     font-size: 0.82rem;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: var(--color-lila);
+    color: var(--tinta-meta);
   }
   .pagina__cab h1 { font-size: clamp(3.2rem, 9vw, 6.5rem); line-height: 0.88; }
   .pagina__lede { max-width: 60ch; font-size: clamp(1.05rem, 1.6vw, 1.25rem); line-height: 1.5; }
-  .pagina__cab hr { height: 3px; border: 0; margin: var(--space-4) 0 0; background: var(--color-horizonte); }
+  .pagina__cab hr { height: 3px; border: 0; margin: var(--space-4) 0 0; background: var(--senal); }
 
   /* El monitor ya trae su propia apertura: acá le sacamos el aire de arriba. */
   .pagina :global(.senales__intro) { padding-top: 0; }
@@ -159,7 +159,7 @@ const archivo = ediciones();
     font-weight: 800;
     font-size: 1.35rem;
     line-height: 1.05;
-    color: var(--color-blanco);
+    color: var(--tinta-fuerte);
     margin-bottom: var(--space-2);
   }
   .metodo__lista dd { margin: 0; font-size: 0.94rem; line-height: 1.6; }
@@ -172,16 +172,16 @@ const archivo = ediciones();
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: var(--space-6);
   }
-  .ejes__lista li { border-top: 3px solid var(--color-horizonte); padding-top: var(--space-3); }
+  .ejes__lista li { border-top: 3px solid var(--senal); padding-top: var(--space-3); }
   .ejes__lista a {
     font-family: var(--font-display-v2);
     font-weight: 800;
     font-size: 1.5rem;
-    color: var(--color-blanco);
+    color: var(--tinta-fuerte);
     text-decoration: none;
   }
-  .ejes__lista a:hover { color: var(--color-horizonte); }
-  .ejes__lista p { margin-top: var(--space-2); font-size: 0.88rem; line-height: 1.5; color: var(--color-lila); }
+  .ejes__lista a:hover { color: var(--senal); }
+  .ejes__lista p { margin-top: var(--space-2); font-size: 0.88rem; line-height: 1.5; color: var(--tinta-meta); }
 
   .archivo__lista { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--color-teal); }
   /* Una fila por edición: "Semana 42 · del 12 de octubre de 2026 · 8 señales". */
@@ -193,13 +193,13 @@ const archivo = ediciones();
     padding: var(--space-4) 0;
     border-bottom: 1px solid var(--color-teal);
     text-decoration: none;
-    color: var(--color-hueso);
+    color: var(--tinta);
   }
-  .archivo__lista a:hover { color: var(--color-blanco); }
-  .archivo__sem { font-family: var(--font-display-v2); font-weight: 800; font-size: 1.3rem; color: var(--color-blanco); }
+  .archivo__lista a:hover { color: var(--tinta-fuerte); }
+  .archivo__sem { font-family: var(--font-display-v2); font-weight: 800; font-size: 1.3rem; color: var(--tinta-fuerte); }
   .archivo__fecha { font-variant-numeric: tabular-nums; }
-  .archivo__n { font-weight: 500; font-size: 0.8rem; color: var(--color-lila); }
-  .archivo__sep { color: var(--color-horizonte); font-weight: 700; }
+  .archivo__n { font-weight: 500; font-size: 0.8rem; color: var(--tinta-meta); }
+  .archivo__sep { color: var(--senal); font-weight: 700; }
   /* En celular la cantidad de señales baja a su propia línea, sin dejar un punto colgando. */
   @media (max-width: 560px) {
     .archivo__sep--n { display: none; }
@@ -212,7 +212,7 @@ const archivo = ediciones();
     gap: var(--space-3);
     max-width: 640px;
     padding: var(--space-8);
-    background: var(--color-selva);
+    background: var(--fondo-caja);
     border: 1px solid var(--color-teal);
   }
   .sub h2 { font-size: 2rem; line-height: 1; }
@@ -221,13 +221,13 @@ const archivo = ediciones();
     display: inline-flex;
     gap: 10px;
     padding: 14px 20px;
-    background: var(--color-horizonte);
-    color: var(--color-vacio);
+    background: var(--boton);
+    color: var(--sobre-boton);
     font-weight: 700;
     font-size: 0.85rem;
     letter-spacing: 0.04em;
     text-transform: uppercase;
     text-decoration: none;
   }
-  .sub__boton:hover { background: var(--color-blanco); color: var(--color-vacio); }
+  .sub__boton:hover { background: var(--boton-hover); color: var(--sobre-boton); }
 </style>

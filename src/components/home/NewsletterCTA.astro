@@ -39,7 +39,7 @@ const hasHeading = Astro.slots.has('heading');
     align-self: flex-start;
   }
   .cta--standalone {
-    background: color-mix(in oklab, var(--color-selva) 60%, transparent);
+    background: var(--fondo-caja);
     border: 1px solid var(--rule);
     padding: var(--space-8);
     margin-top: var(--space-12);
@@ -50,7 +50,7 @@ const hasHeading = Astro.slots.has('heading');
     font-size: var(--fs-xl);
     letter-spacing: var(--tracking-display);
     text-transform: uppercase;
-    color: var(--color-hueso);
+    color: var(--tinta);
     margin-bottom: var(--space-2);
   }
   .cta__lead {
@@ -59,24 +59,24 @@ const hasHeading = Astro.slots.has('heading');
     font-size: var(--fs-lg);
     letter-spacing: var(--tracking-display);
     text-transform: uppercase;
-    color: var(--color-hueso);
+    color: var(--tinta);
   }
   .cta__sub {
     font-family: var(--font-mono);
     font-size: var(--fs-sm);
-    color: var(--color-ceniza);
+    color: var(--tinta-suave);
   }
   .cta__body {
     font-family: var(--font-mono);
     font-size: var(--fs-base);
-    color: var(--color-hueso);
+    color: var(--tinta);
     line-height: 1.6;
   }
   .cta__pull {
     font-family: var(--font-mono);
     font-style: italic;
     font-size: var(--fs-sm);
-    color: var(--color-ocre);
+    color: var(--senal-texto);
   }
   .cta__button {
     align-self: flex-start;
@@ -89,13 +89,13 @@ const hasHeading = Astro.slots.has('heading');
     letter-spacing: var(--tracking-mono);
     text-transform: uppercase;
     text-decoration: none;
-    color: var(--color-vacio);
-    background: var(--color-teal-brillante);
-    border: 1px solid var(--color-teal-brillante);
+    color: var(--sobre-boton);
+    background: var(--acento);
+    border: 1px solid var(--acento);
     transition: background 150ms, color 150ms;
   }
   .cta__button:hover {
     background: transparent;
-    color: var(--color-teal-brillante);
+    color: var(--acento);
   }
 </style>

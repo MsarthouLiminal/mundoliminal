@@ -91,7 +91,7 @@ function lado(l: string | undefined) {
 
   <div class="panel">
     <div class="panel__in">
-      <div class="carta">
+      <div class="carta ventana">
         <div class="carta__cab">
           <div class="lectura-mapa" aria-live="polite">
             <b data-ro-lugar>{total} señales · {edicion.focos.length} focos en observación</b>
@@ -277,7 +277,7 @@ function lado(l: string | undefined) {
 <style>
   .senales {
     font-family: var(--font-text-v2);
-    color: var(--color-hueso);
+    color: var(--tinta);
     display: flex;
     flex-direction: column;
     gap: var(--space-12);
@@ -306,7 +306,7 @@ function lado(l: string | undefined) {
     font-family: var(--font-text-v2);
     font-weight: 500;
     font-size: 0.82rem;
-    color: var(--color-lila);
+    color: var(--tinta-meta);
     font-variant-numeric: tabular-nums;
   }
   .senales__kick {
@@ -314,7 +314,7 @@ function lado(l: string | undefined) {
     text-transform: uppercase;
   }
   .senales__archivo {
-    color: var(--color-horizonte);
+    color: var(--senal-texto);
   }
   .senales__h {
     font-family: var(--font-display-v2);
@@ -323,7 +323,7 @@ function lado(l: string | undefined) {
     line-height: 0.9;
     letter-spacing: -0.01em;
     text-transform: none;
-    color: var(--color-blanco);
+    color: var(--tinta-fuerte);
     text-wrap: balance;
     max-width: 14ch;
   }
@@ -337,7 +337,7 @@ function lado(l: string | undefined) {
     height: 3px;
     border: 0;
     margin: var(--space-4) 0 0;
-    background: var(--color-horizonte);
+    background: var(--senal);
   }
   .senales__sec {
     font-family: var(--font-display-v2);
@@ -346,7 +346,7 @@ function lado(l: string | undefined) {
     line-height: 1;
     letter-spacing: 0;
     text-transform: none;
-    color: var(--color-blanco);
+    color: var(--tinta-fuerte);
     margin-bottom: var(--space-6);
   }
 
@@ -354,7 +354,6 @@ function lado(l: string | undefined) {
   .panel {
     width: 100vw;
     margin-left: calc(50% - 50vw);
-    background: var(--color-selva);
     border-block: 1px solid var(--color-teal);
   }
   .panel__in {
@@ -366,6 +365,11 @@ function lado(l: string | undefined) {
   }
 
   /* ---------- Carta ---------- */
+  /* El mapa se mira en oscuro: es la ventana del monitor sobre el papel. */
+  .carta {
+    background: var(--fondo);
+    padding: 14px 16px 16px;
+  }
   .carta__cab {
     display: flex;
     justify-content: space-between;
@@ -375,7 +379,7 @@ function lado(l: string | undefined) {
     margin-bottom: var(--space-3);
     font-weight: 500;
     font-size: 0.78rem;
-    color: var(--color-lila);
+    color: var(--tinta-meta);
     font-variant-numeric: tabular-nums;
   }
   .lectura-mapa {
@@ -389,7 +393,7 @@ function lado(l: string | undefined) {
     font-family: var(--font-display-v2);
     font-weight: 800;
     font-size: 1.15rem;
-    color: var(--color-blanco);
+    color: var(--tinta-fuerte);
   }
   .leyenda {
     display: flex;
@@ -407,9 +411,9 @@ function lado(l: string | undefined) {
     height: 9px;
     border-radius: 50%;
   }
-  .lg-punto { background: var(--color-horizonte); }
-  .lg-anillo { border: 1.5px solid var(--color-lila); }
-  .lg-arco { width: 18px; border-top: 1.5px dashed var(--color-horizonte); }
+  .lg-punto { background: var(--senal); }
+  .lg-anillo { border: 1.5px solid var(--tinta-meta); }
+  .lg-arco { width: 18px; border-top: 1.5px dashed var(--senal); }
 
   .carta__marco {
     border: 1px solid var(--color-teal);
@@ -423,11 +427,11 @@ function lado(l: string | undefined) {
   .mapa__tierra { fill: var(--color-bosque); }
   .mapa__grilla { fill: none; stroke: var(--color-teal); stroke-width: 0.6; stroke-opacity: 0.35; }
   .mapa__ecuador { fill: none; stroke: var(--color-teal); stroke-width: 0.8; stroke-dasharray: 3 4; stroke-opacity: 0.8; }
-  .mapa__arco { fill: none; stroke: var(--color-horizonte); stroke-width: 1.2; stroke-dasharray: 4 4; stroke-opacity: 0.75; }
-  .mapa__extremo { fill: var(--color-horizonte); }
-  .foco circle { fill: none; stroke: var(--color-lila); stroke-width: 1.5; }
+  .mapa__arco { fill: none; stroke: var(--senal); stroke-width: 1.2; stroke-dasharray: 4 4; stroke-opacity: 0.75; }
+  .mapa__extremo { fill: var(--senal); }
+  .foco circle { fill: none; stroke: var(--tinta-meta); stroke-width: 1.5; }
   .foco text {
-    fill: var(--color-lila);
+    fill: var(--tinta-meta);
     font: 700 9px var(--font-text-v2);
     letter-spacing: 0.06em;
     paint-order: stroke;
@@ -435,23 +439,23 @@ function lado(l: string | undefined) {
     stroke-width: 3px;
   }
   .punto { cursor: pointer; outline: none; }
-  .punto__nucleo { fill: var(--color-horizonte); stroke: var(--color-vacio); stroke-width: 1.5; }
+  .punto__nucleo { fill: var(--senal); stroke: var(--color-vacio); stroke-width: 1.5; }
   .punto__pulso {
-    fill: var(--color-horizonte);
+    fill: var(--senal);
     opacity: 0.25;
     transform-origin: 0 0;
     animation: senal-pulso 2.6s ease-out infinite;
   }
   .punto text {
-    fill: var(--color-blanco);
+    fill: var(--tinta-fuerte);
     font: 700 13px var(--font-text-v2);
     paint-order: stroke;
     stroke: var(--color-vacio);
     stroke-width: 4px;
   }
   .punto.activo .punto__nucleo,
-  .punto:focus-visible .punto__nucleo { stroke: var(--color-blanco); stroke-width: 2; }
-  .punto.activo text { fill: var(--color-horizonte); }
+  .punto:focus-visible .punto__nucleo { stroke: var(--tinta-fuerte); stroke-width: 2; }
+  .punto.activo text { fill: var(--senal); }
   .atenuado { opacity: 0.18; }
   @keyframes senal-pulso {
     0% { transform: scale(0.6); opacity: 0.45; }
@@ -477,21 +481,21 @@ function lado(l: string | undefined) {
     padding: 10px 14px;
     background: transparent;
     border: 1px solid var(--color-teal);
-    color: var(--color-hueso);
+    color: var(--tinta);
     font: 500 0.82rem/1 var(--font-text-v2);
     cursor: pointer;
   }
-  .pestana span { color: var(--color-lila); font-variant-numeric: tabular-nums; }
+  .pestana span { color: var(--tinta-meta); font-variant-numeric: tabular-nums; }
   .pestana[aria-selected='true'] {
-    background: var(--color-horizonte);
-    border-color: var(--color-horizonte);
-    color: var(--color-vacio);
+    background: var(--senal);
+    border-color: var(--senal);
+    color: var(--sobre-senal);
     font-weight: 700;
   }
-  .pestana[aria-selected='true'] span { color: var(--color-vacio); }
+  .pestana[aria-selected='true'] span { color: var(--sobre-senal); }
   .pestana:focus-visible,
   .senal__num:focus-visible,
-  .senales a:focus-visible { outline: 2px solid var(--color-horizonte); outline-offset: 3px; }
+  .senales a:focus-visible { outline: 2px solid var(--senal); outline-offset: 3px; }
 
   /* ---------- Tablero ---------- */
   .tablero {
@@ -515,14 +519,14 @@ function lado(l: string | undefined) {
     line-height: 0.95;
     letter-spacing: -0.005em;
     text-transform: none;
-    color: var(--color-blanco);
+    color: var(--tinta-fuerte);
   }
   .eje__cab p {
     margin-top: var(--space-2);
     font-weight: 500;
     font-size: 0.78rem;
     line-height: 1.45;
-    color: var(--color-lila);
+    color: var(--tinta-meta);
   }
   .eje__senales {
     display: grid;
@@ -539,14 +543,14 @@ function lado(l: string | undefined) {
     scroll-margin-top: var(--space-16);
   }
   .senal:hover,
-  .senal.activo { background: var(--color-bosque); }
+  .senal.activo { background: var(--hover-fondo); }
   .senal__meta {
     display: flex;
     align-items: center;
     gap: 10px;
     font-weight: 500;
     font-size: 0.76rem;
-    color: var(--color-lila);
+    color: var(--tinta-meta);
     font-variant-numeric: tabular-nums;
   }
   .senal__meta time { margin-left: auto; white-space: nowrap; }
@@ -558,13 +562,13 @@ function lado(l: string | undefined) {
     display: grid;
     place-items: center;
     border-radius: 50%;
-    border: 1.5px solid var(--color-horizonte);
+    border: 1.5px solid var(--senal);
     background: transparent;
-    color: var(--color-horizonte);
+    color: var(--senal-texto);
     font: 700 0.75rem/1 var(--font-text-v2);
     cursor: pointer;
   }
-  .senal.activo .senal__num { background: var(--color-horizonte); color: var(--color-vacio); }
+  .senal.activo .senal__num { background: var(--senal); color: var(--sobre-senal); }
   /* Señales que cambiaron a mitad de semana: la actualización se dice, no se esconde. */
   .senal__aviso {
     justify-self: start;
@@ -572,15 +576,15 @@ function lado(l: string | undefined) {
     font-size: 0.7rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--color-horizonte);
+    color: var(--senal-texto);
   }
   .senal__aviso--um {
     padding: 3px 8px;
-    background: var(--color-horizonte);
-    color: var(--color-vacio);
+    background: var(--senal);
+    color: var(--sobre-senal);
   }
-  .senal--um { box-shadow: inset 3px 0 0 var(--color-horizonte); }
-  .senales__actualizada { color: var(--color-horizonte); }
+  .senal--um { box-shadow: inset 3px 0 0 var(--senal); }
+  .senales__actualizada { color: var(--senal-texto); }
   .senal h4 {
     font-family: var(--font-display-v2);
     font-weight: 800;
@@ -588,7 +592,7 @@ function lado(l: string | undefined) {
     line-height: 1.02;
     letter-spacing: -0.005em;
     text-transform: none;
-    color: var(--color-blanco);
+    color: var(--tinta-fuerte);
     text-wrap: balance;
   }
   .senal__hecho { font-size: 0.875rem; line-height: 1.55; }
@@ -598,13 +602,13 @@ function lado(l: string | undefined) {
     font-weight: 500;
     font-size: 0.94rem;
     line-height: 1.45;
-    color: var(--color-blanco);
+    color: var(--tinta-fuerte);
   }
   .senal__lectura::before {
     content: '';
     width: 28px;
     height: 2px;
-    background: var(--color-horizonte);
+    background: var(--senal);
   }
   .senal__pie {
     display: flex;
@@ -617,16 +621,16 @@ function lado(l: string | undefined) {
   }
   .intensidad { display: inline-flex; align-items: center; gap: 3px; }
   .intensidad i { width: 8px; height: 8px; border: 1px solid var(--color-teal); }
-  .intensidad i.lleno { background: var(--color-horizonte); border-color: var(--color-horizonte); }
-  .intensidad em { font-style: normal; margin-left: 5px; color: var(--color-lila); }
-  .senal__fuente { font-weight: 500; font-size: 0.75rem; line-height: 1.4; color: var(--color-lila); }
+  .intensidad i.lleno { background: var(--senal); border-color: var(--senal); }
+  .intensidad em { font-style: normal; margin-left: 5px; color: var(--tinta-meta); }
+  .senal__fuente { font-weight: 500; font-size: 0.75rem; line-height: 1.4; color: var(--tinta-meta); }
   .senal__fuente a {
     color: inherit;
     text-decoration: underline;
     text-decoration-color: var(--color-teal);
     text-underline-offset: 3px;
   }
-  .senal__fuente a:hover { color: var(--color-blanco); }
+  .senal__fuente a:hover { color: var(--tinta-fuerte); }
   .senal__analisis {
     justify-self: start;
     padding-bottom: 2px;
@@ -634,10 +638,10 @@ function lado(l: string | undefined) {
     font-weight: 700;
     font-size: 0.8rem;
     line-height: 1.35;
-    color: var(--color-blanco);
+    color: var(--tinta-fuerte);
   }
-  .senal__analisis b { color: var(--color-horizonte); }
-  .senal__analisis:hover { color: var(--color-blanco); border-color: var(--color-horizonte); }
+  .senal__analisis b { color: var(--senal); }
+  .senal__analisis:hover { color: var(--tinta-fuerte); border-color: var(--senal); }
   /* La versión del lunes de una señal actualizada: plegada, para que la columna no crezca. */
   .senal__antes { margin-top: 2px; }
   .senal__antes summary {
@@ -650,7 +654,7 @@ function lado(l: string | undefined) {
     font-size: 0.7rem;
     letter-spacing: 0.07em;
     text-transform: uppercase;
-    color: var(--color-lila);
+    color: var(--tinta-meta);
   }
   .senal__antes summary::-webkit-details-marker { display: none; }
   .senal__antes summary::before {
@@ -667,8 +671,8 @@ function lado(l: string | undefined) {
   }
   .senal__antes[open] summary::before { content: '\2212'; }
   .senal__antes summary:hover,
-  .senal__antes summary:focus-visible { color: var(--color-blanco); }
-  .senal__antes summary:focus-visible { outline: 2px solid var(--color-teal-brillante); outline-offset: 3px; }
+  .senal__antes summary:focus-visible { color: var(--tinta-fuerte); }
+  .senal__antes summary:focus-visible { outline: 2px solid var(--acento); outline-offset: 3px; }
   .senal__antes-cuerpo {
     display: grid;
     gap: 8px;
@@ -677,9 +681,9 @@ function lado(l: string | undefined) {
     border-left: 2px solid var(--color-teal);
     font-size: 0.8rem;
     line-height: 1.5;
-    color: var(--color-lila);
+    color: var(--tinta-meta);
   }
-  .senal__antes-titulo { font-weight: 700; font-size: 0.85rem; line-height: 1.3; color: var(--color-hueso); }
+  .senal__antes-titulo { font-weight: 700; font-size: 0.85rem; line-height: 1.3; color: var(--tinta); }
   .senal__antes-lectura { font-weight: 500; }
   .eje__tambien {
     margin-top: auto;
@@ -691,11 +695,11 @@ function lado(l: string | undefined) {
     font: 700 0.7rem/1 var(--font-text-v2);
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--color-lila);
+    color: var(--tinta-meta);
   }
   .eje__tambien ul { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-2); }
   .eje__tambien li { font-size: 0.8rem; line-height: 1.45; }
-  .eje__tambien li span { color: var(--color-lila); font-weight: 500; font-variant-numeric: tabular-nums; }
+  .eje__tambien li span { color: var(--tinta-meta); font-weight: 500; font-variant-numeric: tabular-nums; }
 
   .tablero.solo { grid-template-columns: minmax(0, 1fr); }
   .tablero.solo .eje { border-right: 0; }
@@ -722,7 +726,7 @@ function lado(l: string | undefined) {
     padding: 0;
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    border-top: 3px solid var(--color-horizonte);
+    border-top: 3px solid var(--senal);
   }
   .agenda__linea li {
     display: grid;
@@ -736,14 +740,14 @@ function lado(l: string | undefined) {
     font-size: 0.72rem;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: var(--color-lila);
+    color: var(--tinta-meta);
   }
   .agenda__linea time {
     font-family: var(--font-display-v2);
     font-weight: 800;
     font-size: 1.9rem;
     line-height: 1;
-    color: var(--color-horizonte);
+    color: var(--senal);
   }
   .agenda__linea p { font-size: 0.88rem; line-height: 1.5; max-width: 34ch; }
   @media (max-width: 860px) {
@@ -770,15 +774,15 @@ function lado(l: string | undefined) {
     border-bottom: 1px solid var(--color-teal);
     font-weight: 700;
     font-size: 0.85rem;
-    color: var(--color-blanco);
+    color: var(--tinta-fuerte);
   }
-  .cierre__mas b { color: var(--color-horizonte); }
-  .cierre__mas:hover { color: var(--color-blanco); border-color: var(--color-horizonte); }
+  .cierre__mas b { color: var(--senal); }
+  .cierre__mas:hover { color: var(--tinta-fuerte); border-color: var(--senal); }
   .cierre__sub {
     display: grid;
     gap: var(--space-3);
     padding: 26px;
-    background: var(--color-selva);
+    background: var(--fondo-caja);
     border: 1px solid var(--color-teal);
   }
   .cierre__sub h3 {
@@ -788,7 +792,7 @@ function lado(l: string | undefined) {
     line-height: 0.98;
     letter-spacing: 0;
     text-transform: none;
-    color: var(--color-blanco);
+    color: var(--tinta-fuerte);
   }
   .cierre__sub p { font-size: 0.9rem; }
   .cierre__boton {
@@ -797,15 +801,15 @@ function lado(l: string | undefined) {
     align-items: center;
     gap: 10px;
     padding: 14px 20px;
-    background: var(--color-horizonte);
-    color: var(--color-vacio);
+    background: var(--boton);
+    color: var(--sobre-boton);
     font-weight: 700;
     font-size: 0.85rem;
     letter-spacing: 0.04em;
     text-transform: uppercase;
   }
-  .cierre__boton:hover { background: var(--color-blanco); color: var(--color-vacio); }
-  .cierre__sub small { font-weight: 500; font-size: 0.75rem; color: var(--color-lila); }
+  .cierre__boton:hover { background: var(--boton-hover); color: var(--sobre-boton); }
+  .cierre__sub small { font-weight: 500; font-size: 0.75rem; color: var(--tinta-meta); }
   @media (max-width: 860px) {
     .cierre { grid-template-columns: minmax(0, 1fr); gap: var(--space-8); }
   }

@@ -60,13 +60,13 @@ const isFallback = item === null;
     font-family: var(--font-text-v2);
   }
   .card:hover .card__thumb {
-    border-color: var(--color-horizonte);
+    border-color: var(--senal);
   }
   .card:hover .card__title {
-    color: var(--color-horizonte);
+    color: var(--senal);
   }
   .card:focus-visible {
-    outline: 2px solid var(--color-horizonte);
+    outline: 2px solid var(--senal);
     outline-offset: 4px;
   }
   .card__thumb {
@@ -90,14 +90,14 @@ const isFallback = item === null;
     font-weight: 800;
     font-size: 1.6rem;
     letter-spacing: 0.12em;
-    color: color-mix(in oklab, var(--color-hueso) 30%, transparent);
+    color: color-mix(in oklab, var(--tinta) 30%, transparent);
   }
   .card__platform {
     font-weight: 700;
     font-size: 0.72rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--color-horizonte);
+    color: var(--tinta-meta);
   }
   .card__title {
     margin: 0;
@@ -107,14 +107,14 @@ const isFallback = item === null;
     font-size: 1.45rem;
     line-height: 1.05;
     text-transform: none;
-    color: var(--color-blanco);
+    color: var(--tinta-fuerte);
     text-wrap: balance;
     transition: color 150ms;
   }
   .card__date {
     font-weight: 500;
     font-size: 0.78rem;
-    color: var(--color-lila);
+    color: var(--tinta-meta);
   }
   .card__date--soft {
     font-style: normal;
