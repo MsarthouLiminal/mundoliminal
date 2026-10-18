@@ -12,6 +12,24 @@
       "senales": [
         {
           "n": 1,
+          "titulo": "Australia no descarta nacionalizar su fuente de disprosio y terbio",
+          "lugar": "Canberra / Browns Range",
+          "lugarMapa": "Browns Range, Australia",
+          "lat": -19.0,
+          "lon": 128.9,
+          "etiqueta": "der",
+          "fecha": "2026-10-14",
+          "hecho": "La ministra de Recursos, Madeleine King, dijo que nacionalizar Northern Minerals, el principal proyecto australiano de disprosio y terbio, es \"una opción\", sin decisión tomada. Seis inversores vinculados a China, con cerca del 17% de la empresa, no cumplieron la orden de desinvertir antes del 2 de julio ni pagaron las multas. El proyecto tiene unos USD 500 millones de financiamiento del Export-Import Bank de Estados Unidos.",
+          "lectura": "Canberra descubrió que las reglas del mercado no alcanzan para sacar a China de una mina que Washington ya financió: los inversores sancionados ni vendieron ni pagaron las multas, y la ministra terminó hablando de nacionalizar. Si hasta un aliado con tribunales propios necesita invocar al Estado para ejecutar una orden de desinversión, el precio real de la diversificación lo termina poniendo el contribuyente.",
+          "tendencia": "escala",
+          "intensidad": 2,
+          "fuente": {
+            "nombre": "ABC News (Australia)",
+            "url": "https://www.abc.net.au/news/2026-10-14/federal-politics-resources-minister-open-nationalising-company/107266624"
+          }
+        },
+        {
+          "n": 2,
           "titulo": "Avalancha, sismos y huelga aprietan el cobre chileno en una semana",
           "lugar": "El Teniente · Centinela · Escondida (Chile)",
           "lugarMapa": "El Teniente, Chile",
@@ -32,7 +50,6 @@
       "tambienTitulo": "También en el radar",
       "tambien": [
         { "etiqueta": "15 oct", "texto": "Beijing mantiene las licencias de tierras raras a Europa y pide reciprocidad en doble uso. La pausa de sus controles vence el 10 de noviembre." },
-        { "etiqueta": "14 oct", "texto": "La ministra de Recursos australiana dijo que nacionalizar Northern Minerals, su fuente de disprosio y terbio con 17% en manos chinas, es \"una opción\"." },
         { "etiqueta": "14 oct", "texto": "Argentina exportó litio por USD 1.467 millones entre enero y agosto, 190,5% más que un año antes (INDEC)." }
       ]
     },
@@ -43,7 +60,7 @@
       "alcance": "Estrechos, puertos, aranceles y cadenas de suministro. Dónde se traba el comercio.",
       "senales": [
         {
-          "n": 2,
+          "n": 3,
           "titulo": "El Paraná pasa de la bajante a la crecida: más calado en la hidrovía",
           "lugar": "Rosario / Corrientes",
           "lugarMapa": "Rosario, Argentina",
@@ -61,7 +78,7 @@
           }
         },
         {
-          "n": 3,
+          "n": 4,
           "titulo": "Nueva Palmira recibe hierro de Brasil; la ANP apunta a 25 millones",
           "lugar": "Nueva Palmira / Montevideo",
           "lugarMapa": "Nueva Palmira, Uruguay",
@@ -93,7 +110,7 @@
       "alcance": "Data centers, chips, energía y agua. El cuerpo físico de la IA y quién lo decide.",
       "senales": [
         {
-          "n": 4,
+          "n": 5,
           "titulo": "Las moratorias de data centers escalan a gobernadores y legislaturas",
           "lugar": "Oregon / Virginia",
           "lugarMapa": "Salem, Oregon",
@@ -112,7 +129,7 @@
           }
         },
         {
-          "n": 5,
+          "n": 6,
           "titulo": "Solaria: contrato con UTE por hasta 40 años y sin cifra de agua",
           "lugar": "Montevideo",
           "lugarMapa": "Canelones, Uruguay",
@@ -144,7 +161,7 @@
       "alcance": "Guerras activas, cambios de fase y lo que derraman sobre la región.",
       "senales": [
         {
-          "n": 6,
+          "n": 7,
           "titulo": "Los hutíes golpean el palacio de Adén y EE.UU. evalúa entrar",
           "lugar": "Adén / Riad",
           "lugarMapa": "Adén, Yemen",
@@ -163,7 +180,7 @@
           }
         },
         {
-          "n": 7,
+          "n": 8,
           "titulo": "Guerra energética abierta: Putin dice que Ucrania \"empezó\"",
           "lugar": "Riazán / Moscú",
           "lugarMapa": "Riazán, Rusia",
@@ -179,28 +196,11 @@
             "nombre": "Reuters vía Nation Thailand",
             "url": "https://www.nationthailand.com/news/world/40072388"
           }
-        },
-        {
-          "n": 8,
-          "titulo": "Brasil define todo en un balotaje con empate técnico",
-          "lugar": "Brasilia",
-          "lugarMapa": "Brasilia, Brasil",
-          "lat": -15.79,
-          "lon": -47.88,
-          "etiqueta": "der",
-          "fecha": "2026-10-15",
-          "hecho": "Brasil va a balotaje el 25 de octubre entre Flávio Bolsonaro y Lula. La última encuesta de Datafolha, realizada del 13 al 15 de octubre, da 47% a 45%, una diferencia dentro del margen de error de dos puntos.",
-          "lectura": "Brasil llega al balotaje como moneda al aire: dos puntos de diferencia, dentro del margen de error, entre dos proyectos que se definen uno contra el otro. Para Uruguay no hay nada ajeno en esa urna: el socio mayor del Mercosur decide rumbo en plena guerra comercial global, y lo decide el domingo que viene.",
-          "tendencia": "escala",
-          "intensidad": 2,
-          "fuente": {
-            "nombre": "Datafolha vía Melhor Investimento",
-            "url": "https://melhorinvestimento.net/noticias/datafolha-flavio-47-lula-45-segundo-turno"
-          }
         }
       ],
       "tambienTitulo": "Focos en observación",
       "tambien": [
+        { "etiqueta": "Brasil · 25 oct", "texto": "Balotaje con empate técnico entre Flávio Bolsonaro y Lula: 47% a 45% en Datafolha, dentro del margen de error. El resultado marca el rumbo del Mercosur." },
         { "etiqueta": "Etiopía · 15 oct", "texto": "Fuerzas federales entraron en Aksum y Eritrea rompió relaciones con Addis Abeba; Rubio pidió desescalar." },
         { "etiqueta": "Sudán · 17 oct", "texto": "Un ataque con dron en Blue Nile dejó al menos 40 muertos, según la ONU." },
         { "etiqueta": "Gaza · 16 oct", "texto": "UNICEF cuenta más de 340 niños muertos desde el alto el fuego de octubre de 2025." },
@@ -209,15 +209,16 @@
     }
   ],
   "focos": [
+    { "nombre": "Brasil", "lugarMapa": "Brasilia, Brasil", "lat": -15.79, "lon": -47.88, "etiqueta": "der", "eje": "con" },
     { "nombre": "Etiopía", "lugarMapa": "Mekelle, Etiopía", "lat": 13.49, "lon": 39.47, "etiqueta": "der", "eje": "con" },
     { "nombre": "Irán", "lugarMapa": "Teherán, Irán", "lat": 35.69, "lon": 51.39, "etiqueta": "arriba", "eje": "con" },
     { "nombre": "Sudán", "lugarMapa": "Jartum, Sudán", "lat": 15.5, "lon": 32.56, "etiqueta": "izq", "eje": "con" },
     { "nombre": "Afganistán-Pakistán", "lugarMapa": "Kabul, Afganistán", "lat": 34.53, "lon": 69.17, "etiqueta": "der", "eje": "con" }
   ],
   "agenda": [
+    { "fecha": "2026-10-25", "texto": "25 oct", "eje": "Conflictos", "detalle": "Balotaje en Brasil entre Flávio Bolsonaro y Lula, con empate técnico en Datafolha (47% a 45%). La cita clave de la semana para la región." },
     { "fecha": "2026-10-22", "texto": "22 oct", "eje": "Chokepoints", "detalle": "Reunión informal de ministros de Comercio de la UE, con el vencimiento chino del 10 de noviembre de fondo." },
     { "fecha": "2026-10-24", "texto": "24 oct", "eje": "Infraestructura IA", "detalle": "Cierra el plazo de comentarios públicos del data center de Amazon en Boardman, Oregon." },
-    { "fecha": "2026-10-25", "texto": "25 oct", "eje": "Conflictos", "detalle": "Balotaje en Brasil entre Flávio Bolsonaro y Lula, con empate técnico en la última Datafolha." },
     { "fecha": "2026-10-28", "texto": "28 oct", "eje": "Chokepoints", "detalle": "El INA prevé que el Paraná supere el nivel de alerta de 5 metros en Rosario." },
     { "fecha": "2026-11-03", "texto": "3 nov", "eje": "Infraestructura IA", "detalle": "Elecciones de medio término en EE.UU., con 34 votaciones locales sobre data centers." },
     { "fecha": "2026-11-10", "texto": "10 nov", "eje": "Minerales críticos", "detalle": "Vence la pausa de 12 meses de la ampliación de controles chinos sobre tierras raras." }
