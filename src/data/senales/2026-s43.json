@@ -36,14 +36,24 @@
           "lat": -34.09,
           "lon": -70.35,
           "etiqueta": "der",
-          "fecha": "2026-10-14",
-          "hecho": "Una avalancha mortal cerró el rajo Sur de El Teniente, la mayor mina subterránea de cobre del mundo, y Codelco suspendió el proyecto Andes Norte por riesgo sísmico profundo. Centinela, de Antofagasta, lleva casi una semana de huelga y en Escondida los supervisores negocian con mediación del gobierno. GEM Mining Consulting estima en riesgo, en promedio, el 5,2% de la producción de las principales minas chilenas.",
-          "lectura": "El primer productor mundial de cobre mostró en una semana todas sus fragilidades juntas: la montaña, el sindicato y la geología profunda. La parte especulativa de la suba se corregirá sola, pero lo estructural queda: la transición energética global depende de minas donde una avalancha o una asamblea pueden recortar el 5% de la oferta sin aviso.",
+          "fecha": "2026-10-16",
+          "hecho": "Una avalancha mortal cerró el rajo Sur de El Teniente, la mayor mina subterránea de cobre del mundo, y Codelco suspendió el proyecto Andes Norte por riesgo sísmico profundo. En Escondida, los supervisores aprobaron la oferta de BHP el 14 de octubre con el 64% de los votos y un contrato a 36 meses, y la huelga quedó descartada; Centinela, de Antofagasta, sigue en paro desde el 7 de octubre. El cobre tocó USD 6,69 por libra en la semana y cerró el viernes 16 en USD 6,62 (Cochilco), con la producción chilena 7,7% abajo en los primeros ocho meses del año.",
+          "lectura": "El primer productor mundial de cobre mostró en una semana todas sus fragilidades juntas: la montaña, el sindicato y la geología profunda. Escondida compró la paz con un contrato a 36 meses, pero lo estructural queda: la transición energética global depende de minas donde una avalancha o una asamblea pueden recortar la oferta sin aviso.",
           "tendencia": "escala",
           "intensidad": 2,
           "fuente": {
-            "nombre": "Mining.com",
-            "url": "https://www.mining.com/chile-copper-supply-under-pressure-as-disruptions-mount/"
+            "nombre": "Cooperativa.cl",
+            "url": "https://www.cooperativa.cl/noticias/economia/sectores-productivos/mineria/escondida-anuncia-acuerdo-para-evitar-huelga-de-supervisores/2026-10-14/075716.html"
+          },
+          "actualizado": "2026-10-19T07:29",
+          "anterior": {
+            "fecha": "2026-10-14",
+            "hecho": "Una avalancha mortal cerró el rajo Sur de El Teniente, la mayor mina subterránea de cobre del mundo, y Codelco suspendió el proyecto Andes Norte por riesgo sísmico profundo. Centinela, de Antofagasta, lleva casi una semana de huelga y en Escondida los supervisores negocian con mediación del gobierno. GEM Mining Consulting estima en riesgo, en promedio, el 5,2% de la producción de las principales minas chilenas.",
+            "lectura": "El primer productor mundial de cobre mostró en una semana todas sus fragilidades juntas: la montaña, el sindicato y la geología profunda. La parte especulativa de la suba se corregirá sola, pero lo estructural queda: la transición energética global depende de minas donde una avalancha o una asamblea pueden recortar el 5% de la oferta sin aviso.",
+            "fuente": {
+              "nombre": "Mining.com",
+              "url": "https://www.mining.com/chile-copper-supply-under-pressure-as-disruptions-mount/"
+            }
           }
         }
       ],
@@ -59,6 +69,26 @@
       "nombre": "Chokepoints",
       "alcance": "Estrechos, puertos, aranceles y cadenas de suministro. Dónde se traba el comercio.",
       "senales": [
+        {
+          "n": 9,
+          "titulo": "Irán administra Ormuz: minas a tanqueros y oferta de reapertura",
+          "lugar": "Estrecho de Ormuz",
+          "lugarMapa": "Estrecho de Ormuz",
+          "lat": 26.6,
+          "lon": 56.5,
+          "etiqueta": "der",
+          "fecha": "2026-10-19",
+          "hecho": "La Guardia Revolucionaria reportó entre el sábado 17 y este lunes 19 al menos tres tanqueros incendiados por minas en Ormuz, dos de ellos con unos 2 millones de barriles de crudo cada uno, sin verificación independiente (Al Jazeera, TASS). UKMTO registró 10 ataques a buques en la semana cerrada el viernes, y el Brent, que tocó USD 109,86 el viernes, su máximo desde mayo, operaba este lunes cerca de USD 108. El canciller Araghchi mantiene una oferta de reabrir el estrecho al sexto día y negociar al séptimo, condicionada a que EE.UU. levante el bloqueo naval sobre los puertos iraníes, y dijo el domingo que Teherán revisa los comentarios de Washington.",
+          "lectura": "Irán dejó de declamar el cierre de Ormuz y pasó a administrarlo: minas para el buque que cruza sin permiso, calendario de reapertura para el que negocia. El estrecho ya funciona como mesa de negociación antes que como ruta, y el petróleo arriba de los 100 le recuerda a Washington lo que cuesta cada día sin acuerdo.",
+          "tendencia": "escala",
+          "intensidad": 3,
+          "fuente": {
+            "nombre": "Al Jazeera",
+            "url": "https://www.aljazeera.com/news/2026/10/18/iran-says-two-tankers-catch-fire-after-hitting-mines-in-strait-of-hormuz"
+          },
+          "ultimoMomento": true,
+          "actualizado": "2026-10-19T07:29"
+        },
         {
           "n": 3,
           "titulo": "El Paraná pasa de la bajante a la crecida: más calado en la hidrovía",
