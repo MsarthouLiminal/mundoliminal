@@ -71,23 +71,23 @@
       "senales": [
         {
           "n": 9,
-          "titulo": "Irán administra Ormuz: minas a tanqueros y oferta de reapertura",
+          "titulo": "Irán reivindica un dron de EE.UU. y Ormuz pierde 70% del tránsito",
           "lugar": "Estrecho de Ormuz",
           "lugarMapa": "Estrecho de Ormuz",
           "lat": 26.6,
           "lon": 56.5,
           "etiqueta": "der",
-          "fecha": "2026-10-19",
-          "hecho": "La Guardia Revolucionaria reportó entre el sábado 17 y este lunes 19 al menos tres tanqueros incendiados por minas en Ormuz, dos de ellos con unos 2 millones de barriles de crudo cada uno, sin verificación independiente (Al Jazeera, TASS). UKMTO registró 10 ataques a buques en la semana cerrada el viernes, y el Brent, que tocó USD 109,86 el viernes, su máximo desde mayo, operaba este lunes cerca de USD 108. El canciller Araghchi mantiene una oferta de reabrir el estrecho al sexto día y negociar al séptimo, condicionada a que EE.UU. levante el bloqueo naval sobre los puertos iraníes, y dijo el domingo que Teherán revisa los comentarios de Washington.",
+          "fecha": "2026-10-20",
+          "hecho": "La Guardia Revolucionaria reportó este martes 20 otros dos tanqueros incendiados y detenidos por minas al sur de Ormuz, y afirmó haber derribado en la madrugada un dron estadounidense MQ-9 sobre el estrecho, sin confirmación de Washington (Press TV). UKMTO registra una caída de cerca del 70% en los tránsitos semanales por el estrecho, a 254 buques, y Kpler cuenta al menos 18 ataques a tanqueros en dos semanas (Reuters). El Brent cerró el lunes 19 en USD 109,55, máximo de cinco meses, y la oferta del canciller Araghchi de reabrir el estrecho tras un acuerdo seguía en pie al cierre del domingo.",
           "lectura": "Irán dejó de declamar el cierre de Ormuz y pasó a administrarlo: minas para el buque que cruza sin permiso, calendario de reapertura para el que negocia. El estrecho ya funciona como mesa de negociación antes que como ruta, y el petróleo arriba de los 100 le recuerda a Washington lo que cuesta cada día sin acuerdo.",
           "tendencia": "escala",
           "intensidad": 3,
           "fuente": {
-            "nombre": "Al Jazeera",
-            "url": "https://www.aljazeera.com/news/2026/10/18/iran-says-two-tankers-catch-fire-after-hitting-mines-in-strait-of-hormuz"
+            "nombre": "Asharq Al-Awsat",
+            "url": "https://english.aawsat.com/world/5331506-irgc-2-tankers-hit-mines-set-ablaze-south-hormuz"
           },
           "ultimoMomento": true,
-          "actualizado": "2026-10-19T07:29"
+          "actualizado": "2026-10-20T08:13"
         },
         {
           "n": 3,
@@ -192,21 +192,32 @@
       "senales": [
         {
           "n": 7,
-          "titulo": "Los hutíes golpean el palacio de Adén y EE.UU. evalúa entrar",
-          "lugar": "Adén / Riad",
-          "lugarMapa": "Adén, Yemen",
-          "lat": 12.79,
-          "lon": 45.02,
-          "etiqueta": "der",
+          "titulo": "Los hutíes apuntan al petróleo saudí y Riad posterga su cumbre",
+          "lugar": "Yanbu / Shaybah / Riad",
+          "lugarMapa": "Yanbu, Arabia Saudita",
+          "lat": 24.09,
+          "lon": 38.06,
+          "etiqueta": "izq",
           "arco": { "lat": 24.71, "lon": 46.68, "nombre": "Riad" },
-          "fecha": "2026-10-16",
-          "hecho": "Misiles hutíes alcanzaron el 16 de octubre el palacio Al-Maashiq, sede del gobierno reconocido en Adén, con al menos 5 muertos según fuentes militares citadas por AFP, en la misma semana de los ataques sobre Riad y la sede de Aramco. Trump dijo que Estados Unidos puede sumarse a los ataques saudíes contra los hutíes, y el Tesoro sancionó redes financieras vinculadas a Irán, incluido un banco iraquí.",
-          "lectura": "Los hutíes ya golpean las dos capitales a la vez, Riad y Adén, y Washington evalúa en voz alta sumarse a los ataques saudíes. Para el comercio el dato está en el calendario: la amenaza de una entrada estadounidense madura justo cuando las navieras vuelven a Suez, y ese regreso depende de que esta guerra no vuelva a tocar el agua.",
+          "fecha": "2026-10-19",
+          "hecho": "Los hutíes reivindicaron seis ataques contra Arabia Saudita en 48 horas, entre el 17 y el 19 de octubre, incluidos la terminal de Aramco en Yanbu, sobre el Mar Rojo, y el campo petrolero de Shaybah; el ejército saudí dijo haber interceptado misiles rumbo a Yanbu y drones sobre Riad, sin que ninguna fuente independiente confirmara daños. Riad pospuso para 2027 la Future Investment Initiative, su principal conferencia de inversores (CNBC, 19 de octubre). Trump mantiene sobre la mesa sumar a EE.UU. a los ataques contra el grupo.",
+          "lectura": "Los hutíes pasaron de los palacios a la caja: Yanbu y Shaybah son la infraestructura que convierte el petróleo saudí en exportación, y Riad pospuso su vitrina de inversores sin esperar la verificación de los daños. Cuando el misil sin confirmar alcanza para mover un calendario de capital, el atacante cobra el efecto económico sin pagar el costo de la prueba.",
           "tendencia": "escala",
           "intensidad": 3,
           "fuente": {
-            "nombre": "AFP vía Gulf News",
-            "url": "https://gulfnews.com/world/mena/middle-east-conflict-houthis-strike-yemens-presidential-palace-us-issues-new-iran-sanctions-1.500712575"
+            "nombre": "Xinhua",
+            "url": "https://english.news.cn/20261020/708046df596b4fdbb14e1288c5625501/c.html"
+          },
+          "actualizado": "2026-10-20T08:13",
+          "anterior": {
+            "titulo": "Los hutíes golpean el palacio de Adén y EE.UU. evalúa entrar",
+            "fecha": "2026-10-16",
+            "hecho": "Misiles hutíes alcanzaron el 16 de octubre el palacio Al-Maashiq, sede del gobierno reconocido en Adén, con al menos 5 muertos según fuentes militares citadas por AFP, en la misma semana de los ataques sobre Riad y la sede de Aramco. Trump dijo que Estados Unidos puede sumarse a los ataques saudíes contra los hutíes, y el Tesoro sancionó redes financieras vinculadas a Irán, incluido un banco iraquí.",
+            "lectura": "Los hutíes ya golpean las dos capitales a la vez, Riad y Adén, y Washington evalúa en voz alta sumarse a los ataques saudíes. Para el comercio el dato está en el calendario: la amenaza de una entrada estadounidense madura justo cuando las navieras vuelven a Suez, y ese regreso depende de que esta guerra no vuelva a tocar el agua.",
+            "fuente": {
+              "nombre": "AFP vía Gulf News",
+              "url": "https://gulfnews.com/world/mena/middle-east-conflict-houthis-strike-yemens-presidential-palace-us-issues-new-iran-sanctions-1.500712575"
+            }
           }
         },
         {
