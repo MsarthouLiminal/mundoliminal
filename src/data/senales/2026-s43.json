@@ -30,23 +30,24 @@
         },
         {
           "n": 2,
-          "titulo": "Avalancha, sismos y huelga aprietan el cobre chileno en una semana",
+          "titulo": "Las huelgas del cobre chileno terminan; El Teniente sigue cerrado",
           "lugar": "El Teniente · Centinela · Escondida (Chile)",
           "lugarMapa": "El Teniente, Chile",
           "lat": -34.09,
           "lon": -70.35,
           "etiqueta": "der",
-          "fecha": "2026-10-16",
-          "hecho": "Una avalancha mortal cerró el rajo Sur de El Teniente, la mayor mina subterránea de cobre del mundo, y Codelco suspendió el proyecto Andes Norte por riesgo sísmico profundo. En Escondida, los supervisores aprobaron la oferta de BHP el 14 de octubre con el 64% de los votos y un contrato a 36 meses, y la huelga quedó descartada; Centinela, de Antofagasta, sigue en paro desde el 7 de octubre. El cobre tocó USD 6,69 por libra en la semana y cerró el viernes 16 en USD 6,62 (Cochilco), con la producción chilena 7,7% abajo en los primeros ocho meses del año.",
+          "fecha": "2026-10-18",
+          "hecho": "Una avalancha mortal cerró el rajo Sur de El Teniente, la mayor mina subterránea de cobre del mundo, y Codelco suspendió el proyecto Andes Norte por riesgo sísmico profundo. Los dos conflictos laborales se cerraron: en Escondida los supervisores aprobaron la oferta de BHP el 14 de octubre con el 64% de los votos y un contrato a 36 meses, y en Centinela los sindicatos ratificaron el domingo 18 un convenio con el 94,5% de los votos tras 11 días de huelga que, según Antofagasta, no afectaron la producción (Reuters). El cobre cerró el viernes 16 en USD 6,62 por libra (Cochilco), con la producción chilena 7,7% abajo en los primeros ocho meses del año.",
           "lectura": "El primer productor mundial de cobre mostró en una semana todas sus fragilidades juntas: la montaña, el sindicato y la geología profunda. Escondida compró la paz con un contrato a 36 meses, pero lo estructural queda: la transición energética global depende de minas donde una avalancha o una asamblea pueden recortar la oferta sin aviso.",
-          "tendencia": "escala",
+          "tendencia": "afloja",
           "intensidad": 2,
           "fuente": {
-            "nombre": "Cooperativa.cl",
-            "url": "https://www.cooperativa.cl/noticias/economia/sectores-productivos/mineria/escondida-anuncia-acuerdo-para-evitar-huelga-de-supervisores/2026-10-14/075716.html"
+            "nombre": "Reuters vía US News",
+            "url": "https://www.usnews.com/news/top-news/articles/2026-10-18/antofagastas-centinela-strike-ends-after-deal-with-unions"
           },
-          "actualizado": "2026-10-19T07:29",
+          "actualizado": "2026-10-22THH:MM",
           "anterior": {
+            "titulo": "Avalancha, sismos y huelga aprietan el cobre chileno en una semana",
             "fecha": "2026-10-14",
             "hecho": "Una avalancha mortal cerró el rajo Sur de El Teniente, la mayor mina subterránea de cobre del mundo, y Codelco suspendió el proyecto Andes Norte por riesgo sísmico profundo. Centinela, de Antofagasta, lleva casi una semana de huelga y en Escondida los supervisores negocian con mediación del gobierno. GEM Mining Consulting estima en riesgo, en promedio, el 5,2% de la producción de las principales minas chilenas.",
             "lectura": "El primer productor mundial de cobre mostró en una semana todas sus fragilidades juntas: la montaña, el sindicato y la geología profunda. La parte especulativa de la suba se corregirá sola, pero lo estructural queda: la transición energética global depende de minas donde una avalancha o una asamblea pueden recortar el 5% de la oferta sin aviso.",
@@ -71,23 +72,23 @@
       "senales": [
         {
           "n": 9,
-          "titulo": "Irán reivindica un dron de EE.UU. y Ormuz pierde 70% del tránsito",
+          "titulo": "Irán reporta siete tanqueros alcanzados en una noche en Ormuz",
           "lugar": "Estrecho de Ormuz",
           "lugarMapa": "Estrecho de Ormuz",
           "lat": 26.6,
           "lon": 56.5,
           "etiqueta": "der",
-          "fecha": "2026-10-20",
-          "hecho": "La Guardia Revolucionaria reportó este martes 20 otros dos tanqueros incendiados y detenidos por minas al sur de Ormuz, y afirmó haber derribado en la madrugada un dron estadounidense MQ-9 sobre el estrecho, sin confirmación de Washington (Press TV). UKMTO registra una caída de cerca del 70% en los tránsitos semanales por el estrecho, a 254 buques, y Kpler cuenta al menos 18 ataques a tanqueros en dos semanas (Reuters). El Brent cerró el lunes 19 en USD 109,55, máximo de cinco meses, y la oferta del canciller Araghchi de reabrir el estrecho tras un acuerdo seguía en pie al cierre del domingo.",
+          "fecha": "2026-10-22",
+          "hecho": "La TV estatal iraní informó que siete tanqueros fueron alcanzados en la madrugada del jueves 22 en Ormuz: cuatro atacados mientras transferían crudo, con incendios a bordo, y tres inmovilizados por minas navales, la mayor cifra en un día desde el inicio de la guerra, el 28 de febrero, sin verificación independiente (AP). UKMTO no registró esos ataques, aunque los monitores notan renuencia de los armadores a reportar; el martes 21 sí había rastreado el impacto a un tanquero kuwaití frente a Omán, con la tripulación a salvo. El Brent subió 3,2% el jueves, a USD 112,27, la Guardia Revolucionaria advirtió que puede atacar bases de EE.UU. si Washington habilita tránsitos por otras partes del estrecho, y los contactos indirectos siguen tras el rechazo de Trump a la última propuesta de siete días.",
           "lectura": "Irán dejó de declamar el cierre de Ormuz y pasó a administrarlo: minas para el buque que cruza sin permiso, calendario de reapertura para el que negocia. El estrecho ya funciona como mesa de negociación antes que como ruta, y el petróleo arriba de los 100 le recuerda a Washington lo que cuesta cada día sin acuerdo.",
           "tendencia": "escala",
           "intensidad": 3,
           "fuente": {
-            "nombre": "Asharq Al-Awsat",
-            "url": "https://english.aawsat.com/world/5331506-irgc-2-tankers-hit-mines-set-ablaze-south-hormuz"
+            "nombre": "AP vía WSLS",
+            "url": "https://www.wsls.com/business/2026/10/22/iran-says-7-tankers-on-fire-or-damaged-overnight-in-the-strait-of-hormuz-and-other-mideast-news/"
           },
           "ultimoMomento": true,
-          "actualizado": "2026-10-20T08:13"
+          "actualizado": "2026-10-22THH:MM"
         },
         {
           "n": 3,
