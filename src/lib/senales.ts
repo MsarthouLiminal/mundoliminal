@@ -54,6 +54,11 @@ export interface Eje {
   slug: string;
   nombre: string;
   alcance: string;
+  /**
+   * De la más reciente a la más antigua (por fecha del hecho). El sitio
+   * las ordena igual por código, pero el JSON también se escribe así;
+   * los ítems de "También en el radar" siguen la misma regla.
+   */
   senales: Senal[];
   tambienTitulo: string;
   tambien: { etiqueta: string; texto: string }[];
@@ -83,9 +88,22 @@ const archivos = import.meta.glob<Edicion>('../data/senales/*.json', {
   import: 'default',
 });
 
+/** Las señales de cada eje, de la más reciente a la más antigua (empates en orden de archivo). */
+function ordenarSenales(e: Edicion): Edicion {
+  return {
+    ...e,
+    ejes: e.ejes.map((eje) => ({
+      ...eje,
+      senales: [...eje.senales].sort((a, b) => b.fecha.localeCompare(a.fecha)),
+    })),
+  };
+}
+
 /** Todas las ediciones, de la más nueva a la más vieja. */
 export function ediciones(): Edicion[] {
-  return Object.values(archivos).sort((a, b) => b.fechaEdicion.localeCompare(a.fechaEdicion));
+  return Object.values(archivos)
+    .map(ordenarSenales)
+    .sort((a, b) => b.fechaEdicion.localeCompare(a.fechaEdicion));
 }
 
 export function edicionVigente(): Edicion {

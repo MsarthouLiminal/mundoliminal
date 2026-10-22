@@ -11,24 +11,6 @@
       "alcance": "Tierras raras, cobre, cobalto, litio, uranio. Quién controla el acceso y a qué precio.",
       "senales": [
         {
-          "n": 1,
-          "titulo": "Australia no descarta nacionalizar su fuente de disprosio y terbio",
-          "lugar": "Canberra / Browns Range",
-          "lugarMapa": "Browns Range, Australia",
-          "lat": -19.0,
-          "lon": 128.9,
-          "etiqueta": "der",
-          "fecha": "2026-10-14",
-          "hecho": "La ministra de Recursos, Madeleine King, dijo que nacionalizar Northern Minerals, el principal proyecto australiano de disprosio y terbio, es \"una opción\", sin decisión tomada. Seis inversores vinculados a China, con cerca del 17% de la empresa, no cumplieron la orden de desinvertir antes del 2 de julio ni pagaron las multas. El proyecto tiene unos USD 500 millones de financiamiento del Export-Import Bank de Estados Unidos.",
-          "lectura": "Canberra descubrió que las reglas del mercado no alcanzan para sacar a China de una mina que Washington ya financió: los inversores sancionados ni vendieron ni pagaron las multas, y la ministra terminó hablando de nacionalizar. Si hasta un aliado con tribunales propios necesita invocar al Estado para ejecutar una orden de desinversión, el precio real de la diversificación lo termina poniendo el contribuyente.",
-          "tendencia": "escala",
-          "intensidad": 2,
-          "fuente": {
-            "nombre": "ABC News (Australia)",
-            "url": "https://www.abc.net.au/news/2026-10-14/federal-politics-resources-minister-open-nationalising-company/107266624"
-          }
-        },
-        {
           "n": 2,
           "titulo": "Las huelgas del cobre chileno terminan; El Teniente sigue cerrado",
           "lugar": "El Teniente · Centinela · Escondida (Chile)",
@@ -56,12 +38,36 @@
               "url": "https://www.mining.com/chile-copper-supply-under-pressure-as-disruptions-mount/"
             }
           }
+        },
+        {
+          "n": 1,
+          "titulo": "Australia no descarta nacionalizar su fuente de disprosio y terbio",
+          "lugar": "Canberra / Browns Range",
+          "lugarMapa": "Browns Range, Australia",
+          "lat": -19.0,
+          "lon": 128.9,
+          "etiqueta": "der",
+          "fecha": "2026-10-14",
+          "hecho": "La ministra de Recursos, Madeleine King, dijo que nacionalizar Northern Minerals, el principal proyecto australiano de disprosio y terbio, es \"una opción\", sin decisión tomada. Seis inversores vinculados a China, con cerca del 17% de la empresa, no cumplieron la orden de desinvertir antes del 2 de julio ni pagaron las multas. El proyecto tiene unos USD 500 millones de financiamiento del Export-Import Bank de Estados Unidos.",
+          "lectura": "Canberra descubrió que las reglas del mercado no alcanzan para sacar a China de una mina que Washington ya financió: los inversores sancionados ni vendieron ni pagaron las multas, y la ministra terminó hablando de nacionalizar. Si hasta un aliado con tribunales propios necesita invocar al Estado para ejecutar una orden de desinversión, el precio real de la diversificación lo termina poniendo el contribuyente.",
+          "tendencia": "escala",
+          "intensidad": 2,
+          "fuente": {
+            "nombre": "ABC News (Australia)",
+            "url": "https://www.abc.net.au/news/2026-10-14/federal-politics-resources-minister-open-nationalising-company/107266624"
+          }
         }
       ],
       "tambienTitulo": "También en el radar",
       "tambien": [
-        { "etiqueta": "15 oct", "texto": "Beijing mantiene las licencias de tierras raras a Europa y pide reciprocidad en doble uso. La pausa de sus controles vence el 10 de noviembre." },
-        { "etiqueta": "14 oct", "texto": "Argentina exportó litio por USD 1.467 millones entre enero y agosto, 190,5% más que un año antes (INDEC)." }
+        {
+          "etiqueta": "15 oct",
+          "texto": "Beijing mantiene las licencias de tierras raras a Europa y pide reciprocidad en doble uso. La pausa de sus controles vence el 10 de noviembre."
+        },
+        {
+          "etiqueta": "14 oct",
+          "texto": "Argentina exportó litio por USD 1.467 millones entre enero y agosto, 190,5% más que un año antes (INDEC)."
+        }
       ]
     },
     {
@@ -91,24 +97,6 @@
           "actualizado": "2026-10-22T07:19"
         },
         {
-          "n": 3,
-          "titulo": "El Paraná pasa de la bajante a la crecida: más calado en la hidrovía",
-          "lugar": "Rosario / Corrientes",
-          "lugarMapa": "Rosario, Argentina",
-          "lat": -32.95,
-          "lon": -60.66,
-          "etiqueta": "izq",
-          "fecha": "2026-10-14",
-          "hecho": "Prefectura Naval Argentina registra el Paraná en Rosario en unos 3,34 metros y en ascenso, y el INA estima que superaría el nivel de alerta de 5 metros hacia el 28 de octubre. La navegación comercial tendrá más calado el resto del año, con caudales altos hasta mediados de diciembre por un El Niño en fortalecimiento. Itaipú y Yacyretá abrieron compuertas y hay evacuados por la crecida del río Uruguay en Concordia y Paso de los Libres.",
-          "lectura": "El mismo Niño que amenaza las minas chilenas le devuelve calado a la hidrovía: más agua es más carga por barcaza y menos costo por tonelada, justo cuando la región presupuesta la próxima cosecha. Para los puertos uruguayos el regalo viene con letra chica, porque la crecida que hoy abarata el flete puede pasar de alivio a emergencia si el río supera los 5 metros a fin de mes.",
-          "tendencia": "afloja",
-          "intensidad": 2,
-          "fuente": {
-            "nombre": "Rosario3, con datos de Prefectura y el INA",
-            "url": "https://www.rosario3.com/informaciongeneral/el-parana-continuara-en-ascenso-frente-a-rosario-que-preven-los-informes-oficiales-para-los-proximos-meses-20261014-0067.html"
-          }
-        },
-        {
           "n": 4,
           "titulo": "Nueva Palmira recibe hierro de Brasil; la ANP apunta a 25 millones",
           "lugar": "Nueva Palmira / Montevideo",
@@ -125,13 +113,40 @@
             "nombre": "MundoMaritimo",
             "url": "https://www.mundomaritimo.cl/noticias/uruguay-recibe-nuevos-flujos-de-mineral-de-hierro-desde-brasil-a-traves-de-la-hidrovia-paraguay-parana-en-nueva-palmira"
           }
+        },
+        {
+          "n": 3,
+          "titulo": "El Paraná pasa de la bajante a la crecida: más calado en la hidrovía",
+          "lugar": "Rosario / Corrientes",
+          "lugarMapa": "Rosario, Argentina",
+          "lat": -32.95,
+          "lon": -60.66,
+          "etiqueta": "izq",
+          "fecha": "2026-10-14",
+          "hecho": "Prefectura Naval Argentina registra el Paraná en Rosario en unos 3,34 metros y en ascenso, y el INA estima que superaría el nivel de alerta de 5 metros hacia el 28 de octubre. La navegación comercial tendrá más calado el resto del año, con caudales altos hasta mediados de diciembre por un El Niño en fortalecimiento. Itaipú y Yacyretá abrieron compuertas y hay evacuados por la crecida del río Uruguay en Concordia y Paso de los Libres.",
+          "lectura": "El mismo Niño que amenaza las minas chilenas le devuelve calado a la hidrovía: más agua es más carga por barcaza y menos costo por tonelada, justo cuando la región presupuesta la próxima cosecha. Para los puertos uruguayos el regalo viene con letra chica, porque la crecida que hoy abarata el flete puede pasar de alivio a emergencia si el río supera los 5 metros a fin de mes.",
+          "tendencia": "afloja",
+          "intensidad": 2,
+          "fuente": {
+            "nombre": "Rosario3, con datos de Prefectura y el INA",
+            "url": "https://www.rosario3.com/informaciongeneral/el-parana-continuara-en-ascenso-frente-a-rosario-que-preven-los-informes-oficiales-para-los-proximos-meses-20261014-0067.html"
+          }
         }
       ],
       "tambienTitulo": "También en el radar",
       "tambien": [
-        { "etiqueta": "17 oct", "texto": "Irán declaró \"cerrado\" Ormuz tras la explosión de un superpetrolero contra una mina; CENTCOM lo niega. El Brent cerró a USD 109,86, máximo desde mayo." },
-        { "etiqueta": "14 oct", "texto": "El tránsito de portacontenedores por Suez superó el 50% del nivel preguerra: 753.000 TEU semanales (BIMCO)." },
-        { "etiqueta": "15 oct", "texto": "El Canal de Panamá sumó un cupo Neopanamax y opera 33 tránsitos diarios con calado de 49 pies." }
+        {
+          "etiqueta": "17 oct",
+          "texto": "Irán declaró \"cerrado\" Ormuz tras la explosión de un superpetrolero contra una mina; CENTCOM lo niega. El Brent cerró a USD 109,86, máximo desde mayo."
+        },
+        {
+          "etiqueta": "15 oct",
+          "texto": "El Canal de Panamá sumó un cupo Neopanamax y opera 33 tránsitos diarios con calado de 49 pies."
+        },
+        {
+          "etiqueta": "14 oct",
+          "texto": "El tránsito de portacontenedores por Suez superó el 50% del nivel preguerra: 753.000 TEU semanales (BIMCO)."
+        }
       ]
     },
     {
@@ -148,7 +163,11 @@
           "lat": 44.94,
           "lon": -123.03,
           "etiqueta": "izq",
-          "arco": { "lat": 37.54, "lon": -77.44, "nombre": "Richmond" },
+          "arco": {
+            "lat": 37.54,
+            "lon": -77.44,
+            "nombre": "Richmond"
+          },
           "fecha": "2026-10-16",
           "hecho": "La gobernadora de Oregon, Tina Kotek, pidió al regulador ambiental del estado no aprobar permisos de aire y agua para data centers nuevos o ampliaciones hasta julio de 2027, una moratoria de hecho que puede alcanzar un proyecto de Amazon en Boardman. En Virginia, con casi 400 data centers operativos, hay tres proyectos de ley de moratoria para la sesión de enero (Virginia Mercury). Dominion acumula unos 75.000 MW de pedidos de conexión sin fecha.",
           "lectura": "La resistencia a los data centers dejó de ser municipal: ya firma decretos de gobernador y proyectos de ley estatales, con el agua y la red eléctrica como nueva frontera del permiso. Cada moratoria en el norte funciona como folleto de inversión para el sur, y conviene leerlo entero: trae la lista de preguntas que Oregon hace y que acá todavía nadie formuló.",
@@ -180,9 +199,18 @@
       ],
       "tambienTitulo": "También en el radar",
       "tambien": [
-        { "etiqueta": "15 oct", "texto": "TSMC ganó NT$ 763.060 millones en el trimestre, 68,7% más interanual, con guía de USD 52.300 a 54.300 millones para el cuarto." },
-        { "etiqueta": "16 oct", "texto": "China propuso sumar 23 tecnologías de IA a su lista de control de exportaciones, pesos y código de modelos incluidos; comentarios hasta el 15 de noviembre." },
-        { "etiqueta": "16 oct", "texto": "Taiwán hará delito penal exportar chips y servidores de IA a China sin autorización." }
+        {
+          "etiqueta": "16 oct",
+          "texto": "China propuso sumar 23 tecnologías de IA a su lista de control de exportaciones, pesos y código de modelos incluidos; comentarios hasta el 15 de noviembre."
+        },
+        {
+          "etiqueta": "16 oct",
+          "texto": "Taiwán hará delito penal exportar chips y servidores de IA a China sin autorización."
+        },
+        {
+          "etiqueta": "15 oct",
+          "texto": "TSMC ganó NT$ 763.060 millones en el trimestre, 68,7% más interanual, con guía de USD 52.300 a 54.300 millones para el cuarto."
+        }
       ]
     },
     {
@@ -199,7 +227,11 @@
           "lat": 24.09,
           "lon": 38.06,
           "etiqueta": "izq",
-          "arco": { "lat": 24.71, "lon": 46.68, "nombre": "Riad" },
+          "arco": {
+            "lat": 24.71,
+            "lon": 46.68,
+            "nombre": "Riad"
+          },
           "fecha": "2026-10-19",
           "hecho": "Los hutíes reivindicaron seis ataques contra Arabia Saudita en 48 horas, entre el 17 y el 19 de octubre, incluidos la terminal de Aramco en Yanbu, sobre el Mar Rojo, y el campo petrolero de Shaybah; el ejército saudí dijo haber interceptado misiles rumbo a Yanbu y drones sobre Riad, sin que ninguna fuente independiente confirmara daños. Riad pospuso para 2027 la Future Investment Initiative, su principal conferencia de inversores (CNBC, 19 de octubre). Trump mantiene sobre la mesa sumar a EE.UU. a los ataques contra el grupo.",
           "lectura": "Los hutíes pasaron de los palacios a la caja: Yanbu y Shaybah son la infraestructura que convierte el petróleo saudí en exportación, y Riad pospuso su vitrina de inversores sin esperar la verificación de los daños. Cuando el misil sin confirmar alcanza para mover un calendario de capital, el atacante cobra el efecto económico sin pagar el costo de la prueba.",
@@ -242,27 +274,107 @@
       ],
       "tambienTitulo": "Focos en observación",
       "tambien": [
-        { "etiqueta": "Brasil · 25 oct", "texto": "Balotaje con empate técnico entre Flávio Bolsonaro y Lula: 47% a 45% en Datafolha, dentro del margen de error. El resultado marca el rumbo del Mercosur." },
-        { "etiqueta": "Etiopía · 15 oct", "texto": "Fuerzas federales entraron en Aksum y Eritrea rompió relaciones con Addis Abeba; Rubio pidió desescalar." },
-        { "etiqueta": "Sudán · 17 oct", "texto": "Un ataque con dron en Blue Nile dejó al menos 40 muertos, según la ONU." },
-        { "etiqueta": "Gaza · 16 oct", "texto": "UNICEF cuenta más de 340 niños muertos desde el alto el fuego de octubre de 2025." },
-        { "etiqueta": "Af-Pak · 30 set", "texto": "Ataques aéreos pakistaníes en Kunar y Helmand, con al menos 10 civiles muertos según UNAMA." }
+        {
+          "etiqueta": "Brasil · 25 oct",
+          "texto": "Balotaje con empate técnico entre Flávio Bolsonaro y Lula: 47% a 45% en Datafolha, dentro del margen de error. El resultado marca el rumbo del Mercosur."
+        },
+        {
+          "etiqueta": "Etiopía · 15 oct",
+          "texto": "Fuerzas federales entraron en Aksum y Eritrea rompió relaciones con Addis Abeba; Rubio pidió desescalar."
+        },
+        {
+          "etiqueta": "Sudán · 17 oct",
+          "texto": "Un ataque con dron en Blue Nile dejó al menos 40 muertos, según la ONU."
+        },
+        {
+          "etiqueta": "Gaza · 16 oct",
+          "texto": "UNICEF cuenta más de 340 niños muertos desde el alto el fuego de octubre de 2025."
+        },
+        {
+          "etiqueta": "Af-Pak · 30 set",
+          "texto": "Ataques aéreos pakistaníes en Kunar y Helmand, con al menos 10 civiles muertos según UNAMA."
+        }
       ]
     }
   ],
   "focos": [
-    { "nombre": "Brasil", "lugarMapa": "Brasilia, Brasil", "lat": -15.79, "lon": -47.88, "etiqueta": "der", "eje": "con" },
-    { "nombre": "Etiopía", "lugarMapa": "Mekelle, Etiopía", "lat": 13.49, "lon": 39.47, "etiqueta": "der", "eje": "con" },
-    { "nombre": "Irán", "lugarMapa": "Teherán, Irán", "lat": 35.69, "lon": 51.39, "etiqueta": "arriba", "eje": "con" },
-    { "nombre": "Sudán", "lugarMapa": "Jartum, Sudán", "lat": 15.5, "lon": 32.56, "etiqueta": "izq", "eje": "con" },
-    { "nombre": "Afganistán-Pakistán", "lugarMapa": "Kabul, Afganistán", "lat": 34.53, "lon": 69.17, "etiqueta": "der", "eje": "con" }
+    {
+      "nombre": "Brasil",
+      "lugarMapa": "Brasilia, Brasil",
+      "lat": -15.79,
+      "lon": -47.88,
+      "etiqueta": "der",
+      "eje": "con"
+    },
+    {
+      "nombre": "Etiopía",
+      "lugarMapa": "Mekelle, Etiopía",
+      "lat": 13.49,
+      "lon": 39.47,
+      "etiqueta": "der",
+      "eje": "con"
+    },
+    {
+      "nombre": "Irán",
+      "lugarMapa": "Teherán, Irán",
+      "lat": 35.69,
+      "lon": 51.39,
+      "etiqueta": "arriba",
+      "eje": "con"
+    },
+    {
+      "nombre": "Sudán",
+      "lugarMapa": "Jartum, Sudán",
+      "lat": 15.5,
+      "lon": 32.56,
+      "etiqueta": "izq",
+      "eje": "con"
+    },
+    {
+      "nombre": "Afganistán-Pakistán",
+      "lugarMapa": "Kabul, Afganistán",
+      "lat": 34.53,
+      "lon": 69.17,
+      "etiqueta": "der",
+      "eje": "con"
+    }
   ],
   "agenda": [
-    { "fecha": "2026-10-25", "texto": "25 oct", "eje": "Conflictos", "detalle": "Balotaje en Brasil entre Flávio Bolsonaro y Lula, con empate técnico en Datafolha (47% a 45%). La cita clave de la semana para la región." },
-    { "fecha": "2026-10-22", "texto": "22 oct", "eje": "Chokepoints", "detalle": "Reunión informal de ministros de Comercio de la UE, con el vencimiento chino del 10 de noviembre de fondo." },
-    { "fecha": "2026-10-24", "texto": "24 oct", "eje": "Infraestructura IA", "detalle": "Cierra el plazo de comentarios públicos del data center de Amazon en Boardman, Oregon." },
-    { "fecha": "2026-10-28", "texto": "28 oct", "eje": "Chokepoints", "detalle": "El INA prevé que el Paraná supere el nivel de alerta de 5 metros en Rosario." },
-    { "fecha": "2026-11-03", "texto": "3 nov", "eje": "Infraestructura IA", "detalle": "Elecciones de medio término en EE.UU., con 34 votaciones locales sobre data centers." },
-    { "fecha": "2026-11-10", "texto": "10 nov", "eje": "Minerales críticos", "detalle": "Vence la pausa de 12 meses de la ampliación de controles chinos sobre tierras raras." }
+    {
+      "fecha": "2026-10-25",
+      "texto": "25 oct",
+      "eje": "Conflictos",
+      "detalle": "Balotaje en Brasil entre Flávio Bolsonaro y Lula, con empate técnico en Datafolha (47% a 45%). La cita clave de la semana para la región."
+    },
+    {
+      "fecha": "2026-10-22",
+      "texto": "22 oct",
+      "eje": "Chokepoints",
+      "detalle": "Reunión informal de ministros de Comercio de la UE, con el vencimiento chino del 10 de noviembre de fondo."
+    },
+    {
+      "fecha": "2026-10-24",
+      "texto": "24 oct",
+      "eje": "Infraestructura IA",
+      "detalle": "Cierra el plazo de comentarios públicos del data center de Amazon en Boardman, Oregon."
+    },
+    {
+      "fecha": "2026-10-28",
+      "texto": "28 oct",
+      "eje": "Chokepoints",
+      "detalle": "El INA prevé que el Paraná supere el nivel de alerta de 5 metros en Rosario."
+    },
+    {
+      "fecha": "2026-11-03",
+      "texto": "3 nov",
+      "eje": "Infraestructura IA",
+      "detalle": "Elecciones de medio término en EE.UU., con 34 votaciones locales sobre data centers."
+    },
+    {
+      "fecha": "2026-11-10",
+      "texto": "10 nov",
+      "eje": "Minerales críticos",
+      "detalle": "Vence la pausa de 12 meses de la ampliación de controles chinos sobre tierras raras."
+    }
   ]
 }
