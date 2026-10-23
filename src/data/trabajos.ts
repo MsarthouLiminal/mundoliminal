@@ -49,12 +49,24 @@ export const MARCAS: Marca[] = [
   { nombre: 'Amber Latam' },
   { nombre: 'MBRF' },
   { nombre: 'Fenicio' },
+  { nombre: 'Nantas' },
   { nombre: 'BMI' },
   { nombre: 'Segura Bank' },
   { nombre: 'Club del Inversor' },
 ];
 
 export const CASOS: Caso[] = [
+  {
+    cliente: 'Nantas',
+    etiqueta: 'Puntos de Inflexión',
+    formato: 'Conversación y conducción',
+    fecha: '16 oct 2026',
+    lugar: 'WTC Free Zone, Montevideo',
+    texto:
+      'Encuentro para clientes e invitados de Nantas: una conversación con María Noel Riccetto, directora artística del Ballet Nacional del Sodre, sobre las decisiones detrás de los cambios de etapa en la vida.',
+    foto: '/images/talks/nantas-puntos-de-inflexion.jpg',
+    fotoAlt: 'Martín Sarthou conversa con María Noel Riccetto en Puntos de Inflexión, el encuentro de Nantas.',
+  },
   {
     cliente: 'WTC Uruguay',
     etiqueta: 'Leading Sessions',
