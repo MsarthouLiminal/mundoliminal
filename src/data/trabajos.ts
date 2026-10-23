@@ -43,6 +43,7 @@ export interface Evento {
 /** Con quiénes trabajó LIMINAL Talks. */
 export const MARCAS: Marca[] = [
   { nombre: 'WTC Uruguay' },
+  { nombre: 'WTC Punta del Este' },
   { nombre: 'REF Uruguay' },
   { nombre: 'Sancor Seguros' },
   { nombre: 'Randstad' },
@@ -57,6 +58,17 @@ export const MARCAS: Marca[] = [
 ];
 
 export const CASOS: Caso[] = [
+  {
+    cliente: 'WTC Punta del Este',
+    etiqueta: 'Leading Sessions',
+    formato: 'Presentación analítica',
+    fecha: '22 oct 2026',
+    lugar: 'WTC Free Zone, Punta del Este',
+    texto:
+      'Charla "El Cono Sur después del 25 de octubre": qué cambia en la región si en Brasil gana Lula o Flávio Bolsonaro, el contexto de Argentina y los movimientos de Estados Unidos y China, leídos desde las decisiones de las empresas que invierten en Uruguay.',
+    foto: '/images/talks/wtc-punta-del-este.jpg',
+    fotoAlt: 'Martín Sarthou da la charla de Leading Sessions en WTC Punta del Este, con la sala de espaldas en primer plano.',
+  },
   {
     cliente: 'Lanzamiento de I WILL',
     etiqueta: "Giorgio Armani, L'Oréal Uruguay",
