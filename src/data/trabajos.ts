@@ -50,12 +50,23 @@ export const MARCAS: Marca[] = [
   { nombre: 'MBRF' },
   { nombre: 'Fenicio' },
   { nombre: 'Nantas' },
+  { nombre: "L'Oréal Uruguay" },
   { nombre: 'BMI' },
   { nombre: 'Segura Bank' },
   { nombre: 'Club del Inversor' },
 ];
 
 export const CASOS: Caso[] = [
+  {
+    cliente: 'Lanzamiento de I WILL',
+    etiqueta: "Giorgio Armani, L'Oréal Uruguay",
+    formato: 'Conversación y conducción',
+    fecha: '19 oct 2026',
+    texto:
+      'Conducción de la noche y conversación con el actor Agustín Della Corte, protagonista del short film de la fragancia, y el psicólogo Alejandro De Barbieri sobre la voluntad y la disciplina, ante clientes e invitados de la marca.',
+    foto: '/images/talks/iwill-giorgio-armani.jpg',
+    fotoAlt: 'Martín Sarthou conversa con Agustín Della Corte y Alejandro De Barbieri en el lanzamiento de I WILL, de Giorgio Armani.',
+  },
   {
     cliente: 'Nantas',
     etiqueta: 'Puntos de Inflexión',
