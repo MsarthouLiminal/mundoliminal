@@ -20,7 +20,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
     <section class="about__bio">
       <figure class="about__photo">
-        <img src="/images/martin-sarthou-sobre.jpg" alt="Martín Sarthou" width="720" height="960" />
+        <img src="/images/martin-sarthou-sobre-wtc.jpg" alt="Martín Sarthou con el micrófono en la mano, durante una charla de LIMINAL Talks en WTC Punta del Este." width="720" height="960" />
       </figure>
 
       <div class="about__text">
@@ -167,14 +167,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     display: block;
     width: 100%;
     height: auto;
-    filter: grayscale(100%);
-  }
-  .about__photo::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-color: rgba(11, 139, 110, 0.20);
-    pointer-events: none;
   }
   .about__text {
     display: flex;
