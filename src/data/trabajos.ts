@@ -65,7 +65,7 @@ export const CASOS: Caso[] = [
     fecha: '22 oct 2026',
     lugar: 'WTC Free Zone, Punta del Este',
     texto:
-      'Charla "El Cono Sur después del 25 de octubre": qué cambia en la región si en Brasil gana Lula o Flávio Bolsonaro, el contexto de Argentina y los movimientos de Estados Unidos y China, leídos desde las decisiones de las empresas que invierten en Uruguay.',
+      'Charla "Techo propio. El Cono Sur después del 25 de octubre": qué cambia en la región si en Brasil gana Lula o Flávio Bolsonaro, el contexto de Argentina y los movimientos de Estados Unidos y China, leídos desde las decisiones de las empresas que invierten en Uruguay.',
     foto: '/images/talks/wtc-punta-del-este.jpg',
     fotoAlt: 'Martín Sarthou da la charla de Leading Sessions en WTC Punta del Este, con la sala de espaldas en primer plano.',
   },
