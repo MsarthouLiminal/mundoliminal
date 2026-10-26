@@ -1,0 +1,319 @@
+{
+  "id": "2026-s44",
+  "semana": 44,
+  "fechaEdicion": "2026-10-26",
+  "corteDatos": "2026-10-25",
+  "ejes": [
+    {
+      "id": "min",
+      "slug": "minerales",
+      "nombre": "Minerales críticos",
+      "alcance": "Tierras raras, cobre, cobalto, litio, uranio. Quién controla el acceso y a qué precio.",
+      "senales": [
+        {
+          "n": 1,
+          "titulo": "Las fundiciones pagan por el cobre y el metal se apila en EE.UU.",
+          "lugar": "Antofagasta / Londres / Nueva Orleans",
+          "lugarMapa": "Antofagasta, Chile",
+          "lat": -23.65,
+          "lon": -70.4,
+          "etiqueta": "izq",
+          "arco": {
+            "lat": 29.95,
+            "lon": -90.07,
+            "nombre": "Nueva Orleans"
+          },
+          "fecha": "2026-10-22",
+          "hecho": "El cargo de tratamiento del concentrado de cobre quedó en USD -240 por tonelada (Platts) y USD -242 (Fastmarkets) al 16 de octubre: las fundiciones pagan por el mineral, y S&P estima que las chinas pierden unos USD 140 por tonelada procesada. Antofagasta colocó concentrado de Centinela a USD -310 y su CEO, Iván Arriagada, dijo el 19 en Londres que la empresa no va a invertir en fundición ni refinación. Del otro lado, los inventarios de la LME en depósitos de EE.UU. llegaron el 22 a 169.475 toneladas, máximo desde abril de 2014 y 62% del total de la bolsa, ante un arancel al cobre refinado de 15% desde 2027 que el Departamento de Comercio propuso y todavía no confirmó.",
+          "lectura": "El cobre dejó de tener un solo precio: en EE.UU. el metal se apila a la espera de un arancel que todavía es una propuesta, y en China las fundiciones procesan a pérdida para no quedarse sin mineral. Chile cobra hoy esa escasez, y Antofagasta ya avisó que no va a fundir: vender concentrado rinde tanto que invertir en la etapa que domina China no le cierra ni a una de las mayores mineras del país. La renta de este año es también la dependencia de la próxima década.",
+          "tendencia": "escala",
+          "intensidad": 2,
+          "fuente": {
+            "nombre": "S&P Global Commodity Insights",
+            "url": "https://www.spglobal.com/energy/en/news-research/latest-news/metals/102026-lme-week-copper-supply-struggles-to-keep-pace-with-electrification-demand"
+          }
+        }
+      ],
+      "tambienTitulo": "También en el radar",
+      "tambien": [
+        {
+          "etiqueta": "22 oct",
+          "texto": "Comercio de EE.UU. emitió cartas de intención por hasta USD 389 millones a cambio de acciones en materiales críticos, USD 56 millones para cuarzo de ultra alta pureza de Sibelco."
+        },
+        {
+          "etiqueta": "23 oct",
+          "texto": "Energy Fuels reveló ante la SEC que GM canceló en julio su contrato con la planta de imanes de e-VAC en Carolina del Sur, de casi 2.000 toneladas anuales y 90% destinada a GM."
+        },
+        {
+          "etiqueta": "16 oct",
+          "texto": "Brasil creó por el Decreto 13.139 la secretaría del consejo de minerales críticos que puede aprobar, condicionar o vetar compras extranjeras de derechos mineros; la llave queda en manos del gobierno reelecto."
+        },
+        {
+          "etiqueta": "Calendario",
+          "texto": "Dos vencimientos chinos: la pausa de tierras raras (10 de noviembre o 10 de enero, sin texto de MOFCOM que lo aclare) y la de galio, germanio y antimonio hacia EE.UU. (27 de noviembre, según el anuncio del 9 de noviembre de 2025)."
+        }
+      ]
+    },
+    {
+      "id": "cho",
+      "slug": "chokepoints",
+      "nombre": "Chokepoints",
+      "alcance": "Estrechos, puertos, aranceles y cadenas de suministro. Dónde se traba el comercio.",
+      "senales": [
+        {
+          "n": 2,
+          "titulo": "Ormuz: octubre ya es el mes con más ataques y el Brent pasa 116",
+          "lugar": "Estrecho de Ormuz",
+          "lugarMapa": "Estrecho de Ormuz",
+          "lat": 26.6,
+          "lon": 56.5,
+          "etiqueta": "der",
+          "fecha": "2026-10-23",
+          "hecho": "Lloyd's List Intelligence contó al menos 28 ataques o incidentes de seguridad en la primera mitad de octubre, ya el total mensual más alto desde el inicio de la guerra, y 104 tránsitos de buques no vinculados a Irán en la semana al 11 de octubre, 17% menos que la anterior. El viernes 23, la Guardia Revolucionaria informó que dos superpetroleros con más de 4,5 millones de barriles quedaron sin propulsión tras chocar con minas, sin verificación independiente, y el Wall Street Journal reportó que EE.UU. se prepara para una posible campaña de bombardeos contra Irán. El Brent cerró ese día en USD 116,72, 3,1% arriba.",
+          "lectura": "Ormuz se mide ahora con dos relojes: el de los ataques, que en quince días superó cualquier mes de la guerra, y el de Washington, que los reportes de prensa ubican después de las elecciones del 3 de noviembre. En el medio, el barril se paga como si el bombardeo ya hubiera ocurrido, y el Cono Sur lo importa a ese precio: cada dólar que suma el Brent termina en el gasoil del agro y del transporte.",
+          "tendencia": "escala",
+          "intensidad": 3,
+          "fuente": {
+            "nombre": "Lloyd's List Intelligence",
+            "url": "https://www.lloydslistintelligence.com/resources/blog/strait-of-hormuz-brief-22-october-2026"
+          }
+        },
+        {
+          "n": 3,
+          "titulo": "El gasoil del Río de la Plata, el más caro de la región",
+          "lugar": "Buenos Aires / Montevideo",
+          "lugarMapa": "Montevideo, Uruguay",
+          "lat": -34.9,
+          "lon": -56.16,
+          "etiqueta": "der",
+          "fecha": "2026-10-23",
+          "hecho": "Según la consultora Economía y Energía, con datos de Global Petrol Prices, el gasoil promedió en octubre USD 1,63 por litro en Argentina (1,51 en setiembre), 1,56 en Uruguay, 1,54 en Paraguay, 1,46 en Chile y México y 1,35 en Brasil. En Uruguay, la paridad de importación de URSEA indicaba para octubre una suba de 37% y el Ejecutivo aplicó 7%, con el gasoil 50S a $ 62,79 el litro.",
+          "lectura": "Uruguay paga el segundo gasoil más caro de la región y aun así lo vende por debajo de lo que cuesta traerlo: la diferencia entre el 37% que marcaba la paridad y el 7% aplicado no desaparece, queda en las cuentas públicas. Con el Brent arriba de 116 y la siembra de verano en marcha, el informe de URSEA de fin de mes va a mostrar cuánto de la guerra del Golfo ya llegó al surtidor y cuánto sigue esperando en la cuenta del Estado.",
+          "tendencia": "escala",
+          "intensidad": 2,
+          "fuente": {
+            "nombre": "Estaciones, con datos de Economía y Energía",
+            "url": "https://www.estaciones.com.ar/2026/10/23/precio-del-gasoil-argentina-tiene-el-combustible-mas-caro-de-la-region-y-lidera-el-ranking-en-dolares/"
+          }
+        }
+      ],
+      "tambienTitulo": "También en el radar",
+      "tambien": [
+        {
+          "etiqueta": "22 oct",
+          "texto": "QatarEnergy firmó con Cheniere hasta 4 millones de toneladas anuales de GNL de EE.UU. entre 2031 y 2054, con dos trenes de Ras Laffan dañados por la guerra."
+        },
+        {
+          "etiqueta": "21 oct",
+          "texto": "OFAC sancionó 9 buques de la flota en la sombra iraní, siete con bandera de Panamá, y habilitó negociar la venta de Lukoil International."
+        },
+        {
+          "etiqueta": "22 oct",
+          "texto": "El Paraná marcó 3,52 m en Rosario y el INA prevé 4,56 m para el 3 de noviembre, por debajo de la alerta de 5 m."
+        }
+      ]
+    },
+    {
+      "id": "ia",
+      "slug": "ia",
+      "nombre": "Infraestructura IA",
+      "alcance": "Data centers, chips, energía y agua. El cuerpo físico de la IA y quién lo decide.",
+      "senales": [
+        {
+          "n": 4,
+          "titulo": "Un proyecto busca prohibir data centers sobre los acuíferos uruguayos",
+          "lugar": "Montevideo / Libertad (San José)",
+          "lugarMapa": "Libertad, San José",
+          "lat": -34.63,
+          "lon": -56.62,
+          "etiqueta": "izq",
+          "fecha": "2026-10-22",
+          "hecho": "El senador Sebastián da Silva (Partido Nacional) presentó un proyecto que prohíbe instalar o ampliar data centers sobre los acuíferos Guaraní y Raigón, incluida la zona de Libertad, en San José, \"independientemente de su tecnología de refrigeración o consumo de agua\", sin afectar lo ya habilitado. El 21, El Observador informó que UTE necesita USD 120 millones adicionales, que debe aprobar la OPP, para adelantar obras de red y respaldo para el primer data center de Solaria, de 200 MW en Canelones, cuya decisión final de inversión sería en mayo de 2027.",
+          "lectura": "El agua y la energía, las dos cifras que faltaban en el anuncio de Solaria, entraron a la discusión pública la misma semana: un proyecto que no nombra a la empresa pero dibuja un mapa de dónde no se puede construir, y una cuenta de USD 120 millones que UTE tiene que adelantar antes de que la empresa confirme la inversión. Uruguay empieza a discutir dónde va un data center después de haber anunciado que viene.",
+          "tendencia": "escala",
+          "intensidad": 2,
+          "fuente": {
+            "nombre": "El Observador",
+            "url": "https://www.elobservador.com.uy/nacional/senador-da-silva-presento-proyecto-ley-prohibir-instalacion-centros-datos-los-acuiferos-guarani-y-raigon-n6061322"
+          }
+        },
+        {
+          "n": 5,
+          "titulo": "Trump dice que los data centers deben generar su propia energía",
+          "lugar": "Washington",
+          "lugarMapa": "Washington, EE.UU.",
+          "lat": 38.9,
+          "lon": -77.04,
+          "etiqueta": "der",
+          "fecha": "2026-10-21",
+          "hecho": "Trump escribió en Truth Social que los data centers están \"obligados por mí\" a generar su propia electricidad y que deberían pagar un \"dividendo\" a sus comunidades, sin una orden ejecutiva conocida que lo instrumente; este mes la FERC rechazó imponer ese requisito en la mayor red eléctrica del país. El 14 de octubre, el demócrata Eugene Vindman presentó en la Cámara la Make Data Centers Pay Act, que obligaría a los data centers de 20 MW o más a pagar todos los costos incrementales de su suministro. La encuesta ABC/Washington Post/Ipsos del 21 da 72% en contra de un data center nuevo en la propia comunidad.",
+          "lectura": "\"Traé tu propia energía\" es el esquema que Uruguay ya firmó con Solaria: parque solar propio y contrato con UTE. EE.UU. llega al mismo lugar por el camino opuesto, empujado por una campaña donde siete de cada diez votantes no quieren un data center al lado de su casa. Si la Casa Blanca que en agosto pedía dejar reinar a los datos ahora le pasa la cuenta eléctrica a la industria, la energía renovable que ofrece el sur gana valor como condición de negociación, y Uruguay la cobra mejor si sabe cuánto vale.",
+          "tendencia": "escala",
+          "intensidad": 2,
+          "fuente": {
+            "nombre": "Bisnow",
+            "url": "https://www.bisnow.com/news/national/data-center-community-relations/trump-data-centers-mandated-to-supply-own-electricity-should-pay-dividend-to-communities"
+          }
+        }
+      ],
+      "tambienTitulo": "También en el radar",
+      "tambien": [
+        {
+          "etiqueta": "21 oct",
+          "texto": "ERCOT tiene 92 GW de carga de data centers pidiendo conexión en Texas, de los cuales 11 ya operan, según Modo Energy."
+        },
+        {
+          "etiqueta": "23 oct",
+          "texto": "Aparecieron 32 GPU Nvidia B300, de exportación prohibida a China, dentro de la red de China Telecom."
+        }
+      ]
+    },
+    {
+      "id": "con",
+      "slug": "conflictos",
+      "nombre": "Conflictos",
+      "alcance": "Guerras activas, cambios de fase y lo que derraman sobre la región.",
+      "senales": [
+        {
+          "n": 6,
+          "titulo": "Lula gana en Brasil y Flávio Bolsonaro no reconoce el resultado",
+          "lugar": "Brasilia",
+          "lugarMapa": "Brasilia, Brasil",
+          "lat": -15.79,
+          "lon": -47.88,
+          "etiqueta": "der",
+          "fecha": "2026-10-25",
+          "hecho": "Lula da Silva fue reelecto el domingo 25 con 51,79% de los votos válidos contra 48,21% de Flávio Bolsonaro, más de 4,4 millones de votos de diferencia con el 100% de las secciones contadas por el TSE, y es el primer candidato desde 1989 que gana un balotaje después de salir segundo en la primera vuelta. Flávio dijo que es \"imposible reconocer el resultado\" y que pedirá la anulación por la decisión del ministro del STF Cristiano Zanin, que a pedido de la coalición de Lula extendió la votación hasta las 19:00 en todo el país; su propia campaña había pedido una prórroga para municipios del sur afectados por lluvias. El presidente del TSE, Kassio Nunes Marques, dijo tener \"absoluta seguridad del proceso electoral\" y que la decisión judicial no alteró nada; Orsi y la mayoría de los presidentes de la región felicitaron a Lula esa noche; Milei no lo felicitó, y ni la Casa Blanca ni el Departamento de Estado fijaron posición.",
+          "lectura": "Lula ganó por más de cuatro millones de votos, y uno de los grandes temas a mirar ahora son las señales de aceptación del resultado y de acatamiento cívico: quién felicita y quién calla, si el reclamo de Flávio va al TSE o a la calle, qué dicen los gobernadores de su campo y qué hacen las policías en las rutas. La prórroga de Zanin le dio al perdedor un argumento jurídico, aunque la diferencia duplica la que separó a Lula de Jair Bolsonaro en 2022, y Brasil ya sabe adónde llega un reclamo que se muda del tribunal a la calle: al 8 de enero de 2023. Para Uruguay y el Mercosur, el socio mayor empieza su nuevo mandato con el segundo más votado diciendo que el resultado es imposible de reconocer.",
+          "tendencia": "escala",
+          "intensidad": 2,
+          "fuente": {
+            "nombre": "Poder360",
+            "url": "https://www.poder360.com.br/poder-eleicoes-2026/flavio-nao-aceita-derrota-e-diz-que-pedira-a-anulacao-do-resultado/"
+          }
+        },
+        {
+          "n": 7,
+          "titulo": "Ucrania: la tregua energética no existió",
+          "lugar": "Ucrania / Rusia",
+          "lugarMapa": "Kyiv, Ucrania",
+          "lat": 50.45,
+          "lon": 30.52,
+          "etiqueta": "der",
+          "fecha": "2026-10-23",
+          "hecho": "Zelensky contó más de 170 instalaciones energéticas ucranianas atacadas desde el 11 de octubre, cuando Trump anunció la tregua energética; en la noche del 21 al 22 Rusia lanzó 210 drones de largo alcance y misiles Iskander, Zircon y Onyx, y en la siguiente otros 176 drones; ese día los ataques rusos dejaron 8 civiles muertos y 67 heridos, y una termoeléctrica de DTEK dejó de generar. El Kremlin dijo el 22 que Putin no presentó ninguna propuesta de paz a Witkoff. Del otro lado, Bloomberg cuenta al menos 114 ataques ucranianos a refinerías rusas en 2026, con impactos confirmados que duplican los de 2025, y fuentes de Rosneft admiten que el daño puede volverse duradero.",
+          "lectura": "La tregua energética duró lo que tardó en anunciarse: dos semanas después, los dos bandos se disparan a la infraestructura que sostiene la economía del otro, y el Kremlin ya ni simula una propuesta de paz. Para el Cono Sur, el frente que importa es el de las refinerías: con Rusia restringiendo sus exportaciones de diésel y el Brent arriba de 116, el gasoil que compran el agro y el transporte en plena siembra de verano carga con dos guerras a la vez.",
+          "tendencia": "escala",
+          "intensidad": 3,
+          "fuente": {
+            "nombre": "ISW / Critical Threats",
+            "url": "https://www.criticalthreats.org/analysis/russian-offensive-campaign-assessment-october-22-2026"
+          }
+        },
+        {
+          "n": 8,
+          "titulo": "Trump amenaza a Cuba y Venezuela vuelve a la calle",
+          "lugar": "La Habana / Caracas",
+          "lugarMapa": "La Habana, Cuba",
+          "lat": 23.11,
+          "lon": -82.37,
+          "etiqueta": "izq",
+          "fecha": "2026-10-23",
+          "hecho": "En un acto de campaña en Fort Myers, Florida, Trump dijo el viernes 23 que se ocupará de Cuba \"a nuestro regreso de Irán\", con un buque detenido a unas 50 yardas de la costa, y que después mandará a Marco Rubio a cerrar un acuerdo; no hubo orden formal ni movimiento naval verificado. El jueves 22, Vente Venezuela hizo la primera protesta opositora nacional en casi dos años, en Caracas, Valencia, Maracay, San Cristóbal y Maracaibo, para exigir elecciones: Delcy Rodríguez es presidenta interina desde el 3 de enero y no hay fecha para votar.",
+          "lectura": "Trump habla de Cuba con el calendario de otra guerra: primero Irán, después la isla, y Rubio para cerrar. En Venezuela, la transición sin fecha electoral volvió a la calle por primera vez en casi dos años. Entre una frase de mitin y una orden faltan buques, sanciones o avisos de navegación, y hasta que aparezcan la señal es política. Para el sur del continente, una crisis en el Caribe llega en pasajes de ida.",
+          "tendencia": "escala",
+          "intensidad": 1,
+          "fuente": {
+            "nombre": "Infobae",
+            "url": "https://www.infobae.com/estados-unidos/2026/10/24/donald-trump-dijo-que-los-buques-militares-estadounidenses-se-detendran-frente-a-cuba-al-regresar-de-iran/"
+          }
+        }
+      ],
+      "tambienTitulo": "Focos en observación",
+      "tambien": [
+        {
+          "etiqueta": "Sudán, 21 oct",
+          "texto": "La ONU contó al menos 306 civiles muertos por drones entre el 1 y el 21 de octubre; los ataques alcanzaron Abyei y Chad, y la reunión de Ginebra del 23 terminó sin tregua."
+        },
+        {
+          "etiqueta": "Arabia Saudita, 24 oct",
+          "texto": "La coalición saudí dijo haber interceptado un misil hutí lanzado hacia Riad, dos días después de la evacuación de la sede de Aramco."
+        },
+        {
+          "etiqueta": "Etiopía, 20 oct",
+          "texto": "Fuerzas federales avanzan en el norte de Tigray y hay denuncias de tropas eritreas, casi todo sin verificación independiente."
+        },
+        {
+          "etiqueta": "RDC, 22 oct",
+          "texto": "El FRN, nueva marca del M23, anunció una marcha sobre Uvira, en la frontera con Burundi."
+        }
+      ]
+    }
+  ],
+  "focos": [
+    {
+      "nombre": "Sudán",
+      "lugarMapa": "Jartum, Sudán",
+      "lat": 15.5,
+      "lon": 32.56,
+      "etiqueta": "izq",
+      "eje": "con"
+    },
+    {
+      "nombre": "Arabia Saudita",
+      "lugarMapa": "Riad, Arabia Saudita",
+      "lat": 24.71,
+      "lon": 46.68,
+      "etiqueta": "der",
+      "eje": "con"
+    },
+    {
+      "nombre": "Etiopía",
+      "lugarMapa": "Mekelle, Etiopía",
+      "lat": 13.49,
+      "lon": 39.47,
+      "etiqueta": "der",
+      "eje": "con"
+    },
+    {
+      "nombre": "RDC",
+      "lugarMapa": "Uvira, RDC",
+      "lat": -3.4,
+      "lon": 29.14,
+      "etiqueta": "izq",
+      "eje": "con"
+    }
+  ],
+  "agenda": [
+    {
+      "fecha": "2026-10-27",
+      "texto": "27 oct",
+      "eje": "Conflictos",
+      "detalle": "Elecciones en Israel para la 26ª Knesset, con la lista de Eisenkot pareja con el Likud en las encuestas."
+    },
+    {
+      "fecha": "2026-10-27",
+      "texto": "27 oct",
+      "eje": "Chokepoints",
+      "detalle": "Cumbre de países exportadores de gas en Moscú, con una reunión Pezeshkian-Putin anunciada para esa semana."
+    },
+    {
+      "fecha": "2026-10-31",
+      "texto": "31 oct",
+      "eje": "Conflictos",
+      "detalle": "Vence el mandato de la Misión de Verificación de la ONU en Colombia."
+    },
+    {
+      "fecha": "2026-11-01",
+      "texto": "1 nov",
+      "eje": "Conflictos",
+      "detalle": "Empieza el toque de queda nocturno en cinco provincias de Ecuador, hasta el 10."
+    },
+    {
+      "fecha": "2026-11-03",
+      "texto": "3 nov",
+      "eje": "Infraestructura IA",
+      "detalle": "Elecciones de medio término en EE.UU., con votaciones locales sobre data centers y la fecha que los reportes fijan como bisagra para un posible ataque a Irán."
+    }
+  ]
+}
