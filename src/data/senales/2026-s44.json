@@ -176,20 +176,31 @@
       "senales": [
         {
           "n": 6,
-          "titulo": "Lula gana en Brasil y Flávio Bolsonaro no reconoce el resultado",
+          "titulo": "Brasil: Trump habla de fraude y el partido de Flávio reconoce a Lula",
           "lugar": "Brasilia",
           "lugarMapa": "Brasilia, Brasil",
           "lat": -15.79,
           "lon": -47.88,
           "etiqueta": "der",
-          "fecha": "2026-10-25",
-          "hecho": "Lula da Silva fue reelecto el domingo 25 con 51,79% de los votos válidos contra 48,21% de Flávio Bolsonaro, más de 4,4 millones de votos de diferencia con el 100% de las secciones contadas por el TSE, y es el primer candidato desde 1989 que gana un balotaje después de salir segundo en la primera vuelta. Flávio dijo que es \"imposible reconocer el resultado\" y que pedirá la anulación por la decisión del ministro del STF Cristiano Zanin, que a pedido de la coalición de Lula extendió la votación hasta las 19:00 en todo el país; su propia campaña había pedido una prórroga para municipios del sur afectados por lluvias. El presidente del TSE, Kassio Nunes Marques, dijo tener \"absoluta seguridad del proceso electoral\" y que la decisión judicial no alteró nada; Orsi y la mayoría de los presidentes de la región felicitaron a Lula esa noche; Milei no lo felicitó, y ni la Casa Blanca ni el Departamento de Estado fijaron posición.",
-          "lectura": "Lula ganó por más de cuatro millones de votos, y uno de los grandes temas a mirar ahora son las señales de aceptación del resultado y de acatamiento cívico: quién felicita y quién calla, si el reclamo de Flávio va al TSE o a la calle, qué dicen los gobernadores de su campo y qué hacen las policías en las rutas. La prórroga de Zanin le dio al perdedor un argumento jurídico, aunque la diferencia duplica la que separó a Lula de Jair Bolsonaro en 2022, y Brasil ya sabe adónde llega un reclamo que se muda del tribunal a la calle: al 8 de enero de 2023. Para Uruguay y el Mercosur, el socio mayor empieza su nuevo mandato con el segundo más votado diciendo que el resultado es imposible de reconocer.",
+          "fecha": "2026-10-26",
+          "hecho": "El lunes 26, primer día hábil tras el balotaje, el Ibovespa cayó 13,9% hasta los 176.608 puntos, con un circuit breaker que no se activaba desde marzo de 2020, y el dólar subió 8,2% hasta R$ 5,40 (InfoMoney, con datos de B3). Trump dijo que la victoria de Lula \"parecía otra elección amañada\", sin presentar pruebas, y el mismo lunes el Partido Liberal, el partido de Flávio Bolsonaro, reconoció el resultado en un comunicado firmado por su presidente, Valdemar Costa Neto, que pidió aclarar \"las cuestiones planteadas\". Flávio mantiene que pedirá la anulación por la prórroga de la votación que dispuso el STF.",
+          "lectura": "Las respuestas del lunes llegaron todas juntas: el mercado, que había apostado a Flávio, se desplomó hasta el circuit breaker; su propio partido reconoció el resultado; y el que habla de fraude, sin pruebas, es Trump. El reclamo de anulación quedó huérfano antes de llegar al tribunal, y para el Mercosur la transición del socio mayor se juega ahora menos en la calle que en el precio del real.",
           "tendencia": "escala",
           "intensidad": 2,
           "fuente": {
-            "nombre": "Poder360",
-            "url": "https://www.poder360.com.br/poder-eleicoes-2026/flavio-nao-aceita-derrota-e-diz-que-pedira-a-anulacao-do-resultado/"
+            "nombre": "Reuters (vía US News)",
+            "url": "https://www.usnews.com/news/world/articles/2026-10-26/brazil-heads-back-to-the-future-as-flavio-bolsonaro-refuses-to-recognize-lula-win"
+          },
+          "actualizado": "2026-10-27THH:MM",
+          "anterior": {
+            "titulo": "Lula gana en Brasil y Flávio Bolsonaro no reconoce el resultado",
+            "fecha": "2026-10-25",
+            "hecho": "Lula da Silva fue reelecto el domingo 25 con 51,79% de los votos válidos contra 48,21% de Flávio Bolsonaro, más de 4,4 millones de votos de diferencia con el 100% de las secciones contadas por el TSE, y es el primer candidato desde 1989 que gana un balotaje después de salir segundo en la primera vuelta. Flávio dijo que es \"imposible reconocer el resultado\" y que pedirá la anulación por la decisión del ministro del STF Cristiano Zanin, que a pedido de la coalición de Lula extendió la votación hasta las 19:00 en todo el país; su propia campaña había pedido una prórroga para municipios del sur afectados por lluvias. El presidente del TSE, Kassio Nunes Marques, dijo tener \"absoluta seguridad del proceso electoral\" y que la decisión judicial no alteró nada; Orsi y la mayoría de los presidentes de la región felicitaron a Lula esa noche; Milei no lo felicitó, y ni la Casa Blanca ni el Departamento de Estado fijaron posición.",
+            "lectura": "Lula ganó por más de cuatro millones de votos, y uno de los grandes temas a mirar ahora son las señales de aceptación del resultado y de acatamiento cívico: quién felicita y quién calla, si el reclamo de Flávio va al TSE o a la calle, qué dicen los gobernadores de su campo y qué hacen las policías en las rutas. La prórroga de Zanin le dio al perdedor un argumento jurídico, aunque la diferencia duplica la que separó a Lula de Jair Bolsonaro en 2022, y Brasil ya sabe adónde llega un reclamo que se muda del tribunal a la calle: al 8 de enero de 2023. Para Uruguay y el Mercosur, el socio mayor empieza su nuevo mandato con el segundo más votado diciendo que el resultado es imposible de reconocer.",
+            "fuente": {
+              "nombre": "Poder360",
+              "url": "https://www.poder360.com.br/poder-eleicoes-2026/flavio-nao-aceita-derrota-e-diz-que-pedira-a-anulacao-do-resultado/"
+            }
           }
         },
         {
