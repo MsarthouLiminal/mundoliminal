@@ -175,6 +175,26 @@
       "alcance": "Guerras activas, cambios de fase y lo que derraman sobre la región.",
       "senales": [
         {
+          "n": 9,
+          "titulo": "Israel vota y nadie llega a 61: Netanyahu queda a siete bancas",
+          "lugar": "Jerusalén",
+          "lugarMapa": "Jerusalén, Israel",
+          "lat": 31.78,
+          "lon": 35.22,
+          "etiqueta": "izq",
+          "fecha": "2026-10-27",
+          "hecho": "Israel votó el martes 27 para la 26ª Knesset y, con 76,8% escrutado a la mañana del miércoles, el conteo oficial de la Comisión Electoral Central da 54 bancas al bloque de Netanyahu, siete menos que la mayoría de 61, 47 al bloque de Gadi Eisenkot y 19 a los partidos árabes, su máximo histórico. El Likud queda como primer partido con 27 bancas contra 20 de Yashar, y la Comisión advirtió que el conteo puede seguir hasta el viernes.",
+          "lectura": "Netanyahu llegó a la urna con la guerra de Irán abierta y salió siete bancas abajo de la mayoría, con los partidos árabes en su máximo histórico. El reloj que importa sigue siendo el de Washington, que ubica cualquier decisión sobre Irán después del 3 de noviembre, solo que ahora el socio israelí negocia su propia supervivencia mientras cuenta votos.",
+          "tendencia": "escala",
+          "intensidad": 2,
+          "fuente": {
+            "nombre": "The Times of Israel",
+            "url": "https://www.timesofisrael.com/liveblog-october-28-2026/"
+          },
+          "actualizado": "2026-10-28THH:MM",
+          "ultimoMomento": true
+        },
+        {
           "n": 6,
           "titulo": "Brasil: Trump habla de fraude y el partido de Flávio reconoce a Lula",
           "lugar": "Brasilia",
