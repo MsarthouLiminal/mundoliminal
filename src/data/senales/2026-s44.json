@@ -177,8 +177,8 @@
         {
           "n": 9,
           "titulo": "Israel vota y nadie llega a 61: Netanyahu queda a siete bancas",
-          "lugar": "Jerusalén",
-          "lugarMapa": "Jerusalén, Israel",
+          "lugar": "Israel",
+          "lugarMapa": "Israel",
           "lat": 31.78,
           "lon": 35.22,
           "etiqueta": "izq",
@@ -191,7 +191,7 @@
             "nombre": "The Times of Israel",
             "url": "https://www.timesofisrael.com/liveblog-october-28-2026/"
           },
-          "actualizado": "2026-10-28THH:MM",
+          "actualizado": "2026-10-28T07:18",
           "ultimoMomento": true
         },
         {
