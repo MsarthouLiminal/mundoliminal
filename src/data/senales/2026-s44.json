@@ -176,42 +176,42 @@
       "senales": [
         {
           "n": 9,
-          "titulo": "Israel vota y nadie llega a 61: Netanyahu queda a siete bancas",
+          "titulo": "Israel contó los votos regulares: Netanyahu queda a ocho bancas",
           "lugar": "Israel",
           "lugarMapa": "Israel",
           "lat": 31.78,
           "lon": 35.22,
           "etiqueta": "izq",
-          "fecha": "2026-10-27",
-          "hecho": "Israel votó el martes 27 para la 26ª Knesset y, con 76,8% escrutado a la mañana del miércoles, el conteo oficial de la Comisión Electoral Central da 54 bancas al bloque de Netanyahu, siete menos que la mayoría de 61, 47 al bloque de Gadi Eisenkot y 19 a los partidos árabes, su máximo histórico. El Likud queda como primer partido con 27 bancas contra 20 de Yashar, y la Comisión advirtió que el conteo puede seguir hasta el viernes.",
-          "lectura": "Netanyahu llegó a la urna con la guerra de Irán abierta y salió siete bancas abajo de la mayoría, con los partidos árabes en su máximo histórico. El reloj que importa sigue siendo el de Washington, que ubica cualquier decisión sobre Irán después del 3 de noviembre, solo que ahora el socio israelí negocia su propia supervivencia mientras cuenta votos.",
+          "fecha": "2026-10-28",
+          "hecho": "La Comisión Electoral Central terminó el miércoles 28 el conteo de los votos regulares de la elección del martes: 53 bancas para el bloque de Netanyahu, ocho menos que la mayoría de 61, 48 para el bloque de Gadi Eisenkot y 19 para los partidos árabes, su máximo histórico. El Likud sigue primero, con 26 bancas contra 21 de Yashar en el conteo difundido el miércoles. Desde la madrugada del jueves se cuentan unos 450.000 votos de doble sobre (soldados, diplomáticos y presos), que pueden mover bancas entre partidos pero difícilmente el balance entre bloques; el resultado de ese conteo se espera desde el jueves a la noche.",
+          "lectura": "Netanyahu llegó a la urna con la guerra de Irán abierta y salió ocho bancas abajo de la mayoría, con los partidos árabes en su máximo histórico. El reloj que importa sigue siendo el de Washington, que ubica cualquier decisión sobre Irán después del 3 de noviembre, solo que ahora el socio israelí negocia su propia supervivencia mientras cuenta votos.",
           "tendencia": "escala",
           "intensidad": 2,
           "fuente": {
             "nombre": "The Times of Israel",
-            "url": "https://www.timesofisrael.com/liveblog-october-28-2026/"
+            "url": "https://www.timesofisrael.com/israels-uncounted-ballots-could-shift-knesset-seats-but-likely-not-the-balance-of-power/"
           },
-          "actualizado": "2026-10-28T07:18",
+          "actualizado": "2026-10-29THH:MM",
           "ultimoMomento": true
         },
         {
           "n": 6,
-          "titulo": "Brasil: Trump habla de fraude y el partido de Flávio reconoce a Lula",
-          "lugar": "Brasilia",
+          "titulo": "Brasil: Flávio huye a EE.UU. y su equipo descarta la anulación",
+          "lugar": "Brasilia / EE.UU.",
           "lugarMapa": "Brasilia, Brasil",
           "lat": -15.79,
           "lon": -47.88,
           "etiqueta": "der",
-          "fecha": "2026-10-26",
-          "hecho": "El lunes 26, primer día hábil tras el balotaje, el Ibovespa cayó 13,9% hasta los 176.608 puntos, con un circuit breaker que no se activaba desde marzo de 2020, y el dólar subió 8,2% hasta R$ 5,40 (InfoMoney, con datos de B3). Trump dijo que la victoria de Lula \"parecía otra elección amañada\", sin presentar pruebas, y el mismo lunes el Partido Liberal, el partido de Flávio Bolsonaro, reconoció el resultado en un comunicado firmado por su presidente, Valdemar Costa Neto, que pidió aclarar \"las cuestiones planteadas\". Flávio mantiene que pedirá la anulación por la prórroga de la votación que dispuso el STF.",
-          "lectura": "Las respuestas del lunes llegaron todas juntas: el mercado, que había apostado a Flávio, se desplomó hasta el circuit breaker; su propio partido reconoció el resultado; y el que habla de fraude, sin pruebas, es Trump. El reclamo de anulación quedó huérfano antes de llegar al tribunal, y para el Mercosur la transición del socio mayor se juega ahora menos en la calle que en el precio del real.",
-          "tendencia": "escala",
+          "fecha": "2026-10-27",
+          "hecho": "Flávio Bolsonaro salió de Brasil de madrugada en un vuelo chárter y llegó a EE.UU. el martes 27, después de que el ministro del STF Alexandre de Moraes ordenara la entrega de sus pasaportes y le prohibiera salir del país (Jovem Pan); su equipo jurídico ya descartaba pedir la anulación de la elección antes del viaje, y una fuente citada por CNN Brasil dice que Trump autorizó su entrada. El miércoles 28 el Ibovespa cayó 2,68% hasta los 171.006 puntos, tercera baja seguida y 16,6% abajo en la semana, y el dólar cerró a R$ 5,34 (Agência Brasil).",
+          "lectura": "El que decía que el resultado era imposible de reconocer lo terminó reconociendo con los pies: antes que entregar los pasaportes se fue a Estados Unidos, con la anulación ya descartada por sus propios abogados. Para el Mercosur, el riesgo cambió de forma: más que una calle brasileña incendiada, un expatriado con padrino en la Casa Blanca.",
+          "tendencia": "afloja",
           "intensidad": 2,
           "fuente": {
-            "nombre": "Reuters (vía US News)",
-            "url": "https://www.usnews.com/news/world/articles/2026-10-26/brazil-heads-back-to-the-future-as-flavio-bolsonaro-refuses-to-recognize-lula-win"
+            "nombre": "Correio Braziliense",
+            "url": "https://www.correiobraziliense.com.br/politica/2026/10/7529175-equipe-de-flavio-bolsonaro-ja-descartava-pedir-anulacao-da-eleicao-de-2026-antes-de-fuga-para-os-eua.html"
           },
-          "actualizado": "2026-10-27T07:26",
+          "actualizado": "2026-10-29THH:MM",
           "anterior": {
             "titulo": "Lula gana en Brasil y Flávio Bolsonaro no reconoce el resultado",
             "fecha": "2026-10-25",
