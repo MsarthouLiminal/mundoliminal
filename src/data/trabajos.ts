@@ -52,12 +52,24 @@ export const MARCAS: Marca[] = [
   { nombre: 'Fenicio' },
   { nombre: 'Nantas' },
   { nombre: "L'Oréal Uruguay" },
+  { nombre: 'Hormetal' },
   { nombre: 'BMI' },
   { nombre: 'Segura Bank' },
   { nombre: 'Club del Inversor' },
 ];
 
 export const CASOS: Caso[] = [
+  {
+    cliente: 'Hormetal',
+    etiqueta: '15 años',
+    formato: 'Conversación y conducción',
+    fecha: '28 oct 2026',
+    lugar: 'Hyatt, Montevideo',
+    texto:
+      'Celebración de los 15 años de Hormetal junto a clientes e invitados de la empresa, que incluyó una conversación con un economista.',
+    foto: '/images/talks/hormetal-15-anios.jpg',
+    fotoAlt: 'Martín Sarthou en el atril durante el encuentro por los 15 años de Hormetal.',
+  },
   {
     cliente: 'WTC Punta del Este',
     etiqueta: 'Leading Sessions',
