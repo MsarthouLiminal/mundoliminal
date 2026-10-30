@@ -62,20 +62,31 @@
       "senales": [
         {
           "n": 2,
-          "titulo": "Ormuz: octubre ya es el mes con más ataques y el Brent pasa 116",
+          "titulo": "Irán exige permiso para cruzar Ormuz y reporta 4 buques minados",
           "lugar": "Estrecho de Ormuz",
           "lugarMapa": "Estrecho de Ormuz",
           "lat": 26.6,
           "lon": 56.5,
           "etiqueta": "der",
-          "fecha": "2026-10-23",
-          "hecho": "Lloyd's List Intelligence contó al menos 28 ataques o incidentes de seguridad en la primera mitad de octubre, ya el total mensual más alto desde el inicio de la guerra, y 104 tránsitos de buques no vinculados a Irán en la semana al 11 de octubre, 17% menos que la anterior. El viernes 23, la Guardia Revolucionaria informó que dos superpetroleros con más de 4,5 millones de barriles quedaron sin propulsión tras chocar con minas, sin verificación independiente, y el Wall Street Journal reportó que EE.UU. se prepara para una posible campaña de bombardeos contra Irán. El Brent cerró ese día en USD 116,72, 3,1% arriba.",
-          "lectura": "Ormuz se mide ahora con dos relojes: el de los ataques, que en quince días superó cualquier mes de la guerra, y el de Washington, que los reportes de prensa ubican después de las elecciones del 3 de noviembre. En el medio, el barril se paga como si el bombardeo ya hubiera ocurrido, y el Cono Sur lo importa a ese precio: cada dólar que suma el Brent termina en el gasoil del agro y del transporte.",
+          "fecha": "2026-10-29",
+          "hecho": "La Guardia Revolucionaria afirmó el jueves 29 que tres petroleros explotaron tras chocar con minas en la ruta sur del estrecho, que Teherán declara no autorizada, y el ejército iraní reportó un cuarto buque dañado al este del paso; UKMTO solo confirmó un incidente, un buque incendiado a unas 9 millas náuticas al norte de Khasab, Omán, sin atribuirlo a minas. Irán exige que los buques que quieran cruzar se comuniquen con sus autoridades y sigan las rutas que fija, mientras CENTCOM insiste en que las rutas principales de tránsito están libres de minas. El Brent operaba el viernes 30 cerca de USD 116,5, rumbo a su cuarta suba mensual seguida (FinanceFeeds).",
+          "lectura": "Irán pasó de atacar el estrecho a administrarlo: declara minadas las rutas que no autoriza y ofrece paso a quien se reporte ante sus autoridades, mientras CENTCOM jura que los corredores principales están limpios. Con el Brent arriba de 116 y Washington mirando el calendario electoral, el peaje de Ormuz lo fija Teherán, y el Cono Sur lo paga en el gasoil de la siembra.",
           "tendencia": "escala",
           "intensidad": 3,
           "fuente": {
-            "nombre": "Lloyd's List Intelligence",
-            "url": "https://www.lloydslistintelligence.com/resources/blog/strait-of-hormuz-brief-22-october-2026"
+            "nombre": "Al Arabiya English",
+            "url": "https://english.alarabiya.net/News/middle-east/2026/10/29/iran-s-irgc-says-three-tankers-on-fire-after-hitting-mines-in-hormuz-"
+          },
+          "actualizado": "2026-10-30T07:29",
+          "anterior": {
+            "titulo": "Ormuz: octubre ya es el mes con más ataques y el Brent pasa 116",
+            "fecha": "2026-10-23",
+            "hecho": "Lloyd's List Intelligence contó al menos 28 ataques o incidentes de seguridad en la primera mitad de octubre, ya el total mensual más alto desde el inicio de la guerra, y 104 tránsitos de buques no vinculados a Irán en la semana al 11 de octubre, 17% menos que la anterior. El viernes 23, la Guardia Revolucionaria informó que dos superpetroleros con más de 4,5 millones de barriles quedaron sin propulsión tras chocar con minas, sin verificación independiente, y el Wall Street Journal reportó que EE.UU. se prepara para una posible campaña de bombardeos contra Irán. El Brent cerró ese día en USD 116,72, 3,1% arriba.",
+            "lectura": "Ormuz se mide ahora con dos relojes: el de los ataques, que en quince días superó cualquier mes de la guerra, y el de Washington, que los reportes de prensa ubican después de las elecciones del 3 de noviembre. En el medio, el barril se paga como si el bombardeo ya hubiera ocurrido, y el Cono Sur lo importa a ese precio: cada dólar que suma el Brent termina en el gasoil del agro y del transporte.",
+            "fuente": {
+              "nombre": "Lloyd's List Intelligence",
+              "url": "https://www.lloydslistintelligence.com/resources/blog/strait-of-hormuz-brief-22-october-2026"
+            }
           }
         },
         {
@@ -176,22 +187,22 @@
       "senales": [
         {
           "n": 9,
-          "titulo": "Israel contó los votos regulares: Netanyahu queda a ocho bancas",
+          "titulo": "Israel cerró el conteo: Netanyahu 53 y nadie llega a 61",
           "lugar": "Israel",
           "lugarMapa": "Israel",
           "lat": 31.78,
           "lon": 35.22,
           "etiqueta": "izq",
-          "fecha": "2026-10-28",
-          "hecho": "La Comisión Electoral Central terminó el miércoles 28 el conteo de los votos regulares de la elección del martes: 53 bancas para el bloque de Netanyahu, ocho menos que la mayoría de 61, 48 para el bloque de Gadi Eisenkot y 19 para los partidos árabes, su máximo histórico. El Likud sigue primero, con 26 bancas contra 21 de Yashar en el conteo difundido el miércoles. Desde la madrugada del jueves se cuentan unos 450.000 votos de doble sobre (soldados, diplomáticos y presos), que pueden mover bancas entre partidos pero difícilmente el balance entre bloques; el resultado de ese conteo se espera desde el jueves a la noche.",
-          "lectura": "Netanyahu llegó a la urna con la guerra de Irán abierta y salió ocho bancas abajo de la mayoría, con los partidos árabes en su máximo histórico. El reloj que importa sigue siendo el de Washington, que ubica cualquier decisión sobre Irán después del 3 de noviembre, solo que ahora el socio israelí negocia su propia supervivencia mientras cuenta votos.",
+          "fecha": "2026-10-30",
+          "hecho": "La Comisión Electoral publicó entre el jueves 29 a la noche y la madrugada del viernes 30 el resultado con todos los votos contados, incluidos los de doble sobre: 53 bancas para el bloque de Netanyahu, 48 para el de Eisenkot y 19 para los partidos árabes, su máximo histórico, con el Likud en 27 y Yashar en 21. Ningún bloque llega a la mayoría de 61; el resultado, sujeto a controles de integridad, se entrega al presidente Herzog el miércoles 4 de noviembre, que abre la ronda de consultas, y la nueva Knesset jura el 10.",
+          "lectura": "Netanyahu llegó a la urna con la guerra de Irán abierta y salió ocho bancas abajo de la mayoría, con los partidos árabes en su máximo histórico. El reloj que importa sigue siendo el de Washington, que ubica cualquier decisión sobre Irán después del 3 de noviembre, solo que ahora el socio israelí negocia su propia supervivencia con el conteo cerrado y sin mayoría a la vista.",
           "tendencia": "escala",
           "intensidad": 2,
           "fuente": {
             "nombre": "The Times of Israel",
-            "url": "https://www.timesofisrael.com/israels-uncounted-ballots-could-shift-knesset-seats-but-likely-not-the-balance-of-power/"
+            "url": "https://www.timesofisrael.com/with-all-votes-counted-netanyahus-bloc-at-53-seats-eisenkots-48-arab-parties-19/"
           },
-          "actualizado": "2026-10-29T07:36",
+          "actualizado": "2026-10-30T07:29",
           "ultimoMomento": true
         },
         {
