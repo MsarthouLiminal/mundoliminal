@@ -1,0 +1,308 @@
+{
+  "id": "2026-s45",
+  "semana": 45,
+  "fechaEdicion": "2026-11-02",
+  "corteDatos": "2026-11-01",
+  "ejes": [
+    {
+      "id": "min",
+      "slug": "minerales",
+      "nombre": "Minerales críticos",
+      "alcance": "Tierras raras, cobre, cobalto, litio, uranio. Quién controla el acceso y a qué precio.",
+      "senales": [
+        {
+          "n": 1,
+          "titulo": "Lynas vende tierras raras con piso de precio fuera de China",
+          "lugar": "Perth / Kuantan (Malasia)",
+          "lugarMapa": "Kuantan, Malasia",
+          "lat": 3.82,
+          "lon": 103.33,
+          "etiqueta": "der",
+          "fecha": "2026-10-30",
+          "hecho": "Lynas informó un récord trimestral de 2.082 toneladas de NdPr (neodimio y praseodimio) y un precio promedio también récord de A$102,1 por kilo (+88%), con ingresos de A$310,1 millones (+55%) pese a vender 18% menos volumen. Más de la mitad de su producción ya se vende con acuerdos de precio mínimo con fabricantes, cuyos niveles no se publican, y su planta de Malasia parará cerca de un mes por mantenimiento en el trimestre a diciembre.",
+          "lectura": "Fuera de China, las tierras raras empezaron a tener un precio que no figura en ninguna pizarra: el que firman los fabricantes para asegurarse el imán. Un piso garantizado funciona como un seguro, y la prima la paga el comprador occidental a cambio de no depender de una licencia de Beijing. Si la pausa china vence sin papel nuevo, ese seguro va a parecer barato.",
+          "tendencia": "escala",
+          "intensidad": 2,
+          "fuente": {
+            "nombre": "MINING.COM",
+            "url": "https://www.mining.com/lynas-locks-in-price-floors-as-revenue-jumps-55"
+          }
+        },
+        {
+          "n": 2,
+          "titulo": "Argentina aprueba Agua Rica: USD 6.393 millones en cobre para 2031",
+          "lugar": "Catamarca, Argentina",
+          "lugarMapa": "Andalgalá, Catamarca",
+          "lat": -27.6,
+          "lon": -66.32,
+          "etiqueta": "izq",
+          "fecha": "2026-10-27",
+          "hecho": "La Resolución 1854/2026 del Ministerio de Economía, firmada por el ministro Luis Caputo, aprobó el ingreso de Agua Rica al RIGI con una inversión declarada de USD 6.393 millones (USD 3.310 millones computables). El proyecto prevé unas 160.000 toneladas anuales de concentrado de cobre, con oro, plata y molibdeno, durante 23 años; la construcción empieza el 1 de noviembre de 2027 y la operación el 1 de octubre de 2031.",
+          "lectura": "Argentina asegura cobre para 2031 en un mercado donde hoy las fundiciones pagan para conseguir concentrado. El RIGI le da reglas estables a la mina, pero no decide quién refina: si nada cambia, Catamarca va a vender mineral para que lo funda China, como ya hace Chile. La provincia se queda con el pozo, y el valor de la etapa siguiente cruza el Pacífico.",
+          "tendencia": "estable",
+          "intensidad": 1,
+          "fuente": {
+            "nombre": "La Nación",
+            "url": "https://www.lanacion.com.ar/economia/el-gobierno-aprobo-un-nuevo-proyecto-rigi-en-catamarca-por-us6300-millones-nid27102026/"
+          }
+        }
+      ],
+      "tambienTitulo": "También en el radar",
+      "tambien": [
+        {
+          "etiqueta": "30 oct",
+          "texto": "El cobre a tres meses en la LME caía 1,5%, a USD 14.140 por tonelada, rumbo a su primera pérdida mensual desde junio, con las dudas sobre el retorno del gasto en IA entre los motivos citados."
+        },
+        {
+          "etiqueta": "30 oct",
+          "texto": "Malasia autorizó a DTEC, con 51% de capital estadounidense, a exportar hasta 700 toneladas de tierras raras sin procesar a EE.UU.; el primer envío, de unas 30, es para investigación."
+        },
+        {
+          "etiqueta": "30 oct",
+          "texto": "Benchmark calcula que el óxido de disprosio cuesta en Europa hasta 16 veces más que en China: unos USD 3.500 por kilo en setiembre, contra USD 210 a 216 a fines de octubre."
+        }
+      ]
+    },
+    {
+      "id": "cho",
+      "slug": "chokepoints",
+      "nombre": "Chokepoints",
+      "alcance": "Estrechos, puertos, aranceles y cadenas de suministro. Dónde se traba el comercio.",
+      "senales": [
+        {
+          "n": 3,
+          "titulo": "Irán ofrece reabrir Ormuz en dos días, con condiciones",
+          "lugar": "Teherán / Doha",
+          "lugarMapa": "Estrecho de Ormuz",
+          "lat": 26.6,
+          "lon": 56.5,
+          "etiqueta": "der",
+          "fecha": "2026-11-01",
+          "hecho": "Después de dos días de conversaciones con mediadores de Qatar, el canciller iraní Abbas Araghchi dijo que la propuesta en discusión reduce de siete a dos días el plazo para reabrir parcialmente Ormuz, si EE.UU. levanta el bloqueo naval, restablece las exenciones petroleras, descongela activos iraníes y reconoce las rutas acordadas con Omán. Trump dijo que las conversaciones van bien pero que los iraníes no son confiables, y sugirió que un ataque podría llegar después de las elecciones del martes 3. Al menos cuatro buques fueron alcanzados en el estrecho el viernes 30 y el sábado 31.",
+          "lectura": "Irán le puso plazo y precio a Ormuz: dos días para reabrir si Washington levanta el bloqueo, libera fondos y acepta las rutas que Teherán pactó con Omán. Trump responde con el calendario electoral, y el estrecho queda colgado del martes 3. Para el Cono Sur importa poco quién ceda primero: mientras dure la espera, el barril se paga como si la guerra no tuviera fecha de salida.",
+          "tendencia": "escala",
+          "intensidad": 3,
+          "fuente": {
+            "nombre": "Al Jazeera",
+            "url": "https://www.aljazeera.com/news/2026/11/1/iran-and-us-explore-diplomacy-amid-rising-threats-of-war"
+          }
+        },
+        {
+          "n": 4,
+          "titulo": "Uruguay congela el gasoil y absorbe una suba de 31%",
+          "lugar": "Montevideo",
+          "lugarMapa": "Montevideo, Uruguay",
+          "lat": -34.9,
+          "lon": -56.16,
+          "etiqueta": "der",
+          "fecha": "2026-10-30",
+          "hecho": "El Poder Ejecutivo mantuvo en noviembre el gasoil 50S en $ 62,79 por litro, la nafta Súper en $ 90,45 y el supergás en $ 93,56 por kilo, cuando la paridad de importación de URSEA indicaba subas de 31,3% para el gasoil (unos $ 20 por litro) y de 3,3% para las naftas. La diferencia se absorbe con una excepción al Decreto 130/025, y el gobierno no informó el costo.",
+          "lectura": "Uruguay decidió que la guerra del Golfo no llegue al surtidor en plena siembra, y la decisión tiene un costo que el gobierno todavía no puso en números. Los veinte pesos por litro que el productor no paga los termina pagando alguien: ANCAP, Rentas Generales o un ajuste más adelante. Congelar compra tiempo, y cuánto tiempo depende más de Ormuz que de Montevideo.",
+          "tendencia": "escala",
+          "intensidad": 2,
+          "fuente": {
+            "nombre": "El Observador",
+            "url": "https://www.elobservador.com.uy/economia-y-empresas/gobierno-mantiene-los-precios-los-combustibles-noviembre-y-evita-subas-3-naftas-y-20-gasoil-n6062187"
+          }
+        },
+        {
+          "n": 5,
+          "titulo": "La tregua con China: prórroga anunciada, casi nada firmado",
+          "lugar": "Washington / Beijing",
+          "lugarMapa": "Washington, EE.UU.",
+          "lat": 38.9,
+          "lon": -77.04,
+          "etiqueta": "der",
+          "fecha": "2026-10-26",
+          "hecho": "A las 23:59 del lunes 9 (hora del este de EE.UU.) vencen la suspensión de la regla del 50% del BIS, que extiende los controles de exportación a filiales de empresas listadas, las 178 exclusiones arancelarias de la Sección 301 y la suspensión de las tasas portuarias a buques chinos. USTR propuso el 26 de octubre prorrogar las tasas portuarias hasta el 9 de enero, sin decisión final; para las otras dos no hay aviso publicado, aunque el secretario del Tesoro Scott Bessent anunció en setiembre que la tregua pasaba al 10 de enero. El Ministerio de Comercio chino no aclaró si su pausa de tierras raras sigue esa fecha.",
+          "lectura": "La tregua entre Washington y Beijing se prorrogó de palabra en setiembre, pero los aranceles, las tasas y los controles se prorrogan con avisos legales, y hasta ahora hay uno solo, propuesto y sin firmar. Si el resto no aparece antes del 10, las medidas vuelven solas, sin que nadie tenga que declarar una guerra comercial. Para el Cono Sur, que les vende a los dos, una tregua sin papel es un riesgo más a cubrir.",
+          "tendencia": "escala",
+          "intensidad": 2,
+          "fuente": {
+            "nombre": "Holland & Knight, sobre el aviso de USTR",
+            "url": "https://www.hklaw.com/en/insights/publications/2026/10/ustr-proposes-2-month-extension-of-suspension-of-section-301"
+          }
+        }
+      ],
+      "tambienTitulo": "También en el radar",
+      "tambien": [
+        {
+          "etiqueta": "30 oct",
+          "texto": "El gas europeo TTF abrió el viernes en 101,82 euros por MWh, por primera vez arriba de 100 desde 2022, con los depósitos al 74,89% contra un promedio de cinco años de 86%."
+        },
+        {
+          "etiqueta": "30 oct",
+          "texto": "El Brent de enero cerró en USD 113,43 y sumó 13,6% en octubre; el contrato de diciembre venció ese día en USD 117,64."
+        },
+        {
+          "etiqueta": "28 oct",
+          "texto": "QatarEnergy extendió hasta fin de diciembre la fuerza mayor sobre sus envíos de GNL a la italiana Edison, con 38 cargamentos afectados desde abril."
+        }
+      ]
+    },
+    {
+      "id": "ia",
+      "slug": "ia",
+      "nombre": "Infraestructura IA",
+      "alcance": "Data centers, chips, energía y agua. El cuerpo físico de la IA y quién lo decide.",
+      "senales": [
+        {
+          "n": 6,
+          "titulo": "Alphabet cae 12,6% y el mercado empieza a cobrar el capex de la IA",
+          "lugar": "Mountain View / Nueva York",
+          "lugarMapa": "Mountain View, EE.UU.",
+          "lat": 37.39,
+          "lon": -122.08,
+          "etiqueta": "izq",
+          "fecha": "2026-10-29",
+          "hecho": "Alphabet cayó 12,64% el jueves 29, hasta USD 283,82, en su peor jornada desde que salió a bolsa en 2004 y con unos USD 475.000 millones menos de valor, después de informar un capex trimestral de USD 51.400 millones, mantener la guía de 2026 en USD 195.000 a 205.000 millones y anticipar un aumento \"significativo\" en 2027; por falta de capacidad propia, empezó a usar cómputo de terceros. Microsoft gastó USD 45.200 millones en el trimestre, cerca de tres cuartos en CPU y GPU, y espera más de USD 50.000 millones en el siguiente.",
+          "lectura": "El mercado venía financiando sin muchas preguntas el gasto de las big tech en data centers; el jueves pasó la cuenta, en el peor día de Alphabet desde 2004. La empresa admite que le falta capacidad y aun así gasta más, porque el cuello de botella es físico: chips, energía, terrenos. Uruguay, que espera a Google en Canelones y a Solaria, va a negociar con inversores a los que Wall Street ya les pregunta cuándo rinde.",
+          "tendencia": "escala",
+          "intensidad": 2,
+          "fuente": {
+            "nombre": "Yahoo Finance",
+            "url": "https://finance.yahoo.com/markets/article/alphabet-heads-for-a-500-billion-drop-in-market-value-the-biggest-in-its-history-134824763.html"
+          }
+        }
+      ],
+      "tambienTitulo": "También en el radar",
+      "tambien": [
+        {
+          "etiqueta": "28 oct",
+          "texto": "El Departamento de Energía de EE.UU. comprometió, todavía sin cerrar, un préstamo de hasta USD 5.000 millones a Constellation para sumar 1,1 GW en 11 reactores; casi toda la energía de siete de esas plantas ya la contrataron Google, Amazon y Meta."
+        },
+        {
+          "etiqueta": "27 oct",
+          "texto": "San Diego aprobó por unanimidad una moratoria de 45 días a los permisos de data centers, que puede extenderse casi dos años."
+        },
+        {
+          "etiqueta": "23 oct",
+          "texto": "En Brasil, los beneficios fiscales del Redata (Ley 15.504) vencen el 31 de diciembre y la ley sigue sin decreto reglamentario; la Receita Federal estima su impacto fiscal en R$ 5.200 millones en 2026."
+        }
+      ]
+    },
+    {
+      "id": "con",
+      "slug": "conflictos",
+      "nombre": "Conflictos",
+      "alcance": "Guerras activas, cambios de fase y lo que derraman sobre la región.",
+      "senales": [
+        {
+          "n": 7,
+          "titulo": "Zelensky ofrece discutir territorio con Putin cara a cara",
+          "lugar": "Kiev / Helsinki / Oslo",
+          "lugarMapa": "Kiev, Ucrania",
+          "lat": 50.45,
+          "lon": 30.52,
+          "etiqueta": "der",
+          "fecha": "2026-10-29",
+          "hecho": "El canciller ucraniano Andrii Sybiha dijo al diario finlandés Helsingin Sanomat que Volodímir Zelensky está dispuesto a tratar con Vladímir Putin \"los temas más difíciles\", incluido el territorio, en una reunión personal y con alto el fuego. Lo transmitieron el martes 27 el presidente finlandés Alexander Stubb y el primer ministro noruego Jonas Gahr Støre, en el primer contacto de Putin con líderes europeos aliados de Kiev desde julio de 2025. El viernes 30, ataques rusos a centrales y subestaciones dejaron sin luz a unos 280.000 hogares en las regiones de Kiev y Dnipró (Kyiv Post).",
+          "lectura": "Kiev puso el territorio sobre la mesa en voz alta, con dos condiciones: que Putin se siente en persona y que callen las armas mientras tanto. Que el mensaje viaje por Helsinki y Oslo, y no por Washington, muestra a quién quiere Ucrania en la sala. Mientras se habla de reuniones, Rusia sigue apagando ciudades con el invierno a las puertas, y la diplomacia avanza más rápido en las declaraciones que en el frente.",
+          "tendencia": "afloja",
+          "intensidad": 2,
+          "fuente": {
+            "nombre": "Meduza",
+            "url": "https://meduza.io/en/news/2026/10/29/ukraine-says-zelensky-is-ready-to-discuss-territory-with-putin-in-person"
+          }
+        },
+        {
+          "n": 8,
+          "titulo": "Los hutíes apuntan a las dos salidas del crudo saudí",
+          "lugar": "Ras Tanura / Yanbu (Arabia Saudita)",
+          "lugarMapa": "Ras Tanura, Arabia Saudita",
+          "lat": 26.64,
+          "lon": 50.16,
+          "etiqueta": "izq",
+          "fecha": "2026-10-27",
+          "hecho": "Los hutíes reivindicaron el martes 27 un misil balístico contra la refinería de Ras Tanura (550.000 barriles diarios), en el complejo de una de las principales terminales de exportación saudíes; una fuente citada por Bloomberg dijo que un incendio cerca de la terminal quedó controlado, y Aramco no confirmó daños. Días antes habían reivindicado ataques a estaciones de bombeo del oleoducto Este-Oeste, que lleva crudo hasta el Mar Rojo: al menos una resultó dañada, con impacto limitado y sin afectar las operaciones.",
+          "lectura": "Con Ormuz sujeto a permisos iraníes, Arabia Saudita depende de sus dos grandes salidas: las terminales del Golfo, como Ras Tanura, y el oleoducto que cruza el desierto hasta el Mar Rojo. Los hutíes apuntaron a las dos en la misma semana, y aunque el daño fue menor, el mensaje es geográfico. Si el colchón saudí queda al alcance de un misil lanzado desde Yemen, el mercado va a cobrar ese riesgo aunque no se pierda un barril.",
+          "tendencia": "escala",
+          "intensidad": 3,
+          "fuente": {
+            "nombre": "Argus",
+            "url": "https://www.argusmedia.com/en/news-and-insights/latest-market-news/2896184-fire-reported-near-saudi-arabia-s-ras-tanura-complex"
+          }
+        }
+      ],
+      "tambienTitulo": "Focos en observación",
+      "tambien": [
+        {
+          "etiqueta": "Ecuador, 31 oct",
+          "texto": "Rige del 1 al 10 de noviembre el cuarto toque de queda del año, de 0 a 5 en cinco provincias costeras, a cuatro semanas de las elecciones locales del 29."
+        },
+        {
+          "etiqueta": "RDC, 28 oct",
+          "texto": "EE.UU. sancionó al Ministerio de Defensa de Ruanda y a la financiera Zigama por sostener al M23 y a su sucesor, el FRN; el secretario del Tesoro Scott Bessent exigió el retiro de las tropas ruandesas del este congoleño."
+        },
+        {
+          "etiqueta": "Sudán, 28 oct",
+          "texto": "La misión de investigación de la ONU registró en octubre el mayor número de ataques con drones contra civiles de la guerra; en El Obeid funciona cerca del 30% de los hospitales."
+        },
+        {
+          "etiqueta": "Haití, 22 oct",
+          "texto": "El Salvador mandó 100 efectivos de fuerzas especiales, con otros 100 anunciados, para rescatar a cuatro militares salvadoreños secuestrados por bandas en Croix-des-Bouquets."
+        }
+      ]
+    }
+  ],
+  "focos": [
+    {
+      "nombre": "Ecuador",
+      "lugarMapa": "Guayaquil, Ecuador",
+      "lat": -2.17,
+      "lon": -79.92,
+      "etiqueta": "izq",
+      "eje": "con"
+    },
+    {
+      "nombre": "RDC",
+      "lugarMapa": "Bukavu, RDC",
+      "lat": -2.51,
+      "lon": 28.86,
+      "etiqueta": "izq",
+      "eje": "con"
+    },
+    {
+      "nombre": "Sudán",
+      "lugarMapa": "El Obeid, Sudán",
+      "lat": 13.18,
+      "lon": 30.22,
+      "etiqueta": "izq",
+      "eje": "con"
+    },
+    {
+      "nombre": "Haití",
+      "lugarMapa": "Puerto Príncipe, Haití",
+      "lat": 18.59,
+      "lon": -72.31,
+      "etiqueta": "der",
+      "eje": "con"
+    }
+  ],
+  "agenda": [
+    {
+      "fecha": "2026-11-03",
+      "texto": "3 nov",
+      "eje": "Infraestructura IA",
+      "detalle": "Elecciones de medio término en EE.UU., con 41 medidas locales sobre data centers en 10 estados, 17 de ellas para prohibirlos, y la fecha que Trump dejó como bisagra para Irán."
+    },
+    {
+      "fecha": "2026-11-04",
+      "texto": "4 nov",
+      "eje": "Conflictos",
+      "detalle": "El presidente israelí Isaac Herzog recibe el resultado oficial de la elección y abre las consultas para encargar el gobierno."
+    },
+    {
+      "fecha": "2026-11-05",
+      "texto": "5 nov",
+      "eje": "Minerales críticos",
+      "detalle": "Junta extraordinaria de accionistas de Codelco, pedida por los ministerios de Hacienda y Minería, tras las inconsistencias en la producción declarada."
+    },
+    {
+      "fecha": "2026-11-09",
+      "texto": "9 nov",
+      "eje": "Chokepoints",
+      "detalle": "A las 23:59, hora del este de EE.UU., vencen la suspensión de la regla del 50% del BIS, las 178 exclusiones de la Sección 301 y la de las tasas portuarias a buques chinos."
+    }
+  ]
+}
