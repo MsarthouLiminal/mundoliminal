@@ -1,0 +1,109 @@
+---
+/**
+ * Aviso del especial "Midterms desde el Sur" en la home.
+ * Se muestra hasta el viernes 6 de noviembre de 2026 inclusive (hora de
+ * Uruguay). El sitio se reconstruye cada 6 horas, así que se va solo.
+ */
+const vigente = Date.now() < Date.parse('2026-11-07T03:00:00Z');
+
+// Hemiciclo del Senado (100 bancas: 47 demócratas, 53 republicanos), calculado al compilar.
+const filas = 6;
+const radios = Array.from({ length: filas }, (_, i) => 105 + (180 * i) / (filas - 1));
+const total = radios.reduce((a, b) => a + b, 0);
+const cuenta = radios.map((r) => Math.round((100 * r) / total));
+cuenta[filas - 1] += 100 - cuenta.reduce((a, b) => a + b, 0);
+const puntos: { x: number; y: number; a: number }[] = [];
+radios.forEach((r, i) => {
+  const c = cuenta[i];
+  for (let j = 0; j < c; j++) {
+    const a = Math.PI * (1 - (c === 1 ? 0.5 : j / (c - 1)));
+    puntos.push({ x: 300 + r * Math.cos(a), y: 300 - r * Math.sin(a), a });
+  }
+});
+puntos.sort((p, q) => q.a - p.a);
+const bancas = puntos.map((p, k) => ({ ...p, d: k < 47 }));
+---
+
+{vigente && (
+  <section class="especial ventana" aria-labelledby="especial-midterms">
+    <div class="especial__texto">
+      <p class="especial__kick">Especial · Legislativas de EE.UU., 3 de noviembre</p>
+      <h2 id="especial-midterms" class="especial__titulo">Midterms desde el Sur</h2>
+      <p class="especial__bajada">
+        El Senado se juega en tierra de soja y carne. Armá tu propio Senado, mirá cuatro escenarios para seis
+        países y seguí la noche en hora de Montevideo.
+      </p>
+      <a class="especial__boton" href="/midterms/">Abrir el simulador <b aria-hidden="true">→</b></a>
+    </div>
+    <svg class="especial__hemi" viewBox="0 0 600 315" role="img" aria-label="Senado hoy: 47 demócratas y 53 republicanos">
+      {bancas.map((b) => (
+        <circle cx={b.x.toFixed(1)} cy={b.y.toFixed(1)} r="15" fill={b.d ? '#3F86E0' : '#E0574C'} />
+      ))}
+      <line x1="300" x2="300" y1="312" y2="4" stroke="var(--color-horizonte)" stroke-width="3" />
+    </svg>
+  </section>
+)}
+
+<style>
+  .especial {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-8);
+    margin-top: var(--space-8);
+    padding: var(--space-8);
+    background: var(--color-selva);
+    border-top: 3px solid var(--color-horizonte);
+    font-family: var(--font-text-v2);
+  }
+  .especial__texto {
+    flex: 1 1 420px;
+    min-width: 0;
+    display: grid;
+    gap: var(--space-3);
+    justify-items: start;
+  }
+  .especial__kick {
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--tinta-meta);
+  }
+  .especial__titulo {
+    margin: 0;
+    font-family: var(--font-display-v2);
+    font-weight: 800;
+    font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+    line-height: 0.95;
+    color: var(--tinta-fuerte);
+  }
+  .especial__bajada {
+    max-width: 56ch;
+    line-height: 1.55;
+    color: var(--tinta);
+  }
+  .especial__boton {
+    margin-top: var(--space-2);
+    display: inline-block;
+    padding: 0.7rem 1.2rem;
+    background: var(--boton);
+    color: var(--sobre-boton);
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 2px;
+  }
+  .especial__boton b {
+    color: var(--color-oxido);
+  }
+  .especial__boton:hover {
+    background: var(--boton-hover);
+  }
+  .especial__hemi {
+    flex: 0 1 280px;
+    width: 280px;
+    max-width: 100%;
+    height: auto;
+  }
+</style>

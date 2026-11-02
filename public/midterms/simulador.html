@@ -1,0 +1,961 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Simulador de LIMINAL para las legislativas de EE.UU. del 3 de noviembre de 2026, leídas desde el Cono Sur: armá tu Senado, cuatro escenarios para seis países, el petróleo y la noche en hora de Montevideo.">
+<meta property="og:title" content="Midterms desde el Sur · LIMINAL">
+<meta property="og:description" content="Armá tu Senado, cuatro escenarios para seis países y la noche electoral en hora de Montevideo.">
+<meta property="og:type" content="website">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}[hidden]{display:none!important}img{max-width:100%}</style>
+<title>Midterms desde el Sur</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800&family=Chivo:ital,wght@0,400;0,500;0,700;1,400&display=swap">
+<style>
+/* Layout: una sola columna editorial larga sobre Selva; la línea de umbral (Horizonte) marca siempre la mayoría. */
+:root{
+  color-scheme: dark;
+  --bg:#0B2419; --bg-deep:#060C08; --panel:#1A3D2B; --panel-2:#13311F;
+  --fg:#FFFFFF; --fg-2:#C8D3CB; --meta:#C6B8DB; --hueso:#DED8CE; --wordmark:#DED8CE;
+  --teal:#0B8B6E; --series:#0FBA94; --signal:#FF7A1A; --grid:rgba(222,216,206,.14);
+  --dem:#3F86E0; --rep:#E0574C; --ind:#C6B8DB; --vac:#3E5A4A;
+  --font-display:"Big Shoulders Display","Oswald","Arial Narrow",Impact,sans-serif;
+  --font-body:"Chivo","Helvetica Neue",Arial,sans-serif;
+}
+@media (prefers-color-scheme: light){
+  :root:not([data-theme="dark"]){
+    color-scheme: light;
+    --bg:#E8EAE3; --bg-deep:#DCE0D6; --panel:#F6F7F2; --panel-2:#EEF0E9;
+    --fg:#0B2419; --fg-2:#34483C; --meta:#4A2E5C; --hueso:#0B2419; --wordmark:#0B2419;
+    --teal:#0B8B6E; --series:#0B8B6E; --signal:#C4530F; --grid:rgba(11,36,25,.13);
+    --dem:#2A6CC4; --rep:#C8433A; --ind:#4A2E5C; --vac:#B7C1B5;
+  }
+}
+:root[data-theme="light"]{
+  color-scheme: light;
+  --bg:#E8EAE3; --bg-deep:#DCE0D6; --panel:#F6F7F2; --panel-2:#EEF0E9;
+  --fg:#0B2419; --fg-2:#34483C; --meta:#4A2E5C; --hueso:#0B2419; --wordmark:#0B2419;
+  --teal:#0B8B6E; --series:#0B8B6E; --signal:#C4530F; --grid:rgba(11,36,25,.13);
+  --dem:#2A6CC4; --rep:#C8433A; --ind:#4A2E5C; --vac:#B7C1B5;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--fg);font-family:var(--font-body);font-size:17px;line-height:1.55;margin:0;
+  padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px));padding-block:0}
+.wrap{max-width:1120px;margin:0 auto}
+a{color:inherit;text-decoration-color:var(--signal);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--signal);outline-offset:3px}
+h1,h2,h3{font-family:var(--font-display);font-weight:800;letter-spacing:.005em;line-height:.98;text-wrap:balance;margin:0}
+h2{font-size:clamp(34px,5.4vw,58px)}
+h3{font-size:clamp(22px,2.6vw,28px);font-weight:700;line-height:1.05}
+p{margin:0}
+.meta{color:var(--meta);font-size:14px}
+.eyebrow{font-family:var(--font-body);font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--meta)}
+.lede{font-size:clamp(18px,2vw,21px);color:var(--fg-2);max-width:62ch}
+.prose{max-width:66ch;color:var(--fg-2)}
+.prose strong{color:var(--fg)}
+.num{font-variant-numeric:tabular-nums}
+
+/* Cabecera */
+header.top{padding-block:28px 10px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.logo{height:44px;width:auto;display:block}
+.hero{padding-block:30px 26px;display:grid;gap:18px;border-bottom:3px solid var(--signal)}
+.hero h1{font-size:clamp(56px,10vw,120px)}
+.hero .dl{color:var(--meta);font-size:15px}
+.window{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;margin-top:8px;max-width:760px}
+.window .d{font-family:var(--font-display);font-weight:800;font-size:30px;line-height:1}
+.window .d small{display:block;font-family:var(--font-body);font-weight:500;font-size:12.5px;color:var(--meta);letter-spacing:.06em;text-transform:uppercase;margin-top:4px}
+.window .bar{position:relative;height:10px;border-radius:5px;background:var(--panel)}
+.window .bar i{position:absolute;inset:0;border-radius:5px;background:linear-gradient(90deg,var(--signal),var(--teal));transform-origin:left;animation:grow 1.6s ease-out both}
+.window .bar b{position:absolute;left:50%;top:-24px;transform:translateX(-50%);font-size:13px;font-weight:700;color:var(--fg);white-space:nowrap}
+@keyframes grow{from{transform:scaleX(.02)}to{transform:scaleX(1)}}
+
+section.block{padding-block:56px 8px;display:grid;grid-template-columns:minmax(0,1fr);gap:22px}
+.panel{min-width:0}
+.chartwrap{max-width:100%}
+.sec-head{display:grid;gap:10px;max-width:820px}
+
+/* Ficha */
+.ficha{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:2px;background:var(--grid);border-radius:6px;overflow:hidden}
+.ficha div{background:var(--bg);padding:16px 16px 14px}
+.ficha b{display:block;font-family:var(--font-display);font-weight:800;font-size:46px;line-height:1}
+.ficha span{display:block;color:var(--fg-2);font-size:14.5px;margin-top:6px}
+@media (max-width:720px){.ficha{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* Paneles */
+.panel{background:var(--panel-2);border-radius:8px;padding:20px}
+.two{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:18px}
+@media (max-width:860px){.two{grid-template-columns:minmax(0,1fr)}}
+.chart-title{font-family:var(--font-display);font-weight:700;font-size:24px;line-height:1.05}
+.src{font-size:12.5px;color:var(--meta);margin-top:10px}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:13.5px;color:var(--fg-2)}
+.legend i{display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:6px;vertical-align:-1px}
+svg text{fill:var(--fg-2);font-family:var(--font-body)}
+svg .t-strong{fill:var(--fg);font-weight:700}
+svg .t-meta{fill:var(--meta)}
+.seg{display:inline-flex;background:var(--panel);border-radius:999px;padding:3px;gap:2px;flex-wrap:wrap}
+.seg button{all:unset;cursor:pointer;padding:7px 14px;border-radius:999px;font-size:14px;font-weight:500;color:var(--fg-2)}
+.seg button[aria-pressed="true"]{background:var(--fg);color:var(--bg)}
+.seg button:focus-visible{outline:2px solid var(--signal)}
+
+/* Hemiciclos */
+.hemis{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:22px;align-items:end}
+@media (max-width:760px){.hemis{grid-template-columns:minmax(0,1fr)}}
+.hemi svg{width:100%;height:auto;display:block}
+.hemi .lbl{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-bottom:6px}
+.hemi .lbl h3{font-size:26px}
+.score{display:flex;justify-content:space-between;font-family:var(--font-display);font-weight:800;font-size:34px;line-height:1;margin-top:6px}
+.score .d{color:var(--dem)} .score .r{color:var(--rep)}
+.score small{font-family:var(--font-body);font-size:12.5px;font-weight:500;color:var(--meta);display:block;letter-spacing:.04em}
+.seat{transition:fill .5s ease}
+
+/* Senado interactivo */
+.builder{display:grid;gap:16px}
+.tally{display:grid;gap:8px}
+.tally-bar{position:relative;height:34px;display:flex;border-radius:5px;overflow:hidden;background:var(--panel)}
+.tally-bar span{display:block;height:100%;transition:width .45s ease}
+.tally-bar .thr{position:absolute;top:-6px;bottom:-6px;width:3px;background:var(--signal);left:50.5%;transform:translateX(-50%)}
+.tally-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.verdict{font-family:var(--font-display);font-weight:800;font-size:clamp(24px,3.2vw,34px);line-height:1.05}
+.races{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
+.race{all:unset;box-sizing:border-box;cursor:pointer;display:grid;gap:6px;padding:12px 14px;border-radius:7px;background:var(--panel);border-left:5px solid var(--vac);transition:border-color .3s, background .3s}
+.race:hover{background:var(--panel-2)}
+.race:focus-visible{outline:2px solid var(--signal);outline-offset:2px}
+.race .st{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.race .st b{font-family:var(--font-display);font-size:23px;font-weight:700;line-height:1}
+.race .st em{font-style:normal;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 7px;border-radius:4px;color:#fff}
+.race .who{font-size:13.5px;color:var(--fg-2);line-height:1.35}
+.race .pr{font-size:12.5px;color:var(--meta)}
+.race[data-w="D"]{border-left-color:var(--dem)} .race[data-w="R"]{border-left-color:var(--rep)} .race[data-w="I"]{border-left-color:var(--ind)}
+.race[data-w="D"] .st em{background:var(--dem)} .race[data-w="R"] .st em{background:var(--rep)} .race[data-w="I"] .st em{background:var(--ind);color:var(--bg)}
+.btns{display:flex;gap:8px;flex-wrap:wrap}
+.btn{all:unset;cursor:pointer;font-size:14px;font-weight:500;padding:8px 14px;border-radius:999px;border:1px solid var(--grid);color:var(--fg-2)}
+.btn:hover{border-color:var(--fg-2);color:var(--fg)}
+.btn:focus-visible{outline:2px solid var(--signal)}
+
+/* Carreras desde el Sur */
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+.card{background:var(--panel-2);border-radius:8px;padding:18px;display:grid;gap:10px;align-content:start;min-width:0}
+.card .top{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.card .top h3{font-size:30px}
+.tag{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--meta)}
+.card .vs{font-size:14px;color:var(--fg-2);line-height:1.4}
+.card .vs b{color:var(--fg)}
+.prob{display:grid;gap:4px}
+.prob .pb{height:8px;border-radius:4px;background:var(--rep);position:relative;overflow:hidden}
+.prob .pb i{position:absolute;left:0;top:0;bottom:0;background:var(--dem);border-right:2px solid var(--panel-2)}
+.prob .pl{display:flex;justify-content:space-between;font-size:12.5px;color:var(--meta)}
+.card p{font-size:15px;color:var(--fg-2)}
+.card .sig{border-top:1px solid var(--grid);padding-top:10px;font-size:14.5px;color:var(--fg)}
+.card .sig b{color:var(--signal);font-weight:700}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{font-size:12px;font-weight:700;letter-spacing:.06em;padding:3px 8px;border-radius:4px;background:var(--panel);color:var(--fg-2)}
+
+/* Escenarios */
+.scen-tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+@media (max-width:760px){.scen-tabs{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.scen-tab{all:unset;box-sizing:border-box;cursor:pointer;padding:14px;border-radius:8px;background:var(--panel);display:grid;gap:6px;border:2px solid transparent}
+.scen-tab[aria-selected="true"]{border-color:var(--signal);background:var(--panel-2)}
+.scen-tab:focus-visible{outline:2px solid var(--signal);outline-offset:2px}
+.scen-tab .pct{font-family:var(--font-display);font-weight:800;font-size:42px;line-height:1}
+.scen-tab .nm{font-weight:700;font-size:15px;line-height:1.2}
+.scen-tab .ch{display:flex;gap:6px}
+.mini{display:inline-flex;align-items:center;gap:5px;font-size:12px;color:var(--fg-2)}
+.mini i{width:10px;height:10px;border-radius:2px;display:inline-block}
+.pbar{height:6px;border-radius:3px;background:var(--panel-2);overflow:hidden}
+.pbar i{display:block;height:100%;background:var(--signal);transition:width .8s ease}
+.scen-body{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px}
+@media (max-width:860px){.scen-body{grid-template-columns:minmax(0,1fr)}}
+.scen-body h3{margin-bottom:8px}
+.scen-body ul{margin:0;padding-left:18px;color:var(--fg-2);display:grid;gap:8px;font-size:15.5px}
+.scen-body li strong{color:var(--fg)}
+.countries{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.ctry{all:unset;cursor:pointer;font-size:13.5px;font-weight:700;padding:7px 12px;border-radius:999px;background:var(--panel);color:var(--fg-2)}
+.ctry[aria-pressed="true"]{background:var(--fg);color:var(--bg)}
+.ctry:focus-visible{outline:2px solid var(--signal)}
+.ctry-text{font-size:16px;color:var(--fg-2);min-height:7em}
+.ctry-text b{color:var(--fg)}
+.always{border:1px dashed var(--grid);border-radius:8px;padding:14px 16px;color:var(--fg-2);font-size:15px}
+.always b{color:var(--signal)}
+
+/* Línea de tiempo de la noche */
+.night{display:grid;gap:0;position:relative}
+.hour{display:grid;grid-template-columns:96px minmax(0,1fr);gap:16px;padding-block:14px;border-top:1px solid var(--grid)}
+.hour .h{font-family:var(--font-display);font-weight:800;font-size:38px;line-height:.95}
+.hour .h small{display:block;font-family:var(--font-body);font-size:11.5px;font-weight:500;color:var(--meta);letter-spacing:.04em;margin-top:4px}
+.hour .what{display:grid;gap:4px}
+.hour .what b{font-size:16px}
+.hour .what p{font-size:15px;color:var(--fg-2)}
+.hour.key .h{color:var(--signal)}
+
+/* Petróleo */
+.oil svg{width:100%;height:auto;display:block}
+.scen-oil{display:flex;gap:8px;flex-wrap:wrap}
+
+/* Calendario */
+.cal{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+@media (min-width:900px){.cal{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.cal div{background:var(--panel-2);border-radius:7px;padding:14px;display:grid;gap:4px;align-content:start}
+.cal b{font-family:var(--font-display);font-size:24px;font-weight:800;line-height:1}
+.cal span{font-size:14px;color:var(--fg-2)}
+.cal div.key{outline:2px solid var(--signal)}
+
+.chartwrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.chartwrap svg{display:block;width:100%;height:auto;min-width:520px}
+.chartwrap.wide svg{min-width:760px}
+/* Tooltip */
+.tip{position:fixed;z-index:20;pointer-events:none;background:var(--bg-deep);color:var(--fg);border:1px solid var(--grid);border-radius:6px;padding:8px 10px;font-size:13px;line-height:1.35;max-width:260px;opacity:0;transition:opacity .12s}
+.tip b{display:block;font-size:14px}
+
+footer{padding-block:48px 60px;color:var(--meta);font-size:13.5px;display:grid;gap:12px;border-top:1px solid var(--grid);margin-top:56px}
+footer ol{margin:0;padding-left:18px;display:grid;gap:4px}
+footer a{color:var(--fg-2)}
+
+/* Export (PNG/GIF para Substack): solo se activa con ?export= en el render local */
+body.export{padding:0;background:var(--bg)}
+body.export .exp-hide{display:none!important}
+.exp-card{width:1456px;padding:44px 56px 40px;display:grid;gap:22px;background:var(--bg)}
+.exp-head{display:flex;justify-content:space-between;align-items:center}
+.exp-head .logo{height:52px}
+.exp-title{font-family:var(--font-display);font-weight:800;font-size:64px;line-height:1;padding-bottom:18px;border-bottom:3px solid var(--signal)}
+.exp-sub{color:var(--meta);font-size:19px;margin-top:-6px}
+.exp-foot{color:var(--meta);font-size:15px;line-height:1.45}
+
+body.export .seg,body.export .btns,body.export .chart-title{display:none!important}
+body.export .panel{background:var(--panel-2)}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<script>
+(function(){try{var q=new URLSearchParams(location.search);if(q.has('embed')){var r=document.documentElement;r.setAttribute('data-theme','dark');r.classList.add('embed');}}catch(e){}})();
+</script>
+<style>
+.embed body{padding-left:max(20px, env(safe-area-inset-left, 0px));padding-right:max(20px, env(safe-area-inset-right, 0px))}
+.embed header.top,.embed .hero,.embed #logo-foot{display:none!important}
+.embed section.block:first-of-type{padding-top:28px}
+.embed footer{margin-top:40px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top exp-hide">
+  <span id="logo-top"></span>
+  <span class="meta">Montevideo, lunes 2 de noviembre de 2026 · datos al 2/11, 11:30</span>
+</header>
+
+<section class="hero exp-hide" aria-labelledby="t-hero">
+  <p class="eyebrow">LIMINAL · Elecciones legislativas de Estados Unidos, 3 de noviembre</p>
+  <h1 id="t-hero">Midterms desde el Sur</h1>
+  <p class="lede">Qué se vota, quién manda hoy, qué dicen los modelos y, sobre todo, qué tenemos que mirar desde Montevideo, Buenos Aires, Asunción, Santiago, Brasilia y Bogotá. Tocá, cambiá resultados y armá tu propio Senado.</p>
+  <div class="window" aria-label="61 días entre la elección y la asunción del nuevo Congreso">
+    <div class="d">3 nov<small>se vota</small></div>
+    <div class="bar"><i></i><b>61 días con el Congreso viejo</b></div>
+    <div class="d" style="text-align:right">3 ene<small>asume el nuevo</small></div>
+  </div>
+</section>
+
+<!-- 1. FICHA -->
+<section class="block exp-hide" id="abc" aria-labelledby="t-abc">
+  <div class="sec-head">
+    <p class="eyebrow">El ABC</p>
+    <h2 id="t-abc">Qué se vota mañana</h2>
+    <p class="prose">Las elecciones de mitad de mandato renuevan el Congreso a mitad del período presidencial. Trump no está en la boleta, pero sí lo que puede hacer en sus últimos dos años: el Congreso aprueba el presupuesto, controla con sus comisiones, confirma embajadores y es el único que puede declarar una guerra.</p>
+  </div>
+  <div class="ficha num">
+    <div><b>435</b><span>bancas de la Cámara de Representantes: se renueva entera, cada dos años</span></div>
+    <div><b>35</b><span>de las 100 bancas del Senado (mandatos de seis años): 22 republicanas y 13 demócratas</span></div>
+    <div><b>36</b><span>gobernaciones, entre ellas Florida, Texas, Georgia, Arizona y Míchigan</span></div>
+    <div><b>145</b><span>consultas populares estatales, de la identificación del votante al aborto</span></div>
+  </div>
+</section>
+
+<!-- 2. HEMICICLOS -->
+<section class="block" id="hoy" aria-labelledby="t-hoy" data-export="hoy">
+  <div class="sec-head exp-hide">
+    <p class="eyebrow">Quién manda hoy</p>
+    <h2 id="t-hoy">A los demócratas les faltan 3 bancas en la Cámara y 4 en el Senado</h2>
+    <p class="prose">Los republicanos controlan las dos cámaras desde enero de 2025. En la Cámara la mayoría es 218. En el Senado los demócratas necesitan 51, porque un 50 a 50 lo desempata el vicepresidente, JD Vance.</p>
+  </div>
+  <div class="panel">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px">
+      <div class="seg" role="group" aria-label="Qué mostrar">
+        <button id="b-hoy" aria-pressed="true">Hoy</button>
+        <button id="b-proy" aria-pressed="false">Si se cumple el pronóstico de Decision Desk HQ</button>
+      </div>
+      <div class="legend"><span><i style="background:var(--dem)"></i>Demócratas</span><span><i style="background:var(--rep)"></i>Republicanos</span><span><i style="background:var(--ind)"></i>Independiente</span><span><i style="background:var(--vac)"></i>Vacante</span><span><i style="background:var(--signal);border-radius:1px;width:3px;height:13px"></i>Mayoría</span></div>
+    </div>
+    <div class="hemis">
+      <div class="hemi">
+        <div class="lbl"><h3>Cámara de Representantes</h3><span class="meta num" id="h-note">435 bancas · mayoría: 218</span></div>
+        <svg id="hemi-house" viewBox="0 0 600 320" role="img" aria-label="Composición de la Cámara"></svg>
+        <div class="score num"><span class="d"><small>Demócratas</small><span id="hs-d">214</span></span><span class="r" style="text-align:right"><small>Republicanos</small><span id="hs-r">218</span></span></div>
+      </div>
+      <div class="hemi">
+        <div class="lbl"><h3>Senado</h3><span class="meta num" id="s-note">100 bancas · mayoría: 51</span></div>
+        <svg id="hemi-senate" viewBox="0 0 600 320" role="img" aria-label="Composición del Senado"></svg>
+        <div class="score num"><span class="d"><small>Demócratas</small><span id="ss-d">47</span></span><span class="r" style="text-align:right"><small>Republicanos</small><span id="ss-r">53</span></span></div>
+      </div>
+    </div>
+    <p class="src" id="hemi-src">Hoy: Cámara 218 republicanos, 214 demócratas, 1 independiente (Kevin Kiley, que dejó el Partido Republicano en marzo) y 2 vacantes (Texas 23 y Florida 20). Senado: 53 republicanos y 47 demócratas (incluye a 2 independientes que votan con ellos). Fuentes: Galería de Prensa de la Cámara, Senado de EE.UU.</p>
+  </div>
+</section>
+
+<!-- 3. MODELOS + HISTORIA -->
+<section class="block" id="modelos" aria-labelledby="t-mod">
+  <div class="sec-head exp-hide">
+    <p class="eyebrow">Lo que dicen los números</p>
+    <h2 id="t-mod">La Cámara parece decidida; el Senado, no tanto</h2>
+    <p class="prose">Los modelos estadísticos y los mercados de predicción coinciden en la dirección y difieren en la intensidad. Trump llega con 37% de aprobación, la segunda más baja antes de una legislativa desde 1946 según The New York Times; solo Harry Truman llegó peor.</p>
+  </div>
+  <div class="two">
+    <div class="panel" data-export="modelos">
+      <p class="chart-title">Probabilidad de que los demócratas ganen cada cámara</p>
+      <div class="chartwrap"><svg id="models" viewBox="0 0 560 300" role="img" aria-label="Probabilidades por fuente"></svg></div>
+      <p class="src">Decision Desk HQ (2/11), Kalshi (1/11), Silver Bulletin (1/11 Cámara; 22/10 Senado), VoteHub (23/10). Los mercados de predicción no son encuestas: es dinero apostado.</p>
+    </div>
+    <div class="panel" data-export="historia">
+      <p class="chart-title">Aprobación del presidente y bancas que perdió su partido</p>
+      <div class="chartwrap"><svg id="history" viewBox="0 0 560 360" role="img" aria-label="Aprobación presidencial y cambio de bancas en la Cámara, 1946 a 2022"></svg></div>
+      <p class="src">Cada punto es una elección de mitad de mandato (1946 a 2022). Aprobación de Gallup y bancas: American Presidency Project, UC Santa Barbara. Trump 2026: promedio de Silver Bulletin (37,3%, 31/10) y pérdida media proyectada por su modelo (25 bancas). En las ocho legislativas en que el presidente llegó con menos de 45%, su partido perdió en promedio 31 bancas (cálculo de LIMINAL).</p>
+    </div>
+  </div>
+</section>
+
+<!-- 4. ARMÁ TU SENADO -->
+<section class="block" id="senado" aria-labelledby="t-sen" data-export="senado">
+  <div class="sec-head exp-hide">
+    <p class="eyebrow">Interactivo</p>
+    <h2 id="t-sen">Armá tu Senado</h2>
+    <p class="prose">Estas son las 14 carreras que pueden cambiar de manos. Arrancan con el favorito de cada una según Decision Desk HQ; las tres en empate técnico (Kansas, Iowa y Ohio), con el partido que hoy tiene la banca. Tocá un estado para cambiar el ganador y mirá qué pasa con la mayoría. Las otras 21 bancas en juego son seguras para su partido, y 65 no se votan este año.</p>
+  </div>
+  <div class="panel builder">
+    <div class="tally">
+      <div class="tally-row"><span class="verdict" id="verdict">Mayoría demócrata</span><span class="meta num" id="tally-num">51 D · 49 R</span></div>
+      <div class="tally-bar" id="tally-bar" aria-hidden="true"><span id="tb-d" style="background:var(--dem)"></span><span id="tb-i" style="background:var(--ind)"></span><span id="tb-r" style="background:var(--rep)"></span><i class="thr"></i></div>
+      <p class="meta" id="tally-note">La línea naranja es el umbral: 51 bancas. Con 50, desempata JD Vance y la mayoría queda republicana.</p>
+    </div>
+    <div class="races" id="races"></div>
+    <div class="btns exp-hide">
+      <button class="btn" data-preset="fav">Favoritos de los modelos</button>
+      <button class="btn" data-preset="R">Todo para los republicanos</button>
+      <button class="btn" data-preset="D">Ola demócrata</button>
+      <button class="btn" data-preset="hold">Nadie cambia de partido</button>
+    </div>
+    <p class="src">Probabilidades del favorito: Decision Desk HQ, 2/11/2026, 3:39. Georgia, Carolina del Norte, Nuevo Hampshire y Minnesota no figuran en su lista de disputadas: se muestra la calificación de Cook Political Report. En Nebraska el rival de Pete Ricketts es un independiente, Dan Osborn, que no dijo con qué bancada votaría.</p>
+  </div>
+</section>
+
+<!-- 5. CARRERAS DESDE EL SUR -->
+<section class="block" id="carreras" aria-labelledby="t-car">
+  <div class="sec-head">
+    <p class="eyebrow">Las carreras que miramos desde acá</p>
+    <h2 id="t-car">El Senado se juega en tierra de soja y carne</h2>
+    <p class="prose">Las tres carreras más parejas según Decision Desk HQ son Kansas, Iowa y Ohio: tres estados agrícolas que venden soja, maíz o carne, lo mismo que el Mercosur. A esas se suman las que miden la guerra, el petróleo y el voto latino.</p>
+  </div>
+  <div class="cards" id="cards"></div>
+</section>
+
+<!-- 6. ESCENARIOS -->
+<section class="block" id="escenarios" aria-labelledby="t-esc" data-export="escenarios">
+  <div class="sec-head exp-hide">
+    <p class="eyebrow">Interactivo</p>
+    <h2 id="t-esc">Cuatro escenarios y seis países</h2>
+    <p class="prose">Probabilidad conjunta de cada combinación según Decision Desk HQ. Elegí un escenario y después un país.</p>
+  </div>
+  <div class="scen-tabs" role="tablist" id="scen-tabs"></div>
+  <div class="panel scen-body">
+    <div><h3 id="scen-name"></h3><ul id="scen-list"></ul></div>
+    <div>
+      <h3>Qué mirar desde</h3>
+      <div class="countries" id="countries" role="group" aria-label="País"></div>
+      <p class="ctry-text" id="ctry-text"></p>
+    </div>
+  </div>
+  <div class="always" id="always"></div>
+</section>
+
+<!-- 7. PETRÓLEO -->
+<section class="block oil" id="petroleo" aria-labelledby="t-oil" data-export="petroleo">
+  <div class="sec-head exp-hide">
+    <p class="eyebrow">La guerra que no está en la boleta</p>
+    <h2 id="t-oil">El barril y la ventana de 61 días</h2>
+    <p class="prose" id="oil-intro"></p>
+  </div>
+  <div class="panel">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:10px">
+      <p class="chart-title">Petróleo Brent, dólares por barril</p>
+      <div class="seg" role="group" aria-label="Escenario del petróleo" id="oil-seg"></div>
+    </div>
+    <div class="chartwrap wide"><svg id="oil" viewBox="0 0 1000 420" role="img" aria-label="Precio del Brent en 2026 y escenarios"></svg></div>
+    <p class="meta" id="oil-note" style="margin-top:8px"></p>
+    <p class="src" id="oil-src"></p>
+  </div>
+</section>
+
+<!-- 8. LA NOCHE -->
+<section class="block" id="noche" aria-labelledby="t-noche" data-export="noche">
+  <div class="sec-head exp-hide">
+    <p class="eyebrow">Guía práctica</p>
+    <h2 id="t-noche">La noche, en hora de Montevideo</h2>
+    <p class="prose">Desde el domingo 1 de noviembre la costa este de Estados Unidos está dos horas detrás de Uruguay. Estos son los cierres de urnas que importan y qué mirar en cada uno.</p>
+  </div>
+  <div class="night" id="night"></div>
+  <p class="src">Horarios de cierre: Fox News y National Association of Secretaries of State, convertidos a hora de Uruguay (UTC−3). Los primeros resultados llegan minutos después del cierre; las cadenas proyectan ganadores cuando el margen lo permite.</p>
+</section>
+
+<!-- 9. CALENDARIO -->
+<section class="block" id="calendario" aria-labelledby="t-cal">
+  <div class="sec-head">
+    <p class="eyebrow">Después del martes</p>
+    <h2 id="t-cal">El Senado puede tardar semanas en tener dueño</h2>
+    <p class="prose" id="cal-intro">Maine y Alaska cuentan con voto preferencial y Georgia va a segunda vuelta si nadie supera el 50%. Mientras tanto gobierna el Congreso actual, hasta el 3 de enero.</p>
+  </div>
+  <div class="cal" id="cal"></div>
+</section>
+
+<footer class="exp-hide">
+  <span id="logo-foot"></span>
+  <p>La columna que acompaña este simulador está en <a href="https://mundoliminal.substack.com" target="_blank" rel="noopener">mundoliminal.substack.com</a>.</p>
+  <p>Una pieza de LIMINAL, análisis internacional hecho desde Montevideo, por Martín Sarthou. Datos al lunes 2 de noviembre de 2026, 11:30 (hora de Uruguay). Los pronósticos cambian hasta el cierre de las urnas.</p>
+  <ol id="sources"></ol>
+</footer>
+</div>
+<div class="tip" id="tip" role="tooltip"></div>
+
+<script>
+// Wordmark LIMINAL v2.1 (paths oficiales del archivo de marca), colores por token
+window.LIMINAL_LOGO = function (opts) {
+  opts = opts || {};
+  var wm = opts.wordmark || 'var(--wordmark)';
+  var br = opts.brackets || 'var(--teal)';
+  var ln = opts.line || 'var(--signal)';
+  return '<svg class="logo" viewBox="40 40 880 196" role="img" aria-label="LIMINAL">' +
+    '<g fill="' + br + '"><rect x="46.64" y="47.60" width="44" height="3"/><rect x="45.14" y="49.10" width="3" height="44"/><rect x="869.36" y="47.60" width="44" height="3"/><rect x="911.86" y="49.10" width="3" height="44"/><rect x="46.64" y="227.40" width="44" height="3"/><rect x="45.14" y="184.90" width="3" height="44"/><rect x="869.36" y="227.40" width="44" height="3"/><rect x="911.86" y="184.90" width="3" height="44"/></g>' +
+    '<rect x="69.64" y="142.50" width="820.72" height="3" fill="' + ln + '"/>' +
+    '<g fill="' + wm + '">' +
+    '<g transform="translate(74.640 216.900) scale(0.18 -0.18)"><path d="M60 0V810H239V121H425V0Z"/></g>' +
+    '<g transform="translate(190.380 216.900) scale(0.18 -0.18)"><path d="M61 0V810H240V0Z"/></g>' +
+    '<g transform="translate(280.560 216.900) scale(0.18 -0.18)"><path d="M57 0 71 810H263L352 339L448 810H633L647 0H520L505 539L411 0H298L198 543L186 0Z"/></g>' +
+    '<g transform="translate(443.280 216.900) scale(0.18 -0.18)"><path d="M61 0V810H240V0Z"/></g>' +
+    '<g transform="translate(533.460 216.900) scale(0.18 -0.18)"><path d="M60 0V810H186L352 420V810H500V0H379L213 420V0Z"/></g>' +
+    '<g transform="translate(670.440 216.900) scale(0.18 -0.18)"><path d="M21 0 174 810H378L529 0H364L337 171H218L190 0ZM234 278H320L277 594Z"/></g>' +
+    '<g transform="translate(805.620 216.900) scale(0.18 -0.18)"><path d="M60 0V810H239V121H425V0Z"/></g>' +
+    '</g>' +
+    '</svg>';
+};
+
+window.BRENT=[[0,64.22],[1,63.37],[2,63.75],[3,64.15],[4,64.42],[7,63.3],[8,62.62],[9,63.12],[10,61.87],[11,62.11],[14,61.55],[15,59.93],[16,60.61],[17,60.69],[18,61.35],[21,62.22],[22,63.7],[23,63.7],[28,63.1],[29,62.3],[30,61.35],[32,61.98],[35,63.0],[36,62.1],[37,61.08],[38,63.34],[39,65.11],[42,65.4],[43,67.58],[44,68.87],[45,66.16],[46,66.97],[49,66.91],[50,67.68],[51,66.72],[52,65.46],[53,68.16],[56,67.7],[57,70.28],[58,70.9],[59,71.0],[60,72.25],[63,67.72],[64,70.01],[65,71.15],[66,69.87],[67,70.45],[70,71.19],[71,71.01],[72,71.52],[73,69.8],[74,69.96],[77,70.81],[78,69.77],[79,71.78],[80,73.17],[81,72.75],[84,71.9],[85,71.21],[86,70.69],[87,71.66],[88,71.32],[91,77.24],[92,83.28],[93,81.56],[94,88.59],[95,95.74],[98,94.35],[99,89.84],[100,90.98],[101,102.38],[102,103.23],[105,101.04],[106,108.39],[107,118.09],[108,111.05],[109,118.42],[112,103.79],[113,108.42],[114,109.14],[115,113.39],[116,121.47],[119,121.88],[120,126.69],[121,119.56],[122,127.61],[127,138.21],[128,122.11],[129,119.03],[130,119.07],[133,123.28],[134,118.69],[135,114.93],[136,116.63],[137,98.63],[140,103.4],[141,106.14],[142,113.44],[143,113.25],[144,111.86],[147,113.89],[148,117.62],[149,124.16],[150,124.24],[151,118.26],[155,114.51],[156,103.7],[157,101.82],[158,103.48],[161,106.11],[162,111.37],[163,110.28],[164,110.91],[165,113.96],[168,116.73],[169,114.64],[170,108.93],[171,105.84],[172,106.9],[176,102.75],[177,97.11],[178,95.47],[179,92.88],[182,98.29],[183,98.49],[184,101.69],[185,98.98],[186,97.29],[189,97.46],[190,94.15],[191,95.73],[192,92.84],[193,88.64],[196,84.36],[197,80.5],[198,80.33],[199,79.35],[200,80.46],[203,76.49],[204,75.69],[205,72.09],[206,73.74],[207,70.16],[210,71.59],[211,70.46],[212,69.24],[213,68.53],[214,68.68],[217,69.56],[218,71.78],[219,76.5],[220,74.46],[221,74.34],[224,81.62],[225,83.69],[226,83.08],[227,81.23],[228,85.01],[231,86.99],[232,93.85],[233,94.12],[234,105.32],[235,100.31],[238,91.82],[239,85.51],[240,91.95],[241,91.91],[242,96.95],[245,88.9],[246,86.47],[247,86.65],[248,89.65],[249,87.62],[252,92.74],[253,93.26],[254,92.52],[255,92.03],[256,92.02],[259,92.43],[260,95.29],[261,92.37],[262,94.0],[263,96.92],[266,92.71],[267,88.24],[268,87.77],[269,90.18],[270,89.75],[274,96.02],[275,97.59],[276,100.52],[277,102.24],[280,104.47],[281,106.12],[282,109.51],[283,120.98],[284,118.06],[287,121.25],[288,130.8],[289,127.84],[290,121.18],[291,119.66],[294,116.15],[295,114.89],[296,117.45],[297,120.92],[298,116.01],[301,119.97],[302,113.96],[303,115.91],[304,114.82],[305,135.51],[308,125.51],[309,125.44],[310,126.0],[311,130.18],[312,130.03],[315,129.95],[316,125.78],[317,126.55],[318,126.35],[319,119.33],[322,118.82],[323,115.22],[324,117.37],[325,125.39],[326,128.3],[329,128.12],[330,123.1]];
+</script>
+<script>
+(function(){
+"use strict";
+var $ = function(s,r){return (r||document).querySelector(s)};
+var $$ = function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+var NS = 'http://www.w3.org/2000/svg';
+var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var params = new URLSearchParams(location.search);
+var EXPORT = params.get('export');
+var ANIM = params.get('anim') === '1';
+function el(tag, attrs, parent){var e=document.createElementNS(NS,tag);for(var k in attrs){e.setAttribute(k,attrs[k])}if(parent)parent.appendChild(e);return e}
+function txt(parent,x,y,s,cls,anchor,size){var t=el('text',{x:x,y:y,'class':cls||'', 'text-anchor':anchor||'start','font-size':size||13},parent);t.textContent=s;return t}
+
+/* Tooltip */
+var tip = $('#tip');
+function showTip(html, ev){tip.innerHTML=html;tip.style.opacity=1;moveTip(ev)}
+function moveTip(ev){var x=ev.clientX+14,y=ev.clientY+14;var w=tip.offsetWidth,h=tip.offsetHeight;if(x+w>innerWidth-8)x=ev.clientX-w-14;if(y+h>innerHeight-8)y=ev.clientY-h-14;tip.style.left=x+'px';tip.style.top=y+'px'}
+function hideTip(){tip.style.opacity=0}
+function bindTip(node, html){node.addEventListener('pointerenter',function(e){showTip(typeof html==='function'?html():html,e)});node.addEventListener('pointermove',moveTip);node.addEventListener('pointerleave',hideTip)}
+
+/* Logo */
+$('#logo-top').innerHTML = LIMINAL_LOGO();
+$('#logo-foot').innerHTML = LIMINAL_LOGO();
+
+/* ---------- Hemiciclos ---------- */
+function hemiSeats(n, rows, cx, cy, r0, r1){
+  var radii=[],tot=0,i,j;
+  for(i=0;i<rows;i++){var r=r0+(r1-r0)*i/(rows-1);radii.push(r);tot+=r}
+  var counts=radii.map(function(r){return Math.round(n*r/tot)});
+  var diff=n-counts.reduce(function(a,b){return a+b},0);counts[rows-1]+=diff;
+  var pts=[];
+  for(i=0;i<rows;i++){var c=counts[i];for(j=0;j<c;j++){var a=Math.PI*(1-(c===1?0.5:j/(c-1)));pts.push({x:cx+radii[i]*Math.cos(a),y:cy-radii[i]*Math.sin(a),a:a})}}
+  pts.sort(function(p,q){return q.a-p.a});
+  return pts;
+}
+function makeHemi(svg, n, rows, dotR){
+  var cx=300,cy=300,pts=hemiSeats(n,rows,cx,cy,105,285);
+  var g=el('g',{},svg);
+  var dots=pts.map(function(p){return el('circle',{cx:p.x.toFixed(1),cy:p.y.toFixed(1),r:dotR,'class':'seat',fill:'var(--vac)'},g)});
+  el('line',{x1:cx,y1:cy+6,x2:cx,y2:cy-296,stroke:'var(--signal)','stroke-width':3},svg);
+  return dots;
+}
+function paintHemi(dots, groups, animate){
+  var colors=[];groups.forEach(function(gp){for(var i=0;i<gp[1];i++)colors.push(gp[0])});
+  dots.forEach(function(d,i){
+    var c=colors[i]||'var(--vac)';
+    if(animate){d.style.transition='none';d.setAttribute('fill','var(--panel)');setTimeout(function(){d.style.transition='';d.setAttribute('fill',c)},18+i*(1400/dots.length))}
+    else d.setAttribute('fill',c);
+  });
+}
+var houseDots=makeHemi($('#hemi-house'),435,12,8.2);
+var senDots=makeHemi($('#hemi-senate'),100,6,15);
+(function labels(){
+  var h=$('#hemi-house'),s=$('#hemi-senate');
+})();
+var HEMI={
+  hoy:{house:[['var(--dem)',214],['var(--ind)',1],['var(--vac)',2],['var(--rep)',218]],hd:'214',hr:'218',sen:[['var(--dem)',47],['var(--rep)',53]],sd:'47',sr:'53',
+       hn:'435 bancas · mayoría: 218',sn:'100 bancas · mayoría: 51'},
+  proy:{house:[['var(--dem)',241],['var(--rep)',194]],hd:'241',hr:'194',sen:[['var(--dem)',52],['var(--rep)',48]],sd:'52',sr:'48',
+       hn:'Proyección DDHQ: 241 demócratas',sn:'Proyección DDHQ: 52 demócratas'}
+};
+function setHemi(k, animate){
+  var o=HEMI[k];paintHemi(houseDots,o.house,animate);paintHemi(senDots,o.sen,animate);
+  $('#hs-d').textContent=o.hd;$('#hs-r').textContent=o.hr;$('#ss-d').textContent=o.sd;$('#ss-r').textContent=o.sr;
+  $('#h-note').textContent=o.hn;$('#s-note').textContent=o.sn;
+  $('#b-hoy').setAttribute('aria-pressed',k==='hoy');$('#b-proy').setAttribute('aria-pressed',k==='proy');
+}
+setHemi('hoy',false);
+$('#b-hoy').addEventListener('click',function(){setHemi('hoy',!reduce)});
+$('#b-proy').addEventListener('click',function(){setHemi('proy',!reduce)});
+
+/* ---------- Modelos ---------- */
+(function models(){
+  var svg=$('#models');
+  var rows=[
+    {cam:'Cámara',items:[['Silver Bulletin',95],['Kalshi',93.3],['Decision Desk HQ',84]]},
+    {cam:'Senado',items:[['Silver Bulletin',76.4],['Kalshi',71],['Decision Desk HQ',64],['VoteHub',60]]}
+  ];
+  var x0=150,x1=530,y=30;
+  function X(v){return x0+(x1-x0)*v/100}
+  [0,25,50,75,100].forEach(function(v){el('line',{x1:X(v),x2:X(v),y1:16,y2:286,stroke:'var(--grid)'},svg);txt(svg,X(v),298,v+'%','t-meta','middle',12)});
+  el('line',{x1:X(50),x2:X(50),y1:12,y2:286,stroke:'var(--signal)','stroke-width':2,'stroke-dasharray':'4 4'},svg);
+  txt(svg,X(50)+4,12,'50%: moneda al aire','t-meta','start',11.5);
+  var bars=[];
+  rows.forEach(function(r){
+    txt(svg,0,y+4,r.cam.toUpperCase(),'t-strong','start',13);y+=22;
+    r.items.forEach(function(it){
+      txt(svg,8,y+5,it[0],'','start',13.5);
+      el('line',{x1:X(0),x2:X(100),y1:y,y2:y,stroke:'var(--panel)','stroke-width':10,'stroke-linecap':'round'},svg);
+      var b=el('line',{x1:X(0),x2:X(it[1]),y1:y,y2:y,stroke:'var(--dem)','stroke-width':10,'stroke-linecap':'round'},svg);
+      var lab=txt(svg,X(it[1])+10,y+5,(it[1]%1?it[1].toFixed(1).replace('.',','):it[1])+'%','t-strong','start',14);
+      bars.push({b:b,v:it[1],lab:lab});
+      var hit=el('rect',{x:0,y:y-12,width:560,height:24,fill:'transparent'},svg);
+      bindTip(hit,'<b>'+it[0]+'</b>'+r.cam+': '+String(it[1]).replace('.',',')+'% de que la controlen los demócratas');
+      y+=27;
+    });
+    y+=12;
+  });
+  window.__animModels=function(){bars.forEach(function(o,i){o.b.style.transition='none';o.b.setAttribute('x2',X(0));o.lab.style.opacity=0;setTimeout(function(){o.b.style.transition='all 900ms cubic-bezier(.2,.7,.2,1)';o.b.setAttribute('x2',X(o.v));setTimeout(function(){o.lab.style.transition='opacity .3s';o.lab.style.opacity=1},800)},60+i*120)})};
+})();
+
+/* ---------- Historia ---------- */
+(function history(){
+  var svg=$('#history');
+  var D=[[1946,'Truman',27,-56],[1950,'Truman',41,-28],[1954,'Eisenhower',62,-18],[1958,'Eisenhower',57,-48],[1962,'Kennedy',61,-4],[1966,'Johnson',44,-47],[1970,'Nixon',58,-12],[1974,'Ford',53,-48],[1978,'Carter',45,-15],[1982,'Reagan',42,-26],[1986,'Reagan',64,-5],[1990,'Bush',57,-8],[1994,'Clinton',48,-54],[1998,'Clinton',65,4],[2002,'Bush (h)',67,8],[2006,'Bush (h)',37,-30],[2010,'Obama',45,-63],[2014,'Obama',41,-13],[2018,'Trump',44,-41],[2022,'Biden',40,-9]];
+  var L=52,R=545,T=16,B=318;
+  function X(v){return L+(R-L)*(v-25)/(70-25)}
+  function Y(v){return T+(B-T)*(15-v)/(15+70)}
+  [30,40,50,60,70].forEach(function(v){el('line',{x1:X(v),x2:X(v),y1:T,y2:B,stroke:'var(--grid)'},svg);txt(svg,X(v),B+18,v+'%','t-meta','middle',12)});
+  [10,0,-20,-40,-60].forEach(function(v){el('line',{x1:L,x2:R,y1:Y(v),y2:Y(v),stroke:v===0?'var(--fg-2)':'var(--grid)','stroke-width':v===0?1.2:1},svg);txt(svg,L-8,Y(v)+4,(v>0?'+':'')+v,'t-meta','end',12)});
+  txt(svg,R,B+36,'Aprobación del presidente (Gallup)','t-meta','end',12);
+  var yl=txt(svg,14,T+150,'Bancas ganadas o perdidas por su partido','t-meta','middle',12);yl.setAttribute('transform','rotate(-90 14 '+(T+150)+')');
+  el('rect',{x:X(25),y:T,width:X(45)-X(25),height:B-T,fill:'var(--signal)','fill-opacity':.07},svg);
+  txt(svg,X(25)+6,T+14,'Menos de 45%: perdieron siempre','t-meta','start',11.5);
+  var pts=[];
+  D.forEach(function(d){
+    var c=el('circle',{cx:X(d[2]),cy:Y(d[3]),r:7,fill:'var(--fg-2)','fill-opacity':.85,stroke:'var(--panel-2)','stroke-width':2},svg);
+    bindTip(c,'<b>'+d[0]+' · '+d[1]+'</b>Aprobación '+d[2]+'% · '+(d[3]>0?'+':'')+d[3]+' bancas');
+    pts.push(c);
+    if([1946,2006,2010,2018,1998].indexOf(d[0])>=0){txt(svg,X(d[2])+(d[0]===2010?-10:10),Y(d[3])+(d[0]===2006?16:4),String(d[0]),'t-meta',d[0]===2010?'end':'start',11.5)}
+  });
+  // Trump 2026
+  var tx=X(37.3),ty=Y(-25);
+  el('line',{x1:tx,x2:tx,y1:Y(0),y2:ty,stroke:'var(--signal)','stroke-width':2,'stroke-dasharray':'3 3'},svg);
+  var tc=el('circle',{cx:tx,cy:ty,r:9,fill:'var(--signal)',stroke:'var(--panel-2)','stroke-width':2},svg);
+  txt(svg,tx-14,ty-4,'Trump 2026','t-strong','end',14);
+  txt(svg,tx-14,ty+12,'37,3% · proyección: −25','t-meta','end',12);
+  bindTip(tc,'<b>2026 · Trump (proyección)</b>Aprobación 37,3% (Silver Bulletin, 31/10). Pérdida media proyectada: 25 bancas (FLIPR, 1/11).');
+  window.__animHistory=function(){pts.forEach(function(p,i){p.style.transition='none';p.style.opacity=0;setTimeout(function(){p.style.transition='opacity .35s';p.style.opacity=1},80+i*70)});tc.style.opacity=0;setTimeout(function(){tc.style.transition='opacity .5s';tc.style.opacity=1},80+D.length*70+200)};
+})();
+
+/* ---------- Armá tu Senado ---------- */
+var RACES=[
+  {st:'Kansas',held:'R',r:'Roger Marshall',d:'Adam Hamilton',fav:'R',p:'Empate técnico (arranca con el titular)',pd:50},
+  {st:'Iowa',held:'R',r:'Ashley Hinson',d:'Josh Turek',fav:'R',p:'Empate técnico (arranca con el titular)',pd:null},
+  {st:'Ohio',held:'R',r:'Jon Husted',d:'Sherrod Brown',fav:'R',p:'Empate técnico (arranca con el titular)',pd:null},
+  {st:'Alaska',held:'R',r:'Dan Sullivan',d:'Mary Peltola',fav:'D',p:'Favorita con 61%',pd:61},
+  {st:'Texas',held:'R',r:'Ken Paxton',d:'James Talarico',fav:'D',p:'Favorito con 61%',pd:61},
+  {st:'Carolina del Sur',held:'R',r:'Darline Graham',d:'Annie Andrews',fav:'R',p:'Favorita con 62%',pd:38},
+  {st:'Maine',held:'R',r:'Susan Collins',d:'Troy Jackson',fav:'D',p:'Favorito con 63%',pd:63},
+  {st:'Nebraska',held:'R',r:'Pete Ricketts',d:'Dan Osborn (ind.)',fav:'R',p:'Favorito con 73%',pd:27,ind:true},
+  {st:'Florida',held:'R',r:'Ashley Moody',d:'Angie Nixon',fav:'R',p:'Favorita con 75%',pd:25},
+  {st:'Carolina del Norte',held:'R',r:'Michael Whatley',d:'Roy Cooper',fav:'D',p:'Probable demócrata (Cook)',pd:null},
+  {st:'Míchigan',held:'D',r:'Mike Rogers',d:'Abdul El-Sayed',fav:'D',p:'Favorito con 76%',pd:76},
+  {st:'Georgia',held:'D',r:'Mike Collins',d:'Jon Ossoff',fav:'D',p:'Probable demócrata (Cook)',pd:null},
+  {st:'Nuevo Hampshire',held:'D',r:'John E. Sununu',d:'Chris Pappas',fav:'D',p:'Inclinada demócrata (Cook)',pd:null},
+  {st:'Minnesota',held:'D',r:'Royce White',d:'Peggy Flanagan',fav:'D',p:'Inclinada demócrata',pd:null}
+];
+var state={};
+function preset(k){RACES.forEach(function(r){state[r.st]= k==='fav'? r.fav : k==='hold'? r.held : k==='R' ? 'R' : (r.ind?'I':'D')});renderSenate()}
+function renderSenate(){
+  var d=43,r=43,i=0;
+  RACES.forEach(function(x){var w=state[x.st];if(w==='D')d++;else if(w==='R')r++;else i++});
+  $('#tb-d').style.width=d+'%';$('#tb-i').style.width=i+'%';$('#tb-r').style.width=r+'%';
+  $('#tally-num').textContent=d+' D'+(i?' · '+i+' ind.':'')+' · '+r+' R';
+  var v,n;
+  if(d>=51){v='Mayoría demócrata';n='Desde el 3 de enero, las comisiones del Senado pasan a manos demócratas.'}
+  else if(r>=50){v=(r===50?'Empate: desempata Vance':'Mayoría republicana');n=r===50?'Con 50 a 50, el vicepresidente JD Vance rompe los empates: la mayoría queda republicana.':'Trump conserva el Senado: nombramientos y tratados siguen su curso.'}
+  else{v='Dan Osborn decide';n='Con 50 demócratas y 49 republicanos, el independiente de Nebraska define la mayoría según con quién vote.'}
+  $('#verdict').textContent=v;$('#tally-note').textContent=n+' La línea naranja marca 51 bancas.';
+  $$('.race').forEach(function(b){var x=RACES[+b.dataset.i];var w=state[x.st];b.dataset.w=w;b.querySelector('em').textContent=w==='D'?'Demócrata':w==='R'?'Republicano':'Independiente';b.setAttribute('aria-label',x.st+': gana '+(w==='D'?x.d:w==='R'?x.r:x.d)+'. Tocá para cambiar.')});
+}
+(function buildRaces(){
+  var box=$('#races');
+  RACES.forEach(function(x,idx){
+    var b=document.createElement('button');b.className='race';b.dataset.i=idx;b.type='button';
+    b.innerHTML='<span class="st"><b>'+x.st+'</b><em></em></span><span class="who"><span style="color:var(--rep)">●</span> '+x.r+' · <span style="color:'+(x.ind?'var(--ind)':'var(--dem)')+'">●</span> '+x.d+'</span><span class="pr">'+(x.held==='R'?'Banca republicana':'Banca demócrata')+' · '+x.p+'</span>';
+    b.addEventListener('click',function(){var w=state[x.st];state[x.st]= w==='R' ? (x.ind?'I':'D') : 'R';renderSenate()});
+    box.appendChild(b);
+  });
+  $$('[data-preset]').forEach(function(btn){btn.addEventListener('click',function(){preset(btn.dataset.preset)})});
+  preset('fav');
+})();
+
+window.__LIM = {el:el,txt:txt,bindTip:bindTip,$:$,$$:$$,reduce:reduce,EXPORT:EXPORT,ANIM:ANIM,setHemi:setHemi};
+})();
+
+</script>
+<script>
+(function(){
+"use strict";
+var L=window.__LIM, el=L.el, txt=L.txt, bindTip=L.bindTip, $=L.$, $$=L.$$;
+
+/* ---------- Carreras desde el Sur ---------- */
+var CARDS=[
+  {st:'Kansas',tag:'Carne y trigo',r:'Roger Marshall',rr:'senador',d:'Adam Hamilton',dr:'pastor de una megaiglesia',pd:50,pl:'50%: empate técnico',
+   body:'Kansas no elige a un demócrata para el Senado desde 1932. Es estado triguero y ganadero, como los que protestaron contra el plan de Trump de abrir la puerta a más carne importada.',
+   sig:'Si Hamilton gana, el campo dejó de ser territorio seguro de Trump, y la presión contra la carne y la soja del Sur sube en los dos partidos.',ch:['AR','UY','BR','PY']},
+  {st:'Iowa',tag:'Soja',r:'Ashley Hinson',rr:'representante',d:'Josh Turek',dr:'legislador estatal',pd:null,pl:'Empate técnico según Decision Desk HQ (53% para el favorito)',
+   body:'En setiembre de 2025, mientras Washington armaba el rescate de Argentina, China le compró soja a la Argentina y no a Iowa. Turek acusó a Hinson de callar ante el acuerdo de carne con Buenos Aires.',
+   sig:'Si Iowa castiga al oficialismo, ayudar a Milei habrá tenido costo en el cinturón agrícola.',ch:['AR','PY','BR','UY']},
+  {st:'Nebraska',tag:'Carne',r:'Pete Ricketts',rr:'senador',d:'Dan Osborn',dr:'independiente, ex dirigente sindical',pd:27,pl:'Ricketts, favorito con 73%',ind:true,
+   body:'Ricketts le pidió a la Casa Blanca cambiar el plan de importar "carne extranjera de baja calidad". Trump fue a Nebraska el 5 de octubre a sostenerlo. Osborn no dijo con qué bancada votaría.',
+   sig:'La cuota extra para la carne argentina (80.000 toneladas) vence el 31 de diciembre. El senador que puede definir la mayoría hizo campaña contra la gran agroindustria.',ch:['AR','UY','BR','PY']},
+  {st:'Ohio',tag:'Proteccionismo',r:'Jon Husted',rr:'senador designado',d:'Sherrod Brown',dr:'ex senador',pd:null,pl:'Empate técnico según Decision Desk HQ; Brown lidera la mayoría de las encuestas',
+   body:'Sherrod Brown votó contra el NAFTA en 1993 y escribió "Myths of Free Trade" (2004). Disputa la banca que dejó JD Vance al asumir como vicepresidente.',
+   sig:'Un Senado demócrata no es un Senado librecambista: el arancel tiene defensores en los dos partidos.',ch:['BR','CL','UY','AR']},
+  {st:'Texas',tag:'Petróleo y voto latino',r:'Ken Paxton',rr:'fiscal general de Texas',d:'James Talarico',dr:'legislador estatal',pd:61,pl:'Talarico, favorito con 61%',
+   body:'Ningún demócrata gana una banca de Texas en el Senado desde Lloyd Bentsen, en 1988. Es la capital petrolera que compite con Vaca Muerta y el presal, y donde el voto latino giró hacia Trump en 2024.',
+   sig:'Si el sur hispano de Texas vuelve a los demócratas, se cae la lectura de 2024 de que los latinos se habían vuelto trumpistas.',ch:['AR','BR','CO']},
+  {st:'Maine',tag:'La caja de la guerra',r:'Susan Collins',rr:'senadora, preside Asignaciones',d:'Troy Jackson',dr:'ex presidente del Senado de Maine',pd:63,pl:'Jackson, favorito con 63%',
+   body:'Collins preside la comisión que reparte el presupuesto federal. El pedido de US$ 87.600 millones para la guerra con Irán, de junio, sigue sin aprobarse. Maine cuenta con voto preferencial: el resultado puede tardar días.',
+   sig:'Si Collins pierde y el Senado cambia de manos, la llave del dinero de la guerra pasa a los demócratas el 3 de enero.',ch:['UY','PY','CL']},
+  {st:'Carolina del Sur',tag:'El asiento del halcón',r:'Darline Graham',rr:'senadora designada',d:'Annie Andrews',dr:'pediatra',pd:38,pl:'Graham, favorita con 62%',
+   body:'Lindsey Graham, uno de los senadores que más empujó la guerra con Irán, murió en julio. Su hermana heredó la banca y admitió en un debate no estar "tan informada en seguridad nacional". NYT/Siena: 48 a 48.',
+   sig:'Trump ganó el estado por casi 18 puntos. Si se da vuelta, la guerra no suma votos ni en el Sur más trumpista.',ch:['UY','PY','CL']},
+  {st:'Florida · distrito 27',tag:'Miami y las deportaciones',r:'María Elvira Salazar',rr:'representante',d:'Eliott Rodríguez',dr:'ex presentador de CBS4',pd:null,pl:'La banca más disputada de Miami-Dade',
+   body:'Salazar se despegó de Trump en un aviso por las redadas migratorias. Según el Pew Research Center, la aprobación de Trump entre los hispanos cayó a 24%, desde 38% en febrero de 2025.',
+   sig:'Miami es el electorado que más pesa en la política de Washington hacia Venezuela, Cuba y Colombia. Si castiga a Salazar, castiga las deportaciones.',ch:['CO','AR']}
+];
+var NAMES={AR:'Argentina',UY:'Uruguay',BR:'Brasil',PY:'Paraguay',CL:'Chile',CO:'Colombia'};
+(function(){
+  var box=$('#cards');
+  CARDS.forEach(function(c){
+    var div=document.createElement('article');div.className='card';
+    var prob = c.pd===null ? '' : '<div class="prob" aria-label="Probabilidad"><div class="pb"><i style="width:'+c.pd+'%'+(c.ind?';background:var(--ind)':'')+'"></i></div><div class="pl"><span>'+(c.ind?'Osborn':'Dem.')+' '+c.pd+'%</span><span>Rep. '+(100-c.pd)+'%</span></div></div>';
+    div.innerHTML='<div class="top"><h3>'+c.st+'</h3><span class="tag">'+c.tag+'</span></div>'+
+      '<p class="vs"><span style="color:var(--rep)">●</span> <b>'+c.r+'</b>, '+c.rr+'<br><span style="color:'+(c.ind?'var(--ind)':'var(--dem)')+'">●</span> <b>'+c.d+'</b>, '+c.dr+'</p>'+
+      prob+'<p class="meta">'+c.pl+(c.pd!==null&&c.pl.indexOf('Decision')<0?' (Decision Desk HQ)':'')+'</p><p>'+c.body+'</p><p class="sig"><b>Señal: </b>'+c.sig+'</p>'+
+      '<div class="chips">'+c.ch.map(function(k){return '<span class="chip">'+NAMES[k]+'</span>'}).join('')+'</div>';
+    box.appendChild(div);
+  });
+})();
+
+/* ---------- Escenarios ---------- */
+var SCEN=[
+  {k:'A',pct:62,nm:'Las dos cámaras demócratas',h:'D',s:'D',
+   items:['<strong>La guerra:</strong> no alcanza para frenarla por ley. Vencer un veto exige 67 senadores y 290 representantes, y los demócratas no van a pasar de 54 bancas en el Senado. Sí manejan la caja: cualquier dinero nuevo para Irán necesita sus votos.',
+          '<strong>Los aranceles:</strong> desde el fallo de la Corte Suprema de febrero, los vigentes se apoyan en las secciones 301 y 232, facultades que el Congreso ya delegó. Cambiarlos exige una ley, que Trump puede vetar.',
+          '<strong>El control:</strong> las comisiones citan testigos. Elizabeth Warren, que en febrero pidió cortar el swap con Argentina, presidiría la de Bancos; Gregory Meeks, la de Asuntos Exteriores de la Cámara.',
+          '<strong>Los nombramientos:</strong> embajadores, jueces y gabinete pasan a depender de un Senado opositor.']},
+  {k:'B',pct:21,nm:'Cámara demócrata, Senado republicano',h:'D',s:'R',
+   items:['<strong>El precedente es 2019:</strong> con la Cámara en contra, Trump vivió el cierre de gobierno más largo de la historia (35 días) y un juicio político que el Senado archivó.',
+          '<strong>La Cámara investiga y negocia el presupuesto;</strong> el Senado sigue confirmando a los candidatos de Trump.',
+          '<strong>La guerra:</strong> la Cámara ya aprobó tres resoluciones contra la guerra en 2026. Con mayoría propia puede trabar el dinero, no las órdenes.',
+          '<strong>Juicio político:</strong> Hakeem Jeffries, jefe de la bancada demócrata, dice que "no descartó nada", pero destituir exige 67 senadores.']},
+  {k:'C',pct:15,nm:'Trump conserva las dos',h:'R',s:'R',
+   items:['<strong>Lectura de mandato:</strong> desde 1946, ningún presidente con menos de 45% de aprobación evitó perder bancas. Retener las dos cámaras sería leído como aval a la guerra y a los aranceles.',
+          '<strong>La guerra:</strong> el pedido de US$ 87.600 millones de junio tendría vía libre.',
+          '<strong>La región:</strong> el canal que rinde es el del alineamiento personal: el rescate de Argentina, la cooperación militar con Paraguay, la cercanía con José Antonio Kast y Abelardo de la Espriella.',
+          '<strong>Sin auditoría:</strong> las investigaciones sobre el swap o sobre la campaña por los Bolsonaro no tendrían comisión que las lleve.']},
+  {k:'D',pct:2,nm:'Senado demócrata, Cámara republicana',h:'R',s:'D',
+   items:['<strong>Rareza estadística:</strong> el Senado es el más difícil de dar vuelta, por eso es la combinación menos probable.',
+          '<strong>El freno estaría en los nombramientos:</strong> embajadores, jueces y funcionarios del Departamento de Estado.',
+          '<strong>La caja quedaría compartida:</strong> sin acuerdo entre las dos cámaras no hay presupuesto.']}
+];
+var CTRY={
+  UY:{base:'<b>Uruguay</b> le vendió a Estados Unidos un récord de US$ 1.553 millones en 2025, su cuarto destino. Paga 12,5% desde julio, pero más de tres cuartas partes de lo que exporta allá (carne, celulosa, madera) entran exentas. La carne, 58% de esas ventas, compite con la cuota ampliada de Argentina. Y Uruguay importa todo su petróleo.',
+      A:'Un Congreso opositor no toca el 12,5%, pero sube el costo de los favores a terceros, como la cuota argentina. El riesgo inmediato es el barril en los 61 días de transición.',
+      B:'Audiencias en la Cámara, rumbo comercial intacto en el Senado. Para Uruguay, lo que importa sigue siendo el petróleo y la carne.',
+      C:'Sin contrapeso, rinde el canal del alineamiento. La reunión entre Yamandú Orsi y Trump que anunció la Cancillería en mayo no tiene constancia de haberse concretado.',
+      D:'El Senado puede demorar embajadores; lo comercial sigue en manos de la Casa Blanca.'},
+  AR:{base:'<b>Argentina</b> tiene un swap de US$ 20.000 millones con el Tesoro (usó 2.500 y ya los devolvió), un acuerdo comercial firmado en febrero y una cuota de carne de 100.000 toneladas cuyo tramo extra vence el 31 de diciembre. Paga 10%. Es el país de la región más atado a la decisión personal de Trump.',
+      A:'Elizabeth Warren, que pidió cortar el swap, presidiría la Comisión de Bancos del Senado. Los senadores ganaderos, de los dos partidos, ya protestan contra la cuota.',
+      B:'La Cámara puede investigar el uso del Fondo de Estabilización Cambiaria; el Senado republicano protege el rescate.',
+      C:'Javier Milei gana: rescate y cuota sin auditoría, y vía libre para renovar el tramo extra de carne.',
+      D:'Warren en Bancos igual: el Senado es el que fiscaliza al Tesoro.'},
+  PY:{base:'<b>Paraguay</b> no figura en la lista del arancel de la Sección 301: no paga recargo. Tiene exención para la carne hasta el 30 de noviembre, firmó con Marco Rubio un acuerdo de estatus de tropas y compite con Iowa en soja.',
+      A:'El alineamiento con Rubio sigue rindiendo en la Casa Blanca, pero la exención de la carne vence el 30/11 bajo la presión de los estados ganaderos.',
+      B:'Sin cambios para Asunción mientras el Senado siga republicano: los nombramientos y acuerdos pasan por esa cámara.',
+      C:'El escenario ideal para Santiago Peña: exenciones renovables y cooperación militar sin preguntas.',
+      D:'Un Senado opositor puede demorar nombramientos de embajadores en la región.'},
+  CL:{base:'<b>Chile</b> paga 12,5%, pero el cobre en cátodos, el litio, la plata y el molibdeno entran exentos. El cobre semielaborado paga 50% por la Sección 232. La decisión sobre un arancel al cobre refinado se demoró, según Reuters, por el costo de vida antes de las elecciones.',
+      A:'La Sección 232 no depende del Congreso. Una derrota por el costo de vida hace menos probable un nuevo arancel que encarecería cables y construcción en Estados Unidos.',
+      B:'El cobre refinado vuelve a la mesa después del 3 de noviembre, con o sin Cámara opositora.',
+      C:'Una victoria republicana despeja el arancel de 15% al cobre refinado previsto para 2027.',
+      D:'Sin efecto directo: el cobre se decide en la Casa Blanca.'},
+  BR:{base:'<b>Brasil</b> paga 12,5% más 25% por una Sección 301 propia: el 16,5% de lo que vende a Estados Unidos paga 37,5%. Lula da Silva fue reelecto, Flávio Bolsonaro tiene visa estadounidense y Reuters reveló una campaña del Departamento de Estado por los Bolsonaro.',
+      A:'Gregory Meeks y Joaquín Castro, que ya pidieron a Trump dejar de "socavar la democracia de Brasil", presidirían Asuntos Exteriores y su subcomisión del Hemisferio Occidental: pueden citar a los funcionarios de la investigación de Reuters.',
+      B:'Igual que arriba en la Cámara. El Senado republicano sostiene el rumbo: ya confirmó a un embajador al que Brasil no le dio el beneplácito.',
+      C:'Washington sin frenos: el Financial Times informó en agosto que se evaluaban nuevas sanciones contra el juez Alexandre de Moraes.',
+      D:'El Senado demócrata ya votó en 2025, 52 a 48, contra los aranceles a Brasil.'},
+  CO:{base:'<b>Colombia</b> estrenó en agosto a Abelardo de la Espriella, elogiado por Trump. Sigue descertificada (con dispensa), Gustavo Petro está en la lista de sanciones de la OFAC y Estados Unidos lleva al menos 70 ataques contra lanchas, con 235 muertos hasta el 4 de octubre. Paga 12,5%.',
+      A:'Los ataques a lanchas, sin autorización del Congreso, pasan a tener audiencias y votaciones de poderes de guerra con mayoría (el veto igual los frena).',
+      B:'La Cámara puede investigar los ataques; el Senado republicano los respalda.',
+      C:'Mano libre en el Caribe y una alianza con De la Espriella sin escrutinio.',
+      D:'Mayoría en el Senado para votar poderes de guerra, sin la Cámara.'}
+};
+var curS='A',curC='UY';
+function renderScen(){
+  var s=SCEN.filter(function(x){return x.k===curS})[0];
+  $('#scen-name').textContent=s.nm+' · '+s.pct+'%';
+  $('#scen-list').innerHTML=s.items.map(function(i){return '<li>'+i+'</li>'}).join('');
+  $$('.scen-tab').forEach(function(t){t.setAttribute('aria-selected',t.dataset.k===curS)});
+  $$('.ctry').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.c===curC)});
+  var c=CTRY[curC];$('#ctry-text').innerHTML=c.base+'<br><br><b style="color:var(--signal)">Con este Congreso:</b> '+c[curS];
+}
+(function(){
+  var tabs=$('#scen-tabs');
+  SCEN.forEach(function(s){
+    var b=document.createElement('button');b.className='scen-tab';b.setAttribute('role','tab');b.dataset.k=s.k;b.type='button';
+    function sq(p){return '<i style="background:var(--'+(p==='D'?'dem':'rep')+')"></i>'}
+    b.innerHTML='<span class="pct num">'+s.pct+'%</span><span class="nm">'+s.nm+'</span><span class="ch"><span class="mini">'+sq(s.h)+'Cámara</span><span class="mini">'+sq(s.s)+'Senado</span></span><span class="pbar"><i style="width:'+s.pct+'%"></i></span>';
+    b.addEventListener('click',function(){curS=s.k;renderScen()});
+    tabs.appendChild(b);
+  });
+  var cs=$('#countries');
+  ['UY','AR','PY','CL','BR','CO'].forEach(function(k){var b=document.createElement('button');b.className='ctry';b.dataset.c=k;b.type='button';b.textContent=NAMES[k];b.addEventListener('click',function(){curC=k;renderScen()});cs.appendChild(b)});
+  $('#always').innerHTML='<b>En los cuatro escenarios:</b> hasta el 3 de enero gobierna el Congreso actual, republicano en las dos cámaras. En esos 61 días vencen la exención arancelaria a la carne de Brasil y Paraguay (30 de noviembre), el financiamiento del gobierno (11 de diciembre) y la cuota extra de carne argentina (31 de diciembre). La Casa Blanca tiene pendiente el arancel al cobre refinado y, según The New York Times, un plan de unos tres días de ataques contra Irán para después de la votación.';
+  renderScen();
+})();
+
+/* ---------- Petróleo ---------- */
+(function oil(){
+  var svg=$('#oil'), B=window.BRENT;
+  var L0=56,R0=790,T0=24,B0=372;
+  var dMax=426; // 31/1/2027
+  function X(d){return L0+(R0-L0)*d/dMax}
+  function Y(v){return T0+(B0-T0)*(150-v)/(150-50)}
+  [50,75,100,125,150].forEach(function(v){el('line',{x1:L0,x2:R0,y1:Y(v),y2:Y(v),stroke:'var(--grid)'},svg);txt(svg,L0-8,Y(v)+4,v,'t-meta','end',13)});
+  var months=[['dic',0],['ene',31],['feb',62],['mar',90],['abr',121],['may',151],['jun',182],['jul',212],['ago',243],['sep',274],['oct',304],['nov',335],['dic',365],['ene',396]];
+  months.forEach(function(m){txt(svg,X(m[1]+15),B0+22,m[0],'t-meta','middle',12.5)});
+  txt(svg,X(15),B0+40,'2025','t-meta','middle',11.5);txt(svg,X(46),B0+40,'2026','t-meta','middle',11.5);txt(svg,X(411),B0+40,'2027','t-meta','middle',11.5);
+  // ventana 61 días
+  el('rect',{x:X(337),y:T0,width:X(398)-X(337),height:B0-T0,fill:'var(--signal)','fill-opacity':.09},svg);
+  el('line',{x1:X(337),x2:X(337),y1:T0,y2:B0,stroke:'var(--signal)','stroke-width':2},svg);
+  el('line',{x1:X(398),x2:X(398),y1:T0,y2:B0,stroke:'var(--signal)','stroke-width':1.5,'stroke-dasharray':'4 4'},svg);
+  txt(svg,X(337)-6,T0+12,'Elección 3/11','t-strong','end',12.5);
+  txt(svg,X(398)+6,T0+12,'3/1','t-strong','start',12.5);
+  txt(svg,X(398)+6,T0+27,'Congreso','t-meta','start',11.5);
+  txt(svg,X(398)+6,T0+40,'nuevo','t-meta','start',11.5);
+  txt(svg,(X(337)+X(398))/2,B0-10,'61 días','t-strong','middle',13);
+  // línea
+  var dpath='M'+B.map(function(p){return X(p[0]).toFixed(1)+','+Y(p[1]).toFixed(1)}).join('L');
+  var path=el('path',{d:dpath,fill:'none',stroke:'var(--series)','stroke-width':2.4,'stroke-linejoin':'round'},svg);
+  var last=B[B.length-1];
+  var dot=el('circle',{cx:X(last[0]),cy:Y(last[1]),r:6,fill:'var(--series)',stroke:'var(--panel-2)','stroke-width':2},svg);
+  var lastLab=el('g',{},svg);txt(lastLab,X(337)+8,Y(last[1])+2,'US$ '+String(last[1]).replace('.',','),'t-strong','start',13);txt(lastLab,X(337)+8,Y(last[1])+17,'27/10','t-meta','start',11.5);
+  // eventos: [día, texto, dx, dy, ancla, segunda línea]
+  var EV=[[89,'28/2: empieza la guerra',-8,-34,'end'],[127,'7/4: pico de US$ 138',0,-30,'middle','8/4: alto el fuego'],[218,'8/7: cae la tregua',-8,30,'end'],[278,'5/9: EE.UU. ataca',-10,-26,'end','petroleros iraníes']];
+  var evNodes=[];
+  EV.forEach(function(e){
+    var p=B.filter(function(b){return b[0]>=e[0]})[0]||last;
+    var x=X(p[0]),y=Y(p[1]);var ly=y+e[3];
+    var g=el('g',{},svg);
+    el('line',{x1:x,x2:x+(e[4]==='middle'?0:e[2]*0.6),y1:y,y2:ly+(e[3]<0?(e[5]?-2:6):-14),stroke:'var(--fg-2)','stroke-width':1,'stroke-dasharray':'2 3'},g);
+    el('circle',{cx:x,cy:y,r:3.5,fill:'var(--fg)'},g);
+    var ty=e[5]&&e[3]<0?ly-16:ly;
+    txt(g,x+e[2],ty,e[1],'',e[4],12.5);
+    if(e[5])txt(g,x+e[2],ty+15,e[5],'',e[4],12.5);
+    evNodes.push(g);
+  });
+  // referencias de escenarios (en la ventana, con etiqueta en el margen derecho)
+  var REF=[
+    {k:'g',v:90,lab:['Goldman Sachs','US$ 90 en diciembre'],note:'Goldman Sachs (19/10) calcula unos US$ 25 de prima de guerra dentro del precio y proyecta US$ 90 para diciembre si esa prima se desinfla. Es una referencia del contrato a futuro, que cotiza por debajo del Brent fechado.'},
+    {k:'u',v:110,lab:['UBS','US$ 110 a fin de año'],note:'UBS (27/10) subió su proyección a unos US$ 110 hasta fines de 2026: la guerra sigue sin resolverse, sin cierre total. La Administración de Información Energética de EE.UU. proyecta US$ 105 de promedio para el cuarto trimestre.'},
+    {k:'f',v:130,lab:['FMI, escenario adverso','US$ 130'],note:'El escenario adverso del FMI (octubre) supone guerra hasta mediados de 2027 con Ormuz y Bab el-Mandeb casi cerrados: barril a US$ 130 desde el cuarto trimestre de 2026 hasta el primero de 2027, medio punto menos de crecimiento mundial y 1,1 puntos más de inflación en 2027.'}
+  ];
+  var refNodes={};
+  REF.forEach(function(r){
+    var g=el('g',{'class':'ref'},svg);
+    el('line',{x1:X(337),x2:X(426),y1:Y(r.v),y2:Y(r.v),stroke:'var(--fg)','stroke-width':2.5,'stroke-dasharray':'7 5'},g);
+    txt(g,X(426)+10,Y(r.v)-3,r.lab[0],'t-strong','start',13);
+    txt(g,X(426)+10,Y(r.v)+13,r.lab[1],'t-meta','start',12.5);
+    refNodes[r.k]=g;
+  });
+  var seg=$('#oil-seg');
+  [['all','Todas las referencias'],['g','Se desinfla'],['u','Sigue la guerra'],['f','Escalada (FMI)']].forEach(function(o,i){
+    var b=document.createElement('button');b.type='button';b.textContent=o[1];b.setAttribute('aria-pressed',i===0);b.dataset.k=o[0];
+    b.addEventListener('click',function(){setRef(o[0])});seg.appendChild(b);
+  });
+  function setRef(k){
+    $$('#oil-seg button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.k===k)});
+    REF.forEach(function(r){refNodes[r.k].style.opacity=(k==='all'||k===r.k)?1:.14});
+    var r=REF.filter(function(x){return x.k===k})[0];
+    $('#oil-note').textContent= r? r.note : 'Las líneas punteadas no son pronósticos de LIMINAL: son las referencias publicadas por el FMI, UBS y Goldman Sachs para los próximos meses. Elegí una para ver qué supone.';
+  }
+  setRef('all');
+  $('#oil-intro').textContent='La guerra empezó el 28 de febrero y no figura en ninguna boleta, pero el calendario electoral la ordena: Trump dijo que no habría ataques antes del 3 de noviembre, The New York Times informó de un plan de unos tres días para después, y funcionarios citados por Bloomberg describen como "especialmente peligroso" el período entre la elección y el Congreso nuevo.';
+  $('#oil-src').innerHTML='Brent fechado (spot), precio diario, Administración de Información Energética de EE.UU. (EIA), 1/12/2025 a 27/10/2026. El contrato a futuro que citan los noticieros cotiza bastante más abajo (unos US$ 106 a 110 el 2/11). Referencias: FMI, Perspectivas de la Economía Mundial (13/10); UBS (27/10); Goldman Sachs (19/10).';
+  // hover
+  var hl=el('line',{x1:0,x2:0,y1:T0,y2:B0,stroke:'var(--fg-2)','stroke-width':1,opacity:0},svg);
+  var hit=el('rect',{x:L0,y:T0,width:X(last[0])-L0,height:B0-T0,fill:'transparent'},svg);
+  var d0=new Date(2025,11,1);
+  hit.addEventListener('pointermove',function(ev){
+    var pt=svg.createSVGPoint();pt.x=ev.clientX;pt.y=ev.clientY;var loc=pt.matrixTransform(svg.getScreenCTM().inverse());
+    var day=(loc.x-L0)/(R0-L0)*dMax;var best=B[0];B.forEach(function(b){if(Math.abs(b[0]-day)<Math.abs(best[0]-day))best=b});
+    hl.setAttribute('x1',X(best[0]));hl.setAttribute('x2',X(best[0]));hl.setAttribute('opacity',1);
+    var dt=new Date(d0.getTime()+best[0]*864e5);
+    showT('<b>US$ '+best[1].toFixed(2).replace('.',',')+'</b>'+dt.toLocaleDateString('es-UY',{day:'numeric',month:'long',year:'numeric'}),ev);
+  });
+  hit.addEventListener('pointerleave',function(){hl.setAttribute('opacity',0);var t=$('#tip');t.style.opacity=0});
+  function showT(h,ev){var t=$('#tip');t.innerHTML=h;t.style.opacity=1;var x=ev.clientX+14,y=ev.clientY+14;if(x+t.offsetWidth>innerWidth-8)x=ev.clientX-t.offsetWidth-14;t.style.left=x+'px';t.style.top=y+'px'}
+  // animación
+  window.__animOil=function(dur){
+    dur=dur||3200;var len=path.getTotalLength();
+    path.style.transition='none';path.style.strokeDasharray=len;path.style.strokeDashoffset=len;
+    evNodes.forEach(function(g){g.style.opacity=0});dot.style.opacity=0;lastLab.style.opacity=0;REF.forEach(function(r){refNodes[r.k].style.opacity=0});
+    void path.getBoundingClientRect();
+    path.style.transition='stroke-dashoffset '+dur+'ms linear';path.style.strokeDashoffset=0;
+    EV.forEach(function(e,i){setTimeout(function(){evNodes[i].style.transition='opacity .4s';evNodes[i].style.opacity=1},dur*(e[0]/last[0]))});
+    setTimeout(function(){dot.style.transition='opacity .3s';dot.style.opacity=1;lastLab.style.transition='opacity .3s';lastLab.style.opacity=1},dur);
+    ['g','u','f'].forEach(function(k,i){setTimeout(function(){refNodes[k].style.transition='opacity .5s';refNodes[k].style.opacity=1},dur+400+i*450)});
+  };
+})();
+
+/* ---------- La noche ---------- */
+var NIGHT=[
+  ['20:00','18:00','Primeros cierres: partes de Kentucky e Indiana','El distrito 6 de Kentucky es la primera pista sobre la Cámara.',false],
+  ['21:00','19:00','Georgia, Carolina del Sur, Virginia, casi toda Florida y Nuevo Hampshire','Carolina del Sur: si Darline Graham sufre, la noche es demócrata. Florida: Miami-Dade y el distrito 27 de María Elvira Salazar miden el voto latino.',true],
+  ['21:30','19:30','Ohio y Carolina del Norte','Sherrod Brown contra Jon Husted, una de las tres carreras más parejas. Roy Cooper en Carolina del Norte, la banca que los demócratas más esperan ganar.',true],
+  ['22:00','20:00','Maine, Pensilvania, casi todo Texas, Míchigan y Kansas','Susan Collins y la caja de la guerra; Paxton contra Talarico; Kansas, la carrera más pareja del país.',true],
+  ['23:00','21:00','Iowa, Nebraska, Nueva York, Arizona, Minnesota, Wisconsin','La soja y la carne: Hinson contra Turek, Ricketts contra Osborn. A esta hora empieza a verse el rumbo de la Cámara.',true],
+  ['00:00','22:00','Nevada, Utah, Montana','Gobernación de Nevada, una de las cuatro más disputadas.',false],
+  ['01:00','23:00','California, Washington, Oregón','California cuenta durante semanas: si la Cámara queda pareja, no se sabe esta noche.',false],
+  ['02:00','00:00','Alaska (casi todo) y Hawái','Dan Sullivan contra Mary Peltola. Con voto preferencial, el resultado final llega el 18 de noviembre.',false]
+];
+(function(){
+  $('#night').innerHTML=NIGHT.map(function(n){return '<div class="hour'+(n[4]?' key':'')+'"><div class="h num">'+n[0]+'<small>'+n[1]+' (Este)</small></div><div class="what"><b>'+n[2]+'</b><p>'+n[3]+'</p></div></div>'}).join('');
+})();
+
+/* ---------- Calendario ---------- */
+var CAL=[
+  ['3 nov','Elección. Primeros cierres a las 20:00 de Montevideo.',true],
+  ['4 nov','Israel certifica el resultado de su elección del 27 de octubre.'],
+  ['18 nov','Alaska hace el conteo de voto preferencial; certifica el 25.'],
+  ['30 nov','Vence la exención arancelaria a la carne de Brasil y Paraguay.'],
+  ['1 dic','Segunda vuelta en Georgia, solo si nadie supera el 50% (improbable).'],
+  ['9 dic','La Reserva Federal, que preside Kevin Warsh, vuelve a decidir su tasa.'],
+  ['11 dic','Vence el financiamiento del gobierno: primera pulseada del Congreso saliente.',true],
+  ['31 dic','Vence la cuota extra de 80.000 toneladas para la carne argentina.',true],
+  ['3 ene','Asume el Congreso nuevo. Las comisiones cambian de dueño.',true]
+];
+$('#cal').innerHTML=CAL.map(function(c){return '<div'+(c[2]?' class="key"':'')+'><b>'+c[0]+'</b><span>'+c[1]+'</span></div>'}).join('');
+
+/* ---------- Fuentes ---------- */
+var SRC=[
+  ['Decision Desk HQ, pronóstico 2026 (2/11)','https://votes.decisiondeskhq.com/forecast/2026'],
+  ['Silver Bulletin, modelo FLIPR (1/11)','https://www.natesilver.net/p/nate-silver-2026-midterm-election-polls-model'],
+  ['Kalshi, pronósticos de las legislativas (1/11)','https://news.kalshi.com/p/2026-midterm-predictions'],
+  ['Yahoo News, encuestas a tres días de la elección (31/10)','https://www.yahoo.com/news/politics/article/the-2026-midterms-are-next-week-which-party-has-a-better-chance-of-winning-heres-what-the-latest-polls-say-155319308.html'],
+  ['American Presidency Project, bancas ganadas y perdidas en legislativas','https://presidency.ucsb.edu/node/332343'],
+  ['Galería de Prensa de la Cámara, composición partidaria','https://pressgallery.house.gov/member-data/party-breakdown'],
+  ['Fox News, horarios de cierre y consultas populares','https://www.foxnews.com/politics/everything-know-house-senate-control-ballot-measures-2026-election-day-poll-closing'],
+  ['ABC News 4, encuesta NYT/Siena en Carolina del Sur (28/10)','https://abcnews4.com/news/local/new-nytsiena-poll-shows-sc-senate-race-tied-as-andrews-graham-deadlocked-at-48'],
+  ['The Florida Trib, Miami-Dade y el voto hispano (20/10)','https://floridatrib.org/2026/10/20/as-miami-dade-votes-gop-incumbents-walk-tightrope-on-trump-ice-raids-faltering-economy/'],
+  ['AP vía KTAR, Trump en Nebraska y la carne importada (4/10)','https://ktar.com/?p=5914136'],
+  ['GV Wire, senadores republicanos contra la importación de carne (25/8)','https://gvwire.com/2026/08/25/gop-lawmakers-rebuke-trump-on-plan-to-increase-beef-imports/'],
+  ['HPPR, Kansas y su último senador demócrata','https://www.hppr.org/hppr-news/2026-08-12/has-it-been-more-than-90-years-since-a-kansas-democrat-was-elected-to-the-u-s-senate'],
+  ['Thompson Coburn, aranceles de la Sección 301 a 60 economías (27/7)','https://www.thompsoncoburn.com/insights/83-july-27-2026-administration-implements-section-301-tariffs-on-60-economies/'],
+  ['MercoPress, exención a la carne de Brasil y Paraguay (28/8)','https://en.mercopress.com/2026/08/28/the-us-waives-beef-tariffs-for-brazil-and-paraguay-but-not-for-argentina-and-uruguay'],
+  ['Bichos de Campo, vencimiento de la cuota argentina','https://bichosdecampo.com/ya-celebraron-el-hito-historico-ahora-vendra-bien-bueno-saber-que-el-cupo-de-carne-a-estados-unidos-tiene-fecha-de-vencimiento-y-solo-se-puede-cumplir-achicando-todavia-mas-el-consumo-inter/'],
+  ['Presidencia de Uruguay, exportaciones a EE.UU. en 2025','https://www.gub.uy/presidencia/comunicacion/noticias/ventas-estados-unidos-alcanzaron-maximo-historico-2025-1553-millones-dolares'],
+  ['El Cronista, el MEF sobre el arancel de 12,5%','https://www.cronista.com/uruguay/economia-uy/mef-afirma-que-nuevos-aranceles-de-eeuu-no-alcanzan-al-75-de-las-exportaciones/'],
+  ['Senado de EE.UU., Comisión de Bancos: Warren y el swap con Argentina','https://www.banking.senate.gov/newsroom/minority/ahead-of-hearing-warren-presses-bessent-to-terminate-20-billion-line-of-credit-for-argentinas-government'],
+  ['Reuters vía The Star, la campaña por los Bolsonaro (25/10)','https://www.thestar.com.my/news/world/2026/10/25/inside-the-trump-administration-campaign-to-return-brazils-bolsonaro-clan-to-power'],
+  ['Kitco/Reuters, el arancel al cobre refinado (10/9)','https://www.kitco.com/news/off-the-wire/2026-09-10/white-house-copper-tariff-plan-stalls-amid-affordability-concerns'],
+  ['Stars and Stripes, ataques a lanchas (5/10)','https://www.stripes.com/theaters/americas/2026-10-05/us-strike-caribbean-kills-4-23061506.html'],
+  ['EIA, Brent fechado diario','https://www.eia.gov/dnav/pet/hist/RBRTEd.htm'],
+  ['FMI, Perspectivas de la Economía Mundial (octubre de 2026)','https://www.imf.org/en/Publications/WEO/Issues/2026/10/13/world-economic-outlook-october-2026'],
+  ['Times of Israel sobre The New York Times, plan de tres días (9/10)','https://www.timesofisrael.com/liveblog_entry/nytimes-us-preparing-options-to-renew-iran-war-including-plan-for-3-days-of-intense-strikes/'],
+  ['Stars and Stripes sobre Bloomberg, el período de transición (25/10)','https://www.stripes.com/theaters/middle_east/2026-10-25/us-israel-iran-war-escalation-23256944.html'],
+  ['Alaska Public Media, conteo preferencial (5/10)','https://alaskapublic.org/news/politics/elections/2026-10-05/what-to-know-about-alaskas-general-election'],
+  ['AACOM, prórroga del financiamiento hasta el 11/12','https://www.aacom.org/news-reports/news/2026/09/08/president-trump-signs-continuing-resolution-to-fund-government-through-december-11'],
+  ['Breaking Defense, pedido suplementario de US$ 87.600 millones (24/6)','https://breakingdefense.com/2026/06/white-house-sends-87-6b-supplemental-to-congress-with-67b-for-defense/']
+];
+$('#sources').innerHTML=SRC.map(function(s){return '<li><a href="'+s[1]+'" target="_blank" rel="noopener">'+s[0]+'</a></li>'}).join('');
+
+/* ---------- Animaciones al entrar en pantalla (el estado final ya está pintado) ---------- */
+var done={};
+function runAnim(id){
+  if(L.reduce||done[id])return;done[id]=1;
+  if(id==='hoy')L.setHemi('hoy',true);
+  if(id==='modelos'&&window.__animModels)window.__animModels();
+  if(id==='historia'&&window.__animHistory)window.__animHistory();
+  if(id==='petroleo'&&window.__animOil)window.__animOil();
+}
+if(!L.EXPORT && 'IntersectionObserver' in window){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){runAnim(e.target.dataset.export);io.unobserve(e.target)}})},{threshold:.35});
+  $$('[data-export]').forEach(function(s){io.observe(s)});
+}
+
+/* ---------- Modo exportación (solo render local) ---------- */
+if(L.EXPORT){
+  var EXP={
+    hoy:['Quién manda hoy en el Congreso','Los republicanos controlan las dos cámaras. A los demócratas les faltan 3 bancas en la Cámara y 4 en el Senado.','Fuentes: Galería de Prensa de la Cámara y Senado de EE.UU., al 2/11/2026. Mayoría del Senado: 51, porque el vicepresidente JD Vance desempata un 50 a 50.'],
+    modelos:['La Cámara parece decidida; el Senado, no tanto','Probabilidad de que los demócratas ganen cada cámara, según modelos y mercados de predicción','Decision Desk HQ (2/11), Kalshi (1/11), Silver Bulletin (1/11 y 22/10), VoteHub (23/10).'],
+    historia:['Con menos de 45% de aprobación, perdieron siempre','Aprobación del presidente y bancas que perdió su partido en la Cámara, 1946 a 2022','Gallup y American Presidency Project (UC Santa Barbara). Trump 2026: Silver Bulletin (aprobación 37,3% al 31/10; pérdida media proyectada de 25 bancas). Promedio de los ocho casos con menos de 45%: 31 bancas (cálculo de LIMINAL).'],
+    senado:['El Senado, carrera por carrera','Las 14 bancas que pueden cambiar de manos, con el favorito de Decision Desk HQ','Decision Desk HQ (2/11/2026) y Cook Political Report. Los demócratas necesitan 51 bancas.'],
+    escenarios:['Cuatro escenarios para el Congreso','Probabilidad conjunta según Decision Desk HQ (2/11/2026)','LIMINAL con datos de Decision Desk HQ.'],
+    petroleo:['El barril y la ventana de 61 días','Brent fechado (spot), dólares por barril, y referencias de escenarios para los próximos meses','EIA (precio diario al 27/10/2026); FMI (13/10), UBS (27/10), Goldman Sachs (19/10). El contrato a futuro cotizaba entre US$ 106 y 110 el 2/11.'],
+    noche:['La noche, en hora de Montevideo','Cierres de urnas que importan y qué mirar en cada uno','Fox News; hora de Uruguay (UTC−3). Desde el 1/11 la costa este de EE.UU. está dos horas detrás.']
+  };
+  var sec=document.querySelector('[data-export="'+L.EXPORT+'"]');
+  document.body.classList.add('export');
+  var e=EXP[L.EXPORT];
+  var card=document.createElement('div');card.className='exp-card';
+  card.innerHTML='<div class="exp-head">'+LIMINAL_LOGO()+'<span class="meta" style="font-size:20px">Montevideo, 2 de noviembre de 2026</span></div><div class="exp-title">'+e[0]+'</div><div class="exp-sub">'+e[1]+'</div>';
+  var holder=document.createElement('div');card.appendChild(holder);
+  var foot=document.createElement('div');foot.className='exp-foot';foot.textContent=e[2];card.appendChild(foot);
+  var wrap=document.querySelector('.wrap');
+  holder.appendChild(sec);
+  wrap.style.display='none';
+  document.body.insertBefore(card,wrap);
+  sec.classList.remove('block');sec.style.padding='0';
+  $$('.src',sec).forEach(function(s){s.remove()});
+  if(L.EXPORT==='petroleo'){$('#oil-note').textContent='Las líneas punteadas no son pronósticos de LIMINAL: son las referencias publicadas por el FMI (escenario adverso), UBS y Goldman Sachs para los próximos meses.';}
+  if(L.EXPORT==='senado'){$('#verdict').textContent='Si ganan los favoritos: mayoría demócrata, justa';$('#tally-note').textContent='Con Kansas, Iowa y Ohio en manos del partido que hoy tiene la banca, los demócratas llegan a 51, el umbral (línea naranja). Con 50, desempata el vicepresidente JD Vance.';}
+  if(L.ANIM){setTimeout(function(){runAnim(L.EXPORT)},300)}
+}
+})();
+
+</script>
+<script>
+(function(){if(!document.documentElement.classList.contains('embed')||window.parent===window)return;
+var last=0;function send(){var h=Math.ceil(document.documentElement.scrollHeight);if(Math.abs(h-last)>2){last=h;try{parent.postMessage({liminalMidterms:h},'*')}catch(e){}}}
+if('ResizeObserver' in window)new ResizeObserver(send).observe(document.body);window.addEventListener('load',send);setTimeout(send,300);setTimeout(send,1500);})();
+</script>
+</body>
+</html>
