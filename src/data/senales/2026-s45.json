@@ -71,20 +71,31 @@
       "senales": [
         {
           "n": 3,
-          "titulo": "Irán ofrece reabrir Ormuz en dos días, con condiciones",
-          "lugar": "Teherán / Doha",
+          "titulo": "EE.UU. ataca objetivos iraníes en Ormuz sin romper la negociación",
+          "lugar": "Isla de Qeshm / Washington",
           "lugarMapa": "Estrecho de Ormuz",
           "lat": 26.6,
           "lon": 56.5,
           "etiqueta": "der",
-          "fecha": "2026-11-01",
-          "hecho": "Después de dos días de conversaciones con mediadores de Qatar, el canciller iraní Abbas Araghchi dijo que la propuesta en discusión reduce de siete a dos días el plazo para reabrir parcialmente Ormuz, si EE.UU. levanta el bloqueo naval, restablece las exenciones petroleras, descongela activos iraníes y reconoce las rutas acordadas con Omán. Trump dijo que las conversaciones van bien pero que los iraníes no son confiables, y sugirió que un ataque podría llegar después de las elecciones del martes 3. Al menos cuatro buques fueron alcanzados en el estrecho el viernes 30 y el sábado 31.",
-          "lectura": "Irán le puso plazo y precio a Ormuz: dos días para reabrir si Washington levanta el bloqueo, libera fondos y acepta las rutas que Teherán pactó con Omán. Trump responde con el calendario electoral, y el estrecho queda colgado del martes 3. Para el Cono Sur importa poco quién ceda primero: mientras dure la espera, el barril se paga como si la guerra no tuviera fecha de salida.",
+          "fecha": "2026-11-02",
+          "hecho": "EE.UU. lanzó el lunes 2 ataques que calificó de defensivos contra objetivos iraníes en el estrecho de Ormuz, con explosiones reportadas en la isla de Qeshm; según un funcionario citado por AP, apuntaron a posiciones que usaban misiles antiaéreos contra medios estadounidenses. Llegaron en la víspera de las legislativas del martes 3, después de que Trump dijera que no habría ataques antes de esa fecha, y con la propuesta iraní de reabrir el estrecho en dos días todavía sobre la mesa. Trump escribió que un acuerdo \"podría pasar\" y Netanyahu presiona por una nueva ola de ataques después de la elección (Times of Israel).",
+          "lectura": "Washington atacó y negoció el mismo día, y las dos cosas son parte del mismo mensaje: la zanahoria del acuerdo y el recordatorio de quién tiene más fuego. La reapertura queda atada al resultado del martes 3, con Netanyahu empujando por otra ola de ataques; mientras tanto, el Cono Sur sigue pagando el barril y el flete como si la diplomacia no existiera.",
           "tendencia": "escala",
           "intensidad": 3,
           "fuente": {
-            "nombre": "Al Jazeera",
-            "url": "https://www.aljazeera.com/news/2026/11/1/iran-and-us-explore-diplomacy-amid-rising-threats-of-war"
+            "nombre": "AP, vía PBS NewsHour",
+            "url": "https://www.pbs.org/newshour/world/u-s-strikes-iranian-targets-in-strait-of-hormuz-u-s-official-tells-ap"
+          },
+          "actualizado": "2026-11-03T07:24",
+          "anterior": {
+            "titulo": "Irán ofrece reabrir Ormuz en dos días, con condiciones",
+            "fecha": "2026-11-01",
+            "hecho": "Después de dos días de conversaciones con mediadores de Qatar, el canciller iraní Abbas Araghchi dijo que la propuesta en discusión reduce de siete a dos días el plazo para reabrir parcialmente Ormuz, si EE.UU. levanta el bloqueo naval, restablece las exenciones petroleras, descongela activos iraníes y reconoce las rutas acordadas con Omán. Trump dijo que las conversaciones van bien pero que los iraníes no son confiables, y sugirió que un ataque podría llegar después de las elecciones del martes 3. Al menos cuatro buques fueron alcanzados en el estrecho el viernes 30 y el sábado 31.",
+            "lectura": "Irán le puso plazo y precio a Ormuz: dos días para reabrir si Washington levanta el bloqueo, libera fondos y acepta las rutas que Teherán pactó con Omán. Trump responde con el calendario electoral, y el estrecho queda colgado del martes 3. Para el Cono Sur importa poco quién ceda primero: mientras dure la espera, el barril se paga como si la guerra no tuviera fecha de salida.",
+            "fuente": {
+              "nombre": "Al Jazeera",
+              "url": "https://www.aljazeera.com/news/2026/11/1/iran-and-us-explore-diplomacy-amid-rising-threats-of-war"
+            }
           }
         },
         {
