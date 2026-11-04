@@ -71,22 +71,22 @@
       "senales": [
         {
           "n": 3,
-          "titulo": "EE.UU. ataca objetivos iraníes en Ormuz sin romper la negociación",
-          "lugar": "Isla de Qeshm / Washington",
+          "titulo": "Trump pierde el Congreso con Irán en la cuenta y Ormuz sigue minado",
+          "lugar": "Washington / Estrecho de Ormuz",
           "lugarMapa": "Estrecho de Ormuz",
           "lat": 26.6,
           "lon": 56.5,
           "etiqueta": "der",
-          "fecha": "2026-11-02",
-          "hecho": "EE.UU. lanzó el lunes 2 ataques que calificó de defensivos contra objetivos iraníes en el estrecho de Ormuz, con explosiones reportadas en la isla de Qeshm; según un funcionario citado por AP, apuntaron a posiciones que usaban misiles antiaéreos contra medios estadounidenses. Llegaron en la víspera de las legislativas del martes 3, después de que Trump dijera que no habría ataques antes de esa fecha, y con la propuesta iraní de reabrir el estrecho en dos días todavía sobre la mesa. Trump escribió que un acuerdo \"podría pasar\" y Netanyahu presiona por una nueva ola de ataques después de la elección (Times of Israel).",
-          "lectura": "Washington atacó y negoció el mismo día, y las dos cosas son parte del mismo mensaje: la zanahoria del acuerdo y el recordatorio de quién tiene más fuego. La reapertura queda atada al resultado del martes 3, con Netanyahu empujando por otra ola de ataques; mientras tanto, el Cono Sur sigue pagando el barril y el flete como si la diplomacia no existiera.",
+          "fecha": "2026-11-04",
+          "hecho": "Los demócratas ganaron las dos cámaras el martes 3: AP les adjudicó la Cámara de Representantes en la madrugada del miércoles y el Senado cambió de mano con al menos siete bancas dadas vuelta (Forbes). Trump dijo a Fox News que la guerra con Irán y el precio de los combustibles pesaron en la derrota, y a la vez advirtió que EE.UU. debe hacer \"algo grande\" contra Irán, aunque relativizó la versión de que reanudaría los bombardeos tras la elección. El negociador iraní Mohammad Bagher Ghalibaf dijo que los estadounidenses votaron \"no a la guerra\", cuatro tanqueros se incendiaron tras tocar minas en el estrecho según Teherán (Gulf News), y la oferta de reabrir en dos días sigue sobre la mesa.",
+          "lectura": "La urna hizo lo que no lograron los mediadores: Trump admitió que Irán y el precio de la nafta le costaron el Congreso, y ahora amenaza con un golpe grande mientras negocia debilitado. Para el Cono Sur la cuenta no cambió: con el estrecho minado, el barril y el flete se siguen pagando como en guerra.",
           "tendencia": "escala",
           "intensidad": 3,
           "fuente": {
-            "nombre": "AP, vía PBS NewsHour",
-            "url": "https://www.pbs.org/newshour/world/u-s-strikes-iranian-targets-in-strait-of-hormuz-u-s-official-tells-ap"
+            "nombre": "CBS News",
+            "url": "https://www.cbsnews.com/live-updates/iran-war-us-trump-midterms-strait-of-hormuz/"
           },
-          "actualizado": "2026-11-03T07:24",
+          "actualizado": "2026-11-04THH:MM",
           "anterior": {
             "titulo": "Irán ofrece reabrir Ormuz en dos días, con condiciones",
             "fecha": "2026-11-01",
@@ -157,6 +157,26 @@
       "nombre": "Infraestructura IA",
       "alcance": "Data centers, chips, energía y agua. El cuerpo físico de la IA y quién lo decide.",
       "senales": [
+        {
+          "n": 9,
+          "titulo": "Las urnas frenan los data centers: Ohio aprueba límites en 14 ciudades",
+          "lugar": "Ohio, EE.UU.",
+          "lugarMapa": "Columbus, Ohio",
+          "lat": 39.96,
+          "lon": -83.0,
+          "etiqueta": "arriba",
+          "fecha": "2026-11-03",
+          "hecho": "El martes 3 se votaron 34 de las 39 medidas locales sobre data centers que hubo este año en ocho estados de EE.UU. (Ballotpedia). En Ohio, con 21 medidas en 18 localidades, los resultados no oficiales dan aprobadas restricciones o prohibiciones en al menos 14: la de Trenton con 79,7% de los votos, la de Urbana con 77%, y en Wilmington cerca de 80% rechazó cuatro rezonificaciones para data centers. Ohio ya acumulaba 125 moratorias locales antes de la elección.",
+          "lectura": "La resistencia a los data centers pasó de audiencia pública a mayoría electoral: donde hubo urna en Ohio, el freno ganó casi siempre y con hasta 80% de los votos. Para Uruguay, que espera a Google en Canelones, el mensaje es incómodo: cada municipio que dice no en EE.UU. empuja a los inversores a buscar suelo, energía y permisos en otra parte.",
+          "tendencia": "escala",
+          "intensidad": 2,
+          "fuente": {
+            "nombre": "Fortune",
+            "url": "https://fortune.com/2026/11/04/ohio-data-center-ballot-measures-midterm-elections/"
+          },
+          "actualizado": "2026-11-04THH:MM",
+          "ultimoMomento": true
+        },
         {
           "n": 6,
           "titulo": "Alphabet cae 12,6% y el mercado empieza a cobrar el capex de la IA",
