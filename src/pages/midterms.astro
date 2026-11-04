@@ -14,31 +14,32 @@ const columna = 'https://mundoliminal.substack.com/p/midterms-2026-cono-sur';
 ---
 
 <BaseLayout
-  title="Midterms desde el Sur"
-  description="Simulador de LIMINAL para las legislativas de Estados Unidos del 3 de noviembre de 2026: armá tu Senado, cuatro escenarios para seis países y la noche electoral en hora de Montevideo."
+  title="Midterms desde el Sur: los resultados"
+  description="Los resultados de las legislativas de Estados Unidos del 3 de noviembre de 2026, leídos desde el Cono Sur: el Senado carrera por carrera y lo que cambia para seis países."
   imagen="/og/midterms.jpg"
 >
   <header class="esp">
-    <p class="esp__kick">Especial · Elecciones legislativas de Estados Unidos, 3 de noviembre de 2026</p>
-    <h1 class="esp__titulo">Midterms desde el Sur</h1>
+    <p class="esp__kick">Especial · Elecciones legislativas de Estados Unidos, 3 de noviembre de 2026 · Resultados</p>
+    <h1 class="esp__titulo">Midterms desde el Sur: los resultados</h1>
     <p class="esp__bajada">
-      Qué se vota, quién manda hoy y qué tenemos que mirar desde Montevideo, Buenos Aires, Asunción, Santiago,
-      Brasilia y Bogotá. Tocá, cambiá resultados y armá tu propio Senado.
+      Los demócratas ganaron la Cámara y el Senado, y el Senado se dio vuelta en tierra de soja y carne. Qué pasó en
+      cada carrera y qué cambia para Montevideo, Buenos Aires, Asunción, Santiago, Brasilia y Bogotá. A Donald Trump
+      le sacaron el Congreso, no la lapicera.
     </p>
     <p class="esp__enlaces">
       <a href={columna}>La columna: El Senado se juega en tierra de soja y carne <b aria-hidden="true">→</b></a>
     </p>
   </header>
 
-  <section class="esp__ventana ventana" aria-label="Simulador interactivo">
+  <section class="esp__ventana ventana" aria-label="Resultados de las elecciones legislativas">
     <iframe
       id="simulador-midterms"
       src="/midterms/simulador.html?embed"
-      title="Simulador Midterms desde el Sur"
+      title="Midterms desde el Sur: los resultados"
       loading="eager"
     ></iframe>
     <p class="esp__alt">
-      ¿No se ve bien? <a href="/midterms/simulador.html">Abrí el simulador en pantalla completa</a>.
+      ¿No se ve bien? <a href="/midterms/simulador.html">Abrí la página en pantalla completa</a>.
     </p>
   </section>
 </BaseLayout>

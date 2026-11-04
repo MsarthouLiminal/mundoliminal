@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="Simulador de LIMINAL para las legislativas de EE.UU. del 3 de noviembre de 2026, leídas desde el Cono Sur: armá tu Senado, cuatro escenarios para seis países, el petróleo y la noche en hora de Montevideo.">
-<meta property="og:title" content="Midterms desde el Sur · LIMINAL">
-<meta property="og:description" content="Armá tu Senado, cuatro escenarios para seis países y la noche electoral en hora de Montevideo.">
+<meta name="description" content="Los resultados de las legislativas de EE.UU. del 3 de noviembre de 2026, leídos desde el Cono Sur: el Senado carrera por carrera, qué cambia para seis países, el petróleo y los 61 días que faltan.">
+<meta property="og:title" content="Midterms desde el Sur: los resultados · LIMINAL">
+<meta property="og:description" content="Los demócratas ganaron el Congreso y el Senado se dio vuelta en tierra de soja y carne. Carrera por carrera y lo que cambia para seis países.">
 <meta property="og:type" content="website">
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}[hidden]{display:none!important}img{max-width:100%}</style>
-<title>Midterms desde el Sur</title>
+<title>Midterms desde el Sur: los resultados · LIMINAL</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -952,6 +952,228 @@ if(L.EXPORT){
 })();
 
 </script>
+<style id="resultados-css">
+.resrow{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-bottom:18px}
+@media (max-width:700px){.resrow{grid-template-columns:minmax(0,1fr)}}
+.resbox{background:var(--panel-2);border-radius:8px;padding:16px 18px;border-left:6px solid var(--dem);display:grid;gap:6px}
+.resbox small{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--meta)}
+.resbox b{font-family:var(--font-display);font-weight:800;font-size:34px;line-height:1}
+.resbox span{font-size:14.5px;color:var(--fg-2);line-height:1.4}
+.hemis-cap{font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--meta);margin:4px 0 10px}
+.res{font-size:14.5px;font-weight:700;line-height:1.4;padding:9px 11px;border-radius:6px;background:var(--panel);border-left:4px solid var(--dem);color:var(--fg)}
+.res.r{border-left-color:var(--rep)}
+.res.x{border-left-color:var(--ind)}
+.res small{display:block;font-weight:500;color:var(--meta);font-size:12.5px;margin-top:2px}
+.race.res-race{cursor:default}
+.race.res-race:hover{background:var(--panel)}
+.race[data-w="X"]{border-left-color:var(--ind)}
+.race[data-w="X"] .st em{background:var(--ind);color:var(--bg)}
+.race .who b{color:var(--fg)}
+.res-verdict{color:var(--signal)}
+</style>
+<script id="resultados-js">
+/* Modo resultados (4/11/2026): la página deja de proyectar y pasa a leer los resultados. */
+(function(){
+"use strict";
+var L=window.__LIM, $=L.$, $$=L.$$;
+function set(sel,html){var e=$(sel);if(e)e.innerHTML=html;return e}
+function hide(sel){$$(sel).forEach(function(e){e.style.display='none'})}
+function head(id,ey,h2,prose){var s=$('#'+id);if(!s)return;var e=s.querySelector('.eyebrow');if(e&&ey!==null)e.textContent=ey;var h=s.querySelector('h2');if(h&&h2)h.textContent=h2;var p=s.querySelector('.sec-head .prose');if(p&&prose!==null)p.innerHTML=prose}
+document.title='Midterms desde el Sur: los resultados · LIMINAL';
+
+/* Encabezado y portada */
+set('header.top .meta','Montevideo, miércoles 4 de noviembre de 2026 · resultados al 4/11, 8:00');
+set('.hero .eyebrow','LIMINAL · Elecciones legislativas de Estados Unidos, 3 de noviembre · Resultados');
+set('#t-hero','Midterms desde el Sur: los resultados');
+set('.hero .lede','Los demócratas ganaron la Cámara y el Senado, y el Senado se dio vuelta en tierra de soja y carne. Qué pasó en cada carrera y qué cambia para Montevideo, Buenos Aires, Asunción, Santiago, Brasilia y Bogotá. A Donald Trump le sacaron el Congreso, no la lapicera.');
+set('.hero .window .d:first-child','3 nov<small>se votó</small>');
+
+/* 1. ABC */
+head('abc','El ABC','Qué se votó el martes','Las elecciones de mitad de mandato renovaron el Congreso a mitad del período presidencial. Trump no estaba en la boleta, pero sí lo que puede hacer en sus últimos dos años: el Congreso aprueba el presupuesto, controla con sus comisiones, confirma embajadores y es el único que puede declarar una guerra.');
+var fi=$$('#abc .ficha span');
+if(fi.length===4){fi[0].textContent='bancas de la Cámara de Representantes: se renovó entera, como cada dos años';fi[1].textContent='de las 100 bancas del Senado (mandatos de seis años): 22 eran republicanas y 13 demócratas';fi[2].textContent='gobernaciones, entre ellas Florida, Texas, Georgia, Arizona y Míchigan';fi[3].textContent='consultas populares estatales, de la identificación del votante al aborto';}
+
+/* 2. Quién manda */
+head('hoy','Quién manda','Desde el 3 de enero, las dos cámaras son demócratas','Lo proyectaron AP, CBS y NBC. Hasta el 3 de enero sigue en funciones el Congreso actual, republicano en las dos cámaras: son los hemiciclos de abajo, 61 días más.');
+hide('#hoy .seg');
+var hemis=$('#hoy .hemis');
+if(hemis){
+  var rr=document.createElement('div');rr.className='resrow';
+  rr.innerHTML='<div class="resbox"><small>Cámara de Representantes</small><b>Mayoría demócrata</b><span>Proyección de CBS y NBC. El conteo final de bancas sigue: California y otros estados cuentan durante días.</span></div>'+
+               '<div class="resbox"><small>Senado</small><b>Mayoría demócrata</b><span>Proyección de AP y CBS. Kansas, Iowa, Ohio, Texas, Maine y las dos Carolinas pasaron a los demócratas; Alaska sigue sin definirse.</span></div>';
+  hemis.parentNode.insertBefore(rr,hemis);
+  var cap=document.createElement('p');cap.className='hemis-cap';cap.textContent='El Congreso que sigue en funciones hasta el 3 de enero';
+  hemis.parentNode.insertBefore(cap,hemis);
+}
+set('#hemi-src','Hasta el 3 de enero: Cámara 218 republicanos, 214 demócratas, 1 independiente (Kevin Kiley) y 2 vacantes; Senado 53 republicanos y 47 demócratas (incluye a 2 independientes que votan con ellos). Fuentes: Galería de Prensa de la Cámara, Senado de EE.UU. Proyecciones del 3 y 4 de noviembre: AP, CBS News, NBC News.');
+
+/* 3. Modelos */
+head('modelos','Lo que esperaban los números','Los modelos daban favoritos a los demócratas en las dos cámaras, y así fue','Antes de votar, Decision Desk HQ les daba 84% de probabilidad en la Cámara y 64% en el Senado; Kalshi, 93% y 71%. En la boca de urna, la aprobación de Trump quedó en 38%, la más baja registrada para un presidente en una elección de mitad de mandato (CBS News).');
+var ct=$$('#modelos .chart-title');
+if(ct[0])ct[0].textContent='Lo que daban antes de votar: probabilidad de que los demócratas ganaran cada cámara';
+if(ct[1])ct[1].textContent='Aprobación del presidente y bancas que perdió su partido, 1946 a 2022';
+var hs=$$('#modelos .src');
+if(hs[1])hs[1].textContent='Cada punto es una elección de mitad de mandato (1946 a 2022). Aprobación de Gallup y bancas: American Presidency Project, UC Santa Barbara. El punto de 2026 es la proyección previa de Silver Bulletin (37,3% de aprobación al 31/10; pérdida media de 25 bancas): la pérdida real se conoce cuando termine el conteo de la Cámara.';
+
+/* 4. El Senado, carrera por carrera */
+head('senado','Resultados','El Senado, carrera por carrera','Las 14 carreras que podían cambiar de manos, con el resultado. Cambiaron de partido Kansas, Iowa, Ohio, Texas, Maine, Carolina del Norte y Carolina del Sur; ninguna de las bancas demócratas en disputa pasó a los republicanos.');
+set('#verdict','<span class="res-verdict">Mayoría demócrata desde el 3 de enero</span>');
+set('#tally-num','Proyección de AP y CBS');
+hide('#tally-bar');hide('#senado .btns');
+set('#tally-note','Alaska sigue sin definirse: si nadie supera el 50%, el conteo preferencial se hace el 18 de noviembre.');
+var RES=[
+  ['Kansas','D','flip','Adam Hamilton','pastor metodista','Roger Marshall','senador','Banca republicana'],
+  ['Iowa','D','flip','Josh Turek','legislador estatal','Ashley Hinson','representante','Banca republicana'],
+  ['Ohio','D','flip','Sherrod Brown','ex senador','Jon Husted','senador designado','Banca republicana'],
+  ['Texas','D','flip','James Talarico','legislador estatal','Ken Paxton','fiscal general','Banca republicana'],
+  ['Maine','D','flip','Troy Jackson','ex presidente del Senado de Maine','Susan Collins','senadora, que reconoció la derrota','Banca republicana'],
+  ['Carolina del Norte','D','flip','Roy Cooper','ex gobernador','Michael Whatley','ex presidente del Comité Nacional Republicano','Banca republicana'],
+  ['Carolina del Sur','D','flip','Annie Andrews','pediatra','Darline Graham','senadora designada','Banca republicana'],
+  ['Nebraska','R','hold','Pete Ricketts','senador','Dan Osborn','independiente','Banca republicana'],
+  ['Florida','R','hold','Ashley Moody','senadora','Angie Nixon','demócrata','Banca republicana'],
+  ['Míchigan','D','hold','Abdul El-Sayed','médico','Mike Rogers','ex representante','Banca demócrata'],
+  ['Georgia','D','hold','Jon Ossoff','senador','Mike Collins','representante','Banca demócrata'],
+  ['Nuevo Hampshire','D','hold','Chris Pappas','representante','John E. Sununu','ex senador','Banca demócrata'],
+  ['Minnesota','D','hold','Peggy Flanagan','vicegobernadora','Michele Tafoya','republicana','Banca demócrata'],
+  ['Alaska','X','open','Dan Sullivan','senador','Mary Peltola','ex representante','Banca republicana']
+];
+var box=$('#races');
+if(box){
+  box.innerHTML=RES.map(function(r){
+    var lab=r[2]==='open'?'Sin definir':(r[1]==='D'?'Demócrata':'Republicano');
+    var who=r[2]==='open'?'<b>Dan Sullivan</b>, senador, 48,6% · <b>Mary Peltola</b>, ex representante, 47,4%, con cerca del 70% escrutado':'<b>Ganó '+r[3]+'</b>, '+r[4]+', a '+r[5]+', '+r[6];
+    var pr=r[2]==='open'?'Banca republicana · conteo preferencial el 18/11 (Alaska Public Media)':(r[7]+' · '+(r[2]==='flip'?'cambió de partido':'la retuvo')+' · proyección de AP');
+    return '<div class="race res-race" data-w="'+r[1]+'"><span class="st"><b>'+r[0]+'</b><em>'+lab+'</em></span><span class="who">'+who+'</span><span class="pr">'+pr+'</span></div>';
+  }).join('');
+}
+set('#senado .builder .src','Proyecciones: AP (consultadas el 4/11 entre las 6:10 y las 7:40, hora de Uruguay). Ganadores: CBS News, NBC News, Forbes y CBN; Maine: concesión de Susan Collins (Axios, Maine Public); Minnesota: CBS News; Alaska: Alaska Public Media (3/11, 20:46 de Alaska). La lista corrige el nombre de la candidata republicana en Minnesota: fue Michele Tafoya.');
+
+/* 5. Carreras desde el Sur */
+head('carreras','Las carreras que miramos desde acá','El Senado se dio vuelta en tierra de soja y carne','Kansas, Iowa y Ohio, las tres carreras más parejas según Decision Desk HQ, cambiaron de partido: tres estados agrícolas que venden soja, maíz o carne, lo mismo que el Mercosur. También cambiaron Texas, Maine y Carolina del Sur. Nebraska fue la excepción.');
+var NAMES={AR:'Argentina',UY:'Uruguay',BR:'Brasil',PY:'Paraguay',CL:'Chile',CO:'Colombia'};
+var CARDS=[
+  {st:'Kansas',tag:'Carne y trigo',w:'D',res:'Ganó Adam Hamilton, demócrata: cambió de partido',src:'Proyección de AP',r:'Roger Marshall',rr:'senador',d:'Adam Hamilton',dr:'pastor de una megaiglesia',
+   body:'Kansas no elegía a un demócrata para el Senado desde 1932. Es estado triguero y ganadero, como los que protestaron contra el plan de Trump de abrir la puerta a más carne importada.',
+   sig:'El campo dejó de ser territorio seguro de Trump. La presión contra la carne y la soja del Sur ahora tiene voz en los dos partidos.',ch:['AR','UY','BR','PY']},
+  {st:'Iowa',tag:'Soja',w:'D',res:'Ganó Josh Turek, demócrata: cambió de partido',src:'Proyección de AP. Según Forbes, la banca que les dio la mayoría',r:'Ashley Hinson',rr:'representante',d:'Josh Turek',dr:'legislador estatal',
+   body:'En setiembre de 2025, mientras Washington armaba el rescate de Argentina, China le compró soja a la Argentina y no a Iowa. Turek acusó a Hinson de callar ante el acuerdo de carne con Buenos Aires.',
+   sig:'Ganó el candidato que hizo campaña con la soja y con el rescate argentino. Ayudar al presidente Javier Milei tuvo costo en el cinturón agrícola.',ch:['AR','PY','BR','UY']},
+  {st:'Nebraska',tag:'Carne',w:'R',res:'Retuvo Pete Ricketts, republicano',src:'Proyección de AP',r:'Pete Ricketts',rr:'senador',d:'Dan Osborn',dr:'independiente, ex dirigente sindical',ind:true,
+   body:'Ricketts le pidió a la Casa Blanca cambiar el plan de importar "carne extranjera de baja calidad". Trump fue a Nebraska el 5 de octubre a sostenerlo.',
+   sig:'Una de las voces más duras contra la carne importada sigue en el Senado, ahora en minoría. La cuota extra para la carne argentina (80.000 toneladas) vence el 31 de diciembre.',ch:['AR','UY','BR','PY']},
+  {st:'Ohio',tag:'Proteccionismo',w:'D',res:'Ganó Sherrod Brown, demócrata: cambió de partido',src:'Proyección de AP',r:'Jon Husted',rr:'senador designado',d:'Sherrod Brown',dr:'ex senador',
+   body:'Sherrod Brown votó contra el NAFTA en 1993 y escribió "Myths of Free Trade" (2004). Recupera la banca que dejó JD Vance al asumir como vicepresidente.',
+   sig:'Un Senado demócrata no es un Senado librecambista: el arancel tiene defensores en los dos partidos.',ch:['BR','CL','UY','AR']},
+  {st:'Texas',tag:'Petróleo y voto latino',w:'D',res:'Ganó James Talarico, demócrata: cambió de partido',src:'Proyección de AP. Gina Hinojosa le ganó además la gobernación a Greg Abbott (CBS Texas)',r:'Ken Paxton',rr:'fiscal general de Texas',d:'James Talarico',dr:'legislador estatal',
+   body:'Ningún demócrata ganaba una banca de Texas en el Senado desde Lloyd Bentsen, en 1988, ni la gobernación desde Ann Richards, en 1990. Es la capital petrolera que compite con Vaca Muerta y el presal.',
+   sig:'El estado que compite con Vaca Muerta y con nuestra carne (es el primer estado ganadero del país) cambia de interlocutores en Washington y en Austin.',ch:['AR','BR','CO']},
+  {st:'Maine',tag:'La caja de la guerra',w:'D',res:'Ganó Troy Jackson, demócrata: cambió de partido',src:'Susan Collins reconoció la derrota (Axios, Maine Public, 4/11)',r:'Susan Collins',rr:'senadora, preside Asignaciones',d:'Troy Jackson',dr:'ex presidente del Senado de Maine',
+   body:'Collins preside la comisión que reparte el presupuesto federal. El pedido de US$ 87.600 millones para la guerra con Irán, de junio, sigue sin aprobarse.',
+   sig:'Desde el 3 de enero, el dinero de la guerra con Irán pasa por un Senado demócrata.',ch:['UY','PY','CL']},
+  {st:'Carolina del Sur',tag:'El asiento del halcón',w:'D',res:'Ganó Annie Andrews, demócrata: cambió de partido',src:'Proyección de AP',r:'Darline Graham',rr:'senadora designada',d:'Annie Andrews',dr:'pediatra',
+   body:'Lindsey Graham, uno de los senadores que más empujó la guerra con Irán, murió en julio. Su hermana heredó la banca y admitió en un debate no estar "tan informada en seguridad nacional".',
+   sig:'Trump había ganado el estado por casi 18 puntos. La guerra no sumó votos ni en el Sur más trumpista.',ch:['UY','PY','CL']},
+  {st:'Florida · distrito 27',tag:'Miami y las deportaciones',w:'X',res:'Sin proyección: Salazar, adelante por un margen estrecho',src:'AP no la proyectó; puede ir a recuento (WLRN, 3/11)',r:'María Elvira Salazar',rr:'representante',d:'Eliott Rodríguez',dr:'ex presentador de CBS4',
+   body:'Salazar se despegó de Trump en un aviso por las redadas migratorias. Según el Pew Research Center, la aprobación de Trump entre los hispanos cayó a 24%, desde 38% en febrero de 2025.',
+   sig:'Miami es el electorado que más pesa en la política de Washington hacia Venezuela, Cuba y Colombia. Una carrera tan pareja ya es un aviso sobre las deportaciones.',ch:['CO','AR']}
+];
+var cb=$('#cards');
+if(cb){
+  cb.innerHTML=CARDS.map(function(c){
+    var cls=c.w==='D'?'':(c.w==='R'?' r':' x');
+    return '<article class="card"><div class="top"><h3>'+c.st+'</h3><span class="tag">'+c.tag+'</span></div>'+
+      '<p class="res'+cls+'">'+c.res+'<small>'+c.src+'</small></p>'+
+      '<p class="vs"><span style="color:var(--rep)">●</span> <b>'+c.r+'</b>, '+c.rr+'<br><span style="color:'+(c.ind?'var(--ind)':'var(--dem)')+'">●</span> <b>'+c.d+'</b>, '+c.dr+'</p>'+
+      '<p>'+c.body+'</p><p class="sig"><b>Lectura: </b>'+c.sig+'</p>'+
+      '<div class="chips">'+c.ch.map(function(k){return '<span class="chip">'+NAMES[k]+'</span>'}).join('')+'</div></article>';
+  }).join('');
+}
+
+/* 6. Lo que cambia para seis países */
+head('escenarios','Resultado','Se dio el escenario más probable: las dos cámaras, demócratas','Antes de votar, Decision Desk HQ le daba 62% a esta combinación. Esto es lo que cambia con ella, en general y país por país.');
+hide('#scen-tabs');
+set('#scen-name','Las dos cámaras, demócratas: qué cambia');
+set('#scen-list',[
+  '<strong>La guerra:</strong> no alcanza para frenarla por ley: vencer un veto exige 67 senadores y 290 representantes. Sí manejan la caja: desde el 3 de enero, cualquier dinero nuevo para Irán necesita votos demócratas.',
+  '<strong>Los aranceles:</strong> se apoyan en las secciones 301 y 232, facultades que el Congreso ya delegó en el presidente. Cambiarlos exige una ley, y Trump puede vetarla.',
+  '<strong>El control:</strong> las comisiones citan testigos. Si se respeta la antigüedad, la senadora Elizabeth Warren presidiría la de Bancos del Senado y el representante Gregory Meeks, la de Asuntos Exteriores de la Cámara.',
+  '<strong>Los nombramientos:</strong> embajadores, jueces y gabinete pasan a depender de un Senado opositor.'
+].map(function(i){return '<li>'+i+'</li>'}).join(''));
+var CT={
+  UY:{base:'<b>Uruguay</b> le vendió a Estados Unidos un récord de US$ 1.553 millones en 2025, su cuarto destino. Paga 12,5% desde julio, pero más de tres cuartas partes de lo que exporta allá (carne, celulosa, madera) entran exentas. La carne fue el 58% de esas ventas en julio y compite con la cuota ampliada de Argentina. Y Uruguay importa todo su petróleo.',
+      r:'El 12,5% no cambia: lo fija la Casa Blanca. Cambió el humor de los estados que compiten con nuestra carne: Kansas, Iowa y Texas giraron, y Nebraska retuvo a Pete Ricketts, uno de los senadores más duros contra la carne importada. El riesgo inmediato sigue siendo el barril: el Brent a futuro subió 0,7%, a US$ 104,36, el 4/11 por la incertidumbre sobre Irán (Reuters).'},
+  AR:{base:'<b>Argentina</b> tiene un swap de US$ 20.000 millones con el Tesoro (usó 2.500 y ya los devolvió), un acuerdo comercial firmado en febrero y una cuota de carne de 100.000 toneladas cuyo tramo extra vence el 31 de diciembre. Paga 10%. Es el país de la región más atado a la decisión personal de Trump.',
+      r:'El presidente Javier Milei pierde el blindaje del Congreso. La senadora Elizabeth Warren, que en febrero pidió cortar el swap, presidiría la Comisión de Bancos y puede citar al secretario del Tesoro, Scott Bessent. Cancelar el swap exige una ley que supere el veto. La cuota extra vence el 31/12, todavía con el Congreso viejo.'},
+  PY:{base:'<b>Paraguay</b> no figura en la lista del arancel de la Sección 301: no paga recargo. Tiene exención para la carne hasta el 30 de noviembre, firmó con el secretario de Estado, Marco Rubio, un acuerdo de estatus de tropas y compite con Iowa en soja.',
+      r:'La exención para la carne vence el 30 de noviembre, dentro de los 61 días del Congreso viejo, y renovarla lo decide la Casa Blanca. El alineamiento del presidente Santiago Peña con Rubio rinde en el Ejecutivo, que es donde se decide la carne.'},
+  CL:{base:'<b>Chile</b> paga 12,5%, pero el cobre en cátodos, el litio, la plata y el molibdeno entran exentos. El cobre semielaborado paga 50% por la Sección 232. La decisión sobre un arancel al cobre refinado se demoró, según Reuters, por el costo de vida antes de las elecciones.',
+      r:'La Sección 232 no depende del Congreso. Pero nueve de cada diez votantes pusieron el costo de vida entre sus factores principales (boca de urna de CNN): un arancel nuevo que encarece cables y construcción en Estados Unidos es más difícil de vender.'},
+  BR:{base:'<b>Brasil</b> paga 12,5% más 25% por una Sección 301 propia: el 16,5% de lo que vende a Estados Unidos paga 37,5%. Lula da Silva fue reelecto presidente el 25 de octubre, Flávio Bolsonaro tiene visa estadounidense y Reuters reveló una campaña del Departamento de Estado por los Bolsonaro.',
+      r:'Gregory Meeks y Joaquín Castro, que ya le pidieron a Trump dejar de "socavar la democracia de Brasil", presidirían Asuntos Exteriores de la Cámara y su subcomisión del Hemisferio Occidental: pueden citar a Darren Beattie y Ricardo Pita, los funcionarios de la investigación de Reuters. El 37,5% sigue en pie: Lula gana aliados en las salas de audiencia, no en la aduana.'},
+  CO:{base:'<b>Colombia</b> estrenó en agosto como presidente a Abelardo de la Espriella, elogiado por Trump. Sigue descertificada (con dispensa), el ex presidente Gustavo Petro está en la lista de sanciones de la OFAC y Estados Unidos lleva al menos 70 ataques contra lanchas, con 235 muertos hasta el 4 de octubre. Paga 12,5%.',
+      r:'Con mayoría demócrata en el Senado, las votaciones de poderes de guerra sobre los ataques a lanchas tienen otros números (la de Venezuela cayó 50 a 51 en enero, con el desempate de JD Vance), aunque igual chocan con el veto. En Miami, María Elvira Salazar quedó adelante por un margen estrecho y la carrera puede ir a recuento.'}
+};
+var cur='UY',cs=$('#countries');
+function paint(){$$('#countries .ctry').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.c===cur)});set('#ctry-text',CT[cur].base+'<br><br><b style="color:var(--signal)">Después de la elección:</b> '+CT[cur].r)}
+if(cs){cs.innerHTML='';['UY','AR','PY','CL','BR','CO'].forEach(function(k){var b=document.createElement('button');b.className='ctry';b.dataset.c=k;b.type='button';b.textContent=NAMES[k];b.addEventListener('click',function(){cur=k;paint()});cs.appendChild(b)});paint();}
+var sb=$('#escenarios .scen-body h3:not(#scen-name)');if(sb)sb.textContent='La lectura desde';
+set('#always','<b>Lo que no cambió:</b> hasta el 3 de enero gobierna el Congreso actual, republicano en las dos cámaras. En esos 61 días vencen la exención arancelaria a la carne de Brasil y Paraguay (30 de noviembre), el financiamiento del gobierno (11 de diciembre) y la cuota extra de carne argentina (31 de diciembre). La Casa Blanca tiene pendiente el arancel al cobre refinado; Trump le dijo al Financial Times que no tiene planes inmediatos de atacar Irán (Reuters, 4/11).');
+
+/* 7. Petróleo */
+head('petroleo','La guerra que no estaba en la boleta','El barril, el día después',null);
+hide('#oil-seg');hide('#oil .ref');
+var os=$('#oil');if(os)os.setAttribute('aria-label','Precio del Brent fechado en 2026, con la ventana de 61 días');
+set('#oil-intro','La guerra no estaba en la boleta, pero pesó: cerca del 60% de los votantes dijo que atacar a Irán fue "la decisión equivocada" y un tercio, que la guerra fue decisiva para su voto (AP VoteCast). El 4 de noviembre, el Brent a futuro subió 0,7%, a US$ 104,36, por la incertidumbre sobre el próximo paso de Washington (Reuters). Funcionarios citados por Bloomberg describen como "especialmente peligroso" el período que empieza ahora, entre la elección y el Congreso nuevo.');
+set('#oil-note','El gráfico muestra el Brent fechado (físico) de la EIA hasta el 27 de octubre. El contrato a futuro, el que citan los noticieros, es otra referencia y cotiza más abajo: US$ 104,36 el 4/11 a las 7:30 GMT.');
+set('#oil-src','Brent fechado (spot), precio diario, Administración de Información Energética de EE.UU. (EIA), 1/12/2025 a 27/10/2026. Brent a futuro del 4/11: Reuters, vía Business Recorder. AP VoteCast, vía Forbes.');
+
+/* 8. La noche */
+head('noche','Lo que pasó','La noche, en hora de Montevideo','Los cierres de urnas que marcamos el lunes, con lo que pasó en cada uno. Proyecciones de AP, salvo donde se indica.');
+var N2=[
+  ['21:00','19:00','Georgia, Carolina del Sur, Virginia, casi toda Florida y Nuevo Hampshire','Carolina del Sur cambió de partido: ganó Annie Andrews. Jon Ossoff retuvo Georgia y Chris Pappas, Nuevo Hampshire. En Florida, Ashley Moody retuvo la banca; el distrito 27 de María Elvira Salazar quedó sin proyección.',true],
+  ['21:30','19:30','Ohio y Carolina del Norte','Sherrod Brown le ganó a Jon Husted y Roy Cooper a Michael Whatley: dos bancas republicanas que pasaron a los demócratas.',true],
+  ['22:00','20:00','Maine, Pensilvania, casi todo Texas, Míchigan y Kansas','Kansas eligió a su primer senador demócrata desde 1932. Texas eligió a James Talarico, y a Gina Hinojosa como gobernadora. Susan Collins reconoció la derrota ante Troy Jackson. Abdul El-Sayed retuvo Míchigan.',true],
+  ['23:00','21:00','Iowa, Nebraska, Nueva York, Arizona, Minnesota, Wisconsin','Josh Turek ganó Iowa: según Forbes, la banca que les dio la mayoría a los demócratas. Pete Ricketts retuvo Nebraska. Peggy Flanagan retuvo Minnesota.',true],
+  ['02:00','00:00','Alaska (casi todo) y Hawái','Alaska sigue sin definirse: Dan Sullivan, adelante por poco sobre Mary Peltola. Si nadie pasa el 50%, el resultado llega el 18 de noviembre.',false]
+];
+set('#night',N2.map(function(n){return '<div class="hour'+(n[4]?' key':'')+'"><div class="h num">'+n[0]+'<small>'+n[1]+' (Este)</small></div><div class="what"><b>'+n[2]+'</b><p>'+n[3]+'</p></div></div>'}).join(''));
+var nsrc=$('#noche > .src');if(nsrc)nsrc.textContent='Horarios de cierre: Fox News y National Association of Secretaries of State, en hora de Uruguay (UTC−3). Proyecciones: AP; ganadores según CBS News, NBC News, Forbes, CBN y Axios.';
+
+/* 9. Calendario */
+head('calendario','Lo que falta','El Senado ya tiene dueño; Alaska todavía cuenta','Maine no necesitó el voto preferencial: Susan Collins reconoció la derrota. Georgia no va a segunda vuelta. Queda Alaska, y 61 días de Congreso viejo con vencimientos que nos tocan.');
+var C2=[
+  ['3 nov','Se votó: las dos cámaras pasan a los demócratas el 3 de enero.',true],
+  ['18 nov','Alaska hace el conteo de voto preferencial, si nadie superó el 50%; certifica el 25.'],
+  ['30 nov','Vence la exención arancelaria a la carne de Brasil y Paraguay.',true],
+  ['9 dic','La Reserva Federal, que preside Kevin Warsh, vuelve a decidir su tasa.'],
+  ['11 dic','Vence el financiamiento del gobierno: primera pulseada del Congreso saliente.',true],
+  ['31 dic','Vence la cuota extra de 80.000 toneladas para la carne argentina.',true],
+  ['3 ene','Asume el Congreso nuevo. Las comisiones cambian de dueño.',true]
+];
+set('#cal',C2.map(function(c){return '<div'+(c[2]?' class="key"':'')+'><b>'+c[0]+'</b><span>'+c[1]+'</span></div>'}).join(''));
+
+/* Pie y fuentes */
+var fp=$$('footer p');
+if(fp[0])fp[0].innerHTML='La columna que acompaña esta lectura está en <a href="https://mundoliminal.substack.com" target="_blank" rel="noopener">mundoliminal.substack.com</a>.';
+if(fp[1])fp[1].textContent='Una pieza de LIMINAL, análisis internacional hecho desde Montevideo, por Martín Sarthou. Resultados al miércoles 4 de noviembre de 2026, 8:00 (hora de Uruguay): proyecciones de AP, CBS News y NBC News. El conteo oficial sigue y los estados certifican en las próximas semanas.';
+var NS=[
+  ['CBS News, los demócratas ganan el Senado','https://www.cbsnews.com/news/senate-control-democrats-republicans-2026-midterm-elections/'],
+  ['CBS News, resultados de la Cámara y boca de urna','https://www.cbsnews.com/live-updates/house-election-results-2026/'],
+  ['Forbes, resultados en vivo (4/11)','https://www.forbes.com/sites/saradorn/2026/11/03/midterm-election-results-live-updates-democrats-win-senate-in-stunning-rout/'],
+  ['CBN, las bancas que cambiaron de partido','https://cbn.com/news/politics/update-democrats-flip-6-seats-take-control-us-senate'],
+  ['Axios, Susan Collins reconoce la derrota (4/11)','https://www.axios.com/2026/11/04/maine-senate-results-collins-jackson'],
+  ['NBC News, Pete Ricketts retiene Nebraska','https://www.nbcnews.com/politics/2026-election/pete-ricketts-nebraska-senator-gop-win-dan-osborn-election-rcna603328'],
+  ['CBS News, Peggy Flanagan gana Minnesota','https://www.cbsnews.com/news/minnesota-2026-senate-flanagan-tafoya/'],
+  ['CBS Texas, Gina Hinojosa le gana a Greg Abbott','https://www.cbsnews.com/texas/news/texas-governor-election-2026-greg-abbott-gina-hinojosa-results/'],
+  ['Alaska Public Media, Sullivan y Peltola (3/11)','https://alaskapublic.org/news/politics/elections/2026-11-03/peltola-takes-early-lead-in-alaskas-u-s-senate-race'],
+  ['WLRN, el distrito 27 de Florida puede ir a recuento (3/11)','https://www.wlrn.org/government-politics/2026-11-03/salazar-rodriguez-27th-recount'],
+  ['Business Recorder (Reuters), el petróleo el 4/11','https://www.brecorder.com/news/40447343/oil-rises-on-iran-war-uncertainty-after-trumps-republicans-are-routed-in-midterms']
+];
+var ol=$('#sources');
+if(ol){ol.insertAdjacentHTML('afterbegin',NS.map(function(s){return '<li><a href="'+s[1]+'" target="_blank" rel="noopener">'+s[0]+'</a></li>'}).join(''));}
+})();
+</script>
+
 <script>
 (function(){if(!document.documentElement.classList.contains('embed')||window.parent===window)return;
 var last=0;function send(){var h=Math.ceil(document.documentElement.scrollHeight);if(Math.abs(h-last)>2){last=h;try{parent.postMessage({liminalMidterms:h},'*')}catch(e){}}}

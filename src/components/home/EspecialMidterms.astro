@@ -6,41 +6,29 @@
  */
 const vigente = Date.now() < Date.parse('2026-11-07T03:00:00Z');
 
-// Hemiciclo del Senado (100 bancas: 47 demócratas, 53 republicanos), calculado al compilar.
-const filas = 6;
-const radios = Array.from({ length: filas }, (_, i) => 105 + (180 * i) / (filas - 1));
-const total = radios.reduce((a, b) => a + b, 0);
-const cuenta = radios.map((r) => Math.round((100 * r) / total));
-cuenta[filas - 1] += 100 - cuenta.reduce((a, b) => a + b, 0);
-const puntos: { x: number; y: number; a: number }[] = [];
-radios.forEach((r, i) => {
-  const c = cuenta[i];
-  for (let j = 0; j < c; j++) {
-    const a = Math.PI * (1 - (c === 1 ? 0.5 : j / (c - 1)));
-    puntos.push({ x: 300 + r * Math.cos(a), y: 300 - r * Math.sin(a), a });
-  }
-});
-puntos.sort((p, q) => q.a - p.a);
-const bancas = puntos.map((p, k) => ({ ...p, d: k < 47 }));
+// Bancas del Senado que cambiaron de partido (proyecciones de AP, 4/11/2026).
+const giro = ['Kansas', 'Iowa', 'Ohio', 'Texas', 'Maine', 'Carolina del Norte', 'Carolina del Sur'];
 ---
 
 {vigente && (
   <section class="especial ventana" aria-labelledby="especial-midterms">
     <div class="especial__texto">
-      <p class="especial__kick">Especial · Legislativas de EE.UU., 3 de noviembre</p>
-      <h2 id="especial-midterms" class="especial__titulo">Midterms desde el Sur</h2>
+      <p class="especial__kick">Especial · Legislativas de EE.UU. · Resultados</p>
+      <h2 id="especial-midterms" class="especial__titulo">Midterms desde el Sur: los resultados</h2>
       <p class="especial__bajada">
-        El Senado se juega en tierra de soja y carne. Armá tu propio Senado, mirá cuatro escenarios para seis
-        países y seguí la noche en hora de Montevideo.
+        Los demócratas ganaron el Congreso y el Senado se dio vuelta en tierra de soja y carne. Carrera por
+        carrera y lo que cambia para seis países del Sur.
       </p>
-      <a class="especial__boton" href="/midterms/">Abrir el simulador <b aria-hidden="true">→</b></a>
+      <a class="especial__boton" href="/midterms/">Ver los resultados <b aria-hidden="true">→</b></a>
     </div>
-    <svg class="especial__hemi" viewBox="0 0 600 315" role="img" aria-label="Senado hoy: 47 demócratas y 53 republicanos">
-      {bancas.map((b) => (
-        <circle cx={b.x.toFixed(1)} cy={b.y.toFixed(1)} r="15" fill={b.d ? '#3F86E0' : '#E0574C'} />
-      ))}
-      <line x1="300" x2="300" y1="312" y2="4" stroke="var(--color-horizonte)" stroke-width="3" />
-    </svg>
+    <div class="especial__giro" aria-label="Bancas del Senado que cambiaron de partido">
+      <p class="especial__giro-kick">Pasaron a los demócratas</p>
+      <ul>
+        {giro.map((e) => (
+          <li>{e}</li>
+        ))}
+      </ul>
+    </div>
   </section>
 )}
 
@@ -100,10 +88,33 @@ const bancas = puntos.map((p, k) => ({ ...p, d: k < 47 }));
   .especial__boton:hover {
     background: var(--boton-hover);
   }
-  .especial__hemi {
-    flex: 0 1 280px;
-    width: 280px;
+  .especial__giro {
+    flex: 0 1 300px;
     max-width: 100%;
-    height: auto;
+  }
+  .especial__giro-kick {
+    margin: 0 0 var(--space-3);
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--tinta-meta);
+  }
+  .especial__giro ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .especial__giro li {
+    padding: 6px 12px;
+    border-left: 4px solid #3f86e0;
+    background: rgba(255, 255, 255, 0.06);
+    font-family: var(--font-display-v2);
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--tinta-fuerte);
   }
 </style>
