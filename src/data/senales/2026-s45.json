@@ -71,22 +71,22 @@
       "senales": [
         {
           "n": 3,
-          "titulo": "Trump pierde el Congreso con Irán en la cuenta y Ormuz sigue minado",
+          "titulo": "Trump frena con Irán tras la derrota y el crudo cae 9% en un día",
           "lugar": "Washington / Estrecho de Ormuz",
           "lugarMapa": "Estrecho de Ormuz",
           "lat": 26.6,
           "lon": 56.5,
           "etiqueta": "der",
-          "fecha": "2026-11-04",
-          "hecho": "Los demócratas ganaron las dos cámaras el martes 3: AP les adjudicó la Cámara de Representantes en la madrugada del miércoles y el Senado cambió de mano con al menos siete bancas dadas vuelta (Forbes). Trump dijo a Fox News que la guerra con Irán y el precio de los combustibles pesaron en la derrota, y a la vez advirtió que EE.UU. debe hacer \"algo grande\" contra Irán, aunque relativizó la versión de que reanudaría los bombardeos tras la elección. El negociador iraní Mohammad Bagher Ghalibaf dijo que los estadounidenses votaron \"no a la guerra\", cuatro tanqueros se incendiaron tras tocar minas en el estrecho según Teherán (Gulf News), y la oferta de reabrir en dos días sigue sobre la mesa.",
-          "lectura": "La urna hizo lo que no lograron los mediadores: Trump admitió que Irán y el precio de la nafta le costaron el Congreso, y ahora amenaza con un golpe grande mientras negocia debilitado. Para el Cono Sur la cuenta no cambió: con el estrecho minado, el barril y el flete se siguen pagando como en guerra.",
-          "tendencia": "escala",
+          "fecha": "2026-11-05",
+          "hecho": "Trump descartó nuevos ataques inmediatos a Irán tras perder el Congreso, dijo que un acuerdo \"podría darse\" y su gobierno afirma que no fija plazos para la negociación que media Qatar (Bloomberg, Financial Times). El Brent cayó 8,6% el miércoles 4, a USD 94,66, desde el pico de USD 118 de octubre, y el jueves rondaba USD 94 en su cuarta rueda de baja. El estrecho sigue minado: la Guardia Revolucionaria informó que cuatro tanqueros fueron destruidos por minas en una ruta que considera prohibida, y un avión estadounidense destruyó un lanzamisiles en la isla de Qeshm (Al Jazeera).",
+          "lectura": "Trump pasó en una semana de amenazar un golpe grande a descartar ataques y hablar de acuerdo, y el mercado le puso precio al giro antes que los diplomáticos: 9% menos por barril en un día. Para el Cono Sur la baja promete aliviar el flete y el surtidor, pero descansa en una negociación sin papel firmado y en un estrecho que sigue minado.",
+          "tendencia": "afloja",
           "intensidad": 3,
           "fuente": {
-            "nombre": "CBS News",
-            "url": "https://www.cbsnews.com/live-updates/iran-war-us-trump-midterms-strait-of-hormuz/"
+            "nombre": "OilPrice",
+            "url": "https://oilprice.com/Latest-Energy-News/World-News/Oil-Crashes-9-as-Trump-and-Vance-Blame-Iran-War-for-Midterm-Rout.html"
           },
-          "actualizado": "2026-11-04T09:33",
+          "actualizado": "2026-11-05THH:MM",
           "anterior": {
             "titulo": "Irán ofrece reabrir Ormuz en dos días, con condiciones",
             "fecha": "2026-11-01",
