@@ -239,6 +239,26 @@
       "alcance": "Guerras activas, cambios de fase y lo que derraman sobre la región.",
       "senales": [
         {
+          "n": 11,
+          "titulo": "Renuncia Peña en Paraguay y el Congreso la deja en suspenso",
+          "lugar": "Asunción, Paraguay",
+          "lugarMapa": "Asunción, Paraguay",
+          "lat": -25.28,
+          "lon": -57.63,
+          "etiqueta": "arriba",
+          "fecha": "2026-11-05",
+          "hecho": "El presidente paraguayo Santiago Peña anunció el jueves 5 su renuncia por el colapso de Ueno Bank, el banco al que estuvo vinculado, horas después de que Diputados aprobara por unanimidad (78 votos) la acusación para su juicio político (ABC Color, Infobae). La sesión del Congreso para aceptar la renuncia quedó sin quórum, así que Peña sigue siendo formalmente presidente mientras el Senado avanza con el juicio, y la oposición prefiere destituirlo para que no conserve fueros. Si la renuncia se acepta, asume el vicepresidente Pedro Alliana.",
+          "lectura": "Paraguay junta en una semana la caída de un banco grande, un presidente que renuncia y un Congreso que congela esa renuncia para poder destituirlo sin fueros. Para el Mercosur el dato es institucional: el socio que venía ofreciendo estabilidad y salida logística por la hidrovía queda con un presidente en retirada, un sucesor sin confirmar y contratos que esperan saber quién firma.",
+          "tendencia": "escala",
+          "intensidad": 3,
+          "fuente": {
+            "nombre": "ABC Color",
+            "url": "https://www.abc.com.py/politica/2026/11/05/renuncio-santiago-pena-la-caida-del-presidente-por-el-caso-ueno-bank/"
+          },
+          "actualizado": "2026-11-06THH:MM",
+          "ultimoMomento": true
+        },
+        {
           "n": 7,
           "titulo": "Ucrania, Rusia y EE.UU. vuelven a la mesa: Abu Dabi, 10 y 11",
           "lugar": "Kiev / Abu Dabi",
