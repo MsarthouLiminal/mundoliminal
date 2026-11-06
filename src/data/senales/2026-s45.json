@@ -11,6 +11,26 @@
       "alcance": "Tierras raras, cobre, cobalto, litio, uranio. Quién controla el acceso y a qué precio.",
       "senales": [
         {
+          "n": 10,
+          "titulo": "Producción inflada en Codelco: 42.000 toneladas y ocho despidos",
+          "lugar": "Santiago de Chile",
+          "lugarMapa": "Santiago, Chile",
+          "lat": -33.45,
+          "lon": -70.66,
+          "etiqueta": "izq",
+          "fecha": "2026-11-05",
+          "hecho": "En la junta extraordinaria de accionistas del jueves 5, pedida por los ministerios de Hacienda y Minería, Codelco informó unas 42.100 toneladas de cobre registradas artificialmente como producidas en 2024 y 2025, con un impacto estimado de USD 140 millones, y la desvinculación de ocho ejecutivos (Cooperativa, G5 Noticias). El ministro Jorge Quiroz habló de un engaño \"al más alto nivel en la línea administrativa\" (Emol). Entre enero y agosto de 2026 la producción de la minera estatal cayó 7,5%.",
+          "lectura": "El mayor productor mundial de cobre acaba de admitir que parte de su producción existía solo en los registros, justo el año en que Chile camina a una baja histórica. En un mercado donde las fundiciones pagan por conseguir concentrado, descubrir que faltaban 42.000 toneladas en los papeles pesa más que cualquier proyección: el cobre escasea incluso donde se contaba sobrado.",
+          "tendencia": "escala",
+          "intensidad": 2,
+          "fuente": {
+            "nombre": "Cooperativa.cl",
+            "url": "https://www.cooperativa.cl/noticias/pais/empresas-del-estado/codelco/codelco-detecto-mas-de-42-mil-toneladas-de-produccion-artificial-en-2024/2026-11-05/104539.html"
+          },
+          "actualizado": "2026-11-06THH:MM",
+          "ultimoMomento": true
+        },
+        {
           "n": 1,
           "titulo": "Lynas vende tierras raras con piso de precio fuera de China",
           "lugar": "Perth / Kuantan (Malasia)",
@@ -71,22 +91,22 @@
       "senales": [
         {
           "n": 3,
-          "titulo": "Trump frena con Irán tras la derrota y el crudo cae 9% en un día",
-          "lugar": "Washington / Estrecho de Ormuz",
+          "titulo": "Ormuz vuelve a arder y el crudo regresa a los USD 100",
+          "lugar": "Estrecho de Ormuz / Golfo Pérsico",
           "lugarMapa": "Estrecho de Ormuz",
           "lat": 26.6,
           "lon": 56.5,
           "etiqueta": "der",
-          "fecha": "2026-11-05",
-          "hecho": "Trump descartó nuevos ataques inmediatos a Irán tras perder el Congreso, dijo que un acuerdo \"podría darse\" y su gobierno afirma que no fija plazos para la negociación que media Qatar (Bloomberg, Financial Times). El Brent cayó 8,6% el miércoles 4, a USD 94,66, desde el pico de USD 118 de octubre, y el jueves rondaba USD 94 en su cuarta rueda de baja. El estrecho sigue minado: la Guardia Revolucionaria informó que cuatro tanqueros fueron destruidos por minas en una ruta que considera prohibida, y un avión estadounidense destruyó un lanzamisiles en la isla de Qeshm (Al Jazeera).",
-          "lectura": "Trump pasó en una semana de amenazar un golpe grande a descartar ataques y hablar de acuerdo, y el mercado le puso precio al giro antes que los diplomáticos: 9% menos por barril en un día. Para el Cono Sur la baja promete aliviar el flete y el surtidor, pero descansa en una negociación sin papel firmado y en un estrecho que sigue minado.",
-          "tendencia": "afloja",
+          "fecha": "2026-11-06",
+          "hecho": "La Guardia Revolucionaria iraní informó el jueves 5 que dos tanqueros y un remolcador se incendiaron tras chocar con minas en Ormuz, y la agencia naval británica UKMTO reportó un tanquero alcanzado por dos proyectiles frente a Qatar, sin autor confirmado (Al Jazeera). El Brent revirtió la baja de la semana: subió 3,9% el jueves, a USD 98,29, y el viernes 6 volvió a operar arriba de USD 100 (Yahoo Finance). Teherán sostiene que el estrecho sigue cerrado hasta que se cumplan sus siete condiciones, y la propuesta nuclear que envió vía Qatar no tiene fecha de negociación.",
+          "lectura": "El alivio del surtidor duró dos ruedas: bastaron dos tanqueros en llamas y un proyectil frente a Qatar para que el barril volviera a tres dígitos. Mientras Teherán condicione cada tránsito y la negociación siga sin papel firmado, el Cono Sur paga el crudo con prima de guerra, se dispare quien se dispare.",
+          "tendencia": "escala",
           "intensidad": 3,
           "fuente": {
-            "nombre": "OilPrice",
-            "url": "https://oilprice.com/Latest-Energy-News/World-News/Oil-Crashes-9-as-Trump-and-Vance-Blame-Iran-War-for-Midterm-Rout.html"
+            "nombre": "Al Jazeera",
+            "url": "https://www.aljazeera.com/news/2026/11/5/iran-says-tankers-struck-in-hormuz-amid-fears-of-new-us-attack"
           },
-          "actualizado": "2026-11-05T07:19",
+          "actualizado": "2026-11-06THH:MM",
           "anterior": {
             "titulo": "Irán ofrece reabrir Ormuz en dos días, con condiciones",
             "fecha": "2026-11-01",
@@ -220,20 +240,32 @@
       "senales": [
         {
           "n": 7,
-          "titulo": "Zelensky ofrece discutir territorio con Putin cara a cara",
-          "lugar": "Kiev / Helsinki / Oslo",
+          "titulo": "Ucrania, Rusia y EE.UU. vuelven a la mesa: Abu Dabi, 10 y 11",
+          "lugar": "Kiev / Abu Dabi",
           "lugarMapa": "Kiev, Ucrania",
           "lat": 50.45,
           "lon": 30.52,
           "etiqueta": "der",
-          "fecha": "2026-10-29",
-          "hecho": "El canciller ucraniano Andrii Sybiha dijo al diario finlandés Helsingin Sanomat que Volodímir Zelensky está dispuesto a tratar con Vladímir Putin \"los temas más difíciles\", incluido el territorio, en una reunión personal y con alto el fuego. Lo transmitieron el martes 27 el presidente finlandés Alexander Stubb y el primer ministro noruego Jonas Gahr Støre, en el primer contacto de Putin con líderes europeos aliados de Kiev desde julio de 2025. El viernes 30, ataques rusos a centrales y subestaciones dejaron sin luz a unos 280.000 hogares en las regiones de Kiev y Dnipró (Kyiv Post).",
-          "lectura": "Kiev puso el territorio sobre la mesa en voz alta, con dos condiciones: que Putin se siente en persona y que callen las armas mientras tanto. Que el mensaje viaje por Helsinki y Oslo, y no por Washington, muestra a quién quiere Ucrania en la sala. Mientras se habla de reuniones, Rusia sigue apagando ciudades con el invierno a las puertas, y la diplomacia avanza más rápido en las declaraciones que en el frente.",
+          "arco": { "lat": 24.45, "lon": 54.38, "nombre": "Abu Dabi" },
+          "fecha": "2026-11-05",
+          "hecho": "Negociadores de Ucrania, Rusia y EE.UU. se reunirán el 10 y el 11 de noviembre en Abu Dabi, en la primera mesa de los tres desde febrero (CNBC); Zelensky conversó con los enviados estadounidenses antes de la cita (RTÉ). El presidente ucraniano dijo que le pidió a Washington negociar un alto el fuego de invierno que proteja la red eléctrica y permita elecciones presidenciales en Ucrania, y afirmó que Putin no acepta un cese del fuego (Kyiv Post). Moscú mantiene la exigencia de todo el Donbás, que Kiev rechaza.",
+          "lectura": "La oferta de Kiev consiguió fecha y sede: por primera vez desde febrero, los tres se sientan en la misma mesa, con Abu Dabi de anfitrión y Washington de corredor. Zelensky llega pidiendo una tregua de invierno que proteja la red eléctrica y habilite elecciones, una jugada que convierte el frío, hasta ahora arma rusa, en argumento de negociación.",
           "tendencia": "afloja",
           "intensidad": 2,
           "fuente": {
-            "nombre": "Meduza",
-            "url": "https://meduza.io/en/news/2026/10/29/ukraine-says-zelensky-is-ready-to-discuss-territory-with-putin-in-person"
+            "nombre": "CNBC",
+            "url": "https://www.cnbc.com/2026/11/03/russia-ukraine-peace-talks-abu-dhabi-trump-putin-xi.html"
+          },
+          "actualizado": "2026-11-06THH:MM",
+          "anterior": {
+            "titulo": "Zelensky ofrece discutir territorio con Putin cara a cara",
+            "fecha": "2026-10-29",
+            "hecho": "El canciller ucraniano Andrii Sybiha dijo al diario finlandés Helsingin Sanomat que Volodímir Zelensky está dispuesto a tratar con Vladímir Putin \"los temas más difíciles\", incluido el territorio, en una reunión personal y con alto el fuego. Lo transmitieron el martes 27 el presidente finlandés Alexander Stubb y el primer ministro noruego Jonas Gahr Støre, en el primer contacto de Putin con líderes europeos aliados de Kiev desde julio de 2025. El viernes 30, ataques rusos a centrales y subestaciones dejaron sin luz a unos 280.000 hogares en las regiones de Kiev y Dnipró (Kyiv Post).",
+            "lectura": "Kiev puso el territorio sobre la mesa en voz alta, con dos condiciones: que Putin se siente en persona y que callen las armas mientras tanto. Que el mensaje viaje por Helsinki y Oslo, y no por Washington, muestra a quién quiere Ucrania en la sala. Mientras se habla de reuniones, Rusia sigue apagando ciudades con el invierno a las puertas, y la diplomacia avanza más rápido en las declaraciones que en el frente.",
+            "fuente": {
+              "nombre": "Meduza",
+              "url": "https://meduza.io/en/news/2026/10/29/ukraine-says-zelensky-is-ready-to-discuss-territory-with-putin-in-person"
+            }
           }
         },
         {
