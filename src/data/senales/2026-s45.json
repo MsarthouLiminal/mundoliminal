@@ -23,6 +23,9 @@
           "lectura": "El mayor productor mundial de cobre acaba de admitir que parte de su producción existía solo en los registros, justo el año en que Chile camina a una baja histórica. En un mercado donde las fundiciones pagan por conseguir concentrado, descubrir que faltaban 42.000 toneladas en los papeles pesa más que cualquier proyección: el cobre escasea incluso donde se contaba sobrado.",
           "tendencia": "escala",
           "intensidad": 2,
+          "corto": "Codelco",
+          "dato": "42.100 t de cobre",
+          "objetivo": "Minería de cobre",
           "fuente": {
             "nombre": "Cooperativa.cl",
             "url": "https://www.cooperativa.cl/noticias/pais/empresas-del-estado/codelco/codelco-detecto-mas-de-42-mil-toneladas-de-produccion-artificial-en-2024/2026-11-05/104539.html"
@@ -42,6 +45,9 @@
           "lectura": "Fuera de China, las tierras raras empezaron a tener un precio que no figura en ninguna pizarra: el que firman los fabricantes para asegurarse el imán. Un piso garantizado funciona como un seguro, y la prima la paga el comprador occidental a cambio de no depender de una licencia de Beijing. Si la pausa china vence sin papel nuevo, ese seguro va a parecer barato.",
           "tendencia": "escala",
           "intensidad": 2,
+          "corto": "Lynas",
+          "dato": "NdPr A$102,1 por kilo",
+          "objetivo": "Tierras raras",
           "fuente": {
             "nombre": "MINING.COM",
             "url": "https://www.mining.com/lynas-locks-in-price-floors-as-revenue-jumps-55"
@@ -60,6 +66,9 @@
           "lectura": "Argentina asegura cobre para 2031 en un mercado donde hoy las fundiciones pagan para conseguir concentrado. El RIGI le da reglas estables a la mina, pero no decide quién refina: si nada cambia, Catamarca va a vender mineral para que lo funda China, como ya hace Chile. La provincia se queda con el pozo, y el valor de la etapa siguiente cruza el Pacífico.",
           "tendencia": "estable",
           "intensidad": 1,
+          "corto": "Agua Rica",
+          "dato": "USD 6.393 millones",
+          "objetivo": "Proyecto de cobre",
           "fuente": {
             "nombre": "La Nación",
             "url": "https://www.lanacion.com.ar/economia/el-gobierno-aprobo-un-nuevo-proyecto-rigi-en-catamarca-por-us6300-millones-nid27102026/"
@@ -101,6 +110,9 @@
           "lectura": "Los ataques ya cobraron un muerto y aun así el barril terminó la semana abajo de cien: el mercado leyó las urnas del martes como la antesala de un acuerdo y apostó antes de ver un solo papel firmado. Si Washington no convierte esa apuesta en negociación, la prima de guerra vuelve sola, ataque a ataque.",
           "tendencia": "escala",
           "intensidad": 3,
+          "corto": "Ormuz",
+          "dato": "Brent USD 98,32",
+          "objetivo": "Estrecho",
           "fuente": {
             "nombre": "CBS News",
             "url": "https://www.cbsnews.com/live-updates/iran-war-us-trump-midterms-strait-of-hormuz/"
@@ -130,6 +142,9 @@
           "lectura": "Uruguay decidió que la guerra del Golfo no llegue al surtidor en plena siembra, y la decisión tiene un costo que el gobierno todavía no puso en números. Los veinte pesos por litro que el productor no paga los termina pagando alguien: ANCAP, Rentas Generales o un ajuste más adelante. Congelar compra tiempo, y cuánto tiempo depende más de Ormuz que de Montevideo.",
           "tendencia": "escala",
           "intensidad": 2,
+          "corto": "Gasoil UY",
+          "dato": "Paridad: suba de 31,3%",
+          "objetivo": "Combustibles",
           "fuente": {
             "nombre": "El Observador",
             "url": "https://www.elobservador.com.uy/economia-y-empresas/gobierno-mantiene-los-precios-los-combustibles-noviembre-y-evita-subas-3-naftas-y-20-gasoil-n6062187"
@@ -148,6 +163,9 @@
           "lectura": "La tregua entre Washington y Beijing se prorrogó de palabra en setiembre, pero los aranceles, las tasas y los controles se prorrogan con avisos legales, y hasta ahora hay uno solo, propuesto y sin firmar. Si el resto no aparece antes del 10, las medidas vuelven solas, sin que nadie tenga que declarar una guerra comercial. Para el Cono Sur, que les vende a los dos, una tregua sin papel es un riesgo más a cubrir.",
           "tendencia": "escala",
           "intensidad": 2,
+          "corto": "Tregua",
+          "dato": "Vence el lunes 9",
+          "objetivo": "Comercio EE.UU./China",
           "fuente": {
             "nombre": "Holland & Knight, sobre el aviso de USTR",
             "url": "https://www.hklaw.com/en/insights/publications/2026/10/ustr-proposes-2-month-extension-of-suspension-of-section-301"
@@ -189,6 +207,9 @@
           "lectura": "La resistencia a los data centers pasó de audiencia pública a mayoría electoral: donde hubo urna en Ohio, el freno ganó casi siempre y con hasta 80% de los votos. Para Uruguay, que espera a Google en Canelones, el mensaje es incómodo: cada municipio que dice no en EE.UU. empuja a los inversores a buscar suelo, energía y permisos en otra parte.",
           "tendencia": "escala",
           "intensidad": 2,
+          "corto": "Ohio",
+          "dato": "Límites en al menos 14",
+          "objetivo": "Data centers",
           "fuente": {
             "nombre": "Fortune",
             "url": "https://fortune.com/2026/11/04/ohio-data-center-ballot-measures-midterm-elections/"
@@ -208,6 +229,9 @@
           "lectura": "El mercado venía financiando sin muchas preguntas el gasto de las big tech en data centers; el jueves pasó la cuenta, en el peor día de Alphabet desde 2004. La empresa admite que le falta capacidad y aun así gasta más, porque el cuello de botella es físico: chips, energía, terrenos. Uruguay, que espera a Google en Canelones y a Solaria, va a negociar con inversores a los que Wall Street ya les pregunta cuándo rinde.",
           "tendencia": "escala",
           "intensidad": 2,
+          "corto": "Alphabet",
+          "dato": "Cae 12,64%",
+          "objetivo": "Capex de IA",
           "fuente": {
             "nombre": "Yahoo Finance",
             "url": "https://finance.yahoo.com/markets/article/alphabet-heads-for-a-500-billion-drop-in-market-value-the-biggest-in-its-history-134824763.html"
@@ -249,6 +273,9 @@
           "lectura": "Paraguay resolvió en dos días el limbo que abrió la renuncia: destituyó a Peña, tomó juramento a Alliana y puso al expresidente bajo custodia militar, oficialmente por su protección. Para el Mercosur ya se sabe quién firma; falta saber cuánto aguanta un gobierno de reemplazo con un banco caído adentro del sistema y la calle todavía caliente.",
           "tendencia": "escala",
           "intensidad": 3,
+          "corto": "Paraguay",
+          "dato": "44 votos en el Senado",
+          "objetivo": "Crisis institucional",
           "fuente": {
             "nombre": "ABC Color",
             "url": "https://www.abc.com.py/politica/2026/11/06/en-vivo-juicio-politico-a-pena-senado-retoma-proceso-en-medio-de-renuncia-trabada-y-pedido-de-prorroga/"
@@ -270,6 +297,9 @@
           "lectura": "La oferta de Kiev consiguió fecha y sede: por primera vez desde febrero, los tres se sientan en la misma mesa, con Abu Dabi de anfitrión y Washington de corredor. Zelensky llega pidiendo una tregua de invierno que proteja la red eléctrica y habilite elecciones, una jugada que convierte el frío, hasta ahora arma rusa, en argumento de negociación.",
           "tendencia": "afloja",
           "intensidad": 2,
+          "corto": "Abu Dabi",
+          "dato": "10 y 11 de noviembre",
+          "objetivo": "Negociación",
           "fuente": {
             "nombre": "CNBC",
             "url": "https://www.cnbc.com/2026/11/03/russia-ukraine-peace-talks-abu-dhabi-trump-putin-xi.html"
@@ -299,6 +329,9 @@
           "lectura": "Con Ormuz sujeto a permisos iraníes, Arabia Saudita depende de sus dos grandes salidas: las terminales del Golfo, como Ras Tanura, y el oleoducto que cruza el desierto hasta el Mar Rojo. Los hutíes apuntaron a las dos en la misma semana, y aunque el daño fue menor, el mensaje es geográfico. Si el colchón saudí queda al alcance de un misil lanzado desde Yemen, el mercado va a cobrar ese riesgo aunque no se pierda un barril.",
           "tendencia": "escala",
           "intensidad": 3,
+          "corto": "Hutíes",
+          "dato": "Refinería de 550.000 b/d",
+          "objetivo": "Terminales petroleras",
           "fuente": {
             "nombre": "Argus",
             "url": "https://www.argusmedia.com/en/news-and-insights/latest-market-news/2896184-fire-reported-near-saudi-arabia-s-ras-tanura-complex"

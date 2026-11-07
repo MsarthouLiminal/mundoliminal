@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import MonitorSenales from '../../components/senales/MonitorSenales.astro';
+import BigBoard from '../../components/senales/BigBoard.astro';
 import { ediciones, edicionVigente, contarSenales, delFecha } from '../../lib/senales';
 
 const vigente = edicionVigente();
@@ -22,7 +23,9 @@ const archivo = ediciones();
       <hr />
     </header>
 
-    <MonitorSenales edicion={vigente} titular={`Semana ${vigente.semana}`} bajada={false} cierre={false} />
+    <BigBoard edicion={vigente} modo="pagina" />
+
+    <MonitorSenales edicion={vigente} titular="Todas las señales" bajada={false} cierre={false} mapa={false} />
 
     <section class="metodo" aria-labelledby="metodo-h">
       <h2 id="metodo-h">Cómo se arma</h2>

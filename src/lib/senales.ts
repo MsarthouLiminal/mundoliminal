@@ -30,6 +30,12 @@ export interface Senal {
   intensidad: 1 | 2 | 3;
   fuente: { nombre: string; url: string };
   analisis?: { titulo: string; url: string };
+  /** Big board: nombre para el cartel de letras, 13 caracteres como máximo ("ORMUZ"). Si falta, se usa el lugar. */
+  corto?: string;
+  /** Big board: la cifra clave, tomada literal del hecho ("BRENT USD 98,32"). Si falta, no se muestra. */
+  dato?: string;
+  /** Big board: qué es el lugar o el blanco de la señal ("ESTRECHO"). Si falta, se usa el nombre del eje. */
+  objetivo?: string;
   /** Si la señal se actualizó después de publicada: "2026-10-14T16:20" (hora de Montevideo). */
   actualizado?: string;
   /** Señal agregada a mitad de semana, antes de la edición siguiente. */

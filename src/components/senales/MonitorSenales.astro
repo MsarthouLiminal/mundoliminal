@@ -37,6 +37,8 @@ interface Props {
   cierre?: boolean;
   /** Edición vieja: lo aclara arriba. */
   archivada?: boolean;
+  /** Muestra el mapa propio. En /senales lo reemplaza el Big board, que va arriba. */
+  mapa?: boolean;
 }
 
 const {
@@ -46,6 +48,7 @@ const {
   bajada = true,
   cierre = true,
   archivada = false,
+  mapa = true,
 } = Astro.props;
 
 const total = contarSenales(edicion);
@@ -93,6 +96,7 @@ function lado(l: string | undefined) {
 
   <div class="panel">
     <div class="panel__in">
+      {mapa && (
       <div class="carta ventana">
         <div class="carta__cab">
           <div class="lectura-mapa" aria-live="polite">
@@ -157,6 +161,7 @@ function lado(l: string | undefined) {
           </svg>
         </div>
       </div>
+      )}
 
       <div class="pestanas" role="tablist" aria-label="Filtrar por eje">
         <button class="pestana" role="tab" type="button" data-f="todas" data-hash="senales" aria-selected="true">Todas <span>{total}</span></button>
@@ -178,7 +183,7 @@ function lado(l: string | undefined) {
               {eje.senales.map((s) => (
                 <article class:list={['senal', { 'senal--um': umVigente(s) }]} id={`senal-${s.n}`} data-n={s.n} data-lugar={s.lugarMapa} data-coord={coordenadas(s.lat, s.lon)}>
                   <div class="senal__meta">
-                    <button class="senal__num" type="button" aria-label={`Ver señal ${s.n} en el mapa`}>{s.n}</button>
+                    <button class="senal__num" type="button" aria-label={mapa ? `Ver señal ${s.n} en el mapa` : `Ver señal ${s.n} en el tablero`}>{s.n}</button>
                     <span>{s.lugar}</span>
                     <time datetime={s.fecha}>{fechaCorta(s.fecha)}</time>
                   </div>
@@ -836,11 +841,12 @@ function lado(l: string | undefined) {
     const puntos = [...raiz.querySelectorAll<SVGGElement>('.punto')];
     const filtrables = [...raiz.querySelectorAll<SVGElement>('.punto, .foco, .mapa__arco, .mapa__extremo')];
     const focos = [...raiz.querySelectorAll<SVGGElement>('.foco')];
-    const mapa = raiz.querySelector<SVGSVGElement>('.mapa')!;
-    const roLugar = raiz.querySelector<HTMLElement>('[data-ro-lugar]')!;
-    const roCoord = raiz.querySelector<HTMLElement>('[data-ro-coord]')!;
-    const lugarBase = roLugar.textContent;
-    const coordBase = roCoord.textContent;
+    // Sin mapa propio (en /senales lo reemplaza el Big board), las referencias quedan en null.
+    const mapa = raiz.querySelector<SVGSVGElement>('.mapa');
+    const roLugar = raiz.querySelector<HTMLElement>('[data-ro-lugar]');
+    const roCoord = raiz.querySelector<HTMLElement>('[data-ro-coord]');
+    const lugarBase = roLugar?.textContent ?? '';
+    const coordBase = roCoord?.textContent ?? '';
     const lento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     let elegida: string | null = null;
     let filtro = 'todas';
@@ -848,8 +854,8 @@ function lado(l: string | undefined) {
     const ejeDe = (n: string) => document.getElementById(`senal-${n}`)?.closest<HTMLElement>('.eje')?.dataset.eje ?? null;
 
     function lectura(lugar?: string | null, coord?: string | null) {
-      roLugar.textContent = lugar || lugarBase;
-      roCoord.textContent = coord || coordBase;
+      if (roLugar) roLugar.textContent = lugar || lugarBase;
+      if (roCoord) roCoord.textContent = coord || coordBase;
     }
 
     function marcar(n: string | null) {
@@ -913,13 +919,14 @@ function lado(l: string | undefined) {
       s.querySelector('.senal__num')?.addEventListener('click', () => {
         elegida = n;
         marcar(n);
-        mapa.scrollIntoView({ behavior: lento ? 'auto' : 'smooth', block: 'center' });
+        if (mapa) mapa.scrollIntoView({ behavior: lento ? 'auto' : 'smooth', block: 'center' });
+        else document.dispatchEvent(new CustomEvent('bigboard:elegir', { detail: Number(n) }));
       });
     });
 
     const movil = window.matchMedia('(max-width: 640px)');
     const ajustarMapa = () =>
-      mapa.setAttribute('viewBox', (movil.matches ? mapa.dataset.vbMovil : mapa.dataset.vb) ?? '');
+      mapa?.setAttribute('viewBox', (movil.matches ? mapa.dataset.vbMovil : mapa.dataset.vb) ?? '');
     ajustarMapa();
     movil.addEventListener('change', ajustarMapa);
 

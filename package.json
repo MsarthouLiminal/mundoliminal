@@ -19,10 +19,16 @@
     "@fontsource/chivo": "^5.3.0",
     "@fontsource/space-mono": "^5.0.0",
     "astro": "^5.0.0",
-    "fast-xml-parser": "^5.7.2"
+    "d3-geo": "^3.1.2",
+    "fast-xml-parser": "^5.7.2",
+    "topojson-client": "^3.1.0",
+    "us-atlas": "^3.0.1",
+    "world-atlas": "^2.0.2"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.9",
+    "@types/d3-geo": "^3.1.1",
+    "@types/topojson-client": "^3.1.5",
     "typescript": "^5.9.3"
   }
 }

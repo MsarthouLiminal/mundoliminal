@@ -1,0 +1,552 @@
+---
+/**
+ * BigBoard: el tablero de Señales.
+ *
+ * Mapa del mundo en puntos, inclinado, con un haz de luz por señal (altura =
+ * intensidad, color = tendencia). Al tocar una señal la cámara se acerca, se
+ * abre la ficha con el hecho, la lectura y la fuente, y una vista cartográfica
+ * de cerca del lugar. Todo sale del JSON de la edición: cuando se publica una
+ * actualización, el tablero cambia solo.
+ *
+ * Tres modos:
+ *  - pagina:  /senales, a todo el ancho, con lista, ficha y acercamiento.
+ *  - sala:    /senales/sala, pantalla completa para proyectar.
+ *  - portada: la home, compacto; cada número lleva a su señal en /senales.
+ */
+import {
+  type Edicion,
+  semanaDel,
+  fechaSinAnio,
+  fechaHora,
+  ultimaActualizacion,
+} from '../../lib/senales';
+import { VW, VH, ZOOM, geometriaBoard, senalesBoard, senalInicial } from '../../lib/big-board';
+
+interface Props {
+  edicion: Edicion;
+  modo?: 'pagina' | 'sala' | 'portada';
+}
+
+const { edicion, modo = 'pagina' } = Astro.props;
+
+const geo = geometriaBoard(edicion);
+const senales = senalesBoard(edicion);
+const puntoDe = (n: number) => geo.puntos.find((p) => p.n === n)!;
+const inicial = senales.find((s) => s.n === senalInicial(edicion)) ?? senales[0];
+const pIni = puntoDe(inicial.n);
+const actualizada = ultimaActualizacion(edicion);
+const total = senales.length;
+const enEscalada = senales.filter((s) => s.tendencia === 'escala').length;
+const conFicha = modo !== 'portada';
+const id = `bb-${modo}`;
+
+const pad = (n: number) => String(n).padStart(2, '0');
+const pct = (v: number, d: number) => `${((v / d) * 100).toFixed(2)}%`;
+const TEND: Record<string, string> = { escala: 'Escala', estable: 'Se sostiene', afloja: 'Afloja' };
+const SIMB: Record<string, string> = { escala: '▲', estable: '■', afloja: '▼' };
+const EJE_COD: Record<string, string> = { min: 'EJE MIN', cho: 'EJE CHK', ia: 'EJE IA', con: 'EJE CON' };
+const MODO_VISTA: Record<string, string> = { min: 'GEO', cho: 'EO', ia: 'IR', con: 'SAR' };
+
+const ejes = edicion.ejes.map((eje) => {
+  const propias = senales.filter((s) => s.eje === eje.id);
+  return { id: eje.id, nombre: eje.nombre, senales: propias, alta: propias.some((s) => s.intensidad === 3) };
+});
+
+const RELOJES: [string, string][] = [
+  ['Washington', 'America/New_York'],
+  ['Bruselas', 'Europe/Brussels'],
+  ['Moscú', 'Europe/Moscow'],
+  ['Teherán', 'Asia/Tehran'],
+  ['Beijing', 'Asia/Shanghai'],
+  ['Montevideo', 'America/Montevideo'],
+];
+
+// La cinta de abajo: lo que viene en la agenda y los focos en observación.
+const hoy = new Date().toISOString().slice(0, 10);
+const proximas = edicion.agenda.filter((a) => !a.fecha || a.fecha >= hoy).map((a) => `${a.texto}: ${a.detalle}`);
+const ejeFocos = edicion.ejes.find((e) => e.id === 'con');
+const focosTexto = ejeFocos?.tambien.length
+  ? ejeFocos.tambien.map((t) => `${t.etiqueta}: ${t.texto}`)
+  : edicion.focos.map((f) => f.nombre);
+const cinta = [
+  ...(proximas.length ? ['Qué observar', ...proximas] : []),
+  'Focos en observación',
+  ...focosTexto,
+].join('  /  ');
+
+const ini = inicial;
+const avisoUm = ini.umHasta !== null && Date.now() < ini.umHasta;
+const avisoTexto = avisoUm
+  ? `Último momento, ${ini.actualizado ?? ini.fecha}`
+  : ini.actualizado
+    ? `Actualizado el ${ini.actualizado}`
+    : '';
+
+const datos = {
+  edicion: edicion.id,
+  zoom: ZOOM,
+  inicial: ini.n,
+  focos: edicion.focos.length,
+  acercamientos: `/senales/acercamientos/${edicion.id}.json`,
+  senales: senales.map((s) => ({ ...s, p: puntoDe(s.n) })),
+};
+const json = JSON.stringify(datos).replace(/</g, '\\u003c');
+---
+
+<section class:list={['bb', `bb--${modo}`]} data-bigboard data-modo={modo} aria-labelledby={`${id}-h`}>
+  <div class="bb__in">
+    <header class="bb-barra">
+      <div class="bb-marca">
+        <p class="bb-kicker">Señales<span aria-hidden="true"> / </span>Big board</p>
+        <h2 id={`${id}-h`} class="bb-titulo">Semana {edicion.semana}</h2>
+        <p class="bb-fecha">
+          {semanaDel(edicion.fechaEdicion)}. Datos al {fechaSinAnio(edicion.corteDatos)}.
+          {actualizada && <strong> Actualizada el {fechaHora(actualizada)}.</strong>}
+        </p>
+      </div>
+      {modo !== 'portada' && (
+        <ul class="bb-relojes" aria-label="Hora en seis capitales">
+          {RELOJES.map(([ciudad, zona]) => (
+            <li><span>{ciudad}</span><b data-reloj={zona}>--:--</b></li>
+          ))}
+        </ul>
+      )}
+      <div class="bb-estado">
+        <p class="bb-enlace"><i class="bb-led bb-led--vivo" aria-hidden="true"></i>Enlace activo</p>
+        {modo === 'sala' && <button type="button" class="bb-boton" data-accion="pantalla">Pantalla completa</button>}
+        {modo === 'portada' && <a class="bb-boton" href="/senales/">Abrir el monitor</a>}
+      </div>
+    </header>
+
+    <div class="bb-cuerpo">
+      {conFicha && (
+        <nav class="bb-lista" aria-label="Señales de la semana por eje">
+          <p class="bb-cifra"><b>{enEscalada}/{total}</b><span>señales<br />en escalada</span></p>
+          <p class="bb-ayuda">Tocá una señal para leerla. También podés tocar su número en el mapa.</p>
+          {ejes.map((eje) => (
+            <div class="bb-eje">
+              <p class="bb-eje__cab">
+                <i class:list={['bb-led', { 'bb-led--alta': eje.alta }]} aria-hidden="true"></i>
+                {eje.nombre}
+                <span>{eje.senales.length}</span>
+              </p>
+              <ul>
+                {eje.senales.map((s) => (
+                  <li>
+                    <button type="button" class="bb-fila" data-fila={s.n} aria-pressed={s.n === ini.n ? 'true' : 'false'}>
+                      <span class="bb-num" data-t={s.tendencia}>{pad(s.n)}</span>
+                      <span class="bb-fila__lugar">{s.lugar}</span>
+                      <span class="bb-fila__t" data-t={s.tendencia}>{SIMB[s.tendencia]} {s.intensidadNombre}</span>
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </nav>
+      )}
+
+      <div class="bb-escenario">
+        <div class="bb-controles">
+          <p class="bb-rotulo" data-rotulo data-base={`Teatro global / ${total} señales / ${edicion.focos.length} focos`}>
+            Teatro global / {total} señales / {edicion.focos.length} focos
+          </p>
+          <div class="bb-botones">
+            <button type="button" class="bb-boton" data-accion="global">Teatro global</button>
+            <button type="button" class="bb-boton bb-boton--rec" data-accion="recorrido" aria-pressed="true">Recorrido</button>
+          </div>
+        </div>
+        <div class="bb-escena">
+          <svg class="bb-svg" viewBox={`0 0 ${VW} ${VH}`} aria-hidden="true" focusable="false">
+            <defs>
+              <filter id={`${id}-brillo`} x="-50%" y="-50%" width="200%" height="200%">
+                <feGaussianBlur stdDeviation="3" />
+              </filter>
+            </defs>
+            <g class="bb-camara" data-camara>
+              <path class="bb-grilla" d={geo.grilla} />
+              <path class="bb-tierra" d={geo.tierra} />
+              <path class="bb-focos" d={geo.focos} />
+              <path class="bb-arcos" d={geo.arcos} />
+              <path class="bb-haz bb-haz--estable" d={geo.haces.estable} />
+              <path class="bb-haz bb-haz--afloja" d={geo.haces.afloja} />
+              <path class="bb-haz bb-haz--escala" d={geo.haces.escala} />
+              <path class="bb-haz bb-haz--alta" d={geo.haces.alta} />
+              <path class="bb-brillo" d={geo.brillo} filter={`url(#${id}-brillo)`} />
+              <path class="bb-nucleo bb-nucleo--estable" d={geo.nucleos.estable} />
+              <path class="bb-nucleo bb-nucleo--afloja" d={geo.nucleos.afloja} />
+              <path class="bb-nucleo bb-nucleo--escala" d={geo.nucleos.escala} />
+              <path class="bb-sel" data-sel-haz d={`M${pIni.base[0]} ${pIni.base[1]}L${pIni.tope[0]} ${pIni.tope[1]}`} />
+            </g>
+          </svg>
+          <div class="bb-capa" data-capa>
+            {senales.filter((s) => s.intensidad === 3).map((s) => {
+              const p = puntoDe(s.n);
+              return <span class="bb-anillo" data-t={s.tendencia} style={`left:${pct(p.base[0], VW)};top:${pct(p.base[1], VH)}`}><i></i></span>;
+            })}
+            <span class="bb-anillo bb-anillo--sel" data-anillo-sel style={`left:${pct(pIni.base[0], VW)};top:${pct(pIni.base[1], VH)}`}><i></i></span>
+            {senales.map((s) => {
+              const p = puntoDe(s.n);
+              const etiqueta = s.n === ini.n ? `${pad(s.n)} ${s.corto}` : pad(s.n);
+              return (
+                <span class="bb-tag-pos" style={`left:${pct(p.tope[0], VW)};top:${pct(p.tope[1], VH)};--dx:${(p.dx / 10).toFixed(1)}cqw`}>
+                  {modo === 'portada' ? (
+                    <a class="bb-tag" href={`/senales/#senal-${s.n}`} data-tag={s.n} data-t={s.tendencia} aria-current={s.n === ini.n ? 'true' : undefined} aria-label={`Señal ${s.n}: ${s.titulo}`}>{etiqueta}</a>
+                  ) : (
+                    <button type="button" class="bb-tag" data-tag={s.n} data-t={s.tendencia} aria-current={s.n === ini.n ? 'true' : undefined} aria-label={`Leer la señal ${s.n}: ${s.titulo}`}>{etiqueta}</button>
+                  )}
+                </span>
+              );
+            })}
+          </div>
+        </div>
+        <ul class="bb-leyenda" aria-hidden="true">
+          <li><i data-t="escala"></i>Escala</li>
+          <li><i data-t="afloja"></i>Afloja</li>
+          <li><i data-t="estable"></i>Se sostiene</li>
+          <li><i class="bb-leyenda__foco"></i>Foco en observación</li>
+          <li class="bb-leyenda__nota">Altura del haz: intensidad</li>
+        </ul>
+        {modo === 'portada' && (
+          <a class="bb-titular" data-titular href={`/senales/#senal-${ini.n}`}>
+            <span class="bb-titular__num" data-titular-num>{pad(ini.n)}</span>
+            <span class="bb-titular__t" data-titular-t>{ini.titulo}</span>
+          </a>
+        )}
+      </div>
+
+      {conFicha && (
+        <div class="bb-cubierta">
+          <div class="bb-recon" data-recon>
+            <div class="bb-recon__mapa" data-recon-mapa>
+              <svg viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+                <defs>
+                  <pattern id={`${id}-punteado`} width="3" height="3" patternUnits="userSpaceOnUse">
+                    <rect width="3" height="3" fill="#121713" />
+                    <circle cx="1" cy="1" r="0.55" fill="#6d756d" />
+                  </pattern>
+                </defs>
+                <path class="r-grilla" data-r="grilla" d="" />
+                <path class="r-tierra" data-r="tierra" d="" fill={`url(#${id}-punteado)`} />
+                <path class="r-fronteras" data-r="fronteras" d="" />
+                <path class="r-estados" data-r="estados" d="" />
+              </svg>
+            </div>
+            <div class="bb-recon__barrido" aria-hidden="true"></div>
+            <div class="bb-reticula" data-reticula data-eje={ini.eje} aria-hidden="true">
+              <div class="bb-reticula__in" data-reticula-in>
+                <span class="ret ret--cho"><i></i><i></i><i></i><i></i></span>
+                <span class="ret ret--ia"><i></i></span>
+                <span class="ret ret--con"><i></i><i></i></span>
+                <span class="ret ret--min"><i></i></span>
+                <span class="ret-esquinas"><i></i><i></i><i></i><i></i></span>
+                <span class="ret-bloqueo">Bloqueo</span>
+              </div>
+            </div>
+            <span class="bb-recon__flecha" data-flecha hidden aria-hidden="true">▲</span>
+            <p class="bb-hud bb-hud--ai"><span data-hud-fecha>--</span><span>UTC-3 / modo <b data-hud-modo>{MODO_VISTA[ini.eje]}</b></span></p>
+            <p class="bb-hud bb-hud--ad"><span class="bb-hud__eje" data-hud-eje>{EJE_COD[ini.eje]}</span></p>
+            <p class="bb-hud bb-hud--bi"><span class="bb-escala" aria-hidden="true"><i></i>100 km</span></p>
+            <p class="bb-hud bb-hud--bd">Vista cartográfica, no imagen satelital</p>
+          </div>
+          <div class="bb-telemetria">
+            <div class="bb-flaps" data-flaps="1" aria-hidden="true"></div>
+            <div class="bb-flaps" data-flaps="2" aria-hidden="true"></div>
+            <dl class="bb-datos">
+              <div><dt>Coordenadas</dt><dd data-t-campo="coord">{ini.lat}  {ini.lon}</dd></div>
+              <div><dt>Objetivo</dt><dd data-t-campo="objetivo">{ini.objetivo}</dd></div>
+              <div><dt>Dato</dt><dd data-t-campo="dato">{ini.dato ?? 'Sin dato clave'}</dd></div>
+              <div><dt>Enlace</dt><dd data-t-campo="enlace">{ini.arco ? `${ini.arco.nombre} / rumbo ${String(ini.arco.rumbo).padStart(3, '0')}° / ${ini.arco.km.toLocaleString('es-UY')} km` : 'Sin enlace'}</dd></div>
+              <div>
+                <dt>Intensidad</dt>
+                <dd>
+                  <span class="bb-lamparas" data-t-campo="lamparas" data-t={ini.tendencia} data-i={ini.intensidad}><i></i><i></i><i></i></span>
+                  <span data-t-campo="intensidad">{ini.intensidadNombre}</span>
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      )}
+
+      {conFicha && (
+        <article class="bb-ficha" data-ficha aria-live="polite">
+          <p class="bb-ficha__cab">
+            <span data-f="cab">Señal {pad(ini.n)} / {ini.ejeNombre}</span>
+            <span class:list={['bb-aviso', { 'bb-aviso--um': avisoUm }]} data-f="aviso" hidden={!avisoTexto}>{avisoTexto}</span>
+          </p>
+          <h3 class="bb-ficha__titulo" data-f="titulo">{ini.titulo}</h3>
+          <p class="bb-ficha__chips">
+            <span data-f="lugar">{ini.lugar}</span>
+            <span data-f="fecha">{ini.fecha}</span>
+            <span class="bb-chip-t" data-f="tendencia" data-t={ini.tendencia}>{SIMB[ini.tendencia]} {TEND[ini.tendencia]} / intensidad {ini.intensidadNombre.toLowerCase()}</span>
+          </p>
+          <p class="bb-ficha__rot">El hecho</p>
+          <p class="bb-ficha__hecho" data-f="hecho">{ini.hecho}</p>
+          <hr class="bb-umbral" />
+          <p class="bb-ficha__rot bb-ficha__rot--senal">La lectura</p>
+          <p class="bb-ficha__lectura" data-f="lectura">{ini.lectura}</p>
+          <p class="bb-ficha__fuente">
+            <span>Fuente</span>
+            <a data-f="fuente" href={ini.fuente.url} target="_blank" rel="noopener">{ini.fuente.nombre}, {ini.fecha}</a>
+          </p>
+          <a class="bb-ficha__analisis" data-f="analisis" href={ini.analisis?.url ?? '#'} target="_blank" rel="noopener" hidden={!ini.analisis}>
+            Análisis LIMINAL: <span data-f="analisis-t">{ini.analisis?.titulo ?? ''}</span>
+          </a>
+          <a class="bb-ficha__mas" data-f="mas" href={`${modo === 'sala' ? '/senales/' : ''}#senal-${ini.n}`}>
+            <span data-f="mas-t">{ini.tieneAnterior ? 'Ver la señal en la lista, con la versión del lunes' : 'Ver la señal en la lista'}</span>
+          </a>
+        </article>
+      )}
+    </div>
+
+    {modo !== 'portada' && (
+      <div class="bb-cinta" aria-label="Agenda y focos en observación">
+        <div class="bb-cinta__in"><span>{cinta}  /  </span><span aria-hidden="true">{cinta}  /  </span></div>
+      </div>
+    )}
+  </div>
+  <script is:inline type="application/json" data-bigboard-datos set:html={json}></script>
+</section>
+
+<script>
+  import '../../scripts/big-board.ts';
+</script>
+
+<style is:global>
+  html:has(.bb--pagina) { overflow-x: clip; }
+
+  .bb {
+    --bb-vacio: var(--color-vacio, #060c08);
+    --bb-selva: var(--color-selva, #0b2419);
+    --bb-bosque: var(--color-bosque, #1a3d2b);
+    --bb-sal: var(--color-sal, #e8eae3);
+    --bb-hueso: var(--color-hueso, #ded8ce);
+    --bb-horizonte: var(--color-horizonte, #ff7a1a);
+    --bb-lila: var(--color-lila, #c6b8db);
+    --bb-teal: var(--color-teal, #0b8b6e);
+    --bb-teal-b: var(--color-teal-brillante, #0fba94);
+    --bb-texto: var(--font-text-v2, 'Chivo', 'Helvetica Neue', Arial, sans-serif);
+    --bb-display: var(--font-display-v2, 'Big Shoulders Display', 'Arial Narrow', sans-serif);
+    --z: 1;
+    background: var(--bb-vacio);
+    color: var(--bb-sal);
+    font-family: var(--bb-texto);
+    color-scheme: dark;
+  }
+  .bb *, .bb *::before, .bb *::after { box-sizing: border-box; }
+  .bb p, .bb ul, .bb dl, .bb dd, .bb h2, .bb h3 { margin: 0; }
+  .bb ul { list-style: none; padding: 0; }
+  .bb [hidden] { display: none !important; }
+  .bb [data-t="escala"] { --t: var(--bb-horizonte); }
+  .bb [data-t="afloja"] { --t: var(--bb-teal-b); }
+  .bb [data-t="estable"] { --t: var(--bb-lila); }
+
+  .bb--pagina {
+    width: 100vw;
+    margin: 0 calc(50% - 50vw) var(--space-12, 3rem);
+  }
+  .bb--sala { min-height: 100vh; }
+  .bb--portada { border-radius: 2px; }
+  .bb__in { max-width: 1680px; margin: 0 auto; padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 16px; }
+  .bb--portada .bb__in { padding: 14px; gap: 10px; }
+
+  /* Barra superior */
+  .bb-barra { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 28px; border-bottom: 1px solid var(--bb-bosque); padding-bottom: 14px; }
+  .bb-kicker { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--bb-lila); }
+  .bb-titulo { font-family: var(--bb-display); font-weight: 800; font-size: clamp(1.9rem, 3vw, 2.6rem); line-height: 0.95; text-transform: uppercase; letter-spacing: 0.01em; color: var(--bb-sal); }
+  .bb-fecha { font-size: 0.8rem; color: var(--bb-lila); margin-top: 4px; }
+  .bb-fecha strong { color: var(--bb-sal); font-weight: 500; }
+  .bb-relojes { display: flex; flex-wrap: wrap; gap: 6px 20px; }
+  .bb-relojes li { display: flex; flex-direction: column; gap: 1px; }
+  .bb-relojes span { font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--bb-lila); }
+  .bb-relojes b { font-size: 1.15rem; font-weight: 500; font-variant-numeric: tabular-nums; }
+  .bb-estado { display: flex; align-items: center; gap: 12px; }
+  .bb-enlace { display: flex; align-items: center; gap: 7px; font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; }
+  .bb-led { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--bb-teal-b); flex: none; }
+  .bb-led--vivo, .bb-led--alta { background: var(--bb-horizonte); animation: bb-titila 1.1s steps(2, start) infinite; }
+
+  .bb-boton { font-family: var(--bb-texto); font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 8px 12px; min-height: 36px; background: transparent; color: var(--bb-lila); border: 1px solid var(--bb-bosque); cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; }
+  .bb-boton:hover { color: var(--bb-sal); border-color: var(--bb-sal); }
+  .bb-boton--rec[aria-pressed="true"] { background: var(--bb-selva); color: var(--bb-teal-b); border-color: var(--bb-teal-b); }
+  .bb-boton:focus-visible, .bb-fila:focus-visible, .bb-tag:focus-visible, .bb a:focus-visible { outline: 2px solid var(--bb-sal); outline-offset: 2px; }
+
+  /* Distribución */
+  .bb-cuerpo { display: grid; gap: 18px; grid-template-columns: minmax(0, 1fr); grid-template-areas: "escenario" "lista" "ficha" "cubierta"; }
+  .bb-lista { grid-area: lista; }
+  .bb-escenario { grid-area: escenario; min-width: 0; display: flex; flex-direction: column; gap: 10px; }
+  .bb-cubierta { grid-area: cubierta; }
+  .bb-ficha { grid-area: ficha; }
+  @media (min-width: 760px) {
+    .bb-cuerpo { grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); grid-template-rows: auto auto minmax(0, 1fr); grid-template-areas: "escenario escenario" "lista ficha" "cubierta ficha"; align-items: start; }
+  }
+  @media (min-width: 1280px) {
+    .bb-cuerpo { grid-template-columns: 250px minmax(0, 1fr) 420px; grid-template-rows: auto minmax(0, 1fr); grid-template-areas: "lista escenario ficha" "lista cubierta ficha"; }
+  }
+  .bb--portada .bb-cuerpo { grid-template-columns: minmax(0, 1fr); grid-template-areas: "escenario"; }
+
+  /* Lista de señales */
+  .bb-lista { display: flex; flex-direction: column; gap: 12px; }
+  .bb-cifra { display: flex; align-items: baseline; gap: 10px; border-bottom: 1px solid var(--bb-bosque); padding-bottom: 10px; }
+  .bb-cifra b { font-family: var(--bb-display); font-weight: 800; font-size: 2.8rem; line-height: 0.9; color: var(--bb-horizonte); }
+  .bb-cifra span { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--bb-lila); line-height: 1.4; }
+  .bb-ayuda { font-size: 0.78rem; color: var(--bb-lila); line-height: 1.45; }
+  .bb-eje__cab { display: flex; align-items: center; gap: 8px; font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; padding: 4px 0 6px; }
+  .bb-eje__cab span { margin-left: auto; color: var(--bb-lila); }
+  .bb-fila { display: flex; align-items: center; gap: 10px; width: 100%; min-height: 44px; padding: 6px 8px; border: 0; border-top: 1px solid var(--bb-selva); background: transparent; color: var(--bb-sal); font-family: var(--bb-texto); text-align: left; cursor: pointer; }
+  .bb-fila:hover, .bb-fila[aria-pressed="true"] { background: var(--bb-selva); }
+  .bb-num { font-size: 0.78rem; font-variant-numeric: tabular-nums; padding: 2px 5px; border: 1px solid var(--t); flex: none; }
+  .bb-fila[aria-pressed="true"] .bb-num { background: var(--bb-horizonte); border-color: var(--bb-horizonte); color: var(--bb-vacio); }
+  .bb-fila__lugar { font-size: 0.9rem; font-weight: 500; flex: 1; }
+  .bb-fila__t { font-size: 0.68rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--t); white-space: nowrap; }
+
+  /* Escena */
+  .bb-controles { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; }
+  .bb-rotulo { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--bb-lila); }
+  .bb-botones { display: flex; gap: 8px; }
+  .bb--portada .bb-controles { display: none; }
+  .bb-escena { position: relative; width: 100%; aspect-ratio: 1000 / 560; overflow: hidden; border: 1px solid var(--bb-bosque); background: var(--bb-vacio); container-type: inline-size; }
+  .bb-svg { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+  .bb-camara { transform-box: view-box; transform-origin: 0 0; transition: transform 1.2s cubic-bezier(.6, 0, .2, 1); }
+  .bb-grilla { fill: none; stroke: var(--bb-bosque); stroke-width: 0.8; }
+  .bb-tierra { fill: var(--bb-sal); opacity: 0.42; }
+  .bb-focos { fill: none; stroke: var(--bb-lila); stroke-width: 1.2; }
+  .bb-arcos { fill: none; stroke: var(--bb-teal-b); stroke-width: 1.4; stroke-dasharray: 6 6; animation: bb-flujo 1.2s linear infinite; }
+  .bb-haz { opacity: 0.3; }
+  .bb-haz--escala, .bb-haz--alta { fill: var(--bb-horizonte); }
+  .bb-haz--afloja { fill: var(--bb-teal-b); }
+  .bb-haz--estable { fill: var(--bb-lila); }
+  .bb-haz--alta { opacity: 0.55; animation: bb-respira 1.8s ease-in-out infinite alternate; }
+  .bb-brillo { fill: none; stroke: var(--bb-horizonte); stroke-width: 5; opacity: 0.7; }
+  .bb-nucleo { fill: none; stroke-width: 1.2; }
+  .bb-nucleo--escala { stroke: #ffb27a; }
+  .bb-nucleo--afloja { stroke: var(--bb-teal-b); }
+  .bb-nucleo--estable { stroke: var(--bb-lila); }
+  .bb-sel { fill: none; stroke: var(--bb-sal); stroke-width: 2.2; }
+  .bb-capa { position: absolute; inset: 0; transform-origin: 0 0; transition: transform 1.2s cubic-bezier(.6, 0, .2, 1); pointer-events: none; }
+  .bb-anillo { position: absolute; width: 0; height: 0; transform: scaleY(.57); transition: left 1.2s cubic-bezier(.6, 0, .2, 1), top 1.2s cubic-bezier(.6, 0, .2, 1); }
+  .bb-anillo i { position: absolute; left: -12px; top: -12px; width: 24px; height: 24px; border-radius: 50%; border: 1.5px solid var(--t, var(--bb-sal)); animation: bb-ping 2.2s ease-out infinite; }
+  .bb-anillo--sel i { border-color: var(--bb-sal); }
+  .bb-tag-pos { position: absolute; width: 0; height: 0; transform: scale(calc(1 / var(--z))); transform-origin: 0 0; transition: transform 1.2s cubic-bezier(.6, 0, .2, 1); }
+  .bb-tag { position: absolute; bottom: 6px; left: 0; transform: translateX(-50%) translateX(var(--dx, 0)); white-space: nowrap; padding: 3px 7px; border-radius: 2px; font-family: var(--bb-texto); font-size: 0.75rem; line-height: 1.15; font-variant-numeric: tabular-nums; letter-spacing: 0.04em; background: rgba(6, 12, 8, 0.85); color: var(--bb-sal); border: 1px solid var(--t); cursor: pointer; pointer-events: auto; text-decoration: none; }
+  .bb-tag:hover { border-color: var(--bb-sal); }
+  @media (max-width: 759px) {
+    .bb-tag:not([aria-current="true"]) { display: none; }
+  }
+  .bb-tag[aria-current="true"] { background: var(--bb-horizonte); border-color: var(--bb-horizonte); color: var(--bb-vacio); z-index: 2; }
+  .bb-leyenda { display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: 0.66rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--bb-lila); }
+  .bb-leyenda li { display: flex; align-items: center; gap: 5px; }
+  .bb-leyenda i { display: inline-block; width: 2px; height: 10px; background: var(--t); }
+  .bb-leyenda .bb-leyenda__foco { width: 8px; height: 8px; background: transparent; border: 1px solid var(--bb-lila); }
+  .bb-titular { display: flex; gap: 10px; align-items: baseline; text-decoration: none; color: var(--bb-sal); border-top: 1px solid var(--bb-bosque); padding-top: 8px; min-height: 2.6em; }
+  .bb-titular__num { font-size: 0.8rem; padding: 1px 5px; background: var(--bb-horizonte); color: var(--bb-vacio); font-variant-numeric: tabular-nums; flex: none; }
+  .bb-titular__t { font-size: 1rem; font-weight: 500; line-height: 1.3; }
+  .bb-titular:hover .bb-titular__t { text-decoration: underline; text-underline-offset: 3px; }
+
+  /* Acercamiento y telemetría */
+  .bb-cubierta { display: flex; flex-wrap: wrap; gap: 14px; align-items: stretch; }
+  .bb-recon { position: relative; flex: 0 0 280px; height: 280px; overflow: hidden; background: #050806; border: 1px solid #3a423b; }
+  .bb-recon__mapa { position: absolute; inset: 0; }
+  .bb-recon__mapa svg { width: 100%; height: 100%; display: block; }
+  .bb-recon__mapa.bb-adquiere { animation: bb-adquiere .9s cubic-bezier(.2, .7, .2, 1); }
+  .r-grilla { fill: none; stroke: #1f2a22; stroke-width: 0.6; }
+  .r-tierra { stroke: #dde1d9; stroke-width: 0.9; }
+  .r-fronteras { fill: none; stroke: #a7aea6; stroke-width: 0.8; stroke-dasharray: 4 2.5; }
+  .r-estados { fill: none; stroke: #7b837b; stroke-width: 0.6; stroke-dasharray: 1.5 2; }
+  .bb-recon__barrido { position: absolute; left: 0; right: 0; height: 1px; background: rgba(232, 234, 227, 0.18); animation: bb-barrido 3.2s linear infinite; pointer-events: none; }
+  .bb-reticula { position: absolute; left: 50%; top: 50%; width: 0; height: 0; }
+  .bb-reticula__in { position: absolute; left: 0; top: 0; width: 0; height: 0; transform: scale(.8); }
+  .bb-reticula__in.bb-adquiere { animation: bb-reticula .9s cubic-bezier(.2, .7, .2, 1); }
+  .ret { display: none; }
+  .bb-reticula[data-eje="cho"] .ret--cho, .bb-reticula[data-eje="ia"] .ret--ia, .bb-reticula[data-eje="con"] .ret--con, .bb-reticula[data-eje="min"] .ret--min { display: block; }
+  .ret i, .ret-esquinas i { position: absolute; display: block; }
+  .ret--cho i { background: var(--bb-sal); }
+  .ret--cho i:nth-child(1) { left: -110px; top: 0; width: 80px; height: 1px; }
+  .ret--cho i:nth-child(2) { left: 30px; top: 0; width: 80px; height: 1px; }
+  .ret--cho i:nth-child(3) { top: -110px; left: 0; width: 1px; height: 80px; }
+  .ret--cho i:nth-child(4) { top: 30px; left: 0; width: 1px; height: 80px; }
+  .ret--ia i { left: -46px; top: -46px; width: 92px; height: 92px; border-radius: 50%; border: 1px solid var(--bb-sal); }
+  .ret--con i:nth-child(1) { left: -30px; top: -30px; width: 60px; height: 60px; border: 1px solid var(--bb-sal); transform: rotate(45deg); }
+  .ret--con i:nth-child(2) { left: -70px; top: -70px; width: 140px; height: 140px; border-radius: 50%; border: 1px dashed #7b837b; }
+  .ret--min i { left: -36px; top: -36px; width: 72px; height: 72px; border: 1px dotted var(--bb-sal); }
+  .ret-esquinas i { width: 12px; height: 12px; border: 0 solid var(--bb-horizonte); }
+  .ret-esquinas i:nth-child(1) { left: -26px; top: -26px; border-left-width: 1px; border-top-width: 1px; }
+  .ret-esquinas i:nth-child(2) { left: 14px; top: -26px; border-right-width: 1px; border-top-width: 1px; }
+  .ret-esquinas i:nth-child(3) { left: -26px; top: 14px; border-left-width: 1px; border-bottom-width: 1px; }
+  .ret-esquinas i:nth-child(4) { left: 14px; top: 14px; border-right-width: 1px; border-bottom-width: 1px; }
+  .ret-bloqueo { position: absolute; left: 32px; top: -42px; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--bb-horizonte); white-space: nowrap; animation: bb-titila 1.1s steps(2, start) infinite; }
+  .bb-recon__flecha { position: absolute; color: var(--bb-horizonte); font-size: 15px; line-height: 1; }
+  .bb-hud { position: absolute; display: flex; flex-direction: column; font-size: 0.68rem; line-height: 1.4; letter-spacing: 0.06em; text-transform: uppercase; color: var(--bb-sal); font-variant-numeric: tabular-nums; pointer-events: none; }
+  .bb-hud--ai { left: 8px; top: 6px; }
+  .bb-hud--ad { right: 8px; top: 6px; }
+  .bb-hud--bi { left: 8px; bottom: 22px; }
+  .bb-hud--bd { left: 8px; right: 8px; bottom: 6px; color: #a7aea6; text-transform: none; letter-spacing: 0.02em; }
+  .bb-hud__eje { background: var(--bb-sal); color: var(--bb-vacio); padding: 0 5px; }
+  .bb-escala { display: flex; align-items: center; gap: 6px; }
+  .bb-escala i { display: inline-block; width: 28px; height: 4px; border: 1px solid var(--bb-sal); border-top: 0; }
+  .bb-telemetria { flex: 1 1 260px; min-width: 0; display: flex; flex-direction: column; gap: 10px; border: 1px solid var(--bb-bosque); padding: 12px 14px; }
+  .bb-flaps { display: flex; gap: 1.5px; }
+  .bb-flap { display: inline-flex; align-items: center; justify-content: center; width: min(19px, 5.6cqw); flex: none; height: 27px; font-size: 0.95rem; font-weight: 500; color: var(--bb-sal); background: linear-gradient(var(--bb-selva) 0 49%, var(--bb-vacio) 49% 53%, var(--bb-selva) 53%); font-variant-numeric: tabular-nums; }
+  .bb-flaps[data-flaps="1"] .bb-flap:nth-child(-n + 2) { color: var(--bb-horizonte); }
+  .bb-telemetria { container-type: inline-size; }
+  .bb-datos { display: grid; gap: 5px; font-size: 0.72rem; letter-spacing: 0.04em; text-transform: uppercase; line-height: 1.4; }
+  .bb-datos div { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 10px; }
+  .bb-datos dt { color: var(--bb-lila); }
+  .bb-datos dd { display: flex; align-items: center; gap: 8px; font-variant-numeric: tabular-nums; }
+  .bb-lamparas { display: inline-flex; gap: 3px; }
+  .bb-lamparas i { display: inline-block; width: 16px; height: 8px; background: var(--bb-selva); }
+  .bb-lamparas[data-i="1"] i:nth-child(-n + 1), .bb-lamparas[data-i="2"] i:nth-child(-n + 2), .bb-lamparas[data-i="3"] i { background: var(--t); }
+
+  /* Ficha */
+  .bb-ficha { display: flex; flex-direction: column; gap: 10px; border: 1px solid var(--bb-bosque); border-top: 2px solid var(--bb-horizonte); padding: 16px 18px 18px; background: #070f0a; scroll-margin-top: 12px; }
+  .bb-ficha.bb-entra { animation: bb-entra .5s ease-out; }
+  .bb-ficha__cab { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 6px; font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--bb-horizonte); }
+  .bb-aviso { border: 1px solid var(--bb-lila); color: var(--bb-lila); padding: 2px 7px; letter-spacing: 0.08em; }
+  .bb-aviso--um { background: var(--bb-horizonte); border-color: var(--bb-horizonte); color: var(--bb-vacio); }
+  .bb-ficha__titulo { font-family: var(--bb-display); font-weight: 800; font-size: clamp(1.55rem, 2.2vw, 1.9rem); line-height: 1.02; color: var(--bb-sal); text-wrap: balance; }
+  .bb-ficha__chips { display: flex; flex-wrap: wrap; gap: 6px; font-size: 0.68rem; letter-spacing: 0.06em; text-transform: uppercase; }
+  .bb-ficha__chips span { border: 1px solid var(--bb-bosque); padding: 3px 7px; color: var(--bb-lila); }
+  .bb-ficha__chips .bb-chip-t { border-color: var(--t); color: var(--t); }
+  .bb-ficha__rot { font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--bb-lila); }
+  .bb-ficha__rot--senal { color: var(--bb-horizonte); }
+  .bb-ficha__hecho { font-size: 0.9rem; line-height: 1.55; color: var(--bb-hueso); }
+  .bb-umbral { width: 56px; height: 2px; border: 0; margin: 2px 0; background: var(--bb-horizonte); }
+  .bb-ficha__lectura { font-size: 1.06rem; line-height: 1.55; color: var(--bb-sal); }
+  .bb-ficha__fuente { display: flex; flex-direction: column; gap: 4px; border-top: 1px solid var(--bb-bosque); padding-top: 12px; }
+  .bb-ficha__fuente span { font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--bb-lila); }
+  .bb-ficha__fuente a, .bb-ficha__analisis { color: var(--bb-horizonte); font-size: 0.92rem; text-underline-offset: 3px; }
+  .bb-ficha__mas { font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--bb-lila); text-underline-offset: 3px; }
+  .bb-ficha__fuente a:hover, .bb-ficha__analisis:hover, .bb-ficha__mas:hover { color: var(--bb-sal); }
+
+  /* Cinta */
+  .bb-cinta { overflow: hidden; border-top: 1px solid var(--bb-teal); border-bottom: 1px solid var(--bb-teal); padding: 7px 0; white-space: nowrap; }
+  .bb-cinta__in { display: inline-flex; font-size: 0.74rem; letter-spacing: 0.06em; animation: bb-cinta 120s linear infinite; }
+  .bb-cinta__in span { padding-right: 2em; }
+
+  /* Sala: pantalla completa para proyectar */
+  .bb--sala .bb__in { max-width: none; min-height: 100vh; }
+  /* En la sala todo entra en una pantalla: el escenario se achica a lo que sobra de alto, sin perder la proporción. */
+  .bb--sala .bb-escena { max-width: calc((100vh - 520px) * 1000 / 560); margin-inline: auto; }
+  /* En la home el título y la fecha ya están arriba del tablero. */
+  .bb--portada .bb-titulo, .bb--portada .bb-fecha { display: none; }
+  .bb--portada .bb-barra { padding-bottom: 10px; }
+  @media (min-width: 1280px) {
+    .bb--sala .bb-cuerpo { grid-template-columns: 240px minmax(0, 1fr) 440px; }
+    .bb--sala .bb-ficha__titulo { font-size: 2.3rem; }
+    .bb--sala .bb-ficha__lectura { font-size: 1.2rem; }
+  }
+
+  @keyframes bb-titila { to { visibility: hidden; } }
+  @keyframes bb-flujo { to { stroke-dashoffset: -24; } }
+  @keyframes bb-respira { from { opacity: .95; } to { opacity: .45; } }
+  @keyframes bb-ping { 0% { transform: scale(.4); opacity: .9; } 100% { transform: scale(2.8); opacity: 0; } }
+  @keyframes bb-barrido { from { top: 0%; } to { top: 100%; } }
+  @keyframes bb-adquiere { from { transform: scale(1.9); opacity: .15; } to { transform: scale(1); opacity: 1; } }
+  @keyframes bb-reticula { from { transform: scale(2); opacity: 0; } to { transform: scale(.8); opacity: 1; } }
+  @keyframes bb-entra { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+  @keyframes bb-cinta { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  @media (prefers-reduced-motion: reduce) {
+    .bb *, .bb *::before, .bb *::after { animation: none !important; transition: none !important; }
+  }
+</style>

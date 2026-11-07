@@ -1,0 +1,32 @@
+---
+/**
+ * /senales/sala: el Big board a pantalla completa, para proyectar en una charla
+ * o dejar en una pantalla. Sin menú ni pie, con el recorrido automático. Con un
+ * control remoto de presentaciones se avanza y se retrocede entre señales.
+ * No se indexa: es una vista de la misma edición que está en /senales.
+ */
+import '../../styles/global.css';
+import BigBoard from '../../components/senales/BigBoard.astro';
+import { edicionVigente } from '../../lib/senales';
+
+const edicion = edicionVigente();
+---
+
+<!doctype html>
+<html lang="es-UY">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>Señales, sala · LIMINAL</title>
+    <meta name="robots" content="noindex, follow" />
+    <meta name="theme-color" content="#060C08" />
+  </head>
+  <body class="sala">
+    <BigBoard edicion={edicion} modo="sala" />
+  </body>
+</html>
+
+<style is:global>
+  body.sala { margin: 0; background: var(--color-vacio, #060c08); }
+</style>
