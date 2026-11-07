@@ -21,6 +21,8 @@ import {
   arco,
   recorteMovil,
   TENDENCIA,
+  umHasta,
+  umVigente,
 } from '../../lib/senales';
 
 interface Props {
@@ -120,10 +122,12 @@ const dia = (iso: string) => fechaCorta(iso.split('T')[0]);
               <a class="titular" href={`/senales/#senal-${s.n}`}>
                 <span class="titular__num" aria-hidden="true">{s.n}</span>
                 <span class="titular__cuerpo">
-                  {s.ultimoMomento ? (
-                    <span class="titular__um">Último momento{s.actualizado && `, ${dia(s.actualizado)}`}</span>
-                  ) : s.actualizado && (
-                    <span class="titular__act">Actualizado el {dia(s.actualizado)}</span>
+                  {/* "Último momento" vence a las 24 horas de la última actualización: después queda "Actualizado el". */}
+                  {s.ultimoMomento && (
+                    <span class="titular__um" data-um-hasta={umHasta(s)} hidden={!umVigente(s)}>Último momento{s.actualizado && `, ${dia(s.actualizado)}`}</span>
+                  )}
+                  {s.actualizado && (
+                    <span class="titular__act" data-um-relevo hidden={umVigente(s)}>Actualizado el {dia(s.actualizado)}</span>
                   )}
                   <span class="titular__t">{s.titulo}</span>
                   <span class="titular__meta">
@@ -324,6 +328,8 @@ const dia = (iso: string) => fechaCorta(iso.split('T')[0]);
     height: 7px;
     background: var(--senal);
   }
+  .titular__um[hidden],
+  .titular__act[hidden] { display: none; }
   .titular__um {
     justify-self: start;
     padding: 3px 7px;
@@ -385,3 +391,7 @@ const dia = (iso: string) => fechaCorta(iso.split('T')[0]);
     }
   }
 </style>
+
+<script>
+  import "../../scripts/ultimo-momento.ts";
+</script>

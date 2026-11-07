@@ -21,6 +21,8 @@ import {
   recorteMovil,
   TENDENCIA,
   INTENSIDAD,
+  umHasta,
+  umVigente,
 } from '../../lib/senales';
 
 interface Props {
@@ -174,16 +176,18 @@ function lado(l: string | undefined) {
             </header>
             <div class="eje__senales">
               {eje.senales.map((s) => (
-                <article class:list={['senal', { 'senal--um': s.ultimoMomento }]} id={`senal-${s.n}`} data-n={s.n} data-lugar={s.lugarMapa} data-coord={coordenadas(s.lat, s.lon)}>
+                <article class:list={['senal', { 'senal--um': umVigente(s) }]} id={`senal-${s.n}`} data-n={s.n} data-lugar={s.lugarMapa} data-coord={coordenadas(s.lat, s.lon)}>
                   <div class="senal__meta">
                     <button class="senal__num" type="button" aria-label={`Ver señal ${s.n} en el mapa`}>{s.n}</button>
                     <span>{s.lugar}</span>
                     <time datetime={s.fecha}>{fechaCorta(s.fecha)}</time>
                   </div>
-                  {s.ultimoMomento ? (
-                    <p class="senal__aviso senal__aviso--um">Último momento{s.actualizado && ` · ${fechaHora(s.actualizado)}`}</p>
-                  ) : s.actualizado && (
-                    <p class="senal__aviso">Actualizado el {fechaHora(s.actualizado)}</p>
+                  {/* "Último momento" vence a las 24 horas de la última actualización: después queda "Actualizado el". */}
+                  {s.ultimoMomento && (
+                    <p class="senal__aviso senal__aviso--um" data-um-hasta={umHasta(s)} hidden={!umVigente(s)}>Último momento{s.actualizado && ` · ${fechaHora(s.actualizado)}`}</p>
+                  )}
+                  {s.actualizado && (
+                    <p class="senal__aviso" data-um-relevo hidden={umVigente(s)}>Actualizado el {fechaHora(s.actualizado)}</p>
                   )}
                   <h4>{s.titulo}</h4>
                   <p class="senal__hecho">{s.hecho}</p>
@@ -583,6 +587,7 @@ function lado(l: string | undefined) {
     background: var(--senal);
     color: var(--sobre-senal);
   }
+  .senal__aviso[hidden] { display: none; }
   .senal--um { box-shadow: inset 3px 0 0 var(--senal); }
   .senales__actualizada { color: var(--senal-texto); }
   .senal h4 {
@@ -930,4 +935,8 @@ function lado(l: string | undefined) {
     desdeUrl(false);
     window.addEventListener('hashchange', () => desdeUrl(true));
   })();
+</script>
+
+<script>
+  import "../../scripts/ultimo-momento.ts";
 </script>

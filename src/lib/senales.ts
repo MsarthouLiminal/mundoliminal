@@ -166,6 +166,32 @@ export function fechaHora(isoLocal: string): string {
   return hora ? `${fechaCorta(dia)}, ${hora.slice(0, 5)}` : fechaCorta(dia);
 }
 
+/* ---------- Último momento ---------- */
+
+/** Horas que dura la etiqueta "Último momento", contadas desde la última actualización. */
+export const UM_HORAS = 24;
+
+/** "2026-11-07T08:14" (hora de Montevideo, UTC-3 todo el año) → instante absoluto en ms. */
+export function instanteMontevideo(isoLocal: string): number {
+  const [dia, hora = '00:00'] = isoLocal.split('T');
+  return Date.parse(`${dia}T${hora.slice(0, 5)}:00-03:00`);
+}
+
+/**
+ * Hasta cuándo vale la etiqueta "Último momento" (ms), o null si la señal no la tiene.
+ * Vale 24 horas desde `actualizado`; cada actualización la renueva.
+ */
+export function umHasta(s: Senal): number | null {
+  if (!s.ultimoMomento) return null;
+  return instanteMontevideo(s.actualizado ?? s.fecha) + UM_HORAS * 3_600_000;
+}
+
+/** Si la etiqueta sigue vigente al momento del build. En el navegador la revisa src/scripts/ultimo-momento.ts. */
+export function umVigente(s: Senal, ahora = Date.now()): boolean {
+  const hasta = umHasta(s);
+  return hasta !== null && ahora < hasta;
+}
+
 /** La actualización más reciente de la edición, si hubo alguna. */
 export function ultimaActualizacion(e: Edicion): string | null {
   const marcas = e.ejes.flatMap((eje) => eje.senales.map((s) => s.actualizado).filter(Boolean)) as string[];

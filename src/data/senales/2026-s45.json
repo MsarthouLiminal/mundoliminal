@@ -90,22 +90,22 @@
       "senales": [
         {
           "n": 3,
-          "titulo": "Minas y un muerto en Ormuz, y el crudo cierra la semana bajo USD 100",
+          "titulo": "Ormuz: minas sin confirmar, un muerto en el Golfo, crudo bajo USD 100",
           "lugar": "Estrecho de Ormuz / Golfo Pérsico",
           "lugarMapa": "Estrecho de Ormuz",
           "lat": 26.6,
           "lon": 56.5,
           "etiqueta": "der",
           "fecha": "2026-11-06",
-          "hecho": "La Guardia Revolucionaria informó que cuatro tanqueros fueron destruidos por minas al sur de Ormuz el miércoles 4, con más buques en llamas el jueves y el viernes, y un marinero de un tanquero griego murió en un aparente ataque con misil en el Golfo; CENTCOM sostiene que las minas fueron despejadas (CBS News, Business Recorder). El Brent cerró la semana en USD 98,32: había caído hasta USD 94 el miércoles, con el mercado apostando a que el resultado de las legislativas del martes empuje a Washington a cerrar la guerra y reabrir el estrecho, y el viernes volvió a rozar los USD 100 por los ataques (CNBC, NBC News). El cierre del estrecho llegó el sábado 7 al día 251 (straits.live).",
-          "lectura": "Las minas ya cobraron un muerto y aun así el barril terminó la semana abajo de cien: el mercado leyó las urnas del martes como la antesala de un acuerdo y apostó antes de ver un solo papel firmado. Si Washington no convierte esa apuesta en negociación, la prima de guerra vuelve sola, mina a mina.",
+          "hecho": "La Guardia Revolucionaria informó, sin confirmación independiente, que cuatro tanqueros fueron destruidos por minas al sur de Ormuz el miércoles 4, con más buques en llamas el jueves y el viernes, y un marinero del Velos Sapphire, un tanquero de gestión griega, murió en un aparente ataque con misil en el Golfo, al norte de Qatar; CENTCOM sostiene que las minas fueron despejadas (CBS News, Business Recorder). El Brent cerró la semana en USD 98,32: había caído hasta USD 94 el miércoles, con el mercado apostando a que el resultado de las legislativas del martes empuje a Washington a cerrar la guerra y reabrir el estrecho, y el viernes volvió a rozar los USD 100 por los ataques (CNBC, NBC News). El cierre del estrecho llegó el sábado 7 al día 251 (straits.live).",
+          "lectura": "Los ataques ya cobraron un muerto y aun así el barril terminó la semana abajo de cien: el mercado leyó las urnas del martes como la antesala de un acuerdo y apostó antes de ver un solo papel firmado. Si Washington no convierte esa apuesta en negociación, la prima de guerra vuelve sola, ataque a ataque.",
           "tendencia": "escala",
           "intensidad": 3,
           "fuente": {
             "nombre": "CBS News",
             "url": "https://www.cbsnews.com/live-updates/iran-war-us-trump-midterms-strait-of-hormuz/"
           },
-          "actualizado": "2026-11-07T08:14",
+          "actualizado": "2026-11-07T08:39",
           "anterior": {
             "titulo": "Irán ofrece reabrir Ormuz en dos días, con condiciones",
             "fecha": "2026-11-01",
@@ -244,8 +244,8 @@
           "lat": -25.28,
           "lon": -57.63,
           "etiqueta": "arriba",
-          "fecha": "2026-11-07",
-          "hecho": "El Senado destituyó a Santiago Peña el viernes 6 por mal desempeño de funciones, con 44 votos, y Pedro Alliana juró ante el Congreso como presidente, con Antonio Barrios en la vicepresidencia (ABC Color). En la madrugada del sábado 7, tras enfrentamientos entre manifestantes y policías frente a su casa, Peña fue detenido por orden fiscal y trasladado al Regimiento Escolta Presidencial, oficialmente para proteger su integridad y la de su familia (La Nación, Diario Uno). Declara este sábado a las 11:00 por el caso Ueno Bank.",
+          "fecha": "2026-11-06",
+          "hecho": "El Senado destituyó a Santiago Peña el viernes 6 por mal desempeño de funciones, con 44 votos, y Pedro Alliana juró ante el Congreso como presidente, con Antonio Barrios en la vicepresidencia (ABC Color). Esa misma noche Peña quedó detenido en su casa por orden fiscal y, tras enfrentamientos entre manifestantes y policías frente a la vivienda, fue trasladado al Regimiento Escolta Presidencial en la noche del viernes al sábado, oficialmente para proteger su integridad y la de su familia (La Nación, Diario Uno). Declara este sábado a las 11:00 por el caso Ueno Bank.",
           "lectura": "Paraguay resolvió en dos días el limbo que abrió la renuncia: destituyó a Peña, tomó juramento a Alliana y puso al expresidente bajo custodia militar, oficialmente por su protección. Para el Mercosur ya se sabe quién firma; falta saber cuánto aguanta un gobierno de reemplazo con un banco caído adentro del sistema y la calle todavía caliente.",
           "tendencia": "escala",
           "intensidad": 3,
@@ -253,7 +253,7 @@
             "nombre": "ABC Color",
             "url": "https://www.abc.com.py/politica/2026/11/06/en-vivo-juicio-politico-a-pena-senado-retoma-proceso-en-medio-de-renuncia-trabada-y-pedido-de-prorroga/"
           },
-          "actualizado": "2026-11-07T08:14",
+          "actualizado": "2026-11-07T08:39",
           "ultimoMomento": true
         },
         {
