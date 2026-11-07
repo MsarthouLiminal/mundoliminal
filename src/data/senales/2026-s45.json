@@ -91,22 +91,22 @@
       "senales": [
         {
           "n": 3,
-          "titulo": "Ormuz vuelve a arder y el crudo regresa a los USD 100",
+          "titulo": "Minas y un muerto en Ormuz, y el crudo cierra la semana bajo USD 100",
           "lugar": "Estrecho de Ormuz / Golfo Pérsico",
           "lugarMapa": "Estrecho de Ormuz",
           "lat": 26.6,
           "lon": 56.5,
           "etiqueta": "der",
           "fecha": "2026-11-06",
-          "hecho": "La Guardia Revolucionaria iraní informó el jueves 5 que dos tanqueros y un remolcador se incendiaron tras chocar con minas en Ormuz, y la agencia naval británica UKMTO reportó un tanquero alcanzado por dos proyectiles frente a Qatar, sin autor confirmado (Al Jazeera). El Brent revirtió la baja de la semana: subió 3,9% el jueves, a USD 98,29, y el viernes 6 volvió a operar arriba de USD 100 (Yahoo Finance). Teherán sostiene que el estrecho sigue cerrado hasta que se cumplan sus siete condiciones, y la propuesta nuclear que envió vía Qatar no tiene fecha de negociación.",
-          "lectura": "El alivio del surtidor duró dos ruedas: bastaron dos tanqueros en llamas y un proyectil frente a Qatar para que el barril volviera a tres dígitos. Mientras Teherán condicione cada tránsito y la negociación siga sin papel firmado, el Cono Sur paga el crudo con prima de guerra, se dispare quien se dispare.",
+          "hecho": "La Guardia Revolucionaria informó que cuatro tanqueros fueron destruidos por minas al sur de Ormuz el miércoles 4, con más buques en llamas el jueves y el viernes, y un marinero de un tanquero griego murió en un aparente ataque con misil en el Golfo; CENTCOM sostiene que las minas fueron despejadas (CBS News, Business Recorder). El Brent cerró la semana en USD 98,32: había caído hasta USD 94 el miércoles, con el mercado apostando a que el resultado de las legislativas del martes empuje a Washington a cerrar la guerra y reabrir el estrecho, y el viernes volvió a rozar los USD 100 por los ataques (CNBC, NBC News). El cierre del estrecho llegó el sábado 7 al día 251 (straits.live).",
+          "lectura": "Las minas ya cobraron un muerto y aun así el barril terminó la semana abajo de cien: el mercado leyó las urnas del martes como la antesala de un acuerdo y apostó antes de ver un solo papel firmado. Si Washington no convierte esa apuesta en negociación, la prima de guerra vuelve sola, mina a mina.",
           "tendencia": "escala",
           "intensidad": 3,
           "fuente": {
-            "nombre": "Al Jazeera",
-            "url": "https://www.aljazeera.com/news/2026/11/5/iran-says-tankers-struck-in-hormuz-amid-fears-of-new-us-attack"
+            "nombre": "CBS News",
+            "url": "https://www.cbsnews.com/live-updates/iran-war-us-trump-midterms-strait-of-hormuz/"
           },
-          "actualizado": "2026-11-06T07:24",
+          "actualizado": "2026-11-07T08:14",
           "anterior": {
             "titulo": "Irán ofrece reabrir Ormuz en dos días, con condiciones",
             "fecha": "2026-11-01",
@@ -240,22 +240,22 @@
       "senales": [
         {
           "n": 11,
-          "titulo": "Renuncia Peña en Paraguay y el Congreso la deja en suspenso",
+          "titulo": "Paraguay destituye a Peña: Alliana asume y el expresidente, detenido",
           "lugar": "Asunción, Paraguay",
           "lugarMapa": "Asunción, Paraguay",
           "lat": -25.28,
           "lon": -57.63,
           "etiqueta": "arriba",
-          "fecha": "2026-11-05",
-          "hecho": "El presidente paraguayo Santiago Peña anunció el jueves 5 su renuncia por el colapso de Ueno Bank, el banco al que estuvo vinculado, horas después de que Diputados aprobara por unanimidad (78 votos) la acusación para su juicio político (ABC Color, Infobae). La sesión del Congreso para aceptar la renuncia quedó sin quórum, así que Peña sigue siendo formalmente presidente mientras el Senado avanza con el juicio, y la oposición prefiere destituirlo para que no conserve fueros. Si la renuncia se acepta, asume el vicepresidente Pedro Alliana.",
-          "lectura": "Paraguay junta en una semana la caída de un banco grande, un presidente que renuncia y un Congreso que congela esa renuncia para poder destituirlo sin fueros. Para el Mercosur el dato es institucional: el socio que venía ofreciendo estabilidad y salida logística por la hidrovía queda con un presidente en retirada, un sucesor sin confirmar y contratos que esperan saber quién firma.",
+          "fecha": "2026-11-07",
+          "hecho": "El Senado destituyó a Santiago Peña el viernes 6 por mal desempeño de funciones, con 44 votos, y Pedro Alliana juró ante el Congreso como presidente, con Antonio Barrios en la vicepresidencia (ABC Color). En la madrugada del sábado 7, tras enfrentamientos entre manifestantes y policías frente a su casa, Peña fue detenido por orden fiscal y trasladado al Regimiento Escolta Presidencial, oficialmente para proteger su integridad y la de su familia (La Nación, Diario Uno). Declara este sábado a las 11:00 por el caso Ueno Bank.",
+          "lectura": "Paraguay resolvió en dos días el limbo que abrió la renuncia: destituyó a Peña, tomó juramento a Alliana y puso al expresidente bajo custodia militar, oficialmente por su protección. Para el Mercosur ya se sabe quién firma; falta saber cuánto aguanta un gobierno de reemplazo con un banco caído adentro del sistema y la calle todavía caliente.",
           "tendencia": "escala",
           "intensidad": 3,
           "fuente": {
             "nombre": "ABC Color",
-            "url": "https://www.abc.com.py/politica/2026/11/05/renuncio-santiago-pena-la-caida-del-presidente-por-el-caso-ueno-bank/"
+            "url": "https://www.abc.com.py/politica/2026/11/06/en-vivo-juicio-politico-a-pena-senado-retoma-proceso-en-medio-de-renuncia-trabada-y-pedido-de-prorroga/"
           },
-          "actualizado": "2026-11-06T07:24",
+          "actualizado": "2026-11-07T08:14",
           "ultimoMomento": true
         },
         {
