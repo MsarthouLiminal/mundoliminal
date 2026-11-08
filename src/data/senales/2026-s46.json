@@ -1,0 +1,332 @@
+{
+  "id": "2026-s46",
+  "semana": 46,
+  "fechaEdicion": "2026-11-09",
+  "corteDatos": "2026-11-07",
+  "ejes": [
+    {
+      "id": "min",
+      "slug": "minerales",
+      "nombre": "Minerales críticos",
+      "alcance": "Tierras raras, cobre, cobalto, litio, uranio. Quién controla el acceso y a qué precio.",
+      "senales": [
+        {
+          "n": 1,
+          "titulo": "La pausa china de tierras raras vence el martes 10 sin aviso oficial",
+          "lugar": "Beijing",
+          "lugarMapa": "Beijing, China",
+          "lat": 39.9,
+          "lon": 116.41,
+          "etiqueta": "der",
+          "fecha": "2026-11-05",
+          "hecho": "La suspensión de los controles chinos de octubre de 2025 sobre tierras raras (anuncio 70 del Ministerio de Comercio, que deja en pausa los anuncios 55 a 58, 61 y 62) vence el martes 10, y hasta el jueves 5 Beijing no había publicado un aviso que la prorrogue (The Motley Fool). El 28 de setiembre, el Ministerio de Comercio chino dijo que el acuerdo con EE.UU. se extiende al 10 de enero de 2027, sin nombrar las tierras raras; el secretario del Tesoro Scott Bessent sostiene que la extensión las cubre. Sin aviso nuevo vuelve, entre otras medidas, la licencia china para productos fabricados afuera con al menos 0,1% de su valor en tierras raras chinas; las licencias de abril de 2025 sobre siete tierras raras medias y pesadas nunca se suspendieron.",
+          "lectura": "Washington dice que la tregua cubre las tierras raras; Beijing dijo que se extiende, pero sin nombrarlas, y el papel que cuenta vence el martes. Para quien compra imanes, esa diferencia tiene costo: hasta que aparezca el aviso, cada contrato con contenido chino se firma con una cláusula de riesgo. Dejar la fecha abierta hasta el último día también es una forma de negociar.",
+          "tendencia": "escala",
+          "intensidad": 3,
+          "corto": "Tierras raras",
+          "dato": "Vence el martes 10",
+          "objetivo": "Controles de exportación",
+          "fuente": {
+            "nombre": "The Motley Fool",
+            "url": "https://www.fool.com/investing/2026/11/05/china-rare-earth-export-pause-usar-mp-materials/"
+          }
+        },
+        {
+          "n": 2,
+          "titulo": "Brasil arma su lista de 27 minerales y un filtro a las inversiones",
+          "lugar": "Brasilia",
+          "lugarMapa": "Brasilia, Brasil",
+          "lat": -15.79,
+          "lon": -47.88,
+          "etiqueta": "der",
+          "fecha": "2026-11-05",
+          "hecho": "El jueves 5, en la primera reunión del Consejo Nacional para la Industrialización de Minerales Críticos y Estratégicos (CIMCE), en el Palacio del Planalto y con la presencia del presidente Luiz Inácio Lula da Silva, Brasil aprobó una lista de 27 minerales en tres clases (Ministerio de Minas y Energía, Agência iNFRA). La Clase I, de prioridad alta, reúne tierras raras, grafito, litio, níquel, cobalto, cobre, manganeso, silicio y uranio; el niobio quedó en la Clase III, de monitoreo (TVT News). Estar en la lista activa el filtro de inversiones sobre operaciones societarias estratégicas y el acceso al fondo garantizador FGAM; según Reuters, el consejo podrá ratificar cambios de control en empresas con derechos mineros y aprobar contratos internacionales de suministro, con reglamentación prevista para los primeros meses de 2027.",
+          "lectura": "Brasil se dio una herramienta que no tenía: revisar quién compra una mina antes de que la compre. El filtro alcanza a las tierras raras, el litio y el grafito que se disputan Washington y Beijing, y llega cuando empresas como Solvay ya firman por la producción de proyectos brasileños que todavía no producen. El niobio, donde Brasil manda en el mercado mundial, quedó en la clase de monitoreo: el filtro apunta a lo que todavía se disputa más que a lo que el país ya controla.",
+          "tendencia": "escala",
+          "intensidad": 2,
+          "corto": "Brasil",
+          "dato": "27 minerales",
+          "objetivo": "Minerales críticos",
+          "fuente": {
+            "nombre": "Ministerio de Minas y Energía de Brasil",
+            "url": "https://www.gov.br/mme/pt-br/assuntos/noticias/novembro-26/cimce-aprova-lista-de-minerais-criticos-e-estrategicos-da-pnmce"
+          }
+        }
+      ],
+      "tambienTitulo": "También en el radar",
+      "tambien": [
+        {
+          "etiqueta": "4 nov",
+          "texto": "Solvay firmó con Viridis volúmenes mínimos de neodimio, praseodimio, disprosio y terbio equivalentes a cerca de 70% de la capacidad prevista del proyecto Colossus (Minas Gerais), con envíos desde 2028, contrato hasta 2034 y separación en La Rochelle."
+        },
+        {
+          "etiqueta": "4 nov",
+          "texto": "Indonesia anticipó que la cuota de mineral de níquel de 2027 se fijará según la capacidad óptima de sus fundiciones, con recortes que pueden ser más duros que los de 2026; la cuota revisada de este año ronda las 295 a 300 millones de toneladas húmedas."
+        },
+        {
+          "etiqueta": "6 nov",
+          "texto": "La Defense Logistics Agency de EE.UU. comprometió USD 2.000 millones en el año fiscal para comprar materiales críticos para la reserva de defensa, entre ellos tierras raras, tungsteno, titanio y antimonio."
+        }
+      ]
+    },
+    {
+      "id": "cho",
+      "slug": "chokepoints",
+      "nombre": "Chokepoints",
+      "alcance": "Estrechos, puertos, aranceles y cadenas de suministro. Dónde se traba el comercio.",
+      "senales": [
+        {
+          "n": 3,
+          "titulo": "Ormuz, según Irán: pase libre para India, China, Irak y Qatar",
+          "lugar": "Estrecho de Ormuz / Golfo Pérsico",
+          "lugarMapa": "Estrecho de Ormuz",
+          "lat": 26.6,
+          "lon": 56.5,
+          "etiqueta": "der",
+          "fecha": "2026-11-06",
+          "hecho": "El martes 3, Amir Hayat Moghadam, vicepresidente de la comisión de Seguridad Nacional y Política Exterior del Parlamento iraní, dijo que los buques de India, China, Irak y Qatar están exentos de las restricciones de tránsito en Ormuz; el resto pasa por un control y, en algunos casos, paga tasas (PTI). El jueves 5 murió un tripulante del tanquero Velos Sapphire, de bandera de Islas Marshall y gestión griega, alcanzado en el Golfo (Reuters vía gCaptain), y la Guardia Revolucionaria dijo, sin confirmación independiente, que otros tanqueros se incendiaron por minas ese día y el viernes. El Brent cerró el viernes 6 en USD 98,32, con su mayor caída semanal desde 2020 por la apuesta a un acuerdo entre EE.UU. e Irán (CNBC).",
+          "lectura": "Irán convirtió el cierre de Ormuz en un peaje con lista de invitados: India, China, Irak y Qatar pasan sin restricciones, y el resto se somete a control, paga tasas o navega expuesto. El Brent tuvo su peor semana desde 2020 porque el mercado apuesta a un acuerdo, pero un estrecho que se abre por bandera sigue cobrando su prima. El Cono Sur compra gasoil y fletes a precio del resto, y esa prima llega en cada embarque.",
+          "tendencia": "escala",
+          "intensidad": 3,
+          "corto": "Ormuz",
+          "dato": "Brent USD 98,32",
+          "objetivo": "Estrecho",
+          "fuente": {
+            "nombre": "PTI, vía The Week",
+            "url": "https://www.theweek.in/wire-updates/business/2026/11/04/iran-exempts-ships-from-india-and-3-other-nations-from-transit-restrictions-in-strait-of-hormuz.html"
+          }
+        },
+        {
+          "n": 4,
+          "titulo": "Paro en el puerto por la tripulación del dragado del Martín García",
+          "lugar": "Montevideo / canal Martín García",
+          "lugarMapa": "Puerto de Montevideo",
+          "lat": -34.9,
+          "lon": -56.21,
+          "etiqueta": "der",
+          "fecha": "2026-11-04",
+          "hecho": "La Intergremial Marítima cortó el martes 3, en forma intermitente hasta las 13:00, el acceso norte del puerto de Montevideo y el ingreso de camiones, en reclamo de tripulantes uruguayos en el dragado del canal Martín García, que la CARP adjudicó a la belga Jan De Nul por casi USD 66 millones financiados en partes iguales por Uruguay y Argentina (En Perspectiva, Telenoche). Los sindicatos denuncian que la obra no tiene tripulantes uruguayos y piden que la mitad sean nacionales; la empresa ofreció tres marinos y la negociación en el Ministerio de Trabajo pasó a cuarto intermedio hasta el miércoles 4, sin resultado público al cierre de esta edición. Jan De Nul obtuvo en junio la concesión de la hidrovía Paraná-Paraguay por 25 años (Forbes Argentina).",
+          "lectura": "El reclamo por la tripulación abre una discusión más grande: quién trabaja en un canal binacional que Uruguay paga por mitades. Jan De Nul ya tiene la hidrovía argentina por 25 años y ahora el Martín García, así que lo que se acuerde en el Ministerio de Trabajo va a funcionar como antecedente para el resto del Río de la Plata. La empresa ofrece tres marinos y los sindicatos piden la mitad de la tripulación: entre esas dos cifras se mide cuánto de Uruguay hay en su propio acceso.",
+          "tendencia": "escala",
+          "intensidad": 1,
+          "corto": "Martín García",
+          "dato": "USD 66 millones",
+          "objetivo": "Canal de acceso",
+          "fuente": {
+            "nombre": "En Perspectiva",
+            "url": "https://enperspectiva.uy/en-perspectiva-programa/noticias-del-miercoles-4-de-noviembre-de-2026"
+          }
+        }
+      ],
+      "tambienTitulo": "También en el radar",
+      "tambien": [
+        {
+          "etiqueta": "6 nov",
+          "texto": "El canal de Suez informó ingresos de USD 724 millones en octubre, 94% más que un año antes, con 1.490 buques (+32%) y 88 millones de toneladas netas (+86%)."
+        },
+        {
+          "etiqueta": "3 nov",
+          "texto": "Según el Ministerio de Economía, Uruguay exportó USD 860 millones a la UE entre mayo y setiembre (+12%), mientras sus exportaciones totales cayeron 1,5%; solo USD 38 millones entraron con preferencias del acuerdo Mercosur y UE."
+        },
+        {
+          "etiqueta": "4 nov",
+          "texto": "La egipcia Kima recibe 20% menos gas desde el domingo 1, y la urea granular egipcia de noviembre ronda los USD 535 por tonelada FOB, unos 17% más que en setiembre."
+        }
+      ]
+    },
+    {
+      "id": "ia",
+      "slug": "ia",
+      "nombre": "Infraestructura IA",
+      "alcance": "Data centers, chips, energía y agua. El cuerpo físico de la IA y quién lo decide.",
+      "senales": [
+        {
+          "n": 5,
+          "titulo": "Los data centers pesaron en las urnas y OpenAI ofrece pagar la luz",
+          "lugar": "EE.UU.",
+          "lugarMapa": "Washington, EE.UU.",
+          "lat": 38.9,
+          "lon": -77.04,
+          "etiqueta": "arriba",
+          "fecha": "2026-11-05",
+          "hecho": "Los demócratas ganaron el control de las dos cámaras en las elecciones del martes 3 (TechCrunch, Gizmodo). En la encuesta a boca de urna de NBC, casi 80% se opuso a que se construyan data centers en su barrio y casi 60% dijo que el tema fue un factor crucial o importante en su voto; la gobernadora electa de Texas, Gina Hinojosa, apoya una moratoria estatal. El jueves 5, OpenAI se comprometió a cubrir los costos de electricidad e infraestructura energética de los futuros data centers que posea y opere, y a limitar los acuerdos de confidencialidad con funcionarios públicos.",
+          "lectura": "La resistencia local a los data centers llegó al resultado nacional: casi seis de cada diez votantes dijeron que el tema pesó en su voto, y dos días después OpenAI ofreció pagar la energía de los centros propios que construya. Cuando la red eléctrica entra en campaña, instalar cómputo en EE.UU. se encarece y la búsqueda de suelo, agua y energía se mueve. Uruguay, que espera a Google en Canelones, conviene que llegue a esa conversación con reglas propias sobre agua y energía.",
+          "tendencia": "escala",
+          "intensidad": 2,
+          "corto": "Midterms",
+          "dato": "Casi 80% en contra",
+          "objetivo": "Data centers",
+          "fuente": {
+            "nombre": "TechCrunch",
+            "url": "https://techcrunch.com/2026/11/04/after-the-midterms-a-bigger-clash-over-data-centers-could-be-coming/"
+          }
+        },
+        {
+          "n": 6,
+          "titulo": "ByteDance busca ampliar Pecém y abrir otro data center para Brasil",
+          "lugar": "Pecém (Ceará), Brasil",
+          "lugarMapa": "Pecém, Ceará",
+          "lat": -3.54,
+          "lon": -38.81,
+          "etiqueta": "der",
+          "fecha": "2026-11-06",
+          "hecho": "Según Bloomberg, que cita fuentes sin nombre, ByteDance busca una desarrolladora para la segunda fase de su complejo de data centers en el puerto de Pecém (Ceará), que podría superar a la fase en obra, de USD 10.000 millones y 300 MW, y negocia en etapa preliminar otro centro de tamaño similar fuera del puerto. En Pecém, los data centers tienen que exportar datos para acceder a las exenciones fiscales; el centro de afuera atendería a clientes del mercado brasileño. ByteDance no respondió a Bloomberg.",
+          "lectura": "La exención de Pecém premia a los data centers que sirven afuera y empuja a otro lado a los que atienden a Brasil: el régimen fiscal termina dibujando dónde se guardan los datos de los brasileños. ByteDance responde con dos sedes, una para exportar y otra para el mercado interno. Uruguay, que también ofrece zona franca a los data centers, tiene en Ceará un espejo de lo que pasa cuando el incentivo decide la geografía.",
+          "tendencia": "escala",
+          "intensidad": 2,
+          "corto": "Pecém",
+          "dato": "USD 10.000 millones",
+          "objetivo": "Data centers",
+          "fuente": {
+            "nombre": "InvestNews, con Bloomberg",
+            "url": "https://investnews.com.br/negocios/dona-do-tiktok-negocia-nova-fase-de-complexo-de-data-centers-no-ceara/"
+          }
+        }
+      ],
+      "tambienTitulo": "También en el radar",
+      "tambien": [
+        {
+          "etiqueta": "2 nov",
+          "texto": "Argentina impulsa bajar de 25% a 15% el impuesto a las ganancias para proyectos de IA de al menos USD 1.000 millones, sin exigir cómputo para uso local ni informar consumo de energía y agua; la medida espera aprobación del Senado."
+        },
+        {
+          "etiqueta": "3 nov",
+          "texto": "Portugal ultima un decreto que exigirá a los data centers energía renovable y una refrigeración que no use agua dulce o no compita con el abastecimiento de la población; tiene más de 2,6 GW en desarrollo."
+        },
+        {
+          "etiqueta": "6 nov",
+          "texto": "El Consejo de Estado de España avaló por unanimidad, con cuatro cambios obligatorios, el real decreto que regula la conexión eléctrica de los data centers."
+        }
+      ]
+    },
+    {
+      "id": "con",
+      "slug": "conflictos",
+      "nombre": "Conflictos",
+      "alcance": "Guerras activas, cambios de fase y lo que derraman sobre la región.",
+      "senales": [
+        {
+          "n": 7,
+          "titulo": "El expresidente Santiago Peña, en prisión preventiva por el caso Ueno",
+          "lugar": "Asunción, Paraguay",
+          "lugarMapa": "Asunción, Paraguay",
+          "lat": -25.28,
+          "lon": -57.63,
+          "etiqueta": "izq",
+          "fecha": "2026-11-07",
+          "hecho": "El juez penal de garantías de Delitos Económicos Humberto Otazú dictó el sábado 7 la prisión preventiva del expresidente Santiago Peña, que la cumple en el Regimiento Escolta Presidencial de Asunción, adonde fue trasladado el viernes tras su destitución por el Senado (EFE). La Fiscalía lo imputa por lesión de confianza, como instigador, y administración en provecho propio, como autor, en el caso Ueno; en su forma agravada, ambos delitos pueden castigarse con hasta 10 años de prisión. La caída de Ueno afectó a unos 2,94 millones de clientes y el Banco Central del Paraguay ya pagó cerca de USD 160 millones de la garantía estatal; el presidente brasileño Luiz Inácio Lula da Silva felicitó al nuevo presidente, Pedro Alliana, el viernes 6 (ABC Color).",
+          "lectura": "Paraguay recorrió en pocos días la renuncia, la destitución, el juramento de Pedro Alliana como presidente y la prisión preventiva del expresidente Santiago Peña. La velocidad ordena la política, pero la cuenta de Ueno sigue abierta: 2,94 millones de clientes afectados y una garantía estatal que ya pagó unos USD 160 millones. Para el Mercosur, el socio de Itaipú y de la hidrovía tiene presidente nuevo y un sistema financiero en reparación.",
+          "tendencia": "estable",
+          "intensidad": 2,
+          "corto": "Paraguay",
+          "dato": "2,94 millones de clientes",
+          "objetivo": "Crisis institucional",
+          "fuente": {
+            "nombre": "EFE, vía Infobae",
+            "url": "https://www.infobae.com/america/agencias/2026/11/08/pena-permanece-en-prision-preventiva-mientras-paraguay-da-paso-a-un-nuevo-gobierno/"
+          }
+        },
+        {
+          "n": 8,
+          "titulo": "Sudán acusa a Etiopía por drones de las RSF; se expulsan diplomáticos",
+          "lugar": "Nilo Azul (Sudán) / Asosa (Etiopía)",
+          "lugarMapa": "Nilo Azul, Sudán",
+          "lat": 11.79,
+          "lon": 34.36,
+          "etiqueta": "izq",
+          "fecha": "2026-11-04",
+          "hecho": "Sudán acusó a Etiopía ante el Consejo de Seguridad de la ONU y el Consejo de Paz y Seguridad de la Unión Africana de alojar sitios de lanzamiento de drones de las RSF, tras ataques del domingo 1 contra subestaciones eléctricas en al-Dabba y Abu Hamad, en el norte del país; Addis Abeba niega apoyar a las RSF (Al Jazeera). Etiopía expulsó a seis funcionarios del consulado sudanés en Asosa, con 48 horas para salir, y Sudán respondió cerrando el consulado etíope en Gadarif. El martes 3, las RSF y milicias aliadas habrían tomado la base militar de Sali, en Nilo Azul (Sudans Post, citado por el Global Conflict Tracker del CFR, que marca el conflicto como en deterioro).",
+          "lectura": "La guerra de Sudán ya tiene un frente diplomático con un Estado vecino: si los drones de las RSF despegan de Etiopía, el conflicto deja de ser interno aunque nadie lo declare. Las expulsiones cruzadas llegan justo cuando el tráfico vuelve a Suez, con ingresos que casi se duplicaron en octubre. Un frente abierto entre dos Estados del Cuerno de África es un riesgo más para una ruta que recién empieza a recuperarse.",
+          "tendencia": "escala",
+          "intensidad": 3,
+          "corto": "Nilo Azul",
+          "dato": "Seis funcionarios",
+          "objetivo": "Frontera",
+          "fuente": {
+            "nombre": "Al Jazeera",
+            "url": "https://www.aljazeera.com/news/2026/11/4/sudan-ethiopia-order-tit-for-tat-diplomatic-expulsions"
+          }
+        }
+      ],
+      "tambienTitulo": "Focos en observación",
+      "tambien": [
+        {
+          "etiqueta": "Ucrania, 6 nov",
+          "texto": "Kiev lleva a la mesa de Abu Dabi, el 10 y 11, la propuesta de frenar los combates en la línea actual del frente, altos el fuego por sectores en energía y mar Negro, y el desbloqueo de los puertos."
+        },
+        {
+          "etiqueta": "Yemen, 6 nov",
+          "texto": "Arabia Saudita informó que interceptó un dron hutí cerca de La Meca y dos misiles balísticos cerca de Najrán; los hutíes no desmintieron el ataque."
+        },
+        {
+          "etiqueta": "Haití, 6 nov",
+          "texto": "Murió tras un operativo policial Mathias Saintil, jefe de la banda Boston, de Cité Soleil; el primer ministro Alix Didier Fils-Aimé lo celebró con la frase \"un líder de pandilla menos\"."
+        },
+        {
+          "etiqueta": "Ecuador, 1 nov",
+          "texto": "Rige hasta el martes 10 el cuarto toque de queda del año, de 0 a 5 en cinco provincias costeras, a tres semanas de las elecciones locales del 29."
+        }
+      ]
+    }
+  ],
+  "focos": [
+    {
+      "nombre": "Ucrania",
+      "lugarMapa": "Kiev, Ucrania",
+      "lat": 50.45,
+      "lon": 30.52,
+      "etiqueta": "der",
+      "eje": "con"
+    },
+    {
+      "nombre": "Yemen",
+      "lugarMapa": "Saná, Yemen",
+      "lat": 15.37,
+      "lon": 44.19,
+      "etiqueta": "der",
+      "eje": "con"
+    },
+    {
+      "nombre": "Haití",
+      "lugarMapa": "Puerto Príncipe, Haití",
+      "lat": 18.59,
+      "lon": -72.31,
+      "etiqueta": "der",
+      "eje": "con"
+    },
+    {
+      "nombre": "Ecuador",
+      "lugarMapa": "Guayaquil, Ecuador",
+      "lat": -2.17,
+      "lon": -79.92,
+      "etiqueta": "izq",
+      "eje": "con"
+    }
+  ],
+  "agenda": [
+    {
+      "fecha": "2026-11-09",
+      "texto": "9 nov",
+      "eje": "Chokepoints",
+      "detalle": "A las 23:59, hora del este de EE.UU., vencen la suspensión de las tasas portuarias a buques chinos, las 178 exclusiones de la Sección 301 y la de la regla del 50% del BIS, sin aviso de prórroga publicado."
+    },
+    {
+      "fecha": "2026-11-10",
+      "texto": "10 nov",
+      "eje": "Minerales críticos",
+      "detalle": "Vence la pausa china de los controles de tierras raras de octubre de 2025, salvo que Beijing publique un aviso que la extienda."
+    },
+    {
+      "fecha": "2026-11-10",
+      "texto": "10 y 11 nov",
+      "eje": "Conflictos",
+      "detalle": "Negociadores de Ucrania, Rusia y EE.UU. se reúnen en Abu Dabi, con Washington como mediador."
+    },
+    {
+      "fecha": "2026-11-17",
+      "texto": "17 nov",
+      "eje": "Infraestructura IA",
+      "detalle": "Fecha prevista por el gobierno español para aprobar el real decreto sobre la conexión eléctrica de los data centers, antes de las elecciones del 29."
+    }
+  ]
+}
