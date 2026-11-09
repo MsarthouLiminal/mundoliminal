@@ -120,23 +120,34 @@
         },
         {
           "n": 4,
-          "titulo": "Paro en el puerto por la tripulación del dragado del Martín García",
+          "titulo": "La Intergremial anuncia acuerdo por la tripulación del Martín García",
           "lugar": "Montevideo / canal Martín García",
           "lugarMapa": "Puerto de Montevideo",
           "lat": -34.9,
           "lon": -56.21,
           "etiqueta": "der",
           "fecha": "2026-11-04",
-          "hecho": "La Intergremial Marítima cortó el martes 3, en forma intermitente hasta las 13:00, el acceso norte del puerto de Montevideo y el ingreso de camiones, en reclamo de tripulantes uruguayos en el dragado del canal Martín García, que la CARP adjudicó a la belga Jan De Nul por casi USD 66 millones financiados en partes iguales por Uruguay y Argentina (En Perspectiva, Telenoche). Los sindicatos denuncian que la obra no tiene tripulantes uruguayos y piden que la mitad sean nacionales; la empresa ofreció tres marinos y la negociación en el Ministerio de Trabajo pasó a cuarto intermedio hasta el miércoles 4, sin resultado público al cierre de esta edición. Jan De Nul obtuvo en junio la concesión de la hidrovía Paraná-Paraguay por 25 años (Forbes Argentina).",
-          "lectura": "El reclamo por la tripulación abre una discusión más grande: quién trabaja en un canal binacional que Uruguay paga por mitades. Jan De Nul ya tiene la hidrovía argentina por 25 años y ahora el Martín García, así que lo que se acuerde en el Ministerio de Trabajo va a funcionar como antecedente para el resto del Río de la Plata. La empresa ofrece tres marinos y los sindicatos piden la mitad de la tripulación: entre esas dos cifras se mide cuánto de Uruguay hay en su propio acceso.",
-          "tendencia": "escala",
+          "hecho": "La Intergremial Marítima cortó el martes 3, en forma intermitente hasta las 13:00, el acceso norte del puerto de Montevideo y el ingreso de camiones, en reclamo de tripulantes uruguayos en el dragado del canal Martín García, que la CARP adjudicó a la belga Jan De Nul por casi USD 66 millones financiados en partes iguales por Uruguay y Argentina (En Perspectiva, Telenoche). Al día siguiente, en el Ministerio de Trabajo, la Intergremial informó un acuerdo con la empresa para que el 50% de los trabajadores del dragado sean uruguayos; según su presidente, Facundo Montaña, el acuerdo alcanzará también a otras embarcaciones extranjeras y la firma estaba prevista para el viernes 6, sin confirmación pública al cierre de esta actualización (Medios Públicos). Jan De Nul obtuvo en junio la concesión de la hidrovía Paraná-Paraguay por 25 años (Forbes Argentina).",
+          "lectura": "El conflicto se cerró al día siguiente del corte y con la cifra que pedían los sindicatos: la mitad de la tripulación. Jan De Nul, que ya tiene la hidrovía argentina por 25 años y ahora el Martín García, aceptó esa regla en un canal binacional, y según la Intergremial el acuerdo se extenderá a otras embarcaciones extranjeras. Ese antecedente pesa más que el paro.",
+          "tendencia": "afloja",
           "intensidad": 1,
           "corto": "Martín García",
-          "dato": "USD 66 millones",
+          "dato": "50% uruguayos",
           "objetivo": "Canal de acceso",
           "fuente": {
-            "nombre": "En Perspectiva",
-            "url": "https://enperspectiva.uy/en-perspectiva-programa/noticias-del-miercoles-4-de-noviembre-de-2026"
+            "nombre": "Medios Públicos",
+            "url": "https://mediospublicos.uy/intergremial-maritima-logro-acuerdo-con-empresa-belga-por-obras-de-dragado/"
+          },
+          "actualizado": "2026-11-09T08:52",
+          "anterior": {
+            "titulo": "Paro en el puerto por la tripulación del dragado del Martín García",
+            "fecha": "2026-11-04",
+            "hecho": "La Intergremial Marítima cortó el martes 3, en forma intermitente hasta las 13:00, el acceso norte del puerto de Montevideo y el ingreso de camiones, en reclamo de tripulantes uruguayos en el dragado del canal Martín García, que la CARP adjudicó a la belga Jan De Nul por casi USD 66 millones financiados en partes iguales por Uruguay y Argentina (En Perspectiva, Telenoche). Los sindicatos denuncian que la obra no tiene tripulantes uruguayos y piden que la mitad sean nacionales; la empresa ofreció tres marinos y la negociación en el Ministerio de Trabajo pasó a cuarto intermedio hasta el miércoles 4, sin resultado público al cierre de esta edición. Jan De Nul obtuvo en junio la concesión de la hidrovía Paraná-Paraguay por 25 años (Forbes Argentina).",
+            "lectura": "El reclamo por la tripulación abre una discusión más grande: quién trabaja en un canal binacional que Uruguay paga por mitades. Jan De Nul ya tiene la hidrovía argentina por 25 años y ahora el Martín García, así que lo que se acuerde en el Ministerio de Trabajo va a funcionar como antecedente para el resto del Río de la Plata. La empresa ofrece tres marinos y los sindicatos piden la mitad de la tripulación: entre esas dos cifras se mide cuánto de Uruguay hay en su propio acceso.",
+            "fuente": {
+              "nombre": "En Perspectiva",
+              "url": "https://enperspectiva.uy/en-perspectiva-programa/noticias-del-miercoles-4-de-noviembre-de-2026"
+            }
           }
         }
       ],
