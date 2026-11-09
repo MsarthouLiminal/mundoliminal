@@ -12,23 +12,34 @@
       "senales": [
         {
           "n": 1,
-          "titulo": "La pausa china de tierras raras vence el martes 10 sin aviso oficial",
+          "titulo": "China prorroga la pausa de tierras raras hasta el 10 de enero",
           "lugar": "Beijing",
           "lugarMapa": "Beijing, China",
           "lat": 39.9,
           "lon": 116.41,
           "etiqueta": "der",
-          "fecha": "2026-11-05",
-          "hecho": "La suspensión de los controles chinos de octubre de 2025 sobre tierras raras (anuncio 70 del Ministerio de Comercio, que deja en pausa los anuncios 55 a 58, 61 y 62) vence el martes 10, y hasta el jueves 5 Beijing no había publicado un aviso que la prorrogue (The Motley Fool). El 28 de setiembre, el Ministerio de Comercio chino dijo que el acuerdo con EE.UU. se extiende al 10 de enero de 2027, sin nombrar las tierras raras; el secretario del Tesoro Scott Bessent sostiene que la extensión las cubre. Sin aviso nuevo vuelve, entre otras medidas, la licencia china para productos fabricados afuera con al menos 0,1% de su valor en tierras raras chinas; las licencias de abril de 2025 sobre siete tierras raras medias y pesadas nunca se suspendieron.",
-          "lectura": "Washington dice que la tregua cubre las tierras raras; Beijing dijo que se extiende, pero sin nombrarlas, y el papel que cuenta vence el martes. Para quien compra imanes, esa diferencia tiene costo: hasta que aparezca el aviso, cada contrato con contenido chino se firma con una cláusula de riesgo. Dejar la fecha abierta hasta el último día también es una forma de negociar.",
-          "tendencia": "escala",
-          "intensidad": 3,
+          "fecha": "2026-11-09",
+          "hecho": "El lunes 9, un día antes del vencimiento, el Ministerio de Comercio chino anunció que la suspensión de los controles de tierras raras de octubre de 2025 (anuncios 55 a 58, 61 y 62) se prorroga por dos meses, hasta el 10 de enero de 2027, el mismo día en que vence la tregua comercial con EE.UU. (Reuters). La pausa prorrogada rige del 11 de noviembre al 10 de enero; las licencias de abril de 2025 sobre siete tierras raras medias y pesadas siguen vigentes.",
+          "lectura": "Beijing publicó el aviso un día antes del vencimiento y ató la prórroga al calendario de la tregua: ahora todo vence junto, el 10 de enero. El alivio es real para quien firma contratos con imanes chinos, pero las licencias de abril sobre las tierras raras pesadas siguen intactas, así que China renovó la tregua sin soltar la llave.",
+          "tendencia": "afloja",
+          "intensidad": 2,
           "corto": "Tierras raras",
-          "dato": "Vence el martes 10",
+          "dato": "Hasta el 10 de enero",
           "objetivo": "Controles de exportación",
           "fuente": {
-            "nombre": "The Motley Fool",
-            "url": "https://www.fool.com/investing/2026/11/05/china-rare-earth-export-pause-usar-mp-materials/"
+            "nombre": "Shanghai Metals Market (SMM)",
+            "url": "https://news.metal.com/newscontent/CNTOCBN4QTSC2L3BEOVBYILPAZVOOIHVV6INVPY-china-extends-suspension-of-rare-earth-export-controls-until-january-2027"
+          },
+          "actualizado": "2026-11-09T07:19",
+          "anterior": {
+            "titulo": "La pausa china de tierras raras vence el martes 10 sin aviso oficial",
+            "fecha": "2026-11-05",
+            "hecho": "La suspensión de los controles chinos de octubre de 2025 sobre tierras raras (anuncio 70 del Ministerio de Comercio, que deja en pausa los anuncios 55 a 58, 61 y 62) vence el martes 10, y hasta el jueves 5 Beijing no había publicado un aviso que la prorrogue (The Motley Fool). El 28 de setiembre, el Ministerio de Comercio chino dijo que el acuerdo con EE.UU. se extiende al 10 de enero de 2027, sin nombrar las tierras raras; el secretario del Tesoro Scott Bessent sostiene que la extensión las cubre. Sin aviso nuevo vuelve, entre otras medidas, la licencia china para productos fabricados afuera con al menos 0,1% de su valor en tierras raras chinas; las licencias de abril de 2025 sobre siete tierras raras medias y pesadas nunca se suspendieron.",
+            "lectura": "Washington dice que la tregua cubre las tierras raras; Beijing dijo que se extiende, pero sin nombrarlas, y el papel que cuenta vence el martes. Para quien compra imanes, esa diferencia tiene costo: hasta que aparezca el aviso, cada contrato con contenido chino se firma con una cláusula de riesgo. Dejar la fecha abierta hasta el último día también es una forma de negociar.",
+            "fuente": {
+              "nombre": "The Motley Fool",
+              "url": "https://www.fool.com/investing/2026/11/05/china-rare-earth-export-pause-usar-mp-materials/"
+            }
           }
         },
         {
@@ -77,23 +88,34 @@
       "senales": [
         {
           "n": 3,
-          "titulo": "Ormuz, según Irán: pase libre para India, China, Irak y Qatar",
-          "lugar": "Estrecho de Ormuz / Golfo Pérsico",
+          "titulo": "EE.UU. dispara sobre un carguero y la Guardia habla de minas en Ormuz",
+          "lugar": "Estrecho de Ormuz / Golfo de Omán",
           "lugarMapa": "Estrecho de Ormuz",
           "lat": 26.6,
           "lon": 56.5,
           "etiqueta": "der",
-          "fecha": "2026-11-06",
-          "hecho": "El martes 3, Amir Hayat Moghadam, vicepresidente de la comisión de Seguridad Nacional y Política Exterior del Parlamento iraní, dijo que los buques de India, China, Irak y Qatar están exentos de las restricciones de tránsito en Ormuz; el resto pasa por un control y, en algunos casos, paga tasas (PTI). El jueves 5 murió un tripulante del tanquero Velos Sapphire, de bandera de Islas Marshall y gestión griega, alcanzado en el Golfo (Reuters vía gCaptain), y la Guardia Revolucionaria dijo, sin confirmación independiente, que otros tanqueros se incendiaron por minas ese día y el viernes. El Brent cerró el viernes 6 en USD 98,32, con su mayor caída semanal desde 2020 por la apuesta a un acuerdo entre EE.UU. e Irán (CNBC).",
-          "lectura": "Irán convirtió el cierre de Ormuz en un peaje con lista de invitados: India, China, Irak y Qatar pasan sin restricciones, y el resto se somete a control, paga tasas o navega expuesto. El Brent tuvo su peor semana desde 2020 porque el mercado apuesta a un acuerdo, pero un estrecho que se abre por bandera sigue cobrando su prima. El Cono Sur compra gasoil y fletes a precio del resto, y esa prima llega en cada embarque.",
+          "fecha": "2026-11-08",
+          "hecho": "El sábado 7, el Comando Central de EE.UU. informó que sus fuerzas dispararon municiones de precisión contra la popa del carguero Huda en el Golfo de Omán, tras advertencias ignoradas, el quinto mercante que inutiliza desde julio por intentar violar el bloqueo a Irán (AP). El domingo 8, la Guardia Revolucionaria dijo, sin confirmación independiente, que dos tanqueros chocaron contra minas y se incendiaron en la zona del estrecho; la agencia marítima británica UKMTO reportó fuego a bordo de un tanquero a 8 millas náuticas de Khasab (Omán), con la tripulación forzada a abandonar el buque. Emiratos Árabes Unidos rescató a 22 tripulantes tras un incendio en el Golfo de Omán (Gulf News).",
+          "lectura": "Al peaje iraní se le sumó el otro lado del mostrador: EE.UU. ya inutilizó cinco mercantes desde julio y la Guardia responde hablando de minas. Entre municiones de precisión y explosiones sin confirmar, el tránsito por Ormuz se define más en los blancos que en las tarifas, y esa cuenta la fijan las aseguradoras antes que los cañones.",
           "tendencia": "escala",
           "intensidad": 3,
           "corto": "Ormuz",
-          "dato": "Brent USD 98,32",
+          "dato": "22 tripulantes",
           "objetivo": "Estrecho",
           "fuente": {
-            "nombre": "PTI, vía The Week",
-            "url": "https://www.theweek.in/wire-updates/business/2026/11/04/iran-exempts-ships-from-india-and-3-other-nations-from-transit-restrictions-in-strait-of-hormuz.html"
+            "nombre": "Euronews",
+            "url": "https://www.euronews.com/2026/11/08/us-forces-strike-commercial-vessel-in-gulf-of-oman-after-crew-ignored-repeated-warnings"
+          },
+          "actualizado": "2026-11-09T07:19",
+          "anterior": {
+            "titulo": "Ormuz, según Irán: pase libre para India, China, Irak y Qatar",
+            "fecha": "2026-11-06",
+            "hecho": "El martes 3, Amir Hayat Moghadam, vicepresidente de la comisión de Seguridad Nacional y Política Exterior del Parlamento iraní, dijo que los buques de India, China, Irak y Qatar están exentos de las restricciones de tránsito en Ormuz; el resto pasa por un control y, en algunos casos, paga tasas (PTI). El jueves 5 murió un tripulante del tanquero Velos Sapphire, de bandera de Islas Marshall y gestión griega, alcanzado en el Golfo (Reuters vía gCaptain), y la Guardia Revolucionaria dijo, sin confirmación independiente, que otros tanqueros se incendiaron por minas ese día y el viernes. El Brent cerró el viernes 6 en USD 98,32, con su mayor caída semanal desde 2020 por la apuesta a un acuerdo entre EE.UU. e Irán (CNBC).",
+            "lectura": "Irán convirtió el cierre de Ormuz en un peaje con lista de invitados: India, China, Irak y Qatar pasan sin restricciones, y el resto se somete a control, paga tasas o navega expuesto. El Brent tuvo su peor semana desde 2020 porque el mercado apuesta a un acuerdo, pero un estrecho que se abre por bandera sigue cobrando su prima. El Cono Sur compra gasoil y fletes a precio del resto, y esa prima llega en cada embarque.",
+            "fuente": {
+              "nombre": "PTI, vía The Week",
+              "url": "https://www.theweek.in/wire-updates/business/2026/11/04/iran-exempts-ships-from-india-and-3-other-nations-from-transit-restrictions-in-strait-of-hormuz.html"
+            }
           }
         },
         {
