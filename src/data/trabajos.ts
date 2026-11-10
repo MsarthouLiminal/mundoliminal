@@ -250,6 +250,7 @@ export const AGENDA: Evento[] = [
   },
   {
     fecha: '2026-11-18',
+    hora: '19:00',
     ciudad: 'Carmelo',
     lugar: 'Carmelo Resort & Spa',
     titulo: 'Un torneo es histórico cuando alguien lo cuenta',
@@ -257,6 +258,7 @@ export const AGENDA: Evento[] = [
     detalle:
       'Forum del 1.er Sudamericano de Pickleball. Cómo se construye el relato de un deporte y qué hace que una historia llegue a los medios, con el pickleball como caso: un deporte que recién se está desarrollando en Uruguay.',
     organiza: 'Sudamericano de Pickleball',
+    acceso: 'invitacion',
   },
   {
     fecha: '2026-12-12',
