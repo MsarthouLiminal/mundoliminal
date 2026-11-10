@@ -88,25 +88,25 @@
       "senales": [
         {
           "n": 3,
-          "titulo": "EE.UU. dispara sobre un carguero y la Guardia habla de minas en Ormuz",
-          "lugar": "Estrecho de Ormuz / Golfo de Omán",
+          "titulo": "Trump frena ataques nuevos y el Brent cae 5,9% con la oferta por Ormuz",
+          "lugar": "Washington / Estrecho de Ormuz",
           "lugarMapa": "Estrecho de Ormuz",
           "lat": 26.6,
           "lon": 56.5,
           "etiqueta": "der",
-          "fecha": "2026-11-08",
-          "hecho": "El sábado 7, el Comando Central de EE.UU. informó que sus fuerzas dispararon municiones de precisión contra la popa del carguero Huda en el Golfo de Omán, tras advertencias ignoradas, el quinto mercante que inutiliza desde julio por intentar violar el bloqueo a Irán (AP). El domingo 8, la Guardia Revolucionaria dijo, sin confirmación independiente, que dos tanqueros chocaron contra minas y se incendiaron en la zona del estrecho; la agencia marítima británica UKMTO reportó fuego a bordo de un tanquero a 8 millas náuticas de Khasab (Omán), con la tripulación forzada a abandonar el buque. Emiratos Árabes Unidos rescató a 22 tripulantes tras un incendio en el Golfo de Omán (Gulf News).",
-          "lectura": "Al peaje iraní se le sumó el otro lado del mostrador: EE.UU. ya inutilizó cinco mercantes desde julio y la Guardia responde hablando de minas. Entre municiones de precisión y explosiones sin confirmar, el tránsito por Ormuz se define más en los blancos que en las tarifas, y esa cuenta la fijan las aseguradoras antes que los cañones.",
-          "tendencia": "escala",
+          "fecha": "2026-11-09",
+          "hecho": "El lunes 9, Trump recibió en la Casa Blanca al primer ministro catarí, Mohammed bin Abdulrahman Al Thani, mediador de una propuesta iraní que ofrece reabrir Ormuz a cambio de levantar sanciones, descongelar activos y reducir la presencia militar de EE.UU. en la región, y tras la reunión dijo que nuevos ataques son \"bastante improbables\" (UPI); el bloqueo naval sigue y el secretario de Estado Marco Rubio sostiene que un acuerdo no está cerca. El Brent cerró el lunes con una caída de 5,9%, en USD 92,57, su nivel más bajo desde el 31 de agosto y lejos del máximo de seis meses de USD 118 del 30 de octubre (Reuters). La Guardia Revolucionaria dijo, sin confirmación independiente, que el lunes un tercer tanquero chocó contra una mina en la ruta este del estrecho.",
+          "lectura": "Ormuz se contaba en blancos y volvió a contarse en precios: con Qatar de mediador y Trump frenando los ataques nuevos, el Brent perdió USD 25 desde el pico del 30 de octubre. El mercado ya descuenta la paz, pero el bloqueo sigue, los avisos de minas también, y lo único que bajó hasta ahora es el petróleo.",
+          "tendencia": "afloja",
           "intensidad": 3,
           "corto": "Ormuz",
-          "dato": "22 tripulantes",
+          "dato": "USD 92,57",
           "objetivo": "Estrecho",
           "fuente": {
-            "nombre": "Euronews",
-            "url": "https://www.euronews.com/2026/11/08/us-forces-strike-commercial-vessel-in-gulf-of-oman-after-crew-ignored-repeated-warnings"
+            "nombre": "Reuters, vía Business Recorder",
+            "url": "https://www.brecorder.com/news/40448220/oil-falls-as-trump-downplays-prospect-of-escalation-with-iran"
           },
-          "actualizado": "2026-11-09T07:19",
+          "actualizado": "2026-11-10T07:25",
           "anterior": {
             "titulo": "Ormuz, según Irán: pase libre para India, China, Irak y Qatar",
             "fecha": "2026-11-06",
