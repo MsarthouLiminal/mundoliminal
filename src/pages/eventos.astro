@@ -8,7 +8,8 @@ import '../styles/v2.css';
 const lista = proximos();
 const pasados = recientes();
 
-const acceso = (e: Evento) => (e.acceso === 'invitacion' ? 'Por invitación' : 'Inscripción abierta');
+const ACCESO = { invitacion: 'Por invitación', abierto: 'Inscripción abierta', publico: 'Abierto al público' };
+const acceso = (e: Evento) => (e.acceso ? ACCESO[e.acceso] : null);
 ---
 
 <BaseLayout
@@ -37,7 +38,8 @@ const acceso = (e: Evento) => (e.acceso === 'invitacion' ? 'Por invitación' : '
               </time>
               <div class="evento__cuerpo">
                 <p class="evento__formato">
-                  {e.formato} · <span>{acceso(e)}</span>
+                  {e.formato}
+                  {acceso(e) && <> · <span>{acceso(e)}</span></>}
                 </p>
                 <h3>{e.titulo}</h3>
                 <p class="evento__detalle">{e.detalle}</p>

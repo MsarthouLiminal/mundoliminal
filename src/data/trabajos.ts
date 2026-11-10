@@ -24,7 +24,12 @@ export interface Caso {
   fotoAlt?: string;
 }
 
-export type Acceso = 'invitacion' | 'abierto';
+/**
+ * invitacion: "Por invitación". abierto: "Inscripción abierta" (va con enlace).
+ * publico: "Abierto al público", sin enlace de inscripción.
+ * Si no se sabe todavía, se deja sin `acceso` y la ficha no dice nada.
+ */
+export type Acceso = 'invitacion' | 'abierto' | 'publico';
 
 export interface Evento {
   fecha: string;
@@ -35,7 +40,7 @@ export interface Evento {
   formato: 'Charla' | 'Conversación' | 'Moderación' | 'Conducción';
   detalle: string;
   organiza: string;
-  acceso: Acceso;
+  acceso?: Acceso;
   /** Enlace de inscripción, solo para eventos abiertos. */
   inscripcion?: string;
 }
@@ -232,15 +237,39 @@ export const AGENDA: Evento[] = [
     acceso: 'invitacion',
   },
   {
-    fecha: '2026-11-27',
-    ciudad: 'Minas',
-    lugar: 'Parque UTE-Antel',
-    titulo: 'Charla para el directorio de UTE',
+    fecha: '2026-11-12',
+    hora: '15:00 a 15:50',
+    ciudad: 'Montevideo',
+    lugar: 'Centro Cultural de España, Rincón 629',
+    titulo: '¿Quién puede apagar tu IA? Geopolítica de lo que no se ve detrás de un botón',
     formato: 'Charla',
-    detalle: 'Para el directorio y las gerencias estratégicas.',
-    organiza: 'UTE',
-    acceso: 'invitacion',
+    detalle:
+      'Burocracia Creativa 2026. Lo que no se ve detrás de apretar un botón de inteligencia artificial: quién controla la infraestructura, quién puede cortarla y qué significa eso para el Estado uruguayo.',
+    organiza: 'Burocracia Creativa',
+    acceso: 'publico',
   },
+  {
+    fecha: '2026-11-18',
+    ciudad: 'Carmelo',
+    lugar: 'Carmelo Resort & Spa',
+    titulo: 'Un torneo es histórico cuando alguien lo cuenta',
+    formato: 'Charla',
+    detalle:
+      'Forum del 1.er Sudamericano de Pickleball. Cómo se construye el relato de un deporte y qué hace que una historia llegue a los medios, con el pickleball como caso: un deporte que recién se está desarrollando en Uruguay.',
+    organiza: 'Sudamericano de Pickleball',
+  },
+  {
+    fecha: '2026-12-12',
+    ciudad: 'Montevideo',
+    lugar: 'FADU, Bulevar Artigas 1031',
+    titulo: 'TEDxParqueRodó',
+    formato: 'Charla',
+    detalle: "Charla en la nueva edición de TEDx en Montevideo, con el lema \"Vamo' Arriba\".",
+    organiza: 'TEDxParqueRodó',
+    acceso: 'publico',
+  },
+  // La charla para el directorio de UTE (Parque UTE-Antel, Minas) se pasó a 2027,
+  // todavía sin fecha. Vuelve a la agenda cuando la haya.
 ];
 
 const DIAS = ['dom', 'lun', 'mar', 'mié', 'jue', 'vie', 'sáb'];
