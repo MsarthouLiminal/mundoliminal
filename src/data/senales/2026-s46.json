@@ -88,25 +88,25 @@
       "senales": [
         {
           "n": 3,
-          "titulo": "Trump frena ataques nuevos y el Brent cae 5,9% con la oferta por Ormuz",
+          "titulo": "El Brent perfora los USD 90 y rebota: otro tanquero alcanzado en Ormuz",
           "lugar": "Washington / Estrecho de Ormuz",
           "lugarMapa": "Estrecho de Ormuz",
           "lat": 26.6,
           "lon": 56.5,
           "etiqueta": "der",
-          "fecha": "2026-11-09",
-          "hecho": "El lunes 9, Trump recibió en la Casa Blanca al primer ministro catarí, Mohammed bin Abdulrahman Al Thani, mediador de una propuesta iraní que ofrece reabrir Ormuz a cambio de levantar sanciones, descongelar activos y reducir la presencia militar de EE.UU. en la región, y tras la reunión dijo que nuevos ataques son \"bastante improbables\" (UPI); el bloqueo naval sigue y el secretario de Estado Marco Rubio sostiene que un acuerdo no está cerca. El Brent cerró el lunes con una caída de 5,9%, en USD 92,57, su nivel más bajo desde el 31 de agosto y lejos del máximo de seis meses de USD 118 del 30 de octubre (Reuters). La Guardia Revolucionaria dijo, sin confirmación independiente, que el lunes un tercer tanquero chocó contra una mina en la ruta este del estrecho.",
-          "lectura": "Ormuz se contaba en blancos y volvió a contarse en precios: con Qatar de mediador y Trump frenando los ataques nuevos, el Brent perdió USD 25 desde el pico del 30 de octubre. El mercado ya descuenta la paz, pero el bloqueo sigue, los avisos de minas también, y lo único que bajó hasta ahora es el petróleo.",
-          "tendencia": "afloja",
+          "fecha": "2026-11-10",
+          "hecho": "El martes 10, el Brent cayó hasta USD 89,16, su primer registro debajo de 90 desde agosto, y cerró en USD 91,49 tras los dichos de Trump de que la guerra con Irán podría terminar pronto (CNBC); en la rueda asiática del miércoles rebotó a USD 92,20 cuando un funcionario de seguridad iraní negó que haya conversaciones entre las partes. El mismo martes, la agencia marítima británica UKMTO informó que otro tanquero fue alcanzado al noreste de Lima, Omán, y la Guardia Revolucionaria dijo que dos tanqueros se incendiaron por minas en una ruta no autorizada. Octubre cerró con 37 buques atacados en Ormuz y aguas cercanas, el mayor total mensual desde el inicio de la guerra, y noviembre ya suma 10 (Washington Institute for Near East Policy).",
+          "lectura": "El mercado compró la paz un día antes de tiempo: el Brent perforó los 90 por primera vez desde agosto y rebotó en horas, cuando un funcionario iraní negó que haya conversaciones y otro tanquero fue alcanzado frente a Omán. Con 37 buques atacados en octubre y diez en lo que va de noviembre, la prima de Ormuz se va a levantar cuando dejen de arder los barcos, y todavía arden.",
+          "tendencia": "estable",
           "intensidad": 3,
           "corto": "Ormuz",
-          "dato": "USD 92,57",
+          "dato": "USD 92,20",
           "objetivo": "Estrecho",
           "fuente": {
-            "nombre": "Reuters, vía Business Recorder",
-            "url": "https://www.brecorder.com/news/40448220/oil-falls-as-trump-downplays-prospect-of-escalation-with-iran"
+            "nombre": "Reuters, vía CNBC",
+            "url": "https://www.cnbc.com/2026/11/11/oil-rises-from-two-month-low-as-hormuz-shipping-attacks-offset-iran-truce-hopes.html"
           },
-          "actualizado": "2026-11-10T07:25",
+          "actualizado": "2026-11-11T07:18",
           "anterior": {
             "titulo": "Ormuz, según Irán: pase libre para India, China, Irak y Qatar",
             "fecha": "2026-11-06",
@@ -341,7 +341,7 @@
       "fecha": "2026-11-09",
       "texto": "9 nov",
       "eje": "Chokepoints",
-      "detalle": "A las 23:59, hora del este de EE.UU., vencen la suspensión de las tasas portuarias a buques chinos, las 178 exclusiones de la Sección 301 y la de la regla del 50% del BIS; la USTR propuso prorrogar las tasas hasta el 9 de enero de 2027 y la prórroga se reporta formalizada, sin aviso final publicado."
+      "detalle": "A las 23:59, hora del este de EE.UU., vencía la suspensión de las tasas portuarias a buques chinos, junto con las 178 exclusiones de la Sección 301 y la de la regla del 50% del BIS; la USTR formalizó la prórroga de las tasas hasta el 9 de enero de 2027, con aviso en el Federal Register del martes 10, y China extendió la suspensión de sus tasas de represalia hasta el 10 de enero (gCaptain)."
     },
     {
       "fecha": "2026-11-10",
