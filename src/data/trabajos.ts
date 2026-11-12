@@ -58,12 +58,24 @@ export const MARCAS: Marca[] = [
   { nombre: 'Nantas' },
   { nombre: "L'Oréal Uruguay" },
   { nombre: 'Hormetal' },
+  { nombre: 'Burocracia Creativa' },
   { nombre: 'BMI' },
   { nombre: 'Segura Bank' },
   { nombre: 'Club del Inversor' },
 ];
 
 export const CASOS: Caso[] = [
+  {
+    cliente: 'Burocracia Creativa',
+    etiqueta: 'Edición 2026',
+    formato: 'Presentación analítica',
+    fecha: '12 nov 2026',
+    lugar: 'Centro Cultural de España, Montevideo',
+    texto:
+      'Charla "¿Quién puede apagar tu IA? Geopolítica de lo que no se ve detrás de un botón": un recorrido en siete paradas, de la pantalla y la aplicación al cable, el centro de datos, el chip, los minerales y la energía, para ver quién controla cada tramo y quién puede cortarlo.',
+    foto: '/images/talks/burocracia-creativa.jpg',
+    fotoAlt: 'Martín Sarthou en Burocracia Creativa 2026, frente a la pantalla con la parada del chip: ASML, la única empresa que fabrica las máquinas de litografía EUV.',
+  },
   {
     cliente: 'Hormetal',
     etiqueta: '15 años',
