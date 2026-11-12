@@ -50,7 +50,7 @@ const acceso = (e: Evento) => (e.acceso ? ACCESO[e.acceso] : null);
                 <h3>{e.titulo}</h3>
                 <p class="evento__detalle">{e.detalle}</p>
                 <p class="v2-meta">
-                  {[e.ciudad, e.lugar, e.hora && `${e.hora} h`, `Organiza ${e.organiza}`].filter(Boolean).join(' · ')}
+                  {[e.ciudad, e.lugar, e.hora && `${e.hora} h`, `Organiza ${e.organiza}`, e.produccion && `Producción ${e.produccion}`].filter(Boolean).join(' · ')}
                 </p>
                 {(e.inscripcion || e.reservas || e.enlace) && (
                   <div class="evento__acciones">

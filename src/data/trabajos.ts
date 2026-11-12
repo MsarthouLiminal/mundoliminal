@@ -48,6 +48,8 @@ export interface Evento {
   reservas?: string;
   /** Un enlace extra, por ejemplo el Instagram del lugar. */
   enlace?: { href: string; texto: string };
+  /** Quién produce el encuentro; aparece como "Producción ..." junto a quién organiza. */
+  produccion?: string;
 }
 
 /** Con quiénes trabajó LIMINAL Talks. */
@@ -286,6 +288,7 @@ export const AGENDA: Evento[] = [
     formato: 'Charla',
     detalle: 'Una noche de política internacional contada con anécdotas y cruzada con la música y la cultura pop.',
     organiza: 'Viti, Bar de Vinos',
+    produccion: 'Jorgelina Sánchez-Cores',
     acceso: 'reserva',
     reservas: '+598 97 660 878',
     enlace: { href: 'https://www.instagram.com/vitibardevinos/', texto: 'Viti en Instagram' },
