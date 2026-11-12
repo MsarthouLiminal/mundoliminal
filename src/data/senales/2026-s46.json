@@ -240,23 +240,34 @@
       "senales": [
         {
           "n": 7,
-          "titulo": "El expresidente Santiago Peña, en prisión preventiva por el caso Ueno",
+          "titulo": "Paraguay devuelve USD 643 millones a los ahorristas de Ueno",
           "lugar": "Asunción, Paraguay",
           "lugarMapa": "Asunción, Paraguay",
           "lat": -25.28,
           "lon": -57.63,
           "etiqueta": "izq",
-          "fecha": "2026-11-07",
-          "hecho": "El juez penal de garantías de Delitos Económicos Humberto Otazú dictó el sábado 7 la prisión preventiva del expresidente Santiago Peña, que la cumple en el Regimiento Escolta Presidencial de Asunción, adonde fue trasladado en la noche del viernes al sábado tras su destitución por el Senado (EFE). La Fiscalía lo imputa por lesión de confianza, como instigador, y administración en provecho propio, como autor, en el caso Ueno; en su forma agravada, ambos delitos pueden castigarse con hasta 10 años de prisión, y el juzgado ya ordenó la inhibición de sus bienes y el embargo de sus cuentas (ABC Color). La caída de Ueno afectó a unos 2,94 millones de clientes y el Banco Central del Paraguay ya pagó cerca de USD 160 millones de la garantía estatal; el presidente brasileño Luiz Inácio Lula da Silva felicitó al nuevo presidente, Pedro Alliana, el viernes 6 (ABC Color).",
-          "lectura": "Paraguay recorrió en pocos días la renuncia, la destitución, el juramento de Pedro Alliana como presidente y la prisión preventiva del expresidente Santiago Peña. La velocidad ordena la política, pero la cuenta de Ueno sigue abierta: 2,94 millones de clientes afectados y una garantía estatal que ya pagó unos USD 160 millones. Para el Mercosur, el socio de Itaipú y de la hidrovía tiene presidente nuevo y un sistema financiero en reparación.",
+          "fecha": "2026-11-11",
+          "hecho": "El miércoles 11, el Banco Central del Paraguay completó el pago anticipado de la garantía de depósitos de Ueno: unos USD 643 millones para 1.812.348 ahorristas, el 100% de los que tienen derecho a ella, sobre cerca de USD 2.800 millones que tenía el banco intervenido el 3 de noviembre (AFP). El anticipo de la ley de emergencia llega hasta unos USD 19.000 por depositante y la garantía total hasta unos USD 37.000; quedan pendientes los fondos jubilatorios, que superan los USD 500 millones. El lunes 9, el nuevo presidente, Pedro Alliana, ordenó que ministros, secretarios ejecutivos y jefes de entes públicos pongan sus cargos a disposición del nuevo gobierno (Latin Times); el expresidente Santiago Peña sigue en prisión preventiva por el caso.",
+          "lectura": "Paraguay tapó primero el agujero más visible: en una semana de crisis bancaria e institucional, el Estado devolvió USD 643 millones y llegó a todos los ahorristas con derecho a garantía. La parte lenta empieza ahora: más de USD 500 millones de fondos jubilatorios siguen pendientes, y el expresidente preso responde por el mismo banco que el nuevo gobierno intenta ordenar.",
           "tendencia": "estable",
           "intensidad": 2,
           "corto": "Paraguay",
-          "dato": "2,94 millones de clientes",
+          "dato": "USD 643 millones",
           "objetivo": "Crisis institucional",
           "fuente": {
-            "nombre": "EFE, vía Infobae",
-            "url": "https://www.infobae.com/america/agencias/2026/11/08/pena-permanece-en-prision-preventiva-mientras-paraguay-da-paso-a-un-nuevo-gobierno/"
+            "nombre": "AFP, vía El Salvador",
+            "url": "https://www.elsalvador.com/noticias/internacional/paraguay-devuelve-ahorros-ueno-bank/1303696/2026/"
+          },
+          "actualizado": "2026-11-12T07:19",
+          "anterior": {
+            "titulo": "El expresidente Santiago Peña, en prisión preventiva por el caso Ueno",
+            "fecha": "2026-11-07",
+            "hecho": "El juez penal de garantías de Delitos Económicos Humberto Otazú dictó el sábado 7 la prisión preventiva del expresidente Santiago Peña, que la cumple en el Regimiento Escolta Presidencial de Asunción, adonde fue trasladado en la noche del viernes al sábado tras su destitución por el Senado (EFE). La Fiscalía lo imputa por lesión de confianza, como instigador, y administración en provecho propio, como autor, en el caso Ueno; en su forma agravada, ambos delitos pueden castigarse con hasta 10 años de prisión, y el juzgado ya ordenó la inhibición de sus bienes y el embargo de sus cuentas (ABC Color). La caída de Ueno afectó a unos 2,94 millones de clientes y el Banco Central del Paraguay ya pagó cerca de USD 160 millones de la garantía estatal; el presidente brasileño Luiz Inácio Lula da Silva felicitó al nuevo presidente, Pedro Alliana, el viernes 6 (ABC Color).",
+            "lectura": "Paraguay recorrió en pocos días la renuncia, la destitución, el juramento de Pedro Alliana como presidente y la prisión preventiva del expresidente Santiago Peña. La velocidad ordena la política, pero la cuenta de Ueno sigue abierta: 2,94 millones de clientes afectados y una garantía estatal que ya pagó unos USD 160 millones. Para el Mercosur, el socio de Itaipú y de la hidrovía tiene presidente nuevo y un sistema financiero en reparación.",
+            "fuente": {
+              "nombre": "EFE, vía Infobae",
+              "url": "https://www.infobae.com/america/agencias/2026/11/08/pena-permanece-en-prision-preventiva-mientras-paraguay-da-paso-a-un-nuevo-gobierno/"
+            }
           }
         },
         {
