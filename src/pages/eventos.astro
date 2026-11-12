@@ -8,7 +8,13 @@ import '../styles/v2.css';
 const lista = proximos();
 const pasados = recientes();
 
-const ACCESO = { invitacion: 'Por invitación', abierto: 'Inscripción abierta', publico: 'Abierto al público' };
+const ACCESO = {
+  invitacion: 'Por invitación',
+  abierto: 'Inscripción abierta',
+  publico: 'Abierto al público',
+  reserva: 'Con reserva',
+};
+const tel = (n: string) => `tel:${n.replace(/[^\d+]/g, '')}`;
 const acceso = (e: Evento) => (e.acceso ? ACCESO[e.acceso] : null);
 ---
 
@@ -46,10 +52,24 @@ const acceso = (e: Evento) => (e.acceso ? ACCESO[e.acceso] : null);
                 <p class="v2-meta">
                   {[e.ciudad, e.lugar, e.hora && `${e.hora} h`, `Organiza ${e.organiza}`].filter(Boolean).join(' · ')}
                 </p>
-                {e.inscripcion && (
-                  <a class="evento__inscripcion" href={e.inscripcion} target="_blank" rel="noopener">
-                    Inscribirse <span aria-hidden="true">→</span>
-                  </a>
+                {(e.inscripcion || e.reservas || e.enlace) && (
+                  <div class="evento__acciones">
+                    {e.inscripcion && (
+                      <a class="evento__inscripcion" href={e.inscripcion} target="_blank" rel="noopener">
+                        Inscribirse <span aria-hidden="true">→</span>
+                      </a>
+                    )}
+                    {e.reservas && (
+                      <a class="evento__inscripcion" href={tel(e.reservas)}>
+                        Reservas al {e.reservas}
+                      </a>
+                    )}
+                    {e.enlace && (
+                      <a class="evento__inscripcion" href={e.enlace.href} target="_blank" rel="noopener">
+                        {e.enlace.texto} <span aria-hidden="true">→</span>
+                      </a>
+                    )}
+                  </div>
                 )}
               </div>
             </li>
@@ -146,6 +166,11 @@ const acceso = (e: Evento) => (e.acceso ? ACCESO[e.acceso] : null);
   .evento h3 {
     font-size: clamp(1.5rem, 3vw, 2rem);
     line-height: 1.02;
+  }
+  .evento__acciones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
   }
   .evento__inscripcion {
     justify-self: start;

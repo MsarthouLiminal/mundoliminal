@@ -27,9 +27,10 @@ export interface Caso {
 /**
  * invitacion: "Por invitación". abierto: "Inscripción abierta" (va con enlace).
  * publico: "Abierto al público", sin enlace de inscripción.
+ * reserva: "Con reserva" (va con el teléfono en `reservas`).
  * Si no se sabe todavía, se deja sin `acceso` y la ficha no dice nada.
  */
-export type Acceso = 'invitacion' | 'abierto' | 'publico';
+export type Acceso = 'invitacion' | 'abierto' | 'publico' | 'reserva';
 
 export interface Evento {
   fecha: string;
@@ -43,6 +44,10 @@ export interface Evento {
   acceso?: Acceso;
   /** Enlace de inscripción, solo para eventos abiertos. */
   inscripcion?: string;
+  /** Teléfono de reservas, tal como se muestra (el enlace tel: se arma solo). */
+  reservas?: string;
+  /** Un enlace extra, por ejemplo el Instagram del lugar. */
+  enlace?: { href: string; texto: string };
 }
 
 /** Con quiénes trabajó LIMINAL Talks. */
@@ -271,6 +276,19 @@ export const AGENDA: Evento[] = [
       'Forum del 1.er Sudamericano de Pickleball. Cómo se construye el relato de un deporte y qué hace que una historia llegue a los medios, con el pickleball como caso: un deporte que recién se está desarrollando en Uruguay.',
     organiza: 'Sudamericano de Pickleball',
     acceso: 'invitacion',
+  },
+  {
+    fecha: '2026-12-03',
+    hora: '20:00',
+    ciudad: 'Montevideo',
+    lugar: 'Ciudad Vieja',
+    titulo: 'La playlist del poder',
+    formato: 'Charla',
+    detalle: 'Una noche de política internacional contada con anécdotas y cruzada con la música y la cultura pop.',
+    organiza: 'Viti, Bar de Vinos',
+    acceso: 'reserva',
+    reservas: '+598 97 660 878',
+    enlace: { href: 'https://www.instagram.com/vitibardevinos/', texto: 'Viti en Instagram' },
   },
   {
     fecha: '2026-12-12',
