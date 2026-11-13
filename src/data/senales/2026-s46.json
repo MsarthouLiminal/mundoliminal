@@ -11,6 +11,28 @@
       "alcance": "Tierras raras, cobre, cobalto, litio, uranio. Quién controla el acceso y a qué precio.",
       "senales": [
         {
+          "n": 9,
+          "titulo": "Chile: Diputados rechaza el presupuesto de Minería por Codelco",
+          "lugar": "Valparaíso, Chile",
+          "lugarMapa": "Valparaíso, Chile",
+          "lat": -33.05,
+          "lon": -71.61,
+          "etiqueta": "izq",
+          "fecha": "2026-11-12",
+          "hecho": "El jueves 12, la Cámara de Diputados de Chile rechazó, tras un empate a 59 votos, la partida del Ministerio de Minería del Presupuesto 2027, en un debate marcado por el futuro de Codelco y su posible apertura a capitales privados (La Tercera). El proyecto reduce los recursos de Minería en 207,8 millones de pesos chilenos, una rebaja real de 0,4%, con ajustes que alcanzan al servicio geológico Sernageomin. El presidente de Codelco, Bernardo Fontaine, dijo que en el plan de recuperación de la empresa no hay privatización: \"Codelco es del Estado, y punto\" (El Periodista).",
+          "lectura": "La partida de Minería cayó por un empate, y lo que se votaba ahí era menos el recorte de 0,4% que la sospecha sobre Codelco: alcanzó con que se hablara de capital privado para que media Cámara usara el presupuesto como veto. Fontaine salió a decir que la empresa es del Estado, y cuando el presidente de una estatal necesita aclararlo, la discusión ya está abierta.",
+          "tendencia": "escala",
+          "intensidad": 2,
+          "corto": "Codelco",
+          "dato": "59 votos",
+          "objetivo": "Cobre estatal",
+          "fuente": {
+            "nombre": "La Tercera",
+            "url": "https://www.latercera.com/nacional/noticia/presupuesto-2027-camara-rechaza-partida-de-mineria-en-debate-marcado-por-futuro-de-codelco/"
+          },
+          "actualizado": "2026-11-13T08:23"
+        },
+        {
           "n": 1,
           "titulo": "China prorroga la pausa de tierras raras hasta el 10 de enero",
           "lugar": "Beijing",
@@ -61,7 +83,8 @@
           "fuente": {
             "nombre": "Ministerio de Minas y Energía de Brasil",
             "url": "https://www.gov.br/mme/pt-br/assuntos/noticias/novembro-26/cimce-aprova-lista-de-minerais-criticos-e-estrategicos-da-pnmce"
-          }
+          },
+          "rotada": "2026-11-13T08:23"
         }
       ],
       "tambienTitulo": "También en el radar",
@@ -88,25 +111,25 @@
       "senales": [
         {
           "n": 3,
-          "titulo": "Trump descarta un acuerdo con Irán y el Brent cierra en USD 95,82",
-          "lugar": "Washington / Estrecho de Ormuz",
+          "titulo": "Irán se atribuye el ataque a un radar de EE.UU. en Bahréin",
+          "lugar": "Bahréin / Estrecho de Ormuz",
           "lugarMapa": "Estrecho de Ormuz",
           "lat": 26.6,
           "lon": 56.5,
           "etiqueta": "der",
-          "fecha": "2026-11-12",
-          "hecho": "El jueves 12, Trump escribió en Truth Social que EE.UU. no necesita un acuerdo con Irán (\"tenemos su estrecho\") y le pidió al vicepresidente JD Vance, que conducía las gestiones, que se dedique a otros temas (CNBC). El Brent cerró en USD 95,82, con un alza de 3,3%, después de que los hutíes dijeron haber atacado una estación de bombeo del oleoducto saudita Este-Oeste, una instalación petrolera en Yanbu y un edificio de Aramco en Riad, sin confirmación independiente; la coalición que lidera Arabia Saudita informó que interceptó dos drones (Reuters). Entre el martes 10 y el miércoles 11 fueron alcanzados al menos tres tanqueros en Ormuz y sus accesos (The Maritime Executive); el ejército iraní habla de cuatro que explotaron por ignorar advertencias, versión que Reuters no pudo verificar.",
-          "lectura": "El martes el mercado apostaba a la paz y el jueves Trump avisó que ya no necesita firmarla: el Brent recuperó más de tres dólares en una rueda y volvió a cotizar un conflicto sin fecha de salida. Si se confirma lo que dicen los hutíes, el dato de fondo está en Yanbu, porque el oleoducto Este-Oeste es la ruta con la que Arabia Saudita esquiva Ormuz, y un desvío bajo fuego deja de ser un desvío.",
+          "fecha": "2026-11-13",
+          "hecho": "El viernes 13, la Guardia Revolucionaria iraní dijo que atacó un radar de alerta temprana de EE.UU. en Bahréin, en represalia por un ataque aéreo contra una torre de telecomunicaciones en Sirik (Hormozgán); ni EE.UU. ni Bahréin lo comentaron, y es el primer anuncio de este tipo contra activos militares estadounidenses en un país del Golfo desde principios de setiembre (Reuters). El mismo día, la marina de la Guardia afirmó que un buque de GNL explotó al chocar con una mina en una ruta \"no autorizada y peligrosa\" de Ormuz, sin nombre del buque ni confirmación independiente (Reuters, vía Baird Maritime). El Brent, que había cerrado el jueves 12 en USD 95,82 después de que Trump escribió que EE.UU. no necesita un acuerdo con Irán, operaba el viernes en USD 95,59 (The National), y la Agencia Internacional de Energía proyectó para este trimestre un superávit de crudo de unos 2 millones de barriles diarios, el primero desde el inicio de la guerra (Bloomberg, vía Rigzone).",
+          "lectura": "Trump escribió el jueves que ya tiene el estrecho, y el viernes Irán sumó dos anuncios propios: un radar estadounidense atacado en Bahréin y un buque de gas que explotó por una mina. El Brent casi no se movió, porque la Agencia Internacional de Energía ve crudo de sobra este trimestre; esa calma descansa sobre dos partes de guerra que nadie confirmó, y dura lo que tarde en confirmarse el primero.",
           "tendencia": "escala",
           "intensidad": 3,
           "corto": "Ormuz",
-          "dato": "USD 95,82",
+          "dato": "USD 95,59",
           "objetivo": "Estrecho",
           "fuente": {
             "nombre": "Reuters, vía Investing.com",
-            "url": "https://www.investing.com/news/commodities-news/oil-prices-drop-more-than-1-as-hopes-for-iran-ukraine-peace-talks-pressure-markets-5020171"
+            "url": "https://www.investing.com/news/commodities-news/irans-guards-say-they-targeted-a-us-earlywarning-radar-in-bahrain-5024146"
           },
-          "actualizado": "2026-11-13T06:15",
+          "actualizado": "2026-11-13T08:23",
           "anterior": {
             "titulo": "Ormuz, según Irán: pase libre para India, China, Irak y Qatar",
             "fecha": "2026-11-06",
@@ -240,25 +263,25 @@
       "senales": [
         {
           "n": 7,
-          "titulo": "Paraguay devuelve USD 643 millones a los ahorristas de Ueno",
+          "titulo": "Caso Ueno: detienen a dos exdirectores del Banco Central paraguayo",
           "lugar": "Asunción, Paraguay",
           "lugarMapa": "Asunción, Paraguay",
           "lat": -25.28,
           "lon": -57.63,
           "etiqueta": "izq",
-          "fecha": "2026-11-11",
-          "hecho": "El miércoles 11, el Banco Central del Paraguay completó el pago anticipado de la garantía de depósitos de Ueno: unos USD 643 millones para 1.812.348 ahorristas, el 100% de los que tienen derecho a ella, sobre cerca de USD 2.800 millones que tenía el banco intervenido el 3 de noviembre (AFP). El anticipo de la ley de emergencia llega hasta unos USD 19.000 por depositante y la garantía total hasta unos USD 37.000; quedan pendientes los fondos jubilatorios, que superan los USD 500 millones. El lunes 9, el nuevo presidente, Pedro Alliana, ordenó que ministros, secretarios ejecutivos y jefes de entes públicos pongan sus cargos a disposición del nuevo gobierno (Latin Times); el expresidente Santiago Peña sigue en prisión preventiva por el caso.",
-          "lectura": "Paraguay tapó primero el agujero más visible: en una semana de crisis bancaria e institucional, el Estado devolvió USD 643 millones y llegó a todos los ahorristas con derecho a garantía. La parte lenta empieza ahora: más de USD 500 millones de fondos jubilatorios siguen pendientes, y el expresidente preso responde por el mismo banco que el nuevo gobierno intenta ordenar.",
-          "tendencia": "estable",
+          "fecha": "2026-11-13",
+          "hecho": "El viernes 13, la Fiscalía paraguaya detuvo a Liana Caballero y Miguel Ángel Mora, exmiembros del directorio del Banco Central del Paraguay, y busca a un tercero, Marco Aurelio González, que no fue hallado en su domicilio; los investiga por lesión de confianza en la supervisión de Ueno (La Nación). Según la Fiscalía, conocían la situación crítica del banco desde diciembre de 2025 y en febrero de 2026 fueron alertados de operaciones con empresas vinculadas por unos USD 140 millones, sin tomar medidas. El jueves 12 fue imputado por el mismo delito el superintendente de Bancos, Holger Insfrán (Última Hora), un día después de que el Banco Central completó el pago anticipado de la garantía de depósitos: unos USD 643 millones para 1.812.348 ahorristas (AFP).",
+          "lectura": "La causa Ueno subió un piso: después del banco y del expresidente, la Fiscalía fue por quienes tenían que vigilarlos, con dos exdirectores del Banco Central detenidos y el superintendente de Bancos imputado. Si la acusación se sostiene, el supervisor supo desde diciembre y dejó hacer, y el mismo Banco Central que acaba de devolver USD 643 millones a los ahorristas queda como pagador del daño y sospechoso de haberlo permitido.",
+          "tendencia": "escala",
           "intensidad": 2,
           "corto": "Paraguay",
-          "dato": "USD 643 millones",
+          "dato": "USD 140 millones",
           "objetivo": "Crisis institucional",
           "fuente": {
-            "nombre": "AFP, vía El Salvador",
-            "url": "https://www.elsalvador.com/noticias/internacional/paraguay-devuelve-ahorros-ueno-bank/1303696/2026/"
+            "nombre": "La Nación (Paraguay)",
+            "url": "https://www.lanacion.com.py/pais/2026/11/13/caso-ueno-bank-detienen-a-dos-exdirectivos-del-bcp-y-uno-esta-profugo/"
           },
-          "actualizado": "2026-11-12T07:19",
+          "actualizado": "2026-11-13T08:23",
           "anterior": {
             "titulo": "El expresidente Santiago Peña, en prisión preventiva por el caso Ueno",
             "fecha": "2026-11-07",
