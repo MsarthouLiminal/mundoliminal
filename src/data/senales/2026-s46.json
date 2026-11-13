@@ -118,7 +118,7 @@
           "lon": 56.5,
           "etiqueta": "der",
           "fecha": "2026-11-13",
-          "hecho": "El viernes 13, el Comando Central de EE.UU. (CENTCOM) desmintió que la Guardia Revolucionaria iraní haya destruido un radar de alerta temprana estadounidense en Bahréin: dijo que la Guardia lanzó dos drones de ataque hacia Bahréin, que sus fuerzas derribaron ambos y que no hubo heridos ni daños, sin referirse al ataque aéreo contra una torre de telecomunicaciones en Sirik (Hormozgán) que la Guardia invocó como motivo (Radio Free Europe/Radio Liberty). El mismo día, la marina de la Guardia afirmó que un buque de GNL explotó al chocar con una mina en una ruta \"no autorizada y peligrosa\" de Ormuz, sin nombre del buque ni confirmación independiente; el Washington Institute cuenta al menos 10 buques alcanzados en los primeros 10 días de noviembre, después de 37 ataques en octubre (Reuters, vía gCaptain). El Brent, que había cerrado el jueves 12 en USD 95,82 después de que Trump escribió que EE.UU. no necesita un acuerdo con Irán, operaba el viernes en USD 95,59 (The National), y la Agencia Internacional de Energía proyectó para este trimestre un superávit de crudo de unos 2 millones de barriles diarios, el primero desde el inicio de la guerra (Bloomberg, vía Rigzone).",
+          "hecho": "El viernes 13, el Comando Central de EE.UU. (CENTCOM) desmintió que la Guardia Revolucionaria iraní haya destruido un radar de alerta temprana estadounidense en Bahréin: dijo que la Guardia lanzó dos drones de ataque hacia Bahréin, que sus fuerzas derribaron ambos y que no hubo heridos ni daños, sin referirse al ataque aéreo contra una torre de telecomunicaciones en Sirik (Hormozgán) que la Guardia invocó como motivo (Radio Free Europe/Radio Liberty). El mismo día, la marina de la Guardia afirmó que un buque gasero (de GNL según Reuters, de GLP según AP) explotó al chocar con una mina en una ruta \"no autorizada y peligrosa\" de Ormuz, sin nombre del buque ni confirmación independiente; el Washington Institute cuenta al menos 10 buques alcanzados en los primeros 10 días de noviembre, después de 37 ataques en octubre (Reuters, vía gCaptain). El Brent, que había cerrado el jueves 12 en USD 95,82 después de que Trump escribió que EE.UU. no necesita un acuerdo con Irán, cerró el viernes en USD 95,84, dos centavos arriba, y la Agencia Internacional de Energía proyectó para este trimestre un superávit de crudo de unos 2 millones de barriles diarios, el primero desde el inicio de la guerra (Bloomberg, vía Rigzone).",
           "lectura": "Trump escribió el jueves que ya tiene el estrecho, y el viernes Irán sumó dos anuncios propios: un radar estadounidense atacado en Bahréin y un buque de gas que explotó por una mina. Washington desmintió el primero y, al hacerlo, admitió dos drones iraníes en vuelo hacia Bahréin; el Brent casi no se movió, porque la Agencia Internacional de Energía ve crudo de sobra, y el mercado eligió creerle al desmentido antes que a los drones.",
           "tendencia": "escala",
           "intensidad": 3,
@@ -129,7 +129,7 @@
             "nombre": "Radio Free Europe/Radio Liberty",
             "url": "https://www.rferl.org/a/iran-us-sirik-bahrain-war-nuclear-talks/33897951.html"
           },
-          "actualizado": "2026-11-13T13:11",
+          "actualizado": "2026-11-13T19:11",
           "anterior": {
             "titulo": "Ormuz, según Irán: pase libre para India, China, Irak y Qatar",
             "fecha": "2026-11-06",
@@ -286,25 +286,25 @@
       "senales": [
         {
           "n": 7,
-          "titulo": "Caso Ueno: ya son tres los exdirectores del Banco Central detenidos",
+          "titulo": "Caso Ueno: la Fiscalía imputa a Peña como jefe de asociación criminal",
           "lugar": "Asunción, Paraguay",
           "lugarMapa": "Asunción, Paraguay",
           "lat": -25.28,
           "lon": -57.63,
           "etiqueta": "izq",
           "fecha": "2026-11-13",
-          "hecho": "El viernes 13, la Fiscalía paraguaya detuvo a Liana Caballero y Miguel Ángel Mora, exmiembros del directorio del Banco Central del Paraguay, y horas después se entregó y quedó detenido el tercero, Marco Aurelio González, que no había sido hallado en su domicilio; con el expresidente del banco, Carlos Carvallo, en prisión preventiva, son cuatro los exdirectores detenidos, investigados por lesión de confianza en la supervisión de Ueno (Última Hora, El Trueno). Según la Fiscalía, conocían la situación crítica del banco desde diciembre de 2025 y en febrero de 2026 fueron alertados de operaciones con empresas vinculadas por unos USD 140 millones, sin tomar medidas. El jueves 12 fue imputado por el mismo delito el superintendente de Bancos, Holger Insfrán (Última Hora), un día después de que el Banco Central completó el pago anticipado de la garantía de depósitos: unos USD 643 millones para 1.812.348 ahorristas (AFP).",
-          "lectura": "La causa Ueno subió un piso: después del banco y del expresidente, la Fiscalía fue por quienes tenían que vigilarlos, con tres exdirectores del Banco Central detenidos y el superintendente de Bancos imputado. Si la acusación se sostiene, el supervisor supo desde diciembre y dejó hacer, y el mismo Banco Central que acaba de devolver USD 643 millones a los ahorristas queda como pagador del daño y sospechoso de haberlo permitido.",
+          "hecho": "El viernes 13, la Fiscalía paraguaya amplió la imputación contra el expresidente Santiago Peña, destituido el 6 de noviembre y en prisión preventiva, y le sumó el delito de asociación criminal: según el acta, \"habría actuado como jefe de la estructura\" que, desde el Poder Ejecutivo y el Banco Central, favoreció al Grupo Vázquez, controlador de Ueno (ABC Color). El mismo delito alcanza al expresidente del banco, Carlos Carvallo, al superintendente de Bancos, Holger Insfrán, y a los exdirectores Liana Caballero, Miguel Ángel Mora y Marco Aurelio González, detenidos ese día; la Fiscalía pidió prisión preventiva para González y arresto domiciliario para Caballero y Mora (La Nación, Paraguay). La hipótesis fiscal, todavía sin decisión judicial, incluye USD 200.000 en efectivo que Peña habría recibido en sobres en la residencia presidencial, y llega dos días después de que el Banco Central completó el pago anticipado de la garantía de depósitos: unos USD 643 millones para 1.812.348 ahorristas (AFP).",
+          "lectura": "La Fiscalía cambió de figura y con eso cambió el caso: hasta el jueves la causa sumaba delitos individuales, y desde el viernes describe una estructura con jefe, que sería el expresidente. Si esa hipótesis se sostiene ante el juez, más que una falla de supervisión, la caída de Ueno sería la historia de un regulador puesto al servicio del regulado, con el Estado pagando una cuenta de USD 643 millones.",
           "tendencia": "escala",
           "intensidad": 2,
           "corto": "Paraguay",
-          "dato": "USD 140 millones",
+          "dato": "USD 200.000",
           "objetivo": "Crisis institucional",
           "fuente": {
-            "nombre": "Última Hora",
-            "url": "https://ultimahora.com/de-denunciantes-a-detenidos-la-caida-de-la-cupula-del-bcp-tras-el-colapso-de-ueno-bank"
+            "nombre": "ABC Color",
+            "url": "https://www.abc.com.py/politica/2026/11/13/amplian-imputacion-contra-santiago-en-caso-ueno-bank-pena-incluyen-asociacion-criminal/"
           },
-          "actualizado": "2026-11-13T13:11",
+          "actualizado": "2026-11-13T19:11",
           "anterior": {
             "titulo": "El expresidente Santiago Peña, en prisión preventiva por el caso Ueno",
             "fecha": "2026-11-07",
