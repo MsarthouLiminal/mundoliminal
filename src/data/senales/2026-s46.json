@@ -88,25 +88,25 @@
       "senales": [
         {
           "n": 3,
-          "titulo": "El Brent perfora los USD 90 y rebota: otro tanquero alcanzado en Ormuz",
+          "titulo": "Trump descarta un acuerdo con Irán y el Brent cierra en USD 95,82",
           "lugar": "Washington / Estrecho de Ormuz",
           "lugarMapa": "Estrecho de Ormuz",
           "lat": 26.6,
           "lon": 56.5,
           "etiqueta": "der",
-          "fecha": "2026-11-10",
-          "hecho": "El martes 10, el Brent cayó hasta USD 89,16, su primer registro debajo de 90 desde agosto, y cerró en USD 91,49 tras los dichos de Trump de que la guerra con Irán podría terminar pronto (CNBC); en la rueda asiática del miércoles rebotó a USD 92,20 cuando un funcionario de seguridad iraní negó que haya conversaciones entre las partes. El mismo martes, la agencia marítima británica UKMTO informó que otro tanquero fue alcanzado al noreste de Lima, Omán, y la Guardia Revolucionaria dijo que dos tanqueros se incendiaron por minas en una ruta no autorizada. Octubre cerró con 37 buques atacados en Ormuz y aguas cercanas, el mayor total mensual desde el inicio de la guerra, y noviembre ya suma 10 (Washington Institute for Near East Policy).",
-          "lectura": "El mercado compró la paz un día antes de tiempo: el Brent perforó los 90 por primera vez desde agosto y rebotó en horas, cuando un funcionario iraní negó que haya conversaciones y otro tanquero fue alcanzado frente a Omán. Con 37 buques atacados en octubre y diez en lo que va de noviembre, la prima de Ormuz se va a levantar cuando dejen de arder los barcos, y todavía arden.",
-          "tendencia": "estable",
+          "fecha": "2026-11-12",
+          "hecho": "El jueves 12, Trump escribió en Truth Social que EE.UU. no necesita un acuerdo con Irán (\"tenemos su estrecho\") y le pidió al vicepresidente JD Vance, que conducía las gestiones, que se dedique a otros temas (CNBC). El Brent cerró en USD 95,82, con un alza de 3,3%, después de que los hutíes dijeron haber atacado una estación de bombeo del oleoducto saudita Este-Oeste, una instalación petrolera en Yanbu y un edificio de Aramco en Riad, sin confirmación independiente; la coalición que lidera Arabia Saudita informó que interceptó dos drones (Reuters). Entre el martes 10 y el miércoles 11 fueron alcanzados al menos tres tanqueros en Ormuz y sus accesos (The Maritime Executive); el ejército iraní habla de cuatro que explotaron por ignorar advertencias, versión que Reuters no pudo verificar.",
+          "lectura": "El martes el mercado apostaba a la paz y el jueves Trump avisó que ya no necesita firmarla: el Brent recuperó más de tres dólares en una rueda y volvió a cotizar un conflicto sin fecha de salida. Si se confirma lo que dicen los hutíes, el dato de fondo está en Yanbu, porque el oleoducto Este-Oeste es la ruta con la que Arabia Saudita esquiva Ormuz, y un desvío bajo fuego deja de ser un desvío.",
+          "tendencia": "escala",
           "intensidad": 3,
           "corto": "Ormuz",
-          "dato": "USD 92,20",
+          "dato": "USD 95,82",
           "objetivo": "Estrecho",
           "fuente": {
-            "nombre": "Reuters, vía CNBC",
-            "url": "https://www.cnbc.com/2026/11/11/oil-rises-from-two-month-low-as-hormuz-shipping-attacks-offset-iran-truce-hopes.html"
+            "nombre": "Reuters, vía Investing.com",
+            "url": "https://www.investing.com/news/commodities-news/oil-prices-drop-more-than-1-as-hopes-for-iran-ukraine-peace-talks-pressure-markets-5020171"
           },
-          "actualizado": "2026-11-11T07:18",
+          "actualizado": "2026-11-13T06:15",
           "anterior": {
             "titulo": "Ormuz, según Irán: pase libre para India, China, Irak y Qatar",
             "fecha": "2026-11-06",
