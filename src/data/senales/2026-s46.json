@@ -110,6 +110,29 @@
       "alcance": "Estrechos, puertos, aranceles y cadenas de suministro. Dónde se traba el comercio.",
       "senales": [
         {
+          "n": 11,
+          "titulo": "EE.UU. frena todos los despegues por una falla de comunicaciones",
+          "lugar": "EE.UU.",
+          "lugarMapa": "Washington, EE.UU.",
+          "lat": 38.9,
+          "lon": -77.04,
+          "etiqueta": "arriba",
+          "fecha": "2026-11-13",
+          "hecho": "El viernes 13 a la tarde, la Administración Federal de Aviación de EE.UU. (FAA) ordenó frenar en tierra todas las salidas de los aeropuertos del país, \"hasta nuevo aviso\", después de una falla de comunicaciones en los centros de control de tráfico aéreo en ruta; el secretario de Transporte, Sean Duffy, dijo que afectó a todos esos centros, que son 22, y que los técnicos investigan la causa (Reuters, vía Global News; ABC News). Es la segunda vez desde el 11 de setiembre de 2001 que se frenan todas las salidas, después de enero de 2023; FlightAware contó cerca de 7.000 vuelos demorados o cancelados, y la FAA dijo que los vuelos internacionales se manejan caso a caso. El secretario de Seguridad Nacional, Markwayne Mullin, dijo que por ahora es \"solo una falla de telecomunicaciones\" y que no hay indicios de un ataque (ABC News).",
+          "lectura": "Un país puede quedarse sin despegues sin que nadie lo ataque: alcanzó con que fallara la comunicación entre los 22 centros que ordenan el tráfico en ruta para frenar todas las salidas, por segunda vez desde 2001. El gobierno habla de una falla de telecomunicaciones y no ve indicios de un ataque; si eso se confirma, el punto de estrangulamiento estaba en la red que une a los controladores, y nadie tuvo que apuntarle.",
+          "tendencia": "escala",
+          "intensidad": 3,
+          "corto": "Cielo EE.UU.",
+          "dato": "7.000 vuelos",
+          "objetivo": "Espacio aéreo",
+          "fuente": {
+            "nombre": "Reuters, vía Global News",
+            "url": "https://globalnews.ca/news/12150274/faa-usa-ground-stop-order/"
+          },
+          "actualizado": "2026-11-13T19:15",
+          "ultimoMomento": true
+        },
+        {
           "n": 3,
           "titulo": "EE.UU. niega el ataque iraní a su radar en Bahréin: derribó 2 drones",
           "lugar": "Bahréin / Estrecho de Ormuz",
@@ -171,7 +194,8 @@
               "nombre": "En Perspectiva",
               "url": "https://enperspectiva.uy/en-perspectiva-programa/noticias-del-miercoles-4-de-noviembre-de-2026"
             }
-          }
+          },
+          "rotada": "2026-11-13T19:15"
         }
       ],
       "tambienTitulo": "También en el radar",
