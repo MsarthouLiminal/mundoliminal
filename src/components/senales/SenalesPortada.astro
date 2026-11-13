@@ -3,7 +3,7 @@
  * SenalesPortada: Señales en la home, en versión de portada.
  *
  * El Big board en versión compacta (oscuro, como ventana sobre el papel) y las
- * señales de la semana como titulares agrupados por eje. Cada titular y cada número del tablero llevan
+ * señales activas como titulares agrupados por eje. Cada titular y cada número del tablero llevan
  * a su señal completa en /senales, donde están el hecho, la lectura, la
  * fuente y las versiones anteriores. Los cambios de mitad de semana se ven
  * acá con sus marcas ("Actualizado", "Último momento").
@@ -19,6 +19,7 @@ import {
   TENDENCIA,
   umHasta,
   umVigente,
+  activas,
 } from '../../lib/senales';
 
 interface Props {
@@ -53,7 +54,7 @@ const dia = (iso: string) => fechaCorta(iso.split('T')[0]);
       <section class="ps__eje" aria-labelledby={`ps-eje-${eje.id}`}>
         <h3 id={`ps-eje-${eje.id}`}>{eje.nombre}</h3>
         <ul>
-          {eje.senales.map((s) => (
+          {activas(eje).map((s) => (
             <li>
               <a class="titular" href={`/senales/#senal-${s.n}`}>
                 <span class="titular__num" aria-hidden="true">{s.n}</span>

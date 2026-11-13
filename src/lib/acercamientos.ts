@@ -12,7 +12,7 @@ import { readFileSync } from 'node:fs';
 import { createRequire } from 'node:module';
 import { feature, mesh } from 'topojson-client';
 import { geoAzimuthalEquidistant, geoGraticule, geoPath, type GeoPermissibleObjects } from 'd3-geo';
-import type { Edicion } from './senales';
+import { activas, type Edicion } from './senales';
 
 /** Medio lado del recuadro, en grados de arco (unos 500 km). */
 const MEDIO_LADO = 4.5;
@@ -75,11 +75,11 @@ export function acercamiento(lat: number, lon: number): Acercamiento {
   };
 }
 
-/** Los acercamientos de todas las señales de una edición, por número de señal. */
+/** Los acercamientos de las señales activas de una edición, por número de señal. */
 export function acercamientosEdicion(e: Edicion): Record<string, Acercamiento> {
   const salida: Record<string, Acercamiento> = {};
   for (const eje of e.ejes) {
-    for (const s of eje.senales) salida[String(s.n)] = acercamiento(s.lat, s.lon);
+    for (const s of activas(eje)) salida[String(s.n)] = acercamiento(s.lat, s.lon);
   }
   return salida;
 }

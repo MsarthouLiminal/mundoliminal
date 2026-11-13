@@ -1,10 +1,14 @@
 /**
- * Señales: el monitor semanal de LIMINAL.
+ * Señales: el Monitor Diario de Señales de LIMINAL.
  *
  * Cada edición es un archivo JSON en src/data/senales/ (uno por semana,
  * con nombre AAAA-sNN.json). La edición con fecha más reciente es la que
  * se muestra en la home y en /senales. Todas quedan archivadas en
  * /senales/AAAA-sNN.
+ *
+ * La edición sale los lunes y se actualiza todos los días: cuando un eje
+ * suma una señal nueva, la más vieja del eje baja a "Antes en la semana"
+ * (campo `rotada`). Nada se borra del archivo.
  *
  * Para publicar una edición nueva: copiar el JSON de la semana anterior,
  * cambiar id, semana, fechas y contenido, y publicar el sitio.
@@ -40,6 +44,13 @@ export interface Senal {
   actualizado?: string;
   /** Señal agregada a mitad de semana, antes de la edición siguiente. */
   ultimoMomento?: boolean;
+  /**
+   * Cuándo la señal bajó a "Antes en la semana" porque entró una más nueva
+   * en su eje: "2026-11-13T07:20" (hora de Montevideo). La señal queda
+   * entera en el archivo y la web la muestra plegada; el Big board, el mapa
+   * y la home usan solo las activas (las que no tienen este campo).
+   */
+  rotada?: string;
   /**
    * La versión publicada el lunes, cuando una actualización cambió el texto.
    * Se carga la primera vez que se actualiza la señal y no se vuelve a pisar:
@@ -118,8 +129,30 @@ export function edicionVigente(): Edicion {
   return todas[0];
 }
 
+/** Todas las señales de la edición: las activas y las que bajaron a "Antes en la semana". */
 export function contarSenales(e: Edicion): number {
   return e.ejes.reduce((n, eje) => n + eje.senales.length, 0);
+}
+
+/* ---------- Rotación: activas y "Antes en la semana" ---------- */
+
+/** Las señales a la vista de un eje: las que no bajaron a "Antes en la semana". */
+export function activas(eje: Eje): Senal[] {
+  return eje.senales.filter((s) => !s.rotada);
+}
+
+/** Las señales que bajaron a "Antes en la semana", de la que bajó último a la que bajó primero. */
+export function rotadas(eje: Eje): Senal[] {
+  return eje.senales.filter((s) => s.rotada).sort((a, b) => b.rotada!.localeCompare(a.rotada!));
+}
+
+export function contarActivas(e: Edicion): number {
+  return e.ejes.reduce((n, eje) => n + activas(eje).length, 0);
+}
+
+/** La edición solo con sus señales activas: lo que usan el Big board, el mapa y la home. */
+export function soloActivas(e: Edicion): Edicion {
+  return { ...e, ejes: e.ejes.map((eje) => ({ ...eje, senales: activas(eje) })) };
 }
 
 /* ---------- Fechas (siempre en UTC para que no corra el día) ---------- */

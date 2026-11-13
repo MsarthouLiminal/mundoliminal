@@ -14,6 +14,7 @@ import {
   umHasta,
   fechaCorta,
   fechaHora,
+  activas,
   INTENSIDAD,
 } from './senales';
 import { GRILLA_FILAS, GRILLA_PASO, GRILLA_LAT0, GRILLA_LON0, GRILLA_COLS } from '../data/big-board-grilla';
@@ -90,9 +91,9 @@ export interface GeometriaBoard {
   puntos: PuntoBoard[];
 }
 
-/** Todas las señales de la edición, en el orden de los ejes. */
+/** Las señales activas de la edición, en el orden de los ejes. Las que bajaron a "Antes en la semana" no van al tablero. */
 export function senalesEnOrden(e: Edicion): (Senal & { eje: string; ejeNombre: string })[] {
-  return e.ejes.flatMap((eje) => eje.senales.map((s) => ({ ...s, eje: eje.id, ejeNombre: eje.nombre })));
+  return e.ejes.flatMap((eje) => activas(eje).map((s) => ({ ...s, eje: eje.id, ejeNombre: eje.nombre })));
 }
 
 export function geometriaBoard(e: Edicion): GeometriaBoard {

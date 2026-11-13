@@ -1,15 +1,21 @@
 ---
 /**
- * MonitorSenales: el monitor semanal de LIMINAL.
+ * MonitorSenales: el Monitor Diario de Señales de LIMINAL.
  *
  * Panel de instrumento en Brand Kit v2.1: carta equirectangular con las
  * señales numeradas, tablero de cuatro ejes y agenda de "qué observar".
  * Todo el contenido sale de un archivo de src/data/senales/.
+ *
+ * Cada eje muestra arriba sus señales activas. Las que bajaron porque entró
+ * una más nueva (campo `rotada`) quedan enteras en "Antes en la semana",
+ * plegadas, y no van al mapa ni al conteo de las pestañas.
  */
 import { MAPA_W, MAPA_H, TIERRA, GRILLA, ECUADOR } from '../../data/mapa-mundo';
 import {
   type Edicion,
-  contarSenales,
+  contarActivas,
+  activas,
+  rotadas,
   fechaCorta,
   semanaDel,
   fechaHora,
@@ -51,9 +57,9 @@ const {
   mapa = true,
 } = Astro.props;
 
-const total = contarSenales(edicion);
+const total = contarActivas(edicion);
 const actualizada = ultimaActualizacion(edicion);
-const senales = edicion.ejes.flatMap((eje) => eje.senales.map((s) => ({ ...s, eje: eje.id })));
+const senales = edicion.ejes.flatMap((eje) => activas(eje).map((s) => ({ ...s, eje: eje.id })));
 const puntos = senales.map((s) => ({ s, xy: proyectar(s.lat, s.lon) }));
 const focos = edicion.focos.map((f) => ({ f, xy: proyectar(f.lat, f.lon) }));
 const arcos = senales
@@ -167,7 +173,7 @@ function lado(l: string | undefined) {
         <button class="pestana" role="tab" type="button" data-f="todas" data-hash="senales" aria-selected="true">Todas <span>{total}</span></button>
         {edicion.ejes.map((eje) => (
           <button class="pestana" role="tab" type="button" data-f={eje.id} data-hash={eje.slug} aria-selected="false">
-            {eje.nombre} <span>{eje.senales.length}</span>
+            {eje.nombre} <span>{activas(eje).length}</span>
           </button>
         ))}
       </div>
@@ -179,14 +185,22 @@ function lado(l: string | undefined) {
               <h3 id={`eje-${eje.id}`}>{eje.nombre}</h3>
               <p>{eje.alcance}</p>
             </header>
-            <div class="eje__senales">
-              {eje.senales.map((s) => (
-                <article class:list={['senal', { 'senal--um': umVigente(s) }]} id={`senal-${s.n}`} data-n={s.n} data-lugar={s.lugarMapa} data-coord={coordenadas(s.lat, s.lon)}>
+            {/* Arriba, las señales activas. Debajo, plegadas, las que bajaron cuando entró una más nueva en el eje. */}
+            {[false, true].map((plegado) => {
+              const lista = plegado ? rotadas(eje) : activas(eje);
+              if (!lista.length) return null;
+              const fichas = lista.map((s) => (
+                <article class:list={['senal', { 'senal--um': umVigente(s), 'senal--rotada': plegado }]} id={`senal-${s.n}`} data-n={s.n} data-lugar={s.lugarMapa} data-coord={coordenadas(s.lat, s.lon)}>
                   <div class="senal__meta">
-                    <button class="senal__num" type="button" aria-label={mapa ? `Ver señal ${s.n} en el mapa` : `Ver señal ${s.n} en el tablero`}>{s.n}</button>
+                    {plegado ? (
+                      <span class="senal__num senal__num--fija" aria-hidden="true">{s.n}</span>
+                    ) : (
+                      <button class="senal__num" type="button" aria-label={mapa ? `Ver señal ${s.n} en el mapa` : `Ver señal ${s.n} en el tablero`}>{s.n}</button>
+                    )}
                     <span>{s.lugar}</span>
                     <time datetime={s.fecha}>{fechaCorta(s.fecha)}</time>
                   </div>
+                  {s.rotada && <p class="senal__aviso senal__aviso--rotada">A la vista hasta el {fechaHora(s.rotada)}</p>}
                   {/* "Último momento" vence a las 24 horas de la última actualización: después queda "Actualizado el". */}
                   {s.ultimoMomento && (
                     <p class="senal__aviso senal__aviso--um" data-um-hasta={umHasta(s)} hidden={!umVigente(s)}>Último momento{s.actualizado && ` · ${fechaHora(s.actualizado)}`}</p>
@@ -226,8 +240,16 @@ function lado(l: string | undefined) {
                     </details>
                   )}
                 </article>
-              ))}
-            </div>
+              ));
+              return plegado ? (
+                <details class="eje__antes">
+                  <summary>Antes en la semana <span>{lista.length}</span></summary>
+                  <div class="eje__senales eje__senales--antes">{fichas}</div>
+                </details>
+              ) : (
+                <div class="eje__senales">{fichas}</div>
+              );
+            })}
             {eje.tambien.length > 0 && (
               <div class="eje__tambien">
                 <h5>{eje.tambienTitulo}</h5>
@@ -268,7 +290,7 @@ function lado(l: string | undefined) {
           Cada una lleva fuente con nombre y fecha. La lectura es de LIMINAL y está separada del dato.
           La IA ayuda a rastrear y ordenar; cada señal la reviso yo antes de publicarla.
         </p>
-        <p>La edición sale los lunes. Si algo se rompe en la semana, la señal se actualiza y lo dice.</p>
+        <p>El monitor se actualiza todos los días y la edición sale los lunes. Cuando entra una señal nueva, la más antigua de su eje baja a "Antes en la semana": nada se borra.</p>
         <a class="cierre__mas" href="/senales/">Método completo y archivo de ediciones <b aria-hidden="true">→</b></a>
       </div>
       <aside class="cierre__sub" aria-labelledby="senales-sub">
@@ -578,6 +600,9 @@ function lado(l: string | undefined) {
     cursor: pointer;
   }
   .senal.activo .senal__num { background: var(--senal); color: var(--sobre-senal); }
+  /* Señal en "Antes en la semana": no está en el tablero, así que su número no es un botón. */
+  .senal__num--fija { border-color: var(--color-teal); color: var(--tinta-meta); cursor: default; }
+  .senal.activo .senal__num--fija { background: transparent; color: var(--tinta-meta); }
   /* Señales que cambiaron a mitad de semana: la actualización se dice, no se esconde. */
   .senal__aviso {
     justify-self: start;
@@ -593,6 +618,7 @@ function lado(l: string | undefined) {
     color: var(--sobre-senal);
   }
   .senal__aviso[hidden] { display: none; }
+  .senal__aviso--rotada { color: var(--tinta-meta); }
   .senal--um { box-shadow: inset 3px 0 0 var(--senal); }
   .senales__actualizada { color: var(--senal-texto); }
   .senal h4 {
@@ -654,7 +680,13 @@ function lado(l: string | undefined) {
   .senal__analisis:hover { color: var(--tinta-fuerte); border-color: var(--senal); }
   /* La versión del lunes de una señal actualizada: plegada, para que la columna no crezca. */
   .senal__antes { margin-top: 2px; }
-  .senal__antes summary {
+  /* "Antes en la semana": las señales que bajaron cuando entró una más nueva en el eje. Mismo plegado. */
+  .eje__antes { padding: 14px 0 12px; border-top: 1px solid var(--color-teal); }
+  .eje__antes > summary span { margin-left: -2px; font-variant-numeric: tabular-nums; }
+  .eje__senales--antes { margin-top: 12px; }
+  .senal--rotada h4 { font-size: 1.2rem; }
+  .senal__antes summary,
+  .eje__antes > summary {
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -666,8 +698,10 @@ function lado(l: string | undefined) {
     text-transform: uppercase;
     color: var(--tinta-meta);
   }
-  .senal__antes summary::-webkit-details-marker { display: none; }
-  .senal__antes summary::before {
+  .senal__antes summary::-webkit-details-marker,
+  .eje__antes > summary::-webkit-details-marker { display: none; }
+  .senal__antes summary::before,
+  .eje__antes > summary::before {
     content: '+';
     display: grid;
     place-items: center;
@@ -679,10 +713,14 @@ function lado(l: string | undefined) {
     line-height: 1;
     letter-spacing: 0;
   }
-  .senal__antes[open] summary::before { content: '\2212'; }
+  .senal__antes[open] summary::before,
+  .eje__antes[open] > summary::before { content: '\2212'; }
   .senal__antes summary:hover,
-  .senal__antes summary:focus-visible { color: var(--tinta-fuerte); }
-  .senal__antes summary:focus-visible { outline: 2px solid var(--acento); outline-offset: 3px; }
+  .senal__antes summary:focus-visible,
+  .eje__antes > summary:hover,
+  .eje__antes > summary:focus-visible { color: var(--tinta-fuerte); }
+  .senal__antes summary:focus-visible,
+  .eje__antes > summary:focus-visible { outline: 2px solid var(--acento); outline-offset: 3px; }
   .senal__antes-cuerpo {
     display: grid;
     gap: 8px;
@@ -916,7 +954,7 @@ function lado(l: string | undefined) {
       const n = s.dataset.n ?? '';
       s.addEventListener('mouseenter', () => marcar(n));
       s.addEventListener('mouseleave', () => marcar(elegida));
-      s.querySelector('.senal__num')?.addEventListener('click', () => {
+      s.querySelector('button.senal__num')?.addEventListener('click', () => {
         elegida = n;
         marcar(n);
         if (mapa) mapa.scrollIntoView({ behavior: lento ? 'auto' : 'smooth', block: 'center' });
@@ -939,8 +977,21 @@ function lado(l: string | undefined) {
       filtrar(desdeHash[h], false);
       if (desplazar) raiz.querySelector('.panel')?.scrollIntoView({ behavior: lento ? 'auto' : 'smooth' });
     };
+    // Un enlace a una señal que bajó a "Antes en la semana" abre el plegado y la muestra.
+    const abrirPlegada = () => {
+      const m = location.hash.match(/^#senal-(\d+)$/);
+      const s = m ? document.getElementById(`senal-${m[1]}`) : null;
+      const caja = s?.closest<HTMLDetailsElement>('details.eje__antes');
+      if (!s || !caja) return;
+      caja.open = true;
+      s.scrollIntoView({ behavior: lento ? 'auto' : 'smooth', block: 'start' });
+    };
     desdeUrl(false);
-    window.addEventListener('hashchange', () => desdeUrl(true));
+    abrirPlegada();
+    window.addEventListener('hashchange', () => {
+      desdeUrl(true);
+      abrirPlegada();
+    });
   })();
 </script>
 
