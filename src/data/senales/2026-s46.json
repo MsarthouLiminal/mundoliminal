@@ -111,25 +111,25 @@
       "senales": [
         {
           "n": 3,
-          "titulo": "Irán se atribuye el ataque a un radar de EE.UU. en Bahréin",
+          "titulo": "EE.UU. niega el ataque iraní a su radar en Bahréin: derribó 2 drones",
           "lugar": "Bahréin / Estrecho de Ormuz",
           "lugarMapa": "Estrecho de Ormuz",
           "lat": 26.6,
           "lon": 56.5,
           "etiqueta": "der",
           "fecha": "2026-11-13",
-          "hecho": "El viernes 13, la Guardia Revolucionaria iraní dijo que atacó un radar de alerta temprana de EE.UU. en Bahréin, en represalia por un ataque aéreo contra una torre de telecomunicaciones en Sirik (Hormozgán); ni EE.UU. ni Bahréin lo comentaron, y es el primer anuncio de este tipo contra activos militares estadounidenses en un país del Golfo desde principios de setiembre (Reuters). El mismo día, la marina de la Guardia afirmó que un buque de GNL explotó al chocar con una mina en una ruta \"no autorizada y peligrosa\" de Ormuz, sin nombre del buque ni confirmación independiente (Reuters, vía Baird Maritime). El Brent, que había cerrado el jueves 12 en USD 95,82 después de que Trump escribió que EE.UU. no necesita un acuerdo con Irán, operaba el viernes en USD 95,59 (The National), y la Agencia Internacional de Energía proyectó para este trimestre un superávit de crudo de unos 2 millones de barriles diarios, el primero desde el inicio de la guerra (Bloomberg, vía Rigzone).",
-          "lectura": "Trump escribió el jueves que ya tiene el estrecho, y el viernes Irán sumó dos anuncios propios: un radar estadounidense atacado en Bahréin y un buque de gas que explotó por una mina. El Brent casi no se movió, porque la Agencia Internacional de Energía ve crudo de sobra este trimestre; esa calma descansa sobre dos partes de guerra que nadie confirmó, y dura lo que tarde en confirmarse el primero.",
+          "hecho": "El viernes 13, el Comando Central de EE.UU. (CENTCOM) desmintió que la Guardia Revolucionaria iraní haya destruido un radar de alerta temprana estadounidense en Bahréin: dijo que la Guardia lanzó dos drones de ataque hacia Bahréin, que sus fuerzas derribaron ambos y que no hubo heridos ni daños, sin referirse al ataque aéreo contra una torre de telecomunicaciones en Sirik (Hormozgán) que la Guardia invocó como motivo (Radio Free Europe/Radio Liberty). El mismo día, la marina de la Guardia afirmó que un buque de GNL explotó al chocar con una mina en una ruta \"no autorizada y peligrosa\" de Ormuz, sin nombre del buque ni confirmación independiente; el Washington Institute cuenta al menos 10 buques alcanzados en los primeros 10 días de noviembre, después de 37 ataques en octubre (Reuters, vía gCaptain). El Brent, que había cerrado el jueves 12 en USD 95,82 después de que Trump escribió que EE.UU. no necesita un acuerdo con Irán, operaba el viernes en USD 95,59 (The National), y la Agencia Internacional de Energía proyectó para este trimestre un superávit de crudo de unos 2 millones de barriles diarios, el primero desde el inicio de la guerra (Bloomberg, vía Rigzone).",
+          "lectura": "Trump escribió el jueves que ya tiene el estrecho, y el viernes Irán sumó dos anuncios propios: un radar estadounidense atacado en Bahréin y un buque de gas que explotó por una mina. Washington desmintió el primero y, al hacerlo, admitió dos drones iraníes en vuelo hacia Bahréin; el Brent casi no se movió, porque la Agencia Internacional de Energía ve crudo de sobra, y el mercado eligió creerle al desmentido antes que a los drones.",
           "tendencia": "escala",
           "intensidad": 3,
           "corto": "Ormuz",
-          "dato": "USD 95,59",
+          "dato": "dos drones",
           "objetivo": "Estrecho",
           "fuente": {
-            "nombre": "Reuters, vía Investing.com",
-            "url": "https://www.investing.com/news/commodities-news/irans-guards-say-they-targeted-a-us-earlywarning-radar-in-bahrain-5024146"
+            "nombre": "Radio Free Europe/Radio Liberty",
+            "url": "https://www.rferl.org/a/iran-us-sirik-bahrain-war-nuclear-talks/33897951.html"
           },
-          "actualizado": "2026-11-13T08:23",
+          "actualizado": "2026-11-13T13:11",
           "anterior": {
             "titulo": "Ormuz, según Irán: pase libre para India, China, Irak y Qatar",
             "fecha": "2026-11-06",
@@ -286,25 +286,25 @@
       "senales": [
         {
           "n": 7,
-          "titulo": "Caso Ueno: detienen a dos exdirectores del Banco Central paraguayo",
+          "titulo": "Caso Ueno: ya son tres los exdirectores del Banco Central detenidos",
           "lugar": "Asunción, Paraguay",
           "lugarMapa": "Asunción, Paraguay",
           "lat": -25.28,
           "lon": -57.63,
           "etiqueta": "izq",
           "fecha": "2026-11-13",
-          "hecho": "El viernes 13, la Fiscalía paraguaya detuvo a Liana Caballero y Miguel Ángel Mora, exmiembros del directorio del Banco Central del Paraguay, y busca a un tercero, Marco Aurelio González, que no fue hallado en su domicilio; los investiga por lesión de confianza en la supervisión de Ueno (La Nación). Según la Fiscalía, conocían la situación crítica del banco desde diciembre de 2025 y en febrero de 2026 fueron alertados de operaciones con empresas vinculadas por unos USD 140 millones, sin tomar medidas. El jueves 12 fue imputado por el mismo delito el superintendente de Bancos, Holger Insfrán (Última Hora), un día después de que el Banco Central completó el pago anticipado de la garantía de depósitos: unos USD 643 millones para 1.812.348 ahorristas (AFP).",
-          "lectura": "La causa Ueno subió un piso: después del banco y del expresidente, la Fiscalía fue por quienes tenían que vigilarlos, con dos exdirectores del Banco Central detenidos y el superintendente de Bancos imputado. Si la acusación se sostiene, el supervisor supo desde diciembre y dejó hacer, y el mismo Banco Central que acaba de devolver USD 643 millones a los ahorristas queda como pagador del daño y sospechoso de haberlo permitido.",
+          "hecho": "El viernes 13, la Fiscalía paraguaya detuvo a Liana Caballero y Miguel Ángel Mora, exmiembros del directorio del Banco Central del Paraguay, y horas después se entregó y quedó detenido el tercero, Marco Aurelio González, que no había sido hallado en su domicilio; con el expresidente del banco, Carlos Carvallo, en prisión preventiva, son cuatro los exdirectores detenidos, investigados por lesión de confianza en la supervisión de Ueno (Última Hora, El Trueno). Según la Fiscalía, conocían la situación crítica del banco desde diciembre de 2025 y en febrero de 2026 fueron alertados de operaciones con empresas vinculadas por unos USD 140 millones, sin tomar medidas. El jueves 12 fue imputado por el mismo delito el superintendente de Bancos, Holger Insfrán (Última Hora), un día después de que el Banco Central completó el pago anticipado de la garantía de depósitos: unos USD 643 millones para 1.812.348 ahorristas (AFP).",
+          "lectura": "La causa Ueno subió un piso: después del banco y del expresidente, la Fiscalía fue por quienes tenían que vigilarlos, con tres exdirectores del Banco Central detenidos y el superintendente de Bancos imputado. Si la acusación se sostiene, el supervisor supo desde diciembre y dejó hacer, y el mismo Banco Central que acaba de devolver USD 643 millones a los ahorristas queda como pagador del daño y sospechoso de haberlo permitido.",
           "tendencia": "escala",
           "intensidad": 2,
           "corto": "Paraguay",
           "dato": "USD 140 millones",
           "objetivo": "Crisis institucional",
           "fuente": {
-            "nombre": "La Nación (Paraguay)",
-            "url": "https://www.lanacion.com.py/pais/2026/11/13/caso-ueno-bank-detienen-a-dos-exdirectivos-del-bcp-y-uno-esta-profugo/"
+            "nombre": "Última Hora",
+            "url": "https://ultimahora.com/de-denunciantes-a-detenidos-la-caida-de-la-cupula-del-bcp-tras-el-colapso-de-ueno-bank"
           },
-          "actualizado": "2026-11-13T08:23",
+          "actualizado": "2026-11-13T13:11",
           "anterior": {
             "titulo": "El expresidente Santiago Peña, en prisión preventiva por el caso Ueno",
             "fecha": "2026-11-07",
