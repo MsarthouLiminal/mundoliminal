@@ -111,25 +111,25 @@
       "senales": [
         {
           "n": 11,
-          "titulo": "EE.UU. reabre su cielo tras cuatro horas sin despegues",
+          "titulo": "EE.UU.: Duffy apunta a la contratista L3Harris por el apagón aéreo",
           "lugar": "EE.UU.",
           "lugarMapa": "Washington, EE.UU.",
           "lat": 38.9,
           "lon": -77.04,
           "etiqueta": "arriba",
-          "fecha": "2026-11-13",
-          "hecho": "El viernes 13, la Administración Federal de Aviación de EE.UU. (FAA) levantó el freno en tierra de todas las salidas de los aeropuertos del país, ordenado por una falla de comunicaciones que afectó a los 22 centros de control de tráfico aéreo en ruta: el secretario de Transporte, Sean Duffy, dijo que el espacio aéreo reabrió a las 20:15, hora del este (22:15 de Montevideo), cuatro horas después de que él mismo anunció la orden, a las 16:16 (NBC News). Duffy atribuyó la falla a un sistema de control aéreo \"increíblemente viejo\", con telecomunicaciones analógicas cuyos switches y routers se sobrecargaron de datos y volvieron inestables el radar y las comunicaciones, y pidió al Congreso fondos para modernizarlo; el secretario de Seguridad Nacional, Markwayne Mullin, dijo que hasta ahora no se ve un ciberataque y que la investigación sigue. FlightAware contaba a las 19:30 del este 10.079 vuelos demorados y 4.238 cancelados; fue la segunda vez desde el 11 de setiembre de 2001 que se frenaron todas las salidas, después de enero de 2023 (ABC News).",
+          "fecha": "2026-11-14",
+          "hecho": "El sábado 14, el secretario de Transporte de EE.UU., Sean Duffy, dijo en una conferencia en Washington que la falla de comunicaciones que el viernes afectó a los 22 centros de control de tráfico aéreo en ruta y frenó todas las salidas del país, por segunda vez desde el 11 de setiembre de 2001, empezó mientras la contratista L3Harris, que según él es la dueña de esa red, pasaba líneas de cobre a fibra en al menos un sitio remoto de la Administración Federal de Aviación (FAA), y que un router \"empezó a inundar a otros routers\" (Yahoo News). Agregó que no creen que haya sido un ataque de otro país y que todavía no se determinó cuál fue la falla, si un error de la contratista o un equipo defectuoso; L3Harris no respondió a los pedidos de comentario. FlightAware contó 9.159 vuelos cancelados el viernes, cuando las salidas estuvieron frenadas unas cuatro horas, hasta las 20:15, hora del este, y más de 3.800 el sábado a las 10:08 (CBS News).",
           "lectura": "Un país puede quedarse sin despegues sin que nadie lo ataque: alcanzó con que fallara la comunicación entre los 22 centros que ordenan el tráfico en ruta para frenar todas las salidas, por segunda vez desde 2001. El gobierno habla de una falla de telecomunicaciones y no ve indicios de un ataque; si eso se confirma, el punto de estrangulamiento estaba en la red que une a los controladores, y nadie tuvo que apuntarle.",
           "tendencia": "afloja",
           "intensidad": 3,
           "corto": "Cielo EE.UU.",
-          "dato": "4.238 cancelados",
+          "dato": "9.159 vuelos cancelados",
           "objetivo": "Espacio aéreo",
           "fuente": {
-            "nombre": "NBC News",
-            "url": "https://www.nbcnews.com/news/us-news/live-blog/live-updates-flights-grounded-faa-communications-outage-rcna609268"
+            "nombre": "Yahoo News",
+            "url": "https://www.yahoo.com/news/us/live/faa-ground-stop-latest-updates-thousands-more-flights-canceled-saturday-officials-blame-overloaded-routers-no-sign-of-cyberattack-140904919.html"
           },
-          "actualizado": "2026-11-13T23:01",
+          "actualizado": "2026-11-14T13:55",
           "ultimoMomento": true
         },
         {
