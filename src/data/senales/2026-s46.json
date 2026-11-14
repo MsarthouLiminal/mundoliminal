@@ -12,25 +12,25 @@
       "senales": [
         {
           "n": 9,
-          "titulo": "Chile: Diputados rechaza el presupuesto de Minería por Codelco",
-          "lugar": "Valparaíso, Chile",
+          "titulo": "Chile: el gobierno dice que estudia privados en minas de Codelco",
+          "lugar": "Santiago / Valparaíso, Chile",
           "lugarMapa": "Valparaíso, Chile",
           "lat": -33.05,
           "lon": -71.61,
           "etiqueta": "izq",
-          "fecha": "2026-11-12",
-          "hecho": "El jueves 12, la Cámara de Diputados de Chile rechazó, tras un empate a 59 votos, la partida del Ministerio de Minería del Presupuesto 2027, en un debate marcado por el futuro de Codelco y su posible apertura a capitales privados (La Tercera). El proyecto reduce los recursos de Minería en 207,8 millones de pesos chilenos, una rebaja real de 0,4%, con ajustes que alcanzan al servicio geológico Sernageomin. El presidente de Codelco, Bernardo Fontaine, dijo que en el plan de recuperación de la empresa no hay privatización: \"Codelco es del Estado, y punto\" (El Periodista).",
-          "lectura": "La partida de Minería cayó por un empate, y lo que se votaba ahí era menos el recorte de 0,4% que la sospecha sobre Codelco: alcanzó con que se hablara de capital privado para que media Cámara usara el presupuesto como veto. Fontaine salió a decir que la empresa es del Estado, y cuando el presidente de una estatal necesita aclararlo, la discusión ya está abierta.",
+          "fecha": "2026-11-13",
+          "hecho": "El viernes 13, el biministro de Economía y Minería de Chile, Daniel Mas, dijo en una entrevista con Bloomberg que el gobierno busca socios privados para Codelco, en la exploración y también en la explotación de yacimientos: \"Estamos considerando capital privado en todas las áreas donde sea posible\"; aseguró que la empresa seguirá siendo estatal y que no se discute sumar accionistas minoritarios, y la nota agrega que algunos yacimientos requerirían cambios legales (BioBioChile). Ese mismo viernes, pasadas las 6:00 y tras más de 21 horas de sesión, la Cámara de Diputados despachó al Senado el Presupuesto 2027 con la partida de Minería rechazada por un empate a 59 votos, con 8 abstenciones, en un debate marcado por Codelco; el ministro de Hacienda, Jorge Quiroz, dijo que el Senado repondrá las partidas rechazadas, con algunos ajustes (T13).",
+          "lectura": "Media Cámara tumbó la partida de Minería por la sospecha de que el gobierno quería privados en Codelco, y al día siguiente el biministro Mas la confirmó en una entrevista: socios en la exploración y también en la explotación. La empresa seguirá siendo estatal, dice, pero el Senado recibe el presupuesto con la discusión de fondo ya sobre la mesa: quién saca el cobre de las minas del Estado.",
           "tendencia": "escala",
           "intensidad": 2,
           "corto": "Codelco",
           "dato": "59 votos",
           "objetivo": "Cobre estatal",
           "fuente": {
-            "nombre": "La Tercera",
-            "url": "https://www.latercera.com/nacional/noticia/presupuesto-2027-camara-rechaza-partida-de-mineria-en-debate-marcado-por-futuro-de-codelco/"
+            "nombre": "BioBioChile",
+            "url": "https://www.biobiochile.cl/noticias/economia/actualidad-economica/2026/11/13/gobierno-estudia-cambios-legales-para-permitir-participacion-privada-en-yacimientos-de-codelco.shtml"
           },
-          "actualizado": "2026-11-13T08:23"
+          "actualizado": "2026-11-14T07:16"
         },
         {
           "n": 1,
@@ -222,25 +222,25 @@
       "senales": [
         {
           "n": 10,
-          "titulo": "Nvidia: Brasil necesitaría licencia de EE.UU. para chips avanzados",
-          "lugar": "Santa Clara / Washington",
+          "titulo": "Nvidia cae 12,75% en la semana; China advierte por los chips",
+          "lugar": "Santa Clara / Beijing",
           "lugarMapa": "Santa Clara, EE.UU.",
           "lat": 37.37,
           "lon": -121.96,
           "etiqueta": "izq",
-          "fecha": "2026-11-12",
-          "hecho": "El jueves 12, Nvidia anunció que Jensen Huang renunció, con efecto inmediato, como presidente, CEO y miembro del directorio; la directora financiera, Colette Kress, asume como CEO interina y Harvey C. Jones como primer presidente del directorio, sin que el comunicado dé un motivo (Nvidia). Según The Information, que cita a dos personas al tanto y sin confirmación del Departamento de Comercio, EE.UU. prepara una regla que exigiría licencia para enviar chips Nvidia Blackwell o más avanzados a siete países: Singapur, Malasia, Tailandia, Indonesia, Brasil, Noruega y Sudáfrica (Asia Times). Quedarían exentos los data centers de empresas estadounidenses que restrinjan el acceso remoto desde países bajo embargo de armas, como China y Rusia, y la regla podría anunciarse este mes.",
+          "fecha": "2026-11-13",
+          "hecho": "El viernes 13, la acción de Nvidia cayó otro 2,01% y la empresa cerró por debajo de los USD 4 millones de millones de capitalización por primera vez desde julio de 2025, con una baja de 12,75% en la semana, la sexta consecutiva (CNBC); un día después de anunciar la renuncia de Jensen Huang como CEO, el directorio dijo que todavía está eligiendo una firma de búsqueda y que no contactó formalmente a ningún candidato. El mismo día, la portavoz de la Cancillería china, Mao Ning, dijo que China se opone al \"abuso de las medidas de control de exportaciones\", mientras legisladores de EE.UU. piden limitar más las ventas a China (Euronews). La regla que, según The Information, exigiría licencia para enviar chips Blackwell o más avanzados a siete países, entre ellos Brasil, con exención para los data centers de empresas estadounidenses, sigue sin confirmación del Departamento de Comercio (Asia Times).",
           "lectura": "Nvidia se quedó sin su CEO la misma semana en que circuló la lista de países que necesitarían permiso de Washington para recibir sus chips, y Brasil está en ella. Si la regla sale como la cuenta The Information, el cómputo de un data center en Brasil pasaría a depender de quién lo opera: la exención es para las empresas estadounidenses, y el resto hace fila por cada envío.",
           "tendencia": "escala",
           "intensidad": 2,
           "corto": "Nvidia",
-          "dato": "siete países",
+          "dato": "12,75% en la semana",
           "objetivo": "Chips de IA",
           "fuente": {
-            "nombre": "Nvidia",
-            "url": "https://nvidianews.nvidia.com/news/nvidia-announces-ceo-transition"
+            "nombre": "CNBC",
+            "url": "https://www.cnbc.com/2026/11/13/nvidia-nvda-stock-jensen-huang-transition.html"
           },
-          "actualizado": "2026-11-13T08:27"
+          "actualizado": "2026-11-14T07:16"
         },
         {
           "n": 5,
