@@ -221,6 +221,28 @@
       "alcance": "Data centers, chips, energía y agua. El cuerpo físico de la IA y quién lo decide.",
       "senales": [
         {
+          "n": 13,
+          "titulo": "China cierra la consulta de su control a la exportación de IA",
+          "lugar": "Beijing",
+          "lugarMapa": "Beijing, China",
+          "lat": 39.9,
+          "lon": 116.41,
+          "etiqueta": "izq",
+          "fecha": "2026-11-15",
+          "hecho": "El domingo 15 vence el plazo de comentarios públicos del anuncio 48 de 2026, con el que el Ministerio de Comercio y el Ministerio de Ciencia y Tecnología de China proponen sumar 40 tecnologías a su catálogo de exportación prohibida o restringida: 14 quedarían prohibidas y 26 necesitarían licencia (HLC). De las 40 tecnologías, 23 son de inteligencia artificial, entre ellas los pesos y el código fuente de los grandes modelos, los agentes, el diseño de chips de IA de 14 nanómetros o menos y los clústeres de cómputo (The Next Web). Desde el 16 de octubre, fecha del borrador, rige un registro obligatorio antes de exportar cualquiera de esas tecnologías, que seguirá vigente hasta que entre en vigor el catálogo definitivo.",
+          "lectura": "Mientras Washington discute a quién le vende chips, Beijing arma su propia lista: los pesos de sus modelos más grandes y el diseño de sus chips de IA quedarían bajo control de exportación. El borrador todavía puede cambiar, pero el registro previo rige desde octubre, y con eso China ya sabe quién quiere llevarse su tecnología antes de decidir a quién se la niega.",
+          "tendencia": "escala",
+          "intensidad": 2,
+          "corto": "IA china",
+          "dato": "40 tecnologías",
+          "objetivo": "Exportación de modelos",
+          "fuente": {
+            "nombre": "HLC",
+            "url": "https://www.hlc.com/en/publications/china-proposes-new-export-controls-on-ai-life-sciences-and-photovoltaic-technologies"
+          },
+          "actualizado": "2026-11-15T13:16"
+        },
+        {
           "n": 10,
           "titulo": "Nvidia cae 12,75% en la semana; China advierte por los chips",
           "lugar": "Santa Clara / Beijing",
@@ -283,7 +305,8 @@
           "fuente": {
             "nombre": "InvestNews, con Bloomberg",
             "url": "https://investnews.com.br/negocios/dona-do-tiktok-negocia-nova-fase-de-complexo-de-data-centers-no-ceara/"
-          }
+          },
+          "rotada": "2026-11-15T13:16"
         }
       ],
       "tambienTitulo": "También en el radar",
