@@ -111,48 +111,48 @@
       "senales": [
         {
           "n": 11,
-          "titulo": "EE.UU.: L3Harris dice que colabora con la FAA; 5.200 cancelados más",
+          "titulo": "EE.UU.: la falla aérea alcanzó a 17 de 22 centros; 6.400 cancelados",
           "lugar": "EE.UU.",
           "lugarMapa": "Washington, EE.UU.",
           "lat": 38.9,
           "lon": -77.04,
           "etiqueta": "arriba",
-          "fecha": "2026-11-14",
-          "hecho": "El sábado 14, L3Harris, la contratista a la que el secretario de Transporte de EE.UU., Sean Duffy, había apuntado horas antes por la falla de comunicaciones que el viernes afectó a los 22 centros de control de tráfico aéreo en ruta y frenó todas las salidas del país, por segunda vez desde el 11 de setiembre de 2001, dijo en un comunicado que está \"apoyando a la FAA en su investigación\" y que toma \"con seriedad\" el apagón y su impacto (ABC News). El jefe de la Administración Federal de Aviación (FAA), Bryan Bedford, previó entre 4.000 y 5.000 cancelaciones el sábado, sobre unos 41.000 vuelos programados, y una recuperación completa el domingo; Duffy había dicho que la falla empezó mientras la contratista pasaba líneas de cobre a fibra en un sitio remoto de la FAA, que no creen que haya sido un ataque y que falta determinar si fue un error de uso, de instalación o un router defectuoso (NBC News). A primera hora de la tarde del sábado iban más de 5.200 vuelos cancelados en el día (ABC News), después de los 9.159 vuelos cancelados del viernes que contó FlightAware.",
-          "lectura": "Un país puede quedarse sin despegues sin que nadie lo ataque: alcanzó con que fallara la comunicación entre los 22 centros que ordenan el tráfico en ruta para frenar todas las salidas, por segunda vez desde 2001. El gobierno habla de una falla de telecomunicaciones y no ve indicios de un ataque; si eso se confirma, el punto de estrangulamiento estaba en la red que une a los controladores, y nadie tuvo que apuntarle.",
+          "fecha": "2026-11-15",
+          "hecho": "En la madrugada del domingo 15, NBC News informó que los funcionarios detectaron interrupciones en 17 de los 22 centros de control de tráfico aéreo en ruta de EE.UU. por la falla de comunicaciones que el viernes 13 frenó todas las salidas del país, por segunda vez desde el 11 de setiembre de 2001; el jefe de la Administración Federal de Aviación (FAA), Bryan Bedford, había dicho que la inestabilidad se extendió a 17 instalaciones (CBS News). El sábado 14 se cancelaron más de 6.400 vuelos, por encima de los 4.000 a 5.000 que había previsto Bedford, y a las 22:33, hora del este, ya iban 910 cancelados para el domingo (FlightAware, vía ABC News), después de los 9.159 del viernes; Bedford mantiene que las aerolíneas recuperarán el programa completo el domingo a la noche. El secretario de Transporte, Sean Duffy, dijo que la falla empezó mientras la contratista L3Harris pasaba líneas de cobre a fibra y que no creen que haya sido un ataque; la empresa dijo que colabora con la investigación de la FAA (NBC News).",
+          "lectura": "Un país puede quedarse sin despegues sin que nadie lo ataque: alcanzó con que fallara la comunicación en 17 de los 22 centros que ordenan el tráfico en ruta para frenar todas las salidas, por segunda vez desde 2001. El gobierno habla de una falla de telecomunicaciones y no ve indicios de un ataque; si eso se confirma, el punto de estrangulamiento estaba en la red que une a los controladores, y nadie tuvo que apuntarle.",
           "tendencia": "afloja",
           "intensidad": 3,
           "corto": "Cielo EE.UU.",
-          "dato": "9.159 vuelos cancelados",
+          "dato": "17 de los 22 centros",
           "objetivo": "Espacio aéreo",
           "fuente": {
             "nombre": "NBC News",
             "url": "https://www.nbcnews.com/news/us-news/live-blog/live-updates-faa-lifts-ground-stops-airports-rcna609302"
           },
-          "actualizado": "2026-11-14T19:11",
+          "actualizado": "2026-11-15T07:38",
           "ultimoMomento": true
         },
         {
           "n": 3,
-          "titulo": "EE.UU. niega el ataque iraní a su radar en Bahréin: derribó 2 drones",
+          "titulo": "Bahréin intercepta ataques de Irán, que dice que golpeó un radar",
           "lugar": "Bahréin / Estrecho de Ormuz",
           "lugarMapa": "Estrecho de Ormuz",
           "lat": 26.6,
           "lon": 56.5,
           "etiqueta": "der",
-          "fecha": "2026-11-13",
-          "hecho": "El viernes 13, el Comando Central de EE.UU. (CENTCOM) desmintió que la Guardia Revolucionaria iraní haya destruido un radar de alerta temprana estadounidense en Bahréin: dijo que la Guardia lanzó dos drones de ataque hacia Bahréin, que sus fuerzas derribaron ambos y que no hubo heridos ni daños, sin referirse al ataque aéreo contra una torre de telecomunicaciones en Sirik (Hormozgán) que la Guardia invocó como motivo (Radio Free Europe/Radio Liberty). El mismo día, la marina de la Guardia afirmó que un buque gasero (de GNL según Reuters, de GLP según AP) explotó al chocar con una mina en una ruta \"no autorizada y peligrosa\" de Ormuz, sin nombre del buque ni confirmación independiente; el Washington Institute cuenta al menos 10 buques alcanzados en los primeros 10 días de noviembre, después de 37 ataques en octubre (Reuters, vía gCaptain). El Brent, que había cerrado el jueves 12 en USD 95,82 después de que Trump escribió que EE.UU. no necesita un acuerdo con Irán, cerró el viernes en USD 95,84, dos centavos arriba, y la Agencia Internacional de Energía proyectó para este trimestre un superávit de crudo de unos 2 millones de barriles diarios, el primero desde el inicio de la guerra (Bloomberg, vía Rigzone).",
-          "lectura": "Trump escribió el jueves que ya tiene el estrecho, y el viernes Irán sumó dos anuncios propios: un radar estadounidense atacado en Bahréin y un buque de gas que explotó por una mina. Washington desmintió el primero y, al hacerlo, admitió dos drones iraníes en vuelo hacia Bahréin; el Brent casi no se movió, porque la Agencia Internacional de Energía ve crudo de sobra, y el mercado eligió creerle al desmentido antes que a los drones.",
+          "fecha": "2026-11-15",
+          "hecho": "En la madrugada del domingo 15, la Guardia Revolucionaria iraní afirmó que atacó con seis drones el radar de defensa aérea de EE.UU. en la base de helicópteros de Al-Riffa, en Bahréin; el ejército bahreiní dijo que sus defensas interceptaron varios proyectiles iraníes antes de que llegaran a sus blancos, y el Ministerio del Interior emitió dos alertas nacionales, las primeras desde setiembre (Associated Press). El Comando Central de EE.UU. (CENTCOM), que el viernes 13 había desmentido la destrucción de un radar suyo en Bahréin y dicho que derribó dos drones iraníes, no comentó de inmediato el anuncio. En Ormuz, los incendios en petroleros que Irán atribuyó desde el viernes a choques con minas siguen sin verificación independiente (CBS News).",
+          "lectura": "El viernes Washington desmintió el golpe al radar y contó dos drones derribados; el domingo Irán volvió a anunciar un ataque sobre Bahréin, ahora con seis, y esta vez el que habló fue Manama, con dos alertas nacionales que no sonaban desde setiembre. Un desmentido aguanta mientras el vecino no tenga que avisarle a su población que hay peligro, y Bahréin lo hizo dos veces en una madrugada.",
           "tendencia": "escala",
           "intensidad": 3,
           "corto": "Ormuz",
-          "dato": "dos drones",
+          "dato": "seis drones",
           "objetivo": "Estrecho",
           "fuente": {
-            "nombre": "Radio Free Europe/Radio Liberty",
-            "url": "https://www.rferl.org/a/iran-us-sirik-bahrain-war-nuclear-talks/33897951.html"
+            "nombre": "Associated Press, vía WSLS",
+            "url": "https://wsls.com/news/world/2026/11/15/israel-says-it-killed-a-top-hamas-commander-and-other-mideast-news"
           },
-          "actualizado": "2026-11-13T19:11",
+          "actualizado": "2026-11-15T07:38",
           "anterior": {
             "titulo": "Ormuz, según Irán: pase libre para India, China, Irak y Qatar",
             "fecha": "2026-11-06",
@@ -309,6 +309,29 @@
       "alcance": "Guerras activas, cambios de fase y lo que derraman sobre la región.",
       "senales": [
         {
+          "n": 12,
+          "titulo": "Yemen: las fuerzas del sur anuncian que se retiran de Bab el-Mandeb",
+          "lugar": "Dhubab (Taiz), Yemen",
+          "lugarMapa": "Bab el-Mandeb, Yemen",
+          "lat": 12.94,
+          "lon": 43.41,
+          "etiqueta": "izq",
+          "fecha": "2026-11-15",
+          "hecho": "El domingo 15, las Fuerzas Armadas del Sur, que combaten por el gobierno de Yemen reconocido internacionalmente y respaldado por Arabia Saudita, anunciaron un repliegue desde el aeropuerto de Dhubab y la zona de Bab el-Mandeb, al oeste de la gobernación de Taiz, hacia Adén, \"sobre la base de la prioridad de asegurar la capital, Adén, y las gobernaciones vecinas\". Según Reuters, la retirada deja a los hutíes, aliados de Irán, en control de la zona que domina el estrecho, y la nota no recoge ninguna declaración hutí; el gobierno había lanzado en octubre una campaña para recuperar la costa. Taiz, que sigue sitiada, aloja a cerca de la mitad de las 300.000 personas desplazadas por esta ronda de combates.",
+          "lectura": "El gobierno yemení eligió cuidar Adén y, para hacerlo, soltó la costa que mira al estrecho, la misma que había salido a recuperar en octubre. Con Ormuz trabado por Irán, la orilla yemení de Bab el-Mandeb queda, según Reuters, en manos de sus aliados hutíes: la salida del mar Rojo pasa a estar bajo presión de la misma alianza que ya aprieta la del Golfo.",
+          "tendencia": "escala",
+          "intensidad": 3,
+          "corto": "Bab el-Mandeb",
+          "dato": "300.000 personas desplazadas",
+          "objetivo": "Estrecho",
+          "fuente": {
+            "nombre": "Reuters, vía WHBL",
+            "url": "https://whbl.com/2026/11/15/yemen-government-forces-withdraw-from-area-near-bab-el-mandeb-strait-houthis-in-control/"
+          },
+          "actualizado": "2026-11-15T07:38",
+          "ultimoMomento": true
+        },
+        {
           "n": 7,
           "titulo": "Caso Ueno: el juez manda a prisión a tres exdirectores del BCP",
           "lugar": "Asunción, Paraguay",
@@ -359,7 +382,8 @@
           "fuente": {
             "nombre": "Al Jazeera",
             "url": "https://www.aljazeera.com/news/2026/11/4/sudan-ethiopia-order-tit-for-tat-diplomatic-expulsions"
-          }
+          },
+          "rotada": "2026-11-15T07:38"
         }
       ],
       "tambienTitulo": "Focos en observación",
