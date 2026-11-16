@@ -11,6 +11,32 @@
       "alcance": "Tierras raras, cobre, cobalto, litio, uranio. Quién controla el acceso y a qué precio.",
       "senales": [
         {
+          "n": 11,
+          "titulo": "La ASEAN pacta una política de minerales; Lula pide inversión",
+          "lugar": "Manila / Brasilia",
+          "lugarMapa": "Manila, Filipinas",
+          "lat": 14.6,
+          "lon": 120.98,
+          "etiqueta": "izq",
+          "arco": {
+            "lat": -15.79,
+            "lon": -47.88,
+            "nombre": "Brasilia"
+          },
+          "fecha": "2026-11-15",
+          "hecho": "El domingo 15, en la 49ª cumbre de la Asociación de Naciones del Sudeste Asiático (ASEAN), en Manila, los líderes del bloque adoptaron la Declaración sobre Minerales Críticos de la ASEAN para la Resiliencia Regional y el Crecimiento Sostenible, que busca hacer de la región un polo de producción y procesamiento, con inversión en toda la cadena, de la exploración al reciclaje, y con cooperación voluntaria que reconoce la soberanía de cada país sobre sus recursos (ANTARA). Ese día, tras la apertura de la cumbre, el presidente de Brasil, Luiz Inácio Lula da Silva, dijo que su país busca inversión para explorar e industrializar minerales críticos y tierras raras, que no quiere limitarse a exportar materia prima y que los aranceles de EE.UU. aceleraron la búsqueda de mercados nuevos (Agência Brasil). Ninguna de las dos notas informa montos, plazos ni acuerdos firmados entre Brasil y el bloque.",
+          "lectura": "El Sudeste Asiático y Brasil dijeron en Manila, el mismo día, casi lo mismo: quieren capital para procesar sus minerales adentro. La coincidencia tiene un costo que ninguna de las dos notas registra: son dos regiones con la misma oferta ante quienes financian plantas de procesamiento, y cuando varios dueños del mineral piden la planta, el que pone el capital elige dónde va.",
+          "tendencia": "estable",
+          "intensidad": 1,
+          "corto": "ASEAN",
+          "objetivo": "Procesamiento",
+          "fuente": {
+            "nombre": "ANTARA",
+            "url": "https://en.antaranews.com/news/443087/asean-agrees-to-develop-sustainable-critical-minerals-hub"
+          },
+          "actualizado": "2026-11-16T13:13"
+        },
+        {
           "n": 1,
           "titulo": "USGS: Brasil concentra el 92% de la oferta mundial de niobio",
           "lugar": "Reston (EE.UU.) / Araxá (Brasil)",
@@ -50,7 +76,8 @@
           "fuente": {
             "nombre": "USA Rare Earth",
             "url": "https://investors.usare.com/news-releases/news-release-details/usa-rare-earth-announces-start-commercial-scale-shipments-and"
-          }
+          },
+          "rotada": "2026-11-16T13:13"
         }
       ],
       "tambienTitulo": "También en el radar",
@@ -77,14 +104,14 @@
       "senales": [
         {
           "n": 3,
-          "titulo": "Ormuz opera 65% por debajo de la preguerra, según UKMTO",
+          "titulo": "Ormuz: UKMTO registra un petrolero alcanzado; Irán dice que minó",
           "lugar": "Estrecho de Ormuz / Bahréin",
           "lugarMapa": "Estrecho de Ormuz",
           "lat": 26.6,
           "lon": 56.5,
           "etiqueta": "der",
-          "fecha": "2026-11-13",
-          "hecho": "El informe semanal de la agencia marítima británica UKMTO, difundido el viernes 13, da un tránsito por el estrecho de Ormuz 65% por debajo del nivel previo a la guerra, con ocho incidentes marítimos en la semana y 163 desde el 28 de febrero (Gulf News). Ese día, el Comando Central de EE.UU. negó que la Guardia Revolucionaria iraní haya destruido un radar estadounidense en Bahréin y dijo que derribó dos drones lanzados hacia ese país (Radio Free Europe/Radio Liberty). En la madrugada del sábado 14, hora de Irán, la Guardia dijo que dos petroleros se incendiaron al chocar con minas en una ruta no autorizada del estrecho; la Marina iraní habló de uno solo y no hay confirmación independiente (AFP). Actualización del lunes 16: el domingo 15, el ejército de Bahréin dijo que interceptó varios proyectiles iraníes y el Ministerio del Interior emitió dos alertas nacionales, las primeras desde setiembre (Associated Press). El lunes 16, la Armada de la Guardia Revolucionaria dijo, en un comunicado que difundió la agencia Mehr, que la ruta sur del estrecho está minada y que seis petroleros se incendiaron y se hundieron entre el domingo y el lunes; es una declaración iraní, sin nombres de buques ni confirmación independiente (Oilprice.com).",
+          "fecha": "2026-11-16",
+          "hecho": "El lunes 16, la agencia marítima británica UKMTO informó que un petrolero fue alcanzado por un proyectil no identificado cuando salía del Golfo por el estrecho de Ormuz, con un incendio en la sala de máquinas y sin heridos (Reuters). Ese día, la Armada de la Guardia Revolucionaria iraní dijo que las minas dañaron seis petroleros desde el domingo 15 y que la ruta que protege EE.UU. sigue siendo peligrosa; es una declaración iraní, sin banderas de los buques ni confirmación independiente, y el parte de UKMTO habla de un proyectil, sin mencionar minas (Associated Press). El informe semanal de UKMTO del viernes 13 daba un tránsito por el estrecho 65% por debajo del nivel previo a la guerra, con 163 incidentes marítimos desde el 28 de febrero.",
           "lectura": "La semana se contó en anuncios: un radar que Irán dice haber destruido y Washington niega, petroleros que chocan con minas sin confirmación independiente. UKMTO le puso número a lo que hay debajo: por Ormuz pasa cerca de un tercio del tráfico de antes de la guerra, ocho meses y medio después de que empezó, con más de un incidente por día. Para el Cono Sur, que compra gasoil y contrata fletes a precio mundial, esa cifra pesa más que cualquier comunicado. El jueves 19, en Shenzhen, Donald Trump se reúne con Xi Jinping y Vladimir Putin, y la Casa Blanca dijo que Irán está en la agenda.",
           "tendencia": "escala",
           "intensidad": 3,
@@ -92,10 +119,20 @@
           "dato": "65% por debajo",
           "objetivo": "Estrecho",
           "fuente": {
-            "nombre": "Gulf News, con datos de UKMTO",
-            "url": "https://gulfnews.com/world/mena/us-israel-iran-war-enemy-strike-hits-irans-sirik-as-trump-warns-tehran-over-threats-to-us-officials-houthis-claim-attack-on-saudi-pipeline-1.500745854"
+            "nombre": "Reuters, vía Arab News",
+            "url": "https://www.arabnews.com/middle-east/british-authority-tanker-targeted-by-unknown-projectile-in-strait-of-hormuz-fire-erupts-3012196"
           },
-          "actualizado": "2026-11-16T07:40"
+          "actualizado": "2026-11-16T13:13",
+          "anterior": {
+            "titulo": "Ormuz opera 65% por debajo de la preguerra, según UKMTO",
+            "fecha": "2026-11-13",
+            "hecho": "El informe semanal de la agencia marítima británica UKMTO, difundido el viernes 13, da un tránsito por el estrecho de Ormuz 65% por debajo del nivel previo a la guerra, con ocho incidentes marítimos en la semana y 163 desde el 28 de febrero (Gulf News). Ese día, el Comando Central de EE.UU. negó que la Guardia Revolucionaria iraní haya destruido un radar estadounidense en Bahréin y dijo que derribó dos drones lanzados hacia ese país (Radio Free Europe/Radio Liberty). En la madrugada del sábado 14, hora de Irán, la Guardia dijo que dos petroleros se incendiaron al chocar con minas en una ruta no autorizada del estrecho; la Marina iraní habló de uno solo y no hay confirmación independiente (AFP). Actualización del lunes 16: el domingo 15, el ejército de Bahréin dijo que interceptó varios proyectiles iraníes y el Ministerio del Interior emitió dos alertas nacionales, las primeras desde setiembre (Associated Press). El lunes 16, la Armada de la Guardia Revolucionaria dijo, en un comunicado que difundió la agencia Mehr, que la ruta sur del estrecho está minada y que seis petroleros se incendiaron y se hundieron entre el domingo y el lunes; es una declaración iraní, sin nombres de buques ni confirmación independiente (Oilprice.com).",
+            "lectura": "La semana se contó en anuncios: un radar que Irán dice haber destruido y Washington niega, petroleros que chocan con minas sin confirmación independiente. UKMTO le puso número a lo que hay debajo: por Ormuz pasa cerca de un tercio del tráfico de antes de la guerra, ocho meses y medio después de que empezó, con más de un incidente por día. Para el Cono Sur, que compra gasoil y contrata fletes a precio mundial, esa cifra pesa más que cualquier comunicado. El jueves 19, en Shenzhen, Donald Trump se reúne con Xi Jinping y Vladimir Putin, y la Casa Blanca dijo que Irán está en la agenda.",
+            "fuente": {
+              "nombre": "Gulf News, con datos de UKMTO",
+              "url": "https://gulfnews.com/world/mena/us-israel-iran-war-enemy-strike-hits-irans-sirik-as-trump-warns-tehran-over-threats-to-us-officials-houthis-claim-attack-on-saudi-pipeline-1.500745854"
+            }
+          }
         },
         {
           "n": 4,
@@ -159,6 +196,33 @@
       "alcance": "Data centers, chips, energía y agua. El cuerpo físico de la IA y quién lo decide.",
       "senales": [
         {
+          "n": 12,
+          "titulo": "EE.UU. exige licencia para exportar chips avanzados de IA a Brasil",
+          "lugar": "Washington / Brasilia",
+          "lugarMapa": "Washington, EE.UU.",
+          "lat": 38.9,
+          "lon": -77.04,
+          "etiqueta": "der",
+          "arco": {
+            "lat": -15.79,
+            "lon": -47.88,
+            "nombre": "Brasilia"
+          },
+          "fecha": "2026-11-16",
+          "hecho": "El lunes 16, el Departamento de Comercio de EE.UU. difundió una regla final interina que exige licencia para exportar, reexportar o transferir semiconductores avanzados a Indonesia, Malasia, Singapur, Tailandia y Brasil, países que, según el texto, presentan un riesgo de desvío más alto que el normal; quedan exceptuados los chips destinados a empresas con casa matriz en EE.UU., si cumplen requisitos de reporte (Departamento de Comercio). La regla alcanza también a los data centers de cualquier país que den acceso a más de 12.000.000 de TPP agregado, la medida de capacidad de cómputo que usa la norma, a empresas con casa matriz en Macao o en el grupo de países D:5, que incluye a China: los que ya prestan ese servicio tienen 90 días para pedir licencia. Rige desde su publicación en el Registro Federal, que el texto difundido todavía no fecha, y deroga formalmente la regla de difusión de IA del gobierno de Joe Biden.",
+          "lectura": "Brasil quedó en la misma lista que Singapur y Malasia: cinco países donde Washington ve un riesgo de desvío de chips más alto que el normal. Para un data center en territorio brasileño, la cuenta suma un trámite a la energía y el agua, porque sin casa matriz en EE.UU. cada chip avanzado necesita una licencia que se decide en Washington.",
+          "tendencia": "escala",
+          "intensidad": 2,
+          "corto": "Chips Brasil",
+          "dato": "90 días",
+          "objetivo": "Control de exportación",
+          "fuente": {
+            "nombre": "Departamento de Comercio de EE.UU. (BIS)",
+            "url": "https://www.bis.gov/media/documents/rin-0694-ak50.pdf"
+          },
+          "actualizado": "2026-11-16T13:13"
+        },
+        {
           "n": 6,
           "titulo": "Minneapolis: el concejo se reserva la aprobación de cada data center",
           "lugar": "Minneapolis / Oakland / Washington",
@@ -198,7 +262,8 @@
           "fuente": {
             "nombre": "Telesemana",
             "url": "https://www.telesemana.com/blog/2026/11/11/uruguay-antel-iniciara-en-2027-las-obras-de-su-nuevo-data-center-en-las-piedras-con-una-inversion-de-us-70-millones/"
-          }
+          },
+          "rotada": "2026-11-16T13:13"
         }
       ],
       "tambienTitulo": "También en el radar",
