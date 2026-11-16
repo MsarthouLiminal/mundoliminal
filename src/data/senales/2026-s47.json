@@ -1,0 +1,366 @@
+{
+  "id": "2026-s47",
+  "semana": 47,
+  "fechaEdicion": "2026-11-16",
+  "corteDatos": "2026-11-14",
+  "ejes": [
+    {
+      "id": "min",
+      "slug": "minerales",
+      "nombre": "Minerales críticos",
+      "alcance": "Tierras raras, cobre, cobalto, litio, uranio. Quién controla el acceso y a qué precio.",
+      "senales": [
+        {
+          "n": 1,
+          "titulo": "USGS: Brasil concentra el 92% de la oferta mundial de niobio",
+          "lugar": "Reston (EE.UU.) / Araxá (Brasil)",
+          "lugarMapa": "Araxá, Brasil",
+          "lat": -19.59,
+          "lon": -46.94,
+          "etiqueta": "der",
+          "fecha": "2026-11-12",
+          "hecho": "El Servicio Geológico de EE.UU. (USGS) publicó el jueves 12 la segunda edición de su World Minerals Outlook, que proyecta a 2030 la capacidad mundial de producción de ocho minerales: antimonio, grafito natural, niobio, potasa, silicio, tungsteno, cobre y plata. Según el organismo, el 92% de la oferta de niobio se concentra en Brasil y más del 70% de la oferta mundial de grafito natural, silicio y tungsteno, en China; la capacidad crecería 20% en grafito natural, 9% en cobre y 8% en niobio (USGS). Según Metal Tech News, el informe atribuye a China el 87% de la capacidad de silicio metálico y cerca del 69% de la de tungsteno, y registra que EE.UU. importó en 2025 todo el niobio que consumió.",
+          "lectura": "Cuando se habla de minerales críticos se mira a China, y el informe da motivos: 87% del silicio metálico y cerca de 69% del tungsteno, dos insumos de la cadena de chips. Brasil aparece con un porcentaje más alto que esos, 92% del niobio, un mineral que EE.UU. importa en su totalidad. Brasilia lo dejó en la clase de monitoreo de su lista nueva, la tercera de tres: tiene en el niobio una concentración mayor que la de China en esos dos metales y, por ahora, no la usa como palanca.",
+          "tendencia": "estable",
+          "intensidad": 1,
+          "corto": "Niobio",
+          "dato": "92%",
+          "objetivo": "Oferta mundial",
+          "fuente": {
+            "nombre": "Servicio Geológico de EE.UU. (USGS)",
+            "url": "https://www.usgs.gov/news/national-news-release/usgs-projects-world-production-capacity-8-critical-minerals-2026-2030"
+          }
+        },
+        {
+          "n": 2,
+          "titulo": "Goiás ya vende sus tierras raras a un vehículo que financia EE.UU.",
+          "lugar": "Minaçu, Goiás (Brasil)",
+          "lugarMapa": "Minaçu, Goiás",
+          "lat": -13.53,
+          "lon": -48.22,
+          "etiqueta": "arriba",
+          "fecha": "2026-11-09",
+          "hecho": "USA Rare Earth, que cotiza en Nasdaq y es dueña de Serra Verde desde setiembre, anunció el lunes 9 que la mina Pela Ema, en Minaçu (Goiás), empezó en octubre los embarques a escala comercial de carbonato mixto de tierras raras y cobró en noviembre las primeras ventas. El comprador es US SIIE, una sociedad de propósito específico financiada por el gobierno de EE.UU., que compra el 100% de la producción de la primera fase por 15 años, con precios mínimos garantizados para neodimio, praseodimio, disprosio y terbio (USA Rare Earth). El vehículo se capitalizó en agosto con USD 1.550 millones: USD 750 millones del Departamento de Guerra, una línea de crédito de hasta USD 500 millones y un contrato de compra del gobierno por no menos de USD 300 millones en cinco años. La empresa prevé vender al menos 325 toneladas de óxidos de tierras raras en el cuarto trimestre y llegar a un ritmo de unas 4.000 toneladas anuales en el segundo trimestre de 2027.",
+          "lectura": "El filtro que Brasil aprobó el 5 de noviembre para revisar quién compra sus minas llegó tarde a Pela Ema: desde setiembre la mina es de una empresa que cotiza en Nasdaq, y toda la producción de su primera fase está vendida por 15 años a un vehículo que financia el Departamento de Guerra de EE.UU. Con ese contrato, Washington fija el precio mínimo, el plazo y el destino de cada embarque. A Brasil le quedan el yacimiento y un filtro que recién se reglamenta en 2027.",
+          "tendencia": "escala",
+          "intensidad": 2,
+          "corto": "Serra Verde",
+          "dato": "USD 1.550 millones",
+          "objetivo": "Tierras raras",
+          "fuente": {
+            "nombre": "USA Rare Earth",
+            "url": "https://investors.usare.com/news-releases/news-release-details/usa-rare-earth-announces-start-commercial-scale-shipments-and"
+          }
+        }
+      ],
+      "tambienTitulo": "También en el radar",
+      "tambien": [
+        {
+          "etiqueta": "13 nov",
+          "texto": "En Chile, el biministro de Economía y Minería, Daniel Mas, dijo que el gobierno busca socios privados para Codelco en la exploración y estudia sumarlos en la explotación, sin que la empresa deje de ser estatal; ese día, la Cámara de Diputados despachó el Presupuesto 2027 con la partida de Minería rechazada por un empate a 59 votos."
+        },
+        {
+          "etiqueta": "12 nov",
+          "texto": "Cochilco estima para 2026 un déficit mundial de litio de 79.000 toneladas de carbonato de litio equivalente y, para 2027, un superávit de 42.000; Chile produciría 325.000 toneladas este año."
+        },
+        {
+          "etiqueta": "10 nov",
+          "texto": "India prohibió, con efecto inmediato, exportar la masa negra de baterías de ion-litio, el polvo con litio, cobalto, níquel y manganeso que queda al triturarlas."
+        }
+      ]
+    },
+    {
+      "id": "cho",
+      "slug": "chokepoints",
+      "nombre": "Chokepoints",
+      "alcance": "Estrechos, puertos, aranceles y cadenas de suministro. Dónde se traba el comercio.",
+      "senales": [
+        {
+          "n": 3,
+          "titulo": "Ormuz opera 65% por debajo de la preguerra, según UKMTO",
+          "lugar": "Estrecho de Ormuz / Bahréin",
+          "lugarMapa": "Estrecho de Ormuz",
+          "lat": 26.6,
+          "lon": 56.5,
+          "etiqueta": "der",
+          "fecha": "2026-11-13",
+          "hecho": "El informe semanal de la agencia marítima británica UKMTO, difundido el viernes 13, da un tránsito por el estrecho de Ormuz 65% por debajo del nivel previo a la guerra, con ocho incidentes marítimos en la semana y 163 desde el 28 de febrero (Gulf News). Ese día, el Comando Central de EE.UU. negó que la Guardia Revolucionaria iraní haya destruido un radar estadounidense en Bahréin y dijo que derribó dos drones lanzados hacia ese país (Radio Free Europe/Radio Liberty). En la madrugada del sábado 14, hora de Irán, la Guardia dijo que dos petroleros se incendiaron al chocar con minas en una ruta no autorizada del estrecho; la Marina iraní habló de uno solo y no hay confirmación independiente (AFP). Actualización del lunes 16: el domingo 15, el ejército de Bahréin dijo que interceptó varios proyectiles iraníes y el Ministerio del Interior emitió dos alertas nacionales, las primeras desde setiembre (Associated Press). El lunes 16, la Armada de la Guardia Revolucionaria dijo, en un comunicado que difundió la agencia Mehr, que la ruta sur del estrecho está minada y que seis petroleros se incendiaron y se hundieron entre el domingo y el lunes; es una declaración iraní, sin nombres de buques ni confirmación independiente (Oilprice.com).",
+          "lectura": "La semana se contó en anuncios: un radar que Irán dice haber destruido y Washington niega, petroleros que chocan con minas sin confirmación independiente. UKMTO le puso número a lo que hay debajo: por Ormuz pasa cerca de un tercio del tráfico de antes de la guerra, ocho meses y medio después de que empezó, con más de un incidente por día. Para el Cono Sur, que compra gasoil y contrata fletes a precio mundial, esa cifra pesa más que cualquier comunicado. El jueves 19, en Shenzhen, Donald Trump se reúne con Xi Jinping y Vladimir Putin, y la Casa Blanca dijo que Irán está en la agenda.",
+          "tendencia": "escala",
+          "intensidad": 3,
+          "corto": "Ormuz",
+          "dato": "65% por debajo",
+          "objetivo": "Estrecho",
+          "fuente": {
+            "nombre": "Gulf News, con datos de UKMTO",
+            "url": "https://gulfnews.com/world/mena/us-israel-iran-war-enemy-strike-hits-irans-sirik-as-trump-warns-tehran-over-threats-to-us-officials-houthis-claim-attack-on-saudi-pipeline-1.500745854"
+          },
+          "actualizado": "2026-11-16T07:40"
+        },
+        {
+          "n": 4,
+          "titulo": "El Bundestag aprueba la ratificación del acuerdo Mercosur y UE",
+          "lugar": "Berlín / Montevideo",
+          "lugarMapa": "Berlín, Alemania",
+          "lat": 52.52,
+          "lon": 13.4,
+          "etiqueta": "arriba",
+          "fecha": "2026-11-13",
+          "hecho": "El viernes 13, el Bundestag aprobó la ley con la que Alemania ratifica el acuerdo entre la Unión Europea y el Mercosur, con los votos de CDU, CSU, SPD y Verdes y el rechazo de AfD y La Izquierda (EFE). La parte comercial rige en forma provisional desde el 1 de mayo; la vigencia plena depende de los parlamentos de los países de la UE, con la oposición de Francia, y del Parlamento Europeo, que espera un dictamen del Tribunal de Justicia de la UE. Según el balance que el Ministerio de Economía y Finanzas publicó el 1 de noviembre, Uruguay exportó USD 860 millones a la UE entre mayo y setiembre, 12% más que un año antes, y solo USD 38 millones entraron con preferencias del acuerdo; el ministerio explica que la celulosa, el principal producto que Uruguay vende a Europa, ya entraba sin arancel (dNegocios).",
+          "lectura": "Para un exportador uruguayo, el voto de Berlín no mueve el arancel de mañana: la parte comercial ya rige en forma provisional desde mayo. Suma respaldo político en la mayor economía de la UE, mientras el Parlamento Europeo espera al Tribunal de Justicia y Francia sigue en contra. La cuenta pendiente está de este lado del Atlántico: de USD 860 millones vendidos a Europa en cinco meses, USD 38 millones usaron las preferencias, menos del 5%. Una parte se explica porque la celulosa ya entraba sin arancel; el resto es un acuerdo vigente que todavía se usa poco.",
+          "tendencia": "afloja",
+          "intensidad": 2,
+          "corto": "Mercosur UE",
+          "dato": "USD 38 millones",
+          "objetivo": "Acuerdo comercial",
+          "fuente": {
+            "nombre": "EFE, vía Infobae",
+            "url": "https://www.infobae.com/america/agencias/2026/11/13/el-parlamento-aleman-aprueba-la-ley-para-ratificar-el-acuerdo-ue-mercosur/"
+          }
+        },
+        {
+          "n": 5,
+          "titulo": "El Paraná en Rosario, en su nivel más alto para noviembre desde 1998",
+          "lugar": "Rosario, Argentina",
+          "lugarMapa": "Rosario, Argentina",
+          "lat": -32.95,
+          "lon": -60.64,
+          "etiqueta": "izq",
+          "fecha": "2026-11-13",
+          "hecho": "Según el informe semanal de la Bolsa de Comercio de Rosario, con datos del Instituto Nacional del Agua (INA), el Paraná marcó en Rosario 4,40 metros el martes 10 y cerca de 4,47 metros el miércoles 11, su nivel más alto para un noviembre desde 1998 y a 53 centímetros de la cota de alerta, de 5 metros; el promedio de la semana fue de 4,28 metros, contra 2,32 en la misma semana de 2025 y 0,58 en la de 2024 (Rosario3). La Bolsa advierte que el río alto no permite cargar más: la Vía Navegable Troncal tiene un calado de diseño de 34 pies entre Timbúes y el océano, los canales del Río de la Plata dependen de mareas y vientos, y los buques de mayor porte siguen saliendo del Gran Rosario con carga parcial para completar bodegas en puertos de aguas profundas. El INA prevé que el río siga subiendo y pueda alcanzar o superar la cota de alerta.",
+          "lectura": "Hace dos años el problema del Paraná era la falta de agua: 58 centímetros en Rosario en esta misma semana de 2024. Hoy el río está a medio metro de la alerta y los buques grandes igual salen con carga parcial, porque el límite lo ponen el canal, con su calado de diseño de 34 pies, y el Río de la Plata. Con el río lleno, el cuello de la hidrovía quedó a la vista: depende del dragado, que es una decisión de obra y de concesión, más que del clima.",
+          "tendencia": "afloja",
+          "intensidad": 1,
+          "corto": "Paraná",
+          "dato": "4,47 metros",
+          "objetivo": "Hidrovía",
+          "fuente": {
+            "nombre": "Rosario3, con el informe de la Bolsa de Comercio de Rosario",
+            "url": "https://www.rosario3.com/ecos365/noticias/despues-de-anos-de-bajante-el-parana-alcanza-niveles-que-no-se-veian-desde-1998-20261113-0007.html"
+          }
+        }
+      ],
+      "tambienTitulo": "También en el radar",
+      "tambien": [
+        {
+          "etiqueta": "15 nov",
+          "texto": "La falla que el viernes 13 frenó todos los despegues en EE.UU. empezó, según el secretario de Transporte, Sean Duffy, al encenderse un router nuevo en un sitio de la Administración Federal de Aviación (FAA) en El Dorado, Arkansas, y alcanzó a 17 de los 22 centros de control en ruta; el sábado 14 se cancelaron más de 6.400 vuelos y la causa sigue bajo investigación (Yahoo News)."
+        },
+        {
+          "etiqueta": "9 nov",
+          "texto": "El canal de Panamá subió de 33 a 34 los cupos diarios de tránsito con reserva y llevó a 50 pies (15,24 metros) el calado máximo de las esclusas Neopanamax."
+        }
+      ]
+    },
+    {
+      "id": "ia",
+      "slug": "ia",
+      "nombre": "Infraestructura IA",
+      "alcance": "Data centers, chips, energía y agua. El cuerpo físico de la IA y quién lo decide.",
+      "senales": [
+        {
+          "n": 6,
+          "titulo": "Minneapolis: el concejo se reserva la aprobación de cada data center",
+          "lugar": "Minneapolis / Oakland / Washington",
+          "lugarMapa": "Minneapolis, EE.UU.",
+          "lat": 44.98,
+          "lon": -93.27,
+          "etiqueta": "arriba",
+          "fecha": "2026-11-12",
+          "hecho": "El jueves 12, el concejo de Minneapolis aprobó por 7 a 6 una ordenanza que somete cada data center nuevo a su aprobación, los limita a edificios existentes y obliga a declarar el uso de energía, agua y generadores; la prohibición total no reunió los votos, y la norma pasa ahora al alcalde Jacob Frey (FOX 9). El martes 10, el concejo de Oakland prorrogó por unanimidad su moratoria hasta el 5 de octubre de 2027 (NBC Bay Area). El lunes 9, el Senado de EE.UU. votó 73 a 25 empezar a tratar un proyecto que obliga a los dueños de data centers de alto consumo a pagar la infraestructura eléctrica que usan: unos USD 55.000 millones en 10 años, según sus autores (Al Jazeera).",
+          "lectura": "A menos de dos semanas de las elecciones, el rechazo a los data centers que midieron las encuestas a boca de urna ya se escribe en ordenanzas: Minneapolis quiere decidir cada proyecto en su concejo, Oakland congeló los suyos hasta octubre de 2027 y el Senado discute quién paga la red. Cada permiso que se demora en EE.UU. empuja demanda de cómputo hacia donde haya suelo, energía y menos preguntas. Minneapolis ya exige declarar energía, agua y generadores: con esa vara conviene mirar lo que se le pide a un campus de 500 MW en Uruguay.",
+          "tendencia": "escala",
+          "intensidad": 2,
+          "corto": "Minneapolis",
+          "dato": "7 a 6",
+          "objetivo": "Permisos locales",
+          "fuente": {
+            "nombre": "FOX 9",
+            "url": "https://www.fox9.com/news/minneapolis-city-council-approves-data-center-ordinance-fails-pass-full-ban"
+          }
+        },
+        {
+          "n": 7,
+          "titulo": "Uruguay: Antel empieza en 2027 su data center de USD 70 millones",
+          "lugar": "Las Piedras, Canelones (Uruguay)",
+          "lugarMapa": "Las Piedras, Uruguay",
+          "lat": -34.73,
+          "lon": -56.22,
+          "etiqueta": "der",
+          "fecha": "2026-11-11",
+          "hecho": "Antel invertirá USD 70 millones en un data center en Las Piedras (Canelones), en 2,5 hectáreas de un predio de la ANEP, con cuatro salas para 330 racks y diseño para certificar Tier III; las obras empiezan en julio de 2027 y la operación, en el primer semestre de 2029 (Telesemana, miércoles 11). La empresa dice que refrigerará con un circuito cerrado, sin consumir agua dulce; la nota no informa la potencia eléctrica. El lunes 9, el presidente Yamandú Orsi acordó con los intendentes de Canelones, San José y Florida un cronograma de trabajo para el proyecto de la española Solaria, de USD 5.700 millones: un campus de data centers de hasta 500 MW y un parque solar de 350 MW en tierras de UTE en Cardal (Florida), cuya energía Solaria le vendería a UTE con un contrato a 40 años para que UTE abastezca al campus por la red nacional. La nota no trae cifras de consumo de agua del campus y registra que el senador nacionalista Sebastián Da Silva presentó un proyecto para prohibir data centers sobre los acuíferos Guaraní y Raigón (Latin Times).",
+          "lectura": "Uruguay tiene en carpeta dos data centers de escala muy distinta: el de Antel, público, de USD 70 millones y 330 racks, y el campus de Solaria, privado, de USD 5.700 millones y hasta 500 MW. El parque solar de 350 MW no cubre la demanda del campus, así que la cuenta eléctrica pasa por UTE: la empresa pública le compraría la energía a Solaria por 40 años y abastecería a los data centers por la red. Antel ya dijo que refrigerará sin agua dulce; del campus todavía no hay cifras de agua, y en el Senado ya hay un proyecto para prohibir data centers sobre los acuíferos Guaraní y Raigón.",
+          "tendencia": "escala",
+          "intensidad": 2,
+          "corto": "Antel",
+          "dato": "USD 70 millones",
+          "objetivo": "Data centers",
+          "fuente": {
+            "nombre": "Telesemana",
+            "url": "https://www.telesemana.com/blog/2026/11/11/uruguay-antel-iniciara-en-2027-las-obras-de-su-nuevo-data-center-en-las-piedras-con-una-inversion-de-us-70-millones/"
+          }
+        }
+      ],
+      "tambienTitulo": "También en el radar",
+      "tambien": [
+        {
+          "etiqueta": "15 nov",
+          "texto": "Venció el plazo de comentarios del borrador con el que China propone sumar 40 tecnologías a su catálogo de exportación prohibida o restringida, 14 prohibidas y 26 restringidas, entre ellas grandes modelos de IA, diseño de chips de IA y clústeres de cómputo; desde el 16 de octubre rige un registro obligatorio antes de exportarlas (HLC)."
+        },
+        {
+          "etiqueta": "13 nov",
+          "texto": "Malasia investiga a una subsidiaria de Megaspeed por el posible desvío de chips avanzados de IA; la Cancillería china dijo que se opone al abuso de los controles de exportación."
+        },
+        {
+          "etiqueta": "12 nov",
+          "texto": "Jensen Huang renunció como presidente y CEO de Nvidia y dejó el directorio; Colette Kress, la directora financiera, asumió como CEO interina. La acción cerró la semana con una baja de 12,75% (CNBC)."
+        },
+        {
+          "etiqueta": "11 nov",
+          "texto": "AWS puso en marcha su región de nube en Chile, con tres zonas en la Región Metropolitana, dentro de un plan de más de USD 4.000 millones a 15 años; dice que sus centros se enfrían con aire y usan agua cerca del 4% del año."
+        }
+      ]
+    },
+    {
+      "id": "con",
+      "slug": "conflictos",
+      "nombre": "Conflictos",
+      "alcance": "Guerras activas, cambios de fase y lo que derraman sobre la región.",
+      "senales": [
+        {
+          "n": 8,
+          "titulo": "Caso Ueno: la Fiscalía busca congelar fondos del banco en el exterior",
+          "lugar": "Asunción, Paraguay",
+          "lugarMapa": "Asunción, Paraguay",
+          "lat": -25.28,
+          "lon": -57.63,
+          "etiqueta": "izq",
+          "fecha": "2026-11-13",
+          "hecho": "El viernes 13 a la noche, el fiscal Francisco Cabrera dijo que varias jurisdicciones respondieron afirmativamente a las consultas sobre fondos vinculados a Ueno Bank y que el Ministerio Público prepara pedidos para congelarlos; no precisó países ni montos, y mencionó contactos preliminares con EE.UU. y Argentina y una reunión con fiscales de Luxemburgo (AFP). Ese día, el juez Humberto Otazú dictó prisión preventiva para tres exdirectores del Banco Central del Paraguay: Liana Caballero, Marco Aurelio González y Miguel Ángel Mora (ABC Color). Según la AFP, más de USD 800 millones de organismos públicos siguen sin aparecer. En Uruguay, Guillermo Tolosa, presidente del Banco Central, dijo que el impacto será marginal o nulo; la Fiscalía no recibió pedidos de cooperación de Paraguay y no descarta que los fondos hayan pasado por el país (Brecha).",
+          "lectura": "La causa Ueno salió de Paraguay: la Fiscalía ya habla con EE.UU., Argentina y Luxemburgo, y prepara pedidos para congelar fondos de los que no dice dónde están ni cuánto suman. En Montevideo, el Banco Central mide el riesgo por los vínculos entre los dos sistemas financieros y concluye que es marginal o nulo; la Fiscalía uruguaya, que no recibió pedidos de Asunción, no descarta que los fondos hayan pasado por el país. Son dos preguntas distintas, una sobre la solidez de los bancos y otra sobre la ruta del dinero, y la segunda sigue abierta.",
+          "tendencia": "escala",
+          "intensidad": 2,
+          "corto": "Paraguay",
+          "dato": "Más de USD 800 millones",
+          "objetivo": "Crisis institucional",
+          "fuente": {
+            "nombre": "AFP, vía Infobae",
+            "url": "https://www.infobae.com/america/america-latina/2026/11/14/la-fiscalia-de-paraguay-identifico-fondos-de-ueno-bank-en-el-exterior-y-prepara-pedidos-para-congelarlos/"
+          }
+        },
+        {
+          "n": 9,
+          "titulo": "Ecuador: la CIDH pide investigar el asesinato de dos candidatos",
+          "lugar": "Huaquillas, El Oro (Ecuador)",
+          "lugarMapa": "Huaquillas, Ecuador",
+          "lat": -3.48,
+          "lon": -80.23,
+          "etiqueta": "izq",
+          "fecha": "2026-11-13",
+          "hecho": "El viernes 13, la Comisión Interamericana de Derechos Humanos (CIDH) pidió a Ecuador investigar con debida diligencia, y examinar una posible motivación política, los asesinatos de Ronald Farfán, exalcalde de Huaquillas y candidato al mismo cargo, y de Cristhian Rugel, candidato a concejal, atacados la noche del lunes 9 durante un acto de campaña en esa ciudad de El Oro, en la frontera con Perú; en el ataque murió también la comerciante Hilda Ruiz, y un hijo de Farfán había sido asesinado nueve meses antes (EFE). El miércoles 11, el presidente Daniel Noboa renovó por 30 días el estado de excepción en ocho provincias, El Oro entre ellas; el decreto cuenta 328 hechos violentos entre el 14 de octubre y el 4 de noviembre, con 32 policías asesinados (Primicias). Las elecciones locales son el domingo 29.",
+          "lectura": "El cuarto toque de queda del año terminó el martes 10 a la madrugada; la noche anterior habían matado a Ronald Farfán en un acto de campaña, nueve meses después de que mataran a su hijo. Huaquillas es paso de frontera con Perú, y qué se disputa ahí además de la alcaldía es lo que la investigación tendría que decir. Ecuador llega a votar el 29 con ocho provincias bajo estado de excepción y con la CIDH pidiendo que se averigüe si a los candidatos los matan por serlo.",
+          "tendencia": "escala",
+          "intensidad": 2,
+          "corto": "Huaquillas",
+          "dato": "328 hechos violentos",
+          "objetivo": "Elecciones locales",
+          "fuente": {
+            "nombre": "EFE, vía Infobae",
+            "url": "https://www.infobae.com/america/agencias/2026/11/13/la-cidh-pide-a-ecuador-investigar-posible-motivacion-politica-en-asesinato-de-candidatos/"
+          }
+        }
+      ],
+      "tambienTitulo": "Focos en observación",
+      "tambien": [
+        {
+          "etiqueta": "Ucrania, 13 nov",
+          "texto": "Volodímir Zelenski, presidente de Ucrania, dijo que los negociadores de EE.UU. preguntaron por primera vez si Kiev retiraría sus tropas del Donbás a cambio de entrar en la OTAN, y que faltan precisiones; Washington no lo confirmó. La ronda de Abu Dabi terminó el miércoles 11 con un canje de prisioneros acordado y sin alto el fuego."
+        },
+        {
+          "etiqueta": "Sudán, 13 nov",
+          "texto": "El ejército dijo que derribó en Dandro (Nilo Azul) un dron que cruzó desde Etiopía, sin identificar quién lo operaba, y que avanza hacia Al-Khuway, en Kordofán Occidental."
+        },
+        {
+          "etiqueta": "Yemen, 15 nov",
+          "texto": "Las Fuerzas Armadas del Sur, que combaten por el gobierno reconocido internacionalmente, anunciaron su repliegue desde el aeropuerto de Dhubab y la zona de Bab el-Mandeb hacia Adén; según Reuters, la retirada deja a los hutíes, aliados de Irán, en control de la zona que domina el estrecho, y la nota no recoge ninguna declaración hutí."
+        },
+        {
+          "etiqueta": "Gaza, 12 nov",
+          "texto": "Seis palestinos murieron en un ataque israelí al hospital Nasser, en Jan Yunis, según Radio Pakistan; el Board of Peace pidió aplicar de inmediato el plan de paz."
+        },
+        {
+          "etiqueta": "Indonesia, 12 nov",
+          "texto": "El vicepresidente Gibran Rakabuming Raka renunció horas antes de que el Parlamento tratara un pedido de destitución firmado por más de 120 legisladores; el presidente Prabowo Subianto aceptó la renuncia."
+        }
+      ]
+    }
+  ],
+  "focos": [
+    {
+      "nombre": "Ucrania",
+      "lugarMapa": "Kiev, Ucrania",
+      "lat": 50.45,
+      "lon": 30.52,
+      "etiqueta": "der",
+      "eje": "con"
+    },
+    {
+      "nombre": "Sudán",
+      "lugarMapa": "Nilo Azul, Sudán",
+      "lat": 11.79,
+      "lon": 34.36,
+      "etiqueta": "izq",
+      "eje": "con"
+    },
+    {
+      "nombre": "Yemen",
+      "lugarMapa": "Bab el-Mandeb, Yemen",
+      "lat": 12.94,
+      "lon": 43.41,
+      "etiqueta": "der",
+      "eje": "con"
+    },
+    {
+      "nombre": "Gaza",
+      "lugarMapa": "Gaza",
+      "lat": 31.5,
+      "lon": 34.47,
+      "etiqueta": "izq",
+      "eje": "con"
+    },
+    {
+      "nombre": "Indonesia",
+      "lugarMapa": "Yakarta, Indonesia",
+      "lat": -6.21,
+      "lon": 106.85,
+      "etiqueta": "der",
+      "eje": "con"
+    }
+  ],
+  "agenda": [
+    {
+      "fecha": "2026-11-16",
+      "texto": "16 nov",
+      "eje": "Infraestructura IA",
+      "detalle": "El presidente Yamandú Orsi habla en Madrid en un desayuno del Fórum Europa, patrocinado por Solaria; viaja del 14 al 17."
+    },
+    {
+      "fecha": "2026-11-17",
+      "texto": "17 nov",
+      "eje": "Infraestructura IA",
+      "detalle": "Fecha que maneja el gobierno español para aprobar el real decreto sobre la conexión eléctrica de los data centers; no descarta el 24, antes de las elecciones generales del 29."
+    },
+    {
+      "fecha": "2026-11-17",
+      "texto": "17 nov",
+      "eje": "Minerales críticos",
+      "detalle": "El Senado chileno empieza a tratar en sala el Presupuesto 2027, que llegó de Diputados con la partida de Minería rechazada en medio del debate por Codelco."
+    },
+    {
+      "fecha": "2026-11-19",
+      "texto": "19 nov",
+      "eje": "Chokepoints",
+      "detalle": "Donald Trump, Xi Jinping y Vladimir Putin se reúnen en Shenzhen, al margen de la cumbre de APEC; la Casa Blanca dijo que la agenda incluye a Irán y las armas nucleares, y que Ucrania queda afuera."
+    }
+  ]
+}
