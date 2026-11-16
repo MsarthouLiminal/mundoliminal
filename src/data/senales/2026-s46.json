@@ -11,6 +11,33 @@
       "alcance": "Tierras raras, cobre, cobalto, litio, uranio. Quién controla el acceso y a qué precio.",
       "senales": [
         {
+          "n": 14,
+          "titulo": "Lula busca en la ASEAN capital para procesar minerales en Brasil",
+          "lugar": "Manila / Brasilia",
+          "lugarMapa": "Brasilia, Brasil",
+          "lat": -15.79,
+          "lon": -47.88,
+          "etiqueta": "der",
+          "arco": {
+            "lat": 14.6,
+            "lon": 120.98,
+            "nombre": "Manila"
+          },
+          "fecha": "2026-11-15",
+          "hecho": "El domingo 15, en Manila, tras la apertura de la 49ª cumbre de la Asociación de Naciones del Sudeste Asiático (ASEAN), el presidente de Brasil, Luiz Inácio Lula da Silva, dijo que su país busca inversión para explorar e industrializar minerales críticos y tierras raras, que no quiere limitarse a exportar materia prima y que los aranceles de EE.UU. aceleraron la búsqueda de mercados nuevos (Agência Brasil). Brasil, hoy socio de diálogo sectorial del bloque, busca subir a socio de diálogo (\"Queremos ser socios definitivos de la ASEAN\"), y Lula defendió en su discurso acercar el Mercosur al Sudeste Asiático. Según Lula, el comercio de Brasil con la ASEAN fue de USD 38.400 millones en 2025 (TMC); Agência Brasil no informa montos de inversión, empresas ni acuerdos sobre minerales, y el pedido llega diez días después de que Brasil aprobara su lista de 27 minerales críticos y estratégicos.",
+          "lectura": "Brasil ya tiene la lista de 27 minerales y ahora sale a buscar quién ponga el capital para procesarlos en casa. Lula eligió decirlo en Manila, ante un bloque con el que ya comercia USD 38.400 millones y con el Mercosur en el discurso: la condición de industrializar adentro, que hasta acá era un párrafo de política minera, ya es la oferta con la que Brasil se presenta en Asia.",
+          "tendencia": "estable",
+          "intensidad": 1,
+          "corto": "Lula en Asia",
+          "dato": "USD 38.400 millones",
+          "objetivo": "Inversión asiática",
+          "fuente": {
+            "nombre": "Agência Brasil",
+            "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/lula-ve-oportunidades-na-asia-para-explorar-minerais-criticos"
+          },
+          "actualizado": "2026-11-15T22:13"
+        },
+        {
           "n": 9,
           "titulo": "Chile: el gobierno dice que estudia privados en minas de Codelco",
           "lugar": "Santiago / Valparaíso, Chile",
@@ -62,7 +89,8 @@
               "nombre": "The Motley Fool",
               "url": "https://www.fool.com/investing/2026/11/05/china-rare-earth-export-pause-usar-mp-materials/"
             }
-          }
+          },
+          "rotada": "2026-11-15T22:13"
         },
         {
           "n": 2,
