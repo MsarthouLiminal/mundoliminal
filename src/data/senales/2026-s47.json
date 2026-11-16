@@ -229,6 +229,28 @@
       "senales": [
         {
           "n": 8,
+          "titulo": "Yemen: las fuerzas del sur anuncian que se retiran de Bab el-Mandeb",
+          "lugar": "Dhubab (Taiz), Yemen",
+          "lugarMapa": "Bab el-Mandeb, Yemen",
+          "lat": 12.94,
+          "lon": 43.41,
+          "etiqueta": "der",
+          "fecha": "2026-11-15",
+          "hecho": "El domingo 15, las Fuerzas Armadas del Sur, que combaten por el gobierno de Yemen reconocido internacionalmente y respaldado por Arabia Saudita, anunciaron un repliegue desde el aeropuerto de Dhubab y la zona de Bab el-Mandeb, al oeste de la gobernación de Taiz, hacia Adén, \"sobre la base de la prioridad de asegurar la capital, Adén, y las gobernaciones vecinas\". Según Reuters, la retirada deja a los hutíes, aliados de Irán, en control de la zona que domina el estrecho, y la nota no recoge ninguna declaración hutí; el gobierno había lanzado en octubre una campaña para recuperar la costa. Taiz, que sigue sitiada, aloja a cerca de la mitad de las 300.000 personas desplazadas por esta ronda de combates.",
+          "lectura": "El gobierno yemení eligió cuidar Adén y, para hacerlo, soltó la costa que mira al estrecho, la misma que había salido a recuperar en octubre. Con Ormuz trabado por Irán, la orilla yemení de Bab el-Mandeb queda, según Reuters, en manos de sus aliados hutíes: la salida del mar Rojo pasa a estar bajo presión de la misma alianza que ya aprieta la del Golfo.",
+          "tendencia": "escala",
+          "intensidad": 3,
+          "corto": "Bab el-Mandeb",
+          "dato": "300.000 personas desplazadas",
+          "objetivo": "Estrecho",
+          "fuente": {
+            "nombre": "Reuters, vía WHBL",
+            "url": "https://whbl.com/2026/11/15/yemen-government-forces-withdraw-from-area-near-bab-el-mandeb-strait-houthis-in-control/"
+          },
+          "actualizado": "2026-11-16T07:50"
+        },
+        {
+          "n": 9,
           "titulo": "Caso Ueno: la Fiscalía busca congelar fondos del banco en el exterior",
           "lugar": "Asunción, Paraguay",
           "lugarMapa": "Asunción, Paraguay",
@@ -249,7 +271,7 @@
           }
         },
         {
-          "n": 9,
+          "n": 10,
           "titulo": "Ecuador: la CIDH pide investigar el asesinato de dos candidatos",
           "lugar": "Huaquillas, El Oro (Ecuador)",
           "lugarMapa": "Huaquillas, Ecuador",
@@ -281,10 +303,6 @@
           "texto": "El ejército dijo que derribó en Dandro (Nilo Azul) un dron que cruzó desde Etiopía, sin identificar quién lo operaba, y que avanza hacia Al-Khuway, en Kordofán Occidental."
         },
         {
-          "etiqueta": "Yemen, 15 nov",
-          "texto": "Las Fuerzas Armadas del Sur, que combaten por el gobierno reconocido internacionalmente, anunciaron su repliegue desde el aeropuerto de Dhubab y la zona de Bab el-Mandeb hacia Adén; según Reuters, la retirada deja a los hutíes, aliados de Irán, en control de la zona que domina el estrecho, y la nota no recoge ninguna declaración hutí."
-        },
-        {
           "etiqueta": "Gaza, 12 nov",
           "texto": "Seis palestinos murieron en un ataque israelí al hospital Nasser, en Jan Yunis, según Radio Pakistan; el Board of Peace pidió aplicar de inmediato el plan de paz."
         },
@@ -310,14 +328,6 @@
       "lat": 11.79,
       "lon": 34.36,
       "etiqueta": "izq",
-      "eje": "con"
-    },
-    {
-      "nombre": "Yemen",
-      "lugarMapa": "Bab el-Mandeb, Yemen",
-      "lat": 12.94,
-      "lon": 43.41,
-      "etiqueta": "der",
       "eje": "con"
     },
     {
