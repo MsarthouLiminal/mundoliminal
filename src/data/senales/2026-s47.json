@@ -11,6 +11,33 @@
       "alcance": "Tierras raras, cobre, cobalto, litio, uranio. Quién controla el acceso y a qué precio.",
       "senales": [
         {
+          "n": 13,
+          "titulo": "Anwar: Malasia no exporta materia prima, pero con Francia lo hará",
+          "lugar": "Kuala Lumpur / París",
+          "lugarMapa": "Kuala Lumpur, Malasia",
+          "lat": 3.14,
+          "lon": 101.69,
+          "etiqueta": "der",
+          "arco": {
+            "lat": 48.86,
+            "lon": 2.35,
+            "nombre": "París"
+          },
+          "fecha": "2026-11-17",
+          "hecho": "El martes 17, en Kuala Lumpur, el presidente de Francia, Emmanuel Macron, y el primer ministro de Malasia, Anwar Ibrahim, anunciaron que el proyecto de tierras raras de la francesa Carester y la malasia Malaco Mining empezará a operar a comienzos de 2027 y sumará 13.000 toneladas de minerales procesados, entre ellos los que se usan en imanes de alto rendimiento, con la opción de refinar en Francia (AFP). \"No exportamos materias primas. Pero con Francia lo vamos a hacer\", dijo Anwar; en julio, las dos empresas habían anunciado una planta de separación en el estado de Perak, con una sociedad conjunta a 10 años. La nota no informa el monto de la inversión, si las 13.000 toneladas son anuales ni qué volumen iría a Francia.",
+          "lectura": "Anwar dijo en una frase la regla y la excepción: Malasia no exporta materia prima, y con Francia lo va a hacer porque el proyecto procesa en el país antes de embarcar. Es la respuesta práctica a lo que la ASEAN y Lula pidieron el domingo en Manila: el que llega con la planta consigue el mineral, y el que llega solo con la orden de compra se queda con la regla.",
+          "tendencia": "estable",
+          "intensidad": 1,
+          "corto": "Malasia",
+          "dato": "13.000 toneladas",
+          "objetivo": "Tierras raras",
+          "fuente": {
+            "nombre": "AFP, vía Malay Mail",
+            "url": "https://www.malaymail.com/news/malaysia/2026/11/17/france-malaysia-strike-unique-rare-earth-deal-as-defence-ties-deepen/243612"
+          },
+          "actualizado": "2026-11-17T07:16"
+        },
+        {
           "n": 11,
           "titulo": "La ASEAN pacta una política de minerales; Lula pide inversión",
           "lugar": "Manila / Brasilia",
@@ -55,7 +82,8 @@
           "fuente": {
             "nombre": "Servicio Geológico de EE.UU. (USGS)",
             "url": "https://www.usgs.gov/news/national-news-release/usgs-projects-world-production-capacity-8-critical-minerals-2026-2030"
-          }
+          },
+          "rotada": "2026-11-17T07:16"
         },
         {
           "n": 2,
@@ -294,25 +322,35 @@
       "senales": [
         {
           "n": 8,
-          "titulo": "Yemen: las fuerzas del sur anuncian que se retiran de Bab el-Mandeb",
-          "lugar": "Dhubab (Taiz), Yemen",
-          "lugarMapa": "Bab el-Mandeb, Yemen",
-          "lat": 12.94,
-          "lon": 43.41,
+          "titulo": "Yemen: los hutíes avanzan hacia Adén y Riad releva a su comandante",
+          "lugar": "Khor Omairh (Lahj), Yemen",
+          "lugarMapa": "Khor Omairh, Yemen",
+          "lat": 12.65,
+          "lon": 44.12,
           "etiqueta": "der",
-          "fecha": "2026-11-15",
-          "hecho": "El domingo 15, las Fuerzas Armadas del Sur, que combaten por el gobierno de Yemen reconocido internacionalmente y respaldado por Arabia Saudita, anunciaron un repliegue desde el aeropuerto de Dhubab y la zona de Bab el-Mandeb, al oeste de la gobernación de Taiz, hacia Adén, \"sobre la base de la prioridad de asegurar la capital, Adén, y las gobernaciones vecinas\". Según Reuters, la retirada deja a los hutíes, aliados de Irán, en control de la zona que domina el estrecho, y la nota no recoge ninguna declaración hutí; el gobierno había lanzado en octubre una campaña para recuperar la costa. Taiz, que sigue sitiada, aloja a cerca de la mitad de las 300.000 personas desplazadas por esta ronda de combates.",
+          "fecha": "2026-11-16",
+          "hecho": "El lunes 16, los hutíes avanzaron hasta la zona costera de Khor Omairh, a unos 100 kilómetros al oeste de Adén y a 25 kilómetros de las líneas del gobierno en Qawah, según cinco fuentes militares yemeníes; tres fuentes del gobierno dijeron que la prioridad es asegurar Adén y la provincia de Lahj y reorganizarse para recuperar lo perdido, y la nota no recoge declaraciones de los hutíes, de Arabia Saudita ni de EE.UU. (Reuters). Ese día, Arabia Saudita relevó por decreto real al comandante de la coalición que combate a los hutíes, el teniente general Fahd bin Hamad al-Salman, que pasa a ser asesor de asuntos militares del ministro de Defensa, y puso en su lugar al jefe del Estado Mayor, el general Fayyad al-Ruwaili; la agencia oficial SPA no informó el motivo (France 24, con AFP). El repliegue de las Fuerzas Armadas del Sur desde Dhubab y la zona de Bab el-Mandeb hacia Adén se había anunciado el domingo 15.",
           "lectura": "El gobierno yemení eligió cuidar Adén y, para hacerlo, soltó la costa que mira al estrecho, la misma que había salido a recuperar en octubre. Con Ormuz trabado por Irán, la orilla yemení de Bab el-Mandeb queda, según Reuters, en manos de sus aliados hutíes: la salida del mar Rojo pasa a estar bajo presión de la misma alianza que ya aprieta la del Golfo.",
           "tendencia": "escala",
           "intensidad": 3,
-          "corto": "Bab el-Mandeb",
-          "dato": "300.000 personas desplazadas",
-          "objetivo": "Estrecho",
+          "corto": "Adén",
+          "dato": "100 kilómetros",
+          "objetivo": "Capital del sur",
           "fuente": {
-            "nombre": "Reuters, vía WHBL",
-            "url": "https://whbl.com/2026/11/15/yemen-government-forces-withdraw-from-area-near-bab-el-mandeb-strait-houthis-in-control/"
+            "nombre": "Reuters, vía NBC News",
+            "url": "https://www.nbcnews.com/world/yemen/yemen-houthi-rebels-saudi-arabia-backed-forces-retreat-aden-rcna609670"
           },
-          "actualizado": "2026-11-16T07:50"
+          "actualizado": "2026-11-17T07:16",
+          "anterior": {
+            "titulo": "Yemen: las fuerzas del sur anuncian que se retiran de Bab el-Mandeb",
+            "fecha": "2026-11-15",
+            "hecho": "El domingo 15, las Fuerzas Armadas del Sur, que combaten por el gobierno de Yemen reconocido internacionalmente y respaldado por Arabia Saudita, anunciaron un repliegue desde el aeropuerto de Dhubab y la zona de Bab el-Mandeb, al oeste de la gobernación de Taiz, hacia Adén, \"sobre la base de la prioridad de asegurar la capital, Adén, y las gobernaciones vecinas\". Según Reuters, la retirada deja a los hutíes, aliados de Irán, en control de la zona que domina el estrecho, y la nota no recoge ninguna declaración hutí; el gobierno había lanzado en octubre una campaña para recuperar la costa. Taiz, que sigue sitiada, aloja a cerca de la mitad de las 300.000 personas desplazadas por esta ronda de combates.",
+            "lectura": "El gobierno yemení eligió cuidar Adén y, para hacerlo, soltó la costa que mira al estrecho, la misma que había salido a recuperar en octubre. Con Ormuz trabado por Irán, la orilla yemení de Bab el-Mandeb queda, según Reuters, en manos de sus aliados hutíes: la salida del mar Rojo pasa a estar bajo presión de la misma alianza que ya aprieta la del Golfo.",
+            "fuente": {
+              "nombre": "Reuters, vía WHBL",
+              "url": "https://whbl.com/2026/11/15/yemen-government-forces-withdraw-from-area-near-bab-el-mandeb-strait-houthis-in-control/"
+            }
+          }
         },
         {
           "n": 9,
