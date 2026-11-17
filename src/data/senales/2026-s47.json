@@ -132,14 +132,14 @@
       "senales": [
         {
           "n": 3,
-          "titulo": "Ormuz: UKMTO registra un petrolero alcanzado; Irán dice que minó",
-          "lugar": "Estrecho de Ormuz / Bahréin",
+          "titulo": "Ormuz: atacan dos veces a un gasero; India reporta un desaparecido",
+          "lugar": "Estrecho de Ormuz / Khasab (Omán)",
           "lugarMapa": "Estrecho de Ormuz",
           "lat": 26.6,
           "lon": 56.5,
           "etiqueta": "der",
-          "fecha": "2026-11-16",
-          "hecho": "El lunes 16, la agencia marítima británica UKMTO informó que un petrolero fue alcanzado por un proyectil no identificado cuando salía del Golfo por el estrecho de Ormuz, con un incendio en la sala de máquinas y sin heridos (Reuters). Ese día, la Armada de la Guardia Revolucionaria iraní dijo que las minas dañaron seis petroleros desde el domingo 15 y que la ruta que protege EE.UU. sigue siendo peligrosa; es una declaración iraní, sin banderas de los buques ni confirmación independiente, y el parte de UKMTO habla de un proyectil, sin mencionar minas (Associated Press). El informe semanal de UKMTO del viernes 13 daba un tránsito por el estrecho 65% por debajo del nivel previo a la guerra, con 163 incidentes marítimos desde el 28 de febrero.",
+          "fecha": "2026-11-17",
+          "hecho": "El martes 17, la agencia marítima británica UKMTO informó que el buque atacado el lunes 16 a unas siete millas náuticas al norte de Khasab (Omán) recibió un segundo impacto, con fuego a bordo, y que la tripulación estaba sin localizar; el aviso no identifica el buque ni al responsable (Anadolu). La Cancillería de India lo identificó como el gasero MT Tara Gas, de bandera panameña, condenó el ataque y dijo que, de sus 24 tripulantes indios, 21 fueron evacuados a Khasab, dos están hospitalizados y uno sigue desaparecido (ANI); el segundo impacto llegó casi 12 horas después del primero y obligó a abandonar el buque (Riviera Maritime Media). Es el segundo buque alcanzado en Ormuz desde el lunes 16, después del petrolero con incendio en la sala de máquinas y sin heridos que UKMTO registró esa mañana; la Guardia Revolucionaria iraní atribuye los incendios a minas en una ruta no autorizada, sin confirmación independiente, y el informe semanal de UKMTO del viernes 13 daba un tránsito por el estrecho 65% por debajo del nivel previo a la guerra.",
           "lectura": "La semana se contó en anuncios: un radar que Irán dice haber destruido y Washington niega, petroleros que chocan con minas sin confirmación independiente. UKMTO le puso número a lo que hay debajo: por Ormuz pasa cerca de un tercio del tráfico de antes de la guerra, ocho meses y medio después de que empezó, con más de un incidente por día. Para el Cono Sur, que compra gasoil y contrata fletes a precio mundial, esa cifra pesa más que cualquier comunicado. El jueves 19, en Shenzhen, Donald Trump se reúne con Xi Jinping y Vladimir Putin, y la Casa Blanca dijo que Irán está en la agenda.",
           "tendencia": "escala",
           "intensidad": 3,
@@ -147,10 +147,10 @@
           "dato": "65% por debajo",
           "objetivo": "Estrecho",
           "fuente": {
-            "nombre": "Reuters, vía Arab News",
-            "url": "https://www.arabnews.com/middle-east/british-authority-tanker-targeted-by-unknown-projectile-in-strait-of-hormuz-fire-erupts-3012196"
+            "nombre": "Riviera Maritime Media",
+            "url": "https://www.rivieramm.com/news-content-hub/seafarer-missing-after-lpg-carrier-hit-twice-and-crew-forced-to-abandon-ship-in-hormuz-90604"
           },
-          "actualizado": "2026-11-16T13:13",
+          "actualizado": "2026-11-17T13:16",
           "anterior": {
             "titulo": "Ormuz opera 65% por debajo de la preguerra, según UKMTO",
             "fecha": "2026-11-13",
