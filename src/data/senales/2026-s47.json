@@ -132,25 +132,25 @@
       "senales": [
         {
           "n": 3,
-          "titulo": "Ormuz: atacan dos veces a un gasero; India reporta un desaparecido",
-          "lugar": "Estrecho de Ormuz / Khasab (Omán)",
+          "titulo": "Ormuz: atacan un buque de ADNOC e Irán lanza drones contra Kuwait",
+          "lugar": "Estrecho de Ormuz / Kuwait",
           "lugarMapa": "Estrecho de Ormuz",
           "lat": 26.6,
           "lon": 56.5,
           "etiqueta": "der",
-          "fecha": "2026-11-17",
-          "hecho": "El martes 17, la agencia marítima británica UKMTO informó que el buque atacado el lunes 16 a unas siete millas náuticas al norte de Khasab (Omán) recibió un segundo impacto, con fuego a bordo, y que la tripulación estaba sin localizar; el aviso no identifica el buque ni al responsable (Anadolu). La Cancillería de India lo identificó como el gasero MT Tara Gas, de bandera panameña, condenó el ataque y dijo que, de sus 24 tripulantes indios, 21 fueron evacuados a Khasab, dos están hospitalizados y uno sigue desaparecido (ANI); el segundo impacto llegó casi 12 horas después del primero y obligó a abandonar el buque (Riviera Maritime Media). Es el segundo buque alcanzado en Ormuz desde el lunes 16, después del petrolero con incendio en la sala de máquinas y sin heridos que UKMTO registró esa mañana; la Guardia Revolucionaria iraní atribuye los incendios a minas en una ruta no autorizada, sin confirmación independiente, y el informe semanal de UKMTO del viernes 13 daba un tránsito por el estrecho 65% por debajo del nivel previo a la guerra.",
+          "fecha": "2026-11-18",
+          "hecho": "El miércoles 18, la emiratí ADNOC Logistics & Services informó que uno de sus buques fue atacado el martes 17 a la noche mientras cruzaba el estrecho de Ormuz, con un tripulante desaparecido y 11 heridos; la empresa no identificó el buque y la nota no atribuye el ataque (The National). Ese martes, cazas de EE.UU. atacaron un sitio de lanzamiento de misiles de la Guardia Revolucionaria en la isla iraní de Qeshm, según un funcionario militar estadounidense que habló sin dar su nombre, y en la madrugada del miércoles el ejército iraní dijo que atacó con drones instalaciones de EE.UU. en la base kuwaití de Ali Al Salem, en el primer ataque iraní a Kuwait desde setiembre, mientras Kuwait y Bahréin informaron intercepciones (Reuters). El gasero Tara Gas, alcanzado dos veces entre el lunes 16 y el martes 17 frente a Khasab (Omán), fue abandonado con un tripulante indio desaparecido, y el informe semanal de la agencia marítima británica UKMTO del viernes 13 daba un tránsito por el estrecho 65% por debajo del nivel previo a la guerra.",
           "lectura": "La semana se contó en anuncios: un radar que Irán dice haber destruido y Washington niega, petroleros que chocan con minas sin confirmación independiente. UKMTO le puso número a lo que hay debajo: por Ormuz pasa cerca de un tercio del tráfico de antes de la guerra, ocho meses y medio después de que empezó, con más de un incidente por día. Para el Cono Sur, que compra gasoil y contrata fletes a precio mundial, esa cifra pesa más que cualquier comunicado. El jueves 19, en Shenzhen, Donald Trump se reúne con Xi Jinping y Vladimir Putin, y la Casa Blanca dijo que Irán está en la agenda.",
           "tendencia": "escala",
           "intensidad": 3,
           "corto": "Ormuz",
-          "dato": "65% por debajo",
+          "dato": "11 heridos",
           "objetivo": "Estrecho",
           "fuente": {
-            "nombre": "Riviera Maritime Media",
-            "url": "https://www.rivieramm.com/news-content-hub/seafarer-missing-after-lpg-carrier-hit-twice-and-crew-forced-to-abandon-ship-in-hormuz-90604"
+            "nombre": "The National",
+            "url": "https://www.thenationalnews.com/business/energy/2026/11/18/adnoc-ls-ship-attacked-at-strait-of-hormuz-with-one-crew-member-missing/"
           },
-          "actualizado": "2026-11-17T13:16",
+          "actualizado": "2026-11-18T07:25",
           "anterior": {
             "titulo": "Ormuz opera 65% por debajo de la preguerra, según UKMTO",
             "fecha": "2026-11-13",
@@ -225,8 +225,8 @@
       "senales": [
         {
           "n": 12,
-          "titulo": "EE.UU. exige licencia para exportar chips avanzados de IA a Brasil",
-          "lugar": "Washington / Brasilia",
+          "titulo": "Chips: Brasil evalúa el impacto y Malasia acata la regla de EE.UU.",
+          "lugar": "Washington / Brasilia / Kuala Lumpur",
           "lugarMapa": "Washington, EE.UU.",
           "lat": 38.9,
           "lon": -77.04,
@@ -236,8 +236,8 @@
             "lon": -47.88,
             "nombre": "Brasilia"
           },
-          "fecha": "2026-11-16",
-          "hecho": "El lunes 16, el Departamento de Comercio de EE.UU. difundió una regla final interina que exige licencia para exportar, reexportar o transferir semiconductores avanzados a Indonesia, Malasia, Singapur, Tailandia y Brasil, países que, según el texto, presentan un riesgo de desvío más alto que el normal; quedan exceptuados los chips destinados a empresas con casa matriz en EE.UU., si cumplen requisitos de reporte (Departamento de Comercio). La regla alcanza también a los data centers de cualquier país que den acceso a más de 12.000.000 de TPP agregado, la medida de capacidad de cómputo que usa la norma, a empresas con casa matriz en Macao o en el grupo de países D:5, que incluye a China: los que ya prestan ese servicio tienen 90 días para pedir licencia. Rige desde su publicación en el Registro Federal, que el texto difundido todavía no fecha, y deroga formalmente la regla de difusión de IA del gobierno de Joe Biden.",
+          "fecha": "2026-11-17",
+          "hecho": "El martes 17, el gobierno de Brasil seguía evaluando el impacto de la regla de chips que el Departamento de Comercio de EE.UU. difundió el lunes 16, con el análisis a cargo de los ministros de Industria, Márcio Elias Rosa, y de Gestión e Innovación, Esther Dweck; Brasil es el único país de América Latina en la lista (Folhapress). Ese día, el ministro de Comercio de Malasia, Johari Abdul Ghani, dijo que no prevé conversaciones con Washington y que los data centers tienen que cumplir, mientras las acciones de las malasias YTL Power y MN Holdings caían cerca de 10% y cerca de 20% (Reuters); el vocero de la Cancillería china, Guo Jiakun, llamó a la regla \"coerción económica típica\" y dijo que China tomará las medidas necesarias para defender sus derechos (Xinhua). La regla exige licencia para exportar semiconductores avanzados a Indonesia, Malasia, Singapur, Tailandia y Brasil, países que según el texto presentan un riesgo de desvío más alto que el normal, exceptúa los chips destinados a empresas con casa matriz en EE.UU. y da 90 días para pedir licencia a los data centers que ya dan acceso a gran capacidad de cómputo a empresas con casa matriz en China; rige desde su publicación en el Registro Federal.",
           "lectura": "Brasil quedó en la misma lista que Singapur y Malasia: cinco países donde Washington ve un riesgo de desvío de chips más alto que el normal. Para un data center en territorio brasileño, la cuenta suma un trámite a la energía y el agua, porque sin casa matriz en EE.UU. cada chip avanzado necesita una licencia que se decide en Washington.",
           "tendencia": "escala",
           "intensidad": 2,
@@ -245,10 +245,10 @@
           "dato": "90 días",
           "objetivo": "Control de exportación",
           "fuente": {
-            "nombre": "Departamento de Comercio de EE.UU. (BIS)",
-            "url": "https://www.bis.gov/media/documents/rin-0694-ak50.pdf"
+            "nombre": "Folhapress, vía Jornal de Brasília",
+            "url": "https://jornaldebrasilia.com.br/noticias/tecnologia-e-inovacao/governo-lula-avalia-impacto-de-restricao-dos-eua-a-importacao-de-chips-de-ia/"
           },
-          "actualizado": "2026-11-16T13:13"
+          "actualizado": "2026-11-18T07:25"
         },
         {
           "n": 6,
