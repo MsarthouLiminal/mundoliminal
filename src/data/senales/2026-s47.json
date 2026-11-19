@@ -270,7 +270,7 @@
         },
         {
           "n": 12,
-          "titulo": "Chips: Brasil evalúa el impacto y Malasia acata la regla de EE.UU.",
+          "titulo": "Chips: la regla de EE.UU. ya rige para Brasil y otros cuatro países",
           "lugar": "Washington / Brasilia / Kuala Lumpur",
           "lugarMapa": "Washington, EE.UU.",
           "lat": 38.9,
@@ -281,8 +281,8 @@
             "lon": -47.88,
             "nombre": "Brasilia"
           },
-          "fecha": "2026-11-17",
-          "hecho": "El martes 17, el gobierno de Brasil seguía evaluando el impacto de la regla de chips que el Departamento de Comercio de EE.UU. difundió el lunes 16, con el análisis a cargo de los ministros de Industria, Márcio Elias Rosa, y de Gestión e Innovación, Esther Dweck; Brasil es el único país de América Latina en la lista (Folhapress). Ese día, el ministro de Comercio de Malasia, Johari Abdul Ghani, dijo que no prevé conversaciones con Washington y que los data centers tienen que cumplir, mientras las acciones de las malasias YTL Power y MN Holdings caían cerca de 10% y cerca de 20% (Reuters); el vocero de la Cancillería china, Guo Jiakun, llamó a la regla \"coerción económica típica\" y dijo que China tomará las medidas necesarias para defender sus derechos (Xinhua). La regla exige licencia para exportar semiconductores avanzados a Indonesia, Malasia, Singapur, Tailandia y Brasil, países que según el texto presentan un riesgo de desvío más alto que el normal, exceptúa los chips destinados a empresas con casa matriz en EE.UU. y da 90 días para pedir licencia a los data centers que ya dan acceso a gran capacidad de cómputo a empresas con casa matriz en China; rige desde su publicación en el Registro Federal.",
+          "fecha": "2026-11-19",
+          "hecho": "El jueves 19, el Registro Federal de EE.UU. publicó la regla de chips que el Departamento de Comercio había difundido el lunes 16, una norma provisional final de su Oficina de Industria y Seguridad (BIS) que rige desde ese mismo día (91 FR 74970). Exige licencia para exportar semiconductores avanzados a Indonesia, Malasia, Singapur, Tailandia y Brasil, el único país de América Latina en la lista, exceptúa los chips destinados a empresas con casa matriz en EE.UU., da 90 días para pedir licencia a los data centers que ya dan acceso a gran capacidad de cómputo a empresas con casa matriz en China y deroga formalmente la regla de difusión de IA de enero de 2025. El martes 17, el gobierno de Brasil seguía evaluando el impacto, con el análisis a cargo de los ministros de Industria, Márcio Elias Rosa, y de Gestión e Innovación, Esther Dweck (Folhapress), y el ministro de Comercio de Malasia, Johari Abdul Ghani, dijo que no prevé conversaciones con Washington y que los data centers tienen que cumplir (Reuters).",
           "lectura": "Brasil quedó en la misma lista que Singapur y Malasia: cinco países donde Washington ve un riesgo de desvío de chips más alto que el normal. Para un data center en territorio brasileño, la cuenta suma un trámite a la energía y el agua, porque sin casa matriz en EE.UU. cada chip avanzado necesita una licencia que se decide en Washington.",
           "tendencia": "escala",
           "intensidad": 2,
@@ -290,10 +290,10 @@
           "dato": "90 días",
           "objetivo": "Control de exportación",
           "fuente": {
-            "nombre": "Folhapress, vía Jornal de Brasília",
-            "url": "https://jornaldebrasilia.com.br/noticias/tecnologia-e-inovacao/governo-lula-avalia-impacto-de-restricao-dos-eua-a-importacao-de-chips-de-ia/"
+            "nombre": "Registro Federal de EE.UU.",
+            "url": "https://www.federalregister.gov/documents/2026/11/19/2026-23529/addressing-remote-access-to-advanced-semiconductors"
           },
-          "actualizado": "2026-11-18T07:25"
+          "actualizado": "2026-11-19T14:32"
         },
         {
           "n": 6,
