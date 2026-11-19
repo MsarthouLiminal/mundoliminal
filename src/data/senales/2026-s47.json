@@ -11,6 +11,28 @@
       "alcance": "Tierras raras, cobre, cobalto, litio, uranio. Quién controla el acceso y a qué precio.",
       "senales": [
         {
+          "n": 15,
+          "titulo": "Brasil: el decreto que filtra negocios mineros sale en 2026, dice AMC",
+          "lugar": "Brasilia",
+          "lugarMapa": "Brasilia, Brasil",
+          "lat": -15.79,
+          "lon": -47.88,
+          "etiqueta": "der",
+          "fecha": "2026-11-18",
+          "hecho": "El miércoles 18, Frederico Bedran, director ejecutivo de la Asociación de Minerales Críticos (AMC) de Brasil, dijo que el gobierno ya señaló que publicará antes de fin de año el decreto que reglamenta el control de inversiones y operaciones con minerales críticos y estratégicos; el gobierno no informó una fecha (CNN Brasil). La ley 15.506, promulgada en setiembre, creó un consejo que depende de la Presidencia (CIMCE) y que debe revisar cambios de control societario, determinados contratos internacionales de suministro y transacciones con derechos mineros; el 5 de noviembre ese consejo aprobó una lista de 27 minerales, con tierras raras, litio, níquel, cobalto, cobre y uranio en la clase de mayor prioridad. Bedran dijo que, sin criterios técnicos, el consejo podría recibir cerca de 5.000 transacciones, que la indefinición inquieta a las empresas que dependen de capital extranjero y que la AMC mira con cautela que las aprobaciones se aten a compromisos de procesar en el país.",
+          "lectura": "La ley le dio a un consejo de la Presidencia la llave de los cambios de dueño y de determinados contratos de suministro en 27 minerales, y dos meses después falta el decreto que diga qué trámite abre esa puerta. Quien avisa es parte interesada, la asociación de las empresas, pero el número que trae pesa igual: con cerca de 5.000 operaciones posibles y sin reglas, el filtro pensado para elegir socios puede terminar funcionando como una fila.",
+          "tendencia": "estable",
+          "intensidad": 1,
+          "corto": "Brasil",
+          "dato": "27 minerales",
+          "objetivo": "Control de inversiones",
+          "fuente": {
+            "nombre": "CNN Brasil",
+            "url": "https://www.cnnbrasil.com.br/infra/governo-sinaliza-decreto-para-triagem-de-minerais-criticos-em-2026-diz-amc/"
+          },
+          "actualizado": "2026-11-19T07:21"
+        },
+        {
           "n": 13,
           "titulo": "Anwar: Malasia no exporta materia prima, pero con Francia lo hará",
           "lugar": "Kuala Lumpur / París",
@@ -61,7 +83,8 @@
             "nombre": "ANTARA",
             "url": "https://en.antaranews.com/news/443087/asean-agrees-to-develop-sustainable-critical-minerals-hub"
           },
-          "actualizado": "2026-11-16T13:13"
+          "actualizado": "2026-11-16T13:13",
+          "rotada": "2026-11-19T07:21"
         },
         {
           "n": 1,
@@ -224,6 +247,28 @@
       "alcance": "Data centers, chips, energía y agua. El cuerpo físico de la IA y quién lo decide.",
       "senales": [
         {
+          "n": 16,
+          "titulo": "Alberta propone 600 metros entre los data centers y las viviendas",
+          "lugar": "Edmonton, Canadá",
+          "lugarMapa": "Edmonton, Canadá",
+          "lat": 53.55,
+          "lon": -113.49,
+          "etiqueta": "izq",
+          "fecha": "2026-11-18",
+          "hecho": "El miércoles 18, el gobierno de la provincia canadiense de Alberta presentó el proyecto de ley 42, que prohíbe construir data centers de 10 megavatios o más a menos de 600 metros de la vivienda más cercana, en tierras bajo riego y en las tierras agrícolas de mejor calidad, unos 14 millones de acres; todavía tiene que aprobarlo la legislatura. El proyecto prevé una norma provincial para que el uso de agua de enfriamiento sea casi nulo, sin cifra por ahora, obliga a diseñar los edificios para recuperar el calor sobrante, eleva a 6 millones de dólares canadienses la multa máxima a empresas por contaminación grave y crea una designación que hace pagar a cada proyecto su propia infraestructura eléctrica, sin trasladar el costo a los usuarios. El martes 17, en EE.UU., el concejo de San José (California) frenó por unanimidad las aprobaciones de uso del suelo para data centers, con 12 proyectos en revisión (San José Spotlight), y el regulador ambiental de Texas informó que volvió a tramitar los permisos que el gobernador saliente, Greg Abbott, había mandado pausar en setiembre (The Texas Tribune).",
+          "lectura": "Alberta le puso números a la discusión: 10 megavatios, 600 metros, agua de enfriamiento casi nula y la red eléctrica a cuenta del que construye. En la misma semana San José frenó sus aprobaciones y Texas reabrió la ventanilla, y entre un extremo y el otro queda una lista de condiciones que cualquier gobierno puede copiar antes de recibir el primer pedido.",
+          "tendencia": "escala",
+          "intensidad": 1,
+          "corto": "Alberta",
+          "dato": "600 metros",
+          "objetivo": "Reglas de localización",
+          "fuente": {
+            "nombre": "Gobierno de Alberta",
+            "url": "https://www.alberta.ca/release.cfm?xID=981575A97E76E-B93C-5D78-1B86AFC4364E2200"
+          },
+          "actualizado": "2026-11-19T07:21"
+        },
+        {
           "n": 12,
           "titulo": "Chips: Brasil evalúa el impacto y Malasia acata la regla de EE.UU.",
           "lugar": "Washington / Brasilia / Kuala Lumpur",
@@ -269,7 +314,8 @@
           "fuente": {
             "nombre": "FOX 9",
             "url": "https://www.fox9.com/news/minneapolis-city-council-approves-data-center-ordinance-fails-pass-full-ban"
-          }
+          },
+          "rotada": "2026-11-19T07:21"
         },
         {
           "n": 7,
@@ -321,6 +367,43 @@
       "alcance": "Guerras activas, cambios de fase y lo que derraman sobre la región.",
       "senales": [
         {
+          "n": 8,
+          "titulo": "Riad: un misil hutí daña la torre del fondo soberano, según Reuters",
+          "lugar": "Riad / Adén",
+          "lugarMapa": "Riad, Arabia Saudita",
+          "lat": 24.71,
+          "lon": 46.68,
+          "etiqueta": "izq",
+          "fecha": "2026-11-19",
+          "hecho": "El jueves 19, un misil lanzado por los hutíes dañó en Riad el rascacielos del distrito financiero Rey Abdalá donde tiene sus oficinas el fondo soberano saudita PIF, según tres personas al tanto del hecho; la coalición que encabeza Arabia Saudita dijo que hizo frente a un misil hutí dirigido a la capital y que los restos causaron daños materiales todavía en evaluación, y los hutíes no se atribuyeron el ataque (Reuters). El miércoles 18, dos funcionarios occidentales informados por Riad dijeron que el reino se prepara para una campaña de hasta seis meses, con el objetivo de que sus aliados yemeníes ganen terreno antes de negociar, y que EE.UU. no dio hasta ahora el apoyo ofensivo que Riad espera (Reuters). Es el segundo edificio saudita dañado en el mes, después del de Aramco el domingo 8, y llega tras el repliegue de las fuerzas del gobierno yemení desde la zona de Bab el-Mandeb, anunciado el domingo 15, y el avance hutí del lunes 16 hasta Khor Omairh, a unos 100 kilómetros al oeste de Adén.",
+          "lectura": "El gobierno yemení eligió cuidar Adén y, para hacerlo, soltó la costa que mira al estrecho, la misma que había salido a recuperar en octubre. Con Ormuz trabado por Irán, la orilla yemení de Bab el-Mandeb queda, según Reuters, en manos de sus aliados hutíes: la salida del mar Rojo pasa a estar bajo presión de la misma alianza que ya aprieta la del Golfo.",
+          "tendencia": "escala",
+          "intensidad": 3,
+          "corto": "Riad",
+          "dato": "seis meses",
+          "objetivo": "Capital saudita",
+          "fuente": {
+            "nombre": "Reuters, vía The Korea Times",
+            "url": "https://www.koreatimes.co.kr/world/20261119/riyadh-skyscraper-housing-saudi-wealth-fund-damaged-in-houthi-strike-sources-say"
+          },
+          "actualizado": "2026-11-19T07:21",
+          "anterior": {
+            "titulo": "Yemen: las fuerzas del sur anuncian que se retiran de Bab el-Mandeb",
+            "fecha": "2026-11-15",
+            "hecho": "El domingo 15, las Fuerzas Armadas del Sur, que combaten por el gobierno de Yemen reconocido internacionalmente y respaldado por Arabia Saudita, anunciaron un repliegue desde el aeropuerto de Dhubab y la zona de Bab el-Mandeb, al oeste de la gobernación de Taiz, hacia Adén, \"sobre la base de la prioridad de asegurar la capital, Adén, y las gobernaciones vecinas\". Según Reuters, la retirada deja a los hutíes, aliados de Irán, en control de la zona que domina el estrecho, y la nota no recoge ninguna declaración hutí; el gobierno había lanzado en octubre una campaña para recuperar la costa. Taiz, que sigue sitiada, aloja a cerca de la mitad de las 300.000 personas desplazadas por esta ronda de combates.",
+            "lectura": "El gobierno yemení eligió cuidar Adén y, para hacerlo, soltó la costa que mira al estrecho, la misma que había salido a recuperar en octubre. Con Ormuz trabado por Irán, la orilla yemení de Bab el-Mandeb queda, según Reuters, en manos de sus aliados hutíes: la salida del mar Rojo pasa a estar bajo presión de la misma alianza que ya aprieta la del Golfo.",
+            "fuente": {
+              "nombre": "Reuters, vía WHBL",
+              "url": "https://whbl.com/2026/11/15/yemen-government-forces-withdraw-from-area-near-bab-el-mandeb-strait-houthis-in-control/"
+            }
+          },
+          "arco": {
+            "lat": 12.79,
+            "lon": 45.02,
+            "nombre": "Adén"
+          }
+        },
+        {
           "n": 14,
           "titulo": "Ucrania derriba un tramo del puente de Crimea; Rusia ataca los de Kiev",
           "lugar": "Estrecho de Kerch / Kiev",
@@ -340,40 +423,7 @@
             "nombre": "NBC News",
             "url": "https://www.nbcnews.com/world/russia/kerch-bridge-strikes-putin-crimea-ukraine-russia-war-kyiv-rcna609756"
           },
-          "actualizado": "2026-11-17T22:13",
-          "ultimoMomento": true
-        },
-        {
-          "n": 8,
-          "titulo": "Yemen: los hutíes avanzan hacia Adén y Riad releva a su comandante",
-          "lugar": "Khor Omairh (Lahj), Yemen",
-          "lugarMapa": "Khor Omairh, Yemen",
-          "lat": 12.65,
-          "lon": 44.12,
-          "etiqueta": "der",
-          "fecha": "2026-11-16",
-          "hecho": "El lunes 16, los hutíes avanzaron hasta la zona costera de Khor Omairh, a unos 100 kilómetros al oeste de Adén y a 25 kilómetros de las líneas del gobierno en Qawah, según cinco fuentes militares yemeníes; tres fuentes del gobierno dijeron que la prioridad es asegurar Adén y la provincia de Lahj y reorganizarse para recuperar lo perdido, y la nota no recoge declaraciones de los hutíes, de Arabia Saudita ni de EE.UU. (Reuters). Ese día, Arabia Saudita relevó por decreto real al comandante de la coalición que combate a los hutíes, el teniente general Fahd bin Hamad al-Salman, que pasa a ser asesor de asuntos militares del ministro de Defensa, y puso en su lugar al jefe del Estado Mayor, el general Fayyad al-Ruwaili; la agencia oficial SPA no informó el motivo (France 24, con AFP). El repliegue de las Fuerzas Armadas del Sur desde Dhubab y la zona de Bab el-Mandeb hacia Adén se había anunciado el domingo 15.",
-          "lectura": "El gobierno yemení eligió cuidar Adén y, para hacerlo, soltó la costa que mira al estrecho, la misma que había salido a recuperar en octubre. Con Ormuz trabado por Irán, la orilla yemení de Bab el-Mandeb queda, según Reuters, en manos de sus aliados hutíes: la salida del mar Rojo pasa a estar bajo presión de la misma alianza que ya aprieta la del Golfo.",
-          "tendencia": "escala",
-          "intensidad": 3,
-          "corto": "Adén",
-          "dato": "100 kilómetros",
-          "objetivo": "Capital del sur",
-          "fuente": {
-            "nombre": "Reuters, vía NBC News",
-            "url": "https://www.nbcnews.com/world/yemen/yemen-houthi-rebels-saudi-arabia-backed-forces-retreat-aden-rcna609670"
-          },
-          "actualizado": "2026-11-17T07:16",
-          "anterior": {
-            "titulo": "Yemen: las fuerzas del sur anuncian que se retiran de Bab el-Mandeb",
-            "fecha": "2026-11-15",
-            "hecho": "El domingo 15, las Fuerzas Armadas del Sur, que combaten por el gobierno de Yemen reconocido internacionalmente y respaldado por Arabia Saudita, anunciaron un repliegue desde el aeropuerto de Dhubab y la zona de Bab el-Mandeb, al oeste de la gobernación de Taiz, hacia Adén, \"sobre la base de la prioridad de asegurar la capital, Adén, y las gobernaciones vecinas\". Según Reuters, la retirada deja a los hutíes, aliados de Irán, en control de la zona que domina el estrecho, y la nota no recoge ninguna declaración hutí; el gobierno había lanzado en octubre una campaña para recuperar la costa. Taiz, que sigue sitiada, aloja a cerca de la mitad de las 300.000 personas desplazadas por esta ronda de combates.",
-            "lectura": "El gobierno yemení eligió cuidar Adén y, para hacerlo, soltó la costa que mira al estrecho, la misma que había salido a recuperar en octubre. Con Ormuz trabado por Irán, la orilla yemení de Bab el-Mandeb queda, según Reuters, en manos de sus aliados hutíes: la salida del mar Rojo pasa a estar bajo presión de la misma alianza que ya aprieta la del Golfo.",
-            "fuente": {
-              "nombre": "Reuters, vía WHBL",
-              "url": "https://whbl.com/2026/11/15/yemen-government-forces-withdraw-from-area-near-bab-el-mandeb-strait-houthis-in-control/"
-            }
-          }
+          "actualizado": "2026-11-17T22:13"
         },
         {
           "n": 9,
