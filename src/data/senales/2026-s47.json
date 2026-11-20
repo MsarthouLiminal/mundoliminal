@@ -402,25 +402,25 @@
       "senales": [
         {
           "n": 8,
-          "titulo": "Riad: un misil hutí daña la torre del fondo soberano, según Reuters",
-          "lugar": "Riad / Adén",
-          "lugarMapa": "Riad, Arabia Saudita",
-          "lat": 24.71,
-          "lon": 46.68,
+          "titulo": "Riad ataca el puerto de Hodeida y los hutíes amenazan el de Yeda",
+          "lugar": "Hodeida / Yeda",
+          "lugarMapa": "Hodeida, Yemen",
+          "lat": 14.8,
+          "lon": 42.95,
           "etiqueta": "izq",
-          "fecha": "2026-11-19",
-          "hecho": "El jueves 19, un misil lanzado por los hutíes dañó en Riad el rascacielos del distrito financiero Rey Abdalá donde tiene sus oficinas el fondo soberano saudita PIF, según tres personas al tanto del hecho; la coalición que encabeza Arabia Saudita dijo que hizo frente a un misil hutí dirigido a la capital y que los restos causaron daños materiales todavía en evaluación, y los hutíes no se atribuyeron el ataque (Reuters). El miércoles 18, dos funcionarios occidentales informados por Riad dijeron que el reino se prepara para una campaña de hasta seis meses, con el objetivo de que sus aliados yemeníes ganen terreno antes de negociar, y que EE.UU. no dio hasta ahora el apoyo ofensivo que Riad espera (Reuters). Es el segundo edificio saudita dañado en el mes, después del de Aramco el domingo 8, y llega tras el repliegue de las fuerzas del gobierno yemení desde la zona de Bab el-Mandeb, anunciado el domingo 15, y el avance hutí del lunes 16 hasta Khor Omairh, a unos 100 kilómetros al oeste de Adén.",
-          "lectura": "El gobierno yemení eligió cuidar Adén y, para hacerlo, soltó la costa que mira al estrecho, la misma que había salido a recuperar en octubre. Con Ormuz trabado por Irán, la orilla yemení de Bab el-Mandeb queda, según Reuters, en manos de sus aliados hutíes: la salida del mar Rojo pasa a estar bajo presión de la misma alianza que ya aprieta la del Golfo.",
+          "fecha": "2026-11-20",
+          "hecho": "El viernes 20, la coalición que encabeza Arabia Saudita anunció una \"operación especial\" contra los hutíes y atacó el puerto de Hodeida, sobre el mar Rojo, después de pedir a civiles y trabajadores que lo evacuaran; su vocero, Turki al-Malki, dijo que golpeó instalaciones usadas para contrabandear armas y misiles balísticos, que al amanecer destruyó 7 blancos militares en Saná (The National) y que la operación sigue en Saná, Saada y Taiz. Los hutíes, que habían advertido que Yeda y otros puertos sauditas del mar Rojo serían blanco si se atacaba Hodeida, pidieron por correo a las navieras que evacuaran el puerto de Yeda, declararon inseguro el espacio aéreo saudita, salvo el de La Meca y Medina, y dijeron que alcanzaron la central eléctrica de al-Shuqaiq y el puerto de Jazan; la coalición informó dos misiles balísticos interceptados sobre Jazan, con restos caídos en al-Shuqaiq, y la AFP no registra vuelos cancelados. Llega un día después de que un misil hutí dañara en Riad el rascacielos donde tiene sus oficinas el fondo soberano PIF, según Reuters, y a cinco días del repliegue de las fuerzas del gobierno yemení desde la zona de Bab el-Mandeb, con cifras que la AFP no pudo verificar: los hutíes cuentan 41 muertos por ataques de la coalición en 24 horas y otros 19 en un barco civil.",
+          "lectura": "Riad pasó de interceptar misiles a golpear el puerto por donde, según su coalición, entran: Hodeida, sobre el mar Rojo. La respuesta hutí apunta a Yeda y al espacio aéreo saudita, así que la guerra que ayer se medía en un rascacielos dañado en Riad hoy se mide en puertos, y con la orilla yemení de Bab el-Mandeb ya cedida, los dos lados del mar Rojo quedan adentro del conflicto.",
           "tendencia": "escala",
           "intensidad": 3,
-          "corto": "Riad",
-          "dato": "seis meses",
-          "objetivo": "Capital saudita",
+          "corto": "Hodeida",
+          "dato": "7 blancos militares",
+          "objetivo": "Puerto del mar Rojo",
           "fuente": {
-            "nombre": "Reuters, vía The Korea Times",
-            "url": "https://www.koreatimes.co.kr/world/20261119/riyadh-skyscraper-housing-saudi-wealth-fund-damaged-in-houthi-strike-sources-say"
+            "nombre": "AFP, vía France 24",
+            "url": "https://www.france24.com/en/live-news/20261120-saudi-coalition-launches-special-operation-yemen-s-houthis-vow-reprisals"
           },
-          "actualizado": "2026-11-19T07:21",
+          "actualizado": "2026-11-20T19:10",
           "anterior": {
             "titulo": "Yemen: las fuerzas del sur anuncian que se retiran de Bab el-Mandeb",
             "fecha": "2026-11-15",
@@ -432,9 +432,9 @@
             }
           },
           "arco": {
-            "lat": 12.79,
-            "lon": 45.02,
-            "nombre": "Adén"
+            "lat": 21.49,
+            "lon": 39.19,
+            "nombre": "Yeda"
           }
         },
         {
