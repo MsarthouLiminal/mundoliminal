@@ -405,25 +405,25 @@
         },
         {
           "n": 14,
-          "titulo": "Ucrania derriba un tramo del puente de Crimea; Rusia ataca los de Kiev",
+          "titulo": "Putin dice que no negocia tras el puente de Crimea; misiles sobre Kiev",
           "lugar": "Estrecho de Kerch / Kiev",
           "lugarMapa": "Estrecho de Kerch",
           "lat": 45.3,
           "lon": 36.51,
           "etiqueta": "der",
-          "fecha": "2026-11-17",
-          "hecho": "En la madrugada del martes 17, en el segundo ataque en dos días, drones y misiles ucranianos destruyeron uno de los arcos metálicos del puente de Crimea, de 19 kilómetros, y el tramo carretero que tenía debajo, según el Servicio de Seguridad de Ucrania (SBU); NBC News geolocalizó videos y fotos que muestran una sección caída al agua. El Ministerio de Transporte de Rusia suspendió el paso de autos y de trenes y dijo que evalúa los daños, sin víctimas según datos preliminares (The Kyiv Independent); más tarde, Serguéi Aksiónov, jefe de la administración que Rusia instaló en Crimea, dijo que parte del tránsito ferroviario se reanudó y que los pasajeros sin vehículo pueden cruzar en ferry. Esa misma noche, misiles rusos dañaron dos de los principales puentes de Kiev, que quedaron cerrados, y los ataques dejaron dos muertos en la ciudad, según sus autoridades; el vocero del Kremlin, Dmitri Peskov, dijo que el puente de Crimea será restaurado, a dos días de la reunión de Vladimir Putin con Donald Trump y Xi Jinping en China.",
-          "lectura": "Ucrania y Rusia pasaron la misma noche golpeando lo mismo: los puentes del otro. El de Crimea perdió un arco y su tramo carretero a dos días de que Putin se siente con Trump y con Xi, y el Kremlin contestó con una promesa de obra; con parte de los trenes otra vez en marcha y los pasajeros sin auto derivados al ferry, la guerra llega a esa mesa contada en tramos caídos.",
+          "fecha": "2026-11-19",
+          "hecho": "El jueves 19, en Shenzhen, después de difundir con Donald Trump y Xi Jinping una \"declaración de paz\" que no menciona a Ucrania (Reuters), Vladimir Putin dijo que tras los ataques al puente de Crimea Rusia no va a negociar y que su respuesta será mucho más dolorosa que lo que Ucrania le hizo al puente; antes de los ataques había pedido a su Consejo de Seguridad que estudiara propuestas de tregua marítima o energética (The Moscow Times). En la noche del miércoles 18 al jueves 19, Ucrania había atacado el puente, de 19 kilómetros, por tercera vez en cuatro días, esta vez con misiles Neptune según su Estado Mayor; el tránsito de trenes se suspendió y se reanudó a la tarde, sin heridos según las autoridades rusas, y Putin admitió daños graves en el tramo carretero y prometió reconstruirlo. En la madrugada del viernes 20 en Kiev, noche del jueves 19 en Montevideo, tras alertas de la Fuerza Aérea ucraniana por misiles balísticos, hubo explosiones en oleadas en la capital, con incendios en edificios de viviendas de los distritos de Obolón y Podil y una instalación de infraestructura alcanzada en Holosiiv, según el alcalde Vitali Klitschko y la administración militar de la ciudad, sin víctimas informadas hasta las 2:57 de Kiev; durante el día, un ataque con drones había dejado un muerto y cinco heridos en la ciudad.",
+          "lectura": "Putin difundió en Shenzhen una declaración de paz con Trump y con Xi y, el mismo día, avisó que con Ucrania no negocia: el puente de Crimea le sirvió de motivo para dejar de lado la tregua marítima o energética que él mismo había mandado estudiar. Esa noche hubo alertas por misiles balísticos y explosiones en Kiev, y la paz del documento quedó como un asunto entre tres potencias, sin lugar para la guerra que pelea una de ellas.",
           "tendencia": "escala",
-          "intensidad": 2,
+          "intensidad": 3,
           "corto": "Crimea",
           "dato": "19 kilómetros",
           "objetivo": "Puente de Kerch",
           "fuente": {
-            "nombre": "NBC News",
-            "url": "https://www.nbcnews.com/world/russia/kerch-bridge-strikes-putin-crimea-ukraine-russia-war-kyiv-rcna609756"
+            "nombre": "The Kyiv Independent",
+            "url": "https://kyivindependent.com/russia-launches-mass-missile-attack-against-ukraine-after-putin-vows-revenge/"
           },
-          "actualizado": "2026-11-17T22:13"
+          "actualizado": "2026-11-19T22:11"
         },
         {
           "n": 9,
