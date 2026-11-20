@@ -104,7 +104,7 @@ export const CASOS: Caso[] = [
     texto:
       'Celebración de los 15 años de Hormetal junto a clientes e invitados de la empresa, que incluyó una conversación con un economista.',
     foto: '/images/talks/hormetal-15-anios.jpg',
-    fotoAlt: 'Martín Sarthou en el atril durante el encuentro por los 15 años de Hormetal.',
+    fotoAlt: 'Martín Sarthou en el atril, con el logo de Hormetal en la pantalla, durante el encuentro por los 15 años de la empresa.',
   },
   {
     cliente: 'WTC Punta del Este',
