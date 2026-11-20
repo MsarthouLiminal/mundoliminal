@@ -66,12 +66,24 @@ export const MARCAS: Marca[] = [
   { nombre: "L'Oréal Uruguay" },
   { nombre: 'Hormetal' },
   { nombre: 'Burocracia Creativa' },
+  { nombre: 'Sudamericano de Pickleball' },
   { nombre: 'BMI' },
   { nombre: 'Segura Bank' },
   { nombre: 'Club del Inversor' },
 ];
 
 export const CASOS: Caso[] = [
+  {
+    cliente: 'Sudamericano de Pickleball',
+    etiqueta: 'Forum del 1.er Sudamericano',
+    formato: 'Presentación analítica',
+    fecha: '18 nov 2026',
+    lugar: 'Carmelo Resort & Spa, Carmelo',
+    texto:
+      'Charla "Un torneo es histórico cuando alguien lo cuenta": cómo se construye el relato de un deporte y qué hace que una historia llegue a los medios, con el pickleball como caso, un deporte que recién se está desarrollando en Uruguay.',
+    foto: '/images/talks/sudamericano-pickleball.jpg',
+    fotoAlt: 'Martín Sarthou en el escenario del Forum del Sudamericano de Pickleball, en Carmelo, junto a la pantalla con las marcas del torneo.',
+  },
   {
     cliente: 'Burocracia Creativa',
     etiqueta: 'Edición 2026',
