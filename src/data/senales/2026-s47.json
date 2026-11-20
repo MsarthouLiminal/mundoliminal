@@ -11,6 +11,28 @@
       "alcance": "Tierras raras, cobre, cobalto, litio, uranio. Quién controla el acceso y a qué precio.",
       "senales": [
         {
+          "n": 17,
+          "titulo": "Chile: la cartera minera llega a USD 111.149 millones por el litio",
+          "lugar": "Antofagasta, Chile",
+          "lugarMapa": "Antofagasta, Chile",
+          "lat": -23.65,
+          "lon": -70.4,
+          "etiqueta": "izq",
+          "fecha": "2026-11-19",
+          "hecho": "El jueves 19 se conoció el catastro de inversión minera 2026-2035 de la Comisión Chilena del Cobre (Cochilco), que el biministro de Economía y Minería, Daniel Mas, presentó durante la gira presidencial por China: 72 proyectos por USD 111.149 millones, 6,3% más que los USD 104.549 millones del informe anterior y el mayor monto en 13 años. El litio pasó de USD 4.700 millones a USD 10.800 millones y explica cerca del 92% del aumento neto, con Salar Futuro, de Codelco y SQM (USD 3.000 millones), y el paso de Albemarle a la extracción directa (USD 3.100 millones), los dos en evaluación ambiental; el cobre concentra el 84,5% del total y la región de Antofagasta, cerca del 46%. Es una cartera proyectada, sin plazos por proyecto, y ese mismo jueves el Senado repuso con la unanimidad de 34 votos la partida de Minería del Presupuesto 2027, que la Cámara de Diputados había rechazado (La Tercera).",
+          "lectura": "El cobre sigue poniendo el 84,5% de la cartera, pero casi todo lo que creció en un año es litio, y ese litio son sobre todo dos proyectos: el de Codelco con SQM y el de Albemarle. Los dos esperan todavía su evaluación ambiental, así que el récord de 13 años mide por ahora la intención de invertir, y la distancia entre el catastro y la obra la administra una oficina de permisos.",
+          "tendencia": "estable",
+          "intensidad": 1,
+          "corto": "Litio Chile",
+          "dato": "USD 111.149 millones",
+          "objetivo": "Cartera de inversión",
+          "fuente": {
+            "nombre": "BioBioChile",
+            "url": "https://www.biobiochile.cl/noticias/economia/actualidad-economica/2026/11/19/chile-registra-su-mayor-cartera-de-inversion-minera-en-13-anos-supera-los-us111-mil-millones.shtml"
+          },
+          "actualizado": "2026-11-20T07:17"
+        },
+        {
           "n": 15,
           "titulo": "Brasil: el decreto que filtra negocios mineros sale en 2026, dice AMC",
           "lugar": "Brasilia",
@@ -57,7 +79,8 @@
             "nombre": "AFP, vía Malay Mail",
             "url": "https://www.malaymail.com/news/malaysia/2026/11/17/france-malaysia-strike-unique-rare-earth-deal-as-defence-ties-deepen/243612"
           },
-          "actualizado": "2026-11-17T07:16"
+          "actualizado": "2026-11-17T07:16",
+          "rotada": "2026-11-20T07:17"
         },
         {
           "n": 11,
@@ -154,6 +177,38 @@
       "alcance": "Estrechos, puertos, aranceles y cadenas de suministro. Dónde se traba el comercio.",
       "senales": [
         {
+          "n": 5,
+          "titulo": "El Paraná en Rosario queda a 11 centímetros de la cota de alerta",
+          "lugar": "Rosario, Argentina",
+          "lugarMapa": "Rosario, Argentina",
+          "lat": -32.95,
+          "lon": -60.64,
+          "etiqueta": "izq",
+          "fecha": "2026-11-19",
+          "hecho": "El jueves 19, el Paraná midió 4,89 metros en Rosario, 3 centímetros más que el día anterior y a 11 de la cota de alerta, de 5 metros, con Santa Fe en 5,84 metros y Paraná en 5,71, las dos en nivel de evacuación, según las lecturas de Prefectura Naval que publica Agrofy News; el pronóstico del Instituto Nacional del Agua (INA) del martes 17 da para Rosario 5,21 metros el martes 24 y 5,29 el 1 de diciembre, con un rango de 4,90 a 5,60. El miércoles 11 el río estaba cerca de 4,47 metros, su nivel más alto para un noviembre desde 1998 según la Bolsa de Comercio de Rosario, que advirtió que el río alto no permite cargar más: la Vía Navegable Troncal tiene un calado de diseño de 34 pies entre Timbúes y el océano, y los buques de mayor porte salen del Gran Rosario con carga parcial. La fuente no informa restricciones a la navegación comercial.",
+          "lectura": "Hace dos años el problema del Paraná era la falta de agua: 58 centímetros en Rosario en esta misma semana de 2024. Hoy el río está a 11 centímetros de la alerta y los buques grandes igual salen con carga parcial, porque el límite lo ponen el canal, con su calado de diseño de 34 pies, y el Río de la Plata. Con el río lleno, el cuello de la hidrovía quedó a la vista: depende del dragado, que es una decisión de obra y de concesión, más que del clima.",
+          "tendencia": "escala",
+          "intensidad": 2,
+          "corto": "Paraná",
+          "dato": "4,89 metros",
+          "objetivo": "Hidrovía",
+          "fuente": {
+            "nombre": "Agrofy News, con datos de Prefectura Naval y del INA",
+            "url": "https://news.agrofy.com.ar/altura-de-los-rios/rio-parana"
+          },
+          "actualizado": "2026-11-20T07:17",
+          "anterior": {
+            "titulo": "El Paraná en Rosario, en su nivel más alto para noviembre desde 1998",
+            "fecha": "2026-11-13",
+            "hecho": "Según el informe semanal de la Bolsa de Comercio de Rosario, con datos del Instituto Nacional del Agua (INA), el Paraná marcó en Rosario 4,40 metros el martes 10 y cerca de 4,47 metros el miércoles 11, su nivel más alto para un noviembre desde 1998 y a 53 centímetros de la cota de alerta, de 5 metros; el promedio de la semana fue de 4,28 metros, contra 2,32 en la misma semana de 2025 y 0,58 en la de 2024 (Rosario3). La Bolsa advierte que el río alto no permite cargar más: la Vía Navegable Troncal tiene un calado de diseño de 34 pies entre Timbúes y el océano, los canales del Río de la Plata dependen de mareas y vientos, y los buques de mayor porte siguen saliendo del Gran Rosario con carga parcial para completar bodegas en puertos de aguas profundas. El INA prevé que el río siga subiendo y pueda alcanzar o superar la cota de alerta.",
+            "lectura": "Hace dos años el problema del Paraná era la falta de agua: 58 centímetros en Rosario en esta misma semana de 2024. Hoy el río está a medio metro de la alerta y los buques grandes igual salen con carga parcial, porque el límite lo ponen el canal, con su calado de diseño de 34 pies, y el Río de la Plata. Con el río lleno, el cuello de la hidrovía quedó a la vista: depende del dragado, que es una decisión de obra y de concesión, más que del clima.",
+            "fuente": {
+              "nombre": "Rosario3, con el informe de la Bolsa de Comercio de Rosario",
+              "url": "https://www.rosario3.com/ecos365/noticias/despues-de-anos-de-bajante-el-parana-alcanza-niveles-que-no-se-veian-desde-1998-20261113-0007.html"
+            }
+          }
+        },
+        {
           "n": 3,
           "titulo": "Ormuz: atacan un buque de ADNOC e Irán lanza drones contra Kuwait",
           "lugar": "Estrecho de Ormuz / Kuwait",
@@ -204,27 +259,6 @@
           "fuente": {
             "nombre": "EFE, vía Infobae",
             "url": "https://www.infobae.com/america/agencias/2026/11/13/el-parlamento-aleman-aprueba-la-ley-para-ratificar-el-acuerdo-ue-mercosur/"
-          }
-        },
-        {
-          "n": 5,
-          "titulo": "El Paraná en Rosario, en su nivel más alto para noviembre desde 1998",
-          "lugar": "Rosario, Argentina",
-          "lugarMapa": "Rosario, Argentina",
-          "lat": -32.95,
-          "lon": -60.64,
-          "etiqueta": "izq",
-          "fecha": "2026-11-13",
-          "hecho": "Según el informe semanal de la Bolsa de Comercio de Rosario, con datos del Instituto Nacional del Agua (INA), el Paraná marcó en Rosario 4,40 metros el martes 10 y cerca de 4,47 metros el miércoles 11, su nivel más alto para un noviembre desde 1998 y a 53 centímetros de la cota de alerta, de 5 metros; el promedio de la semana fue de 4,28 metros, contra 2,32 en la misma semana de 2025 y 0,58 en la de 2024 (Rosario3). La Bolsa advierte que el río alto no permite cargar más: la Vía Navegable Troncal tiene un calado de diseño de 34 pies entre Timbúes y el océano, los canales del Río de la Plata dependen de mareas y vientos, y los buques de mayor porte siguen saliendo del Gran Rosario con carga parcial para completar bodegas en puertos de aguas profundas. El INA prevé que el río siga subiendo y pueda alcanzar o superar la cota de alerta.",
-          "lectura": "Hace dos años el problema del Paraná era la falta de agua: 58 centímetros en Rosario en esta misma semana de 2024. Hoy el río está a medio metro de la alerta y los buques grandes igual salen con carga parcial, porque el límite lo ponen el canal, con su calado de diseño de 34 pies, y el Río de la Plata. Con el río lleno, el cuello de la hidrovía quedó a la vista: depende del dragado, que es una decisión de obra y de concesión, más que del clima.",
-          "tendencia": "afloja",
-          "intensidad": 1,
-          "corto": "Paraná",
-          "dato": "4,47 metros",
-          "objetivo": "Hidrovía",
-          "fuente": {
-            "nombre": "Rosario3, con el informe de la Bolsa de Comercio de Rosario",
-            "url": "https://www.rosario3.com/ecos365/noticias/despues-de-anos-de-bajante-el-parana-alcanza-niveles-que-no-se-veian-desde-1998-20261113-0007.html"
           }
         }
       ],
@@ -405,25 +439,30 @@
         },
         {
           "n": 14,
-          "titulo": "Putin dice que no negocia tras el puente de Crimea; misiles sobre Kiev",
-          "lugar": "Estrecho de Kerch / Kiev",
-          "lugarMapa": "Estrecho de Kerch",
-          "lat": 45.3,
-          "lon": 36.51,
-          "etiqueta": "der",
-          "fecha": "2026-11-19",
-          "hecho": "El jueves 19, en Shenzhen, después de difundir con Donald Trump y Xi Jinping una \"declaración de paz\" que no menciona a Ucrania (Reuters), Vladimir Putin dijo que tras los ataques al puente de Crimea Rusia no va a negociar y que su respuesta será mucho más dolorosa que lo que Ucrania le hizo al puente; antes de los ataques había pedido a su Consejo de Seguridad que estudiara propuestas de tregua marítima o energética (The Moscow Times). En la noche del miércoles 18 al jueves 19, Ucrania había atacado el puente, de 19 kilómetros, por tercera vez en cuatro días, esta vez con misiles Neptune según su Estado Mayor; el tránsito de trenes se suspendió y se reanudó a la tarde, sin heridos según las autoridades rusas, y Putin admitió daños graves en el tramo carretero y prometió reconstruirlo. En la madrugada del viernes 20 en Kiev, noche del jueves 19 en Montevideo, tras alertas de la Fuerza Aérea ucraniana por misiles balísticos, hubo explosiones en oleadas en la capital, con incendios en edificios de viviendas de los distritos de Obolón y Podil y una instalación de infraestructura alcanzada en Holosiiv, según el alcalde Vitali Klitschko y la administración militar de la ciudad, sin víctimas informadas hasta las 2:57 de Kiev; durante el día, un ataque con drones había dejado un muerto y cinco heridos en la ciudad.",
-          "lectura": "Putin difundió en Shenzhen una declaración de paz con Trump y con Xi y, el mismo día, avisó que con Ucrania no negocia: el puente de Crimea le sirvió de motivo para dejar de lado la tregua marítima o energética que él mismo había mandado estudiar. Esa noche hubo alertas por misiles balísticos y explosiones en Kiev, y la paz del documento quedó como un asunto entre tres potencias, sin lugar para la guerra que pelea una de ellas.",
+          "titulo": "Rusia golpea tres puentes de Kiev tras la amenaza de Putin: 8 muertos",
+          "lugar": "Kiev / Estrecho de Kerch",
+          "lugarMapa": "Kiev, Ucrania",
+          "lat": 50.45,
+          "lon": 30.52,
+          "etiqueta": "izq",
+          "fecha": "2026-11-20",
+          "hecho": "En la madrugada del viernes 20, Rusia atacó Ucrania con 84 misiles de crucero, 404 drones y misiles balísticos en número no informado, según la Fuerza Aérea ucraniana, que contó impactos en 23 lugares; el primer ministro Serhii Koretskyi informó 8 muertos y 28 heridos, de ellos 6 muertos y 15 heridos en Kiev. En la capital resultaron dañados tres cruces del Dniéper, el Podilsko-Voskresenskyi, el Darnytskyi y el Sur, según el alcalde Vitali Klitschko, en lo que RTÉ describe como el mayor ataque a las rutas entre las dos márgenes de la ciudad desde el inicio de la guerra; hubo cortes de luz en cinco distritos, según la empresa DTEK, al menos tres de los muertos eran empleados de la empresa de agua, y el Ministerio de Defensa ruso dijo que atacó instalaciones de la industria de defensa e infraestructura de energía y de transporte. El jueves 19, en Shenzhen, después de difundir con Donald Trump y Xi Jinping una \"declaración de paz\" que no menciona a Ucrania (Reuters), Vladimir Putin había dicho que la respuesta a los ataques ucranianos al puente de Crimea, de 19 kilómetros, sería mucho más dolorosa y que Rusia no va a negociar treguas sobre energía ni sobre comercio marítimo.",
+          "lectura": "Putin avisó en Shenzhen que la respuesta por el puente de Crimea iba a doler más, y a la madrugada siguiente los misiles alcanzaron tres cruces del Dniéper en Kiev. Con ocho muertos y las treguas de energía y de mar descartadas por él mismo, la declaración de paz difundida con Trump y con Xi queda como un texto que no nombra a Ucrania, publicado horas antes del mayor ataque a los puentes de Kiev en toda la guerra.",
           "tendencia": "escala",
           "intensidad": 3,
-          "corto": "Crimea",
-          "dato": "19 kilómetros",
-          "objetivo": "Puente de Kerch",
+          "corto": "Kiev",
+          "dato": "8 muertos",
+          "objetivo": "Puentes del Dniéper",
           "fuente": {
             "nombre": "The Kyiv Independent",
             "url": "https://kyivindependent.com/russia-launches-mass-missile-attack-against-ukraine-after-putin-vows-revenge/"
           },
-          "actualizado": "2026-11-19T22:11"
+          "actualizado": "2026-11-20T07:17",
+          "arco": {
+            "lat": 45.3,
+            "lon": 36.51,
+            "nombre": "Estrecho de Kerch"
+          }
         },
         {
           "n": 9,
