@@ -11,6 +11,33 @@
       "alcance": "Tierras raras, cobre, cobalto, litio, uranio. Quién controla el acceso y a qué precio.",
       "senales": [
         {
+          "n": 19,
+          "titulo": "El cobre cae 9,23% en la semana, su sexta baja seguida en Londres",
+          "lugar": "Londres / Shanghái",
+          "lugarMapa": "Londres",
+          "lat": 51.51,
+          "lon": -0.13,
+          "etiqueta": "izq",
+          "arco": {
+            "lat": 31.23,
+            "lon": 121.47,
+            "nombre": "Shanghái"
+          },
+          "fecha": "2026-11-20",
+          "hecho": "El viernes 20, el cobre a tres meses cayó 2,9% en la Bolsa de Metales de Londres (LME) y cerró la semana con una baja de 9,23%, la sexta semana seguida en retroceso, mientras en la bolsa de Shanghái perdió 12,03% en la semana, según SMM. Durante la rueda tocó USD 12.202 la tonelada, el nivel más bajo desde el 24 de marzo, y Reuters anticipaba a media jornada la mayor caída semanal en más de 19 meses, que los analistas consultados atribuyen al retroceso de las acciones de IA y a un dólar más fuerte. La misma nota registra que los premios de importación en China tocaron récords y que las existencias de la bolsa de Shanghái, de 30.846 toneladas, equivalen a menos de un día de consumo chino.",
+          "lectura": "Seis semanas seguidas de baja y más de 9% en la última, con las existencias de Shanghái en menos de un día de consumo chino: el metal físico sigue ajustado mientras el precio se hunde. La explicación que dan los analistas pasa por las acciones de IA y por el dólar, y eso deja a quien vende cobre cobrando según el humor de un mercado que no es el suyo.",
+          "tendencia": "afloja",
+          "intensidad": 2,
+          "corto": "Cobre",
+          "dato": "9,23%",
+          "objetivo": "Precio en Londres",
+          "fuente": {
+            "nombre": "SMM (Shanghai Metals Market)",
+            "url": "https://news.metal.com/newscontent/M3PGTDHOQRYXTCMQFIS5G3LLTREKVGXCZ6EXHHQ-gold-silver-copper-and-tin-weekly-lines-plunge-metals-broadly-weaken-lme-copper-falls-for-six-consecutive-weeks-silver-weekly-line-drops-over-16-overnight-market"
+          },
+          "actualizado": "2026-11-21T08:48"
+        },
+        {
           "n": 17,
           "titulo": "Chile: la cartera minera llega a USD 111.149 millones por el litio",
           "lugar": "Antofagasta, Chile",
@@ -52,7 +79,8 @@
             "nombre": "CNN Brasil",
             "url": "https://www.cnnbrasil.com.br/infra/governo-sinaliza-decreto-para-triagem-de-minerais-criticos-em-2026-diz-amc/"
           },
-          "actualizado": "2026-11-19T07:21"
+          "actualizado": "2026-11-19T07:21",
+          "rotada": "2026-11-21T08:48"
         },
         {
           "n": 13,
@@ -177,6 +205,38 @@
       "alcance": "Estrechos, puertos, aranceles y cadenas de suministro. Dónde se traba el comercio.",
       "senales": [
         {
+          "n": 3,
+          "titulo": "Ormuz: más petroleros alcanzados y Shenzhen no nombra a Irán",
+          "lugar": "Estrecho de Ormuz / Shenzhen",
+          "lugarMapa": "Estrecho de Ormuz",
+          "lat": 26.6,
+          "lon": 56.5,
+          "etiqueta": "der",
+          "fecha": "2026-11-21",
+          "hecho": "El sábado 21, la agencia marítima británica UKMTO informó dos impactos más de proyectiles no identificados contra petroleros cerca de Khasab (Omán), uno en la popa de un buque que salía del estrecho, a unas 11 millas náuticas al norte, y otro en una sala de máquinas, a 17 millas al este, sin heridos y sin que esté claro si se trata del mismo buque; el viernes 20, otro petrolero se había incendiado tras un impacto al norte de Khasab, que la Guardia Revolucionaria iraní atribuyó a una mina (Reuters). El informe semanal de UKMTO difundido el viernes 20 cuenta 263 tránsitos por el estrecho en los siete días al miércoles 18, contra 308 la semana anterior, cerca de 65% por debajo del nivel previo a la guerra, con seis ataques a petroleros en la semana y 106 incidentes en el estrecho desde el 28 de febrero (Iran International). La declaración que Donald Trump, Xi Jinping y Vladimir Putin difundieron el jueves 19 en Shenzhen reafirma la importancia de flujos de energía estables y no menciona a Irán ni a Ormuz, según el texto que publicó la Cancillería china; Trump dijo que Xi coincidió en que el estrecho tiene que seguir abierto, sin confirmación de Beijing (Al Jazeera).",
+          "lectura": "La semana se contó en anuncios: un radar que Irán dice haber destruido y Washington niega, petroleros que chocan con minas sin confirmación independiente. UKMTO le puso número a lo que hay debajo: por Ormuz pasa cerca de un tercio del tráfico de antes de la guerra, ocho meses y medio después de que empezó, con más de un incidente por día. Para el Cono Sur, que compra gasoil y contrata fletes a precio mundial, esa cifra pesa más que cualquier comunicado. El jueves 19, en Shenzhen, Donald Trump, Xi Jinping y Vladimir Putin difundieron una declaración que habla de flujos de energía estables y deja sin nombrar a Irán y a Ormuz; que Xi quiere el estrecho abierto lo dijo Trump, y Beijing no lo confirmó.",
+          "tendencia": "escala",
+          "intensidad": 3,
+          "corto": "Ormuz",
+          "dato": "263 tránsitos",
+          "objetivo": "Estrecho",
+          "fuente": {
+            "nombre": "Reuters, vía Yahoo News",
+            "url": "https://www.yahoo.com/news/articles/tanker-hit-unknown-projectile-near-075656148.html"
+          },
+          "actualizado": "2026-11-21T08:48",
+          "anterior": {
+            "titulo": "Ormuz opera 65% por debajo de la preguerra, según UKMTO",
+            "fecha": "2026-11-13",
+            "hecho": "El informe semanal de la agencia marítima británica UKMTO, difundido el viernes 13, da un tránsito por el estrecho de Ormuz 65% por debajo del nivel previo a la guerra, con ocho incidentes marítimos en la semana y 163 desde el 28 de febrero (Gulf News). Ese día, el Comando Central de EE.UU. negó que la Guardia Revolucionaria iraní haya destruido un radar estadounidense en Bahréin y dijo que derribó dos drones lanzados hacia ese país (Radio Free Europe/Radio Liberty). En la madrugada del sábado 14, hora de Irán, la Guardia dijo que dos petroleros se incendiaron al chocar con minas en una ruta no autorizada del estrecho; la Marina iraní habló de uno solo y no hay confirmación independiente (AFP). Actualización del lunes 16: el domingo 15, el ejército de Bahréin dijo que interceptó varios proyectiles iraníes y el Ministerio del Interior emitió dos alertas nacionales, las primeras desde setiembre (Associated Press). El lunes 16, la Armada de la Guardia Revolucionaria dijo, en un comunicado que difundió la agencia Mehr, que la ruta sur del estrecho está minada y que seis petroleros se incendiaron y se hundieron entre el domingo y el lunes; es una declaración iraní, sin nombres de buques ni confirmación independiente (Oilprice.com).",
+            "lectura": "La semana se contó en anuncios: un radar que Irán dice haber destruido y Washington niega, petroleros que chocan con minas sin confirmación independiente. UKMTO le puso número a lo que hay debajo: por Ormuz pasa cerca de un tercio del tráfico de antes de la guerra, ocho meses y medio después de que empezó, con más de un incidente por día. Para el Cono Sur, que compra gasoil y contrata fletes a precio mundial, esa cifra pesa más que cualquier comunicado. El jueves 19, en Shenzhen, Donald Trump se reúne con Xi Jinping y Vladimir Putin, y la Casa Blanca dijo que Irán está en la agenda.",
+            "fuente": {
+              "nombre": "Gulf News, con datos de UKMTO",
+              "url": "https://gulfnews.com/world/mena/us-israel-iran-war-enemy-strike-hits-irans-sirik-as-trump-warns-tehran-over-threats-to-us-officials-houthis-claim-attack-on-saudi-pipeline-1.500745854"
+            }
+          }
+        },
+        {
           "n": 5,
           "titulo": "El Paraná en Rosario queda a 11 centímetros de la cota de alerta",
           "lugar": "Rosario, Argentina",
@@ -205,38 +265,6 @@
             "fuente": {
               "nombre": "Rosario3, con el informe de la Bolsa de Comercio de Rosario",
               "url": "https://www.rosario3.com/ecos365/noticias/despues-de-anos-de-bajante-el-parana-alcanza-niveles-que-no-se-veian-desde-1998-20261113-0007.html"
-            }
-          }
-        },
-        {
-          "n": 3,
-          "titulo": "Ormuz: atacan un buque de ADNOC e Irán lanza drones contra Kuwait",
-          "lugar": "Estrecho de Ormuz / Kuwait",
-          "lugarMapa": "Estrecho de Ormuz",
-          "lat": 26.6,
-          "lon": 56.5,
-          "etiqueta": "der",
-          "fecha": "2026-11-18",
-          "hecho": "El miércoles 18, la emiratí ADNOC Logistics & Services informó que uno de sus buques fue atacado el martes 17 a la noche mientras cruzaba el estrecho de Ormuz, con un tripulante desaparecido y 11 heridos; la empresa no identificó el buque y la nota no atribuye el ataque (The National). Ese martes, cazas de EE.UU. atacaron un sitio de lanzamiento de misiles de la Guardia Revolucionaria en la isla iraní de Qeshm, según un funcionario militar estadounidense que habló sin dar su nombre, y en la madrugada del miércoles el ejército iraní dijo que atacó con drones instalaciones de EE.UU. en la base kuwaití de Ali Al Salem, en el primer ataque iraní a Kuwait desde setiembre, mientras Kuwait y Bahréin informaron intercepciones (Reuters). El gasero Tara Gas, alcanzado dos veces entre el lunes 16 y el martes 17 frente a Khasab (Omán), fue abandonado con un tripulante indio desaparecido, y el informe semanal de la agencia marítima británica UKMTO del viernes 13 daba un tránsito por el estrecho 65% por debajo del nivel previo a la guerra.",
-          "lectura": "La semana se contó en anuncios: un radar que Irán dice haber destruido y Washington niega, petroleros que chocan con minas sin confirmación independiente. UKMTO le puso número a lo que hay debajo: por Ormuz pasa cerca de un tercio del tráfico de antes de la guerra, ocho meses y medio después de que empezó, con más de un incidente por día. Para el Cono Sur, que compra gasoil y contrata fletes a precio mundial, esa cifra pesa más que cualquier comunicado. El jueves 19, en Shenzhen, Donald Trump se reúne con Xi Jinping y Vladimir Putin, y la Casa Blanca dijo que Irán está en la agenda.",
-          "tendencia": "escala",
-          "intensidad": 3,
-          "corto": "Ormuz",
-          "dato": "11 heridos",
-          "objetivo": "Estrecho",
-          "fuente": {
-            "nombre": "The National",
-            "url": "https://www.thenationalnews.com/business/energy/2026/11/18/adnoc-ls-ship-attacked-at-strait-of-hormuz-with-one-crew-member-missing/"
-          },
-          "actualizado": "2026-11-18T07:25",
-          "anterior": {
-            "titulo": "Ormuz opera 65% por debajo de la preguerra, según UKMTO",
-            "fecha": "2026-11-13",
-            "hecho": "El informe semanal de la agencia marítima británica UKMTO, difundido el viernes 13, da un tránsito por el estrecho de Ormuz 65% por debajo del nivel previo a la guerra, con ocho incidentes marítimos en la semana y 163 desde el 28 de febrero (Gulf News). Ese día, el Comando Central de EE.UU. negó que la Guardia Revolucionaria iraní haya destruido un radar estadounidense en Bahréin y dijo que derribó dos drones lanzados hacia ese país (Radio Free Europe/Radio Liberty). En la madrugada del sábado 14, hora de Irán, la Guardia dijo que dos petroleros se incendiaron al chocar con minas en una ruta no autorizada del estrecho; la Marina iraní habló de uno solo y no hay confirmación independiente (AFP). Actualización del lunes 16: el domingo 15, el ejército de Bahréin dijo que interceptó varios proyectiles iraníes y el Ministerio del Interior emitió dos alertas nacionales, las primeras desde setiembre (Associated Press). El lunes 16, la Armada de la Guardia Revolucionaria dijo, en un comunicado que difundió la agencia Mehr, que la ruta sur del estrecho está minada y que seis petroleros se incendiaron y se hundieron entre el domingo y el lunes; es una declaración iraní, sin nombres de buques ni confirmación independiente (Oilprice.com).",
-            "lectura": "La semana se contó en anuncios: un radar que Irán dice haber destruido y Washington niega, petroleros que chocan con minas sin confirmación independiente. UKMTO le puso número a lo que hay debajo: por Ormuz pasa cerca de un tercio del tráfico de antes de la guerra, ocho meses y medio después de que empezó, con más de un incidente por día. Para el Cono Sur, que compra gasoil y contrata fletes a precio mundial, esa cifra pesa más que cualquier comunicado. El jueves 19, en Shenzhen, Donald Trump se reúne con Xi Jinping y Vladimir Putin, y la Casa Blanca dijo que Irán está en la agenda.",
-            "fuente": {
-              "nombre": "Gulf News, con datos de UKMTO",
-              "url": "https://gulfnews.com/world/mena/us-israel-iran-war-enemy-strike-hits-irans-sirik-as-trump-warns-tehran-over-threats-to-us-officials-houthis-claim-attack-on-saudi-pipeline-1.500745854"
             }
           }
         },
@@ -281,6 +309,27 @@
       "alcance": "Data centers, chips, energía y agua. El cuerpo físico de la IA y quién lo decide.",
       "senales": [
         {
+          "n": 18,
+          "titulo": "Trump amenaza con un impuesto a los data centers fuera de EE.UU.",
+          "lugar": "Washington",
+          "lugarMapa": "Washington",
+          "lat": 38.9,
+          "lon": -77.04,
+          "etiqueta": "izq",
+          "fecha": "2026-11-20",
+          "hecho": "El viernes 20, en una conferencia de prensa en la Casa Blanca, Donald Trump dijo que no va a permitir que las empresas de EE.UU. construyan data centers en otros países y que, si lo hacen, les va a aplicar \"un impuesto tremendo\"; dijo también que todavía no se lo había comunicado a su equipo (CNBC). No hay orden ejecutiva, norma ni proyecto de ley, y la AP señala que no quedó claro cómo se aplicaría; Amazon, Google, Microsoft y Oracle no respondieron de inmediato a la consulta de CNBC. La declaración llegó un día después de que el Registro Federal publicara la regla que exige licencia para exportar chips avanzados a cinco países, Brasil entre ellos.",
+          "lectura": "Washington ya decide con licencias a qué países llegan los chips avanzados, y ahora el presidente dice que también quiere decidir dónde se levantan los edificios que los usan. Por ahora es una frase sin norma, dicha antes de avisarle a su propio equipo, pero alcanza para que cualquier país que negocie un data center con capital estadounidense sume al cálculo un costo que todavía nadie sabe medir.",
+          "tendencia": "escala",
+          "intensidad": 2,
+          "corto": "Data centers",
+          "objetivo": "Inversión en el exterior",
+          "fuente": {
+            "nombre": "AP, vía Yahoo News",
+            "url": "https://www.yahoo.com/news/politics/articles/trump-threatens-tax-us-companies-003837936.html"
+          },
+          "actualizado": "2026-11-21T08:48"
+        },
+        {
           "n": 16,
           "titulo": "Alberta propone 600 metros entre los data centers y las viviendas",
           "lugar": "Edmonton, Canadá",
@@ -300,7 +349,8 @@
             "nombre": "Gobierno de Alberta",
             "url": "https://www.alberta.ca/release.cfm?xID=981575A97E76E-B93C-5D78-1B86AFC4364E2200"
           },
-          "actualizado": "2026-11-19T07:21"
+          "actualizado": "2026-11-19T07:21",
+          "rotada": "2026-11-21T08:48"
         },
         {
           "n": 12,
