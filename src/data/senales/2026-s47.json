@@ -489,14 +489,14 @@
         },
         {
           "n": 14,
-          "titulo": "Rusia golpea tres puentes de Kiev tras la amenaza de Putin: 9 muertos",
-          "lugar": "Kiev / Estrecho de Kerch",
+          "titulo": "Dos misiles rusos caen en Polonia y el jefe de la OTAN va a Varsovia",
+          "lugar": "Kiev / Varsovia",
           "lugarMapa": "Kiev, Ucrania",
           "lat": 50.45,
           "lon": 30.52,
           "etiqueta": "izq",
-          "fecha": "2026-11-20",
-          "hecho": "En la madrugada del viernes 20, Rusia atacó Ucrania con 84 misiles de crucero y 404 drones, según la Fuerza Aérea ucraniana, que contó impactos en 23 lugares, y con 27 misiles balísticos, según el presidente Volodímir Zelenski; el saldo subió a por lo menos 9 muertos, 7 de ellos en Kiev según el alcalde Vitali Klitschko y 2 en otras regiones según el primer ministro Serhii Koretskyi, con 30 heridos en todo el país según el ministro del Interior, Ivan Vyhivskyi. En la capital resultaron dañados tres cruces del Dniéper, el Podilsko-Voskresenskyi, el Darnytskyi y el Sur, según Klitschko, en lo que RTÉ describe como el mayor ataque a las rutas entre las dos márgenes de la ciudad desde el inicio de la guerra; el paso hacia la margen este se restableció por el Podilsko-Voskresenskyi cerca de las 15, hora de Kiev, hubo cortes de luz en cinco distritos, según la empresa DTEK, la empresa de agua informó dos empleados muertos y siete heridos, Polonia denunció que dos misiles y un dron rusos violaron su espacio aéreo (Reuters), y el Ministerio de Defensa ruso dijo que atacó instalaciones de la industria de defensa e infraestructura de energía y de transporte. El jueves 19, en Shenzhen, después de difundir con Donald Trump y Xi Jinping una \"declaración de paz\" que no menciona a Ucrania (Reuters), Vladimir Putin había dicho que la respuesta a los ataques ucranianos al puente de Crimea, de 19 kilómetros, sería mucho más dolorosa y que Rusia no va a negociar treguas sobre energía ni sobre comercio marítimo.",
+          "fecha": "2026-11-21",
+          "hecho": "El sábado 21, en Varsovia, el secretario general de la OTAN, Mark Rutte, se reunió con el primer ministro Donald Tusk y dijo que todos los aliados están en plena solidaridad con Polonia, después de que el viernes 20 dos misiles rusos y un dron a reacción cayeran en territorio polaco durante el ataque a Ucrania, uno de ellos un misil de crucero Kh-101 confirmado en la aldea de Nowy Lipowiec, sin heridos ni daños; Tusk habló de una \"provocación intencional\" y dijo que cayeron cerca de Nowa Deba, donde varios miles de soldados hacen el primer ejercicio de una fuerza multinacional de apoyo a Kiev (France 24, con Reuters y AFP), y Polonia no invocó el artículo 4 de la OTAN y pidió más fuerzas y defensa aérea, según el Instituto para el Estudio de la Guerra. En esa madrugada del viernes 20, Rusia había atacado Ucrania con 84 misiles de crucero y 404 drones, según la Fuerza Aérea ucraniana, y con 27 misiles balísticos, según el presidente Volodímir Zelenski, con por lo menos 9 muertos, 7 de ellos en Kiev, donde resultaron dañados tres cruces del Dniéper (The Kyiv Independent); en la noche del viernes 20 al sábado 21 lanzó otros 3 misiles balísticos y 148 drones, según la Fuerza Aérea, y en Krivói Rog murieron un niño de 7 años y una paramédica de 20, según Oleksandr Vilkul, jefe del consejo de defensa de la ciudad (UNITED24 Media). El jueves 19, en Shenzhen, después de difundir con Donald Trump y Xi Jinping una \"declaración de paz\" que no menciona a Ucrania, Vladimir Putin había dicho que la respuesta a los ataques ucranianos al puente de Crimea sería mucho más dolorosa y que Rusia no va a negociar treguas sobre energía ni sobre comercio marítimo.",
           "lectura": "Putin avisó en Shenzhen que la respuesta por el puente de Crimea iba a doler más, y a la madrugada siguiente los misiles alcanzaron tres cruces del Dniéper en Kiev. Con nueve muertos y las treguas de energía y de mar descartadas por él mismo, la declaración de paz difundida con Trump y con Xi queda como un texto que no nombra a Ucrania, publicado horas antes del mayor ataque a los puentes de Kiev en toda la guerra.",
           "tendencia": "escala",
           "intensidad": 3,
@@ -504,14 +504,14 @@
           "dato": "9 muertos",
           "objetivo": "Puentes del Dniéper",
           "fuente": {
-            "nombre": "The Kyiv Independent",
-            "url": "https://kyivindependent.com/russia-launches-mass-missile-attack-against-ukraine-after-putin-vows-revenge/"
+            "nombre": "Anadolu, vía Anews",
+            "url": "https://www.anews.com.tr/world/2026/11/21/allies-stand-with-poland-after-airspace-breach-by-russia-nato-chief"
           },
-          "actualizado": "2026-11-20T14:08",
+          "actualizado": "2026-11-21T13:13",
           "arco": {
-            "lat": 45.3,
-            "lon": 36.51,
-            "nombre": "Estrecho de Kerch"
+            "lat": 52.23,
+            "lon": 21.01,
+            "nombre": "Varsovia"
           }
         },
         {
