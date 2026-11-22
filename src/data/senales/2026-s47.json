@@ -11,6 +11,33 @@
       "alcance": "Tierras raras, cobre, cobalto, litio, uranio. Quién controla el acceso y a qué precio.",
       "senales": [
         {
+          "n": 21,
+          "titulo": "Codelco ofrece un millón de hectáreas; diputados piden el control",
+          "lugar": "Santiago de Chile / Shanghái",
+          "lugarMapa": "Santiago de Chile",
+          "lat": -33.45,
+          "lon": -70.67,
+          "etiqueta": "izq",
+          "arco": {
+            "lat": 31.23,
+            "lon": 121.47,
+            "nombre": "Shanghái"
+          },
+          "fecha": "2026-11-21",
+          "hecho": "El sábado 21, el presidente de la Comisión de Minería de la Cámara de Diputados de Chile, Cristián Tapia (PPD), respaldó que Codelco se asocie con privados \"siempre que Codelco pueda tener el control mayoritario\", y el diputado Marco Antonio Sulantay (UDI) pidió que la convocatoria quede abierta a inversionistas de todo el mundo, según declaraciones que recoge BioBioChile. Respondían a la oferta que el presidente del directorio de la estatal, Bernardo Fontaine, hizo en Shanghái, en la cena de cierre de la Asia Copper Week y ante unas 2.500 personas: cerca de un millón de hectáreas de pertenencias sin explotar, con una primera cartera de 60 propiedades en distintos grados de exploración, para desarrollarlas con terceros (Diario Financiero, viernes 20). Codelco debe más de USD 27.000 millones y su producción de este año sería la más baja en tres décadas; son declaraciones de diputados, y ninguna de las dos notas informa porcentajes de participación ni plazos.",
+          "lectura": "Codelco salió a buscar socios con una deuda de más de USD 27.000 millones y la producción en su piso de tres décadas, y la primera respuesta política discutió quién manda en cada sociedad antes que cuánto cobre sale. Un diputado pide mayoría para la estatal y otro pide la puerta abierta a todo el mundo: entre esas dos condiciones se va a escribir cada contrato, y todavía nadie mostró un porcentaje.",
+          "tendencia": "estable",
+          "intensidad": 2,
+          "corto": "Codelco",
+          "dato": "un millón de hectáreas",
+          "objetivo": "Pertenencias mineras",
+          "fuente": {
+            "nombre": "BioBioChile",
+            "url": "https://www.biobiochile.cl/noticias/economia/actualidad-economica/2026/11/21/codelco-abre-un-millon-de-hectareas-a-privados-en-china-congreso-exige-resguardo-del-control-estatal.shtml"
+          },
+          "actualizado": "2026-11-22T07:32"
+        },
+        {
           "n": 19,
           "titulo": "El cobre cae 9,23% en la semana, su sexta baja seguida en Londres",
           "lugar": "Londres / Shanghái",
@@ -57,7 +84,8 @@
             "nombre": "BioBioChile",
             "url": "https://www.biobiochile.cl/noticias/economia/actualidad-economica/2026/11/19/chile-registra-su-mayor-cartera-de-inversion-minera-en-13-anos-supera-los-us111-mil-millones.shtml"
           },
-          "actualizado": "2026-11-20T07:17"
+          "actualizado": "2026-11-20T07:17",
+          "rotada": "2026-11-22T07:32"
         },
         {
           "n": 15,
@@ -309,6 +337,28 @@
       "alcance": "Data centers, chips, energía y agua. El cuerpo físico de la IA y quién lo decide.",
       "senales": [
         {
+          "n": 22,
+          "titulo": "España ata la conexión de los data centers a 80% de renovable nueva",
+          "lugar": "Madrid",
+          "lugarMapa": "Madrid",
+          "lat": 40.42,
+          "lon": -3.7,
+          "etiqueta": "izq",
+          "fecha": "2026-11-22",
+          "hecho": "El domingo 22 entró en vigor en España el Real Decreto 1032/2026, publicado el sábado 21 en el Boletín Oficial del Estado: los centros de datos con potencia de acceso de 10 MW o más tienen que acreditar que cubren el 80% de su consumo con renovables de instalaciones nuevas, con puesta en servicio no anterior en más de 36 meses, y que la energía que consumen en cada hora está respaldada, al menos en un 80%, por generación renovable. Alcanza también a los proyectos con permiso de acceso ya otorgado y todavía sin conectar, que tienen seis meses para acreditarlo o el permiso caduca y se ejecutan las garantías; las solicitudes en trámite tienen tres meses, y un régimen transitorio baja la exigencia horaria a 60% en el período punta hasta fines de 2028. El sábado 21, el consejero andaluz José Antonio Nieto dijo que la Junta de Andalucía \"contempla recurrir\" la norma (El Español), y la vicepresidenta Sara Aagesen sostuvo que \"no es ninguna moratoria\" (Europa Press).",
+          "lectura": "España fijó con qué energía se enchufan los data centers grandes: renovable nueva, y medida hora por hora. La regla alcanza también a quien ya tenía el permiso y todavía no se conectó, y le da seis meses, de modo que el bien escaso pasa a ser el megavatio que se puede acreditar más que el megavatio concedido, y un permiso firmado por la red vale lo que dure ese plazo.",
+          "tendencia": "escala",
+          "intensidad": 2,
+          "corto": "España",
+          "dato": "80%",
+          "objetivo": "Conexión a la red",
+          "fuente": {
+            "nombre": "Boletín Oficial del Estado (BOE)",
+            "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-24439"
+          },
+          "actualizado": "2026-11-22T07:32"
+        },
+        {
           "n": 18,
           "titulo": "Trump amenaza con un impuesto a los data centers fuera de EE.UU.",
           "lugar": "Washington",
@@ -377,7 +427,8 @@
             "nombre": "Registro Federal de EE.UU.",
             "url": "https://www.federalregister.gov/documents/2026/11/19/2026-23529/addressing-remote-access-to-advanced-semiconductors"
           },
-          "actualizado": "2026-11-19T14:32"
+          "actualizado": "2026-11-19T14:32",
+          "rotada": "2026-11-22T07:32"
         },
         {
           "n": 6,
