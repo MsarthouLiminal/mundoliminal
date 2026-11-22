@@ -503,25 +503,30 @@
       "senales": [
         {
           "n": 20,
-          "titulo": "Arde en aguas de Finlandia un carguero ruso alcanzado por drones",
-          "lugar": "Golfo de Finlandia / Loviisa",
+          "titulo": "El Sparta II deja Finlandia a remolque; arde otro buque ruso en Libia",
+          "lugar": "Golfo de Finlandia / Bengasi",
           "lugarMapa": "Golfo de Finlandia",
           "lat": 60.2,
           "lon": 26.4,
           "etiqueta": "der",
-          "fecha": "2026-11-21",
-          "hecho": "El sábado 21 a la mañana, el carguero ruso Sparta II, que iba a Kaliningrado y que Finlandia vincula a las fuerzas armadas rusas, se incendió en el golfo de Finlandia tras el impacto de dos drones, según el gobernador de la región de Leningrado, Alexander Drozdenko; el Ministerio de Defensa finlandés ubicó el ataque en aguas internacionales, al oeste de la isla de Gogland, y las Fuerzas de Defensa finlandesas dijeron que lo más probable es que haya sido Ucrania, que no se lo atribuyó. El buque derivó hasta aguas territoriales de Finlandia, frente a Loviisa, donde la Guardia de Fronteras finlandesa dirige el combate del incendio con una patrullera de la marina de Estonia y, a pedido de Helsinki, el buque de rescate ruso Murman; no hay heridos, la tripulación pasó a otro carguero y Finlandia restringió en forma temporal el tráfico aéreo y marítimo en el este del golfo. A las 12:34, hora local, un helicóptero ruso entró hasta 4,1 kilómetros en el espacio aéreo finlandés, según el Ministerio de Defensa (The Kyiv Independent), y el primer ministro Petteri Orpo dijo que la guerra se está derramando sobre la vecindad inmediata de Finlandia y que Ucrania tiene derecho a defenderse del agresor.",
-          "lectura": "Un carguero ruso en llamas derivó hasta aguas de Finlandia y el incendio lo combaten guardacostas finlandeses junto a un buque de rescate ruso, convocado por Helsinki. Finlandia quedó administrando en su propio mar las consecuencias de un ataque que no hizo, y su primer ministro eligió ese momento para decir que Ucrania tiene derecho a defenderse: socorre al buque y respalda a quien, según sus propios militares, probablemente lo atacó.",
+          "arco": {
+            "lat": 32.12,
+            "lon": 20.07,
+            "nombre": "Bengasi"
+          },
+          "fecha": "2026-11-22",
+          "hecho": "El domingo 22, el buque de rescate ruso Murman empezó a remolcar al Sparta II poco antes de las 17, hora local, y lo sacó de las aguas territoriales y de la zona económica de Finlandia rumbo a aguas rusas, con apoyo de la patrullera finlandesa Uisko y del buque estonio Kindral Kurvits; la Guardia de Fronteras dio por terminada su misión, se levantaron las restricciones al tráfico aéreo y marítimo y no se observaron derrames, según Yle, y el presidente Alexander Stubb escribió que el buque, que había causado un peligro grave, salió del territorio finlandés. El mismo domingo, una explosión y un incendio dañaron a un buque ruso amarrado en el puerto de Bengasi, que según el gobierno del este de Libia se sospecha que fue atacado con drones; dos militares libios dijeron a la AP que es la corbeta Merkury, de la Armada rusa, que quedó severamente dañada por dos drones navales ucranianos lanzados desde el oeste de Libia mientras otros cuatro fueron interceptados, y ni Kiev ni Moscú hicieron comentarios (The Kyiv Independent). El Sparta II, que Finlandia vincula a las fuerzas armadas rusas, había sido alcanzado por drones el sábado 21 en aguas internacionales del golfo de Finlandia, en un ataque que las Fuerzas de Defensa finlandesas atribuyen como lo más probable a Ucrania y que Kiev no se atribuyó; Rusia no informó qué carga llevaba.",
+          "lectura": "Finlandia cerró en un día y medio un problema que no había buscado: el Sparta II se fue a remolque de un buque ruso, sin derrames y con la carga sin declarar. Ese mismo domingo ardía otro buque ruso en Bengasi, y si los militares libios tienen razón sobre el origen de los drones, la guerra naval de Ucrania llega al Báltico y al Mediterráneo sin que Kiev firme ninguno de los dos ataques.",
           "tendencia": "escala",
           "intensidad": 2,
-          "corto": "Sparta II",
-          "dato": "4,1 kilómetros",
-          "objetivo": "Carguero ruso",
+          "corto": "Buques rusos",
+          "dato": "dos drones navales",
+          "objetivo": "Carguero y corbeta",
           "fuente": {
-            "nombre": "Al Jazeera",
-            "url": "https://www.aljazeera.com/news/2026/11/21/russia-says-kaliningrad-bound-ship-struck-by-drones-in-gulf-of-finland"
+            "nombre": "Yle",
+            "url": "https://yle.fi/a/74-20258284"
           },
-          "actualizado": "2026-11-21T22:41",
+          "actualizado": "2026-11-22T19:11",
           "ultimoMomento": true
         },
         {
