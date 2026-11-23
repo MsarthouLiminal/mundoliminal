@@ -1,0 +1,394 @@
+{
+  "id": "2026-s48",
+  "semana": 48,
+  "fechaEdicion": "2026-11-23",
+  "corteDatos": "2026-11-22",
+  "ejes": [
+    {
+      "id": "min",
+      "slug": "minerales",
+      "nombre": "Minerales críticos",
+      "alcance": "Tierras raras, cobre, cobalto, litio, uranio. Quién controla el acceso y a qué precio.",
+      "senales": [
+        {
+          "n": 1,
+          "titulo": "Galio, germanio y antimonio: la pausa china para EE.UU. vence el 27",
+          "lugar": "Beijing / Washington",
+          "lugarMapa": "Beijing",
+          "lat": 39.9,
+          "lon": 116.41,
+          "etiqueta": "der",
+          "arco": {
+            "lat": 38.9,
+            "lon": -77.04,
+            "nombre": "Washington"
+          },
+          "fecha": "2026-11-21",
+          "hecho": "En noviembre de 2025, China suspendió por un año, hasta el 27 de noviembre de 2026, la prohibición de exportar galio, germanio y antimonio a EE.UU., vigente desde diciembre de 2024 (Mining.com). Al sábado 21 no apareció aviso de prórroga; la otra suspensión, la de los anuncios 55 a 58, 61 y 62 de 2025 sobre tierras raras, se prorrogó el lunes 9 hasta el 10 de enero de 2027 (SMM).",
+          "lectura": "China prorrogó hasta el 10 de enero la pausa de sus controles sobre tierras raras y, al sábado 21, no había dicho nada de la otra, la que vence el viernes 27 y cubre el galio, el germanio y el antimonio que necesita la fabricación de chips en EE.UU. Beijing maneja dos relojes separados para una misma negociación, y cada fecha suelta le da una ocasión más para cobrar.",
+          "tendencia": "estable",
+          "intensidad": 2,
+          "corto": "Galio",
+          "dato": "27 de noviembre",
+          "objetivo": "Pausa de exportación",
+          "fuente": {
+            "nombre": "Mining.com",
+            "url": "https://mining.com/china-lifts-export-ban-on-gallium-germanium-and-antimony-to-us"
+          }
+        },
+        {
+          "n": 2,
+          "titulo": "Codelco baja a USD 250 a 280 la prima del cobre para China en 2027",
+          "lugar": "Santiago de Chile / Shanghái",
+          "lugarMapa": "Santiago de Chile",
+          "lat": -33.45,
+          "lon": -70.67,
+          "etiqueta": "izq",
+          "arco": {
+            "lat": 31.23,
+            "lon": 121.47,
+            "nombre": "Shanghái"
+          },
+          "fecha": "2026-11-19",
+          "hecho": "Codelco ofrece a sus clientes chinos primas mayoritariamente de USD 250 a 280 por tonelada para 2027, contra el récord de USD 350 de 2026, según Reuters con cuatro fuentes; las importaciones chinas de cátodos chilenos cayeron 38% en los primeros nueve meses de 2026, a unas 140.000 toneladas, y Codelco no comentó. En la misma semana, el presidente del directorio de la estatal, Bernardo Fontaine, ofreció en Shanghái cerca de un millón de hectáreas de pertenencias sin explotar para desarrollarlas con terceros (Diario Financiero); la empresa debe más de USD 27.000 millones (BioBioChile).",
+          "lectura": "Codelco baja la prima que cobra en China la misma semana en que sale a buscar socios para un millón de hectáreas, y cede así en el precio y en el control a la vez. Con las compras chinas de cátodos chilenos 38% abajo en nueve meses, la prima de 2027 muestra que hoy las condiciones las pone el comprador, y eso pesa más en una estatal que debe más de USD 27.000 millones.",
+          "tendencia": "afloja",
+          "intensidad": 2,
+          "corto": "Codelco",
+          "dato": "USD 250 a 280",
+          "objetivo": "Prima del cobre",
+          "fuente": {
+            "nombre": "Reuters, vía Publimetro",
+            "url": "https://www.publimetro.cl/noticias/2026/11/19/giro-en-la-estrategia-de-codelco-la-minera-chilena-reduce-las-primas-del-cobre-en-china-para-frenar-la-caida-de-sus-ventas/"
+          }
+        }
+      ],
+      "tambienTitulo": "También en el radar",
+      "tambien": [
+        {
+          "etiqueta": "16 nov",
+          "texto": "Corea del Sur eligió siete minerales prioritarios (tungsteno, silicio, grafito, cobalto, níquel, galio y tierras raras); China le provee el 93,2% del grafito que importa."
+        },
+        {
+          "etiqueta": "13 nov",
+          "texto": "La bolsa de Guangzhou anunció que lanza futuros de hidróxido de litio el 26 de noviembre y opciones el 27, con un margen de 11%."
+        }
+      ]
+    },
+    {
+      "id": "cho",
+      "slug": "chokepoints",
+      "nombre": "Chokepoints",
+      "alcance": "Estrechos, puertos, aranceles y cadenas de suministro. Dónde se traba el comercio.",
+      "senales": [
+        {
+          "n": 4,
+          "titulo": "Paraná: el INA prevé 5,02 metros en Rosario, sobre la cota de alerta",
+          "lugar": "Rosario, Argentina",
+          "lugarMapa": "Rosario, Argentina",
+          "lat": -32.95,
+          "lon": -60.64,
+          "etiqueta": "izq",
+          "fecha": "2026-11-20",
+          "hecho": "El pronóstico del Instituto Nacional del Agua (INA) emitido el viernes 20 da 5,02 metros en Rosario para el martes 24 (rango de 4,80 a 5,40) y 5,11 para el 1 de diciembre, por debajo de los 5,21 y 5,29 que preveía el del martes 17; la alerta es de 5,00 metros y la evacuación, de 5,25. El río marcó 4,90 metros el viernes 20, el sábado 21 y el domingo 22, según las lecturas de Prefectura Naval que publica Agrofy News. Según la Bolsa de Comercio de Rosario, la Vía Navegable Troncal tiene un calado de diseño de 34 pies y los buques de mayor porte salen del Gran Rosario con carga parcial.",
+          "lectura": "El Instituto Nacional del Agua bajó su pronóstico para Rosario de 5,21 a 5,02 metros: el Paraná pasaría la cota de alerta, por menos de lo que se esperaba hace una semana. Para la carga, el número que manda sigue siendo el calado de diseño del canal, de 34 pies, que aun con el río alto obliga a los buques grandes a salir con carga parcial, y ese límite se mueve con dragado y no con lluvia.",
+          "tendencia": "escala",
+          "intensidad": 2,
+          "corto": "Paraná",
+          "dato": "5,02 metros",
+          "objetivo": "Hidrovía",
+          "fuente": {
+            "nombre": "Agrofy News, con datos de Prefectura Naval y del INA",
+            "url": "https://news.agrofy.com.ar/altura-de-los-rios/rosario"
+          }
+        },
+        {
+          "n": 5,
+          "titulo": "Estonia cierra sus pasos carreteros con Rusia por seis meses",
+          "lugar": "Narva, Estonia",
+          "lugarMapa": "Narva, Estonia",
+          "lat": 59.38,
+          "lon": 28.19,
+          "etiqueta": "der",
+          "fecha": "2026-11-20",
+          "hecho": "El gobierno de Estonia anunció el viernes 20 que suspende desde el 1 de diciembre a las 7 los cruces por carretera con Rusia en Narva-1, Narva-2, Koidula, Luhamaa y Saatse, por seis meses y con revisión al término. El tránsito ferroviario de carga sigue, con controles.",
+          "lectura": "Estonia cierra por seis meses los cinco pasos carreteros con Rusia y deja abierto el tren de carga, con controles: corta autos y camiones y conserva el comercio que viaja por vía férrea. En la misma semana en que el Báltico se volvió escenario de ataques a buques rusos, la frontera terrestre de Estonia con Rusia va a quedar, desde el 1 de diciembre, reducida a un tren que el Estado revisa.",
+          "tendencia": "escala",
+          "intensidad": 2,
+          "corto": "Narva",
+          "dato": "seis meses",
+          "objetivo": "Pasos fronterizos",
+          "fuente": {
+            "nombre": "ERR",
+            "url": "https://news.err.ee/1610201515/estonia-to-close-land-border-with-russia-from-december-1"
+          }
+        },
+        {
+          "n": 3,
+          "titulo": "AIE: la crisis de Ormuz sacó 2.800 millones de barriles del mercado",
+          "lugar": "Estrecho de Ormuz / París",
+          "lugarMapa": "Estrecho de Ormuz",
+          "lat": 26.6,
+          "lon": 56.5,
+          "etiqueta": "der",
+          "fecha": "2026-11-19",
+          "hecho": "En su World Energy Outlook 2026, la Agencia Internacional de Energía estimó \"pérdidas acumuladas de 2.800 millones de barriles de petróleo y 60.000 millones de metros cúbicos de gas\" del suministro del Golfo, a noviembre, y en el peor momento una caída del suministro mundial de petróleo de 16 millones de barriles diarios. Según la agencia marítima británica UKMTO, hubo 31 ataques a buques en octubre y unos 19 en noviembre hasta el miércoles 18 (ABC News). Ese miércoles, el Comando Central de EE.UU. avisó que un buque que reciba por transbordo en el mar carga de un puerto iraní puede ser detenido, abordado o capturado (MarineLink).",
+          "lectura": "La Agencia Internacional de Energía le puso número a la crisis de Ormuz: 2.800 millones de barriles de petróleo y 60.000 millones de metros cúbicos de gas perdidos, con la aclaración de que la cuenta sigue abierta. Que UKMTO registre menos ataques en noviembre que en octubre no achica esa cifra, porque Washington amplió el bloqueo a los transbordos y el estrecho se administra hoy con menos disparos y más control, un costo que el Cono Sur paga en cada carga de gasoil.",
+          "tendencia": "escala",
+          "intensidad": 3,
+          "corto": "Ormuz",
+          "dato": "2.800 millones de barriles",
+          "objetivo": "Estrecho",
+          "fuente": {
+            "nombre": "Agencia Internacional de Energía, World Energy Outlook 2026",
+            "url": "https://www.iea.org/reports/world-energy-outlook-2026/executive-summary"
+          }
+        }
+      ],
+      "tambienTitulo": "También en el radar",
+      "tambien": [
+        {
+          "etiqueta": "16 nov",
+          "texto": "La Unión Europea sancionó a 12 personas y 101 entidades, entre ellas 49 instituciones financieras rusas y 15 empresas de la flota fantasma."
+        },
+        {
+          "etiqueta": "15 nov",
+          "texto": "Un funcionario de la ONU pidió a Irán y a EE.UU. dejar pasar cinco buques de fertilizantes por día por Ormuz; los precios subieron 30%."
+        }
+      ]
+    },
+    {
+      "id": "ia",
+      "slug": "ia",
+      "nombre": "Infraestructura IA",
+      "alcance": "Data centers, chips, energía y agua. El cuerpo físico de la IA y quién lo decide.",
+      "senales": [
+        {
+          "n": 7,
+          "titulo": "TSMC frena pedidos chinos de 16 nm o menos, según fuentes",
+          "lugar": "Hsinchu, Taiwán",
+          "lugarMapa": "Hsinchu, Taiwán",
+          "lat": 24.8,
+          "lon": 120.97,
+          "etiqueta": "der",
+          "fecha": "2026-11-20",
+          "hecho": "Según dos personas al tanto, citadas por el Taipei Times el viernes 20, TSMC dejó de aceptar pedidos de diseñadores chinos con procesos de 16 nanómetros o menos salvo que tengan licencia de exportación de EE.UU., y los limita a 28 y 40 nanómetros, sin memoria HBM ni empaquetado avanzado. TSMC no lo confirmó.",
+          "lectura": "Si se confirma, TSMC fija su propia línea en 16 nanómetros y pide licencia de Washington para cruzarla, de modo que el control de exportaciones de EE.UU. se aplica en la mesa de pedidos de una empresa taiwanesa antes que en una aduana. Los diseñadores chinos quedan con 28 y 40 nanómetros, sin memoria HBM ni empaquetado avanzado, para todo lo que todavía no pueden fabricar en China.",
+          "tendencia": "escala",
+          "intensidad": 2,
+          "corto": "TSMC",
+          "dato": "16 nanómetros",
+          "objetivo": "Fundición de chips",
+          "fuente": {
+            "nombre": "Taipei Times",
+            "url": "https://www.taipeitimes.com/News/biz/archives/2026/11/20/2003868041"
+          }
+        },
+        {
+          "n": 6,
+          "titulo": "El Senado de EE.UU. aprueba que los data centers paguen su energía",
+          "lugar": "Washington",
+          "lugarMapa": "Washington",
+          "lat": 38.9,
+          "lon": -77.04,
+          "etiqueta": "izq",
+          "fecha": "2026-11-19",
+          "hecho": "El jueves 19, el Senado de EE.UU. aprobó por 62 a 33 la Bipartisan American Affordability and Jobs Act of 2026, que acorta los plazos de permisos de proyectos energéticos, modifica la ley ambiental NEPA, la Ley de Agua Limpia y la de especies amenazadas, y busca que los data centers paguen la energía que usan; el proyecto pasa a la Cámara de Representantes y el texto no detalla el mecanismo de cobro (AP). En España, el Real Decreto 1032/2026, publicado el sábado 21 en el Boletín Oficial del Estado, exige a los data centers de 10 MW o más cubrir el 80% de su consumo con renovables de instalaciones nuevas.",
+          "lectura": "El Senado de EE.UU. aprobó, con votos de los dos partidos, que los data centers paguen la energía que usan, la misma semana en que España ató su conexión a la red a renovable nueva. Una parte de las reglas de la IA se escribe ahora en la factura eléctrica, y como el texto del Senado todavía no dice cómo se cobra, la discusión sobre quién paga sigue abierta en la Cámara y en las tarifas.",
+          "tendencia": "escala",
+          "intensidad": 2,
+          "corto": "Senado EE.UU.",
+          "dato": "62 a 33",
+          "objetivo": "Permisos y energía",
+          "fuente": {
+            "nombre": "AP, vía OPB",
+            "url": "https://www.opb.org/article/2026/11/20/senate-approves-bill-to-speed-up-permitting-reviews-force-data-centers-to-pay-for-energy-costs/"
+          }
+        }
+      ],
+      "tambienTitulo": "También en el radar",
+      "tambien": [
+        {
+          "etiqueta": "20 nov",
+          "texto": "Gavin Newsom, gobernador de California, propuso poderes de emergencia para que el estado pueda apagar modelos de IA; necesita una ley."
+        },
+        {
+          "etiqueta": "19 nov",
+          "texto": "Nvidia informó ingresos trimestrales de USD 115.800 millones, 103% más, con USD 107.600 millones de data centers."
+        }
+      ]
+    },
+    {
+      "id": "con",
+      "slug": "conflictos",
+      "nombre": "Conflictos",
+      "alcance": "Guerras activas, cambios de fase y lo que derraman sobre la región.",
+      "senales": [
+        {
+          "n": 8,
+          "titulo": "El Sparta II deja Finlandia a remolque; arde otro buque ruso en Libia",
+          "lugar": "Golfo de Finlandia / Bengasi",
+          "lugarMapa": "Golfo de Finlandia",
+          "lat": 60.2,
+          "lon": 26.4,
+          "etiqueta": "arriba",
+          "arco": {
+            "lat": 32.12,
+            "lon": 20.07,
+            "nombre": "Bengasi"
+          },
+          "fecha": "2026-11-22",
+          "hecho": "El domingo 22, el buque de rescate ruso Murman empezó a remolcar al Sparta II poco antes de las 17, hora local, y lo sacó de las aguas territoriales y de la zona económica de Finlandia rumbo a aguas rusas, con apoyo de la patrullera finlandesa Uisko y del buque estonio Kindral Kurvits; la Guardia de Fronteras dio por terminada su misión, se levantaron las restricciones al tráfico aéreo y marítimo y no se observaron derrames, según Yle, y el presidente Alexander Stubb escribió que el buque, que había causado un peligro grave, salió del territorio finlandés. El mismo domingo, una explosión y un incendio dañaron a un buque ruso amarrado en el puerto de Bengasi, que según el gobierno del este de Libia se sospecha que fue atacado con drones; dos militares libios dijeron a la AP que es la corbeta Merkury, de la Armada rusa, que quedó severamente dañada por dos drones navales ucranianos lanzados desde el oeste de Libia mientras otros cuatro fueron interceptados, y ni Kiev ni Moscú hicieron comentarios (The Kyiv Independent). El Sparta II, que Finlandia vincula a las fuerzas armadas rusas, había sido alcanzado por drones el sábado 21 en aguas internacionales del golfo de Finlandia, en un ataque que las Fuerzas de Defensa finlandesas atribuyen como lo más probable a Ucrania y que Kiev no se atribuyó; Rusia no informó qué carga llevaba.",
+          "lectura": "Finlandia cerró en un día y medio un problema que no había buscado: el Sparta II se fue a remolque de un buque ruso, sin derrames y con la carga sin declarar. Ese mismo domingo ardía otro buque ruso en Bengasi, y si los militares libios tienen razón sobre el origen de los drones, la guerra naval de Ucrania llega al Báltico y al Mediterráneo sin que Kiev firme ninguno de los dos ataques.",
+          "tendencia": "escala",
+          "intensidad": 2,
+          "corto": "Buques rusos",
+          "dato": "dos drones navales",
+          "objetivo": "Carguero y corbeta",
+          "fuente": {
+            "nombre": "Yle",
+            "url": "https://yle.fi/a/74-20258284"
+          }
+        },
+        {
+          "n": 9,
+          "titulo": "México: 11 muertos en la captura del Chapo Isidro en Sinaloa",
+          "lugar": "Guasave, Sinaloa, México",
+          "lugarMapa": "Guasave, México",
+          "lat": 25.57,
+          "lon": -108.47,
+          "etiqueta": "izq",
+          "fecha": "2026-11-21",
+          "hecho": "La captura de Fausto Isidro Meza Flores, \"El Chapo Isidro\", entre el viernes 20 y el sábado 21 en Guasave (Sinaloa), dejó 11 muertos, 7 presuntos sicarios y 4 soldados, según la Secretaría de la Defensa. Estaba en la lista de los diez más buscados del FBI y el sábado 21 fue trasladado a Ciudad de México.",
+          "lectura": "La captura del Chapo Isidro dejó 11 muertos, entre ellos 4 soldados, y mostró cuánto poder de fuego conservaba su organización en el norte de Sinaloa el día que fueron a buscarlo. Sacar de la calle a uno de los diez más buscados del FBI abre un territorio que alguien va a disputar, y el balance de Guasave ya da una medida del costo de esa disputa.",
+          "tendencia": "escala",
+          "intensidad": 2,
+          "corto": "Guasave",
+          "dato": "11 muertos",
+          "objetivo": "Captura",
+          "fuente": {
+            "nombre": "Al Jazeera, con AP",
+            "url": "https://www.aljazeera.com/news/2026/11/22/eleven-killed-in-burst-of-violence-during-mexican-cartel-leaders-capture"
+          }
+        },
+        {
+          "n": 10,
+          "titulo": "Paraguay: la Fiscalía investiga al exfiscal general por Ueno Bank",
+          "lugar": "Asunción, Paraguay",
+          "lugarMapa": "Asunción, Paraguay",
+          "lat": -25.28,
+          "lon": -57.63,
+          "etiqueta": "der",
+          "fecha": "2026-11-20",
+          "hecho": "El viernes 20, la Fiscalía de Paraguay abrió una investigación penal contra el exfiscal general Emiliano Rolón por \"frustración de la persecución y ejecución penal\" en la causa Ueno Bank, a partir de una denuncia de las diputadas Yolanda Paredes y Rocío Vallejo. Rolón había renunciado el martes 17.",
+          "lectura": "La causa Ueno llegó a la cabeza del Ministerio Público: el fiscal general que tenía que conducirla renunció el martes y desde el viernes es investigado por frustrar la persecución penal. Para el Mercosur, a la duda sobre adónde fue el dinero del banco se suma otra sobre quién podía frenar la causa, y un inversor regional mira ese riesgo institucional con la misma atención que un balance.",
+          "tendencia": "escala",
+          "intensidad": 2,
+          "corto": "Ueno",
+          "objetivo": "Fiscalía",
+          "fuente": {
+            "nombre": "EFE, vía Infobae",
+            "url": "https://www.infobae.com/america/agencias/2026/11/20/la-fiscalia-abre-investigacion-penal-contra-el-exfiscal-general-de-paraguay-por-ueno-bank/"
+          }
+        }
+      ],
+      "tambienTitulo": "Focos en observación",
+      "tambien": [
+        {
+          "etiqueta": "Ucrania, 21 nov",
+          "texto": "Mark Rutte, secretario general de la OTAN, fue a Varsovia después de que dos misiles rusos y un dron cayeran en Polonia el viernes 20; el Consejo del Atlántico Norte se reúne el lunes 23."
+        },
+        {
+          "etiqueta": "Sudán, 21 nov",
+          "texto": "La alianza Tasis, de las Fuerzas de Apoyo Rápido y el SPLM-N, dijo que tomó Bau, en el Nilo Azul; el comisionado local lo disputa y da más de 6.000 familias desplazadas."
+        },
+        {
+          "etiqueta": "Etiopía y Eritrea, 18 nov",
+          "texto": "Los dos ejércitos están a distancia de ataque en la frontera, según fuentes y monitores citados por Reuters; ACLED registró choques cerca de Badme el 13 de noviembre."
+        },
+        {
+          "etiqueta": "Báltico, 21 nov",
+          "texto": "Sonó en Kaliningrado la primera alerta aérea desde febrero de 2022, según medios locales; Lituania negó haber registrado drones."
+        },
+        {
+          "etiqueta": "Gaza, 17 nov",
+          "texto": "La Junta de Paz advirtió que la tregua puede caer."
+        }
+      ]
+    }
+  ],
+  "focos": [
+    {
+      "nombre": "Ucrania",
+      "lugarMapa": "Kiev, Ucrania",
+      "lat": 50.45,
+      "lon": 30.52,
+      "etiqueta": "der",
+      "eje": "con"
+    },
+    {
+      "nombre": "Sudán",
+      "lugarMapa": "Nilo Azul, Sudán",
+      "lat": 11.79,
+      "lon": 34.36,
+      "etiqueta": "izq",
+      "eje": "con"
+    },
+    {
+      "nombre": "Etiopía y Eritrea",
+      "lugarMapa": "Badme",
+      "lat": 14.73,
+      "lon": 37.8,
+      "etiqueta": "der",
+      "eje": "con"
+    },
+    {
+      "nombre": "Báltico",
+      "lugarMapa": "Kaliningrado",
+      "lat": 54.71,
+      "lon": 20.51,
+      "etiqueta": "izq",
+      "eje": "con"
+    },
+    {
+      "nombre": "Gaza",
+      "lugarMapa": "Gaza",
+      "lat": 31.5,
+      "lon": 34.47,
+      "etiqueta": "izq",
+      "eje": "con"
+    }
+  ],
+  "agenda": [
+    {
+      "fecha": "2026-11-23",
+      "texto": "23 nov",
+      "eje": "Conflictos",
+      "detalle": "El Consejo del Atlántico Norte trata en Bruselas los misiles rusos caídos en Polonia."
+    },
+    {
+      "fecha": "2026-11-24",
+      "texto": "24 nov",
+      "eje": "Chokepoints",
+      "detalle": "Día para el que el INA pronostica 5,02 metros en Rosario, sobre la cota de alerta."
+    },
+    {
+      "fecha": "2026-11-26",
+      "texto": "26 nov",
+      "eje": "Minerales críticos",
+      "detalle": "La bolsa de Guangzhou empieza a operar futuros de hidróxido de litio."
+    },
+    {
+      "fecha": "2026-11-27",
+      "texto": "27 nov",
+      "eje": "Minerales críticos",
+      "detalle": "Vence la suspensión china de la prohibición de exportar galio, germanio y antimonio a EE.UU."
+    },
+    {
+      "fecha": "2026-11-29",
+      "texto": "29 nov",
+      "eje": "Infraestructura IA",
+      "detalle": "Elecciones generales en España, con el decreto de data centers recurrido por la Comunidad de Madrid."
+    }
+  ]
+}
