@@ -11,6 +11,29 @@
       "alcance": "Tierras raras, cobre, cobalto, litio, uranio. Quién controla el acceso y a qué precio.",
       "senales": [
         {
+          "n": 11,
+          "titulo": "El Congo suspende todas sus exportaciones de cobalto desde el 30",
+          "lugar": "Kinshasa, República Democrática del Congo",
+          "lugarMapa": "Kinshasa",
+          "lat": -4.32,
+          "lon": 15.31,
+          "etiqueta": "der",
+          "fecha": "2026-11-23",
+          "hecho": "El lunes 23, el regulador de minerales estratégicos de la República Democrática del Congo (ARECOMS) anunció que suspende desde el 30 de noviembre, y hasta nuevo aviso, las exportaciones de todo el cobalto producido en el país, de minas industriales y artesanales, por un mercado con demanda débil, inventarios en alza y exceso de oferta, y con precios en baja desde mitad de año. La medida se revisa a los cuatro meses, y el regulador aclaró que esa evaluación no implica reanudar los envíos: hará falta otra decisión que fije volúmenes y cuotas. El Congo, primer productor mundial, ya había frenado sus exportaciones una vez desde 2025 y después pasó a un sistema de cuotas (Reuters).",
+          "lectura": "El Congo vuelve a cerrar la canilla del cobalto y esta vez no pone fecha de reapertura: la revisión a los cuatro meses, aclara el regulador, no obliga a nada. Con el precio en baja desde mitad de año, Kinshasa hace valer su peso de primer productor mundial y deja a los compradores contando inventarios para saber cuánto dura la espera.",
+          "tendencia": "escala",
+          "intensidad": 3,
+          "corto": "Cobalto",
+          "dato": "30 de noviembre",
+          "objetivo": "Exportaciones",
+          "fuente": {
+            "nombre": "Reuters, vía CNBC Africa",
+            "url": "https://www.cnbcafrica.com/2026/congo-halts-cobalt-exports-again-to-tackle-oversupply-support-prices-industry-regulator-says"
+          },
+          "actualizado": "2026-11-23T19:45",
+          "ultimoMomento": true
+        },
+        {
           "n": 1,
           "titulo": "Galio, germanio y antimonio: la pausa china para EE.UU. vence el 27",
           "lugar": "Beijing / Washington",
@@ -60,7 +83,8 @@
           "fuente": {
             "nombre": "Reuters, vía Publimetro",
             "url": "https://www.publimetro.cl/noticias/2026/11/19/giro-en-la-estrategia-de-codelco-la-minera-chilena-reduce-las-primas-del-cobre-en-china-para-frenar-la-caida-de-sus-ventas/"
-          }
+          },
+          "rotada": "2026-11-23T19:45"
         }
       ],
       "tambienTitulo": "También en el radar",
@@ -175,6 +199,28 @@
       "alcance": "Data centers, chips, energía y agua. El cuerpo físico de la IA y quién lo decide.",
       "senales": [
         {
+          "n": 12,
+          "titulo": "Nvidia repone a Huang como CEO tras consultar al gobierno de EE.UU.",
+          "lugar": "Santa Clara, California",
+          "lugarMapa": "Santa Clara, California",
+          "lat": 37.35,
+          "lon": -121.96,
+          "etiqueta": "izq",
+          "fecha": "2026-11-23",
+          "hecho": "El lunes 23, el directorio de Nvidia repuso por unanimidad y con efecto inmediato a Jensen Huang como presidente y director ejecutivo, once días después de su renuncia del 12 de noviembre, que siguió a revelaciones que incluían una relación con una presunta espía china (Al Jazeera). El comunicado de la empresa dice que consultas con altos niveles del gobierno de EE.UU. llevaron al directorio a concluir que la reposición no plantea un riesgo de seguridad nacional, y que sigue hasta su conclusión la investigación de un comité de directores independientes sobre los reportes de que Huang fue blanco de una operación de inteligencia extranjera. El presidente Donald Trump dijo que estuvo \"representado en el directorio\", y la acción subió 33% en la apertura (AP).",
+          "lectura": "Nvidia recupera a su jefe once días después de perderlo, con un directorio que dice haberse convencido, por boca del gobierno, de que no hay riesgo de seguridad nacional mientras su propio comité todavía investiga si lo hubo. Trump cuenta que estuvo representado en el directorio, y una empresa que repone a su CEO con esa silla ocupada queda en deuda con Washington, por más que la acción haya festejado con 33% de suba.",
+          "tendencia": "estable",
+          "intensidad": 2,
+          "corto": "Nvidia",
+          "dato": "33%",
+          "objetivo": "Diseñador de chips",
+          "fuente": {
+            "nombre": "Nvidia, comunicado a inversores",
+            "url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Board-Reinstates-Jensen-Huang-as-President-CEO-and-Board-Director/default.aspx"
+          },
+          "actualizado": "2026-11-23T19:45"
+        },
+        {
           "n": 7,
           "titulo": "TSMC frena pedidos chinos de 16 nm o menos, según fuentes",
           "lugar": "Hsinchu, Taiwán",
@@ -214,7 +260,8 @@
           "fuente": {
             "nombre": "AP, vía OPB",
             "url": "https://www.opb.org/article/2026/11/20/senate-approves-bill-to-speed-up-permitting-reviews-force-data-centers-to-pay-for-energy-costs/"
-          }
+          },
+          "rotada": "2026-11-23T19:45"
         }
       ],
       "tambienTitulo": "También en el radar",
