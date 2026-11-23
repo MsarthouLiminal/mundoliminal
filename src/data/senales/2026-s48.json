@@ -125,24 +125,35 @@
         },
         {
           "n": 3,
-          "titulo": "AIE: la crisis de Ormuz sacó 2.800 millones de barriles del mercado",
-          "lugar": "Estrecho de Ormuz / París",
-          "lugarMapa": "Estrecho de Ormuz",
-          "lat": 26.6,
-          "lon": 56.5,
+          "titulo": "UKMTO: incidente entre un petrolero y fuerzas militares junto a Ormuz",
+          "lugar": "Golfo de Omán, frente a Chabahar",
+          "lugarMapa": "Golfo de Omán",
+          "lat": 25.0,
+          "lon": 60.6,
           "etiqueta": "der",
-          "fecha": "2026-11-19",
-          "hecho": "En su World Energy Outlook 2026, la Agencia Internacional de Energía estimó \"pérdidas acumuladas de 2.800 millones de barriles de petróleo y 60.000 millones de metros cúbicos de gas\" del suministro del Golfo, a noviembre, y en el peor momento una caída del suministro mundial de petróleo de 16 millones de barriles diarios. Según la agencia marítima británica UKMTO, hubo 31 ataques a buques en octubre y unos 19 en noviembre hasta el miércoles 18 (ABC News). Ese miércoles, el Comando Central de EE.UU. avisó que un buque que reciba por transbordo en el mar carga de un puerto iraní puede ser detenido, abordado o capturado (MarineLink).",
-          "lectura": "La Agencia Internacional de Energía le puso número a la crisis de Ormuz: 2.800 millones de barriles de petróleo y 60.000 millones de metros cúbicos de gas perdidos, con la aclaración de que la cuenta sigue abierta. Que UKMTO registre menos ataques en noviembre que en octubre no achica esa cifra, porque Washington amplió el bloqueo a los transbordos y el estrecho se administra hoy con menos disparos y más control, un costo que el Cono Sur paga en cada carga de gasoil.",
+          "fecha": "2026-11-22",
+          "hecho": "El domingo 22, la agencia marítima británica UKMTO informó que un petrolero estuvo involucrado en un incidente con \"fuerzas militares\" en el golfo de Omán, cerca del puerto iraní de Chabahar y de la línea del bloqueo naval de EE.UU., sin identificar el buque ni las fuerzas; no hubo confirmación oficial de Washington ni de Teherán (Gulf News). Ese día, Donald Trump dijo a Fox News sobre los petroleros iraníes que intenten cruzar el bloqueo: \"Espero que lo hagan, van a quedar todos en el fondo del mar, como el resto de la marina\". El centro de información marítima JMIC cuenta siete petroleros alcanzados desde el 16 de noviembre (Gulf News), y la Agencia Internacional de Energía estimó el jueves 19 pérdidas acumuladas de 2.800 millones de barriles de petróleo del suministro del Golfo.",
+          "lectura": "El incidente frente a Chabahar ocurre en el punto donde el bloqueo de EE.UU. y los petroleros iraníes tenían que encontrarse tarde o temprano, y que nadie haya confirmado todavía quién intervino deja la escalada sin autor declarado. Con siete petroleros alcanzados en una semana y Trump prometiendo el fondo del mar, la cuenta de 2.800 millones de barriles de la AIE sigue abierta, y el Cono Sur la paga en cada carga de gasoil.",
           "tendencia": "escala",
           "intensidad": 3,
           "corto": "Ormuz",
-          "dato": "2.800 millones de barriles",
-          "objetivo": "Estrecho",
+          "dato": "siete petroleros",
+          "objetivo": "Línea del bloqueo",
           "fuente": {
-            "nombre": "Agencia Internacional de Energía, World Energy Outlook 2026",
-            "url": "https://www.iea.org/reports/world-energy-outlook-2026/executive-summary"
-          }
+            "nombre": "Euronews, con datos de UKMTO",
+            "url": "https://www.euronews.com/2026/11/22/tanker-incident-involving-military-forces-reported-in-strait-of-hormuz"
+          },
+          "anterior": {
+            "titulo": "AIE: la crisis de Ormuz sacó 2.800 millones de barriles del mercado",
+            "fecha": "2026-11-19",
+            "hecho": "En su World Energy Outlook 2026, la Agencia Internacional de Energía estimó \"pérdidas acumuladas de 2.800 millones de barriles de petróleo y 60.000 millones de metros cúbicos de gas\" del suministro del Golfo, a noviembre, y en el peor momento una caída del suministro mundial de petróleo de 16 millones de barriles diarios. Según la agencia marítima británica UKMTO, hubo 31 ataques a buques en octubre y unos 19 en noviembre hasta el miércoles 18 (ABC News). Ese miércoles, el Comando Central de EE.UU. avisó que un buque que reciba por transbordo en el mar carga de un puerto iraní puede ser detenido, abordado o capturado (MarineLink).",
+            "lectura": "La Agencia Internacional de Energía le puso número a la crisis de Ormuz: 2.800 millones de barriles de petróleo y 60.000 millones de metros cúbicos de gas perdidos, con la aclaración de que la cuenta sigue abierta. Que UKMTO registre menos ataques en noviembre que en octubre no achica esa cifra, porque Washington amplió el bloqueo a los transbordos y el estrecho se administra hoy con menos disparos y más control, un costo que el Cono Sur paga en cada carga de gasoil.",
+            "fuente": {
+              "nombre": "Agencia Internacional de Energía, World Energy Outlook 2026",
+              "url": "https://www.iea.org/reports/world-energy-outlook-2026/executive-summary"
+            }
+          },
+          "actualizado": "2026-11-23T13:14"
         }
       ],
       "tambienTitulo": "También en el radar",
@@ -226,29 +237,40 @@
       "senales": [
         {
           "n": 8,
-          "titulo": "El Sparta II deja Finlandia a remolque; arde otro buque ruso en Libia",
-          "lugar": "Golfo de Finlandia / Bengasi",
-          "lugarMapa": "Golfo de Finlandia",
-          "lat": 60.2,
-          "lon": 26.4,
-          "etiqueta": "arriba",
+          "titulo": "Ucrania se atribuye el hundimiento de la corbeta rusa Merkury en Libia",
+          "lugar": "Bengasi / Golfo de Finlandia",
+          "lugarMapa": "Bengasi, Libia",
+          "lat": 32.12,
+          "lon": 20.07,
+          "etiqueta": "der",
           "arco": {
-            "lat": 32.12,
-            "lon": 20.07,
-            "nombre": "Bengasi"
+            "lat": 60.2,
+            "lon": 26.4,
+            "nombre": "Golfo de Finlandia"
           },
-          "fecha": "2026-11-22",
-          "hecho": "El domingo 22, el buque de rescate ruso Murman empezó a remolcar al Sparta II poco antes de las 17, hora local, y lo sacó de las aguas territoriales y de la zona económica de Finlandia rumbo a aguas rusas, con apoyo de la patrullera finlandesa Uisko y del buque estonio Kindral Kurvits; la Guardia de Fronteras dio por terminada su misión, se levantaron las restricciones al tráfico aéreo y marítimo y no se observaron derrames, según Yle, y el presidente Alexander Stubb escribió que el buque, que había causado un peligro grave, salió del territorio finlandés. El mismo domingo, una explosión y un incendio dañaron a un buque ruso amarrado en el puerto de Bengasi, que según el gobierno del este de Libia se sospecha que fue atacado con drones; dos militares libios dijeron a la AP que es la corbeta Merkury, de la Armada rusa, que quedó severamente dañada por dos drones navales ucranianos lanzados desde el oeste de Libia mientras otros cuatro fueron interceptados, y ni Kiev ni Moscú hicieron comentarios (The Kyiv Independent). El Sparta II, que Finlandia vincula a las fuerzas armadas rusas, había sido alcanzado por drones el sábado 21 en aguas internacionales del golfo de Finlandia, en un ataque que las Fuerzas de Defensa finlandesas atribuyen como lo más probable a Ucrania y que Kiev no se atribuyó; Rusia no informó qué carga llevaba.",
-          "lectura": "Finlandia cerró en un día y medio un problema que no había buscado: el Sparta II se fue a remolque de un buque ruso, sin derrames y con la carga sin declarar. Ese mismo domingo ardía otro buque ruso en Bengasi, y si los militares libios tienen razón sobre el origen de los drones, la guerra naval de Ucrania llega al Báltico y al Mediterráneo sin que Kiev firme ninguno de los dos ataques.",
+          "fecha": "2026-11-23",
+          "hecho": "El lunes 23, el presidente Volodímir Zelenski escribió en X que fuerzas ucranianas usaron siete drones navales de fabricación ucraniana frente a la costa de Libia, y el Servicio de Seguridad de Ucrania (SBU) informó que hundieron a la corbeta rusa Merkury en el puerto de Bengasi, con un helicóptero Ka-27 a bordo, y alcanzaron al carguero ruso Angara (Kyiv Post); las imágenes satelitales muestran a la corbeta volcada y hundida en su mayor parte, con solo la proa a la vista. El vocero del Kremlin, Dmitri Peskov, habló de una \"tendencia muy peligrosa\" y advirtió a Ucrania de consecuencias \"dolorosas\"; el gobierno del este de Libia denunció una violación de su soberanía y pidió una investigación internacional por medio de la ONU. El ataque del domingo 22 en Bengasi llegó un día después del que alcanzó al carguero ruso Sparta II en el golfo de Finlandia, que el ejército finlandés atribuye como lo más probable a Ucrania y que ya fue remolcado a aguas rusas.",
+          "lectura": "Con la firma de Zelenski, lo que el domingo era una sospecha de militares libios queda como una operación que Ucrania reivindica en el Mediterráneo, lejos del mar Negro y dentro del puerto de un tercer país. Moscú responde con la promesa de consecuencias dolorosas, y el este de Libia, que le prestaba el muelle a la corbeta, descubre que alojar a la Armada rusa ya tiene costo propio.",
           "tendencia": "escala",
-          "intensidad": 2,
-          "corto": "Buques rusos",
-          "dato": "dos drones navales",
-          "objetivo": "Carguero y corbeta",
+          "intensidad": 3,
+          "corto": "Merkury",
+          "dato": "siete drones navales",
+          "objetivo": "Corbeta rusa",
           "fuente": {
-            "nombre": "Yle",
-            "url": "https://yle.fi/a/74-20258284"
-          }
+            "nombre": "Al Jazeera, con AP y Reuters",
+            "url": "https://www.aljazeera.com/news/2026/11/23/russian-ships-hit-by-drones-off-libya-coast-what-do-we-know"
+          },
+          "anterior": {
+            "titulo": "El Sparta II deja Finlandia a remolque; arde otro buque ruso en Libia",
+            "fecha": "2026-11-22",
+            "hecho": "El domingo 22, el buque de rescate ruso Murman empezó a remolcar al Sparta II poco antes de las 17, hora local, y lo sacó de las aguas territoriales y de la zona económica de Finlandia rumbo a aguas rusas, con apoyo de la patrullera finlandesa Uisko y del buque estonio Kindral Kurvits; la Guardia de Fronteras dio por terminada su misión, se levantaron las restricciones al tráfico aéreo y marítimo y no se observaron derrames, según Yle, y el presidente Alexander Stubb escribió que el buque, que había causado un peligro grave, salió del territorio finlandés. El mismo domingo, una explosión y un incendio dañaron a un buque ruso amarrado en el puerto de Bengasi, que según el gobierno del este de Libia se sospecha que fue atacado con drones; dos militares libios dijeron a la AP que es la corbeta Merkury, de la Armada rusa, que quedó severamente dañada por dos drones navales ucranianos lanzados desde el oeste de Libia mientras otros cuatro fueron interceptados, y ni Kiev ni Moscú hicieron comentarios (The Kyiv Independent). El Sparta II, que Finlandia vincula a las fuerzas armadas rusas, había sido alcanzado por drones el sábado 21 en aguas internacionales del golfo de Finlandia, en un ataque que las Fuerzas de Defensa finlandesas atribuyen como lo más probable a Ucrania y que Kiev no se atribuyó; Rusia no informó qué carga llevaba.",
+            "lectura": "Finlandia cerró en un día y medio un problema que no había buscado: el Sparta II se fue a remolque de un buque ruso, sin derrames y con la carga sin declarar. Ese mismo domingo ardía otro buque ruso en Bengasi, y si los militares libios tienen razón sobre el origen de los drones, la guerra naval de Ucrania llega al Báltico y al Mediterráneo sin que Kiev firme ninguno de los dos ataques.",
+            "fuente": {
+              "nombre": "Yle",
+              "url": "https://yle.fi/a/74-20258284"
+            }
+          },
+          "actualizado": "2026-11-23T13:14"
         },
         {
           "n": 9,
