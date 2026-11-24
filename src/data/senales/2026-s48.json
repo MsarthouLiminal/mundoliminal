@@ -35,7 +35,7 @@
         },
         {
           "n": 1,
-          "titulo": "Galio, germanio y antimonio: la pausa china para EE.UU. vence el 27",
+          "titulo": "China prorroga hasta el 27 de enero la pausa del galio para EE.UU.",
           "lugar": "Beijing / Washington",
           "lugarMapa": "Beijing",
           "lat": 39.9,
@@ -46,17 +46,28 @@
             "lon": -77.04,
             "nombre": "Washington"
           },
-          "fecha": "2026-11-21",
-          "hecho": "En noviembre de 2025, China suspendió por un año, hasta el 27 de noviembre de 2026, la prohibición de exportar galio, germanio y antimonio a EE.UU., vigente desde diciembre de 2024 (Mining.com). Al sábado 21 no apareció aviso de prórroga; la otra suspensión, la de los anuncios 55 a 58, 61 y 62 de 2025 sobre tierras raras, se prorrogó el lunes 9 hasta el 10 de enero de 2027 (SMM).",
-          "lectura": "China prorrogó hasta el 10 de enero la pausa de sus controles sobre tierras raras y, al sábado 21, no había dicho nada de la otra, la que vence el viernes 27 y cubre el galio, el germanio y el antimonio que necesita la fabricación de chips en EE.UU. Beijing maneja dos relojes separados para una misma negociación, y cada fecha suelta le da una ocasión más para cobrar.",
-          "tendencia": "estable",
+          "fecha": "2026-11-24",
+          "hecho": "El martes 24, el Ministerio de Comercio de China anunció que la prohibición de exportar galio, germanio, antimonio y materiales superduros a EE.UU. sigue suspendida del 28 de noviembre de 2026 al 27 de enero de 2027; la pausa anterior vencía el viernes 27 (Cailianshe). Sigue vigente la prohibición de exportar productos de doble uso a usuarios o usos militares de EE.UU. (UDN). La otra suspensión, la de los anuncios 55 a 58, 61 y 62 de 2025 sobre tierras raras, se había prorrogado el lunes 9 hasta el 10 de enero de 2027 (SMM).",
+          "lectura": "Beijing prorrogó la pausa tres días antes del vencimiento y por dos meses justos, hasta el 27 de enero, diecisiete días después de la fecha que les puso a las tierras raras. Los dos relojes siguen separados y ahora corren cortos: el galio, el germanio y el antimonio que necesita la fabricación de chips en EE.UU. quedan con un permiso de dos meses, y cada vencimiento le da a China otra ocasión de cobrar.",
+          "tendencia": "afloja",
           "intensidad": 2,
           "corto": "Galio",
-          "dato": "27 de noviembre",
+          "dato": "27 de enero de 2027",
           "objetivo": "Pausa de exportación",
           "fuente": {
-            "nombre": "Mining.com",
-            "url": "https://mining.com/china-lifts-export-ban-on-gallium-germanium-and-antimony-to-us"
+            "nombre": "Cailianshe, con el anuncio del Ministerio de Comercio de China",
+            "url": "https://www.cls.cn/detail/2542969"
+          },
+          "actualizado": "2026-11-24T07:15",
+          "anterior": {
+            "titulo": "Galio, germanio y antimonio: la pausa china para EE.UU. vence el 27",
+            "fecha": "2026-11-21",
+            "hecho": "En noviembre de 2025, China suspendió por un año, hasta el 27 de noviembre de 2026, la prohibición de exportar galio, germanio y antimonio a EE.UU., vigente desde diciembre de 2024 (Mining.com). Al sábado 21 no apareció aviso de prórroga; la otra suspensión, la de los anuncios 55 a 58, 61 y 62 de 2025 sobre tierras raras, se prorrogó el lunes 9 hasta el 10 de enero de 2027 (SMM).",
+            "lectura": "China prorrogó hasta el 10 de enero la pausa de sus controles sobre tierras raras y, al sábado 21, no había dicho nada de la otra, la que vence el viernes 27 y cubre el galio, el germanio y el antimonio que necesita la fabricación de chips en EE.UU. Beijing maneja dos relojes separados para una misma negociación, y cada fecha suelta le da una ocasión más para cobrar.",
+            "fuente": {
+              "nombre": "Mining.com",
+              "url": "https://mining.com/china-lifts-export-ban-on-gallium-germanium-and-antimony-to-us"
+            }
           }
         },
         {
@@ -106,6 +117,33 @@
       "alcance": "Estrechos, puertos, aranceles y cadenas de suministro. Dónde se traba el comercio.",
       "senales": [
         {
+          "n": 13,
+          "titulo": "EE.UU. sanciona la red que mueve el dinero de Irán por Dubái",
+          "lugar": "Dubái / Washington",
+          "lugarMapa": "Dubái",
+          "lat": 25.2,
+          "lon": 55.27,
+          "etiqueta": "izq",
+          "arco": {
+            "lat": 38.9,
+            "lon": -77.04,
+            "nombre": "Washington"
+          },
+          "fecha": "2026-11-23",
+          "hecho": "El lunes 23, el Tesoro de EE.UU. sancionó a más de dos docenas de casas de cambio, empresas pantalla y personas de la red de banca en la sombra de Irán, con entidades en Irán, Emiratos Árabes Unidos (la mayoría, en Dubái), Hong Kong y Turquía. El mismo día, su oficina FinCEN informó que los bancos de EE.UU. reportaron unos USD 14.700 millones en operaciones que podrían estar ligadas a esa red entre enero de 2025 y agosto de 2026, y que la ruta más usada fue de bancos de China continental a bancos de Emiratos, con unos USD 2.600 millones. El Tesoro recordó que puede prohibir o condicionar las cuentas corresponsales en EE.UU. de los bancos extranjeros que faciliten a sabiendas operaciones significativas para los sancionados.",
+          "lectura": "El Tesoro va por las casas de cambio y las empresas pantalla con las que Irán cobra lo que exporta, una cañería que pasa por Dubái, Hong Kong y Turquía y que ninguna armada puede cortar. El dato que más pesa es el de FinCEN: la ruta más usada sale de bancos de China continental hacia bancos de Emiratos, y el recordatorio sobre las cuentas corresponsales está escrito para ellos.",
+          "tendencia": "escala",
+          "intensidad": 2,
+          "corto": "Banca sombra",
+          "dato": "USD 14.700 millones",
+          "objetivo": "Sistema de pagos",
+          "fuente": {
+            "nombre": "Departamento del Tesoro de EE.UU.",
+            "url": "https://home.treasury.gov/news/press-releases/sb0699/"
+          },
+          "actualizado": "2026-11-24T07:15"
+        },
+        {
           "n": 4,
           "titulo": "Paraná: el INA prevé 5,02 metros en Rosario, sobre la cota de alerta",
           "lugar": "Rosario, Argentina",
@@ -145,7 +183,8 @@
           "fuente": {
             "nombre": "ERR",
             "url": "https://news.err.ee/1610201515/estonia-to-close-land-border-with-russia-from-december-1"
-          }
+          },
+          "rotada": "2026-11-24T07:15"
         },
         {
           "n": 3,
@@ -451,7 +490,7 @@
       "fecha": "2026-11-27",
       "texto": "27 nov",
       "eje": "Minerales críticos",
-      "detalle": "Vence la suspensión china de la prohibición de exportar galio, germanio y antimonio a EE.UU."
+      "detalle": "Vencía la suspensión china de la prohibición de exportar galio, germanio y antimonio a EE.UU.; China la prorrogó el martes 24 hasta el 27 de enero de 2027."
     },
     {
       "fecha": "2026-11-29",
