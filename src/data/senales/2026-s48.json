@@ -188,23 +188,23 @@
         },
         {
           "n": 3,
-          "titulo": "UKMTO: incidente entre un petrolero y fuerzas militares junto a Ormuz",
-          "lugar": "Golfo de Omán, frente a Chabahar",
-          "lugarMapa": "Golfo de Omán",
-          "lat": 25.0,
-          "lon": 60.6,
+          "titulo": "UKMTO: tres buques alcanzados en Ormuz; Irán ordena cerrarlo más",
+          "lugar": "Estrecho de Ormuz",
+          "lugarMapa": "Estrecho de Ormuz",
+          "lat": 26.57,
+          "lon": 56.25,
           "etiqueta": "der",
-          "fecha": "2026-11-22",
-          "hecho": "El domingo 22, la agencia marítima británica UKMTO informó que un petrolero estuvo involucrado en un incidente con \"fuerzas militares\" en el golfo de Omán, cerca del puerto iraní de Chabahar y de la línea del bloqueo naval de EE.UU., sin identificar el buque ni las fuerzas; no hubo confirmación oficial de Washington ni de Teherán (Gulf News). Ese día, Donald Trump dijo a Fox News sobre los petroleros iraníes que intenten cruzar el bloqueo: \"Espero que lo hagan, van a quedar todos en el fondo del mar, como el resto de la marina\". El centro de información marítima JMIC cuenta siete petroleros alcanzados desde el 16 de noviembre (Gulf News), y la Agencia Internacional de Energía estimó el jueves 19 pérdidas acumuladas de 2.800 millones de barriles de petróleo del suministro del Golfo.",
-          "lectura": "El incidente frente a Chabahar ocurre en el punto donde el bloqueo de EE.UU. y los petroleros iraníes tenían que encontrarse tarde o temprano, y que nadie haya confirmado todavía quién intervino deja la escalada sin autor declarado. Con siete petroleros alcanzados en una semana y Trump prometiendo el fondo del mar, la cuenta de 2.800 millones de barriles de la AIE sigue abierta, y el Cono Sur la paga en cada carga de gasoil.",
+          "fecha": "2026-11-23",
+          "hecho": "El lunes 23 a las 20:25 GMT, tres buques que navegaban hacia el este por el estrecho de Ormuz fueron alcanzados por proyectiles no identificados, informó el martes 24 la agencia marítima británica UKMTO; las tripulaciones están a salvo, los tres siguieron viaje y el alcance de los daños no se conoce. Ese lunes, el jefe del ejército iraní, Amir Hatami, ordenó a la armada mantener cerrado el estrecho y apretar el cierre día a día hasta que Washington cumpla las siete condiciones de Teherán, y la Guardia Revolucionaria dijo, sin confirmación independiente, que tres petroleros chocaron con minas (Euronews). Según MarineTraffic, los buques que entraron o salieron del Golfo bajaron de 226 en la primera semana de noviembre a 125 en la del 17 al 23, y el Brent cotizó a USD 88,35 (Al Jazeera).",
+          "lectura": "El jefe del ejército iraní ordena apretar el cierre de Ormuz día a día y, esa misma noche, tres buques reciben proyectiles que nadie se atribuye: la orden tiene firma y los disparos siguen sin tenerla. El tráfico del Golfo cayó de 226 a 125 buques por semana y el Brent igual baja a USD 88,35, señal de que el mercado ya le puso precio a un estrecho cerrado.",
           "tendencia": "escala",
           "intensidad": 3,
           "corto": "Ormuz",
-          "dato": "siete petroleros",
-          "objetivo": "Línea del bloqueo",
+          "dato": "tres buques",
+          "objetivo": "Estrecho",
           "fuente": {
-            "nombre": "Euronews, con datos de UKMTO",
-            "url": "https://www.euronews.com/2026/11/22/tanker-incident-involving-military-forces-reported-in-strait-of-hormuz"
+            "nombre": "Xinhua, con el aviso de UKMTO",
+            "url": "https://english.news.cn/20261124/c5565ede37184f688b6a99a060145776/c.html"
           },
           "anterior": {
             "titulo": "AIE: la crisis de Ormuz sacó 2.800 millones de barriles del mercado",
@@ -216,7 +216,7 @@
               "url": "https://www.iea.org/reports/world-energy-outlook-2026/executive-summary"
             }
           },
-          "actualizado": "2026-11-23T13:14"
+          "actualizado": "2026-11-24T13:15"
         }
       ],
       "tambienTitulo": "También en el radar",
@@ -322,6 +322,29 @@
       "alcance": "Guerras activas, cambios de fase y lo que derraman sobre la región.",
       "senales": [
         {
+          "n": 14,
+          "titulo": "Riad acusa a los hutíes: 11 heridos en su distrito financiero",
+          "lugar": "Riad, Arabia Saudita",
+          "lugarMapa": "Riad",
+          "lat": 24.71,
+          "lon": 46.68,
+          "etiqueta": "arriba",
+          "fecha": "2026-11-24",
+          "hecho": "El martes 24, un ataque contra una torre del distrito financiero de Riad dejó 11 heridos (dos sauditas, dos indios, tres nepalíes y cuatro egipcios), informó la Defensa Civil de Arabia Saudita, que lo atribuyó a los hutíes de Yemen; los hutíes no se lo habían adjudicado y el comunicado no dice con qué arma. Es el segundo ataque a una torre de ese distrito en menos de una semana: el anterior causó daños materiales y ningún herido (The New Arab). El lunes 23, un bombardeo en Lahj, en el sur de Yemen, mató a 12 combatientes hutíes y 14 civiles según dos funcionarios citados por AFP; los hutíes culparon a la aviación saudita y avisaron que no quedaría sin respuesta (The New Arab).",
+          "lectura": "El segundo ataque en menos de una semana contra el distrito financiero de Riad ya dejó heridos, y cayó al día siguiente de un bombardeo en Lahj que los hutíes cargan a la aviación saudita y prometieron contestar. Si la autoría que da Riad se confirma, la guerra de Yemen llega al barrio que Arabia Saudita levantó para recibir capitales, y ahí once heridos pesan más en el ánimo de los inversores que en cualquier parte militar.",
+          "tendencia": "escala",
+          "intensidad": 2,
+          "corto": "Riad",
+          "dato": "11 heridos",
+          "objetivo": "Distrito financiero",
+          "fuente": {
+            "nombre": "Arab News, con el comunicado de la Defensa Civil saudita",
+            "url": "https://www.arabnews.com/saudi-arabia/11-injured-in-houthi-attack-on-tower-in-riyadhs-financial-district-3013857"
+          },
+          "actualizado": "2026-11-24T13:15",
+          "ultimoMomento": true
+        },
+        {
           "n": 8,
           "titulo": "Ucrania se atribuye el hundimiento de la corbeta rusa Merkury en Libia",
           "lugar": "Bengasi / Golfo de Finlandia",
@@ -360,24 +383,35 @@
         },
         {
           "n": 9,
-          "titulo": "México: 11 muertos en la captura del Chapo Isidro en Sinaloa",
+          "titulo": "México: 20 muertos en la captura del Chapo Isidro en Sinaloa",
           "lugar": "Guasave, Sinaloa, México",
           "lugarMapa": "Guasave, México",
           "lat": 25.57,
           "lon": -108.47,
           "etiqueta": "izq",
-          "fecha": "2026-11-21",
-          "hecho": "La captura de Fausto Isidro Meza Flores, \"El Chapo Isidro\", entre el viernes 20 y el sábado 21 en Guasave (Sinaloa), dejó 11 muertos, 7 presuntos sicarios y 4 soldados, según la Secretaría de la Defensa. Estaba en la lista de los diez más buscados del FBI y el sábado 21 fue trasladado a Ciudad de México.",
-          "lectura": "La captura del Chapo Isidro dejó 11 muertos, entre ellos 4 soldados, y mostró cuánto poder de fuego conservaba su organización en el norte de Sinaloa el día que fueron a buscarlo. Sacar de la calle a uno de los diez más buscados del FBI abre un territorio que alguien va a disputar, y el balance de Guasave ya da una medida del costo de esa disputa.",
+          "fecha": "2026-11-23",
+          "hecho": "El lunes 23, el secretario de la Defensa de México, Ricardo Trevilla, informó que el operativo para capturar a Fausto Isidro Meza Flores, \"El Chapo Isidro\", en Guasave (Sinaloa) dejó 20 muertos: 16 presuntos integrantes de su grupo y 4 militares, además de 10 militares heridos (EFE); el primer balance oficial, del sábado 21, contaba 11 muertos, y la cifra subió al hallarse otros nueve cuerpos. El mismo día, el secretario de Seguridad, Omar García Harfuch, dijo que el grupo no puede darse por desarticulado y que queda \"un remanente\" de colaboradores relevantes. Meza Flores, que estaba en la lista de los diez más buscados del FBI, fue capturado entre el viernes 20 y el sábado 21 y trasladado a Ciudad de México.",
+          "lectura": "La captura del Chapo Isidro dejó 20 muertos, entre ellos 4 soldados, y mostró cuánto poder de fuego conservaba su organización en el norte de Sinaloa el día que fueron a buscarlo. Sacar de la calle a uno de los diez más buscados del FBI abre un territorio que alguien va a disputar, y el balance de Guasave ya da una medida del costo de esa disputa.",
           "tendencia": "escala",
           "intensidad": 2,
           "corto": "Guasave",
-          "dato": "11 muertos",
+          "dato": "20 muertos",
           "objetivo": "Captura",
           "fuente": {
-            "nombre": "Al Jazeera, con AP",
-            "url": "https://www.aljazeera.com/news/2026/11/22/eleven-killed-in-burst-of-violence-during-mexican-cartel-leaders-capture"
-          }
+            "nombre": "EFE, vía Primicias",
+            "url": "https://www.primicias.ec/internacional/muertos-captura-chapo-isidro-mexico-militares-familiares-narcotrafico-sinaloa-137749/"
+          },
+          "anterior": {
+            "titulo": "México: 11 muertos en la captura del Chapo Isidro en Sinaloa",
+            "fecha": "2026-11-21",
+            "hecho": "La captura de Fausto Isidro Meza Flores, \"El Chapo Isidro\", entre el viernes 20 y el sábado 21 en Guasave (Sinaloa), dejó 11 muertos, 7 presuntos sicarios y 4 soldados, según la Secretaría de la Defensa. Estaba en la lista de los diez más buscados del FBI y el sábado 21 fue trasladado a Ciudad de México.",
+            "lectura": "La captura del Chapo Isidro dejó 11 muertos, entre ellos 4 soldados, y mostró cuánto poder de fuego conservaba su organización en el norte de Sinaloa el día que fueron a buscarlo. Sacar de la calle a uno de los diez más buscados del FBI abre un territorio que alguien va a disputar, y el balance de Guasave ya da una medida del costo de esa disputa.",
+            "fuente": {
+              "nombre": "Al Jazeera, con AP",
+              "url": "https://www.aljazeera.com/news/2026/11/22/eleven-killed-in-burst-of-violence-during-mexican-cartel-leaders-capture"
+            }
+          },
+          "actualizado": "2026-11-24T13:15"
         },
         {
           "n": 10,
@@ -397,7 +431,8 @@
           "fuente": {
             "nombre": "EFE, vía Infobae",
             "url": "https://www.infobae.com/america/agencias/2026/11/20/la-fiscalia-abre-investigacion-penal-contra-el-exfiscal-general-de-paraguay-por-ueno-bank/"
-          }
+          },
+          "rotada": "2026-11-24T13:15"
         }
       ],
       "tambienTitulo": "Focos en observación",
