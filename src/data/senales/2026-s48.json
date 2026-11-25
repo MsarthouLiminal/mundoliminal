@@ -116,6 +116,34 @@
       "alcance": "Estrechos, puertos, aranceles y cadenas de suministro. Dónde se traba el comercio.",
       "senales": [
         {
+          "n": 16,
+          "titulo": "EE.UU. propone aranceles a 14 economías y 10% a los aviones de Brasil",
+          "lugar": "Washington / Brasilia",
+          "lugarMapa": "Brasilia",
+          "lat": -15.79,
+          "lon": -47.88,
+          "etiqueta": "der",
+          "arco": {
+            "lat": 38.9,
+            "lon": -77.04,
+            "nombre": "Washington"
+          },
+          "fecha": "2026-11-25",
+          "hecho": "El miércoles 25, el representante comercial de EE.UU., Jamieson Greer, propuso aranceles bajo la Sección 301 a 14 economías por exceso de capacidad industrial, entre ellas China (hasta 20%), la Unión Europea (15%), Japón, Corea del Sur y Taiwán, con audiencia pública el 25 de enero de 2027; Greer dijo que no entrarían en vigor antes de un par de meses y que, en el neto, suman unos pocos puntos a lo ya pactado (NBC News). El mismo día propuso modificar la acción de julio contra Brasil, que ya grava con 25% ciertos bienes: terminar la exención de las aeronaves terminadas, cuarto rubro de exportación de Brasil a EE.UU., y aplicarles 10%, y subir el arancel al azúcar fuera de cuota de todos los orígenes, con comentarios hasta el 30 de diciembre y audiencia el 14 de enero de 2027. México y Noruega quedaron afuera porque sus investigaciones siguen abiertas.",
+          "lectura": "Washington reparte la tanda en dos tonos: a catorce economías les promete un retoque de pocos puntos sobre lo ya pactado, y a Brasil, tras más de un año de conversaciones que Greer da por estériles, le saca la exención a los aviones. El 10% apunta al cuarto rubro de lo que Brasil le vende a EE.UU., y el arancel al azúcar, que alcanza a todos los orígenes, le cierra de antemano la salida por terceros mercados.",
+          "tendencia": "escala",
+          "intensidad": 2,
+          "corto": "Sección 301",
+          "dato": "14 economías",
+          "objetivo": "Aranceles",
+          "fuente": {
+            "nombre": "Representante Comercial de EE.UU. (USTR)",
+            "url": "https://ustr.gov/about/policy-offices/press-office/press-releases/2026/november/ustr-invites-public-comment-proposed-modifications-section-301-action-regarding-brazils-unreasonable"
+          },
+          "actualizado": "2026-11-25T13:14",
+          "ultimoMomento": true
+        },
+        {
           "n": 13,
           "titulo": "EE.UU. sanciona la red que mueve el dinero de Irán por Dubái",
           "lugar": "Dubái / Washington",
@@ -161,7 +189,8 @@
           "fuente": {
             "nombre": "Agrofy News, con datos de Prefectura Naval y del INA",
             "url": "https://news.agrofy.com.ar/altura-de-los-rios/rosario"
-          }
+          },
+          "rotada": "2026-11-25T13:14"
         },
         {
           "n": 5,
@@ -345,25 +374,25 @@
       "senales": [
         {
           "n": 14,
-          "titulo": "La coalición saudita bombardea Hodeida; drones sobre Ras Tanura",
+          "titulo": "Bombardeo saudita en Hodeida; imágenes muestran humo en Ras Tanura",
           "lugar": "Hodeida, Yemen / Ras Tanura, Arabia Saudita",
           "lugarMapa": "Hodeida",
           "lat": 14.8,
           "lon": 42.95,
           "etiqueta": "arriba",
           "fecha": "2026-11-25",
-          "hecho": "El miércoles 25 de madrugada, la coalición que encabeza Arabia Saudita informó que atacó \"capacidades operativas\" en el puerto yemení de Hodeida, por donde entra el 70% de las importaciones comerciales de Yemen, después de pedir a los civiles que lo evacuaran, y que destruyó objetivos en Saada y Amran; no se informaron víctimas ni el alcance del daño. El mismo día, la coalición dijo que interceptó cuatro drones sobre Ras Tanura, la mayor refinería saudita y parte de un complejo que es terminal de exportación de crudo en el Golfo, sin víctimas, y el vocero hutí Yahya Saree afirmó, sin confirmación independiente, que la refinería fue alcanzada y se incendió (Reuters). El martes 24, Saree había amenazado con atacar Yeda y los demás puertos sauditas del mar Rojo si Hodeida era bombardeado, horas después de un ataque que dejó 11 heridos en una torre del distrito financiero de Riad.",
-          "lectura": "En menos de un día la pelea entre Riad y los hutíes pasó de una torre de oficinas a dos puertos: la coalición bombardeó Hodeida, por donde entra el 70% de lo que Yemen importa, y cuatro drones llegaron hasta Ras Tanura, de donde sale crudo saudita. Que los hayan derribado pesa menos que el destino elegido, porque una terminal petrolera a tiro de dron deja de ser retaguardia.",
+          "hecho": "El miércoles 25 de madrugada, la coalición que encabeza Arabia Saudita informó que atacó \"capacidades operativas\" en el puerto yemení de Hodeida, por donde entra el 70% de las importaciones comerciales de Yemen, después de pedir a los civiles que lo evacuaran, y que destruyó objetivos en Saada y Amran; no se informaron víctimas ni el alcance del daño (The National). El mismo día, la coalición dijo que interceptó cuatro drones sobre Ras Tanura, la mayor refinería saudita (550.000 barriles por día) y parte de un complejo que es terminal de exportación de crudo en el Golfo, sin víctimas y sin decir que la planta haya sido alcanzada; el vocero hutí Yahya Saree afirmó que el ataque causó incendios, e imágenes de la NASA revisadas por Reuters muestran humo negro espeso sobre unos 600 kilómetros cuadrados en torno a la refinería, mientras Aramco y el gobierno saudita no respondieron consultas. El Brent subió 2,41%, a USD 93,60 (Oilprice), y sigue en pie la amenaza de Saree del martes 24 contra Yeda y los demás puertos sauditas del mar Rojo, formulada horas después de un ataque que dejó 11 heridos en una torre del distrito financiero de Riad.",
+          "lectura": "En menos de un día la pelea entre Riad y los hutíes pasó de una torre de oficinas a dos puertos: la coalición bombardeó Hodeida, por donde entra el 70% de lo que Yemen importa, y cuatro drones llegaron hasta Ras Tanura, de donde sale crudo saudita. Riad dice que los derribó, las imágenes de la NASA muestran humo sobre la refinería y el Brent subió 2,41%: una terminal petrolera a tiro de dron deja de ser retaguardia.",
           "tendencia": "escala",
           "intensidad": 3,
           "corto": "Hodeida",
-          "dato": "cuatro drones",
+          "dato": "600 kilómetros cuadrados",
           "objetivo": "Puerto",
           "fuente": {
-            "nombre": "The National",
-            "url": "https://www.thenationalnews.com/news/mena/2026/11/25/saudi-led-coalition-strikes-hodeidah-port-after-riyadh-attack/"
+            "nombre": "Reuters, vía Business Recorder",
+            "url": "https://brecorder.com/news/40450708/yemens-houthis-say-they-attacked-saudi-arabias-ras-tanura-refinery"
           },
-          "actualizado": "2026-11-25T07:14",
+          "actualizado": "2026-11-25T13:14",
           "ultimoMomento": true,
           "arco": {
             "lat": 26.64,
