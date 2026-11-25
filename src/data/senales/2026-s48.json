@@ -187,23 +187,23 @@
         },
         {
           "n": 3,
-          "titulo": "UKMTO: tres buques alcanzados en Ormuz; Irán ordena cerrarlo más",
+          "titulo": "EE.UU. informa 108 millones de barriles escoltados por Ormuz",
           "lugar": "Estrecho de Ormuz",
           "lugarMapa": "Estrecho de Ormuz",
           "lat": 26.57,
           "lon": 56.25,
           "etiqueta": "der",
-          "fecha": "2026-11-23",
-          "hecho": "El lunes 23 a las 20:25 GMT, tres buques que navegaban hacia el este por el estrecho de Ormuz fueron alcanzados por proyectiles no identificados, informó el martes 24 la agencia marítima británica UKMTO; las tripulaciones están a salvo, los tres siguieron viaje y el alcance de los daños no se conoce. Ese lunes, el jefe del ejército iraní, Amir Hatami, ordenó a la armada mantener cerrado el estrecho y apretar el cierre día a día hasta que Washington cumpla las siete condiciones de Teherán, y la Guardia Revolucionaria dijo, sin confirmación independiente, que tres petroleros chocaron con minas (Euronews). Según MarineTraffic, los buques que entraron o salieron del Golfo bajaron de 226 en la primera semana de noviembre a 125 en la del 17 al 23, y el Brent cotizó a USD 88,35 (Al Jazeera).",
-          "lectura": "El jefe del ejército iraní ordena apretar el cierre de Ormuz día a día y, esa misma noche, tres buques reciben proyectiles que nadie se atribuye: la orden tiene firma y los disparos siguen sin tenerla. El tráfico del Golfo cayó de 226 a 125 buques por semana y el Brent igual baja a USD 88,35, señal de que el mercado ya le puso precio a un estrecho cerrado.",
+          "fecha": "2026-11-24",
+          "hecho": "El martes 24, el Comando Central de EE.UU. informó que la semana pasada salieron por el estrecho de Ormuz más de 108 millones de barriles de crudo de sus socios del Golfo con protección estadounidense, el mayor volumen semanal hasta ahora, y que desde el alto el fuego del 7 de abril lo cruzaron más de 8.000 buques comerciales, cerca de la mitad con esa protección y más del 95% sin incidentes. El mismo día, la armada iraní dijo, sin confirmación independiente, que dos petroleros se incendiaron al chocar con minas al este del estrecho y que no se reabrirá hasta que se cumplan sus exigencias; el lunes 23, la agencia marítima británica UKMTO había informado tres buques alcanzados por proyectiles. El Brent cotizó el martes por debajo de USD 90, cerca de su nivel más bajo desde fines de agosto, y la Agencia Internacional de Energía estima que las exportaciones de crudo del Golfo recuperaron cerca del 74% de su nivel previo a la guerra.",
+          "lectura": "Washington cuenta barriles y Teherán cuenta minas, y los dos partes describen el mismo estrecho: por Ormuz sale el crudo que viaja con escolta de EE.UU., y el resto queda expuesto a un cierre que Irán promete sostener. Con el Brent por debajo de USD 90, el mercado le cree más al Comando Central que a la armada iraní, aunque las exportaciones del Golfo siguen en 74% de lo que eran antes de la guerra.",
           "tendencia": "escala",
           "intensidad": 3,
           "corto": "Ormuz",
-          "dato": "tres buques",
+          "dato": "108 millones de barriles",
           "objetivo": "Estrecho",
           "fuente": {
-            "nombre": "Xinhua, con el aviso de UKMTO",
-            "url": "https://english.news.cn/20261124/c5565ede37184f688b6a99a060145776/c.html"
+            "nombre": "CBS News",
+            "url": "https://www.cbsnews.com/live-updates/iran-war-us-trump-blockade-strait-of-hormuz-ship-attacks/"
           },
           "anterior": {
             "titulo": "AIE: la crisis de Ormuz sacó 2.800 millones de barriles del mercado",
@@ -215,7 +215,7 @@
               "url": "https://www.iea.org/reports/world-energy-outlook-2026/executive-summary"
             }
           },
-          "actualizado": "2026-11-24T13:15"
+          "actualizado": "2026-11-25T07:14"
         }
       ],
       "tambienTitulo": "También en el radar",
@@ -236,6 +236,28 @@
       "nombre": "Infraestructura IA",
       "alcance": "Data centers, chips, energía y agua. El cuerpo físico de la IA y quién lo decide.",
       "senales": [
+        {
+          "n": 15,
+          "titulo": "Malasia pide a sus data centers cortar con Megaspeed y otras seis",
+          "lugar": "Kuala Lumpur, Malasia / Singapur",
+          "lugarMapa": "Kuala Lumpur",
+          "lat": 3.14,
+          "lon": 101.69,
+          "etiqueta": "izq",
+          "fecha": "2026-11-24",
+          "hecho": "El martes 24, el Ministerio de Inversión, Comercio e Industria de Malasia informó que su agencia de inversiones (MIDA) notificará a todos los operadores de data centers y les aconsejó no alojar, alquilar espacio ni dar servicios a las siete empresas que el Departamento de Comercio de EE.UU. sumó el lunes 23 a su lista de entidades, y advirtió que actuará contra quien viole la ley. La lista incluye a Megaspeed International, de Singapur, investigada por EE.UU. desde 2024 por el posible desvío de chips de IA a China, y a Apex Enterprise Solutions, filial de Alibaba en Singapur; Alibaba dijo que Apex nunca desvió chips y que el listado es un error. Malasia concentra más de la mitad de la capacidad de data centers en construcción del Sudeste Asiático, según DC Byte (AFP).",
+          "lectura": "Malasia tardó un día en convertir la lista de Washington en un aviso a todos sus data centers: no alojar, no alquilar espacio, no dar servicio. El país que concentra más de la mitad de la capacidad en construcción del Sudeste Asiático prefirió cuidar su acceso a los chips antes que a siete clientes, y así el control de exportaciones de EE.UU. se aplica ahora en el contrato de alquiler de un data center malasio.",
+          "tendencia": "escala",
+          "intensidad": 2,
+          "corto": "Megaspeed",
+          "dato": "siete empresas",
+          "objetivo": "Data centers",
+          "fuente": {
+            "nombre": "Reuters y AFP, vía Taipei Times",
+            "url": "https://www.taipeitimes.com/News/biz/archives/2026/11/25/2003868323"
+          },
+          "actualizado": "2026-11-25T07:14"
+        },
         {
           "n": 12,
           "titulo": "Nvidia repone a Huang como CEO tras consultar al gobierno de EE.UU.",
@@ -277,7 +299,8 @@
           "fuente": {
             "nombre": "Taipei Times",
             "url": "https://www.taipeitimes.com/News/biz/archives/2026/11/20/2003868041"
-          }
+          },
+          "rotada": "2026-11-25T07:14"
         },
         {
           "n": 6,
@@ -322,26 +345,31 @@
       "senales": [
         {
           "n": 14,
-          "titulo": "La coalición saudita manda evacuar Hodeida; los hutíes amenazan Yeda",
-          "lugar": "Riad, Arabia Saudita / Hodeida, Yemen",
-          "lugarMapa": "Riad",
-          "lat": 24.71,
-          "lon": 46.68,
+          "titulo": "La coalición saudita bombardea Hodeida; drones sobre Ras Tanura",
+          "lugar": "Hodeida, Yemen / Ras Tanura, Arabia Saudita",
+          "lugarMapa": "Hodeida",
+          "lat": 14.8,
+          "lon": 42.95,
           "etiqueta": "arriba",
-          "fecha": "2026-11-24",
-          "hecho": "El martes 24 a la noche, el vocero de la coalición que encabeza Arabia Saudita, Turki al-Maliki, pidió a los civiles evacuar el puerto yemení de Hodeida \"por su seguridad\", y el vocero militar hutí, Yahya Saree, respondió que el puerto de Yeda y todos los puertos sauditas del mar Rojo serán blanco de sus fuerzas si Hodeida es bombardeado, y llamó a trabajadores y navieras a dejarlos. La agencia hutí Saba informó después ataques aéreos dentro del puerto, que la coalición no había confirmado (Khaberni). Horas antes, un ataque contra una torre del distrito financiero de Riad había dejado 11 heridos según la Defensa Civil saudita, que lo atribuyó a los hutíes; la coalición habló de un dron y prometió una respuesta firme (Xinhua).",
-          "lectura": "Horas después del ataque al distrito financiero de Riad, la coalición manda evacuar el puerto de Hodeida y los hutíes contestan poniendo a Yeda y a los puertos sauditas del mar Rojo en su lista de blancos. La pelea pasó en un día de una torre de oficinas a los muelles de las dos orillas, y el aviso de Saree a las navieras trabaja antes de cualquier disparo, porque un puerto empieza a cerrarse cuando los barcos dudan en entrar.",
+          "fecha": "2026-11-25",
+          "hecho": "El miércoles 25 de madrugada, la coalición que encabeza Arabia Saudita informó que atacó \"capacidades operativas\" en el puerto yemení de Hodeida, por donde entra el 70% de las importaciones comerciales de Yemen, después de pedir a los civiles que lo evacuaran, y que destruyó objetivos en Saada y Amran; no se informaron víctimas ni el alcance del daño. El mismo día, la coalición dijo que interceptó cuatro drones sobre Ras Tanura, la mayor refinería saudita y parte de un complejo que es terminal de exportación de crudo en el Golfo, sin víctimas, y el vocero hutí Yahya Saree afirmó, sin confirmación independiente, que la refinería fue alcanzada y se incendió (Reuters). El martes 24, Saree había amenazado con atacar Yeda y los demás puertos sauditas del mar Rojo si Hodeida era bombardeado, horas después de un ataque que dejó 11 heridos en una torre del distrito financiero de Riad.",
+          "lectura": "En menos de un día la pelea entre Riad y los hutíes pasó de una torre de oficinas a dos puertos: la coalición bombardeó Hodeida, por donde entra el 70% de lo que Yemen importa, y cuatro drones llegaron hasta Ras Tanura, de donde sale crudo saudita. Que los hayan derribado pesa menos que el destino elegido, porque una terminal petrolera a tiro de dron deja de ser retaguardia.",
           "tendencia": "escala",
-          "intensidad": 2,
-          "corto": "Riad",
-          "dato": "11 heridos",
-          "objetivo": "Distrito financiero",
+          "intensidad": 3,
+          "corto": "Hodeida",
+          "dato": "cuatro drones",
+          "objetivo": "Puerto",
           "fuente": {
-            "nombre": "The Jerusalem Post, con Reuters",
-            "url": "https://www.jpost.com/middle-east/article-916028"
+            "nombre": "The National",
+            "url": "https://www.thenationalnews.com/news/mena/2026/11/25/saudi-led-coalition-strikes-hodeidah-port-after-riyadh-attack/"
           },
-          "actualizado": "2026-11-24T22:19",
-          "ultimoMomento": true
+          "actualizado": "2026-11-25T07:14",
+          "ultimoMomento": true,
+          "arco": {
+            "lat": 26.64,
+            "lon": 50.16,
+            "nombre": "Ras Tanura"
+          }
         },
         {
           "n": 8,
