@@ -30,8 +30,7 @@
             "nombre": "Reuters, vía CNBC Africa",
             "url": "https://www.cnbcafrica.com/2026/congo-halts-cobalt-exports-again-to-tackle-oversupply-support-prices-industry-regulator-says"
           },
-          "actualizado": "2026-11-23T19:45",
-          "ultimoMomento": true
+          "actualizado": "2026-11-23T19:45"
         },
         {
           "n": 1,
@@ -323,25 +322,25 @@
       "senales": [
         {
           "n": 14,
-          "titulo": "Riad acusa a los hutíes: 11 heridos en su distrito financiero",
-          "lugar": "Riad, Arabia Saudita",
+          "titulo": "La coalición saudita manda evacuar Hodeida; los hutíes amenazan Yeda",
+          "lugar": "Riad, Arabia Saudita / Hodeida, Yemen",
           "lugarMapa": "Riad",
           "lat": 24.71,
           "lon": 46.68,
           "etiqueta": "arriba",
           "fecha": "2026-11-24",
-          "hecho": "El martes 24, un ataque contra una torre del distrito financiero de Riad dejó 11 heridos (dos sauditas, dos indios, tres nepalíes y cuatro egipcios), informó la Defensa Civil de Arabia Saudita, que lo atribuyó a los hutíes de Yemen; los hutíes no se lo habían adjudicado y el comunicado no dice con qué arma. Es el segundo ataque a una torre de ese distrito en menos de una semana: el anterior causó daños materiales y ningún herido (The New Arab). El lunes 23, un bombardeo en Lahj, en el sur de Yemen, mató a 12 combatientes hutíes y 14 civiles según dos funcionarios citados por AFP; los hutíes culparon a la aviación saudita y avisaron que no quedaría sin respuesta (The New Arab).",
-          "lectura": "El segundo ataque en menos de una semana contra el distrito financiero de Riad ya dejó heridos, y cayó al día siguiente de un bombardeo en Lahj que los hutíes cargan a la aviación saudita y prometieron contestar. Si la autoría que da Riad se confirma, la guerra de Yemen llega al barrio que Arabia Saudita levantó para recibir capitales, y ahí once heridos pesan más en el ánimo de los inversores que en cualquier parte militar.",
+          "hecho": "El martes 24 a la noche, el vocero de la coalición que encabeza Arabia Saudita, Turki al-Maliki, pidió a los civiles evacuar el puerto yemení de Hodeida \"por su seguridad\", y el vocero militar hutí, Yahya Saree, respondió que el puerto de Yeda y todos los puertos sauditas del mar Rojo serán blanco de sus fuerzas si Hodeida es bombardeado, y llamó a trabajadores y navieras a dejarlos. La agencia hutí Saba informó después ataques aéreos dentro del puerto, que la coalición no había confirmado (Khaberni). Horas antes, un ataque contra una torre del distrito financiero de Riad había dejado 11 heridos según la Defensa Civil saudita, que lo atribuyó a los hutíes; la coalición habló de un dron y prometió una respuesta firme (Xinhua).",
+          "lectura": "Horas después del ataque al distrito financiero de Riad, la coalición manda evacuar el puerto de Hodeida y los hutíes contestan poniendo a Yeda y a los puertos sauditas del mar Rojo en su lista de blancos. La pelea pasó en un día de una torre de oficinas a los muelles de las dos orillas, y el aviso de Saree a las navieras trabaja antes de cualquier disparo, porque un puerto empieza a cerrarse cuando los barcos dudan en entrar.",
           "tendencia": "escala",
           "intensidad": 2,
           "corto": "Riad",
           "dato": "11 heridos",
           "objetivo": "Distrito financiero",
           "fuente": {
-            "nombre": "Arab News, con el comunicado de la Defensa Civil saudita",
-            "url": "https://www.arabnews.com/saudi-arabia/11-injured-in-houthi-attack-on-tower-in-riyadhs-financial-district-3013857"
+            "nombre": "The Jerusalem Post, con Reuters",
+            "url": "https://www.jpost.com/middle-east/article-916028"
           },
-          "actualizado": "2026-11-24T13:15",
+          "actualizado": "2026-11-24T22:19",
           "ultimoMomento": true
         },
         {
