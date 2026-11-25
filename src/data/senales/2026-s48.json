@@ -216,23 +216,23 @@
         },
         {
           "n": 3,
-          "titulo": "EE.UU. informa 108 millones de barriles escoltados por Ormuz",
+          "titulo": "Irán dice que otros dos petroleros chocaron con minas en Ormuz",
           "lugar": "Estrecho de Ormuz",
           "lugarMapa": "Estrecho de Ormuz",
           "lat": 26.57,
           "lon": 56.25,
           "etiqueta": "der",
-          "fecha": "2026-11-24",
-          "hecho": "El martes 24, el Comando Central de EE.UU. informó que la semana pasada salieron por el estrecho de Ormuz más de 108 millones de barriles de crudo de sus socios del Golfo con protección estadounidense, el mayor volumen semanal hasta ahora, y que desde el alto el fuego del 7 de abril lo cruzaron más de 8.000 buques comerciales, cerca de la mitad con esa protección y más del 95% sin incidentes. El mismo día, la armada iraní dijo, sin confirmación independiente, que dos petroleros se incendiaron al chocar con minas al este del estrecho y que no se reabrirá hasta que se cumplan sus exigencias; el lunes 23, la agencia marítima británica UKMTO había informado tres buques alcanzados por proyectiles. El Brent cotizó el martes por debajo de USD 90, cerca de su nivel más bajo desde fines de agosto, y la Agencia Internacional de Energía estima que las exportaciones de crudo del Golfo recuperaron cerca del 74% de su nivel previo a la guerra.",
-          "lectura": "Washington cuenta barriles y Teherán cuenta minas, y los dos partes describen el mismo estrecho: por Ormuz sale el crudo que viaja con escolta de EE.UU., y el resto queda expuesto a un cierre que Irán promete sostener. Con el Brent por debajo de USD 90, el mercado le cree más al Comando Central que a la armada iraní, aunque las exportaciones del Golfo siguen en 74% de lo que eran antes de la guerra.",
+          "fecha": "2026-11-25",
+          "hecho": "El miércoles 25, la armada de la Guardia Revolucionaria de Irán dijo, sin nombres de buques ni confirmación independiente, que otros dos petroleros explotaron y se incendiaron al chocar con minas en el estrecho de Ormuz cuando cruzaban por una ruta que no autoriza, y el vocero del Ejército iraní, Mohammad Akraminia, advirtió que los buques que pasen sin coordinar con sus fuerzas corren más riesgo (Reuters). El Brent, que el martes había cotizado por debajo de USD 90, cerró el miércoles en USD 94,61, 3,5% arriba, en una jornada en que también hubo un ataque a la refinería saudita de Ras Tanura (Bloomberg). El martes 24, el Comando Central de EE.UU. había informado que la semana pasada salieron por Ormuz más de 108 millones de barriles de crudo de sus socios del Golfo con protección estadounidense, el mayor volumen semanal hasta ahora, y la Agencia Internacional de Energía estima que las exportaciones de crudo del Golfo recuperaron cerca del 74% de su nivel previo a la guerra.",
+          "lectura": "Washington cuenta barriles y Teherán cuenta minas, y los dos partes describen el mismo estrecho: por Ormuz sale el crudo que viaja con escolta de EE.UU., y el resto queda expuesto a un cierre que Irán promete sostener. El martes, con el Brent por debajo de USD 90, el mercado le creía más al Comando Central; el miércoles, con más minas denunciadas y un ataque a Ras Tanura, cerró en USD 94,61.",
           "tendencia": "escala",
           "intensidad": 3,
           "corto": "Ormuz",
-          "dato": "108 millones de barriles",
+          "dato": "USD 94,61",
           "objetivo": "Estrecho",
           "fuente": {
-            "nombre": "CBS News",
-            "url": "https://www.cbsnews.com/live-updates/iran-war-us-trump-blockade-strait-of-hormuz-ship-attacks/"
+            "nombre": "Reuters, vía BOE Report",
+            "url": "https://boereport.com/2026/11/25/iran-says-ships-hit-mines-in-hormuz-warns-vessels-to-coordinate-passage/"
           },
           "anterior": {
             "titulo": "AIE: la crisis de Ormuz sacó 2.800 millones de barriles del mercado",
@@ -244,7 +244,7 @@
               "url": "https://www.iea.org/reports/world-energy-outlook-2026/executive-summary"
             }
           },
-          "actualizado": "2026-11-25T07:14"
+          "actualizado": "2026-11-25T19:10"
         }
       ],
       "tambienTitulo": "También en el radar",
@@ -374,25 +374,25 @@
       "senales": [
         {
           "n": 14,
-          "titulo": "Bombardeo saudita en Hodeida; imágenes muestran humo en Ras Tanura",
+          "titulo": "Bombardeo saudita en Hodeida; una fuente confirma ataque a Ras Tanura",
           "lugar": "Hodeida, Yemen / Ras Tanura, Arabia Saudita",
           "lugarMapa": "Hodeida",
           "lat": 14.8,
           "lon": 42.95,
           "etiqueta": "arriba",
           "fecha": "2026-11-25",
-          "hecho": "El miércoles 25 de madrugada, la coalición que encabeza Arabia Saudita informó que atacó \"capacidades operativas\" en el puerto yemení de Hodeida, por donde entra el 70% de las importaciones comerciales de Yemen, después de pedir a los civiles que lo evacuaran, y que destruyó objetivos en Saada y Amran; no se informaron víctimas ni el alcance del daño (The National). El mismo día, la coalición dijo que interceptó cuatro drones sobre Ras Tanura, la mayor refinería saudita (550.000 barriles por día) y parte de un complejo que es terminal de exportación de crudo en el Golfo, sin víctimas y sin decir que la planta haya sido alcanzada; el vocero hutí Yahya Saree afirmó que el ataque causó incendios, e imágenes de la NASA revisadas por Reuters muestran humo negro espeso sobre unos 600 kilómetros cuadrados en torno a la refinería, mientras Aramco y el gobierno saudita no respondieron consultas. El Brent subió 2,41%, a USD 93,60 (Oilprice), y sigue en pie la amenaza de Saree del martes 24 contra Yeda y los demás puertos sauditas del mar Rojo, formulada horas después de un ataque que dejó 11 heridos en una torre del distrito financiero de Riad.",
-          "lectura": "En menos de un día la pelea entre Riad y los hutíes pasó de una torre de oficinas a dos puertos: la coalición bombardeó Hodeida, por donde entra el 70% de lo que Yemen importa, y cuatro drones llegaron hasta Ras Tanura, de donde sale crudo saudita. Riad dice que los derribó, las imágenes de la NASA muestran humo sobre la refinería y el Brent subió 2,41%: una terminal petrolera a tiro de dron deja de ser retaguardia.",
+          "hecho": "El miércoles 25 de madrugada, la coalición que encabeza Arabia Saudita informó que atacó \"capacidades operativas\" en el puerto yemení de Hodeida, por donde entra el 70% de las importaciones comerciales de Yemen, después de pedir a los civiles que lo evacuaran, y que destruyó objetivos en Saada y Amran; no se informaron víctimas ni el alcance del daño (The National). El mismo día, la coalición dijo que interceptó cuatro drones sobre Ras Tanura, la mayor refinería saudita (550.000 barriles por día) y parte de un complejo que es terminal de exportación de crudo en el Golfo, sin víctimas y sin decir que la planta haya sido alcanzada; el vocero hutí Yahya Saree afirmó que el ataque causó incendios, una fuente al tanto confirmó a Reuters un ataque a la refinería, sin precisar autor ni daños, e imágenes de la NASA y de Planet Labs muestran humo negro espeso sobre la instalación, mientras Aramco y el gobierno saudita no respondieron consultas. El Brent cerró en USD 94,61, 3,5% arriba (Bloomberg), y sigue en pie la amenaza de Saree del martes 24 contra Yeda y los demás puertos sauditas del mar Rojo, formulada horas después de un ataque que dejó 11 heridos en una torre del distrito financiero de Riad.",
+          "lectura": "En menos de un día la pelea entre Riad y los hutíes pasó de una torre de oficinas a dos puertos: la coalición bombardeó Hodeida, por donde entra el 70% de lo que Yemen importa, y cuatro drones llegaron hasta Ras Tanura, de donde sale crudo saudita. Riad dice que los derribó, una fuente citada por Reuters confirma un ataque a la refinería y el Brent cerró 3,5% arriba: una terminal petrolera a tiro de dron deja de ser retaguardia.",
           "tendencia": "escala",
           "intensidad": 3,
           "corto": "Hodeida",
-          "dato": "600 kilómetros cuadrados",
+          "dato": "550.000 barriles por día",
           "objetivo": "Puerto",
           "fuente": {
-            "nombre": "Reuters, vía Business Recorder",
-            "url": "https://brecorder.com/news/40450708/yemens-houthis-say-they-attacked-saudi-arabias-ras-tanura-refinery"
+            "nombre": "Reuters, vía NBC News",
+            "url": "https://www.nbcnews.com/world/saudi-arabia/yemen-houthi-rebels-attack-saudi-arabia-largest-oil-refinery-rcna611319"
           },
-          "actualizado": "2026-11-25T13:14",
+          "actualizado": "2026-11-25T19:10",
           "ultimoMomento": true,
           "arco": {
             "lat": 26.64,
