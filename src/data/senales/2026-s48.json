@@ -374,25 +374,25 @@
       "senales": [
         {
           "n": 14,
-          "titulo": "Bombardeo saudita en Hodeida; una fuente confirma ataque a Ras Tanura",
-          "lugar": "Hodeida, Yemen / Ras Tanura, Arabia Saudita",
+          "titulo": "Un proyectil hutí alcanza el puerto de Jizán; derriban un dron en Yeda",
+          "lugar": "Jizán y Yeda, Arabia Saudita / Hodeida, Yemen",
           "lugarMapa": "Hodeida",
           "lat": 14.8,
           "lon": 42.95,
           "etiqueta": "arriba",
           "fecha": "2026-11-25",
-          "hecho": "El miércoles 25 de madrugada, la coalición que encabeza Arabia Saudita informó que atacó \"capacidades operativas\" en el puerto yemení de Hodeida, por donde entra el 70% de las importaciones comerciales de Yemen, después de pedir a los civiles que lo evacuaran, y que destruyó objetivos en Saada y Amran; no se informaron víctimas ni el alcance del daño (The National). El mismo día, la coalición dijo que interceptó cuatro drones sobre Ras Tanura, la mayor refinería saudita (550.000 barriles por día) y parte de un complejo que es terminal de exportación de crudo en el Golfo, sin víctimas y sin decir que la planta haya sido alcanzada; el vocero hutí Yahya Saree afirmó que el ataque causó incendios, una fuente al tanto confirmó a Reuters un ataque a la refinería, sin precisar autor ni daños, e imágenes de la NASA y de Planet Labs muestran humo negro espeso sobre la instalación, mientras Aramco y el gobierno saudita no respondieron consultas. El Brent cerró en USD 94,61, 3,5% arriba (Bloomberg), y sigue en pie la amenaza de Saree del martes 24 contra Yeda y los demás puertos sauditas del mar Rojo, formulada horas después de un ataque que dejó 11 heridos en una torre del distrito financiero de Riad.",
-          "lectura": "En menos de un día la pelea entre Riad y los hutíes pasó de una torre de oficinas a dos puertos: la coalición bombardeó Hodeida, por donde entra el 70% de lo que Yemen importa, y cuatro drones llegaron hasta Ras Tanura, de donde sale crudo saudita. Riad dice que los derribó, una fuente citada por Reuters confirma un ataque a la refinería y el Brent cerró 3,5% arriba: una terminal petrolera a tiro de dron deja de ser retaguardia.",
+          "hecho": "El miércoles 25, la coalición que encabeza Arabia Saudita informó que un proyectil lanzado por los hutíes alcanzó el puerto de Jizán, sobre el mar Rojo, con daños menores y sin víctimas civiles, que derribó un dron sobre el puerto de Yeda y que interceptó misiles balísticos dirigidos a Riad; el vocero hutí Yahya Saree, que el martes 24 había amenazado a Yeda y a los demás puertos sauditas del mar Rojo, afirmó que los ataques causaron daños en los dos puertos y anunció una política de \"puerto por puerto\" si Hodeida vuelve a ser atacada (Xinhua). Fue la respuesta al bombardeo de esa madrugada sobre el puerto yemení de Hodeida, por donde entra el 70% de las importaciones comerciales de Yemen (The National): la coalición dijo que atacó allí \"capacidades operativas\", y la televisión hutí Al Masirah informó nuevos ataques al puerto durante el día. El mismo miércoles, la coalición dijo que interceptó siete drones en la Provincia Oriental, cuatro de ellos sobre Ras Tanura, la mayor refinería saudita (550.000 barriles por día), sin decir que la planta haya sido alcanzada; una fuente al tanto confirmó a Reuters un ataque a la refinería, sin precisar autor ni daños, Aramco no respondió consultas y el Brent cerró en USD 94,61, 3,5% arriba (Bloomberg).",
+          "lectura": "La amenaza del martes contra los puertos sauditas del mar Rojo duró un día como amenaza: tras el bombardeo a Hodeida, un proyectil cayó en Jizán, un dron llegó hasta Yeda y Saree le puso nombre a la regla, puerto por puerto. Arabia Saudita quedó bajo ataque en sus dos costas el mismo día, y que Riad informe daños menores pesa menos que el mapa: Ras Tanura en el Golfo, Jizán y Yeda en el mar Rojo.",
           "tendencia": "escala",
           "intensidad": 3,
           "corto": "Hodeida",
           "dato": "550.000 barriles por día",
           "objetivo": "Puerto",
           "fuente": {
-            "nombre": "Reuters, vía NBC News",
-            "url": "https://www.nbcnews.com/world/saudi-arabia/yemen-houthi-rebels-attack-saudi-arabia-largest-oil-refinery-rcna611319"
+            "nombre": "Al Jazeera",
+            "url": "https://www.aljazeera.com/news/2026/11/25/houthis-target-saudi-arabias-red-sea-ports-as-strikes-escalate"
           },
-          "actualizado": "2026-11-25T19:10",
+          "actualizado": "2026-11-25T22:17",
           "ultimoMomento": true,
           "arco": {
             "lat": 26.64,
@@ -402,7 +402,7 @@
         },
         {
           "n": 8,
-          "titulo": "Ucrania se atribuye el hundimiento de la corbeta rusa Merkury en Libia",
+          "titulo": "Mueren dos oficiales libios por el ataque a la Merkury",
           "lugar": "Bengasi / Golfo de Finlandia",
           "lugarMapa": "Bengasi, Libia",
           "lat": 32.12,
@@ -413,17 +413,17 @@
             "lon": 26.4,
             "nombre": "Golfo de Finlandia"
           },
-          "fecha": "2026-11-23",
-          "hecho": "El lunes 23, el presidente Volodímir Zelenski escribió en X que fuerzas ucranianas usaron siete drones navales de fabricación ucraniana frente a la costa de Libia, y el Servicio de Seguridad de Ucrania (SBU) informó que hundieron a la corbeta rusa Merkury en el puerto de Bengasi, con un helicóptero Ka-27 a bordo, y alcanzaron al carguero ruso Angara (Kyiv Post); las imágenes satelitales muestran a la corbeta volcada y hundida en su mayor parte, con solo la proa a la vista. El vocero del Kremlin, Dmitri Peskov, habló de una \"tendencia muy peligrosa\" y advirtió a Ucrania de consecuencias \"dolorosas\"; el gobierno del este de Libia denunció una violación de su soberanía y pidió una investigación internacional por medio de la ONU. El ataque del domingo 22 en Bengasi llegó un día después del que alcanzó al carguero ruso Sparta II en el golfo de Finlandia, que el ejército finlandés atribuye como lo más probable a Ucrania y que ya fue remolcado a aguas rusas.",
-          "lectura": "Con la firma de Zelenski, lo que el domingo era una sospecha de militares libios queda como una operación que Ucrania reivindica en el Mediterráneo, lejos del mar Negro y dentro del puerto de un tercer país. Moscú responde con la promesa de consecuencias dolorosas, y el este de Libia, que le prestaba el muelle a la corbeta, descubre que alojar a la Armada rusa ya tiene costo propio.",
+          "fecha": "2026-11-24",
+          "hecho": "El martes 24 a la noche murieron dos oficiales navales libios heridos en el ataque ucraniano del domingo 22 contra la corbeta rusa Merkury en la base naval de Bengasi, a unos 2.400 kilómetros del frente, informó el Ejército Nacional Libio (LNA), la fuerza que controla el este del país, y su comando general prometió responder \"en el momento y el lugar apropiados, y con los medios apropiados\". Según un funcionario libio hubo al menos 10 heridos, libios y rusos, y dos funcionarios ligados al LNA dijeron que una investigación inicial concluyó que los drones salieron de una base operada por fuerzas ucranianas en el oeste de Libia; Ucrania, que el martes había dicho que no apuntó a libios, no respondió el miércoles 25, y el vocero del Kremlin, Dmitri Peskov, dijo que ningún país deja sin castigo un atentado contra la vida de sus militares. El lunes 23, el presidente Volodímir Zelenski había escrito que fuerzas ucranianas usaron siete drones navales frente a la costa de Libia, y el Servicio de Seguridad de Ucrania (SBU) informó que hundieron a la corbeta y alcanzaron al carguero ruso Angara (Kyiv Post); el ataque llegó un día después del que alcanzó al carguero ruso Sparta II en el golfo de Finlandia.",
+          "lectura": "El costo de prestarle el muelle a la Armada rusa ya tiene nombre para el este de Libia: dos oficiales propios muertos y un comando que promete responder cuando y donde le convenga. Si la investigación del LNA sostiene que los drones salieron del oeste del país, la operación que Ucrania firmó contra Rusia queda metida en la pelea entre el este y el oeste de Libia, y Kiev suma un adversario declarado a 2.400 kilómetros de su frente.",
           "tendencia": "escala",
           "intensidad": 3,
           "corto": "Merkury",
           "dato": "siete drones navales",
           "objetivo": "Corbeta rusa",
           "fuente": {
-            "nombre": "Al Jazeera, con AP y Reuters",
-            "url": "https://www.aljazeera.com/news/2026/11/23/russian-ships-hit-by-drones-off-libya-coast-what-do-we-know"
+            "nombre": "AP, vía Arab News",
+            "url": "https://arabnews.com/middle-east/libyan-army-vows-retaliation-after-2-naval-officers-die-of-wounds-from-ukrainian-drone-attack-3013949"
           },
           "anterior": {
             "titulo": "El Sparta II deja Finlandia a remolque; arde otro buque ruso en Libia",
@@ -435,7 +435,7 @@
               "url": "https://yle.fi/a/74-20258284"
             }
           },
-          "actualizado": "2026-11-23T13:14"
+          "actualizado": "2026-11-25T22:17"
         },
         {
           "n": 9,
