@@ -163,8 +163,7 @@
             "nombre": "Representante Comercial de EE.UU. (USTR)",
             "url": "https://ustr.gov/about/policy-offices/press-office/press-releases/2026/november/ustr-invites-public-comment-proposed-modifications-section-301-action-regarding-brazils-unreasonable"
           },
-          "actualizado": "2026-11-25T13:14",
-          "ultimoMomento": true
+          "actualizado": "2026-11-25T13:14"
         },
         {
           "n": 13,
@@ -419,26 +418,49 @@
       "alcance": "Guerras activas, cambios de fase y lo que derraman sobre la región.",
       "senales": [
         {
+          "n": 19,
+          "titulo": "Mueren dos italianos en un ataque con drones en Kuwait; Irán lo niega",
+          "lugar": "Kuwait",
+          "lugarMapa": "Kuwait",
+          "lat": 29.37,
+          "lon": 47.98,
+          "etiqueta": "arriba",
+          "fecha": "2026-11-26",
+          "hecho": "El jueves 26, dos técnicos italianos de Rheinmetall Italia murieron en un ataque con drones contra una estación de vigilancia de defensa aérea en Kuwait; el Ministerio de Defensa kuwaití lo atribuyó a Irán, habló de una \"instalación vital\" y de daños materiales, e informó otros dos heridos, un kuwaití y un paquistaní. El canciller italiano, Antonio Tajani, dijo en el Senado que fueron drones iraníes, anunció una protesta ante la embajada de Irán, pidió cautela y sostuvo que no hay razón para atacar a los vecinos árabes de Irán que no son parte de la guerra. Teherán lo negó por tres vías: el vocero de las Fuerzas Armadas, Abolfazl Shekarchi, la embajada en Roma y el canciller Abbas Araqchi, que ofreció una investigación conjunta con Kuwait.",
+          "lectura": "Dos técnicos de una empresa de defensa italiana murieron en Kuwait, un país que, según Tajani, no es parte de la guerra, y con ellos el conflicto con Irán le llega a Roma como asunto propio. Teherán niega la autoría por tres voces y ofrece investigar con Kuwait; Italia respondió con una protesta diplomática y un pedido de cautela, que por ahora marca hasta dónde quiere llegar.",
+          "tendencia": "escala",
+          "intensidad": 2,
+          "corto": "Kuwait",
+          "dato": "dos técnicos italianos",
+          "objetivo": "Estación de defensa aérea",
+          "fuente": {
+            "nombre": "Reuters, vía Yahoo News",
+            "url": "https://www.yahoo.com/news/articles/two-italians-killed-iranian-drone-152440938.html"
+          },
+          "actualizado": "2026-11-26T19:28",
+          "ultimoMomento": true
+        },
+        {
           "n": 14,
-          "titulo": "Un proyectil hutí alcanza el puerto de Jizán; derriban un dron en Yeda",
-          "lugar": "Jizán y Yeda, Arabia Saudita / Hodeida, Yemen",
+          "titulo": "Un proyectil alcanza la refinería de Aramco en Jizán: un muerto",
+          "lugar": "Jizán, Arabia Saudita / Hodeida, Yemen",
           "lugarMapa": "Hodeida",
           "lat": 14.8,
           "lon": 42.95,
           "etiqueta": "arriba",
-          "fecha": "2026-11-25",
-          "hecho": "El miércoles 25, la coalición que encabeza Arabia Saudita informó que un proyectil lanzado por los hutíes alcanzó el puerto de Jizán, sobre el mar Rojo, con daños menores y sin víctimas civiles, que derribó un dron sobre el puerto de Yeda y que interceptó misiles balísticos dirigidos a Riad; el vocero hutí Yahya Saree, que el martes 24 había amenazado a Yeda y a los demás puertos sauditas del mar Rojo, afirmó que los ataques causaron daños en los dos puertos y anunció una política de \"puerto por puerto\" si Hodeida vuelve a ser atacada (Xinhua). Fue la respuesta al bombardeo de esa madrugada sobre el puerto yemení de Hodeida, por donde entra el 70% de las importaciones comerciales de Yemen (The National): la coalición dijo que atacó allí \"capacidades operativas\", y la televisión hutí Al Masirah informó nuevos ataques al puerto durante el día. El mismo miércoles, la coalición dijo que interceptó siete drones en la Provincia Oriental, cuatro de ellos sobre Ras Tanura, la mayor refinería saudita (550.000 barriles por día), sin decir que la planta haya sido alcanzada; una fuente al tanto confirmó a Reuters un ataque a la refinería, sin precisar autor ni daños, Aramco no respondió consultas y el Brent cerró en USD 94,61, 3,5% arriba (Bloomberg).",
-          "lectura": "La amenaza del martes contra los puertos sauditas del mar Rojo duró un día como amenaza: tras el bombardeo a Hodeida, un proyectil cayó en Jizán, un dron llegó hasta Yeda y Saree le puso nombre a la regla, puerto por puerto. Arabia Saudita quedó bajo ataque en sus dos costas el mismo día, y que Riad informe daños menores pesa menos que el mapa: Ras Tanura en el Golfo, Jizán y Yeda en el mar Rojo.",
+          "fecha": "2026-11-26",
+          "hecho": "El jueves 26, el Ministerio de Energía de Arabia Saudita informó que un proyectil aéreo hostil alcanzó la refinería de Jizán, de Aramco, con capacidad de diseño de 400.000 barriles por día: murió un trabajador nepalí, hubo varios heridos, el incendio fue controlado y parte de la operación se suspendió de forma temporal (SPA). La coalición que encabeza Arabia Saudita atribuyó el ataque a los hutíes y dijo que destruyó en Hodeida, Yemen, la plataforma de misiles balísticos que, según afirma, se usó para lanzarlo. El miércoles 25 un proyectil había caído en el puerto de Jizán y los hutíes habían reivindicado un ataque a Ras Tanura, la mayor refinería saudita, donde imágenes satelitales mostraron humo negro (NBC News) y, según una fuente naviera citada por CNN, las cargas de crudo quedaron suspendidas; la coalición solo informó allí cuatro drones interceptados.",
+          "lectura": "El miércoles Riad pudo hablar de daños menores en el puerto de Jizán; el jueves, en la refinería de la misma ciudad, el parte oficial incluyó un trabajador muerto, un incendio y operaciones suspendidas. Con Ras Tanura sin cargar crudo, según CNN, y Jizán detenida en parte, la cuenta de los ataques ya se lleva en barriles más que en drones interceptados, y la coalición respondió sobre Hodeida.",
           "tendencia": "escala",
           "intensidad": 3,
           "corto": "Hodeida",
-          "dato": "550.000 barriles por día",
-          "objetivo": "Puerto",
+          "dato": "400.000 barriles por día",
+          "objetivo": "Refinería de Aramco",
           "fuente": {
-            "nombre": "Al Jazeera",
-            "url": "https://www.aljazeera.com/news/2026/11/25/houthis-target-saudi-arabias-red-sea-ports-as-strikes-escalate"
+            "nombre": "Aaj English TV (con SPA, Reuters y AFP)",
+            "url": "https://english.aaj.tv/news/330482286/houthis-attack-saudi-aramcos-jazan-refinery-coalition-says"
           },
-          "actualizado": "2026-11-25T22:17",
+          "actualizado": "2026-11-26T19:28",
           "ultimoMomento": true,
           "arco": {
             "lat": 26.64,
@@ -513,7 +535,8 @@
               "url": "https://www.aljazeera.com/news/2026/11/22/eleven-killed-in-burst-of-violence-during-mexican-cartel-leaders-capture"
             }
           },
-          "actualizado": "2026-11-24T13:15"
+          "actualizado": "2026-11-24T13:15",
+          "rotada": "2026-11-26T19:28"
         },
         {
           "n": 10,
