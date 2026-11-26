@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import MonitorSenales from '../../components/senales/MonitorSenales.astro';
+import Recorrido from '../../components/senales/Recorrido.astro';
 import { ediciones, edicionVigente, semanaDel, contarSenales, type Edicion } from '../../lib/senales';
 
 export function getStaticPaths() {
@@ -19,15 +19,84 @@ const archivada = edicion.id !== edicionVigente().id;
   title={`Señales, semana ${edicion.semana}`}
   description={`Monitor Señales de LIMINAL, ${semanaDel(edicion.fechaEdicion).toLowerCase()}: ${contarSenales(edicion)} señales en minerales críticos, chokepoints, infraestructura de la IA y conflictos, con fuente y fecha.`}
 >
-  <p class="volver"><a href="/senales/">← Señales: método y archivo</a></p>
-  <MonitorSenales edicion={edicion} titular={`Semana ${edicion.semana}`} archivada={archivada} />
+  <Recorrido edicion={edicion} archivada={archivada} />
+
+  <div class="cierre">
+    <div class="cierre__metodo">
+      <h2>Cómo se arma Señales</h2>
+      <p>
+        Una señal entra al monitor si cambia algo material y tiene un mecanismo que se puede explicar.
+        Cada una lleva fuente con nombre y fecha. La lectura es de LIMINAL y está separada del dato.
+        La IA ayuda a rastrear y ordenar; cada señal la reviso yo antes de publicarla.
+      </p>
+      <p>La edición sale los lunes. Si algo se rompe en la semana, la señal se actualiza y lo dice.</p>
+      <a class="cierre__mas" href="/senales/">Método completo y archivo de ediciones <b aria-hidden="true">→</b></a>
+    </div>
+    <aside class="cierre__sub" aria-labelledby="senales-sub">
+      <h2 id="senales-sub">Recibí Señales cada lunes</h2>
+      <p>Las señales de la semana, la lectura completa y lo que quedó afuera del monitor. Llega por correo.</p>
+      <a class="cierre__boton" href="https://mundoliminal.substack.com/subscribe" target="_blank" rel="noopener">
+        Suscribirme en Substack <span aria-hidden="true">→</span>
+      </a>
+      <small>Gratis. Se envía desde mundoliminal.substack.com.</small>
+    </aside>
+  </div>
 </BaseLayout>
 
 <style>
-  .volver {
+  .cierre {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    gap: var(--space-12);
+    align-items: start;
+    margin-top: var(--space-12);
     font-family: var(--font-text-v2);
-    font-weight: 500;
+    color: var(--tinta);
+  }
+  .cierre h2 {
+    font-size: 1.9rem;
+    line-height: 0.98;
+    color: var(--tinta-fuerte);
+  }
+  .cierre__metodo h2 { margin-bottom: var(--space-4); }
+  .cierre__metodo p { margin-bottom: var(--space-3); font-size: 0.95rem; line-height: 1.6; max-width: 60ch; }
+  .cierre__mas {
+    display: inline-block;
+    margin-top: var(--space-2);
+    padding-bottom: 3px;
+    border-bottom: 1px solid var(--color-teal);
+    font-weight: 700;
     font-size: 0.85rem;
-    color: var(--tinta-meta);
+    color: var(--tinta-fuerte);
+    text-decoration: none;
+  }
+  .cierre__mas b { color: var(--senal); }
+  .cierre__mas:hover { color: var(--tinta-fuerte); border-color: var(--senal); }
+  .cierre__sub {
+    display: grid;
+    gap: var(--space-3);
+    padding: 26px;
+    background: var(--fondo-caja);
+    border: 1px solid var(--color-teal);
+  }
+  .cierre__sub p { font-size: 0.9rem; }
+  .cierre__boton {
+    justify-self: start;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 20px;
+    background: var(--boton);
+    color: var(--sobre-boton);
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+  .cierre__boton:hover { background: var(--boton-hover); color: var(--sobre-boton); }
+  .cierre__sub small { font-weight: 500; font-size: 0.75rem; color: var(--tinta-meta); }
+  @media (max-width: 860px) {
+    .cierre { grid-template-columns: minmax(0, 1fr); gap: var(--space-8); }
   }
 </style>

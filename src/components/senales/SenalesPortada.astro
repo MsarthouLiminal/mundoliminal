@@ -1,21 +1,17 @@
 ---
 /**
- * SenalesPortada: Señales en la home, en versión de portada.
+ * SenalesPortada: los titulares de la semana en la home, agrupados por eje.
  *
- * El Big board en versión compacta (oscuro, como ventana sobre el papel) y las
- * señales de la semana como titulares agrupados por eje. Cada titular y cada número del tablero llevan
- * a su señal completa en /senales, donde están el hecho, la lectura, la
- * fuente y las versiones anteriores. Los cambios de mitad de semana se ven
- * acá con sus marcas ("Actualizado", "Último momento").
+ * Arriba de la portada va el hero (SenalesHero), con el globo y la síntesis.
+ * Acá quedan las señales una por una: cada titular lleva a su lectura completa
+ * en /senales, donde están el hecho, la lectura, la fuente y las versiones
+ * anteriores. Los cambios de mitad de semana se ven con sus marcas
+ * ("Actualizado", "Último momento").
  */
-import BigBoard from './BigBoard.astro';
 import {
   type Edicion,
   fechaCorta,
-  fechaHora,
-  semanaDel,
-  fechaSinAnio,
-  ultimaActualizacion,
+  contarSenales,
   TENDENCIA,
   umHasta,
   umVigente,
@@ -27,7 +23,7 @@ interface Props {
 
 const { edicion } = Astro.props;
 
-const actualizada = ultimaActualizacion(edicion);
+const total = contarSenales(edicion);
 /** En la portada los lugares van con comas, sin punto medio. */
 const lugar = (texto: string) => texto.replace(/\s*·\s*/g, ', ');
 const dia = (iso: string) => fechaCorta(iso.split('T')[0]);
@@ -36,17 +32,9 @@ const dia = (iso: string) => fechaCorta(iso.split('T')[0]);
 <section class="portada-senales" aria-labelledby="portada-senales-h">
   <header class="ps__cab">
     <p class="ps__kick">Señales, semana {edicion.semana}</p>
-    <h2 id="portada-senales-h" class="ps__h">Cuatro ejes donde se juega el poder.</h2>
-    <p class="ps__dateline">
-      {semanaDel(edicion.fechaEdicion)}. Datos al {fechaSinAnio(edicion.corteDatos)}.
-      {actualizada && <strong> Actualizada el {fechaHora(actualizada)}</strong>}
-    </p>
+    <h2 id="portada-senales-h" class="ps__h">Los {total} titulares de la semana</h2>
   </header>
   <hr class="ps__umbral" />
-
-  <div class="ps__tablero">
-    <BigBoard edicion={edicion} modo="portada" />
-  </div>
 
   <div class="ps__ejes">
     {edicion.ejes.map((eje) => (
@@ -112,15 +100,6 @@ const dia = (iso: string) => fechaCorta(iso.split('T')[0]);
     color: var(--tinta-fuerte);
     text-wrap: balance;
   }
-  .ps__dateline {
-    font-size: 0.88rem;
-    line-height: 1.5;
-    color: var(--tinta-meta);
-    font-variant-numeric: tabular-nums;
-  }
-  .ps__dateline strong {
-    color: var(--tinta-fuerte);
-  }
   .ps__umbral {
     height: 3px;
     margin: 0;
@@ -129,9 +108,6 @@ const dia = (iso: string) => fechaCorta(iso.split('T')[0]);
   }
 
   /* ---------- Big board compacto ---------- */
-  .ps__tablero {
-    margin: 0;
-  }
 
   /* ---------- Titulares por eje ---------- */
   .ps__ejes {
@@ -272,7 +248,6 @@ const dia = (iso: string) => fechaCorta(iso.split('T')[0]);
   }
 
   @media (max-width: 640px) {
-    .ps__tablero { margin-inline: calc(-1 * var(--space-4)); }
     .ps__ejes {
       grid-template-columns: minmax(0, 1fr);
       gap: var(--space-4);

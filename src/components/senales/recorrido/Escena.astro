@@ -1,0 +1,51 @@
+---
+/**
+ * La escena del recorrido: el globo de puntos y el índice de casillas, una por
+ * señal. En /senales queda fija mientras se lee; en la portada es la mitad
+ * izquierda del hero. El globo lo dibuja src/scripts/recorrido.ts.
+ */
+import type { Edicion } from '../../../lib/senales';
+import { contarSenales } from '../../../lib/senales';
+import { dos, ejeCorto } from '../../../lib/recorrido';
+
+interface Props {
+  edicion: Edicion;
+  /** Adónde llevan las casillas: '' dentro de /senales, '/senales/' desde la portada. */
+  base?: string;
+}
+
+const { edicion, base = '' } = Astro.props;
+const total = contarSenales(edicion);
+const TEND: Record<string, string> = { escala: 'escala', estable: 'se sostiene', afloja: 'afloja' };
+---
+
+<aside class="escena" aria-label="Globo e índice de señales">
+  <div class="lugar">
+    <p class="rot lugar__meta" data-rec-meta>Teatro global</p>
+    <p class="lugar__nombre" data-rec-nombre>{total} señales</p>
+  </div>
+  <div class="globo"><canvas aria-hidden="true"></canvas><div class="globo__capa"></div></div>
+  <nav class="riel" aria-label="Señales de la semana, por eje">
+    {edicion.ejes.map((eje) => (
+      <div class="riel__grupo" data-eje={eje.id} style={`flex:${eje.senales.length} 1 0`}>
+        <a class="riel__eje" href={`${base}#${eje.slug}`}>{ejeCorto(eje)}</a>
+        <div class="riel__nums">
+          {eje.senales.map((s) => (
+            <a
+              class={`t-${s.tendencia}`}
+              href={`${base}#senal-${s.n}`}
+              data-n={s.n}
+              aria-label={`Señal ${s.n}, ${s.corto ?? s.lugarMapa}: ${TEND[s.tendencia]}`}
+            >{dos(s.n)}</a>
+          ))}
+        </div>
+      </div>
+    ))}
+  </nav>
+  <p class="leyenda">
+    <span><i class="ico ico--escala"></i>Escala</span>
+    <span><i class="ico ico--afloja"></i>Afloja</span>
+    <span><i class="ico ico--estable"></i>Se sostiene</span>
+    <span class="leyenda__ayuda">Arrastrá el globo o tocá un número.</span>
+  </p>
+</aside>

@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import MonitorSenales from '../../components/senales/MonitorSenales.astro';
-import BigBoard from '../../components/senales/BigBoard.astro';
+import Recorrido from '../../components/senales/Recorrido.astro';
 import { ediciones, edicionVigente, contarSenales, delFecha } from '../../lib/senales';
 
 const vigente = edicionVigente();
@@ -13,19 +12,7 @@ const archivo = ediciones();
   description="El monitor semanal de LIMINAL: minerales críticos, chokepoints, infraestructura de la IA y conflictos armados. Cada señal con fuente, fecha y lectura."
 >
   <div class="pagina">
-    <header class="pagina__cab">
-      <p class="pagina__kick">Monitor semanal · Sale los lunes</p>
-      <h1>Señales</h1>
-      <p class="pagina__lede">
-        Las señales que mueven el poder en cuatro ejes: minerales críticos, chokepoints,
-        infraestructura de la IA y conflictos armados. Cada una con su fuente, su fecha y una lectura de LIMINAL.
-      </p>
-      <hr />
-    </header>
-
-    <BigBoard edicion={vigente} modo="pagina" />
-
-    <MonitorSenales edicion={vigente} titular="Todas las señales" bajada={false} cierre={false} mapa={false} />
+    <Recorrido edicion={vigente} />
 
     <section class="metodo" aria-labelledby="metodo-h">
       <h2 id="metodo-h">Cómo se arma</h2>
@@ -40,7 +27,7 @@ const archivo = ediciones();
         <div>
           <dt>Dato y lectura, separados</dt>
           <dd>
-            Arriba va el hecho, con fuente y fecha. Abajo, después de la línea naranja, la lectura de LIMINAL.
+            Primero va el hecho, con fuente y fecha. Después, marcada con una línea al costado, la lectura de LIMINAL.
             Así se distingue qué pasó de qué significa.
           </dd>
         </div>
@@ -130,20 +117,7 @@ const archivo = ediciones();
     letter-spacing: -0.005em;
     color: var(--tinta-fuerte);
   }
-  .pagina__cab { display: grid; gap: var(--space-3); }
-  .pagina__kick {
-    font-weight: 500;
-    font-size: 0.82rem;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--tinta-meta);
-  }
-  .pagina__cab h1 { font-size: clamp(3.2rem, 9vw, 6.5rem); line-height: 0.88; }
-  .pagina__lede { max-width: 60ch; font-size: clamp(1.05rem, 1.6vw, 1.25rem); line-height: 1.5; }
-  .pagina__cab hr { height: 3px; border: 0; margin: var(--space-4) 0 0; background: var(--senal); }
 
-  /* El monitor ya trae su propia apertura: acá le sacamos el aire de arriba. */
-  .pagina :global(.senales__intro) { padding-top: 0; }
 
   .metodo h2,
   .ejes h2,

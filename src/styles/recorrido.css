@@ -1,0 +1,449 @@
+/**
+ * Recorrido de Señales: el monitor de /senales y el hero de la portada.
+ *
+ * Una banda oscura a sangre, pegada al menú. Adentro, dos columnas: el globo
+ * queda a la izquierda y la lectura avanza a la derecha, señal por señal. En
+ * /senales el globo queda fijo mientras se lee (en celular, fijo arriba).
+ * Todo va bajo .rec para no tocar el resto del sitio.
+ *
+ * Ojo: no poner overflow en <html> en las páginas que usan .rec. El <body>
+ * ya recorta el ancho (global.css); si <html> también recorta, el globo deja
+ * de quedar fijo al leer.
+ */
+.rec {
+  color-scheme: dark;
+  /* Brand Kit v2.1, combinación sobre oscuro */
+  --vacio: var(--color-vacio, #060c08);
+  --selva: var(--color-selva, #0b2419);
+  --hueso: var(--color-hueso, #ded8ce);
+  --blanco: var(--color-blanco, #fff);
+  --lila: var(--color-lila, #c6b8db);
+
+  --fondo: var(--vacio);
+  --panel: var(--selva);
+  --tinta: var(--hueso);
+  --tinta-fuerte: var(--blanco);
+  --meta: var(--lila);
+  --regla: rgba(222, 216, 206, 0.16);
+  /* El color dice una sola cosa: hacia dónde va la señal.
+     El script del globo lee estos tres valores: tienen que ser hexadecimales. */
+  --escala: #ff7a1a;
+  --afloja: #0fba94;
+  --estable: #a9a69c;
+  --foco: #c6b8db;
+
+  --display: var(--font-display-v2, 'Big Shoulders Display', 'Arial Narrow', sans-serif);
+  --texto: var(--font-text-v2, 'Chivo', 'Helvetica Neue', Arial, sans-serif);
+  --fs-rot: 0.7rem;
+  --fs-chico: 0.84rem;
+  --fs-lectura: 1.14rem;
+  --fs-h3: clamp(1.7rem, 3.1vw, 2.5rem);
+  --fs-h2: clamp(2.4rem, 5vw, 4rem);
+  --escena-h: 0px;
+
+  /* A sangre y pegada al menú: come el aire de arriba de <main>. */
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-top: calc(-1 * var(--space-12, 3rem));
+  background: var(--fondo);
+  color: var(--tinta);
+  font-family: var(--texto);
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+@media (max-width: 720px) {
+  .rec { margin-top: calc(-1 * var(--space-8, 2rem)); }
+}
+html:has(.rec--recorrido) { scroll-behavior: smooth; }
+
+.rec *, .rec *::before, .rec *::after { box-sizing: border-box; }
+.rec [hidden] { display: none !important; }
+.rec h1, .rec h2, .rec h3, .rec h4, .rec p, .rec ul, .rec ol, .rec dl, .rec dd { margin: 0; }
+.rec ul, .rec ol { padding: 0; list-style: none; }
+.rec h1, .rec h2, .rec h3 {
+  font-family: var(--display);
+  font-weight: 800;
+  letter-spacing: -0.005em;
+  line-height: 0.98;
+  color: var(--tinta-fuerte);
+  text-transform: none;
+  text-wrap: balance;
+}
+.rec a { color: var(--tinta-fuerte); text-underline-offset: 0.2em; text-decoration-color: var(--regla); }
+.rec a:hover { color: var(--tinta-fuerte); text-decoration-color: currentColor; }
+.rec :focus-visible { outline: 2px solid var(--blanco); outline-offset: 2px; }
+
+.rec__in {
+  max-width: 1240px;
+  margin-inline: auto;
+  padding: 0 var(--space-8, 2rem) 48px;
+}
+@media (max-width: 720px) {
+  .rec__in { padding-inline: var(--space-4, 1rem); }
+}
+
+.rec .rot {
+  font: 500 var(--fs-rot)/1.3 var(--texto);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--meta);
+}
+
+/* ---------- Título ---------- */
+.rec .cab {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px 40px;
+  padding-block: 0 22px;
+  border-bottom: 1px solid var(--regla);
+}
+.rec .cab h1 { display: grid; gap: 8px; }
+.rec .cab h1 .rot { display: block; }
+.rec .cab__semana { font-size: clamp(2.6rem, 6.4vw, 4.4rem); }
+.rec .cab__volver { margin-bottom: 14px; font-size: var(--fs-chico); }
+.rec .cab__volver a { color: var(--meta); text-decoration: none; }
+.rec .cab__volver a:hover { color: var(--tinta-fuerte); }
+.rec .cab__datos { max-width: 44ch; font-size: var(--fs-chico); color: var(--tinta); }
+.rec .cab__datos strong { color: var(--tinta-fuerte); font-weight: 500; }
+.rec .sello {
+  display: inline-block;
+  margin-bottom: 8px;
+  padding: 4px 8px;
+  border: 1px solid var(--meta);
+  color: var(--meta);
+  font: 500 var(--fs-rot)/1.2 var(--texto);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* ---------- Dos columnas ---------- */
+.rec .recorrido {
+  display: grid;
+  grid-template-columns: minmax(0, 45fr) minmax(0, 55fr);
+  gap: 0 clamp(28px, 4.5vw, 72px);
+  align-items: start;
+}
+
+/* La escena: el globo y el índice, fijos mientras se lee */
+.rec .escena {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+  padding-block: 20px;
+  min-width: 0;
+}
+.rec .lugar { min-height: 6.4rem; }
+.rec .lugar__nombre {
+  margin-top: 6px;
+  font: 800 clamp(1.5rem, 2.6vw, 2.1rem)/1 var(--display);
+  color: var(--tinta-fuerte);
+  text-wrap: balance;
+}
+.rec .globo {
+  position: relative;
+  width: min(100%, calc(100vh - 230px));
+  width: min(100%, calc(100dvh - 230px));
+  max-width: 100%;
+  aspect-ratio: 1;
+  /* el globo deja aire dentro de su caja: se lo come con márgenes negativos */
+  margin: -5% auto -3%;
+}
+.rec .globo canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  touch-action: pan-y;
+  cursor: grab;
+}
+.rec .globo canvas.agarrado { cursor: grabbing; }
+.rec .globo__capa { position: absolute; inset: 0; pointer-events: none; }
+.rec--sin-globo .globo { display: none; }
+.rec--sin-globo.rec--recorrido .escena { justify-content: flex-start; padding-top: 12vh; }
+
+.rec .chip {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(calc(var(--x, 0px) - 50%), calc(var(--y, 0px) - 100% - var(--sep, 9px)));
+  padding: 5px 6px;
+  border: 1px solid var(--c, var(--tinta));
+  background: var(--fondo);
+  color: var(--c, var(--tinta));
+  font: 700 0.7rem/1 var(--texto);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: opacity 0.25s;
+}
+.rec a.chip:hover { color: var(--c, var(--tinta)); background: var(--panel); }
+.rec .chip[data-pos="abajo"] { transform: translate(calc(var(--x, 0px) - 50%), calc(var(--y, 0px) + var(--sep, 9px))); }
+.rec .chip[data-pos="der"] { transform: translate(calc(var(--x, 0px) + var(--sep, 9px)), calc(var(--y, 0px) - 50%)); }
+.rec .chip[data-pos="izq"] { transform: translate(calc(var(--x, 0px) - 100% - var(--sep, 9px)), calc(var(--y, 0px) - 50%)); }
+.rec .chip--activo {
+  z-index: 2;
+  padding: 6px 9px;
+  background: var(--c);
+  color: var(--fondo);
+  font-size: 0.8rem;
+}
+.rec a.chip--activo:hover { background: var(--c); color: var(--fondo); }
+.rec .chip--extremo,
+.rec .chip--foco {
+  border: 0;
+  background: transparent;
+  color: var(--tinta-fuerte);
+  font-weight: 500;
+  text-shadow: 0 0 6px var(--fondo), 0 0 2px var(--fondo);
+}
+.rec .anillo {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 36px;
+  height: 36px;
+  margin: -18px 0 0 -18px;
+  border: 1.5px solid var(--c);
+  border-radius: 50%;
+  translate: var(--x, 0px) var(--y, 0px);
+  animation: rec-pulso 2.4s ease-out infinite;
+  transition: opacity 0.25s;
+}
+@keyframes rec-pulso {
+  0% { scale: 0.3; opacity: 0.95; }
+  100% { scale: 1.5; opacity: 0; }
+}
+
+/* Índice de señales: una casilla por señal, agrupadas por eje */
+.rec .riel { display: flex; gap: 10px; align-items: flex-end; }
+.rec .riel__grupo { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.rec .riel__eje {
+  font: 500 0.62rem/1.2 var(--texto);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--meta);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.rec .riel__grupo.on .riel__eje { color: var(--tinta-fuerte); }
+.rec .riel__nums { display: flex; gap: 3px; }
+.rec .riel__nums a {
+  flex: 1 1 0;
+  min-width: 0;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--regla);
+  border-bottom: 3px solid var(--c);
+  color: var(--tinta);
+  font: 700 0.74rem/1 var(--texto);
+  font-variant-numeric: tabular-nums;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+.rec .riel__nums a:hover { background: var(--panel); color: var(--tinta-fuerte); }
+.rec .riel__nums a.on { background: var(--c); border-color: var(--c); color: var(--fondo); }
+
+.rec .leyenda {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  font-size: 0.74rem;
+  color: var(--tinta);
+}
+.rec .leyenda span { display: inline-flex; align-items: center; gap: 7px; }
+.rec .leyenda__ayuda { color: var(--meta); }
+
+/* Marcas de tendencia: triángulo arriba, abajo, cuadrado */
+.rec .ico { display: inline-block; flex: none; width: 0; height: 0; }
+.rec .ico--escala { border-left: 5px solid transparent; border-right: 5px solid transparent; border-bottom: 8px solid var(--escala); }
+.rec .ico--afloja { border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 8px solid var(--afloja); }
+.rec .ico--estable { width: 8px; height: 8px; background: var(--estable); }
+.rec .t-escala { --c: var(--escala); }
+.rec .t-afloja { --c: var(--afloja); }
+.rec .t-estable { --c: var(--estable); }
+
+/* ---------- La lectura ---------- */
+.rec .lectura { min-width: 0; padding-block: 28px 18vh; }
+.rec .paso { padding-block: clamp(36px, 8vh, 84px); border-top: 1px solid var(--regla); scroll-margin-top: 12px; }
+.rec .paso--inicio { border-top: 0; padding-top: clamp(24px, 6vh, 56px); }
+.rec .paso > * + * { margin-top: 18px; }
+.rec .paso--senal { min-height: 78vh; }
+.rec .paso p, .rec .paso li { max-width: 62ch; }
+
+/* Síntesis y pulso por eje */
+.rec .sintesis__titular { font-size: clamp(2.6rem, 5.6vw, 4.6rem); line-height: 0.95; }
+.rec .sintesis__titular b { font-weight: 800; color: var(--escala); }
+.rec .sintesis__resto { font-size: var(--fs-lectura); color: var(--tinta); }
+
+.rec .pulso { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; margin-top: 28px; background: var(--regla); border: 1px solid var(--regla); }
+.rec .eje-pulso {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+  padding: 18px 18px 16px;
+  background: var(--fondo);
+  color: inherit;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.rec .eje-pulso:hover { background: var(--panel); color: inherit; }
+.rec .eje-pulso__titular { font: 800 clamp(1.5rem, 2.6vw, 2rem)/1 var(--display); color: var(--tinta-fuerte); }
+.rec .eje-pulso__resto { font-size: var(--fs-chico); color: var(--tinta); }
+.rec .hist-caja { display: inline-flex; flex-direction: column; gap: 8px; align-self: flex-start; margin-top: 10px; }
+.rec .hist { display: flex; align-items: flex-end; gap: 5px; height: 88px; }
+.rec .hist__sem { display: flex; flex-direction: column-reverse; gap: 2px; min-width: 9px; opacity: 0.45; }
+.rec .hist__sem--hoy { opacity: 1; }
+.rec .hist__sem i { display: block; width: 9px; height: 9px; background: var(--c); }
+.rec .hist__pie { display: flex; justify-content: space-between; gap: 8px; font-size: 0.64rem; line-height: 1; color: var(--meta); font-variant-numeric: tabular-nums; }
+.rec .hist__pie span:only-child { margin-left: auto; }
+.rec .pulso__nota { margin-top: 12px; font-size: 0.78rem; color: var(--meta); max-width: 62ch; }
+
+/* Entrada de eje */
+.rec .paso--eje h2 { font-size: var(--fs-h2); }
+.rec .paso--eje .alcance { font-size: var(--fs-lectura); color: var(--tinta); }
+.rec .conteo { font-size: var(--fs-chico); color: var(--tinta); }
+
+/* Señal */
+.rec .ficha { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; }
+.rec .ficha__num {
+  min-width: 2.2em;
+  padding: 5px 7px;
+  background: var(--c);
+  color: var(--fondo);
+  font: 700 0.84rem/1 var(--texto);
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+}
+.rec .ficha__corto { font: 700 0.84rem/1 var(--texto); letter-spacing: 0.08em; text-transform: uppercase; color: var(--tinta-fuerte); }
+.rec .tend { display: inline-flex; align-items: center; gap: 7px; font: 500 0.84rem/1 var(--texto); color: var(--c); }
+.rec .inten { display: inline-flex; align-items: center; gap: 3px; font: 500 0.84rem/1 var(--texto); color: var(--tinta); }
+.rec .inten i { width: 12px; height: 6px; background: var(--c); }
+.rec .inten i.no { background: var(--regla); }
+.rec .inten span { margin-left: 5px; }
+.rec .um { font-size: 0.78rem; color: var(--meta); }
+.rec .um--vigente { display: inline-block; padding: 4px 8px; background: var(--tinta-fuerte); color: var(--fondo); font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
+.rec .paso--senal h3 { font-size: var(--fs-h3); max-width: 22em; }
+.rec .senal__meta { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: var(--fs-chico); color: var(--meta); }
+.rec .claves { display: flex; flex-wrap: wrap; gap: 14px 40px; padding-block: 14px; border-block: 1px solid var(--regla); }
+.rec .claves dt { font: 500 var(--fs-rot)/1.3 var(--texto); letter-spacing: 0.14em; text-transform: uppercase; color: var(--meta); }
+.rec .claves dd { margin-top: 4px; font: 800 clamp(1.4rem, 2.4vw, 1.9rem)/1 var(--display); color: var(--tinta-fuerte); }
+.rec .paso--senal .rot { margin-top: 26px; }
+.rec .paso--senal .rot + p { margin-top: 8px; }
+.rec .la-lectura { padding-left: 16px; border-left: 2px solid var(--meta); font-size: var(--fs-lectura); line-height: 1.55; color: var(--tinta-fuerte); }
+.rec .fuente { font-size: var(--fs-chico); color: var(--meta); }
+.rec .anterior { font-size: var(--fs-chico); color: var(--tinta); }
+.rec .anterior summary { cursor: pointer; color: var(--meta); }
+.rec .anterior > * + * { margin-top: 10px; }
+
+/* También en el radar, focos */
+.rec .radar li { display: grid; grid-template-columns: 5.2em minmax(0, 1fr); gap: 12px; padding-block: 12px; border-top: 1px solid var(--regla); }
+.rec .radar li:first-child { border-top: 0; }
+.rec .radar .etq { font: 700 var(--fs-chico)/1.5 var(--texto); color: var(--tinta-fuerte); font-variant-numeric: tabular-nums; }
+.rec .paso--radar h3 { font-size: clamp(1.5rem, 2.6vw, 2rem); }
+
+/* ---------- Qué observar ---------- */
+.rec .observar { padding-block: 56px 8px; border-top: 1px solid var(--regla); }
+.rec .observar h2 { font-size: var(--fs-h2); }
+.rec .agenda { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 28px 32px; margin-top: 28px; }
+.rec .agenda li { display: flex; flex-direction: column; gap: 6px; padding-top: 14px; border-top: 2px solid var(--tinta); min-width: 0; }
+.rec .agenda__fecha { font: 800 1.9rem/1 var(--display); color: var(--tinta-fuerte); }
+.rec .agenda__det { font-size: var(--fs-chico); }
+
+/* Mientras se recorre, lo que no se está leyendo baja un poco */
+@media (min-width: 861px) {
+  .rec--recorrido .paso--eje, .rec--recorrido .paso--radar { min-height: 52vh; }
+  .rec--activo .paso { opacity: 0.55; transition: opacity 0.4s; }
+  .rec--activo .paso.activo { opacity: 1; }
+}
+
+/* ---------- Portada: el mismo globo como hero, sin recorrido ---------- */
+.rec--portada { margin-bottom: var(--space-12, 3rem); }
+.rec--portada .rec__in { padding-block: clamp(20px, 4vh, 44px); }
+.rec--portada .recorrido { align-items: center; }
+.rec--portada .escena { position: static; height: auto; padding-block: 0; }
+.rec--portada .lugar { min-height: 5.2rem; }
+.rec--portada .globo { width: min(100%, 520px); }
+.rec--portada .lectura { padding-block: 0; }
+.rec--portada .lectura > * + * { margin-top: 18px; }
+.rec--portada .hero__kick a { color: inherit; text-decoration: none; }
+.rec--portada .hero__kick a:hover { color: var(--tinta-fuerte); }
+.rec--portada .sintesis__titular { font-size: clamp(2.6rem, 5.2vw, 4.2rem); }
+.rec--portada .pulso { margin-top: 24px; }
+.rec--portada .eje-pulso { padding: 14px 16px 12px; gap: 6px; }
+.rec--portada .hist { height: 66px; }
+.rec--portada .hist__sem i { width: 7px; height: 7px; }
+.rec--portada .hist__sem { min-width: 7px; }
+.rec .hero__acciones { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 24px; margin-top: 24px; }
+.rec .hero__boton {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 20px;
+  background: var(--tinta-fuerte);
+  color: var(--fondo);
+  font: 700 0.85rem/1 var(--texto);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.rec a.hero__boton:hover { background: var(--escala); color: var(--fondo); }
+.rec .hero__fecha { flex: 1 1 240px; max-width: 46ch; font-size: 0.78rem; line-height: 1.5; color: var(--meta); }
+.rec .hero__fecha strong { color: var(--tinta); font-weight: 500; }
+
+/* ---------- Celular ---------- */
+@media (max-width: 860px) {
+  .rec .recorrido { display: block; }
+  /* En /senales el globo queda fijo arriba mientras se lee */
+  .rec--recorrido .escena {
+    z-index: 5;
+    height: auto;
+    gap: 8px;
+    padding-block: 10px 12px;
+    background: var(--fondo);
+    border-bottom: 1px solid var(--regla);
+  }
+  .rec .lugar { min-height: 0; display: flex; align-items: baseline; gap: 10px; }
+  .rec .lugar__nombre { margin-top: 0; font-size: 1.25rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+  .rec--recorrido .globo { width: min(100%, 31vh); width: min(100%, 31dvh); margin-block: -2% -1%; }
+  .rec .riel { gap: 8px; }
+  .rec .riel__eje { font-size: 0.56rem; letter-spacing: 0.06em; }
+  .rec .riel__nums a { height: 28px; font-size: 0.66rem; }
+  .rec .leyenda { display: none; }
+  .rec--recorrido .lectura { padding-block: 20px 12vh; }
+  .rec .paso { scroll-margin-top: calc(var(--escena-h) + 10px); }
+  .rec .paso--senal { min-height: 0; }
+  .rec--sin-globo.rec--recorrido .escena { padding-top: 10px; }
+
+  .rec--portada .escena { gap: 10px; }
+  .rec--portada .lugar { min-height: 0; }
+  .rec--portada .globo { width: min(100%, 340px); margin-block: -3% -2%; }
+  .rec--portada .lectura { margin-top: 28px; }
+}
+@media (max-width: 420px) {
+  .rec .eje-pulso { padding: 14px 12px 12px; }
+  .rec .hist { gap: 4px; }
+  .rec .hist__sem { min-width: 8px; }
+  .rec .hist__sem i { width: 8px; height: 8px; }
+  .rec--portada .hist__sem { min-width: 7px; }
+  .rec--portada .hist__sem i { width: 7px; height: 7px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:has(.rec--recorrido) { scroll-behavior: auto; }
+  .rec .anillo { animation: none; scale: 1; opacity: 0.7; }
+  .rec--activo .paso { transition: none; }
+}

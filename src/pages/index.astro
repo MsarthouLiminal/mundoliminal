@@ -2,16 +2,18 @@
 /**
  * Home de mundoliminal.com: una portada.
  *
- * Arriba, la apertura. Enseguida, en el primer pantallazo, la portada en dos
- * columnas: Señales de la semana (mapa y titulares) y Lo último (columna,
- * video y podcast). En el celular, Lo último va primero. El monitor completo,
- * con hecho, lectura y fuente, vive en /senales.
+ * Arriba de todo, el hero de Señales: el globo con las señales de la semana,
+ * la síntesis y el pulso por eje. Después, la apertura (la marca y quién está
+ * detrás) y la portada en dos columnas: los titulares de la semana y Lo último
+ * (columna, video y podcast). En el celular, Lo último va primero. El monitor
+ * completo, con hecho, lectura y fuente, vive en /senales.
  */
 import BaseLayout from '../layouts/BaseLayout.astro';
 import HeroHome from '../components/home/HeroHome.astro';
 import LoUltimo from '../components/home/LoUltimo.astro';
 import Manifesto from '../components/home/Manifesto.astro';
 import CommercialBlock from '../components/home/CommercialBlock.astro';
+import SenalesHero from '../components/senales/SenalesHero.astro';
 import SenalesPortada from '../components/senales/SenalesPortada.astro';
 import { edicionVigente } from '../lib/senales';
 import {
@@ -34,6 +36,8 @@ const edicion = edicionVigente();
   title="LIMINAL"
   description="Monitor semanal de minerales críticos, chokepoints, infraestructura de la IA y conflictos, con fuente y fecha. Análisis de Martín Sarthou desde Montevideo."
 >
+  <SenalesHero edicion={edicion} />
+
   <HeroHome />
 
   <div class="portada">

@@ -1,0 +1,67 @@
+---
+/**
+ * El pulso de la semana: cuántas señales escalan y, por eje, la cuenta de esta
+ * semana con las anteriores al lado (un cuadro por señal). Son cuentas de lo
+ * que ya está cargado en cada edición: no hay índice ni lectura propia.
+ */
+import type { Edicion } from '../../../lib/senales';
+import { contarSenales } from '../../../lib/senales';
+import { cuenta, resto, mayuscula, titularEje, historial, notaHistorial } from '../../../lib/recorrido';
+
+interface Props {
+  edicion: Edicion;
+  /** Adónde llevan los ejes: '' dentro de /senales, '/senales/' desde la portada. */
+  base?: string;
+  /** id del titular, para nombrar la sección que lo contiene. */
+  idTitular?: string;
+  archivada?: boolean;
+}
+
+const { edicion, base = '', idTitular, archivada = false } = Astro.props;
+const total = contarSenales(edicion);
+const general = cuenta(edicion.ejes.flatMap((e) => e.senales));
+const semanas = historial(edicion);
+const ORDEN = ['escala', 'estable', 'afloja'] as const;
+
+const ejes = edicion.ejes.map((eje) => {
+  const c = cuenta(eje.senales);
+  const columnas = semanas.map((sem) => {
+    const propio = sem.ejes.find((x) => x.id === eje.id);
+    const cs = cuenta(propio?.senales ?? []);
+    return { sem, cs, marcas: ORDEN.flatMap((t) => Array.from({ length: cs[t] }, () => t)) };
+  });
+  const lectura = columnas
+    .map(({ sem, cs }) => `semana ${sem.semana}: ${cs.escala} en escalada, ${cs.estable} que se sostienen, ${cs.afloja} que aflojan`)
+    .join('; ');
+  return { eje, c, columnas, lectura };
+});
+---
+
+<h2 class="sintesis__titular" id={idTitular}>
+  {general.escala > 0 ? <><b>{general.escala}</b> de {total} señales {general.escala === 1 ? 'escala' : 'escalan'}</> : <>Ninguna de las {total} señales escala</>}
+</h2>
+<p class="sintesis__resto">{resto(general) ? `${mayuscula(resto(general))}.` : 'Ninguna afloja.'}</p>
+
+<div class="pulso">
+  {ejes.map(({ eje, c, columnas, lectura }) => (
+    <a class="eje-pulso" href={`${base}#${eje.slug}`} data-eje={eje.id}>
+      <span class="rot">{eje.nombre}</span>
+      <span class="eje-pulso__titular">{titularEje(c, eje.senales.length)}</span>
+      <span class="eje-pulso__resto">{resto(c) ? mayuscula(resto(c)) : 'Ninguna afloja'}</span>
+      <span class="hist-caja">
+        <span class="hist" role="img" aria-label={`${eje.nombre}, ${lectura}`}>
+          {columnas.map(({ sem, marcas }) => (
+            <span class:list={['hist__sem', { 'hist__sem--hoy': sem.id === edicion.id }]}>
+              {marcas.map((t) => <i class={`t-${t}`}></i>)}
+            </span>
+          ))}
+        </span>
+        <span class="hist__pie">
+          {semanas.length > 1 && <span>S{semanas[0].semana}</span>}
+          <span>S{edicion.semana}</span>
+        </span>
+      </span>
+    </a>
+  ))}
+</div>
+<p class="pulso__nota">{notaHistorial(semanas.length, archivada)} Tocá un eje para ir a sus señales.</p>

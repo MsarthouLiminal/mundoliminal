@@ -1,0 +1,55 @@
+---
+/**
+ * SenalesHero: Señales como hero de la portada.
+ *
+ * El globo de puntos con las señales de la semana y, al lado, la síntesis y el
+ * pulso por eje. Pasar el mouse por un eje o por un número muestra esa señal en
+ * el globo; tocarlo lleva a su lectura completa en /senales. Lee el mismo JSON
+ * que el monitor, así que se actualiza con cada publicación.
+ */
+import '../../styles/recorrido.css';
+import Escena from './recorrido/Escena.astro';
+import Pulso from './recorrido/Pulso.astro';
+import {
+  type Edicion,
+  contarSenales,
+  fechaHora,
+  fechaSinAnio,
+  semanaDel,
+  ultimaActualizacion,
+} from '../../lib/senales';
+import { datosGlobo } from '../../lib/recorrido';
+
+interface Props {
+  edicion: Edicion;
+}
+
+const { edicion } = Astro.props;
+const total = contarSenales(edicion);
+const actualizada = ultimaActualizacion(edicion);
+---
+
+<section class="rec rec--portada" data-rec data-modo="portada" aria-labelledby="hero-senales-h">
+  <div class="rec__in">
+    <div class="recorrido">
+      <Escena edicion={edicion} base="/senales/" />
+
+      <div class="lectura">
+        <p class="rot hero__kick"><a href="/senales/">Señales</a> / Semana {edicion.semana}</p>
+        <Pulso edicion={edicion} base="/senales/" idTitular="hero-senales-h" />
+        <div class="hero__acciones">
+          <a class="hero__boton" href="/senales/">Recorrer las {total} señales <span aria-hidden="true">→</span></a>
+          <p class="hero__fecha">
+            {semanaDel(edicion.fechaEdicion)}. Datos al {fechaSinAnio(edicion.corteDatos)}.
+            {actualizada && <strong> Actualizada el {fechaHora(actualizada)}.</strong>}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script is:inline type="application/json" data-rec-datos set:html={JSON.stringify(datosGlobo(edicion)).replace(/</g, '\\u003c')} />
+</section>
+
+<script>
+  import '../../scripts/recorrido.ts';
+</script>

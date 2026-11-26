@@ -1,0 +1,178 @@
+---
+/**
+ * Recorrido: el monitor Señales como lectura guiada.
+ *
+ * Arriba, la síntesis de la semana y el pulso por eje. Después, una señal por
+ * vez (hecho, lectura y fuente) mientras el globo, fijo al costado, gira hacia
+ * el lugar de cada una. El color dice una sola cosa: si la señal escala, afloja
+ * o se sostiene. Todo sale del JSON de la edición, así que cada publicación lo
+ * actualiza solo. La versión de sala, a pantalla completa, sigue siendo el
+ * Big board (/senales/sala).
+ */
+import '../../styles/recorrido.css';
+import Escena from './recorrido/Escena.astro';
+import Pulso from './recorrido/Pulso.astro';
+import {
+  type Edicion,
+  fechaCorta,
+  fechaHora,
+  fechaSinAnio,
+  semanaDel,
+  ultimaActualizacion,
+  INTENSIDAD,
+  umHasta,
+  umVigente,
+} from '../../lib/senales';
+import { cuenta, conteoEje, dos, datosGlobo } from '../../lib/recorrido';
+
+interface Props {
+  edicion: Edicion;
+  /** Edición vieja: lo aclara arriba y ofrece volver al monitor vigente. */
+  archivada?: boolean;
+}
+
+const { edicion, archivada = false } = Astro.props;
+const actualizada = ultimaActualizacion(edicion);
+const TEND: Record<string, string> = { escala: 'Escala', estable: 'Se sostiene', afloja: 'Afloja' };
+/** El eje de conflictos lleva focos en el mapa: su lista de "también" los muestra en el globo. */
+const tieneFocos = (ejeId: string, titulo: string) => /foco/i.test(titulo) && edicion.focos.some((f) => f.eje === ejeId);
+---
+
+<section class="rec rec--recorrido" data-rec data-modo="recorrido" aria-labelledby="rec-titulo">
+  <div class="rec__in">
+    <div class="recorrido">
+      <Escena edicion={edicion} />
+
+      <div class="lectura">
+        <header class="cab">
+          <div>
+            {archivada && <p class="cab__volver"><a href="/senales/">← Señales: método y archivo</a></p>}
+            <h1 id="rec-titulo"><span class="rot">LIMINAL / Señales</span> <span class="cab__semana">Semana {edicion.semana}</span></h1>
+          </div>
+          <div class="cab__datos">
+            {archivada && <span class="sello">Edición archivada</span>}
+            <p>
+              {semanaDel(edicion.fechaEdicion)}. Datos al {fechaSinAnio(edicion.corteDatos)}.
+              {actualizada && <strong> Actualizada el {fechaHora(actualizada)}.</strong>}
+            </p>
+          </div>
+        </header>
+
+        <section class="paso paso--inicio" data-tipo="inicio" id="senales">
+          <Pulso edicion={edicion} archivada={archivada} />
+        </section>
+
+        {edicion.ejes.map((eje, i) => (
+          <>
+            <section class="paso paso--eje" id={eje.slug} data-tipo="eje" data-eje={eje.id}>
+              <p class="rot">Eje {i + 1} de {edicion.ejes.length}</p>
+              <h2>{eje.nombre}</h2>
+              <p class="alcance">{eje.alcance}</p>
+              <p class="conteo">{conteoEje(cuenta(eje.senales), eje.senales.length)}</p>
+            </section>
+
+            {eje.senales.map((s) => (
+              <article
+                class:list={['paso', 'paso--senal', 'senal', { 'senal--um': umVigente(s) }]}
+                id={`senal-${s.n}`}
+                data-tipo="senal"
+                data-eje={eje.id}
+                data-n={s.n}
+              >
+                <header class={`ficha t-${s.tendencia}`}>
+                  <span class="ficha__num">{dos(s.n)}</span>
+                  <span class="ficha__corto">{s.corto ?? s.lugarMapa}</span>
+                  <span class="tend"><i class={`ico ico--${s.tendencia}`}></i>{TEND[s.tendencia]}</span>
+                  <span class="inten" aria-label={`Intensidad ${INTENSIDAD[s.intensidad].toLowerCase()}`}>
+                    {[1, 2, 3].map((n) => <i class:list={[{ no: n > s.intensidad }]}></i>)}
+                    <span>{INTENSIDAD[s.intensidad]}</span>
+                  </span>
+                </header>
+                {/* "Último momento" vence a las 24 horas de la última actualización: después queda "Actualizado el". */}
+                {(s.ultimoMomento || s.actualizado) && (
+                  <div class="avisos">
+                    {s.ultimoMomento && (
+                      <p class="um um--vigente" data-um-hasta={umHasta(s)} hidden={!umVigente(s)}>Último momento{s.actualizado && `, ${fechaHora(s.actualizado)}`}</p>
+                    )}
+                    {s.actualizado && (
+                      <p class="um" data-um-relevo hidden={umVigente(s)}>Actualizado el {fechaHora(s.actualizado)}</p>
+                    )}
+                  </div>
+                )}
+                <h3>{s.titulo}</h3>
+                <p class="senal__meta"><span>{s.lugar}</span><time datetime={s.fecha}>{fechaCorta(s.fecha)}</time></p>
+                {(s.dato || s.objetivo) && (
+                  <dl class="claves">
+                    {s.dato && <div><dt>Dato</dt><dd>{s.dato}</dd></div>}
+                    {s.objetivo && <div><dt>Objetivo</dt><dd>{s.objetivo}</dd></div>}
+                  </dl>
+                )}
+                <h4 class="rot">El hecho</h4>
+                <p>{s.hecho}</p>
+                <h4 class="rot">La lectura</h4>
+                <p class="la-lectura">{s.lectura}</p>
+                <p class="fuente">
+                  Fuente: <a href={s.fuente.url} target="_blank" rel="noopener">{s.fuente.nombre}</a>, {fechaCorta(s.fecha)}
+                </p>
+                {s.analisis && (
+                  <p class="fuente">
+                    Análisis LIMINAL: <a href={s.analisis.url} target="_blank" rel="noopener">{s.analisis.titulo}</a>
+                  </p>
+                )}
+                {s.anterior && (
+                  <details class="anterior">
+                    <summary>Versión del lunes {fechaCorta(edicion.fechaEdicion)}</summary>
+                    {s.anterior.titulo && <p><strong>{s.anterior.titulo}</strong></p>}
+                    <p>{s.anterior.hecho}</p>
+                    <p>{s.anterior.lectura}</p>
+                    <p class="fuente">
+                      <a href={s.anterior.fuente.url} target="_blank" rel="noopener">{s.anterior.fuente.nombre}, {fechaCorta(s.anterior.fecha)}</a>
+                    </p>
+                  </details>
+                )}
+              </article>
+            ))}
+
+            {eje.tambien.length > 0 && (
+              <section
+                class="paso paso--radar"
+                id={`radar-${eje.id}`}
+                data-tipo={tieneFocos(eje.id, eje.tambienTitulo) ? 'focos' : 'radar'}
+                data-eje={eje.id}
+              >
+                <h3>{eje.tambienTitulo}</h3>
+                <ul class="radar">
+                  {eje.tambien.map((t) => (
+                    <li><span class="etq">{t.etiqueta}</span><span>{t.texto}</span></li>
+                  ))}
+                </ul>
+              </section>
+            )}
+          </>
+        ))}
+      </div>
+    </div>
+
+    {edicion.agenda.length > 0 && (
+      <section class="observar" aria-labelledby="rec-observar">
+        <p class="rot">Lo que viene</p>
+        <h2 id="rec-observar">Qué observar</h2>
+        <ul class="agenda">
+          {edicion.agenda.map((a) => (
+            <li>
+              {a.fecha ? <time class="agenda__fecha" datetime={a.fecha}>{a.texto}</time> : <span class="agenda__fecha">{a.texto}</span>}
+              <span class="rot">{a.eje}</span>
+              <span class="agenda__det">{a.detalle}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
+  </div>
+  <script is:inline type="application/json" data-rec-datos set:html={JSON.stringify(datosGlobo(edicion)).replace(/</g, '\\u003c')} />
+</section>
+
+<script>
+  import '../../scripts/recorrido.ts';
+  import '../../scripts/ultimo-momento.ts';
+</script>
