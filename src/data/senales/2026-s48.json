@@ -11,6 +11,28 @@
       "alcance": "Tierras raras, cobre, cobalto, litio, uranio. Quién controla el acceso y a qué precio.",
       "senales": [
         {
+          "n": 17,
+          "titulo": "El hidróxido de litio debuta en Guangzhou con una caída de 7,20%",
+          "lugar": "Guangzhou, China",
+          "lugarMapa": "Guangzhou",
+          "lat": 23.13,
+          "lon": 113.26,
+          "etiqueta": "der",
+          "fecha": "2026-11-26",
+          "hecho": "El jueves 26, la Bolsa de Futuros de Guangzhou empezó a operar futuros de hidróxido de litio, con entrega física y precio en yuanes, y el contrato principal (LI2706) cerró en 69.600 yuanes por tonelada, 7,20% por debajo del precio de referencia de 75.000, con 75.500 contratos negociados por 5.350 millones de yuanes. Es el segundo contrato de litio de la bolsa, que opera futuros de carbonato desde julio de 2023, y las opciones empiezan el viernes 27. China produjo en 2025 unas 306.000 toneladas de hidróxido de litio, 82% del total mundial, y exportó 54.000, cerca del 90% a Corea del Sur y Japón.",
+          "lectura": "China produce el 82% del hidróxido de litio del mundo y desde hoy también le pone pantalla propia, en yuanes y con entrega física, al producto que les vende sobre todo a Corea del Sur y a Japón. El estreno con 7,20% de caída habla del momento del mercado más que del instrumento: el contrato nace con el precio en baja, y a partir de ahora esa baja se lee en Guangzhou.",
+          "tendencia": "estable",
+          "intensidad": 1,
+          "corto": "Litio",
+          "dato": "69.600 yuanes por tonelada",
+          "objetivo": "Bolsa de futuros",
+          "fuente": {
+            "nombre": "21st Century Business Herald (21 Jingji)",
+            "url": "https://m.21jingji.com/article/20261126/herald/bdc8817d0bcc5339dfa43913d694d0c2.html"
+          },
+          "actualizado": "2026-11-26T07:15"
+        },
+        {
           "n": 11,
           "titulo": "El Congo suspende todas sus exportaciones de cobalto desde el 30",
           "lugar": "Kinshasa, República Democrática del Congo",
@@ -30,7 +52,8 @@
             "nombre": "Reuters, vía CNBC Africa",
             "url": "https://www.cnbcafrica.com/2026/congo-halts-cobalt-exports-again-to-tackle-oversupply-support-prices-industry-regulator-says"
           },
-          "actualizado": "2026-11-23T19:45"
+          "actualizado": "2026-11-23T19:45",
+          "rotada": "2026-11-26T07:15"
         },
         {
           "n": 1,
@@ -266,6 +289,28 @@
       "alcance": "Data centers, chips, energía y agua. El cuerpo físico de la IA y quién lo decide.",
       "senales": [
         {
+          "n": 18,
+          "titulo": "Nvidia frena envíos de servidores a 4 países asiáticos, según el FT",
+          "lugar": "Singapur / Malasia, Tailandia e Indonesia",
+          "lugarMapa": "Singapur",
+          "lat": 1.35,
+          "lon": 103.82,
+          "etiqueta": "der",
+          "fecha": "2026-11-26",
+          "hecho": "El jueves 26, el Financial Times informó, con tres personas al tanto, que Nvidia les indicó a sus socios fabricantes frenar los envíos de servidores con sus chips a Malasia, Singapur, Tailandia e Indonesia, y que Dell y Supermicro avisaron a compradores de esos países que Nvidia no permite despachar sus pedidos; Reuters no pudo verificarlo, las tres empresas no respondieron consultas y no está claro si la pausa es temporal. La regla del Departamento de Comercio de EE.UU. del lunes 16 exige licencia para exportar chips avanzados de IA a esos cuatro países y a Brasil, y da 90 días a los data centers que ya dan cómputo a empresas chinas para obtener la suya (Nextgov). El miércoles 25, Bloomberg informó que los prestamistas demoraron un préstamo de USD 6.600 millones para Bridge Data Centres, de Bain Capital, cuyas instalaciones en Malasia atienden a ByteDance, y que Citigroup, Standard Chartered y los mayores bancos de Singapur revisan a sus clientes de data centers.",
+          "lectura": "La regla de Washington pedía licencias y daba 90 días, y Nvidia, si el Financial Times está en lo cierto, eligió no esperar: frenó los servidores antes de que alguien le negara un permiso. Los bancos hicieron la misma cuenta con un préstamo de USD 6.600 millones, y así una norma de exportación con diez días de vida ya decide qué data center del Sudeste Asiático recibe máquinas y cuál recibe crédito.",
+          "tendencia": "escala",
+          "intensidad": 2,
+          "corto": "Chips Asia",
+          "dato": "USD 6.600 millones",
+          "objetivo": "Servidores de IA",
+          "fuente": {
+            "nombre": "Reuters, con el Financial Times, vía WKZO",
+            "url": "https://wkzo.com/2026/11/26/nvidia-halts-server-shipments-to-four-southeast-asian-countries-ft-reports/"
+          },
+          "actualizado": "2026-11-26T07:15"
+        },
+        {
           "n": 15,
           "titulo": "Malasia pide a sus data centers cortar con Megaspeed y otras seis",
           "lugar": "Kuala Lumpur, Malasia / Singapur",
@@ -307,7 +352,8 @@
             "nombre": "Nvidia, comunicado a inversores",
             "url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Board-Reinstates-Jensen-Huang-as-President-CEO-and-Board-Director/default.aspx"
           },
-          "actualizado": "2026-11-23T19:45"
+          "actualizado": "2026-11-23T19:45",
+          "rotada": "2026-11-26T07:15"
         },
         {
           "n": 7,
