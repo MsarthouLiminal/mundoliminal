@@ -17,7 +17,7 @@ const archivada = edicion.id !== edicionVigente().id;
 
 <BaseLayout
   title={`Señales, semana ${edicion.semana}`}
-  description={`Monitor Señales de LIMINAL, ${semanaDel(edicion.fechaEdicion).toLowerCase()}: ${contarSenales(edicion)} señales en minerales críticos, chokepoints, infraestructura de la IA y conflictos, con fuente y fecha.`}
+  description={`Monitor Señales de LIMINAL, ${semanaDel(edicion.fechaEdicion).toLowerCase()}: ${contarSenales(edicion)} señales en infraestructura de la IA, conflictos, minerales críticos y chokepoints, con fuente y fecha.`}
 >
   <Recorrido edicion={edicion} archivada={archivada} />
 

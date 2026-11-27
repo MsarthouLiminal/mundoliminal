@@ -14,7 +14,7 @@ interface Props {
 
 const {
   title,
-  description = 'Monitor semanal de minerales críticos, chokepoints, infraestructura de la IA y conflictos, con fuente y fecha. Análisis de Martín Sarthou desde Montevideo.',
+  description = 'Monitor semanal de infraestructura de la IA, conflictos, minerales críticos y chokepoints, con fuente y fecha. Análisis de Martín Sarthou desde Montevideo.',
   noindex = false,
   imagen = '/og/liminal.jpg',
 } = Astro.props;
@@ -50,7 +50,7 @@ const imagenAbsoluta = new URL(imagen, Astro.site ?? 'https://mundoliminal.com')
     <meta property="og:image" content={imagenAbsoluta} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="LIMINAL. Señales que importan: minerales críticos, chokepoints, infraestructura de la IA y conflictos." />
+    <meta property="og:image:alt" content="LIMINAL. Señales que importan: infraestructura de la IA, conflictos, minerales críticos y chokepoints." />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={fullTitle} />
     <meta name="twitter:description" content={description} />

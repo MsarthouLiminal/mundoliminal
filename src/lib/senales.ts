@@ -94,14 +94,31 @@ const archivos = import.meta.glob<Edicion>('../data/senales/*.json', {
   import: 'default',
 });
 
-/** Las señales de cada eje, de la más reciente a la más antigua (empates en orden de archivo). */
+/**
+ * El orden de los ejes en toda la web: Infraestructura IA, Conflictos,
+ * Minerales críticos y Chokepoints. No depende del orden del JSON: se aplica
+ * acá, al cargar cada edición, así que vale para la portada, /senales, las
+ * ediciones archivadas y la sala. Un eje que no esté en la lista va al final.
+ */
+export const ORDEN_EJES = ['ia', 'con', 'min', 'cho'];
+const lugarDelEje = (id: string) => {
+  const i = ORDEN_EJES.indexOf(id);
+  return i < 0 ? ORDEN_EJES.length : i;
+};
+
+/**
+ * Los ejes en el orden de la web y, dentro de cada uno, las señales de la más
+ * reciente a la más antigua (empates en orden de archivo).
+ */
 function ordenarSenales(e: Edicion): Edicion {
   return {
     ...e,
-    ejes: e.ejes.map((eje) => ({
-      ...eje,
-      senales: [...eje.senales].sort((a, b) => b.fecha.localeCompare(a.fecha)),
-    })),
+    ejes: [...e.ejes]
+      .sort((a, b) => lugarDelEje(a.id) - lugarDelEje(b.id))
+      .map((eje) => ({
+        ...eje,
+        senales: [...eje.senales].sort((a, b) => b.fecha.localeCompare(a.fecha)),
+      })),
   };
 }
 
