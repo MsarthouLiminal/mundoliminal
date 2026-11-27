@@ -238,23 +238,23 @@
         },
         {
           "n": 3,
-          "titulo": "Irán dice que dos petroleros más chocaron con minas frente a Khasab",
+          "titulo": "Ormuz: el Brent cierra en USD 95,44 tras otra denuncia iraní de minas",
           "lugar": "Estrecho de Ormuz",
           "lugarMapa": "Estrecho de Ormuz",
           "lat": 26.57,
           "lon": 56.25,
           "etiqueta": "der",
-          "fecha": "2026-11-26",
-          "hecho": "El jueves 26, la Guardia Revolucionaria de Irán dijo, en un comunicado que difundió la agencia Tasnim y sin nombres de buques ni confirmación independiente, que dos petroleros explotaron y se incendiaron al chocar con minas al norte del puerto omaní de Khasab cuando intentaban cruzar el estrecho de Ormuz por una ruta no autorizada, uno de ellos un superpetrolero con más de 2 millones de barriles de crudo; su vocero, Hossein Mohebbi, dijo que la fuerza usa fuego pesado para mantener cerrado el estrecho (Reuters). El Brent cerró ese día en USD 96,57, USD 1,96 arriba del cierre del miércoles, y el viernes 27, a media mañana del Golfo, cotizaba a USD 97,49, camino a una suba semanal cercana al 7% (The National). Según Kpler, por Ormuz pasaron en promedio 9,25 millones de barriles por día en los siete días al martes 24, cerca del 54% de los 17,14 millones previos a la guerra, y las agencias de seguridad marítima, que suelen registrar menos incidentes que la Guardia, informaron el jueves una explosión por un proyectil desconocido cerca de un petrolero a unas 50 millas náuticas al oeste de Dubái, sin daños.",
-          "lectura": "Teherán sumó el jueves otra denuncia de minas y un vocero que habla de mantener cerrado el estrecho, mientras las agencias marítimas, que llevan su propia cuenta, registraron bastante menos. El petróleo no esperó el arbitraje: con Ormuz al 54% de su flujo previo a la guerra según Kpler, el Brent subió USD 1,96 en un día y va camino a cerrar la semana cerca de 7% arriba.",
+          "fecha": "2026-11-27",
+          "hecho": "El viernes 27, el Brent cerró en USD 95,44 por barril, USD 1,13 abajo del jueves, después de tocar durante la rueda su nivel más alto desde el 9 de noviembre, y terminó la semana cerca de 3% arriba, su primera suba semanal del mes (Reuters). Ese día, la Armada de la Guardia Revolucionaria de Irán dijo, en un comunicado que difundió la agencia Fars y sin nombres de buques ni confirmación independiente, que un petrolero explotó al chocar con una mina al norte de la isla Ghavam, en el estrecho de Ormuz, cuando intentaba cruzar con otro por una ruta no autorizada, y que el segundo dio la vuelta (Anadolu); el jueves 26 había denunciado otros dos frente al puerto omaní de Khasab. El Comando Central de EE.UU. informó que el jueves 26 un avión suyo inutilizó con munición de precisión la propulsión del granelero Pacific Archer, de bandera de Palaos, que había salido de Bandar Abbas y, según el comando, intentó romper el bloqueo pese a varias advertencias: es el sexto buque que inutiliza desde que retomó el bloqueo, con 158 desviados (The Maritime Executive).",
+          "lectura": "La Guardia Revolucionaria denunció otra mina y el Comando Central contó su sexto buque inutilizado, y el Brent, que en la rueda había tocado su nivel más alto desde el 9 de noviembre, cerró USD 1,13 abajo. Ormuz sigue en disputa entre un parte iraní sin nombres de buques y un bloqueo que EE.UU. hace cumplir con munición, pero el viernes una denuncia sin confirmar ya no alcanzó para sostener el precio.",
           "tendencia": "escala",
           "intensidad": 3,
           "corto": "Ormuz",
-          "dato": "USD 96,57",
+          "dato": "USD 95,44",
           "objetivo": "Estrecho",
           "fuente": {
-            "nombre": "Reuters, vía Arab News",
-            "url": "https://www.arabnews.com/middle-east/irans-revolutionary-guards-say-two-oil-tankers-hit-sea-mines-near-omans-khasab-3014111"
+            "nombre": "Reuters, vía APA",
+            "url": "https://en.apa.az/energy-and-industry/oil-notches-first-weekly-gain-in-november-on-supply-fears-539023"
           },
           "anterior": {
             "titulo": "AIE: la crisis de Ormuz sacó 2.800 millones de barriles del mercado",
@@ -266,7 +266,7 @@
               "url": "https://www.iea.org/reports/world-energy-outlook-2026/executive-summary"
             }
           },
-          "actualizado": "2026-11-27T07:20"
+          "actualizado": "2026-11-27T19:10"
         }
       ],
       "tambienTitulo": "También en el radar",
@@ -465,8 +465,7 @@
             "nombre": "Reuters, vía Yahoo News",
             "url": "https://www.yahoo.com/news/articles/two-italians-killed-iranian-drone-152440938.html"
           },
-          "actualizado": "2026-11-26T19:28",
-          "ultimoMomento": true
+          "actualizado": "2026-11-26T19:28"
         },
         {
           "n": 14,
@@ -489,7 +488,6 @@
             "url": "https://english.aaj.tv/news/330482286/houthis-attack-saudi-aramcos-jazan-refinery-coalition-says"
           },
           "actualizado": "2026-11-26T19:28",
-          "ultimoMomento": true,
           "arco": {
             "lat": 26.64,
             "lon": 50.16,
