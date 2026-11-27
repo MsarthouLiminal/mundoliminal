@@ -288,6 +288,33 @@
       "alcance": "Data centers, chips, energía y agua. El cuerpo físico de la IA y quién lo decide.",
       "senales": [
         {
+          "n": 20,
+          "titulo": "La FCC autoriza a SpaceX un millón de satélites como data centers",
+          "lugar": "Washington / Starbase, Texas",
+          "lugarMapa": "Washington",
+          "lat": 38.9,
+          "lon": -77.04,
+          "etiqueta": "arriba",
+          "arco": {
+            "lat": 25.99,
+            "lon": -97.15,
+            "nombre": "Starbase"
+          },
+          "fecha": "2026-11-25",
+          "hecho": "El miércoles 25, la Oficina Espacial de la FCC autorizó en parte y con condiciones a SpaceX a desplegar Starmind, una constelación de 1.000.000 de satélites que funcionarían como data centers en órbita, entre 500 y 1.002 kilómetros de altura; el permiso formal es para usar radiofrecuencias de respaldo y emergencia, y la orden deja fuera el impacto ambiental y sobre la astronomía óptica, temas sobre los que la FCC dice no tener autoridad. SpaceX debe tener un satélite en órbita antes del 25 de noviembre de 2033, el 10% en 2035, el 50% en 2038 y el resto en 2040, y la FCC difirió su pedido de no hacer reingresar a la atmósfera los satélites que operen sobre 600 kilómetros. Amazon (Kuiper), Viasat y la Sociedad Astronómica Estadounidense habían pedido rechazar la solicitud, y SpaceX prevé lanzar los primeros en Starship desde el tercer trimestre de 2027 (Space.com).",
+          "lectura": "La FCC autorizó un millón de satélites a través de una licencia de radio de respaldo, y dejó afuera, por falta de competencia, lo que esa constelación le hace al cielo y al ambiente. El data center que en tierra discute agua, energía y permisos sube a la órbita con una sola pregunta respondida, la de las frecuencias, y catorce años de plazo para todo lo demás.",
+          "tendencia": "escala",
+          "intensidad": 2,
+          "corto": "Starmind",
+          "dato": "1.000.000",
+          "objetivo": "Data centers en órbita",
+          "fuente": {
+            "nombre": "FCC, orden DA 26-1273",
+            "url": "https://docs.fcc.gov/public/attachments/DA-26-1273A1.pdf"
+          },
+          "actualizado": "2026-11-27T07:23"
+        },
+        {
           "n": 18,
           "titulo": "Nvidia frena envíos de servidores a 4 países asiáticos, según el FT",
           "lugar": "Singapur / Malasia, Tailandia e Indonesia",
@@ -329,7 +356,8 @@
             "nombre": "Reuters y AFP, vía Taipei Times",
             "url": "https://www.taipeitimes.com/News/biz/archives/2026/11/25/2003868323"
           },
-          "actualizado": "2026-11-25T07:14"
+          "actualizado": "2026-11-25T07:14",
+          "rotada": "2026-11-27T07:23"
         },
         {
           "n": 12,
